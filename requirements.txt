@@ -6,3 +6,4 @@ anthropic
 langchain
 llama-index
 ell-ai
+setuptools>=64
