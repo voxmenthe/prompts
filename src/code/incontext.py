@@ -1,4 +1,4 @@
-When making or proposing changes, always consider how the change will affect the other parts of the system.
+incontext1 = """When making or proposing changes, always consider how the change will affect the other parts of the system.
 Consider the entire context of the change. If you do not have all the necessary context, ask for it.
 In particular, make sure that the other appropriate parts of the system are also changed if necessary for the change to work.
 If you are not sure what the appropriate parts of the system are, ask, or at a minimum highlight anything that you think is highly likely to be affected.
@@ -24,5 +24,4 @@ When suggesting or implementing code changes:
 5. Communicate implications:
    - Clearly explain the rationale behind your proposed changes.
    - Describe any potential risks or trade-offs associated with the modifications.
-
-No need to be too verbose though. Be clear, succinct, and to the point.
+"""

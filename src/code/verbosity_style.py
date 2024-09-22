@@ -1,0 +1,1 @@
+lowish_verbosity = "No need to be too verbose though. Be clear, succinct, and to the point - focus on the most important information and actionable steps."
