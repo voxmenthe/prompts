@@ -4,9 +4,9 @@
 
 This repository contains a collection of prompts for various applications, including:
 
+- **Code**: Prompts for coding assistants such as Cursor AI
 - **Agents**: Multi-agent simulations and role-playing scenarios
 - **Personas**: Detailed character profiles for AI models
-- **Scenarios**: Real-world and hypothetical situations for scenario testing
 - **Instructions**: Instruction-style prompts for a wide range of tasks
 
 
