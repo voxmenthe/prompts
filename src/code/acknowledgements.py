@@ -2,9 +2,8 @@ acknowledgement = """And finally, just to make sure that I know you've incorpora
 👀 (Eyes) - Indicating "I've seen/read this"
 ✅ (Check Mark) - Signifying "Understood" or "Noted"
 🫡 (Saluting Face) - Suggesting "Acknowledged" or "Roger that"
-📚 (Books) - Implying "Information processed"
+📚 (Books) - Indicating "Used the most recent documentation"
 💡 (Light Bulb) - Indicating "I've grasped this concept"
-🔄 (Recycling Symbol) - Suggesting "I'll keep this in mind"
 🤔 (Thinking Face) - Indicating "I've considered this"
 🧠 (Brain) - Indicating "I've included a substantial amount of additional appropriate information"
 """
@@ -13,5 +12,7 @@ acknowledgement_short = """And finally, just to make sure that I know you've inc
 
 💡 (Light Bulb) - Indicating "I've grasped this concept"
 🤔 (Thinking Face) - Indicating "I've considered this"
+🔄 (Recycling Symbol) - Indicating "I've considered the entire context of the change"
+📚 (Books) - Indicating "Used the most recent documentation"
 🧠 (Brain) - Indicating "I've included a substantial amount of additional appropriate information"
 """
