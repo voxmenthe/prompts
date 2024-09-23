@@ -13,6 +13,7 @@ GIT_URL="$1"
 REPO_NAME=$(basename -s .git "$GIT_URL")
 
 # Clone the GitHub repository
+# You can add —depth 1 to the git clone to only clone the last commits, saves time + (temp) space
 git clone "$GIT_URL"
 
 # Change directory to the cloned repository
