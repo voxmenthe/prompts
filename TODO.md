@@ -1,1 +1,2 @@
 * Use the "how to use it" template from claude-sonnet python prompt repo as a guide to create prompts for other projects - e.g. fastapi api + aws etc.
+* Use the analysis of move 37 on perplexity as a guide to create a prompt for how to think.
