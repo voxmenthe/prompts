@@ -1,0 +1,1 @@
+* Use the "how to use it" template from claude-sonnet python prompt repo as a guide to create prompts for other projects - e.g. fastapi api + aws etc.
