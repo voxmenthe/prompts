@@ -10,6 +10,11 @@ This repository contains a collection of prompts for various applications, inclu
 - **Instructions**: Instruction-style prompts for a wide range of tasks
 
 
+## PRs Welcome
+
+I'm always looking for ways to improve the prompts in this repository, or add new and useful ones. If you have any suggestions, please feel free to open a PR.
+
+
 ## Setup Instructions
 
 1. **Install pyenv:**
