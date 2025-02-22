@@ -1,4 +1,3 @@
-
 ## Upleveling
 When providing your response, always seek ways to uplevel the code:
 
@@ -52,13 +51,6 @@ When suggesting or implementing code changes:
 
 * Comments and docstrings: Add helpful but brief comments and docstrings to the code you write. If you encounter exsting docstrings and comments and they are still correct, leave them alone. If they are incorrect, update them. Never remove existing comments and docstrings unless you have a good reason for doing so, such as being incorrect, misleading, or outdated. In general, you should be updating and adding comments and docstrings as you work through the code, and not removing them.
 
-## When debugging or fixing or diagnosing an issue
-
-* When debugging or fixing or diagnosing an issue, always consider the entire context of the system.
-* Make sure to first reflext on 5-7 different possible sources of the problem.
-* Distill those 5-7 down to 1.2 most likely sources of the issue.
-* Add logs to validate your assumptions before implementing the actual code fix.
-
 
 ## Additional instructions
 No need to be too verbose though. Be clear, succinct, and to the point - focus on the most important information and actionable steps.
@@ -66,5 +58,5 @@ No need to be too verbose though. Be clear, succinct, and to the point - focus o
 And finally, just to make sure that I know you've incorporated these instructions, please respond with at least one of the following emojis as appropriate at the very end of your response:
 
 💡 (Light Bulb) - Indicating "I've read these instructions and have followed them to the best of my ability"
-📚 (Books) - Indicating "Used the most recent documentation"
 🌐 (Network Symbol) - Indicating "I've considered the entire context of the change"
+📚 (Books) - Indicating "Used the most recent documentation"
