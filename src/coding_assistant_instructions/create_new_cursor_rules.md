@@ -4,6 +4,7 @@ First, carefully review the current codebase and analyse its structure, tech sta
 
 Based on this in depth analysis, you will create a set of rule files similar to those in the .cursor/rules folder. The files you need to create are:
 
+# This references this repo: https://github.com/mckaywrigley/o1-pro-template-system/tree/main/.cursor/rules
 1. auth.mdc
 2. backend.mdc
 3. env.mdc
