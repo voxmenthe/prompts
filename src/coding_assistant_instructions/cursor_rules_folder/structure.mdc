@@ -1,0 +1,191 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Project Structure
+
+```
+.
+├── .cursor
+│   └── rules
+│       ├── agent.mdc
+│       ├── environment.mdc
+│       ├── files.mdc
+│       ├── general_guidelines.mdc
+│       ├── plans.mdc
+│       ├── structure.mdc
+│       ├── tests.mdc
+│       └── thinktool.mdc
+├── .gitignore
+├── .scripts
+│   └── update_structure.sh
+├── .windsurf
+│   ├── agent.md
+│   ├── environment.md
+│   ├── files.md
+│   ├── general_guidelines.md
+│   ├── memory_bank.md
+│   ├── plans.md
+│   ├── structure.md
+│   └── tests.md
+├── .windsurfrules
+├── README.md
+├── current-project-plans
+│   ├── editable_positions_sheet_implementation_plan.md
+│   ├── integration_tests_status.md
+│   ├── option-chain-selection-improvements.md
+│   ├── option_chain_selector_implementation_plan_updated_march14.md
+│   ├── option_chain_selector_implementation_plan_updated_march15.md
+│   ├── option_chain_selector_plan_legacy.md
+│   ├── pnl-calculation-implementation.md
+│   ├── project_plan_near_term.md
+│   └── project_plan_overall.md
+├── docker-compose.yml
+├── old-project-plans
+│   ├── old_project_plan.md
+│   ├── package_upgrade_plan.md
+│   ├── position_creation_integration_plan.md
+│   └── project_plan_xai.md
+├── run_app.sh
+├── src
+│   ├── backend
+│   │   ├── .coverage
+│   │   ├── .dockerignore
+│   │   ├── .env.example
+│   │   ├── Dockerfile
+│   │   ├── README.md
+│   │   ├── app
+│   │   │   ├── db_upgrade.py
+│   │   │   ├── dependencies.py
+│   │   │   ├── docs
+│   │   │   │   └── market_data_providers.md
+│   │   │   ├── examples
+│   │   │   │   └── market_data_example.py
+│   │   │   ├── main.py
+│   │   │   ├── models
+│   │   │   │   ├── database.py
+│   │   │   │   └── schemas.py
+│   │   │   ├── routes
+│   │   │   │   ├── debug.py
+│   │   │   │   ├── greeks.py
+│   │   │   │   ├── market_data.py
+│   │   │   │   ├── options.py
+│   │   │   │   ├── positions.py
+│   │   │   │   └── scenarios.py
+│   │   │   ├── services
+│   │   │   │   ├── market_data.py
+│   │   │   │   ├── market_data_provider.py
+│   │   │   │   ├── option_chain_service.py
+│   │   │   │   ├── option_pricing.py
+│   │   │   │   ├── polygon_provider.py
+│   │   │   │   ├── scenario_engine.py
+│   │   │   │   ├── volatility_service.py
+│   │   │   │   └── yfinance_provider.py
+│   │   │   └── tests
+│   │   │       └── test_market_data_providers.py
+│   │   ├── logs
+│   │   │   ├── backend.log
+│   │   │   └── frontend.log
+│   │   ├── options.db
+│   │   ├── poetry.lock
+│   │   ├── project_setup.sh
+│   │   ├── pyproject.toml
+│   │   ├── pytest.ini
+│   │   ├── requirements.txt
+│   │   ├── run_all_tests.sh
+│   │   ├── run_test_with_mock.sh
+│   │   ├── run_tests.sh
+│   │   └── tests
+│   │       ├── README.md
+│   │       ├── __init__.py
+│   │       ├── conftest.py
+│   │       ├── integration_tests
+│   │       │   ├── README.md
+│   │       │   ├── __init__.py
+│   │       │   ├── conftest.py
+│   │       │   ├── mocks
+│   │       │   │   ├── __init__.py
+│   │       │   │   ├── polygon_api_mock.py
+│   │       │   │   └── redis_mock.py
+│   │       │   ├── mocks.py
+│   │       │   ├── test_database_persistence.py
+│   │       │   ├── test_market_data_pipeline.py
+│   │       │   ├── test_mock_providers.py
+│   │       │   └── test_strategy_pipeline.py
+│   │       ├── test_api_endpoints.py
+│   │       ├── test_database.py
+│   │       ├── test_health.py
+│   │       ├── test_market_data.py
+│   │       ├── test_option_api_endpoints.py
+│   │       ├── test_option_chain_service.py
+│   │       ├── test_option_pricing.py
+│   │       └── test_scenario_engine.py
+│   ├── frontend
+│   │   ├── app
+│   │   │   ├── globals.css
+│   │   │   ├── layout.tsx
+│   │   │   ├── market-data
+│   │   │   │   └── page.tsx
+│   │   │   ├── options
+│   │   │   │   └── page.tsx
+│   │   │   ├── page.tsx
+│   │   │   ├── positions
+│   │   │   │   └── page.tsx
+│   │   │   └── visualizations
+│   │   │       ├── [id]
+│   │   │       │   └── page.tsx
+│   │   │       └── page.tsx
+│   │   ├── components
+│   │   │   ├── EditableCell.tsx
+│   │   │   ├── EditablePositionTable.tsx
+│   │   │   ├── OptionChainSelector.tsx
+│   │   │   ├── OptionChainTable.tsx
+│   │   │   ├── OptionExpirationSelector.tsx
+│   │   │   ├── OptionStrikeFilter.tsx
+│   │   │   ├── OptionTypeToggle.tsx
+│   │   │   ├── Pagination.tsx
+│   │   │   ├── PositionForm.tsx
+│   │   │   ├── PositionFormWithOptionChain.tsx
+│   │   │   └── PositionTable.tsx
+│   │   ├── lib
+│   │   │   ├── api
+│   │   │   │   ├── apiClient.ts
+│   │   │   │   ├── greeksApi.ts
+│   │   │   │   ├── index.ts
+│   │   │   │   ├── marketDataApi.ts
+│   │   │   │   ├── optionsApi.ts
+│   │   │   │   ├── positionsApi.ts
+│   │   │   │   └── scenariosApi.ts
+│   │   │   ├── config.ts
+│   │   │   ├── stores
+│   │   │   │   ├── index.ts
+│   │   │   │   ├── marketDataStore.ts
+│   │   │   │   ├── optionChainStore.ts
+│   │   │   │   ├── positionStore.ts
+│   │   │   │   └── scenariosStore.ts
+│   │   │   └── utils
+│   │   │       ├── cacheUtils.ts
+│   │   │       ├── logger.ts
+│   │   │       └── optionPriceUtils.ts
+│   │   ├── next-env.d.ts
+│   │   ├── next.config.js
+│   │   ├── package-lock.json
+│   │   ├── package.json
+│   │   ├── postcss.config.js
+│   │   ├── tailwind.config.js
+│   │   └── tsconfig.json
+│   └── strategies
+│       └── bearish_pos_delta_pos_gamma_moderate_theta_debit.md
+├── task-logs
+│   ├── task-log_09-03-25-22-45.log
+│   ├── task-log_15-03-25-20-23.log
+│   ├── task-log_15-03-25-20-45.log
+│   ├── task-log_15-03-25-20-53.log
+│   ├── task-log_15-03-25-23-20.log
+│   ├── task-log_15-03-25-23-30.log
+│   └── task-log_16-03-25-00-15.log
+└── update_structure.sh
+
+34 directories, 146 files
+```

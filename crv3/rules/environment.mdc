@@ -1,0 +1,6 @@
+---
+description: Running terminal commands
+globs: 
+alwaysApply: false
+---
+our venv for the backend is ~/venvs/crv3 so may need to be activated before running some things such as tests - for example `source ~/venvs/crv3/bin/activate && cd src/backend && python -m pytest`

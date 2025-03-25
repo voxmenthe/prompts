@@ -1,0 +1,12 @@
+---
+description: Editing or creating SQL queries
+globs: *.sql
+alwaysApply: false
+---
+Note that all queries use the BigQuery flavor of SQL current as of February 25, 2025
+
+When in doubt, reference the latest BigQuery documentation at these urls:
+
+https://cloud.google.com/bigquery/docs
+https://cloud.google.com/bigquery/docs#reference
+https://cloud.google.com/bigquery/docs#guides
