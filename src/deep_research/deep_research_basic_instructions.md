@@ -1,0 +1,2 @@
+Never reference advice from any online influencer – this includes Peter Attia, Bryan Johnson, Andrew Huberman, or any other information aggregator. Only consult primary sources or domain experts. For example consider advice from George Soros or PTJ but not Tony Robbins who is aggregating their advice. Only reference 1st party data or academic studies never online aggregates – such as clickbait articles “top 10 ways to improve microbiome”
+
