@@ -1,0 +1,100 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Must consult existing memory
+
+## MUST DO WITH EACH REQUEST
+- First action for each chat request should be to read `@self.md` and `@project.md`
+- Last action for each chat should be to update `@self.md` and `@project.md` if needed.
+
+Whenever Cursor adds a new feature or modifies existing code, flow documentation must be updated automatically.
+
+## Objective
+Ensure Cursor avoids repeating known mistakes by persistently logging corrections and learning. All requests must reference stored knowledge in:
+
+* `.remember/memory/self.md` — for known mistakes and their fixes
+* `.remember/memory/project.md` — for user preferences and custom rules
+
+## Rule: Learn from Mistakes
+
+### On Every Mistake or deprecated warning:
+1. Detect incorrect or suboptimal outputs.
+2. Correct the mistake.
+
+3. Save both mistake and correction in @self.md using the format:
+
+```
+### Mistake: [Short Description]
+**Wrong**:
+[Insert incorrect code or logic]
+
+
+**Correct**:
+[Insert corrected code or logic]
+```
+
+## Always add a step to read @self.md in your thoughts
+
+### Rule: Respect and Reference Project Preferences
+On Every Request:
+Read @project.md for:
+User’s preferred tools, stack, coding style, formatting, naming, etc.
+Preferences like TypeScript over JS, Yarn over npm, etc.
+Apply these preferences without exception.
+Save any new user preferences in @project.md.
+Rule: Prevent Repetition
+On Every Request:
+Always read @self.md before applying logic.
+If a related mistake is found:
+Use the corrected approach instead.
+Log that a prior fix was applied (optional debug).
+Rule: Keep Memory Clean and Updated
+If a better fix is found for an existing issue:
+Update that section in @self.md.
+Structure the memory files with clear ### headers.
+Group by topic if needed.
+MUST DO: Only keep general information in memory, do be specific to the file or request.
+MUST DO: Information saved in memory should be useful and reusable.
+Rule: Document Backend & Frontend Flows
+Whenever Cursor adds a new feature or modifies existing code, flow documentation must be updated automatically.
+
+Backend Flow Update
+For every changed or new API endpoint, add a new subsection to backend-flow.md.
+
+Format (example):
+
+## [Action Name] – [Date YY-MM-DD]
+
+- Endpoint : `/api/...`
+- Triggered Function : `handleX()`
+- Intermediate Steps : [validation, service calls, etc.]
+- DB Impact : `[Table]`, added/updated field(s)
+- Response : `[status / body]`
+List only the steps needed for debugging—avoid unnecessary detail.
+
+Frontend Flow Update
+For each new UI action the user can trigger, add a subsection to frontend-flow.md.
+
+Format (example):
+
+## [User Action] – [Date YY-MM-DD]
+
+- Event : `onClick` → `handleY()`
+- State / Context Change : `[stateName]`, old → new
+- API Call : `/api/...` (if any)
+- UI Result : modal opened / route changed / toast shown
+If updating an existing flow, mark the section with (Updated YY-MM-DD).
+
+Tip: These documents should serve as the single source of truth for quick debugging and onboarding. Keep them concise.
+
+Storage Paths
+.remember/memory/self.md: Persistent log of mistakes and their fixes
+.remember/memory/project.md: User preferences and custom rules
+.remember/flows/backend-flow.md : Backend flow documentation
+.remember/flows/frontend-flow.md : Frontend flow documentation
+Enforcement
+Failing to read or update memory files after a mistake is a critical error.
+All requests must use and comply with stored knowledge and preferences.
+Neglecting the Flow Update rules for backend/frontend changes also counts as an error.

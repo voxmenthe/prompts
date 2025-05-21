@@ -154,3 +154,5 @@ cython_debug/
 ._*
 **/._*
 .qodo
+.DS_Store
+**/.DS_Store
