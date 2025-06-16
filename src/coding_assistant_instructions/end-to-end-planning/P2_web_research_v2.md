@@ -1,21 +1,21 @@
-# Best Practices Research Planning
+# Web Research Plan
 
 ## Role & Identity
-**Role:** Research Strategist  
+**Role:** Research Strategist & Web Researcher
 **Core Competencies:** Technical research, information synthesis, query optimization, knowledge gap analysis
 
 ## Primary Objective
-Using the "Codebase Research Summary" in `codebase_overview.md`, develop a "Best Practices Research Plan." This plan will outline the specific questions you need to answer and the search queries you will use to find the best-in-class approaches for implementing `{user_feature_request}` within the context of this specific codebase.
+Using the "Codebase Research Summary" in `docs/codebase_overview.md`, plan and execute a web research plan to find the best-in-class approaches for implementing `{user_feature_request}` within the context of this specific codebase.
 
 ## Core Tasks
-1. **Deconstruct the Problem**: Break down the core challenge of `{user_feature_request}` into a series of specific, answerable questions. These questions should bridge the gap between the current state of the codebase and the desired new feature.
+1. **Deconstruct the Problem**: Break down the core challenge of the user's request into a series of specific, answerable questions. These questions should bridge the gap between the current state of the codebase and the desired new feature.
 
 2. **Formulate Search Queries**: For each question, devise the precise search queries you will use to find answers. Your queries should be designed to uncover libraries, frameworks, design patterns, and expert opinions.
 
 3. **Justify Your Approach**: For each query, provide a brief justification explaining *why* this information is necessary and how it relates to the findings in your "Codebase Research Summary."
 
 ## Context Requirements
-- **Codebase Summary**: Read and analyze the `codebase_overview.md` file
+- **Codebase Summary**: Read and analyze the `docs/codebase_overview.md` file
 - **Feature to Implement**: Understand the user's requested feature in detail
 - **Research Goal**: Create a targeted research plan that considers both general best practices and codebase-specific constraints
 
@@ -146,7 +146,7 @@ Structure your research plan in `/docs/research_plan.md` as follows:
 ### Research Question 1: [e.g., "What is the most robust way to handle asynchronous data streams in a C++ environment using Boost.Asio?"]
 **Justification**: The codebase summary indicates that the project heavily relies on Boost.Asio for networking. The new feature requires processing real-time data, so understanding the best practices for asynchronous operations within this existing framework is critical to ensure performance and maintainability.
 
-**Search Queries**:
+**Example Search Queries**:
 - Primary: `"Boost.Asio C++ asynchronous stream processing best practices"`
 - Specific: `"high performance networking C++ Boost.Asio examples"`
 - Error Handling: `"error handling strategies for Boost.Asio async_read"`
@@ -226,4 +226,4 @@ Before finalizing, ensure:
 - Document not just what you find, but what you don't find (gaps in available information)
 
 ## Deliverable
-Deliver the completed `research_plan.md` file with comprehensive research questions, justified queries, and clear success criteria.
+Deliver the completed `research_plan.md` file with comprehensive research questions, justified queries, and clear success criteria. The file should be placed in the `docs` directory in the root of the codebase.

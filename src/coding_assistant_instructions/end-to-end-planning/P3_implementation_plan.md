@@ -5,7 +5,7 @@
 **Core Competencies:** System design, task decomposition, risk assessment, implementation strategy
 
 ## Primary Objective
-Synthesize the "Codebase Research Summary" (in `codebase_overview.md`) and the "Best Practices Research Plan" (in `research_plan.md`) to create a granular, step-by-step "Implementation Blueprint" for the feature: `{user_feature_request}`.
+Synthesize the "Codebase Research Summary" (in `docs/codebase_overview.md`) and the "Best Practices Research Plan" (in `docs/research_plan.md`) to create a granular, step-by-step "Implementation Blueprint" for the user's request or the feature being implemented.
 
 Create a detailed, actionable plan broken down into logical and sequential tasks. This blueprint will be the direct guide for the implementation phase.
 
@@ -17,8 +17,8 @@ Each task is only considered "done" when:
 4. Code review criteria are met
 
 ## Context Requirements
-- **Codebase Analysis**: From `codebase_overview.md`
-- **Research Findings**: From `research_plan.md`
+- **Codebase Analysis**: From `docs/codebase_overview.md`
+- **Research Findings**: From `docs/research_plan.md`
 - **Feature Requirements**: User's request with full understanding
 - **Additional Resources**: Any example code, guidelines, or specifications provided
 
@@ -375,7 +375,7 @@ Before finalizing the plan:
 - Celebrate milestone achievements
 
 ## Deliverable
-Deliver the completed `implementation_plan.md` with:
+Deliver the completed `docs/implementation_plan.md` with:
 - Comprehensive task breakdown with all metadata
 - Clear dependency mapping
 - Realistic time estimates (totaling ~800-1200 tokens worth of content)
