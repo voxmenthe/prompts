@@ -9,6 +9,8 @@ This repository contains a collection of prompts for various applications, inclu
 - **Personas**: Detailed character profiles for AI models
 - **Instructions**: Instruction-style prompts for a wide range of tasks
 
+and other random stuff.
+
 
 ## PRs Welcome
 
