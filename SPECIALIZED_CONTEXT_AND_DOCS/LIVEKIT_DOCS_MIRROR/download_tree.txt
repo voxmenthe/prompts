@@ -1,0 +1,221 @@
+LIVEKIT_DOCS_MIRROR
+├── agents
+│   ├── build
+│   │   ├── turns
+│   │   │   ├── turn-detector.md
+│   │   │   └── vad.md
+│   │   ├── audio.md
+│   │   ├── events.md
+│   │   ├── external-data.md
+│   │   ├── metrics.md
+│   │   ├── nodes.md
+│   │   ├── testing.md
+│   │   ├── text.md
+│   │   ├── tools.md
+│   │   ├── turns.md
+│   │   ├── vision.md
+│   │   └── workflows.md
+│   ├── integrations
+│   │   ├── avatar
+│   │   │   ├── anam.md
+│   │   │   ├── bey.md
+│   │   │   ├── bithuman.md
+│   │   │   ├── hedra.md
+│   │   │   ├── simli.md
+│   │   │   └── tavus.md
+│   │   ├── llm
+│   │   │   ├── anthropic.md
+│   │   │   ├── aws.md
+│   │   │   ├── azure-openai.md
+│   │   │   ├── baseten.md
+│   │   │   ├── cerebras.md
+│   │   │   ├── deepseek.md
+│   │   │   ├── fireworks.md
+│   │   │   ├── gemini.md
+│   │   │   ├── groq.md
+│   │   │   ├── langchain.md
+│   │   │   ├── letta.md
+│   │   │   ├── ollama.md
+│   │   │   ├── openai.md
+│   │   │   ├── perplexity.md
+│   │   │   ├── telnyx.md
+│   │   │   ├── together.md
+│   │   │   └── xai.md
+│   │   ├── realtime
+│   │   │   ├── azure-openai.md
+│   │   │   ├── gemini.md
+│   │   │   ├── nova-sonic.md
+│   │   │   └── openai.md
+│   │   ├── stt
+│   │   │   ├── assemblyai.md
+│   │   │   ├── aws.md
+│   │   │   ├── azure-openai.md
+│   │   │   ├── azure.md
+│   │   │   ├── baseten.md
+│   │   │   ├── cartesia.md
+│   │   │   ├── clova.md
+│   │   │   ├── deepgram.md
+│   │   │   ├── fal.md
+│   │   │   ├── gladia.md
+│   │   │   ├── google.md
+│   │   │   ├── groq.md
+│   │   │   ├── openai.md
+│   │   │   ├── sarvam.md
+│   │   │   ├── speechmatics.md
+│   │   │   └── spitch.md
+│   │   ├── tts
+│   │   │   ├── aws.md
+│   │   │   ├── azure-openai.md
+│   │   │   ├── azure.md
+│   │   │   ├── baseten.md
+│   │   │   ├── cartesia.md
+│   │   │   ├── deepgram.md
+│   │   │   ├── elevenlabs.md
+│   │   │   ├── google.md
+│   │   │   ├── groq.md
+│   │   │   ├── hume.md
+│   │   │   ├── inworld.md
+│   │   │   ├── lmnt.md
+│   │   │   ├── neuphonic.md
+│   │   │   ├── openai.md
+│   │   │   ├── playai.md
+│   │   │   ├── resemble.md
+│   │   │   ├── rime.md
+│   │   │   ├── sarvam.md
+│   │   │   ├── speechify.md
+│   │   │   └── spitch.md
+│   │   ├── avatar.md
+│   │   ├── aws.md
+│   │   ├── azure.md
+│   │   ├── cerebras.md
+│   │   ├── google.md
+│   │   ├── groq.md
+│   │   ├── llama.md
+│   │   ├── llm.md
+│   │   ├── openai.md
+│   │   ├── realtime.md
+│   │   ├── stt.md
+│   │   └── tts.md
+│   ├── ops
+│   │   ├── deployment.md
+│   │   └── recording.md
+│   ├── start
+│   │   ├── frontend.md
+│   │   ├── playground.md
+│   │   ├── telephony.md
+│   │   ├── v0-migration.md
+│   │   └── voice-ai.md
+│   ├── worker
+│   │   ├── agent-dispatch.md
+│   │   ├── job.md
+│   │   └── options.md
+│   ├── build.md
+│   ├── integrations.md
+│   └── worker.md
+├── home
+│   ├── cli
+│   │   ├── cli-setup.md
+│   │   └── templates.md
+│   ├── client
+│   │   ├── data
+│   │   │   ├── byte-streams.md
+│   │   │   ├── packets.md
+│   │   │   ├── rpc.md
+│   │   │   └── text-streams.md
+│   │   ├── state
+│   │   │   ├── participant-attributes.md
+│   │   │   └── room-metadata.md
+│   │   ├── tracks
+│   │   │   ├── advanced.md
+│   │   │   ├── encryption.md
+│   │   │   ├── noise-cancellation.md
+│   │   │   ├── publish.md
+│   │   │   ├── screenshare.md
+│   │   │   └── subscribe.md
+│   │   ├── connect.md
+│   │   ├── data.md
+│   │   ├── events.md
+│   │   └── tracks.md
+│   ├── cloud
+│   │   ├── analytics-api.md
+│   │   ├── architecture.md
+│   │   ├── billing.md
+│   │   ├── firewall.md
+│   │   ├── noise-cancellation.md
+│   │   ├── quotas-and-limits.md
+│   │   ├── region-pinning.md
+│   │   └── sandbox.md
+│   ├── egress
+│   │   ├── api.md
+│   │   ├── autoegress.md
+│   │   ├── composite-recording.md
+│   │   ├── custom-template.md
+│   │   ├── examples.md
+│   │   ├── outputs.md
+│   │   ├── overview.md
+│   │   ├── participant.md
+│   │   └── track.md
+│   ├── get-started
+│   │   ├── api-primitives.md
+│   │   ├── authentication.md
+│   │   └── intro-to-livekit.md
+│   ├── ingress
+│   │   ├── configure-streaming-software.md
+│   │   └── overview.md
+│   ├── quickstarts
+│   │   ├── android-compose.md
+│   │   ├── android.md
+│   │   ├── expo.md
+│   │   ├── flutter.md
+│   │   ├── javascript.md
+│   │   ├── nextjs.md
+│   │   ├── react-native.md
+│   │   ├── react.md
+│   │   ├── swift.md
+│   │   └── unity-web.md
+│   ├── self-hosting
+│   │   ├── benchmark.md
+│   │   ├── deployment.md
+│   │   ├── distributed.md
+│   │   ├── egress.md
+│   │   ├── ingress.md
+│   │   ├── kubernetes.md
+│   │   ├── local.md
+│   │   ├── ports-firewall.md
+│   │   ├── sip-server.md
+│   │   └── vm.md
+│   ├── server
+│   │   ├── generating-tokens.md
+│   │   ├── managing-participants.md
+│   │   ├── managing-rooms.md
+│   │   └── webhooks.md
+│   └── cloud.md
+├── recipes
+│   ├── chain-of-thought.md
+│   ├── company-directory.md
+│   ├── ivr-navigator.md
+│   └── moviefone.md
+├── sip
+│   ├── quickstarts
+│   │   ├── configuring-plivo-trunk.md
+│   │   ├── configuring-sip-trunk.md
+│   │   ├── configuring-telnyx-trunk.md
+│   │   └── configuring-twilio-trunk.md
+│   ├── accepting-calls-twilio-voice.md
+│   ├── accepting-calls.md
+│   ├── api.md
+│   ├── cloud.md
+│   ├── dispatch-rule.md
+│   ├── dtmf.md
+│   ├── hd-voice.md
+│   ├── making-calls.md
+│   ├── outbound-calls.md
+│   ├── sip-participant.md
+│   ├── transfer-cold.md
+│   ├── troubleshooting.md
+│   ├── trunk-inbound.md
+│   └── trunk-outbound.md
+├── agents.md
+├── download_results.json
+├── llms.txt
+└── sip.md

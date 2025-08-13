@@ -1,0 +1,202 @@
+GSAP_DOCS_MIRROR
+├── docs
+│   ├── v3
+│   │   ├── Eases
+│   │   │   ├── CustomBounce.md
+│   │   │   ├── CustomEase.md
+│   │   │   ├── CustomWiggle.md
+│   │   │   ├── ExpoScaleEase.md
+│   │   │   ├── RoughEase.md
+│   │   │   ├── SlowMo.md
+│   │   │   └── SteppedEase.md
+│   │   ├── GSAP
+│   │   │   ├── CorePlugins
+│   │   │   │   ├── Attributes.md
+│   │   │   │   ├── CSS.md
+│   │   │   │   ├── EndArray.md
+│   │   │   │   ├── Modifiers.md
+│   │   │   │   └── Snap.md
+│   │   │   ├── Timeline
+│   │   │   │   ├── autoRemoveChildren.md
+│   │   │   │   ├── data.md
+│   │   │   │   ├── labels.md
+│   │   │   │   ├── parent.md
+│   │   │   │   ├── scrollTrigger.md
+│   │   │   │   ├── smoothChildTiming.md
+│   │   │   │   └── vars.md
+│   │   │   ├── Tween
+│   │   │   │   ├── data.md
+│   │   │   │   ├── ratio.md
+│   │   │   │   ├── scrollTrigger.md
+│   │   │   │   └── vars.md
+│   │   │   ├── gsap.effects.md
+│   │   │   ├── gsap.globalTimeline.md
+│   │   │   ├── gsap.ticker.md
+│   │   │   ├── gsap.utils.md
+│   │   │   ├── gsap.version.md
+│   │   │   ├── Timeline.md
+│   │   │   ├── Tween.md
+│   │   │   └── UtilityMethods.md
+│   │   ├── HelperFunctions
+│   │   │   └── helpers
+│   │   │       ├── addWeightedEases.md
+│   │   │       ├── alignOrigins.md
+│   │   │       ├── anchorsToProgress.md
+│   │   │       ├── bgSize.md
+│   │   │       ├── blendEases.md
+│   │   │       ├── callAfterResize.md
+│   │   │       ├── compensatedSkew.md
+│   │   │       ├── easeToLinear.md
+│   │   │       ├── FLIP.md
+│   │   │       ├── formatNumber.md
+│   │   │       ├── getDirectionalSnapFunc.md
+│   │   │       ├── getNestedLabelTime.md
+│   │   │       ├── getScrollLookup.md
+│   │   │       ├── getScrollPosition.md
+│   │   │       ├── imageSequenceScrub.md
+│   │   │       ├── killChildTweensOf.md
+│   │   │       ├── LottieScrollTrigger.md
+│   │   │       ├── nestedLinesSplit.md
+│   │   │       ├── pluckRandomFrom.md
+│   │   │       ├── progressiveBuild.md
+│   │   │       ├── seamlessLoop.md
+│   │   │       ├── smoothOriginChange.md
+│   │   │       ├── stopOverscroll.md
+│   │   │       ├── tickGSAPWhileHidden.md
+│   │   │       ├── trackDirection.md
+│   │   │       └── weightedRandom.md
+│   │   ├── Plugins
+│   │   │   ├── Draggable
+│   │   │   │   ├── autoScroll.md
+│   │   │   │   ├── deltaX.md
+│   │   │   │   ├── deltaY.md
+│   │   │   │   ├── endRotation.md
+│   │   │   │   ├── endX.md
+│   │   │   │   ├── endY.md
+│   │   │   │   ├── isPressed.md
+│   │   │   │   ├── isThrowing.md
+│   │   │   │   ├── lockAxis.md
+│   │   │   │   ├── lockedAxis.md
+│   │   │   │   ├── maxRotation.md
+│   │   │   │   ├── maxX.md
+│   │   │   │   ├── maxY.md
+│   │   │   │   ├── minRotation.md
+│   │   │   │   ├── minX.md
+│   │   │   │   ├── minY.md
+│   │   │   │   ├── pointerEvent.md
+│   │   │   │   ├── pointerX.md
+│   │   │   │   ├── pointerY.md
+│   │   │   │   ├── rotation.md
+│   │   │   │   ├── startX.md
+│   │   │   │   ├── startY.md
+│   │   │   │   ├── target.md
+│   │   │   │   ├── tween.md
+│   │   │   │   ├── vars.md
+│   │   │   │   ├── x.md
+│   │   │   │   ├── y.md
+│   │   │   │   └── zIndex.md
+│   │   │   ├── InertiaPlugin
+│   │   │   │   ├── VelocityTracker
+│   │   │   │   │   ├── .target.md
+│   │   │   │   │   └── .track.md
+│   │   │   │   └── VelocityTracker.md
+│   │   │   ├── MorphSVGPlugin
+│   │   │   │   ├── static.convertToPath.md
+│   │   │   │   ├── static.defaultRender.md
+│   │   │   │   ├── static.defaultType.md
+│   │   │   │   ├── static.defaultUpdateTarget.md
+│   │   │   │   ├── static.rawPathToString.md
+│   │   │   │   └── static.stringToRawPath.md
+│   │   │   ├── MotionPathPlugin
+│   │   │   │   └── methods
+│   │   │   │       └── static-pointsToSegment.md
+│   │   │   ├── Observer
+│   │   │   │   ├── deltaX.md
+│   │   │   │   ├── deltaY.md
+│   │   │   │   ├── event.md
+│   │   │   │   ├── isDragging.md
+│   │   │   │   ├── isEnabled.md
+│   │   │   │   ├── isPressed.md
+│   │   │   │   ├── startX.md
+│   │   │   │   ├── startY.md
+│   │   │   │   ├── static.isTouch.md
+│   │   │   │   ├── target.md
+│   │   │   │   ├── vars.md
+│   │   │   │   ├── velocityX.md
+│   │   │   │   ├── velocityY.md
+│   │   │   │   ├── x.md
+│   │   │   │   └── y.md
+│   │   │   ├── ScrollSmoother
+│   │   │   │   ├── progress.md
+│   │   │   │   ├── scrollTrigger.md
+│   │   │   │   └── vars.md
+│   │   │   ├── ScrollTrigger
+│   │   │   │   ├── animation.md
+│   │   │   │   ├── direction.md
+│   │   │   │   ├── end.md
+│   │   │   │   ├── isActive.md
+│   │   │   │   ├── pin.md
+│   │   │   │   ├── progress.md
+│   │   │   │   ├── scroller.md
+│   │   │   │   ├── start.md
+│   │   │   │   ├── static.isTouch.md
+│   │   │   │   ├── trigger.md
+│   │   │   │   └── vars.md
+│   │   │   ├── SplitText
+│   │   │   │   ├── chars.md
+│   │   │   │   ├── isSplit.md
+│   │   │   │   ├── lines.md
+│   │   │   │   ├── masks.md
+│   │   │   │   ├── vars.md
+│   │   │   │   └── words.md
+│   │   │   ├── CSSRulePlugin.md
+│   │   │   ├── Draggable.md
+│   │   │   ├── DrawSVGPlugin.md
+│   │   │   ├── EaselPlugin.md
+│   │   │   ├── Flip.md
+│   │   │   ├── GSDevTools.md
+│   │   │   ├── InertiaPlugin.md
+│   │   │   ├── MorphSVGPlugin.md
+│   │   │   ├── MotionPathPlugin.md
+│   │   │   ├── Observer.md
+│   │   │   ├── Physics2DPlugin.md
+│   │   │   ├── PhysicsPropsPlugin.md
+│   │   │   ├── PixiPlugin.md
+│   │   │   ├── ScrambleTextPlugin.md
+│   │   │   ├── ScrollSmoother.md
+│   │   │   ├── ScrollToPlugin.md
+│   │   │   ├── ScrollTrigger.md
+│   │   │   ├── SplitText.md
+│   │   │   └── TextPlugin.md
+│   │   ├── Eases.md
+│   │   ├── GSAP.md
+│   │   ├── HelperFunctions.md
+│   │   └── Plugins.md
+│   └── v3.md
+├── resources
+│   ├── getting-started
+│   │   ├── control.md
+│   │   ├── Easing.md
+│   │   ├── Staggers.md
+│   │   └── timelines.md
+│   ├── 3-migration.md
+│   ├── a11y.md
+│   ├── conflict.md
+│   ├── fouc.md
+│   ├── frameworks.md
+│   ├── get-started.md
+│   ├── immediaterender.md
+│   ├── keyframes.md
+│   ├── mistakes.md
+│   ├── Plugins.md
+│   ├── position-parameter.md
+│   ├── private-repo-migration.md
+│   ├── react-advanced.md
+│   ├── react-basics.md
+│   ├── React.md
+│   ├── st-mistakes.md
+│   ├── svg.md
+│   ├── Webflow.md
+│   └── Wordpress.md
+├── download_results.json
+└── resources.md
