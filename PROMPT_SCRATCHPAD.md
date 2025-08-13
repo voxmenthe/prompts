@@ -1,0 +1,1 @@
+@gpt5_new_params_and_tools.md Based off the the new parameters that are now exposed for gpt-5 (as well as incorporating some ideas from the gpt-5 prompting guide in this folder) create a document with some hackathon ideas that could be put together in two days that are unlocked by these new capabilities

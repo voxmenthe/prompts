@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# ------------------------------------------------------------------
+#  Global Claude interceptor: block raw “pip” calls
+# ------------------------------------------------------------------
+
+cat <<'MSG'
+❌  Direct invocation of pip is disabled.
+   Use uv’s drop‑in replacement instead:
+
+       uv pip <args…>
+
+   (uv handles dependency resolution, wheels, and virtual‑envs.)
+MSG
+
+exit 1
