@@ -1,0 +1,18 @@
+{
+  "cleanupPeriodDays": 90,
+  "includeCoAuthoredBy": false,
+  "model": "opus",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/you_are_not_right.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
