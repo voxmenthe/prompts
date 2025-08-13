@@ -16592,7 +16592,7 @@ Response
     "created_at": 1711471533,
     "role": "owner"
   },
-  "value": "sk-admin-1234abcd"
+  "value": "YOUR_OPENAI_API_KEY"
 }
 Retrieve admin API key
 get
@@ -17705,7 +17705,7 @@ Response
     "created_at": 1711471533,
     "api_key": {
         "object": "organization.project.service_account.api_key",
-        "value": "sk-abcdefghijklmnop123",
+        "value": "YOUR_OPENAI_API_KEY",
         "name": "Secret Key",
         "created_at": 1711471533,
         "id": "key_abc"

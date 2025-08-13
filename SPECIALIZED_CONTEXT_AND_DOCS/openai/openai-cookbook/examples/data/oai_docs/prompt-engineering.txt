@@ -26,7 +26,7 @@ These models can’t read your mind. If outputs are too long, ask for brief repl
 Tactics:
 
 -   [Include details in your query to get more relevant answers](/docs/guides/prompt-engineering/tactic-include-details-in-your-query-to-get-more-relevant-answers)
--   [Ask the model to adopt a persona](/docs/guides/prompt-engineering/tactic-ask-the-model-to-adopt-a-persona)
+-   [Ask the model to adopt a persona](/docs/guides/prompt-engineering/tactic-aYOUR_OPENAI_API_KEY)
 -   [Use delimiters to clearly indicate distinct parts of the input](/docs/guides/prompt-engineering/tactic-use-delimiters-to-clearly-indicate-distinct-parts-of-the-input)
 -   [Specify the steps required to complete a task](/docs/guides/prompt-engineering/tactic-specify-the-steps-required-to-complete-a-task)
 -   [Provide examples](/docs/guides/prompt-engineering/tactic-provide-examples)
@@ -59,7 +59,7 @@ Tactics:
 
 -   [Instruct the model to work out its own solution before rushing to a conclusion](/docs/guides/prompt-engineering/tactic-instruct-the-model-to-work-out-its-own-solution-before-rushing-to-a-conclusion)
 -   [Use inner monologue or a sequence of queries to hide the model's reasoning process](/docs/guides/prompt-engineering/tactic-use-inner-monologue-or-a-sequence-of-queries-to-hide-the-model-s-reasoning-process)
--   [Ask the model if it missed anything on previous passes](/docs/guides/prompt-engineering/tactic-ask-the-model-if-it-missed-anything-on-previous-passes)
+-   [Ask the model if it missed anything on previous passes](/docs/guides/prompt-engineering/tactic-aYOUR_OPENAI_API_KEY)
 
 ### Use external tools
 
