@@ -372,7 +372,7 @@ If `play_dialtone` is enabled, the SIP Participant plays a dial tone to the room
 
 ---
 
-This document was rendered at 2025-08-13T22:17:07.622Z.
+
 For the latest version of this document, see [https://docs.livekit.io/sip/outbound-calls.md](https://docs.livekit.io/sip/outbound-calls.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

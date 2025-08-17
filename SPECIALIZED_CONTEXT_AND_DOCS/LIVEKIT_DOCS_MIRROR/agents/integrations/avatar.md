@@ -124,7 +124,7 @@ The following [frontend starter apps](https://docs.livekit.io/agents/start/front
 
 ---
 
-This document was rendered at 2025-08-13T22:17:07.322Z.
+
 For the latest version of this document, see [https://docs.livekit.io/agents/integrations/avatar.md](https://docs.livekit.io/agents/integrations/avatar.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

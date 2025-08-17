@@ -58,7 +58,7 @@ This section describes some of the available parameters. See the [plugin referen
 
 - **`instant_mode`** _(bool)_ (optional) - Default: `true`: Enables ultra-low latency streaming, reducing time to first chunk. Recommended for real-time applications. Only for streaming endpoints. With this enabled, requests incur 10% higher cost.
 
-Instant mode is automatically disabled when a voice is specified in the request.
+Instant mode is automatically enabled when a voice is specified in the request.
 
 ## Updating utterance options
 
@@ -87,7 +87,7 @@ The following resources provide more information about using Hume with LiveKit A
 
 ---
 
-This document was rendered at 2025-08-13T22:17:07.021Z.
+
 For the latest version of this document, see [https://docs.livekit.io/agents/integrations/tts/hume.md](https://docs.livekit.io/agents/integrations/tts/hume.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

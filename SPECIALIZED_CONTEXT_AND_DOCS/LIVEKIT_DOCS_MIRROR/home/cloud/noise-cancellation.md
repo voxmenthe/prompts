@@ -35,13 +35,23 @@ The following table shows the support for each platform.
 
 ## Usage instructions
 
-Use the following instructions to integrate the filter into your app.
+Use the following instructions to integrate the filter into your app, either inside of your agent code or in the frontend.
 
 > 💡 **Tip**
 > 
-> When using server-side noise or background voice cancellation (for example, in agents), client-side noise cancellation should be disabled. Noise cancellation models are trained on raw audio and may produce unexpected results if the input has already been processed on the client.
+> Leaving default settings on is strongly recommended. Learn more about these defaults in the [Noise & echo cancellation](https://docs.livekit.io/home/client/tracks/noise-cancellation.md) docs.
+
+### Agent code ("inbound") implementation
+
+The following examples show how to set up noise cancellation inside your agent code. This applies noise cancellation to inbound audio and is the recommended approach for most voice AI use cases.
 
 **Python**:
+
+> 💡 **Tip**
+> 
+> When using noise or background voice cancellation in the agent code, do not enable Krisp noise cancellation in the frontend. Noise cancellation models are trained on raw audio and might produce unexpected results if the input has already been processed by Krisp in the frontend.
+> 
+> Standard noise cancellation and the separate echo cancellation feature can be left enabled.
 
 #### Installation
 
@@ -106,6 +116,12 @@ noise_cancellation.BVCTelephony()
 ---
 
 **Node.js**:
+
+> 💡 **Tip**
+> 
+> When using noise or background voice cancellation in the agent code, do not enable Krisp noise cancellation in the frontend. Noise cancellation models are trained on raw audio and might produce unexpected results if the input has already been processed by Krisp in the frontend.
+> 
+> Standard noise cancellation and the separate echo cancellation feature can be left enabled.
 
 #### Installation
 
@@ -172,7 +188,40 @@ import {
 
 ---
 
+**SIP**:
+
+#### Installation (inbound)
+
+Include `krisp_enabled: true` in the trunk configuration.
+
+```json
+{
+  "trunk": {
+    "name": "My trunk",
+    "numbers": ["+15105550100"],
+    "krisp_enabled": true
+  }
+}
+
+```
+
+See the full [inbound trunk docs](https://docs.livekit.io/sip/trunk-inbound.md) for more information.
+
+#### Available models
+
+The Telephony noise filter supports only the standard noise cancellation (NC) model.
+
+### Frontend ("outbound") implementation
+
+The following examples show how to set up noise cancellation in the frontend. This applies noise cancellation to outbound audio.
+
 **JavaScript**:
+
+> 💡 **Tip**
+> 
+> When using noise or background voice cancellation in the frontend, do not enable Krisp noise cancellation in the agent code.
+> 
+> Standard noise cancellation and the separate echo cancellation feature can be left enabled.
 
 #### Installation
 
@@ -255,6 +304,12 @@ Not all browsers support the underlying Krisp SDK (including Safari <17.4). Use 
 
 **Android**:
 
+> 💡 **Tip**
+> 
+> When using noise or background voice cancellation in the frontend, do not enable Krisp noise cancellation in the agent code.
+> 
+> Standard noise cancellation and the separate echo cancellation feature can be left enabled.
+
 #### Installation
 
 Add the package to your `build.gradle` file:
@@ -303,6 +358,12 @@ The Android noise filter supports only the standard noise cancellation (NC) mode
 ---
 
 **Swift**:
+
+> 💡 **Tip**
+> 
+> When using noise or background voice cancellation in the frontend, do not enable Krisp noise cancellation in the agent code.
+> 
+> Standard noise cancellation and the separate echo cancellation feature can be left enabled.
 
 #### Installation
 
@@ -367,6 +428,12 @@ The Swift noise filter supports only the standard noise cancellation (NC) model.
 
 **React Native**:
 
+> 💡 **Tip**
+> 
+> When using noise or background voice cancellation in the frontend, do not enable Krisp noise cancellation in the agent code.
+> 
+> Standard noise cancellation and the separate echo cancellation feature can be left enabled.
+
 #### Installation
 
 ```bash
@@ -405,6 +472,12 @@ The React Native noise filter supports only the standard noise cancellation (NC)
 ---
 
 **Flutter**:
+
+> 💡 **Tip**
+> 
+> When using noise or background voice cancellation in the frontend, do not enable Krisp noise cancellation in the agent code.
+> 
+> Standard noise cancellation and the separate echo cancellation feature can be left enabled.
 
 #### Installation
 
@@ -456,24 +529,7 @@ The Flutter noise filter is currently supported only on iOS, macOS, and Android 
 
 **SIP**:
 
-#### Inbound calls
-
-Include `krisp_enabled: true` in the trunk configuration.
-
-```json
-{
-  "trunk": {
-    "name": "My trunk",
-    "numbers": ["+15105550100"],
-    "krisp_enabled": true
-  }
-}
-
-```
-
-See the full [inbound trunk docs](https://docs.livekit.io/sip/trunk-inbound.md) for more information.
-
-#### Outbound calls
+#### Installation (outbound)
 
 Include `krisp_enabled: true` in the [`CreateSipParticipant`](https://docs.livekit.io/sip/api.md#createsipparticipant) request.
 
@@ -498,7 +554,7 @@ The Telephony noise filter supports only the standard noise cancellation (NC) mo
 
 ---
 
-This document was rendered at 2025-08-13T22:17:05.004Z.
+
 For the latest version of this document, see [https://docs.livekit.io/home/cloud/noise-cancellation.md](https://docs.livekit.io/home/cloud/noise-cancellation.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

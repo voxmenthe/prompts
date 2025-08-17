@@ -375,7 +375,7 @@ Create a frontend app that fetches a token from the server we just made, then us
 
 ---
 
-This document was rendered at 2025-08-13T22:17:04.353Z.
+
 For the latest version of this document, see [https://docs.livekit.io/home/server/generating-tokens.md](https://docs.livekit.io/home/server/generating-tokens.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

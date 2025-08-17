@@ -79,7 +79,7 @@ Current models only support loading call history in text format. This limits the
 
 ---
 
-This document was rendered at 2025-08-13T22:17:06.433Z.
+
 For the latest version of this document, see [https://docs.livekit.io/agents/integrations/realtime.md](https://docs.livekit.io/agents/integrations/realtime.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

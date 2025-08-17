@@ -483,7 +483,7 @@ LiveKit provides pre-built React components for common text streaming use cases 
 
 ---
 
-This document was rendered at 2025-08-13T22:17:03.960Z.
+
 For the latest version of this document, see [https://docs.livekit.io/home/client/data/text-streams.md](https://docs.livekit.io/home/client/data/text-streams.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

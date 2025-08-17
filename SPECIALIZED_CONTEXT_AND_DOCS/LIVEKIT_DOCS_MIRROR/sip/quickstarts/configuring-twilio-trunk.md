@@ -131,7 +131,7 @@ Head back to the main setup documentation to finish connecting your SIP trunk to
 
 ---
 
-This document was rendered at 2025-08-13T22:17:07.494Z.
+
 For the latest version of this document, see [https://docs.livekit.io/sip/quickstarts/configuring-twilio-trunk.md](https://docs.livekit.io/sip/quickstarts/configuring-twilio-trunk.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

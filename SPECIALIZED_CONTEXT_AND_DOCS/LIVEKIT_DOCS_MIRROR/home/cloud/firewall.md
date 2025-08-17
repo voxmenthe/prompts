@@ -121,7 +121,7 @@ If wildcard hostnames are not allowed by your firewall or security policy, the f
 
 ---
 
-This document was rendered at 2025-08-13T22:17:04.868Z.
+
 For the latest version of this document, see [https://docs.livekit.io/home/cloud/firewall.md](https://docs.livekit.io/home/cloud/firewall.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

@@ -6,11 +6,20 @@ LiveKit Docs › Accepting calls › Dispatch rule
 
 > How to create and configure a dispatch rule.
 
-To create a dispatch rule with the SIP service, use the `CreateSIPDispatchRule` API. It returns a `SIPDispatchRuleInfo` object that describes the created `SIPDispatchRule`.
+## Introduction
 
-By default, a dispatch rule is matched against all your trunks and makes a caller's phone number visible to others in the room. You can change these default behaviors using dispatch rule options. See the [`CreateSIPDispatchRule`](https://docs.livekit.io/sip/api.md#createsipdispatchrule) API reference for full list of available options.
+A _dispatch rule_  controls how callers are added as SIP participants in rooms. When an inbound call reaches your SIP trunking provider and is connected to LiveKit, the SIP service authenticates the inbound trunk (if applicable) and looks for a matching dispatch rule. It then uses the rule to dispatch SIP participants to rooms.
 
-To learn more about SIP and dispatch rules, see [SIP overview](https://docs.livekit.io/sip.md). To learn more about SIP API endpoints and types, see [SIP API](https://docs.livekit.io/sip/api.md).
+The dispatch rule can also include room configuration options that specify which agents to dispatch to the room. _Agent dispatch_ is a separate feature that handles how agents are dispatched to rooms. To learn more, see [Agent dispatch](https://docs.livekit.io/agents/worker/agent-dispatch.md).
+
+To create a dispatch rule with the SIP service, use the `CreateSIPDispatchRule` API. It returns a `SIPDispatchRuleInfo` object that describes the dispatch rule.
+
+By default, a dispatch rule matches all your trunks and makes a caller's phone number visible to others in the room. You can modify these defaults using dispatch rule options. For a full list of available options, see the [`CreateSIPDispatchRule`](https://docs.livekit.io/sip/api.md#createsipdispatchrule) API reference.
+
+To learn more about, see the following:
+
+- [SIP overview](https://docs.livekit.io/sip.md): General concepts and features.
+- [SIP API](https://docs.livekit.io/sip/api.md): API endpoints and types.
 
 ## Caller dispatch rule (individual)
 
@@ -1280,7 +1289,7 @@ func main() {
 
 ---
 
-This document was rendered at 2025-08-13T22:17:07.520Z.
+
 For the latest version of this document, see [https://docs.livekit.io/sip/dispatch-rule.md](https://docs.livekit.io/sip/dispatch-rule.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

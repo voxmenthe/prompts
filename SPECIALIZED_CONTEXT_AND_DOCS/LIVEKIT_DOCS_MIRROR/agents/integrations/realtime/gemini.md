@@ -149,7 +149,7 @@ The following resources provide more information about using Gemini with LiveKit
 
 ---
 
-This document was rendered at 2025-08-13T22:17:05.924Z.
+
 For the latest version of this document, see [https://docs.livekit.io/agents/integrations/realtime/gemini.md](https://docs.livekit.io/agents/integrations/realtime/gemini.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

@@ -101,11 +101,11 @@ For example, the SIP endpoint for Telnyx is `sip.telnyx.com`. If you include a s
 
 #### Solution
 
-Check with your SIP trunking provider and verify you're using the correct SIP endpoint in the `address` field for your outbound trunk. To learn more, see [Create an outbound trunk](https://docs.livekit.io/sip/trunk-outbound.md#create-an-outbound-trunk).
+Check with your SIP trunking provider and verify you're using the correct SIP endpoint in the `address` field for your outbound trunk. To learn more, see [Create an outbound trunk](https://docs.livekit.io/sip/trunk-outbound.md#create).
 
 ---
 
-This document was rendered at 2025-08-13T22:17:07.857Z.
+
 For the latest version of this document, see [https://docs.livekit.io/sip/troubleshooting.md](https://docs.livekit.io/sip/troubleshooting.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

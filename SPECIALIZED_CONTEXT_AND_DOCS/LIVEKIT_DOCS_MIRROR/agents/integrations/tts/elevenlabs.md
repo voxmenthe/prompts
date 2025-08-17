@@ -94,7 +94,7 @@ The following resources provide more information about using ElevenLabs with Liv
 
 ---
 
-This document was rendered at 2025-08-13T22:17:07.011Z.
+
 For the latest version of this document, see [https://docs.livekit.io/agents/integrations/tts/elevenlabs.md](https://docs.livekit.io/agents/integrations/tts/elevenlabs.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

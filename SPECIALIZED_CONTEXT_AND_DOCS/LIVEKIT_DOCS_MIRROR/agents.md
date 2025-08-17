@@ -8,9 +8,11 @@ LiveKit Docs › Getting started › Introduction
 
 ## Introduction
 
-The Agents framework allows you to add a Python or Node.js program to any LiveKit room as a full realtime participant. The SDK includes a complete set of tools and abstractions that make it easy to feed realtime media and data through an AI pipeline that works with any provider, and to publish realtime results back to the room.
+The Agents framework allows you to add a Python or Node.js program to any LiveKit room as a full realtime participant. It's primarily an SDK that includes a complete set of tools and abstractions that make it easy to feed realtime media and data through an AI pipeline that works with any provider, and to publish realtime results back to the room.
 
-If you want to get your hands on the code right away, follow this quickstart guide. It takes just a few minutes to build your first voice agent.
+While the framework excels at AI-powered voice agents, it's designed to support any type of programmatic participant. You can deploy custom logic that processes realtime audio, video, and data streams, making it suitable for a wide range of applications beyond traditional AI agents. To learn more about this use case, see [Worker lifecycle](https://docs.livekit.io/agents/worker.md).
+
+If you want to get your hands on the code for building an agent right away, follow the Voice AI quickstart guide. It takes just a few minutes to build your first voice agent.
 
 - **[Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md)**: Build a simple voice assistant with Python in less than 10 minutes.
 
@@ -96,7 +98,7 @@ Follow these guides to learn more and get started with LiveKit Agents.
 
 ---
 
-This document was rendered at 2025-08-13T22:17:05.233Z.
+
 For the latest version of this document, see [https://docs.livekit.io/agents.md](https://docs.livekit.io/agents.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

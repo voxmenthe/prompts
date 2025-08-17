@@ -60,7 +60,7 @@ These 2 sample command lines use the `audiotestsrc` and `videotestsrc` sources t
 
 ---
 
-This document was rendered at 2025-08-13T22:17:04.749Z.
+
 For the latest version of this document, see [https://docs.livekit.io/home/ingress/configure-streaming-software.md](https://docs.livekit.io/home/ingress/configure-streaming-software.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

@@ -30,7 +30,7 @@ LiveKit Agents has out-of-the-box support for all of these Llama inference provi
 
 ---
 
-This document was rendered at 2025-08-13T22:17:06.423Z.
+
 For the latest version of this document, see [https://docs.livekit.io/agents/integrations/llama.md](https://docs.livekit.io/agents/integrations/llama.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

@@ -30,6 +30,7 @@ The following document is a comprehensive list of all available documentation an
 
 ### LiveKit SDKs
 
+- [Overview](https://docs.livekit.io/home/client.md): A guide to LiveKit's client and server SDKs for building realtime applications.
 - [Connecting to LiveKit](https://docs.livekit.io/home/client/connect.md): Learn how to connect with realtime SDKs.
 
 #### Realtime media
@@ -38,6 +39,7 @@ The following document is a comprehensive list of all available documentation an
 - [Camera & microphone](https://docs.livekit.io/home/client/tracks/publish.md): Publish realtime audio and video from any device.
 - [Screen sharing](https://docs.livekit.io/home/client/tracks/screenshare.md): Publish your screen with LiveKit.
 - [Subscribing to tracks](https://docs.livekit.io/home/client/tracks/subscribe.md): Play and render realtime media tracks in your application.
+- [Processing raw tracks](https://docs.livekit.io/home/client/tracks/raw-tracks.md): How to read, process, and publish raw media tracks and files.
 - [Noise & echo cancellation](https://docs.livekit.io/home/client/tracks/noise-cancellation.md): Achieve crystal-clear audio for video conferencing and voice AI.
 - [End-to-end encryption](https://docs.livekit.io/home/client/tracks/encryption.md): Secure your realtime media tracks with E2EE.
 - [Codecs & more](https://docs.livekit.io/home/client/tracks/advanced.md): Advanced audio and video topics.
@@ -331,6 +333,7 @@ The following document is a comprehensive list of all available documentation an
 - [DTMF](https://docs.livekit.io/sip/dtmf.md): Sending and receiving DTMF tones.
 - [Cold transfer](https://docs.livekit.io/sip/transfer-cold.md): Using the TransferSIPParticipant API for cold transfers.
 - [HD voice](https://docs.livekit.io/sip/hd-voice.md): LiveKit SIP supports high fidelity calls by enabling HD voice.
+- [Secure trunking](https://docs.livekit.io/sip/secure-trunking.md): How to enable secure trunking for LiveKit SIP.
 
 ### Reference
 
@@ -458,5 +461,5 @@ The following document is a comprehensive list of all available documentation an
 
 ---
 
-This document was rendered at 2025-08-13T00:33:31.741Z.
+This document was rendered at 2025-08-16T18:49:17.650Z.
 For the latest version of this document, see [https://docs.livekit.io/llms.txt](https://docs.livekit.io/llms.txt).

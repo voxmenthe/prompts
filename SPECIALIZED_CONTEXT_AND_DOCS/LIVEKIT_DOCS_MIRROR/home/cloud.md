@@ -44,7 +44,7 @@ When building with LiveKit, you can either self-host the open-source server or u
 
 ---
 
-This document was rendered at 2025-08-13T22:17:04.753Z.
+
 For the latest version of this document, see [https://docs.livekit.io/home/cloud.md](https://docs.livekit.io/home/cloud.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

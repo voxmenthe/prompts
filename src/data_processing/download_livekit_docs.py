@@ -80,6 +80,50 @@ def http_get_bytes(url: str, timeout: float = REQUEST_TIMEOUT_SEC, headers: Opti
         return resp.read()
 
 
+def http_get_with_headers(
+    url: str,
+    timeout: float = REQUEST_TIMEOUT_SEC,
+    headers: Optional[Dict[str, str]] = None,
+) -> Tuple[int, Dict[str, str], bytes]:
+    """HTTP GET that returns (status, headers, body).
+
+    Returns 304 with empty body when server responds Not Modified.
+    Raises for other HTTP errors.
+    """
+    req = Request(url, headers=headers or DEFAULT_HEADERS, method="GET")
+    try:
+        with urlopen(req, timeout=timeout) as resp:
+            status = getattr(resp, "status", 200)
+            hdrs = {k.lower(): v for k, v in resp.getheaders()}
+            body = resp.read()
+            return status, hdrs, body
+    except HTTPError as e:  # type: ignore[reportGeneralTypeIssues]
+        if getattr(e, "code", None) == 304:
+            # 304 Not Modified – treat as success with no body
+            hdrs = {k.lower(): v for k, v in (e.headers.items() if hasattr(e, "headers") else [])}
+            return 304, hdrs, b""
+        raise
+
+
+def normalize_markdown_body(body: bytes) -> bytes:
+    """Remove volatile lines (e.g., 'This document was rendered at ...') to reduce churn.
+
+    The LiveKit docs append a timestamp line that changes on every render; stripping it
+    keeps the local mirror stable when the substantive content hasn't changed.
+    """
+    try:
+        text = body.decode("utf-8", errors="replace")
+    except Exception:
+        return body
+    # Remove lines that match the timestamp footer
+    # Example: "This document was rendered at 2025-08-17T17:54:06.676Z."
+    ts_pattern = re.compile(r"^This document was rendered at .*Z\.$", re.MULTILINE)
+    text = ts_pattern.sub("", text)
+    # Collapse multiple trailing blank lines that may result
+    text = re.sub(r"\n{3,}$", "\n\n", text)
+    return text.encode("utf-8")
+
+
 def fetch_index_text(index_url: str, output_root: Path) -> str:
     print(f"Fetching latest index from: {index_url}")
     output_root.mkdir(parents=True, exist_ok=True)
@@ -182,6 +226,38 @@ class DownloadResult:
     error: Optional[str]
 
 
+def meta_path_for(local_path: Path) -> Path:
+    """Return sidecar JSON metadata path for a downloaded file."""
+    return local_path.with_suffix(local_path.suffix + ".meta.json")
+
+
+def load_sidecar_meta(local_path: Path) -> Dict[str, str]:
+    """Load previously saved ETag/Last-Modified if present."""
+    mp = meta_path_for(local_path)
+    if mp.exists():
+        try:
+            return json.loads(mp.read_text(encoding="utf-8"))
+        except Exception:
+            return {}
+    return {}
+
+
+def save_sidecar_meta(local_path: Path, headers: Dict[str, str]) -> None:
+    mp = meta_path_for(local_path)
+    meta = {
+        "etag": headers.get("etag", ""),
+        "last_modified": headers.get("last-modified", ""),
+        "content_length": headers.get("content-length", ""),
+    }
+    # Do not write a sidecar file if all values are empty (not useful)
+    if not (meta["etag"] or meta["last_modified"] or meta["content_length"]):
+        return
+    try:
+        mp.write_text(json.dumps(meta, indent=2), encoding="utf-8")
+    except Exception:
+        pass
+
+
 def download_one(
     final_url: str,
     relative_path: str,
@@ -192,8 +268,35 @@ def download_one(
     polite_delay_sec: float = POLITE_DELAY_SEC,
 ) -> DownloadResult:
     local_path = local_path_for_output(output_root, relative_path)
-    if SKIP_IF_EXISTS and local_path.exists():
-        return DownloadResult(relative_path=relative_path, url_used=None, success=True, local_path=str(local_path), error=None)
+    # If file exists and skipping is enabled, perform a conditional GET using stored metadata.
+    # If not modified (304) or content identical, we treat as a skip (url_used=None).
+    if local_path.exists():
+        if SKIP_IF_EXISTS:
+            # Attempt conditional GET with ETag / Last-Modified
+            meta = load_sidecar_meta(local_path)
+            cond_headers = dict(DEFAULT_HEADERS)
+            if meta.get("etag"):
+                cond_headers["If-None-Match"] = meta["etag"]
+            if meta.get("last_modified"):
+                cond_headers["If-Modified-Since"] = meta["last_modified"]
+            try:
+                if polite_delay_sec > 0:
+                    time.sleep(polite_delay_sec)
+                status, hdrs, body = http_get_with_headers(final_url, timeout=request_timeout, headers=cond_headers)
+                if status == 304:
+                    return DownloadResult(relative_path=relative_path, url_used=None, success=True, local_path=str(local_path), error=None)
+                # status 200 – overwrite file (we avoid an equality diff to keep it simple)
+                local_path.parent.mkdir(parents=True, exist_ok=True)
+                body = normalize_markdown_body(body)
+                local_path.write_bytes(body)
+                save_sidecar_meta(local_path, hdrs)
+                return DownloadResult(relative_path=relative_path, url_used=final_url, success=True, local_path=str(local_path), error=None)
+            except (HTTPError, URLError, TimeoutError, socket.timeout) as exc:  # type: ignore[name-defined]
+                # Fall through to retry loop below (unconditional GET) on network errors
+                pass
+        else:
+            # For --no-skip, we will force re-download below
+            pass
 
     local_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -202,8 +305,12 @@ def download_one(
         try:
             if polite_delay_sec > 0:
                 time.sleep(polite_delay_sec)
-            content = http_get_bytes(final_url, timeout=request_timeout)
-            local_path.write_bytes(content)
+            # Unconditional GET (used when file missing, --no-skip, or conditional path failed)
+            status, hdrs, content = http_get_with_headers(final_url, timeout=request_timeout, headers=DEFAULT_HEADERS)
+            # status should be 200 here
+            body = normalize_markdown_body(content)
+            local_path.write_bytes(body)
+            save_sidecar_meta(local_path, hdrs)
             return DownloadResult(relative_path=relative_path, url_used=final_url, success=True, local_path=str(local_path), error=None)
         except (HTTPError, URLError, TimeoutError, socket.timeout) as exc:  # type: ignore[name-defined]
             last_error = f"{type(exc).__name__}: {exc}"

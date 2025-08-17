@@ -81,7 +81,7 @@ The following resources are useful for getting started with LiveKit in a JavaScr
 
 ---
 
-This document was rendered at 2025-08-13T22:17:04.232Z.
+
 For the latest version of this document, see [https://docs.livekit.io/home/quickstarts/javascript.md](https://docs.livekit.io/home/quickstarts/javascript.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

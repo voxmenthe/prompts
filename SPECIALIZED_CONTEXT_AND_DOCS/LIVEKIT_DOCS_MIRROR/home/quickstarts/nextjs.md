@@ -242,7 +242,7 @@ The following resources are useful for getting started with LiveKit on Next.js.
 
 ---
 
-This document was rendered at 2025-08-13T22:17:04.230Z.
+
 For the latest version of this document, see [https://docs.livekit.io/home/quickstarts/nextjs.md](https://docs.livekit.io/home/quickstarts/nextjs.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

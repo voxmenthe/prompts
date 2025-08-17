@@ -144,7 +144,7 @@ Ensure that your [firewall](https://docs.livekit.io/home/self-hosting/ports-fire
 
 ---
 
-This document was rendered at 2025-08-13T22:17:04.913Z.
+
 For the latest version of this document, see [https://docs.livekit.io/home/self-hosting/kubernetes.md](https://docs.livekit.io/home/self-hosting/kubernetes.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

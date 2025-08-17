@@ -189,7 +189,7 @@ For the full example, see the [Moviefone repository](https://github.com/ShayneP/
 
 ---
 
-This document was rendered at 2025-08-13T22:17:07.862Z.
+
 For the latest version of this document, see [https://docs.livekit.io/recipes/moviefone.md](https://docs.livekit.io/recipes/moviefone.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

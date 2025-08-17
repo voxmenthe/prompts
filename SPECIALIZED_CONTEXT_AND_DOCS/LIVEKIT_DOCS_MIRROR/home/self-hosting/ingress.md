@@ -249,7 +249,7 @@ You can find an example on how to do this [here](https://towardsdatascience.com/
 
 ---
 
-This document was rendered at 2025-08-13T22:17:05.288Z.
+
 For the latest version of this document, see [https://docs.livekit.io/home/self-hosting/ingress.md](https://docs.livekit.io/home/self-hosting/ingress.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

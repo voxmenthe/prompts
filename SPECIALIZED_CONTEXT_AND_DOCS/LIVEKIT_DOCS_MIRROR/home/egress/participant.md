@@ -32,7 +32,7 @@ For examples on using Participant or Track Composite Egress, please reference [E
 
 ---
 
-This document was rendered at 2025-08-13T22:17:04.414Z.
+
 For the latest version of this document, see [https://docs.livekit.io/home/egress/participant.md](https://docs.livekit.io/home/egress/participant.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

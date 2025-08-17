@@ -113,7 +113,7 @@ if __name__ == "__main__":
 
 ---
 
-This document was rendered at 2025-08-13T22:17:06.957Z.
+
 For the latest version of this document, see [https://docs.livekit.io/agents/integrations/tts.md](https://docs.livekit.io/agents/integrations/tts.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

@@ -250,7 +250,7 @@ To make outbound calls, create a SIP participant. To learn more, see [Make outbo
 
 ---
 
-This document was rendered at 2025-08-13T22:17:07.820Z.
+
 For the latest version of this document, see [https://docs.livekit.io/sip/sip-participant.md](https://docs.livekit.io/sip/sip-participant.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

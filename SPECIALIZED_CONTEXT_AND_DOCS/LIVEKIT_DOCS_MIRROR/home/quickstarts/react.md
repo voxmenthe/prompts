@@ -142,7 +142,7 @@ The following resources are useful for getting started with LiveKit on React.
 
 ---
 
-This document was rendered at 2025-08-13T22:17:04.228Z.
+
 For the latest version of this document, see [https://docs.livekit.io/home/quickstarts/react.md](https://docs.livekit.io/home/quickstarts/react.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

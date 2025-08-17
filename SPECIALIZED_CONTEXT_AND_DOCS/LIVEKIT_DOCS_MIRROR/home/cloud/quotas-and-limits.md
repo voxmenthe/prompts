@@ -90,7 +90,7 @@ LiveKit doesn't anticipate any project exceeding this rate limit. However, you c
 
 ---
 
-This document was rendered at 2025-08-13T22:17:04.748Z.
+
 For the latest version of this document, see [https://docs.livekit.io/home/cloud/quotas-and-limits.md](https://docs.livekit.io/home/cloud/quotas-and-limits.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

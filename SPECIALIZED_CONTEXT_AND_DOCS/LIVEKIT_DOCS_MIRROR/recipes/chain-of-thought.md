@@ -99,7 +99,7 @@ This approach gives you fine-grained control over how the agent processes and sp
 
 ---
 
-This document was rendered at 2025-08-13T22:17:07.878Z.
+
 For the latest version of this document, see [https://docs.livekit.io/recipes/chain-of-thought.md](https://docs.livekit.io/recipes/chain-of-thought.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

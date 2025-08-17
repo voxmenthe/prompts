@@ -922,7 +922,7 @@ room.TrackSubscribed += (track, publication, participant) =>
 
 ---
 
-This document was rendered at 2025-08-13T22:17:03.797Z.
+
 For the latest version of this document, see [https://docs.livekit.io/home/client/tracks/subscribe.md](https://docs.livekit.io/home/client/tracks/subscribe.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

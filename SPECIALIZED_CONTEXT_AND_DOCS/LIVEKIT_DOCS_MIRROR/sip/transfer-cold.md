@@ -209,7 +209,7 @@ func transferParticipant(ctx context.Context, participantIdentity string) {
 
 ---
 
-This document was rendered at 2025-08-13T22:17:07.655Z.
+
 For the latest version of this document, see [https://docs.livekit.io/sip/transfer-cold.md](https://docs.livekit.io/sip/transfer-cold.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

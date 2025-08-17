@@ -89,10 +89,6 @@ lk sip outbound create outbound-trunk.json
 
 To learn more, see [Outbound trunks](https://docs.livekit.io/sip/trunk-outbound.md).
 
-### Considerations
-
-When you enable region pinning, you turn off automatic failover to the nearest region in the case of an outage.
-
 ### Available regions
 
 The following regions are available for region pinning for SIP:
@@ -109,7 +105,7 @@ The following regions are available for region pinning for SIP:
 
 ---
 
-This document was rendered at 2025-08-13T22:17:07.456Z.
+
 For the latest version of this document, see [https://docs.livekit.io/sip/cloud.md](https://docs.livekit.io/sip/cloud.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

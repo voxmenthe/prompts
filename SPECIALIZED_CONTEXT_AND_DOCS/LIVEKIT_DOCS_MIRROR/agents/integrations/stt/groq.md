@@ -74,7 +74,7 @@ The following resources provide more information about using Groq with LiveKit A
 
 ---
 
-This document was rendered at 2025-08-13T22:17:06.277Z.
+
 For the latest version of this document, see [https://docs.livekit.io/agents/integrations/stt/groq.md](https://docs.livekit.io/agents/integrations/stt/groq.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

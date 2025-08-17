@@ -64,7 +64,7 @@ Whatever your use case, LiveKit makes it easy to build innovative, intelligent r
 
 ---
 
-This document was rendered at 2025-08-13T22:17:03.953Z.
+
 For the latest version of this document, see [https://docs.livekit.io/home/get-started/intro-to-livekit.md](https://docs.livekit.io/home/get-started/intro-to-livekit.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

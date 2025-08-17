@@ -130,6 +130,7 @@ LIVEKIT_DOCS_MIRROR
 │   │   │   ├── encryption.md
 │   │   │   ├── noise-cancellation.md
 │   │   │   ├── publish.md
+│   │   │   ├── raw-tracks.md
 │   │   │   ├── screenshare.md
 │   │   │   └── subscribe.md
 │   │   ├── connect.md
@@ -189,6 +190,7 @@ LIVEKIT_DOCS_MIRROR
 │   │   ├── managing-participants.md
 │   │   ├── managing-rooms.md
 │   │   └── webhooks.md
+│   ├── client.md
 │   └── cloud.md
 ├── recipes
 │   ├── chain-of-thought.md
@@ -210,6 +212,7 @@ LIVEKIT_DOCS_MIRROR
 │   ├── hd-voice.md
 │   ├── making-calls.md
 │   ├── outbound-calls.md
+│   ├── secure-trunking.md
 │   ├── sip-participant.md
 │   ├── transfer-cold.md
 │   ├── troubleshooting.md
@@ -217,5 +220,6 @@ LIVEKIT_DOCS_MIRROR
 │   └── trunk-outbound.md
 ├── agents.md
 ├── download_results.json
+├── download_tree.txt
 ├── llms.txt
 └── sip.md

@@ -14,9 +14,11 @@ When a [worker](https://docs.livekit.io/agents/worker.md) accepts a job request 
 
 The `entrypoint` is executed as the main function of the process for each new job run by the worker, effectively handing control over to your code. You should load any necessary app-specific data and then execute your agent's logic.
 
+You can use the `entrypoint` function and Agents Framework without creating an `AgentSession`. This lets you take advantage of the framework’s job context and lifecycle to build a programmatic participant that's automatically dispatched to rooms. To learn more, see [Worker lifecycle](https://docs.livekit.io/agents/worker.md).
+
 > ℹ️ **Note**
 > 
-> If you use `AgentSession`, it connects to LiveKit automatically when started. If not using `AgentSession`, or If you need to control the precise timing or method of connection, for instance to enable [end-to-end encryption](https://docs.livekit.io/home/client/tracks/encryption.md), use the `JobContext`'s [connect method](https://docs.livekit.io/reference/python/livekit/agents/index.html.md#livekit.agents.JobContext.connect).
+> If you use `AgentSession`, it connects to LiveKit automatically when started. If you're not using `AgentSession`, or if you need to control the precise timing or method of connection, for instance to enable [end-to-end encryption](https://docs.livekit.io/home/client/tracks/encryption.md), use the `JobContext` [connect method](https://docs.livekit.io/reference/python/livekit/agents/index.html.md#livekit.agents.JobContext.connect).
 
 This example shows a simple entrypoint that processes incoming audio tracks and publishes a text message to the room.
 
@@ -52,11 +54,21 @@ async def entrypoint(ctx: JobContext):
 
 ```
 
+- **[Echo Agent](https://github.com/livekit/agents/blob/main/examples/primitives/echo-agent.py)**: This programmatic participant example demonstrates how to subscribe to audio tracks and play them back to the room.
+
 For more LiveKit Agents examples, see the [GitHub repository](https://github.com/livekit/agents/tree/main/examples). To learn more about publishing and receiving tracks, see the following topics:
 
-- **[Media tracks](https://docs.livekit.io/home/client/tracks.md)**: Use the microphone, speaker, cameras, and screenshare with your agent.
+- **[Media tracks](https://docs.livekit.io/home/client/tracks.md)**: Use the microphone, speaker, cameras, and screen share with your agent.
 
 - **[Realtime text and data](https://docs.livekit.io/home/client/data.md)**: Use text and data channels to communicate with your agent.
+
+- **[Processing raw media tracks](https://docs.livekit.io/home/client/tracks/raw-tracks.md)**: Use server-side SDKs to read, process, and publish raw media tracks and files.
+
+### Participant entrypoint function
+
+You can also add a participant entrypoint function to the `JobContext` using the `add_participant_entrypoint` method. This function is called for every participant that joins the room, and every participant already in the room when your agent joins. For an example, see the following:
+
+- **[Participant entrypoint function](https://github.com/livekit/agents/blob/main/examples/primitives/participant_entrypoint.py)**: This example shows how to add a participant entrypoint function to the `JobContext` to log the participant's identity when they join the room.
 
 ## Adding custom fields to agent logs
 
@@ -158,7 +170,7 @@ async def entrypoint(ctx: JobContext):
 
 If the session should end for everyone, use the server API [deleteRoom](https://docs.livekit.io/home/server/managing-rooms.md#delete-a-room) to end the session.
 
-The `Disconnected` [room event](https://docs.livekit.io/home/client/events.md) will be sent, and the room will be removed from the server.
+When the `Disconnected` [room event](https://docs.livekit.io/home/client/events.md) is sent, the room is removed from the server.
 
 **Python**:
 
@@ -201,7 +213,7 @@ async def entrypoint(ctx: JobContext):
 
 ---
 
-This document was rendered at 2025-08-13T22:17:05.747Z.
+
 For the latest version of this document, see [https://docs.livekit.io/agents/worker/job.md](https://docs.livekit.io/agents/worker/job.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

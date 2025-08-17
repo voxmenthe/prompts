@@ -124,7 +124,7 @@ For example, if deploying on Kubernetes using a Horizontal Pod Autoscaler, see [
 
 ---
 
-This document was rendered at 2025-08-13T22:17:05.786Z.
+
 For the latest version of this document, see [https://docs.livekit.io/agents/ops/deployment.md](https://docs.livekit.io/agents/ops/deployment.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

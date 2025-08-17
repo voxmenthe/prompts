@@ -73,6 +73,15 @@ LiveKit SIP supports the following functionality.
 | SIP headers | You can map custom `X-*` SIP headers to participant attributes. For example, custom headers can be used to route calls to different workflows. To learn more, see [Custom attributes](https://docs.livekit.io/sip/sip-participant.md#custom-attributes). |
 | Noise cancellation | You can enable noise cancellation for callers and callees using Krisp. To learn more, see [Noise cancellation for calls](#noise-cancellation-for-calls). |
 | Region pinning | You can restrict incoming and outgoing calls to a specific region to comply with local telephony regulations. To learn more, see [Region pinning for SIP](https://docs.livekit.io/sip/cloud.md#region-pinning). |
+| Secure trunking | You can enable encryption for signaling traffic and media using TLS and SRTP for SIP calls. To learn more, see [Secure trunking](https://docs.livekit.io/sip/secure-trunking.md). |
+
+### Supported protocols
+
+LiveKit SIP supports the following protocols:
+
+| Protocol | Description |
+| TCP, UDP, TLS | Transport protocols for SIP signaling. |
+| RTP, SRTP | Network protocols for delivering audio and video media. |
 
 ### Noise cancellation for calls
 
@@ -94,7 +103,7 @@ See the following guides to get started with LiveKit SIP:
 
 ---
 
-This document was rendered at 2025-08-13T22:17:03.772Z.
+
 For the latest version of this document, see [https://docs.livekit.io/sip.md](https://docs.livekit.io/sip.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

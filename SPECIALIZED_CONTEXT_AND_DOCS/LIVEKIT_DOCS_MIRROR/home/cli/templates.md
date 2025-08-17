@@ -23,7 +23,7 @@ The `--template` flag may be omitted to see a list of all available templates, o
 
 | **Template Name** | **Language/Framework** | **Description** |
 | [agent-starter-python](https://github.com/livekit-examples/agent-starter-python) | Python | A starter project for Python, featuring a simple voice agent implementation |
-| [voice-assistant-frontend](https://github.com/livekit-examples/agent-starter-react) | TypeScript/Next.js | A starter app for Next.js, featuring a flexible voice AI frontend |
+| [agent-starter-react](https://github.com/livekit-examples/agent-starter-react) | TypeScript/Next.js | A starter app for Next.js, featuring a flexible voice AI frontend |
 | [agent-starter-android](https://github.com/livekit-examples/agent-starter-android) | Kotlin/Android | A starter project for Android, featuring a flexible voice AI frontend |
 | [agent-starter-swift](https://github.com/livekit-examples/agent-starter-swift) | Swift | A starter project for Swift, featuring a flexible voice AI frontend |
 | [agent-starter-flutter](https://github.com/livekit-examples/agent-starter-flutter) | Flutter | A starter project for Flutter, featuring a flexible voice AI frontend |
@@ -42,7 +42,7 @@ For more information on templates, see the [LiveKit Template Index](https://gith
 
 ---
 
-This document was rendered at 2025-08-13T22:17:03.783Z.
+
 For the latest version of this document, see [https://docs.livekit.io/home/cli/templates.md](https://docs.livekit.io/home/cli/templates.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

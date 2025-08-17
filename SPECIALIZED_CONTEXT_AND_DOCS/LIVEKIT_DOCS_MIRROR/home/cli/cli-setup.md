@@ -146,7 +146,7 @@ This command publishes a looped demo video to `my-first-room`. Due to how the fi
 
 ---
 
-This document was rendered at 2025-08-13T22:17:03.791Z.
+
 For the latest version of this document, see [https://docs.livekit.io/home/cli/cli-setup.md](https://docs.livekit.io/home/cli/cli-setup.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

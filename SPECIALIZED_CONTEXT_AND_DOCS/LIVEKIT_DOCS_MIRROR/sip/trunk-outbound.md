@@ -608,7 +608,7 @@ func main() {
 
 **LiveKit Cloud**:
 
-Update and replace functions are the same in the LiveKit Cloud dashboard. For an example, see the [replace an outbound trunk](#replace-an-outbound-trunk) section.
+Update and replace functions are the same in the LiveKit Cloud dashboard. For an example, see the [replace an outbound trunk](#replace-trunk) section.
 
 ### Replace an outbound trunk
 
@@ -744,7 +744,7 @@ If it's unavailable, or IP range is required in addition to user/password, set r
 
 ---
 
-This document was rendered at 2025-08-13T22:17:07.634Z.
+
 For the latest version of this document, see [https://docs.livekit.io/sip/trunk-outbound.md](https://docs.livekit.io/sip/trunk-outbound.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).

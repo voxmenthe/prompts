@@ -63,9 +63,9 @@ async def entrypoint(ctx: JobContext):
 
 ### Request handler
 
-The `request_fnc` function is executed each time that the server has a job for the agent. The framework expects workers to explicitly accept or reject each job request. If you accept the request, your entrypoint function is called. If the request is rejected, it's sent to the next available worker.
+The `request_fnc` function runs each time the server has a job for the agent. The framework expects workers to explicitly accept or reject each job request. If the worker accepts the request, your entrypoint function is called. If the request is rejected, it's sent to the next available worker. A rejection indicates that the worker is unable to handle the job, not that the job itself is invalid. The framework simply reassigns it to another worker.
 
-By default, if left blank, the behavior is to auto-accept all requests dispatched to the worker.
+If `request_fnc` is not defined, the default behavior is to automatically accept all requests dispatched to the worker.
 
 **Python**:
 
@@ -87,6 +87,10 @@ async def request_fnc(req: JobRequest):
 opts = WorkerOptions(entrypoint_fnc=entrypoint, request_fnc=request_fnc)
 
 ```
+
+> ℹ️ **Agent display name**
+> 
+> The `name` parameter is the display name of the agent, used to identify the agent in the room. It defaults to the agent's identity. This parameter is _not_ the same as the `agent_name` parameter for `WorkerOptions`, which is used to [explicitly dispatch](https://docs.livekit.io/agents/worker/agent-dispatch.md) the agent to a room.
 
 ### Prewarm function
 
@@ -241,7 +245,7 @@ The following log levels are available:
 
 ---
 
-This document was rendered at 2025-08-13T22:17:05.764Z.
+
 For the latest version of this document, see [https://docs.livekit.io/agents/worker/options.md](https://docs.livekit.io/agents/worker/options.md).
 
 To explore all LiveKit documentation, see [llms.txt](https://docs.livekit.io/llms.txt).
