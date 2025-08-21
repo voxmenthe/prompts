@@ -1,14 +1,14 @@
-LiveKit Docs › CLI › Bootstrapping an application
+LiveKit Docs › LiveKit CLI › App templates
 
 ---
 
-# Bootstrapping an application
+# App templates
 
 > Create and initialize an app from a convenient set of templates.
 
 > ℹ️ **Note**
 > 
-> Before starting, make sure you have created a Cloud account, [installed the LiveKit CLI](https://docs.livekit.io/home/cli/cli-setup.md), and have authenticated or manually configured your LiveKit project of choice.
+> Before starting, make sure you have created a LiveKit Cloud account, [installed the LiveKit CLI](https://docs.livekit.io/home/cli.md), and have authenticated or manually configured your LiveKit Cloud project of choice.
 
 The LiveKit CLI can help you bootstrap applications from a number of convenient template repositories, using your project credentials to set up required environment variables and other configuration automatically. To create an application from a template, run the following:
 

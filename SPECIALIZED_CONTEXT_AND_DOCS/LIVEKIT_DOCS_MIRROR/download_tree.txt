@@ -115,6 +115,7 @@ LIVEKIT_DOCS_MIRROR
 ├── home
 │   ├── cli
 │   │   ├── cli-setup.md
+│   │   ├── projects.md
 │   │   └── templates.md
 │   ├── client
 │   │   ├── data
@@ -190,6 +191,7 @@ LIVEKIT_DOCS_MIRROR
 │   │   ├── managing-participants.md
 │   │   ├── managing-rooms.md
 │   │   └── webhooks.md
+│   ├── cli.md
 │   ├── client.md
 │   └── cloud.md
 ├── recipes

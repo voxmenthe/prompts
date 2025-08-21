@@ -9,6 +9,7 @@ Default behavior:
   - Extract .md links for the docs site (host defaults to docs.livekit.io)
   - Download concurrently and mirror the path under OUTPUT_ROOT
   - Produce a JSON summary and an ASCII file tree of results
+  - Always overwrite local files; report which docs were created or modified (ignoring timestamp-only footer)
 
 Usage (from repo root):
   uv run src/data_processing/download_livekit_docs.py
@@ -22,6 +23,7 @@ from __future__ import annotations
 
 import argparse
 import concurrent.futures
+import hashlib
 import json
 import re
 import socket
@@ -58,9 +60,6 @@ POLITE_DELAY_SEC = 0.0
 
 # Preview mode: set N > 0 to only preview first N entries
 DRY_RUN_PREVIEW_COUNT = 0
-
-# Skip already downloaded files
-SKIP_IF_EXISTS = True
 
 # Identify ourselves politely
 DEFAULT_HEADERS = {
@@ -224,38 +223,8 @@ class DownloadResult:
     success: bool
     local_path: Optional[str]
     error: Optional[str]
-
-
-def meta_path_for(local_path: Path) -> Path:
-    """Return sidecar JSON metadata path for a downloaded file."""
-    return local_path.with_suffix(local_path.suffix + ".meta.json")
-
-
-def load_sidecar_meta(local_path: Path) -> Dict[str, str]:
-    """Load previously saved ETag/Last-Modified if present."""
-    mp = meta_path_for(local_path)
-    if mp.exists():
-        try:
-            return json.loads(mp.read_text(encoding="utf-8"))
-        except Exception:
-            return {}
-    return {}
-
-
-def save_sidecar_meta(local_path: Path, headers: Dict[str, str]) -> None:
-    mp = meta_path_for(local_path)
-    meta = {
-        "etag": headers.get("etag", ""),
-        "last_modified": headers.get("last-modified", ""),
-        "content_length": headers.get("content-length", ""),
-    }
-    # Do not write a sidecar file if all values are empty (not useful)
-    if not (meta["etag"] or meta["last_modified"] or meta["content_length"]):
-        return
-    try:
-        mp.write_text(json.dumps(meta, indent=2), encoding="utf-8")
-    except Exception:
-        pass
+    # One of: "created", "modified", "unchanged" (when content identical after normalization)
+    change: Optional[str] = None
 
 
 def download_one(
@@ -268,35 +237,7 @@ def download_one(
     polite_delay_sec: float = POLITE_DELAY_SEC,
 ) -> DownloadResult:
     local_path = local_path_for_output(output_root, relative_path)
-    # If file exists and skipping is enabled, perform a conditional GET using stored metadata.
-    # If not modified (304) or content identical, we treat as a skip (url_used=None).
-    if local_path.exists():
-        if SKIP_IF_EXISTS:
-            # Attempt conditional GET with ETag / Last-Modified
-            meta = load_sidecar_meta(local_path)
-            cond_headers = dict(DEFAULT_HEADERS)
-            if meta.get("etag"):
-                cond_headers["If-None-Match"] = meta["etag"]
-            if meta.get("last_modified"):
-                cond_headers["If-Modified-Since"] = meta["last_modified"]
-            try:
-                if polite_delay_sec > 0:
-                    time.sleep(polite_delay_sec)
-                status, hdrs, body = http_get_with_headers(final_url, timeout=request_timeout, headers=cond_headers)
-                if status == 304:
-                    return DownloadResult(relative_path=relative_path, url_used=None, success=True, local_path=str(local_path), error=None)
-                # status 200 – overwrite file (we avoid an equality diff to keep it simple)
-                local_path.parent.mkdir(parents=True, exist_ok=True)
-                body = normalize_markdown_body(body)
-                local_path.write_bytes(body)
-                save_sidecar_meta(local_path, hdrs)
-                return DownloadResult(relative_path=relative_path, url_used=final_url, success=True, local_path=str(local_path), error=None)
-            except (HTTPError, URLError, TimeoutError, socket.timeout) as exc:  # type: ignore[name-defined]
-                # Fall through to retry loop below (unconditional GET) on network errors
-                pass
-        else:
-            # For --no-skip, we will force re-download below
-            pass
+    existed_before = local_path.exists()
 
     local_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -305,13 +246,32 @@ def download_one(
         try:
             if polite_delay_sec > 0:
                 time.sleep(polite_delay_sec)
-            # Unconditional GET (used when file missing, --no-skip, or conditional path failed)
+            # Single unconditional GET
             status, hdrs, content = http_get_with_headers(final_url, timeout=request_timeout, headers=DEFAULT_HEADERS)
-            # status should be 200 here
-            body = normalize_markdown_body(content)
-            local_path.write_bytes(body)
-            save_sidecar_meta(local_path, hdrs)
-            return DownloadResult(relative_path=relative_path, url_used=final_url, success=True, local_path=str(local_path), error=None)
+            # Expect 200
+            body_norm = normalize_markdown_body(content)
+            new_hash = hashlib.sha256(body_norm).hexdigest()
+            # Determine change kind
+            if existed_before:
+                try:
+                    old_bytes = local_path.read_bytes()
+                    old_hash = hashlib.sha256(old_bytes).hexdigest()
+                except Exception:
+                    old_hash = ""
+                change = "unchanged" if (old_hash and old_hash == new_hash) else "modified"
+            else:
+                change = "created"
+            # Ensure dir and write file
+            local_path.parent.mkdir(parents=True, exist_ok=True)
+            local_path.write_bytes(body_norm)
+            return DownloadResult(
+                relative_path=relative_path,
+                url_used=final_url,
+                success=True,
+                local_path=str(local_path),
+                error=None,
+                change=change,
+            )
         except (HTTPError, URLError, TimeoutError, socket.timeout) as exc:  # type: ignore[name-defined]
             last_error = f"{type(exc).__name__}: {exc}"
             if attempt < max_retries:
@@ -385,8 +345,10 @@ def main() -> int:
 
     results: List[DownloadResult] = []
     succeeded = 0
-    skipped_existing = 0
     failed = 0
+    created_count = 0
+    modified_count = 0
+    unchanged_count = 0
 
     def worker(item: Tuple[str, str, str]) -> DownloadResult:
         final_url, rel, _ = item
@@ -400,12 +362,18 @@ def main() -> int:
                 res = fut.result()
                 results.append(res)
                 if res.success:
-                    if res.url_used is None and SKIP_IF_EXISTS and Path(res.local_path or "").exists():
-                        skipped_existing += 1
-                        print(f"[skip] exists: {rel}")
+                    succeeded += 1
+                    tag = "same"
+                    if res.change == "created":
+                        created_count += 1
+                        tag = "new"
+                    elif res.change == "modified":
+                        modified_count += 1
+                        tag = "mod"
                     else:
-                        succeeded += 1
-                        print(f"[ok]  {rel} <- {res.url_used}")
+                        unchanged_count += 1
+                        tag = "same"
+                    print(f"[ok:{tag}] {rel}")
                 else:
                     failed += 1
                     print(f"[err] {rel} :: {res.error}")
@@ -419,7 +387,14 @@ def main() -> int:
         "base_url": BASE_URL,
         "allowed_hosts": ALLOWED_HOSTS,
         "output_root": str(OUTPUT_ROOT),
-        "counts": {"total": len(plan), "succeeded": succeeded, "skipped_existing": skipped_existing, "failed": failed},
+        "counts": {
+            "total": len(plan),
+            "succeeded": succeeded,
+            "failed": failed,
+            "created": created_count,
+            "modified": modified_count,
+            "unchanged": unchanged_count,
+        },
         "results": [res.__dict__ for res in results],
     }
     summary_path = OUTPUT_ROOT / "download_results.json"
@@ -431,11 +406,29 @@ def main() -> int:
     tree_path.write_text(tree_text, encoding="utf-8")
 
     print("\nDownload complete.")
-    print(f"  succeeded:        {succeeded}")
-    print(f"  skipped_existing: {skipped_existing}")
-    print(f"  failed:           {failed}")
+    print(f"  succeeded:  {succeeded}")
+    print(f"  failed:     {failed}")
+    print(f"  created:    {created_count}")
+    print(f"  modified:   {modified_count}")
+    print(f"  unchanged:  {unchanged_count}")
     print(f"  details:          {summary_path}")
     print(f"  file tree:        {tree_path}")
+
+    # Final message: which files had substantive changes (ignoring timestamp footer)
+    created = sorted([r.relative_path for r in results if r.success and r.change == "created"])  # type: ignore[attr-defined]
+    modified = sorted([r.relative_path for r in results if r.success and r.change == "modified"])  # type: ignore[attr-defined]
+    if created or modified:
+        print("\nContent changes (ignoring timestamp footer):")
+        if created:
+            print("  [created]")
+            for p in created:
+                print(f"    - {p}")
+        if modified:
+            print("  [modified]")
+            for p in modified:
+                print(f"    - {p}")
+    else:
+        print("\nNo content changes detected (ignoring timestamp footer).")
 
     return 0 if failed == 0 else 1
 
@@ -450,7 +443,6 @@ if __name__ == "__main__":
     parser.add_argument("--allow-host", action="append", default=None, help="Allowed host (can repeat). Defaults to docs.livekit.io")
     parser.add_argument("--allow-external", action="store_true", help="Allow downloading .md from hosts outside allowed-hosts")
     parser.add_argument("--preview", type=int, default=DRY_RUN_PREVIEW_COUNT, help="Preview first N items without downloading all")
-    parser.add_argument("--no-skip", action="store_true", help="Do not skip existing files")
     parser.add_argument("--max-workers", type=int, default=MAX_WORKERS)
     args = parser.parse_args()
 
@@ -460,7 +452,6 @@ if __name__ == "__main__":
     if args.allow_host:
         ALLOWED_HOSTS = list(args.allow_host)
     DRY_RUN_PREVIEW_COUNT = args.preview
-    SKIP_IF_EXISTS = not args.no_skip
     MAX_WORKERS = args.max_workers
 
     try:

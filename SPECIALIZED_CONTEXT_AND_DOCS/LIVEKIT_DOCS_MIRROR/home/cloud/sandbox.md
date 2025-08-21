@@ -18,7 +18,7 @@ LiveKit Docs › Cloud › Sandbox
 
 Once you've created a LiveKit Cloud account, you can head to the [Sandboxes](https://cloud.livekit.io/projects/p_/sandbox) page to create a new sandbox, choosing from one of our templates.
 
-1. Create a LiveKit Cloud account and [Install the LiveKit CLI](https://docs.livekit.io/home/cli/cli-setup.md).
+1. Create a LiveKit Cloud account and [Install the LiveKit CLI](https://docs.livekit.io/home/cli.md).
 2. If you're setting up the CLI for the first time, authenticate with your LiveKit Cloud account:
 
 ```bash
@@ -37,7 +37,7 @@ lk app create \
 
 ## Moving to production
 
-When you're ready to move on from the prototyping stage and own the code yourself, every sandbox app can be cloned to your local machine, ready for customization. The quickest way to do this is via the [LiveKit CLI](https://docs.livekit.io/home/cli/cli-setup.md):
+When you're ready to move on from the prototyping stage and own the code yourself, every sandbox app can be cloned to your local machine, ready for customization. The quickest way to do this is via the [LiveKit CLI](https://docs.livekit.io/home/cli.md):
 
 ```bash
 lk app create --template <template-name>

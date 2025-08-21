@@ -23,11 +23,6 @@ The following document is a comprehensive list of all available documentation an
 - [Rooms, participants, and tracks](https://docs.livekit.io/home/get-started/api-primitives.md): Guide to the core API primitives in LiveKit.
 - [Authentication](https://docs.livekit.io/home/get-started/authentication.md): Learn how to authenticate your users to LiveKit sessions.
 
-### CLI
-
-- [Installing CLI](https://docs.livekit.io/home/cli/cli-setup.md): Install the LiveKit CLI and test your setup using an example frontend application.
-- [Bootstrapping an application](https://docs.livekit.io/home/cli/templates.md): Create and initialize an app from a convenient set of templates.
-
 ### LiveKit SDKs
 
 - [Overview](https://docs.livekit.io/home/client.md): A guide to LiveKit's client and server SDKs for building realtime applications.
@@ -72,6 +67,12 @@ The following document is a comprehensive list of all available documentation an
 - [Flutter](https://docs.livekit.io/home/quickstarts/flutter.md): Get started with LiveKit and Flutter
 - [React Native](https://docs.livekit.io/home/quickstarts/react-native.md): Get started with LiveKit and React Native
 - [Expo](https://docs.livekit.io/home/quickstarts/expo.md): Get started with LiveKit and Expo on React Native
+
+### LiveKit CLI
+
+- [Getting started](https://docs.livekit.io/home/cli.md): Install the LiveKit CLI and test your setup using an example frontend application.
+- [Project management](https://docs.livekit.io/home/cli/projects.md): Add, list, and manage projects in the LiveKit CLI.
+- [App templates](https://docs.livekit.io/home/cli/templates.md): Create and initialize an app from a convenient set of templates.
 
 ### Server APIs
 
@@ -461,5 +462,5 @@ The following document is a comprehensive list of all available documentation an
 
 ---
 
-This document was rendered at 2025-08-16T18:49:17.650Z.
+This document was rendered at 2025-08-19T01:59:23.586Z.
 For the latest version of this document, see [https://docs.livekit.io/llms.txt](https://docs.livekit.io/llms.txt).

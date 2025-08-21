@@ -302,7 +302,7 @@ Enum. Valid values are as follows:
 | rule | [SIPDispatchRule](#sipdispatchrule) | Type of dispatch rule. |
 | trunk_ids | array<string> | List of associated trunk IDs. |
 | hide_phone_number | bool | If true, hides phone number. |
-| inbound_numbers | array<string> | If this list is included, the dispatch rule only accepts calls made to the numbers in the list. |
+| inbound_numbers | array<string> | If this list is included, the dispatch rule only accepts calls made from the numbers in the list. |
 | name | string | Human-readable name for the dispatch rule. |
 | metadata | string | User-defined metadata for the dispatch rule. Participants created by this rule inherit this metadata. |
 | headers | map<string, string> | Custom SIP X-* headers to included in the 200 OK response. |
