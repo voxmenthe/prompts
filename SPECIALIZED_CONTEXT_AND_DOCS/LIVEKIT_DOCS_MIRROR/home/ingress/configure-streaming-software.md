@@ -1,4 +1,4 @@
-LiveKit Docs › Stream ingest › Encoder configuration
+LiveKit Docs › Stream import › Encoder configuration
 
 ---
 

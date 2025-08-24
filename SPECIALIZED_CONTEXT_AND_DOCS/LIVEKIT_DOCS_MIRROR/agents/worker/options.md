@@ -114,7 +114,7 @@ opts = WorkerOptions(entrypoint_fnc=entrypoint, prewarm_fnc=prewarm_fnc)
 
 ### Worker load
 
-In [custom deployments](https://docs.livekit.io/agents/ops/deployment.md), you can configure the conditions under which the worker stops accepting new jobs through the `load_fnc` and `load_threshold` parameters.
+In [custom deployments](https://docs.livekit.io/agents/ops/deployment/custom.md), you can configure the conditions under which the worker stops accepting new jobs through the `load_fnc` and `load_threshold` parameters.
 
 - `load_fnc`: A function that returns the current load of the worker as a float between 0 and 1.0.
 - `load_threshold`: The maximum load value at which the worker will still accept new jobs.

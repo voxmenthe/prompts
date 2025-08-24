@@ -28,7 +28,7 @@ webhook:
 
 ## Receiving webhooks
 
-Webhook requests are HTTP POST requests sent to URLs that you specify in your config or Cloud dashboard. A `WebhookEvent` is encoded as JSON and sent in the body of the request.
+Webhook requests are HTTP POST requests sent to URLs that you specify in your config or LiveKit Cloud dashboard. A `WebhookEvent` is encoded as JSON and sent in the body of the request.
 
 The `Content-Type` header of the request is set to `application/webhook+json`. Please ensure your webserver is configured to receive payloads with this content type.
 
@@ -147,6 +147,17 @@ interface WebhookEvent {
 ```typescript
 interface WebhookEvent {
   event: 'participant_left';
+  room: Room;
+  participant: ParticipantInfo;
+}
+
+```
+
+### Participant Connection Aborted
+
+```typescript
+interface WebhookEvent {
+  event: 'participant_connection_aborted';
   room: Room;
   participant: ParticipantInfo;
 }

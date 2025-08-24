@@ -99,6 +99,32 @@ fmt.Printf("Sent text with stream ID: %s\n", info.ID)
 
 ```
 
+---
+
+**Android**:
+
+```kotlin
+val text = "Lorem ipsum dolor sit amet..."
+val result = room.localParticipant.sendText(text, StreamTextOptions(topic = "my-topic"))
+
+result.onSuccess { info ->
+  Log.i("Datastream", "sent text id: ${info.id}")
+}
+
+```
+
+---
+
+**Flutter**:
+
+```dart
+var info = await room.localParticipant?.sendText('Lorem ipsum dolor sit amet...',
+    options: SendTextOptions(
+      topic: 'chat',
+    ));
+
+```
+
 ## Streaming incrementally
 
 If your text is generated incrementally, use `streamText` to open a stream writer. You must explicitly close the stream when you are done sending data.
@@ -244,6 +270,40 @@ for i, chunk := range textChunks {
 }
 
 fmt.Printf("Closed text stream with ID: %s\n", writer.Info.ID)
+
+```
+
+---
+
+**Android**:
+
+```kotlin
+val streamWriter = room.localParticipant.streamText(StreamTextOptions(topic = "my-topic"))
+val textChunks = listOf("Lorem ", "ipsum ", "dolor ", "sit ", "amet...")
+for (chunk in textChunks) {
+    streamWriter.write(chunk)
+}
+streamWriter.close()
+
+```
+
+---
+
+**Flutter**:
+
+```dart
+var stream = await room.localParticipant?.streamText(StreamTextOptions(
+    topic: 'my-topic',
+  ));
+
+var chunks = ['Lorem ', 'ipsum ', 'dolor ', 'sit ', 'amet...'];
+for (var chunk in chunks) {
+   write each chunk to the stream
+  await stream?.write(chunk);
+}
+
+// close the stream to signal that no more data will be sent
+await stream?.close();
 
 ```
 
@@ -446,6 +506,40 @@ room.RegisterTextStreamHandler(
     fmt.Printf("received text: %s\n", text)
   },
 )
+
+```
+
+---
+
+**Android**:
+
+```kotlin
+room.registerTextStreamHandler("my-topic") { reader, info ->
+  myCoroutineScope.launch {
+      val info = reader.info
+      Log.i("Datastream", "info stuff")
+      // Option 1: process incrementally
+      reader.flow.collect { chunk ->
+          Log.i("Datastream", "Next chunk: $chunk")
+      }
+      // Option 2
+      val text = reader.readAll()
+      Log.i("DataStream", "Received text ${text.joinToString()}")
+  }
+}
+
+```
+
+---
+
+**Flutter**:
+
+```dart
+room.registerTextStreamHandler('chat',
+    (TextStreamReader reader, String participantIdentity) async {
+  var text = await reader.readAll();
+  print('received chat message from $participantIdentity: $text');
+});
 
 ```
 

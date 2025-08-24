@@ -4,7 +4,7 @@ LiveKit Docs › Getting started › Voice AI quickstart
 
 # Voice AI quickstart
 
-> Build a simple voice assistant with Python in less than 10 minutes.
+> Build and deploy a simple voice assistant in less than 10 minutes.
 
 ## Overview
 
@@ -12,23 +12,88 @@ This guide walks you through the setup of your very first voice assistant using 
 
 - **[Python starter project](https://github.com/livekit-examples/agent-starter-python)**: Prefer to just clone a repo? This repo is ready-to-go, will all the code you need to get started.
 
-- **[Deeplearning.ai course](https://www.deeplearning.ai/short-courses/building-ai-voice-agents-for-production/)**: Learn to build and deploy voice agents with LiveKit in this free course from Deeplearning.ai.
+- **[Deeplearning.ai course](https://www.deeplearning.ai/short-courses/building-ai-voice-agents-for-production/)**: For a more in-depth guide, learn to build and deploy voice agents with LiveKit in this free course from Deeplearning.ai.
 
 ## Requirements
 
 The following sections describe the minimum requirements to get started with LiveKit Agents.
 
-### Python
+### Python and uv
 
 LiveKit Agents requires Python 3.9 or later.
+
+This guide is written for for the [uv](https://docs.astral.sh/uv/getting-started/installation/) package manager.
 
 > ℹ️ **Looking for Node.js?**
 > 
 > The Node.js beta is still in development and has not yet reached v1.0. See the [v0.x documentation](https://docs.livekit.io/agents/v0.md) for Node.js reference and join the [LiveKit Community Slack](https://livekit.io/join-slack) to be the first to know when the next release is available.
 
-### LiveKit server
+### LiveKit Cloud
 
-You need a LiveKit server instance to transport realtime media between user and agent. The easiest way to get started is with a free [LiveKit Cloud](https://cloud.livekit.io/) account. Create a project and use the API keys in the following steps. You may also [self-host LiveKit](https://docs.livekit.io/home/self-hosting/local.md) if you prefer.
+This guide assumes you have signed up for a free [LiveKit Cloud](https://cloud.livekit.io/) account. LiveKit Cloud offers realtime media transport and agent deployment. Create a free project and use the API keys in the following steps to get started.
+
+While this guide assumes LiveKit Cloud, the instructions can be adapted for [self-hosting](https://docs.livekit.io/home/self-hosting/local.md) the open-source LiveKit server instead. You will need your own [custom deployment](https://docs.livekit.io/agents/ops/deployment/custom.md) environment in production, and should remove the [enhanced noise cancellation](https://docs.livekit.io/home/cloud/noise-cancellation.md) plugin from the agent code.
+
+### LiveKit CLI
+
+Use the LiveKit CLI to manage LiveKit API keys and deploy your agent to LiveKit Cloud.
+
+1. Install the LiveKit CLI:
+
+**macOS**:
+
+Install the LiveKit CLI with [Homebrew](https://brew.sh/):
+
+```text
+brew install livekit-cli
+
+```
+
+---
+
+**Linux**:
+
+```text
+curl -sSL https://get.livekit.io/cli | bash
+
+```
+
+> 💡 **Tip**
+> 
+> You can also download the latest precompiled binaries [here](https://github.com/livekit/livekit-cli/releases/latest).
+
+---
+
+**Windows**:
+
+```text
+winget install LiveKit.LiveKitCLI
+
+```
+
+> 💡 **Tip**
+> 
+> You can also download the latest precompiled binaries [here](https://github.com/livekit/livekit-cli/releases/latest).
+
+---
+
+**From Source**:
+
+This repo uses [Git LFS](https://git-lfs.github.com/) for embedded video resources. Please ensure git-lfs is installed on your machine before proceeding.
+
+```text
+git clone github.com/livekit/livekit-cli
+make install
+
+```
+2. Link your LiveKit Cloud project to the CLI:
+
+```shell
+lk cloud auth
+
+```
+
+This opens a browser window to authenticate and link your project to the CLI.
 
 ### AI providers
 
@@ -62,22 +127,24 @@ Your agent uses a single realtime model to provide an expressive and lifelike vo
 
 Use the instructions in the following sections to set up your new project.
 
-### Packages
+### Project initialization
 
-> ℹ️ **Noise cancellation**
-> 
-> This example integrates LiveKit Cloud [enhanced background voice/noise cancellation](https://docs.livekit.io/home/cloud/noise-cancellation.md), powered by Krisp.
-> 
-> If you're not using LiveKit Cloud, omit the plugin and the `noise_cancellation` parameter from the following code.
-> 
-> For telephony applications, use the `BVCTelephony` model for the best results.
+Create a new project with uv. The following command creates a new folder and a `pyproject.toml` file inside of it.
+
+```shell
+uv init livekit-voice-agent --bare
+cd livekit-voice-agent
+
+```
+
+### Install packages
 
 **STT-LLM-TTS pipeline**:
 
 Install the following packages to build a complete voice AI agent with your STT-LLM-TTS pipeline, noise cancellation, and [turn detection](https://docs.livekit.io/agents/build/turns.md):
 
 ```shell
-pip install \
+uv add \
   "livekit-agents[deepgram,openai,cartesia,silero,turn-detector]~=1.2" \
   "livekit-plugins-noise-cancellation~=0.2" \
   "python-dotenv"
@@ -91,7 +158,7 @@ pip install \
 Install the following packages to build a complete voice AI agent with your realtime model and noise cancellation.
 
 ```shell
-pip install \
+uv add \
   "livekit-agents[openai]~=1.2" \
   "livekit-plugins-noise-cancellation~=0.2" \
   "python-dotenv"
@@ -100,11 +167,18 @@ pip install \
 
 ### Environment variables
 
-Create a file named `.env` and add your LiveKit credentials along with the necessary API keys for your AI providers.
+Run the following command to load your LiveKit Cloud API keys into a `.env.local` file:
+
+```shell
+lk app env -w
+
+```
+
+Now open this file and add keys for your selected AI provider. The file should look like this:
 
 **STT-LLM-TTS pipeline**:
 
-** Filename: `.env`**
+** Filename: `.env.local`**
 
 ```shell
 DEEPGRAM_API_KEY=<Your Deepgram API Key>
@@ -120,7 +194,7 @@ LIVEKIT_URL=%{wsURL}%
 
 **Realtime model**:
 
-** Filename: `.env`**
+** Filename: `.env.local`**
 
 ```shell
 OPENAI_API_KEY=<Your OpenAI API Key>
@@ -152,7 +226,7 @@ from livekit.plugins import (
 )
 from livekit.plugins.turn_detector.multilingual import MultilingualModel
 
-load_dotenv()
+load_dotenv(".env.local")
 
 
 class Assistant(Agent):
@@ -173,9 +247,7 @@ async def entrypoint(ctx: agents.JobContext):
         room=ctx.room,
         agent=Assistant(),
         room_input_options=RoomInputOptions(
-            # LiveKit Cloud enhanced noise cancellation
-            # - If self-hosting, omit this parameter
-            # - For telephony applications, use `BVCTelephony` for best results
+            # For telephony applications, use `BVCTelephony` instead for best results
             noise_cancellation=noise_cancellation.BVC(), 
         ),
     )
@@ -207,7 +279,7 @@ from livekit.plugins import (
     noise_cancellation,
 )
 
-load_dotenv()
+load_dotenv(".env.local")
 
 
 class Assistant(Agent):
@@ -226,9 +298,7 @@ async def entrypoint(ctx: agents.JobContext):
         room=ctx.room,
         agent=Assistant(),
         room_input_options=RoomInputOptions(
-            # LiveKit Cloud enhanced noise cancellation
-            # - If self-hosting, omit this parameter
-            # - For telephony applications, use `BVCTelephony` for best results
+            # For telephony applications, use `BVCTelephony` instead for best results
             noise_cancellation=noise_cancellation.BVC(),
         ),
     )
@@ -249,7 +319,7 @@ if __name__ == "__main__":
 To use the `turn-detector`, `silero`, or `noise-cancellation` plugins, you first need to download the model files:
 
 ```shell
-python agent.py download-files
+uv run agent.py download-files
 
 ```
 
@@ -258,7 +328,7 @@ python agent.py download-files
 Start your agent in `console` mode to run inside your terminal:
 
 ```shell
-python agent.py console
+uv run agent.py console
 
 ```
 
@@ -271,19 +341,30 @@ Your agent speaks to you in the terminal, and you can speak to it as well.
 Start your agent in `dev` mode to connect it to LiveKit and make it available from anywhere on the internet:
 
 ```shell
-python agent.py dev
+uv run agent.py dev
 
 ```
 
 Use the [Agents playground](https://docs.livekit.io/agents/start/playground.md) to speak with your agent and explore its full range of multimodal capabilities.
 
-Congratulations, your agent is up and running. Continue to use the playground or the `console` mode as you build and test your agent.
-
 > 💡 **Agent CLI modes**
 > 
 > In the `console` mode, the agent runs locally and is only available within your terminal.
 > 
-> Run your agent in `dev` (development / debug) or `start` (production) mode to connect to LiveKit and join rooms.
+> Run your agent in `dev` (development / debug) or `start` (production) mode to connect to LiveKit Cloud and join rooms.
+
+## Deploy to LiveKit Cloud
+
+From the root of your project, run the following command with the LiveKit CLI. Ensure you have [linked your LiveKit Cloud project](#cli).
+
+```shell
+lk agent create
+
+```
+
+The CLI creates `Dockerfile`, `.dockerignore`, and `livekit.toml` files in your current directory, then registers your agent with your LiveKit Cloud project and deploys it.
+
+After the deployment completes, you can access your agent in the playground, or continue to use the `console` mode as you build and test your agent locally.
 
 ## Next steps
 
@@ -299,7 +380,7 @@ Follow these guides bring your voice AI app to life in the real world.
 
 - **[Worker lifecycle](https://docs.livekit.io/agents/worker.md)**: Learn how to manage your agents with workers and jobs.
 
-- **[Deploying to production](https://docs.livekit.io/agents/ops/deployment.md)**: Deploy your new voice agent to production.
+- **[Deploying to LiveKit Cloud](https://docs.livekit.io/agents/ops/deployment.md)**: Learn more about deploying and scaling your agent in production.
 
 - **[Integration guides](https://docs.livekit.io/agents/integrations.md)**: Explore the full list of AI providers available for LiveKit Agents.
 

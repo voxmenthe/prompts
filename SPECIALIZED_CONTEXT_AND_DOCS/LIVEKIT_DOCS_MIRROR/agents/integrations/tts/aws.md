@@ -60,13 +60,15 @@ This section describes some of the parameters. See the [plugin reference](https:
 
 - **`voice`** _(TTSModels)_ (optional) - Default: `Ruth`: Voice to use for the synthesis. For a full list, see [Available voices](https://docs.aws.amazon.com/polly/latest/dg/available-voices.html).
 
-- **`language`** _(TTS_LANGUAGE | string)_ (optional): Language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). To learn more, see [Languages in Amazon Polly](https://docs.aws.amazon.com/polly/latest/dg/supported-languages.html).
+- **`language`** _(TTSLanguages | str)_ (optional): Language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). To learn more, see [Languages in Amazon Polly](https://docs.aws.amazon.com/polly/latest/dg/supported-languages.html).
 
-- **`speech_engine`** _(TTS_SPEECH_ENGINE)_ (optional) - Default: `generative`: The voice engine to use for the synthesis. Valid values are `standard`, `neural`, `long-form`, and `generative`. To learn more, see [Amazon Polly voice engines](https://docs.aws.amazon.com/polly/latest/dg/voice-engines-polly.html).
+- **`speech_engine`** _(TTSSpeechEngine)_ (optional) - Default: `generative`: The voice engine to use for the synthesis. Valid values are `standard`, `neural`, `long-form`, and `generative`. To learn more, see [Amazon Polly voice engines](https://docs.aws.amazon.com/polly/latest/dg/voice-engines-polly.html).
+
+- **`text_type`** _(TTSTextType)_ (optional) - Default: `text`: The type of text to synthesize. Valid values are `text` or `ssml`. Use `ssml` to synthesize speech from SSML-enchanced text. To learn more, see [Controlling speech and pronunciation](#pronunciation).
 
 ## Controlling speech and pronunciation
 
-Amazon Polly supports Speech Synthesis Markup Language (SSML) for customizing generated speech. To learn more, see [Generating speech from SSML docs](https://docs.aws.amazon.com/polly/latest/dg/ssml.html) and [Supported SSML tags](https://docs.aws.amazon.com/polly/latest/dg/supportedtags.html).
+Amazon Polly supports Speech Synthesis Markup Language (SSML) for customizing generated speech. To learn more, see [Generating speech from SSML documents](https://docs.aws.amazon.com/polly/latest/dg/ssml.html) and [Supported SSML tags](https://docs.aws.amazon.com/polly/latest/dg/supportedtags.html).
 
 ## Additional resources
 

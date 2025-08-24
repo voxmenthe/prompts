@@ -58,6 +58,8 @@ This section describes some of the available parameters. See the [plugin referen
 
 - **`voice_name`** _(string)_ (optional): Name of the voice to use for speech. For a full list of voices, see [Supported voices and languages](https://cloud.google.com/text-to-speech/docs/voices).
 
+- **`voice_cloning_key`** _(string)_ (optional): Voice cloning key to use a custom, cloned voice. This is a text string that represents your voice data. To learn more, see [Chirp 3: Instant custom voice](https://cloud.google.com/text-to-speech/docs/chirp3-instant-custom-voice).
+
 - **`credentials_info`** _(array)_ (optional): Key-value pairs of authentication credential information.
 
 - **`credentials_file`** _(string)_ (optional): Name of the JSON file that contains authentication credentials for Google Cloud.

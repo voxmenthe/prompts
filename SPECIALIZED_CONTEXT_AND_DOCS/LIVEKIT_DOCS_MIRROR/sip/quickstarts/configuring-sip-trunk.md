@@ -8,7 +8,7 @@ LiveKit Docs › Getting started › SIP trunk setup
 
 ## Overview
 
-LiveKit is compatible with any SIP trunking provider. This guide provides general instructions for setting up a SIP trunk with an external provider and then associating it with your LiveKit project.
+LiveKit is compatible with any SIP trunking provider. This guide provides general instructions for setting up a SIP trunk with an external provider and then associating it with your LiveKit Cloud project.
 
 ## External provider setup
 
@@ -41,7 +41,7 @@ For step-by-step instructions for Telnyx, Twilio, or Plivo, see the following qu
 
 ## LiveKit setup
 
-Now you are ready to configure your LiveKit project to use the SIP trunk.
+Now you are ready to configure your LiveKit Cloud project to use the SIP trunk.
 
 The following steps are common to all SIP trunking providers.
 

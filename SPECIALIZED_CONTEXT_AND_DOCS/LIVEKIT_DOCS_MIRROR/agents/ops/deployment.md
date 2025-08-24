@@ -1,126 +1,180 @@
-LiveKit Docs › Deployment & operations › Deploying to production
+LiveKit Docs › Deployment & operations › Deploying to LiveKit Cloud › Getting started
 
 ---
 
-# Deploying to production
+# Deploying to LiveKit Cloud
 
-> Guide to running LiveKit Agents in a production environment.
+> Run your agents in LiveKit Cloud.
 
 ## Overview
 
-LiveKit agents are ready to deploy to any container orchestration system such as Kubernetes. The framework uses a worker pool model and job dispatch is automatically balanced by LiveKit server across available workers. The workers themselves spawn a new sub-process for each job, and that job is where your code and agent participant run.
+Deploy your agents to LiveKit Cloud to run them on LiveKit's global network and infrastructure. LiveKit Cloud provides automatic scaling and load balancing, ensuring capacity for new sessions up to the limits of your plan. Deploy your agent with a single LiveKit CLI command.
 
-## Project setup
+For deployments to other environments, see [Deploying to custom environments](https://docs.livekit.io/agents/ops/deployment/custom.md).
 
-Deploying to a production environment generally requires a simple `Dockerfile` that builds and runs an agent worker, and a deployment platform that scales your worker pool based on load.
+## Quickstart
 
-The following starter projects each include a working Dockerfile and CI configuration.
+Follow these steps to deploy your first agent to LiveKit Cloud.
 
-- **[Python Voice Agent](https://github.com/livekit-examples/agent-starter-python)**: A production-ready voice AI starter project for Python.
+### Prerequisites
 
-- **[Node.js Voice Agent](https://github.com/livekit-examples/agent-starter-node)**: A production-ready voice AI starter project for Node.js.
+This guide assumes that you already have:
 
-## Where to deploy
+- [LiveKit CLI](https://docs.livekit.io/home/cli.md) version 2.5 or later
+- A [LiveKit Cloud](https://cloud.livekit.io) project
+- A working agent. Create one using the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md) or one of the following starter templates:
 
-LiveKit Agents can be deployed almost anywhere. The LiveKit team and community have found the following deployment platforms to be the easiest and most cost-effective to use.
+- **[Python starter template](https://github.com/livekit-examples/agent-starter-python)**: A ready-to-deploy voice AI agent built with Python.
 
-- **[LiveKit Cloud Agents Beta](https://livekit.io/cloud-agents-beta)**: Run your agent on the same network and infrastructure that serves LiveKit Cloud, with builds, deployment, and scaling handled for you. Sign up for the public beta to get started.
+- **[Node.js starter template](https://github.com/livekit-examples/agent-starter-node)**: A ready-to-deploy voice AI agent built with Node.js.
 
-- **[Kubernetes](https://github.com/livekit-examples/agent-deployment/tree/main/kubernetes)**: Sample configuration for deploying and autoscaling LiveKit Agents on Kubernetes.
+### Deploy your agent
 
-- **[Render.com](https://github.com/livekit-examples/agent-deployment/tree/main/render.com)**: Sample configuration for deploying and autoscaling LiveKit Agents on Render.com.
+Use the following steps with the LiveKit CLI to deploy your agent.
 
-- **[More deployment examples](https://github.com/livekit-examples/agent-deployment)**: Example `Dockerfile` and configuration files for a variety of deployment platforms.
+1. Navigate to your project directory:
 
-## Networking
+```bash
+cd your-agent-project
 
-Workers use a WebSocket connection to register with LiveKit server and accept incoming jobs. This means that workers do not need to expose any inbound hosts or ports to the public internet.
+```
+2. Authenticate with LiveKit Cloud:
 
-You may optionally expose a private health check endpoint for monitoring, but this is not required for normal operation. The default health check server listens on `http://0.0.0.0:8081/`.
-
-## Environment variables
-
-It is best to configure your worker with environment variables for secrets like API keys. In addition to the LiveKit variables, you are likely to need additional keys for external services your agent depends on.
-
-For instance, an agent built with the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md) needs the following keys at a minimum:
-
-** Filename: `.env`**
-
-```shell
-DEEPGRAM_API_KEY=<Your Deepgram API Key>
-OPENAI_API_KEY=<Your OpenAI API Key>
-CARTESIA_API_KEY=<Your Cartesia API Key>
-LIVEKIT_API_KEY=%{apiKey}%
-LIVEKIT_API_SECRET=%{apiSecret}%
-LIVEKIT_URL=%{wsURL}%
+```bash
+lk cloud auth
 
 ```
 
-> ❗ **Project environments**
+This opens a browser window to link your LiveKit Cloud project to the CLI. If you've already authenticated and have linked projects, use `lk project list` to list all linked projects. Then, set the default project for agent deployment with `lk project set-default "<project-name>"`.
+3. Deploy your agent:
+
+```bash
+lk agent create
+
+```
+
+This registers your agent with LiveKit Cloud and assigns a unique ID. The ID is written to a new [`livekit.toml`](#toml) file along with the associated project and other default configuration. If you don't already have a `Dockerfile`, the CLI creates one for you.
+
+Next, the CLI uploads your agent code to the LiveKit Cloud build service, builds an image from your Dockerfile, and then deploys it to your LiveKit Cloud project. See the [Builds](https://docs.livekit.io/agents/ops/deployment/builds.md) guide for details on the build process, logs, and templates.
+
+Your agent is now deployed to LiveKit Cloud and is ready to handle requests. To connect, use the [Agent Playground](https://docs.livekit.io/agents/start/playground.md), [custom frontend](https://docs.livekit.io/agents/start/frontend.md), or [telephony integration](https://docs.livekit.io/agents/start/telephony.md).
+
+### Monitor status and logs
+
+Use the CLI to monitor the [status](https://docs.livekit.io/agents/ops/deployment/cli.md#status) and [logs](https://docs.livekit.io/agents/ops/deployment/logs.md#logs) of your agent.
+
+1. Monitor agent status:
+
+```bash
+lk agent status
+
+```
+
+This shows status, replica count, and other details for your running agent.
+2. Tail agent logs:
+
+```bash
+lk agent logs
+
+```
+
+This shows a live tail of the logs for the new instance of your deployed agent.
+
+## Deploying new versions
+
+To deploy a new version of your agent, run the following command:
+
+```bash
+lk agent deploy
+
+```
+
+LiveKit Cloud builds a container image that includes your agent code. The new version is pushed to production using a rolling deployment strategy. The rolling deployment allows new instances to serve new sessions, while existing instances are given up to 1 hour to complete active sessions. This ensures your new version is deployed without user interruptions or service downtime.
+
+```mermaid
+graph LR
+A[Code Upload] --> B[Build]
+B --> C[Rolling Deploy]
+```
+
+When you run `lk agent deploy`, LiveKit Cloud follows this process:
+
+1. **Build**: The CLI uploads your code and builds a container image from your Dockerfile. See [Builds](https://docs.livekit.io/agents/ops/deployment/builds.md) for more information).
+2. **Deploy**: New agent instances with your updated code are deployed alongside existing instances.
+3. **Route new sessions**: New agent requests are routed to new instances.
+4. **Graceful shutdown**: Old instances stop accepting new sessions, while remaining active for up to 1 hour to complete any active sessions.
+5. **Autoscale**: New instances are automatically scaled up and down to meet demand.
+
+### Rolling back
+
+You can quickly rollback to a previous version of your agent, without a rebuild, by using the following command:
+
+```bash
+lk agent rollback
+
+```
+
+Rollback operates in the same rolling manner as a normal deployment.
+
+> ℹ️ **Paid plan required**
 > 
-> It's recommended to use a separate LiveKit instance for staging, production, and development environments. This ensures you can continue working on your agent locally without accidentally processing real user traffic.
-> 
-> In LiveKit Cloud, make a separate project for each environment. Each has a unique URL, API key, and secret.
-> 
-> For self-hosted LiveKit server, use a separate deployment for staging and production and a local server for development.
+> Instant rollback is available only on paid LiveKit Cloud plans. Users on free plans should revert their code to an earlier version and then redeploy.
 
-## Storage
+## Cold start
 
-Worker and job processes have no particular storage requirements beyond the size of the Docker image itself (typically <1GB). 10GB of ephemeral storage should be more than enough to account for this and any temporary storage needs your app has.
+On certain plans, agents can be scaled down to zero replicas. When a new user connects to the agent, the instance does a "cold start" to serve them. This can take a little longer than normal to connect to the user. For more info, see the [Quotas and limits](https://docs.livekit.io/home/cloud/quotas-and-limits.md) guide.
 
-## Memory and CPU
+## Regions
 
-Memory and CPU requirements vary significantly based on the specific details of your app. For instance, agents that use [enhanced noise cancellation](https://docs.livekit.io/cloud/noise-cancellation.md) or the [LiveKit turn detector](https://docs.livekit.io/agents/build/turns/turn-detector.md) require more CPU and memory than those that don't. In some cases, the memory requirements might exceed the amount available on a cloud provider's free tier.
+Currently, LiveKit Cloud deploys all agents to `us-east` (N. Virginia). More regions are coming soon.
 
-LiveKit recommends 4 cores and 8GB per worker as a starting rule for most voice AI apps. This worker can handle 10-25 concurrent jobs, depending on the components in use.
+## Dashboard
 
-> ℹ️ **Real world load test results**
-> 
-> LiveKit ran a load test to evaluate the memory and CPU requirements of a typical voice-to-voice app.
-> 
-> - 30 agents each placed in their own LiveKit Cloud room.
-> - 30 simulated user participants, one in each room.
-> - Each simulated participant published looping speech audio to the agents.
-> - Each agent subscribed to the incoming audio of the user and ran the Silero VAD plugin.
-> - Each agent published their own audio (simple looping sine wave).
-> - One additional user participant with a corresponding voice AI agent to ensure subjective quality of service.
-> 
-> This test ran all agents on a single 4-Core, 8GB machine. This machine reached peak usage of:
-> 
-> - CPU: ~3.8 cores utilized
-> - Memory: ~2.8GB used
+The LiveKit Cloud dashboard provides a view into the status of your deployed and self-hosted agents.
 
-## Rollout
+- **Realtime metrics**: Monitor session count, agent status, and more.
+- **Error tracking**: Identify and diagnose errors in agent sessions.
+- **Usage and limits**: Track usage, billing, and limits.
 
-Workers stop accepting jobs upon `SIGINT` or `SIGTERM`. Any job still running on the worker continues to run to completion. It's important that you configure a large enough grace period such that your jobs can finish without interrupting the user experience.
+- **[Agents dashboard](https://cloud.livekit.io/projects/p_/agents)**: Monitor and manage your deployed agents in the LiveKit Cloud dashboard.
 
-Voice AI apps might require a 10+ minute grace period to allow for conversations to finish.
+## Configuration with livekit.toml
 
-Different deployment platforms have different ways of setting this grace period. In Kubernetes, it's the `terminationGracePeriodSeconds` field in the pod spec.
+The `livekit.toml` file contains your agent's deployment configuration. The CLI automatically looks for this file in the current directory, and uses it when any `lk agent` commands are run in that directory.
 
-Consult your deployment platform's documentation for more information.
+** Filename: `livekit.toml`**
 
-## Load balancing
+```toml
+[project]
+  subdomain = "<my-project-subdomain>"
 
-LiveKit server includes a built-in balanced job distribution system. This system peforms round-robin distribution with a single-assignment principle that ensures each job is assigned to only one worker. If a worker fails to accept the job within a predetermined timeout period, the job is sent to another available worker instead.
+[agent]
+  id = "<agent-id>"
 
-LiveKit Cloud additionally exercises geographic affinity to prioritize matching users and workers that are geographically closest to each other. This ensures the lowest possible latency between users and agents.
+```
 
-## Worker availability
+To generate a new `livekit.toml` file, run:
 
-Worker availability is defined by the `load_fnc` and `load_threshold` parameters in the `WorkerOptions` configuration. The `load_fnc` must return a value between 0 and 1, indicating how busy the worker is. `load_threshold` is the load value above which the worker stops accepting new jobs.
+```bash
+lk agent config
 
-The default `load_fnc` is overall CPU utilization, and the default `load_threshold` is `0.7`.
+```
 
-In a custom deployment, you can override `load_fnc` and `load_threshold` to match the scaling behavior of your environment and application.
+## Additional resources
 
-## Autoscaling
+The following guides cover additional topics for deploying and managing your agents in LiveKit Cloud.
 
-To handle variable traffic patterns, add an autoscaling strategy to your deployment platform. Your autoscaler should use the same underlying metrics as your `load_fnc` (the default is CPU utilization) but should scale up at a _lower_ threshold than your worker's `load_threshold`. This ensures continuity of service by adding new workers before existing ones go out of service. For example, if your `load_threshold` is `0.7`, you should scale up at `0.5`.
+- **[Secrets management](https://docs.livekit.io/agents/ops/deployment/secrets.md)**: Securely manage API keys and other sensitive data.
 
-Since voice agents are typically long running tasks (relative to typical web requests), rapid increases in load are more likely to be sustained. In technical terms: spikes are less spikey. For your autoscaling configuration, you should consider _reducing_ cooldown/stabilization periods when scaling up. When scaling down, consider _increasing_ cooldown/stabilization periods because workers take time to drain.
+- **[Log collection](https://docs.livekit.io/agents/ops/deployment/logs.md)**: Monitor and debug your deployed agents.
 
-For example, if deploying on Kubernetes using a Horizontal Pod Autoscaler, see [stabilizationWindowSeconds](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#default-behavior).
+- **[Builds and Dockerfiles](https://docs.livekit.io/agents/ops/deployment/builds.md)**: Guide to the LiveKit Cloud build process, plus Dockerfile templates and resources.
+
+- **[Agents CLI reference](https://docs.livekit.io/agents/ops/deployment/cli.md)**: Reference for the agent deployment commands in the LiveKit CLI.
+
+- **[Quotas and limits](https://docs.livekit.io/home/cloud/quotas-and-limits.md)**: Guide to quotas and limits for your LiveKit Cloud project.
+
+- **[Agents framework overview](https://docs.livekit.io/agents.md)**: Learn more about the LiveKit Agents framework.
 
 ---
 

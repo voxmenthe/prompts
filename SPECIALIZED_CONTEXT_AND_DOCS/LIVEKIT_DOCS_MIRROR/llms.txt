@@ -81,7 +81,12 @@ The following document is a comprehensive list of all available documentation an
 - [Participant management](https://docs.livekit.io/home/server/managing-participants.md): List, remove, and mute from your backend server.
 - [Webhooks](https://docs.livekit.io/home/server/webhooks.md): Configure LiveKit to notify your server when room events take place.
 
-### Recording & Composition
+### Stream import
+
+- [Overview](https://docs.livekit.io/home/ingress/overview.md): Use LiveKit's ingress service to bring live streams from non-WebRTC sources into LiveKit rooms.
+- [Encoder configuration](https://docs.livekit.io/home/ingress/configure-streaming-software.md): How to configure streaming software to work with LiveKit Ingress.
+
+### Recording & export
 
 - [Overview](https://docs.livekit.io/home/egress/overview.md): Use LiveKit's egress service to record or livestream a room.
 - [Composite & web recordings](https://docs.livekit.io/home/egress/composite-recording.md): LiveKit web-based recorder gives you flexible compositing options
@@ -93,22 +98,17 @@ The following document is a comprehensive list of all available documentation an
 - [Egress API](https://docs.livekit.io/home/egress/api.md): Use LiveKit's egress service to record or livestream a Room.
 - [Examples](https://docs.livekit.io/home/egress/examples.md): Usage examples for Egress APIs.
 
-### Stream ingest
-
-- [Overview](https://docs.livekit.io/home/ingress/overview.md): Use LiveKit's ingress service to bring live streams from non-WebRTC sources into LiveKit rooms.
-- [Encoder configuration](https://docs.livekit.io/home/ingress/configure-streaming-software.md): How to configure streaming software to work with LiveKit Ingress.
-
-### Cloud
+### LiveKit Cloud
 
 - [Overview](https://docs.livekit.io/home/cloud.md): The fully-managed, globally distributed LiveKit deployment option.
 - [Architecture](https://docs.livekit.io/home/cloud/architecture.md): LiveKit Cloud gives you the flexibility of LiveKit's WebRTC stack, combined with global, CDN-scale infrastructure offering 99.99% uptime.
 - [Sandbox](https://docs.livekit.io/home/cloud/sandbox.md): Rapidly prototype your apps and share them with others, cutting out the boilerplate.
-- [Quotas & limits](https://docs.livekit.io/home/cloud/quotas-and-limits.md): Guide to the quotas and limits for LiveKit Cloud plans.
-- [Billing](https://docs.livekit.io/home/cloud/billing.md): Learn how LiveKit Cloud billing works.
 - [Configuring firewalls](https://docs.livekit.io/home/cloud/firewall.md): Learn how to configure firewalls for LiveKit Cloud.
 - [Region pinning](https://docs.livekit.io/home/cloud/region-pinning.md): Learn how to isolate LiveKit traffic to a specific region.
-- [Analytics API](https://docs.livekit.io/home/cloud/analytics-api.md): Get information about your LiveKit sessions and participants
+- [Analytics API](https://docs.livekit.io/home/cloud/analytics-api.md): Get information about your LiveKit Cloud sessions and participants
 - [Enhanced noise cancellation](https://docs.livekit.io/home/cloud/noise-cancellation.md): LiveKit Cloud offers AI-powered noise cancellation for realtime audio.
+- [Quotas & limits](https://docs.livekit.io/home/cloud/quotas-and-limits.md): Guide to the quotas and limits for LiveKit Cloud plans.
+- [Billing](https://docs.livekit.io/home/cloud/billing.md): Guide to LiveKit Cloud invoices and billing cycles.
 
 ### Self-hosting
 
@@ -128,7 +128,7 @@ The following document is a comprehensive list of all available documentation an
 ### Getting started
 
 - [Introduction](https://docs.livekit.io/agents.md): Realtime framework for production-grade multimodal and voice AI agents.
-- [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md): Build a simple voice assistant with Python in less than 10 minutes.
+- [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md): Build and deploy a simple voice assistant in less than 10 minutes.
 - [Telephony integration](https://docs.livekit.io/agents/start/telephony.md): Enable your voice AI agent to make and receive phone calls.
 - [Web & mobile frontends](https://docs.livekit.io/agents/start/frontend.md): Bring your agent to life through a web or mobile app.
 - [Agents playground](https://docs.livekit.io/agents/start/playground.md): A virtual workbench to test your multimodal AI agent.
@@ -164,11 +164,15 @@ The following document is a comprehensive list of all available documentation an
 
 ### Deployment & operations
 
-- [Deploying to production](https://docs.livekit.io/agents/ops/deployment.md): Guide to running LiveKit Agents in a production environment.
-
 #### Deploying to LiveKit Cloud
 
+- [Getting started](https://docs.livekit.io/agents/ops/deployment.md): Run your agents in LiveKit Cloud.
+- [Secrets management](https://docs.livekit.io/agents/ops/deployment/secrets.md): Manage secrets for your LiveKit Cloud agent deployments.
+- [Log collection](https://docs.livekit.io/agents/ops/deployment/logs.md): Monitor and debug your deployed agents with comprehensive logging.
+- [Builds and Dockerfiles](https://docs.livekit.io/agents/ops/deployment/builds.md): Guide to the LiveKit Cloud build process, plus Dockerfile templates and resources.
+- [CLI reference](https://docs.livekit.io/agents/ops/deployment/cli.md): Reference for the LiveKit Cloud agent deployment commands in the LiveKit CLI.
 - [Session recording & transcripts](https://docs.livekit.io/agents/ops/recording.md): Export session data in video, audio, or text format.
+- [Custom deployments](https://docs.livekit.io/agents/ops/deployment/custom.md): Guide to running LiveKit Agents in a custom environment.
 
 ### Partner spotlight
 
@@ -278,6 +282,7 @@ The following document is a comprehensive list of all available documentation an
 - [Cartesia](https://docs.livekit.io/agents/integrations/tts/cartesia.md): How to use the Cartesia TTS plugin for LiveKit Agents.
 - [Deepgram](https://docs.livekit.io/agents/integrations/tts/deepgram.md): How to use the Deepgram TTS plugin for LiveKit Agents.
 - [ElevenLabs](https://docs.livekit.io/agents/integrations/tts/elevenlabs.md): How to use the ElevenLabs TTS plugin for LiveKit Agents.
+- [Gemini](https://docs.livekit.io/agents/integrations/tts/gemini.md): How to use the Gemini TTS plugin for LiveKit Agents.
 - [Google Cloud](https://docs.livekit.io/agents/integrations/tts/google.md): How to use the Google Cloud TTS plugin for LiveKit Agents.
 - [Groq](https://docs.livekit.io/agents/integrations/tts/groq.md): How to use the Groq TTS plugin for LiveKit Agents.
 - [Hume](https://docs.livekit.io/agents/integrations/tts/hume.md): How to use the Hume TTS plugin for LiveKit Agents.
@@ -462,5 +467,5 @@ The following document is a comprehensive list of all available documentation an
 
 ---
 
-This document was rendered at 2025-08-19T01:59:23.586Z.
+This document was rendered at 2025-08-22T18:41:19.918Z.
 For the latest version of this document, see [https://docs.livekit.io/llms.txt](https://docs.livekit.io/llms.txt).

@@ -1,52 +1,51 @@
-LiveKit Docs › Cloud › Billing
+LiveKit Docs › LiveKit Cloud › Billing
 
 ---
 
-# Billing
+# LiveKit Cloud billing
 
-> Learn how LiveKit Cloud billing works.
+> Guide to LiveKit Cloud invoices and billing cycles.
 
-## Overview
+## Pricing
 
-Refer to our latest [blog post](https://blog.livekit.io/towards-a-future-aligned-pricing-model/) and [pricing page](https://livekit.io/pricing) for information about our current pricing.
+Refer to the following page for current pricing information:
 
-## Billing
+- **[LiveKit Cloud pricing](https://livekit.io/pricing)**: Current pricing, limits, and quotas for LiveKit Cloud plans.
 
-### How we meter
+## Resource metering
 
-We meter all projects and bill for resources consumed. This table shows the resources we meter and the increments we bill in:
+All LiveKit Cloud pricing plans include usage-based pricing, metered by resource consumption. LiveKit Cloud measures usage by **time** or by **data transfer**, depending on the resource. The following table shows the metering approach for each type.
 
-| Resource | Unit | Minimum increment |
-| Outbound transfer | GB | 0.01 GB |
-| Realtime connection | minute | 1 minute |
-| SIP connection | minute | 1 minute |
-| Egress Transcode | minute | 1 minute |
-| Ingress Transcode | minute | 1 minute |
+| Resource type | Unit | Minimum increment |
+| Time | Minute | 1 minute |
+| Data transfer | GB | 0.01 GB |
 
-### Billing cycle
+Resource usages are rounded up to the minimum increment prior to calculating total usage. For example, a connection lasting 10 seconds is billed as 1 connection minute, and one lasting 70 seconds is billed as 2 connection minutes.
 
-LiveKit Cloud bills monthly. At the end of each month, we calculate the total resources consumed by your project and bill you for the resources consumed.
+For more information on each metered resource, see the [Quotas and limits](https://docs.livekit.io/home/cloud/quotas-and-limits.md#metered-resources) guide.
 
 ## Invoices
 
+LiveKit Cloud invoices are issued at the end of each month. The invoice total is based on resource consumption and the project's selected plan. No invoice is issued for projects with no amount due.
+
 ### Downloading invoices
 
-Paying projects can download previous months' invoices as PDFs on the project's [billing page](https://cloud.livekit.io/projects/p_/billing) (accessible only to project admins) and clicking the "PDF" link in the "Statements" section.
+Past monthly invoices are available as PDFs on the project's [billing page](https://cloud.livekit.io/projects/p_/billing) for project admins. Click the **PDF** link in the **Statements** section to download the invoice.
 
-### Customizing invoices
+### Invoice customization
 
-By default, the invoice only lists your project name. Some customers require more information on the invoice, such as a billing address or VAT number. You can add this information to your invoice by clicking the `...` menu to the right of the PDF link, then clicking `Customize “Invoice to:” field`.
+By default, the invoice lists only your project name. Some customers require more information on the invoice, such as a billing address or VAT number. You can add this information to your invoice by selecting the more (**...**) menu to the right of the PDF link, then selecting **Customize “Invoice to:” field**.
 
-This field is a plain text field that accepts any text. Newlines will be preserved on the invoice PDF. For example, you could include your business name and address like so, and the invoice PDF will have line breaks in the same places:
+This plain text field accepts any text, which is rendered verbatim on the invoice PDF (including newlines). For example, you can include your business name and address as in the following example:
 
-```
+```text
 Acme Inc.
 404 Nowhere Ln.
 New York, NY 10001
 
 ```
 
-After saving your “Invoice to:” field, you can click the `PDF` link to re-download the invoice PDF and it will include the new information.
+After saving your changes, select the **PDF** link to re-download the invoice PDF with the new information.
 
 ---
 

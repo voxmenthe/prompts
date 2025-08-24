@@ -25,6 +25,7 @@ All TTS providers support high quality, low-latency, and lifelike multilingual v
 | [Cartesia](https://docs.livekit.io/agents/integrations/tts/cartesia.md) | `cartesia` |  |
 | [Deepgram](https://docs.livekit.io/agents/integrations/tts/deepgram.md) | `deepgram` |  |
 | [ElevenLabs](https://docs.livekit.io/agents/integrations/tts/elevenlabs.md) | `elevenlabs` |  |
+| [Gemini](https://docs.livekit.io/agents/integrations/tts/gemini.md) | `google` |  |
 | [Google Cloud](https://docs.livekit.io/agents/integrations/tts/google.md) | `google` |  |
 | [Groq](https://docs.livekit.io/agents/integrations/tts/groq.md) | `groq` |  |
 | [Hume](https://docs.livekit.io/agents/integrations/tts/hume.md) | `hume` |  |

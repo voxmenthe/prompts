@@ -60,7 +60,7 @@ npm install livekit-server-sdk @livekit/components-react @livekit/components-sty
 
 ### Keys and Configuration
 
-To start, your app needs an LiveKit API key and secret, as well as your LiveKit project URL.
+To start, your app needs an LiveKit API key and secret, as well as your LiveKit server URL.
 
 In your project root create the file `.env.local` with the following contents. Do not commit this file because it contains your secrets!
 

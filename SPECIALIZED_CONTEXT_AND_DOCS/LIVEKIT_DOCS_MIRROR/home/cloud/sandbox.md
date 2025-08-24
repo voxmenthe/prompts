@@ -1,4 +1,4 @@
-LiveKit Docs › Cloud › Sandbox
+LiveKit Docs › LiveKit Cloud › Sandbox
 
 ---
 

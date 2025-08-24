@@ -1,4 +1,4 @@
-LiveKit Docs › Recording & Composition › Recording individual tracks
+LiveKit Docs › Recording & export › Recording individual tracks
 
 ---
 

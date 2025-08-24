@@ -1,4 +1,4 @@
-LiveKit Docs › Recording & Composition › Egress API
+LiveKit Docs › Recording & export › Egress API
 
 ---
 

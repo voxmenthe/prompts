@@ -1,4 +1,4 @@
-LiveKit Docs › Recording & Composition › Composite & web recordings
+LiveKit Docs › Recording & export › Composite & web recordings
 
 ---
 

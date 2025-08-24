@@ -1,8 +1,8 @@
-LiveKit Docs › Recording & Composition › Overview
+LiveKit Docs › Recording & export › Overview
 
 ---
 
-# Recording and composition
+# Recording and export
 
 > Use LiveKit's egress service to record or livestream a room.
 

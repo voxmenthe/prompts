@@ -71,6 +71,7 @@ LIVEKIT_DOCS_MIRROR
 │   │   │   ├── cartesia.md
 │   │   │   ├── deepgram.md
 │   │   │   ├── elevenlabs.md
+│   │   │   ├── gemini.md
 │   │   │   ├── google.md
 │   │   │   ├── groq.md
 │   │   │   ├── hume.md
@@ -97,6 +98,12 @@ LIVEKIT_DOCS_MIRROR
 │   │   ├── stt.md
 │   │   └── tts.md
 │   ├── ops
+│   │   ├── deployment
+│   │   │   ├── builds.md
+│   │   │   ├── cli.md
+│   │   │   ├── custom.md
+│   │   │   ├── logs.md
+│   │   │   └── secrets.md
 │   │   ├── deployment.md
 │   │   └── recording.md
 │   ├── start

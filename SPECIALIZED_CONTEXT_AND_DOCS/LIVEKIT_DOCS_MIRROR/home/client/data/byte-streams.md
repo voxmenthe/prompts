@@ -106,6 +106,39 @@ fmt.Printf("Sent file with stream ID: %s\n", info.ID)
 
 ```
 
+---
+
+**Android**:
+
+```kotlin
+val file = File("path/to/file.jpg")
+val result = room.localParticipant.sendFile(file, StreamBytesOptions(topic = "my-topic"))
+result.onSuccess { info ->
+    Log.i("Datastream", "sent file id: ${info.id}")
+}
+
+```
+
+---
+
+**Flutter**:
+
+```dart
+final fileToSend = File('path/to/file.jpg');
+var info = await room.localParticipant?.sendFile(fileToSend,
+    options: SendFileOptions(
+      topic: 'my-topic',
+      onProgress: (p0) {
+        // progress is a value between 0 and 1
+        // it indicates the progress of the file transfer
+        print('progress: ${p0 * 100} %');
+      },
+    )
+);
+print('Sent file with stream ID: ${info['id']}');
+
+```
+
 ## Streaming bytes
 
 To stream any kind of binary data, open a stream writer with the `streamBytes` method. You must explicitly close the stream when you are done sending data.
@@ -231,6 +264,41 @@ writer.Write(data, onDone)
 
 // Close the writer when done, if you haven't already
 writer.Close()
+
+```
+
+---
+
+**Android**:
+
+```kotlin
+val writer = room.localParticipant.streamBytes(StreamBytesOptions(topic = "my-topic"))
+Log.i("Datastream", "id: ${writer.info.id}")
+val dataChunks = listOf(byteArrayOf(0x00, 0x01), byteArrayOf(0x02, 0x03))
+for (chunk in dataChunks) {
+    writer.write(chunk)
+}
+writer.close()
+
+```
+
+---
+
+**Flutter**:
+
+```dart
+var stream = await room.localParticipant?.streamText(StreamTextOptions(
+  topic: 'my-topic',
+));
+
+var chunks = ['Lorem ', 'ipsum ', 'dolor ', 'sit ', 'amet...'];
+for (var chunk in chunks) {
+  // write each chunk to the stream
+  await stream?.write(chunk);
+}
+
+// close the stream to signal that no more data will be sent
+await stream?.close();
 
 ```
 
@@ -441,6 +509,58 @@ room.RegisterByteStreamHandler(
     fmt.Printf("received data: %v\n", data)
   },
 )
+
+```
+
+---
+
+**Android**:
+
+```kotlin
+room.registerByteStreamHandler("my-topic") { reader, info ->
+  myCoroutineScope.launch {
+      val info = reader.info
+      Log.i("Datastream", "info stuff")
+      // Option 1: process incrementally
+      reader.flow.collect { chunk ->
+          Log.i("Datastream", "Next chunk received: ${chunk.size} bytes")
+      }
+      // Option 2
+      val data = reader.readAll()
+      val dataSize = data.fold(0) { sum, next -> sum + next.size }
+      Log.i("DataStream", "Received data: total $dataSize bytes")
+  }
+}
+
+```
+
+---
+
+**Flutter**:
+
+```dart
+// for incoming text streams 
+room.registerTextStreamHandler('my-topic',
+    (TextStreamReader reader, String participantIdentity) async {
+  var text = await reader.readAll();
+  print('Received text: $text');
+});
+
+// for receiving files
+room.registerByteStreamHandler('my-topic',
+        (ByteStreamReader reader, String participantIdentity) async {
+    // Get the entire file after the stream completes.
+    var file = await reader.readAll();
+
+    // Write a file to local path
+    var writeFile = File('path/to/copy-${reader.info!.name}');
+      
+    // Merge all chunks to content
+    var content = file.expand((element) => element).toList();
+
+    // Write content to the file.
+    writeFile.writeAsBytesSync(content);
+  });
 
 ```
 

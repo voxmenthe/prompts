@@ -1,8 +1,8 @@
-LiveKit Docs › Cloud › Architecture
+LiveKit Docs › LiveKit Cloud › Architecture
 
 ---
 
-# Cloud Architecture
+# LiveKit Cloud Architecture
 
 > LiveKit Cloud gives you the flexibility of LiveKit's WebRTC stack, combined with global, CDN-scale infrastructure offering 99.99% uptime.
 
@@ -10,7 +10,7 @@ LiveKit Docs › Cloud › Architecture
 
 [LiveKit Cloud](https://livekit.io/cloud) builds on our open-source [SFU](https://github.com/livekit/livekit). This means it supports the exact same SDKs and APIs as the open-source [stack](https://github.com/livekit).
 
-Maintaining compatibility with LiveKit's Open Source stack (OSS) is important to us. We didn't want any developer locked into using Cloud, or needing to integrate a different set of features, APIs or SDKs for their applications to work with it. Our design goal: a developer should be able to switch between Cloud or self-hosted without changing a line of code.
+Maintaining compatibility with LiveKit's Open Source stack (OSS) is important to us. We didn't want any developer locked into using LiveKit Cloud, or needing to integrate a different set of features, APIs or SDKs for their applications to work with it. Our design goal: a developer should be able to switch between LiveKit Cloud or self-hosted without changing a line of code.
 
 ## Distributed Mesh Architecture
 
@@ -34,7 +34,7 @@ When an entire data center fails, customer traffic is automatically migrated to 
 
 ### Globally distributed
 
-To serve end users around the world, our infrastructure runs across multiple Cloud vendors and data centers, delivering under 100ms of latency in each region. Today, we have data centers in the following regions:
+To serve end users around the world, our infrastructure runs across multiple cloud vendors and data centers, delivering under 100ms of latency in each region. Today, we have data centers in the following regions:
 
 - North America (US East, US Central, US West)
 - South America (Brazil)

@@ -1,4 +1,4 @@
-LiveKit Docs › Recording & Composition › Auto Egress
+LiveKit Docs › Recording & export › Auto Egress
 
 ---
 

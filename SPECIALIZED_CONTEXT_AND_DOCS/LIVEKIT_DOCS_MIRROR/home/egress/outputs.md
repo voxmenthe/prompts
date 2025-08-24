@@ -1,4 +1,4 @@
-LiveKit Docs › Recording & Composition › Output and streaming options
+LiveKit Docs › Recording & export › Output and streaming options
 
 ---
 
@@ -319,7 +319,7 @@ EncodedOutputs outputs = new EncodedOutputs(
 RTMP streams do not perform well over long distances. Some stream providers include a region or location as part of your stream url, while others might use region-based routing.
 
 - When self-hosting, choose stream endpoints that are close to where your Egress servers are deployed.
-- With Cloud Egress, we will route your Egress request to a server closest to your RTMP endpoints.
+- With LiveKit Cloud Egress, we will route your Egress request to a server closest to your RTMP endpoints.
 
 #### Adding streams to non-streaming egress
 

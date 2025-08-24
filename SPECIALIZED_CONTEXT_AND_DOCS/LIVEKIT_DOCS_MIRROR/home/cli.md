@@ -10,8 +10,10 @@ LiveKit Docs › LiveKit CLI › Getting started
 
 **macOS**:
 
+Install the LiveKit CLI with [Homebrew](https://brew.sh/):
+
 ```text
-brew update && brew install livekit-cli
+brew install livekit-cli
 
 ```
 

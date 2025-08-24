@@ -11,6 +11,7 @@ LiveKit Docs › Partner spotlight › Google › Overview
 [Google AI](https://ai.google.dev/) provides some of the most powerful AI models and services today, which integrate into LiveKit Agents in the following ways:
 
 - **Gemini**: A family of general purpose high-performance LLMs.
+- **Gemini TTS**: A speech synthesis model that generates customizable speech from text.
 - **Google Cloud STT and TTS**: Affordable, production-grade models for transcription and speech synthesis.
 - **Gemini Live API**: A speech-to-speech realtime model with live video input.
 
@@ -68,6 +69,8 @@ LiveKit provides SIP support for [telephony integration](https://docs.livekit.io
 The following links provide more information on each available Google component in LiveKit Agents.
 
 - **[Gemini LLM](https://docs.livekit.io/agents/integrations/llm/gemini.md)**: LiveKit Agents docs for Google Gemini models.
+
+- **[Gemini TTS](https://docs.livekit.io/agents/integrations/tts/gemini.md)**: LiveKit Agents docs for Gemini TTS.
 
 - **[Gemini Live API](https://docs.livekit.io/agents/integrations/realtime/gemini.md)**: LiveKit Agents docs for the Gemini Live API.
 

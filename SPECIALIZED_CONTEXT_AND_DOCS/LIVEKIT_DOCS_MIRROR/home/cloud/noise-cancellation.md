@@ -1,4 +1,4 @@
-LiveKit Docs › Cloud › Enhanced noise cancellation
+LiveKit Docs › LiveKit Cloud › Enhanced noise cancellation
 
 ---
 

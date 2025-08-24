@@ -1,10 +1,10 @@
-LiveKit Docs › Cloud › Analytics API
+LiveKit Docs › LiveKit Cloud › Analytics API
 
 ---
 
 # Analytics API
 
-> Get information about your LiveKit sessions and participants
+> Get information about your LiveKit Cloud sessions and participants
 
 ## Generate an access token for Analytics requests
 
