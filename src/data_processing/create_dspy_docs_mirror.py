@@ -58,7 +58,7 @@ DSPY_REPO_ROOT = Path("/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy")
 
 # Output directory to create the DSPY_DOCS mirror in. If None, uses
 # a folder named 'DSPY_DOCS' in the current working directory.
-OUTPUT_DIR: Optional[Path] = Path("/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS")
+OUTPUT_DIR: Optional[Path] = Path("/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/DSPY_DOCS_MIRROR")
 
 # Whether to remove existing OUTPUT_DIR before mirroring.
 CLEAN_OUTPUT: bool = True
