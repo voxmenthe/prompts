@@ -25,12 +25,25 @@ pip install "livekit-agents[cartesia,deepgram,openai]~=1.2"
 
 You may also install plugins as individual packages. For example, this is equivalent to the previous command:
 
+** Filename: `Install plugins`**
+
 ```shell
 pip install \
   "livekit-agents~=1.2" \
   "livekit-plugins-cartesia~=1.2" \
   "livekit-plugins-deepgram~=1.2" \
   "livekit-plugins-openai~=1.2"
+
+```
+
+** Filename: `Install plugins`**
+
+```shell
+pnpm install \
+  "@livekit/agents@1.x" \
+  "@livekit/agents-plugins-elevenlabs@1.x" \
+  "@livekit/agents-plugins-deepgram@1.x" \
+  "@livekit/agents-plugins-openai@1.x"
 
 ```
 
@@ -60,6 +73,31 @@ CARTESIA_API_KEY=<your-cartesia-api-key>
 
 ```
 
+** Filename: `agent.ts`**
+
+```typescript
+import * as deepgram from '@livekit/agents-plugin-deepgram';
+import * as elevenlabs from '@livekit/agents-plugin-elevenlabs';
+import * as livekit from '@livekit/agents-plugin-livekit';
+import * as openai from '@livekit/agents-plugin-openai';
+
+const session = new voice.AgentSession({
+   llm: new openai.LLM(),
+   tts: new elevenlabs.TTS(),
+   stt: new deepgram.STT(),
+});
+
+```
+
+** Filename: `.env`**
+
+```shell
+OPENAI_API_KEY=<your-openai-api-key>
+DEEPGRAM_API_KEY=<your-deepgram-api-key>
+ELEVEN_API_KEY=<your-elevenlabs-api-key>
+
+```
+
 ## OpenAI API compatibility
 
 Many providers have standardized around the OpenAI API format for chat completions and more. The LiveKit Agents OpenAI plugin provides easy compatibility with many of these providers through special methods which load the correct API key from environment variables. For instance, to use Cerebras instead of OpenAI, you can use the following code:
@@ -70,9 +108,29 @@ Many providers have standardized around the OpenAI API format for chat completio
 from livekit.plugins import openai
 
 session = AgentSession(
-    llm=openai.LLM.with_cerebras(model="llama-3.1-70b-versatile"),
+    llm=openai.LLM.with_cerebras(model="llama-3.3-70b"),
     # ... stt, tts, etc ..
 )  
+
+```
+
+** Filename: `.env`**
+
+```shell
+CEREBRAS_API_KEY=<your-cerebras-api-key>
+# ... other api keys ...
+
+```
+
+** Filename: `agent.ts`**
+
+```typescript
+import * as openai from '@livekit/agents-plugin-openai';
+
+const session = new voice.AgentSession({
+   llm: openai.LLM.with_cerebras("llama-3.1-70b"),
+   // ... stt, tts, etc ...
+});
 
 ```
 

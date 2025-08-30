@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Speech-to-text (STT) › Gladia
 
 > How to use the Gladia STT plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Gladia](https://gladia.io/) provides accurate speech recognition optimized for enterprise use cases. You can use the open source Gladia integration for LiveKit Agents to build voice AI with fast, accurate transcription and optional translation features.

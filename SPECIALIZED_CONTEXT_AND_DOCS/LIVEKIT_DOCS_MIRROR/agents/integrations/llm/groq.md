@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Large language models (LLM) › Groq
 
 > How to use the Groq LLM plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Groq](https://groq.com/) provides fast LLM inference using open models from Llama, DeepSeek, and more. With LiveKit's Groq integration and the Agents framework, you can build low-latency voice AI applications.

@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Speech-to-text (STT) › OpenAI
 
 > How to use the OpenAI STT plugin for LiveKit Agents.
 
+Available in:
+- [x] Node.js
+- [x] Python
+
 ## Overview
 
 [OpenAI](https://platform.openai.com) provides STT support via the latest `gpt-4o-transcribe` model as well as `whisper-1`. You can use the open source OpenAI plugin for LiveKit agents to build voice AI applications with fast, accurate transcription.

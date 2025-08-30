@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Text-to-speech (TTS) › Cartesia
 
 > How to use the Cartesia TTS plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Cartesia](https://www.cartesia.ai/) provides customizable speech synthesis across a number of different languages and produces natural-sounding speech with low latency. You can use the Cartesia TTS plugin for LiveKit Agents to build voice AI applications that sound realistic.

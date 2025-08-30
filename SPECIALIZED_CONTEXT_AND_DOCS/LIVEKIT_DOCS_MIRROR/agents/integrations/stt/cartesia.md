@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Speech-to-text (STT) › Cartesia
 
 > How to use the Cartesia STT plugin for LiveKit Agents.
 
+Available in:
+- [x] Node.js
+- [x] Python
+
 ## Overview
 
 [Cartesia](https://www.cartesia.ai/) provides advanced speech recognition technology with their Ink-Whisper model, optimized for real-time transcription in conversational settings. With LiveKit's Cartesia integration and the Agents framework, you can build AI agents that provide high-accuracy transcriptions with ultra-low latency.

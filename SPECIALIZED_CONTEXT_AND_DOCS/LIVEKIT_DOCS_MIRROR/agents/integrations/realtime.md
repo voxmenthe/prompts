@@ -20,6 +20,8 @@ LiveKit is open source and welcomes [new plugin contributions](https://docs.live
 
 Realtime model plugins have a constructor method to create a `RealtimeModel` instance. This instance can be passed directly to an `AgentSession` or `Agent` in its constructor, in place of an [LLM plugin](https://docs.livekit.io/agents/integrations/llm.md).
 
+** Filename: `agent.py`**
+
 ```python
 from livekit.agents import AgentSession
 from livekit.plugins import openai
@@ -30,11 +32,25 @@ session = AgentSession(
 
 ```
 
+** Filename: `agent.ts`**
+
+```typescript
+import voice from '@livekit/agents';
+import * as openai from '@livekit/agents-plugin-openai';
+
+const session = new voice.AgentSession({
+   llm: new openai.realtime.RealtimeModel()
+});
+
+```
+
 For additional information about installing and using plugins, see the [plugins overview](https://docs.livekit.io/agents/integrations.md#install).
 
 ### Usage with separate TTS
 
 To use a realtime model with a different [TTS provider](https://docs.livekit.io/agents/integrations/tts.md), configure the realtime model to use a text-only response modality and include a TTS plugin in your `AgentSession` configuration.
+
+** Filename: `agent.py`**
 
 ```python
 session = AgentSession(
@@ -44,18 +60,28 @@ session = AgentSession(
 
 ```
 
+** Filename: `agent.ts`**
+
+```typescript
+const session = new voice.AgentSession({
+   llm: new openai.realtime.RealtimeModel(modalities=["text"]), // Or other realtime model plugin
+   tts: new elevenlabs.TTS() // Or other TTS plugin of your choice
+});
+
+```
+
 This feature requires support for a text-only response modality. Consult the following table for information about which providers support this feature.
 
 ## Available providers
 
 The following table lists the available realtime model providers. All providers support fast and expressive full speech-to-speech generation, tool calling, image understanding, and simple VAD-based [turn detection](https://docs.livekit.io/agents/build/turns.md). Support for other features is noted in the following table.
 
-| Provider | Plugin | Notes |
-| -------- | ------ | ----- |
-| [Gemini Live API](https://docs.livekit.io/agents/integrations/realtime/gemini.md) | `google` |  |
-| [Amazon Nova Sonic](https://docs.livekit.io/agents/integrations/realtime/nova-sonic.md) | `aws` |  |
-| [OpenAI Realtime API](https://docs.livekit.io/agents/integrations/realtime/openai.md) | `openai` |  |
-| [Azure OpenAI Realtime API](https://docs.livekit.io/agents/integrations/realtime/azure-openai.md) | `openai` |  |
+| Provider | Plugin | Notes | Available in |
+| -------- | ------ | ----- | ------------ |
+| [Gemini Live API](https://docs.livekit.io/agents/integrations/realtime/gemini.md) | `google` |  | Python, Nodejs |
+| [Amazon Nova Sonic](https://docs.livekit.io/agents/integrations/realtime/nova-sonic.md) | `aws` |  | Python |
+| [OpenAI Realtime API](https://docs.livekit.io/agents/integrations/realtime/openai.md) | `openai` |  | Python, Nodejs |
+| [Azure OpenAI Realtime API](https://docs.livekit.io/agents/integrations/realtime/azure-openai.md) | `openai` |  | Python, Nodejs |
 
 ## Considerations and limitations
 

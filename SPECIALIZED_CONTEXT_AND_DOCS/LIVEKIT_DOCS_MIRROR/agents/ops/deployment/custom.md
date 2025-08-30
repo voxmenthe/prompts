@@ -28,7 +28,7 @@ LiveKit Agents can be deployed almost anywhere. The LiveKit team and community h
 
 - **[Kubernetes](https://github.com/livekit-examples/agent-deployment/tree/main/kubernetes)**: Sample configuration for deploying and autoscaling LiveKit Agents on Kubernetes.
 
-- **[Render.com](https://github.com/livekit-examples/agent-deployment/tree/main/render.com)**: Sample configuration for deploying and autoscaling LiveKit Agents on Render.com.
+- **[Render](https://github.com/livekit-examples/agent-deployment/tree/main/render)**: Sample configuration for deploying and autoscaling LiveKit Agents on Render.
 
 - **[More deployment examples](https://github.com/livekit-examples/agent-deployment)**: Example `Dockerfile` and configuration files for a variety of deployment platforms.
 

@@ -6,6 +6,12 @@ LiveKit Docs › Integration guides › Speech-to-text (STT) › Amazon Transcri
 
 > How to use the Amazon Transcribe STT plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
+## Overview
+
 [Amazon Transcribe](https://docs.aws.amazon.com/transcribe/latest/dg/what-is.html) provides a streaming STT service with high accuracy, realtime transcription. You can use the open source Amazon Transcribe plugin for LiveKit Agents to build voice AI with fast, accurate transcription.
 
 ## Quick reference

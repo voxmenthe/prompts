@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Large language models (LLM) › Firework
 
 > How to use Fireworks AI Llama models with LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Fireworks AI](https://fireworks.ai/) provides access to Llama 3.1 instruction-tuned models through their inference API. These models are multilingual and text-only, making them suitable for a variety of agent applications.

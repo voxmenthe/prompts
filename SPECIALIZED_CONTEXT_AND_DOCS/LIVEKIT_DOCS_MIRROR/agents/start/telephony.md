@@ -36,8 +36,21 @@ To enable explicit dispatch, give your agent a name. This disables automatic dis
 if __name__ == "__main__":
     agents.cli.run_app(agents.WorkerOptions(
         entrypoint_fnc=entrypoint,
-
         # agent_name is required for explicit dispatch
+        agent_name="my-telephony-agent"
+    ))
+
+```
+
+** Filename: `agent.ts`**
+
+```typescript
+// ... your existing agent code ...
+
+if __name__ == "__main__":
+    agents.cli.run_app(agents.WorkerOptions(
+        entrypoint_fnc=entrypoint,
+        // Agent name is required for explicit dispatch
         agent_name="my-telephony-agent"
     ))
 
@@ -87,6 +100,8 @@ lk sip dispatch create dispatch-rule.json
 
 Call the `generate_reply` method of your `AgentSession` to greet the caller after picking up. This code goes after `session.start`:
 
+** Filename: `agent.py`**
+
 ```python
 await session.generate_reply(
     instructions="Greet the user and offer your assistance."
@@ -94,16 +109,39 @@ await session.generate_reply(
 
 ```
 
+** Filename: `agent.ts`**
+
+```typescript
+session.generateReply({
+  instructions: 'Greet the user and offer your assistance.',
+});
+
+
+```
+
 ### Call your agent
 
 After you start your agent with the following command, dial the number you set up earlier to hear your agent answer the phone.
+
+** Filename: `shell`**
 
 ```shell
 python agent.py dev
 
 ```
 
+** Filename: `shell`**
+
+```shell
+pnpm run dev
+
+```
+
 ## Outbound calls
+
+Available in:
+- [ ] Node.js
+- [x] Python
 
 After setting up your [outbound trunk](https://docs.livekit.io/sip/trunk-outbound.md), you may place outbound calls by dispatching an agent and then creating a SIP participant.
 
@@ -218,8 +256,6 @@ await lkapi.agent_dispatch.create_dispatch(
 
 Your agent may still encounter an automated system such as an answering machine or voicemail. You can give your LLM the ability to detect a likely voicemail system via tool call, and then perform special actions such as leaving a message and [hanging up](#hangup).
 
-** Filename: `agent.py`**
-
 ```python
 import asyncio # add this import at the top of your file
 
@@ -238,6 +274,10 @@ class Assistant(Agent):
 ```
 
 ## Hangup
+
+Available in:
+- [ ] Node.js
+- [x] Python
 
 To end a call for all participants, use the `delete_room` API. If only the agent session ends, the user will continue to hear silence until they hang up. The example below shows a basic `hangup_call` function you can use as a starting point.
 
@@ -278,6 +318,10 @@ class MyAgent(Agent):
 ```
 
 ## Transferring call to another number
+
+Available in:
+- [ ] Node.js
+- [x] Python
 
 In case the agent needs to transfer the call to another number or SIP destination, you can use the `transfer_sip_participant` API.
 

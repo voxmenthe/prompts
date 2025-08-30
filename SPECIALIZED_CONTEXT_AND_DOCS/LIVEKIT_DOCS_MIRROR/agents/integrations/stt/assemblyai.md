@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Speech-to-text (STT) › AssemblyAI
 
 > How to use the AssemblyAI STT plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [AssemblyAI](https://www.assemblyai.com/docs/speech-to-text/streaming) provides a streaming STT service with high accuracy, realtime transcription. You can use the open source AssemblyAI plugin for LiveKit Agents to build voice AI with fast, accurate transcription.

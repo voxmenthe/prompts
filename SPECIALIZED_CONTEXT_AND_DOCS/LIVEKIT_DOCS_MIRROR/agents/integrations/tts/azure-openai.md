@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Text-to-speech (TTS) › Azure OpenAI
 
 > How to use the Azure OpenAI TTS plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service/) provides OpenAI services hosted on Azure. With LiveKit's Azure OpenAI TTS integration and the Agents framework, you can build voice AI applications that sound realistic and natural.

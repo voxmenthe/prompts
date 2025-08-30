@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Speech-to-text (STT) › Spitch
 
 > How to use the Spitch STT plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Spitch](https://spitch.app/) provides AI-powered speech and language solutions optimized for African languages. With LiveKit's Spitch STT integration and the Agents framework, you can build voice AI agents that understand speech in a variety of African languages.

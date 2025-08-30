@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Text-to-speech (TTS) › Inworld
 
 > How to use the Inworld TTS plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Inworld](https://inworld.ai/) develops AI products for builders of consumer applications, including an accessible, high quality text-to-speech service for developers. With LiveKit's Inworld TTS integration and the Agents framework, you can build engaging and immersive voice AI experiences.

@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Text-to-speech (TTS) › Deepgram
 
 > How to use the Deepgram TTS plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Deepgram](https://deepgram.com/) provides responsive, human-like text-to-speech technology for voice AI. With LiveKit's Deepgram integration and the Agents framework, you can build voice AI agents that sound realistic.

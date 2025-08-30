@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Text-to-speech (TTS) › Amazon Polly
 
 > How to use the Amazon Polly TTS plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Amazon Polly](https://aws.amazon.com/polly/) is an AI voice generator that provides high-quality, natural-sounding human voices in multiple languages. With LiveKit's Amazon Polly integration and the Agents framework, you can build voice AI applications that sound realistic.

@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Large language models (LLM) › Together
 
 > How to use Together AI Llama models with LiveKit Agents.
 
+Available in:
+- [x] Node.js
+- [x] Python
+
 ## Overview
 
 [Together AI](https://www.together.ai/) provides access to Llama 2 and Llama 3 models including instruction-tuned models through their inference API. These models are multilingual and text-only, making them suitable for a variety of agent applications.

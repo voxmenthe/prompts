@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Text-to-speech (TTS) › Hume
 
 > How to use the Hume TTS plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Hume](https://hume.ai/) provides a text-to-speech service that understands emotional expressions. You can use the Hume TTS plugin for LiveKit Agents to create lifelike and emotional voice AI apps.

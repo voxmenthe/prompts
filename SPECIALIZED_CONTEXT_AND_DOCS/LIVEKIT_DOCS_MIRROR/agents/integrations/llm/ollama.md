@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Large language models (LLM) › Ollama
 
 > How to run models locally using Ollama with LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Ollama](https://ollama.com/library) is an open source LLM engine that you can use to run models locally with an OpenAI-compatible API. Ollama support is available using the OpenAI plugin for LiveKit Agents.

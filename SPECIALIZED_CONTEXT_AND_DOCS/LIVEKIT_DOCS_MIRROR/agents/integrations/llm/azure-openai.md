@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Large language models (LLM) › Azure Op
 
 > How to use the Azure OpenAI LLM plugin for LiveKit Agents.
 
+Available in:
+- [x] Node.js
+- [x] Python
+
 ## Overview
 
 [Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service) provides access to OpenAI's powerful language models like `gpt-4o` and `o1` through Azure's managed service. With LiveKit's Azure OpenAI integration and the Agents framework, you can build sophisticated voice AI applications using their industry-leading models.

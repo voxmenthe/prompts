@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Speech-to-text (STT) › Azure AI Speech
 
 > How to use the Azure Speech STT plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Azure Speech](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/overview) provides a streaming [STT service](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/index-speech-to-text) with high accuracy, realtime transcription. You can use the open source Azure Speech plugin for LiveKit Agents to build voice AI with fast, accurate transcription.

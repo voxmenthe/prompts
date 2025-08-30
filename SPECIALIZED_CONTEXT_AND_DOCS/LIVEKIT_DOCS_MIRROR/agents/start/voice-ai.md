@@ -10,23 +10,25 @@ LiveKit Docs › Getting started › Voice AI quickstart
 
 This guide walks you through the setup of your very first voice assistant using LiveKit Agents for Python. In less than 10 minutes, you'll have a voice assistant that you can speak to in your terminal, browser, telephone, or native app.
 
-- **[Python starter project](https://github.com/livekit-examples/agent-starter-python)**: Prefer to just clone a repo? This repo is ready-to-go, will all the code you need to get started.
+- **[Python starter project](https://github.com/livekit-examples/agent-starter-python)**: Ready-to-go Python starter project. Clone a repo with all the code you need to get started.
 
-- **[Deeplearning.ai course](https://www.deeplearning.ai/short-courses/building-ai-voice-agents-for-production/)**: For a more in-depth guide, learn to build and deploy voice agents with LiveKit in this free course from Deeplearning.ai.
+- **[Node.js starter project](https://github.com/livekit-examples/agent-starter-node)**: Ready-to-go Node.js starter project. Clone a repo with all the code you need to get started.
 
 ## Requirements
 
 The following sections describe the minimum requirements to get started with LiveKit Agents.
 
-### Python and uv
+**Python**:
 
-LiveKit Agents requires Python 3.9 or later.
+- LiveKit Agents requires Python >= 3.9.
+- This guide uses the [uv](https://docs.astral.sh/uv/getting-started/installation/) package manager.
 
-This guide is written for for the [uv](https://docs.astral.sh/uv/getting-started/installation/) package manager.
+---
 
-> ℹ️ **Looking for Node.js?**
-> 
-> The Node.js beta is still in development and has not yet reached v1.0. See the [v0.x documentation](https://docs.livekit.io/agents/v0.md) for Node.js reference and join the [LiveKit Community Slack](https://livekit.io/join-slack) to be the first to know when the next release is available.
+**Node.js**:
+
+- LiveKit Agents for Node.js requires Node.js >= 20.
+- This guide uses [pnpm](https://pnpm.io/installation) package manager and requires pnpm >= 10.15.0.
 
 ### LiveKit Cloud
 
@@ -129,11 +131,30 @@ Use the instructions in the following sections to set up your new project.
 
 ### Project initialization
 
-Create a new project with uv. The following command creates a new folder and a `pyproject.toml` file inside of it.
+Create a new project for the voice agent.
+
+**Python**:
+
+Run the following commands to use uv to create a new project ready to use for your new voice agent.
 
 ```shell
 uv init livekit-voice-agent --bare
 cd livekit-voice-agent
+
+```
+
+---
+
+**Node.js**:
+
+Run the following commands to use pnpm to create a new TypeScript-based project ready to use for your new voice agent.
+
+```shell
+mkdir livekit-voice-agent
+cd livekit-voice-agent
+pnpm init --init-type module
+pnpm add -D typescript tsx
+pnpm exec tsc --init
 
 ```
 
@@ -143,11 +164,27 @@ cd livekit-voice-agent
 
 Install the following packages to build a complete voice AI agent with your STT-LLM-TTS pipeline, noise cancellation, and [turn detection](https://docs.livekit.io/agents/build/turns.md):
 
+** Filename: `Python`**
+
 ```shell
 uv add \
   "livekit-agents[deepgram,openai,cartesia,silero,turn-detector]~=1.2" \
   "livekit-plugins-noise-cancellation~=0.2" \
   "python-dotenv"
+
+```
+
+** Filename: `Node.js`**
+
+```shell
+pnpm add @livekit/agents@1.x \
+    @livekit/agents-plugin-deepgram@1.x \
+    @livekit/agents-plugin-openai@1.x \
+    @livekit/agents-plugin-cartesia@1.x \
+    @livekit/agents-plugin-silero@1.x \
+    @livekit/agents-plugin-livekit@1.x \
+    @livekit/noise-cancellation-node@0.x \
+    dotenv
 
 ```
 
@@ -157,11 +194,23 @@ uv add \
 
 Install the following packages to build a complete voice AI agent with your realtime model and noise cancellation.
 
+** Filename: `Python`**
+
 ```shell
 uv add \
   "livekit-agents[openai]~=1.2" \
   "livekit-plugins-noise-cancellation~=0.2" \
   "python-dotenv"
+
+```
+
+** Filename: `Node.js`**
+
+```shell
+pnpm add @livekit/agents@1.x \
+         @livekit/agents-plugin-openai@1.x \
+         livekit-plugins-noise-cancellation@0.x \
+         dotenv
 
 ```
 
@@ -178,8 +227,6 @@ Now open this file and add keys for your selected AI provider. The file should l
 
 **STT-LLM-TTS pipeline**:
 
-** Filename: `.env.local`**
-
 ```shell
 DEEPGRAM_API_KEY=<Your Deepgram API Key>
 OPENAI_API_KEY=<Your OpenAI API Key>
@@ -194,8 +241,6 @@ LIVEKIT_URL=%{wsURL}%
 
 **Realtime model**:
 
-** Filename: `.env.local`**
-
 ```shell
 OPENAI_API_KEY=<Your OpenAI API Key>
 LIVEKIT_API_KEY=%{apiKey}%
@@ -206,7 +251,7 @@ LIVEKIT_URL=%{wsURL}%
 
 ### Agent code
 
-Create a file named `agent.py` containing the following code for your first voice agent.
+Create a file with your agent code.
 
 **STT-LLM-TTS pipeline**:
 
@@ -263,6 +308,71 @@ if __name__ == "__main__":
 
 ```
 
+** Filename: `agent.ts`**
+
+```typescript
+import {
+  type JobContext,
+  type JobProcess,
+  WorkerOptions,
+  cli,
+  defineAgent,
+  voice,
+} from '@livekit/agents';
+import * as cartesia from '@livekit/agents-plugin-cartesia';
+import * as deepgram from '@livekit/agents-plugin-deepgram';
+import * as livekit from '@livekit/agents-plugin-livekit';
+import * as openai from '@livekit/agents-plugin-openai';
+import * as silero from '@livekit/agents-plugin-silero';
+import { BackgroundVoiceCancellation } from '@livekit/noise-cancellation-node';
+import { fileURLToPath } from 'node:url';
+import dotenv from 'dotenv';
+
+dotenv.config({ path: '.env.local' });
+
+export default defineAgent({
+  prewarm: async (proc: JobProcess) => {
+    proc.userData.vad = await silero.VAD.load();
+  },
+  entry: async (ctx: JobContext) => {
+    const vad = ctx.proc.userData.vad! as silero.VAD;
+    
+    const assistant = new voice.Agent({
+	    instructions: 'You are a helpful voice AI assistant.',
+    });
+
+    const session = new voice.AgentSession({
+      vad,
+      stt: new deepgram.STT({ model: 'nova-3', language: 'multi' }),
+      llm: new openai.LLM({ model: 'gpt-4o-mini' }),
+      tts: new cartesia.TTS({ 
+        model: 'sonic-2', 
+        voice: 'f786b574-daa5-4673-aa0c-cbe3e8534c02' 
+      }),
+      turnDetection: new livekit.turnDetector.MultilingualModel(),
+    });
+
+    await session.start({
+      agent: assistant,
+      room: ctx.room,
+      inputOptions: {
+        // For telephony applications, use `TelephonyBackgroundVoiceCancellation` for best results
+        noiseCancellation: BackgroundVoiceCancellation(),
+      },
+    });
+
+    await ctx.connect();
+
+    const handle = session.generateReply({
+      instructions: 'Greet the user and offer your assistance.',
+    });
+  },
+});
+
+cli.runApp(new WorkerOptions({ agent: fileURLToPath(import.meta.url) }));
+
+```
+
 ---
 
 **Realtime model**:
@@ -314,16 +424,94 @@ if __name__ == "__main__":
 
 ```
 
+** Filename: `Node.js`**
+
+```typescript
+import {
+  type JobContext,
+  WorkerOptions,
+  cli,
+  defineAgent,
+  voice,
+} from '@livekit/agents';
+import * as openai from '@livekit/agents-plugin-openai';
+import { BackgroundVoiceCancellation } from '@livekit/noise-cancellation-node';
+import { fileURLToPath } from 'node:url';
+import dotenv from 'dotenv';
+
+dotenv.config({ path: '.env.local' });
+
+class Assistant extends voice.Agent {
+  constructor() {
+    super({
+      instructions: 'You are a helpful voice AI assistant.',
+    });
+  }
+}
+
+export default defineAgent({
+  entry: async (ctx: JobContext) => {
+    const session = new voice.AgentSession({
+      llm: new openai.realtime.RealtimeModel({
+        voice: 'coral',
+      }),
+    });
+
+    await session.start({
+      agent: new Assistant(),
+      room: ctx.room,
+      inputOptions: {
+        // For telephony applications, use `TelephonyBackgroundVoiceCancellation` for best results
+        noiseCancellation: BackgroundVoiceCancellation(),
+      },
+    });
+
+    await ctx.connect();
+
+    const handle = session.generateReply({
+      instructions: 'Greet the user and offer your assistance.',
+    });
+    await handle.waitForPlayout();
+  },
+});
+
+cli.runApp(new WorkerOptions({ agent: fileURLToPath(import.meta.url) }));
+
+```
+
 ## Download model files
 
-To use the `turn-detector`, `silero`, or `noise-cancellation` plugins, you first need to download the model files:
+To use the `turn-detector`, `silero`, and `noise-cancellation` plugins, you first need to download the model files:
+
+**Python**:
 
 ```shell
 uv run agent.py download-files
 
 ```
 
+---
+
+**Node.js**:
+
+1. Add the `download-files` script to your `package.json` file:
+
+```shell
+pnpm pkg set "scripts.download-files=tsc && node agent.js download-files"
+
+```
+2. After you add the `download-files` script, run the following command:
+
+```shell
+pnpm download-files
+
+```
+
 ## Speak to your agent
+
+> ℹ️ **Python only**
+> 
+> If you're using Node.js, you can skip this setup and continue to [Connect to playground](#connect-to-playground).
 
 Start your agent in `console` mode to run inside your terminal:
 
@@ -340,22 +528,73 @@ Your agent speaks to you in the terminal, and you can speak to it as well.
 
 Start your agent in `dev` mode to connect it to LiveKit and make it available from anywhere on the internet:
 
+**Python**:
+
 ```shell
 uv run agent.py dev
 
 ```
 
+---
+
+**Node.js**:
+
+1. Add the dev script to your `package.json` file:
+
+```shell
+pnpm pkg set "scripts.dev=tsx agent.ts dev"
+
+```
+2. After you add the dev script, anytime you want to run your agent in development mode, run the following command:
+
+```shell
+pnpm dev
+
+```
+
 Use the [Agents playground](https://docs.livekit.io/agents/start/playground.md) to speak with your agent and explore its full range of multimodal capabilities.
 
-> 💡 **Agent CLI modes**
-> 
-> In the `console` mode, the agent runs locally and is only available within your terminal.
-> 
-> Run your agent in `dev` (development / debug) or `start` (production) mode to connect to LiveKit Cloud and join rooms.
+## Agent CLI modes
+
+In the `dev` and `start` modes, your agent connects to LiveKit Cloud and joins rooms:
+
+- `dev` mode: Run your agent in development mode for testing and debugging.
+- `start` mode: Run your agent in production mode.
+
+**Python**:
+
+For Python agents, run the following command to start your agent in production mode:
+
+```shell
+uv run agent.py start
+
+```
+
+---
+
+**Node.js**:
+
+For Node.js agents, you need to add the `build` and `start` scripts to your `package.json` file to use production mode.
+
+```shell
+pnpm pkg set "scripts.build=tsc"
+pnpm pkg set "scripts.start=node agent.js start"
+
+```
+
+Now run the following commands to build and start your agent for production:
+
+```shell
+pnpm build
+pnpm start
+
+```
+
+Python agents can also use `console` mode, which runs locally and is only available within your terminal.
 
 ## Deploy to LiveKit Cloud
 
-From the root of your project, run the following command with the LiveKit CLI. Ensure you have [linked your LiveKit Cloud project](#cli).
+From the root of your project, run the following command with the LiveKit CLI. Ensure you have [linked your LiveKit Cloud project](#cli) and added the [build and start scripts](#cli-modes).
 
 ```shell
 lk agent create

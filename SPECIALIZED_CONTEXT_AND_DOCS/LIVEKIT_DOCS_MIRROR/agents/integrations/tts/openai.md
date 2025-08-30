@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Text-to-speech (TTS) › OpenAI
 
 > How to use the OpenAI TTS plugin for LiveKit Agents.
 
+Available in:
+- [x] Node.js
+- [x] Python
+
 ## Overview
 
 [OpenAI TTS](https://platform.openai.com/docs/guides/text-to-speech) provides lifelike spoken audio through their latest model `gpt-4o-mini-tts` model or their well-tested `tts-1` and `tts-1-hd` models. With LiveKit's OpenAI TTS integration and the Agents framework, you can build voice AI applications that sound realistic and natural.

@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Text-to-speech (TTS) › Gemini
 
 > How to use the Gemini TTS plugin for LiveKit Agents.
 
+Available in (BETA):
+- [x] Node.js
+- [x] Python
+
 ## Overview
 
 [Gemini TTS](https://ai.google.dev/gemini-api/docs/speech-generation) generates speech from text with customizable style, tone, accent, and pace through natural language prompts. It’s designed for scenarios that require precise recitation and nuanced audio output. With LiveKit's Gemini TTS integration and the Agents framework, you can build voice AI applications with accurate and nuanced speech.

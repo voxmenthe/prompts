@@ -12,6 +12,10 @@ There are many reasons to record or persist the sessions that occur in your app,
 
 ## Video or audio recording
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 Use the [Egress feature](https://docs.livekit.io/home/egress/overview.md) to record audio and/or video. The simplest way to do this is to start a [room composite recorder](https://docs.livekit.io/home/egress/composite-recording.md) in your agent's entrypoint. This starts recording when the agent enters the room and automatically captures all audio and video shared in the room. Recording ends when all participants leave. Recordings are stored in the cloud storage provider of your choice.
 
 ### Example
@@ -90,6 +94,30 @@ def entrypoint(ctx: JobContext):
     ctx.add_shutdown_callback(write_transcript)
 
     # .. The rest of your entrypoint code follows ...
+
+```
+
+** Filename: `agent.ts`**
+
+```typescript
+import fs from 'node:fs';
+
+export default defineAgent({
+  entry: async (ctx: JobContext) => {
+    // Add the following code to the top, before calling ctx.connect()
+
+    ctx.addShutdownCallback(async () => {
+      const currentDate = new Date().toISOString();
+      const filename = `/tmp/transcript_${ctx.room.name}_${currentDate}.json`;
+
+      await fs.promises.writeFile(filename, JSON.stringify(session.history.toJSON(), null, 2));
+
+      console.log(`Transcript for ${ctx.room.name} saved to ${filename}`);
+    });
+
+    // .. The rest of your entrypoint code follows ...
+  },
+});
 
 ```
 

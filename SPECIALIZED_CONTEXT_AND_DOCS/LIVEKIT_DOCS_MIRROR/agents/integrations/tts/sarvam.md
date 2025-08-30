@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Text-to-speech (TTS) › Sarvam
 
 > How to use the Sarvam TTS plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Sarvam](https://sarvam.ai/) provides high-quality text-to-speech technology optimized for Indian languages. With LiveKit's Sarvam integration and the Agents framework, you can build voice AI agents that sound natural in Indian languages.

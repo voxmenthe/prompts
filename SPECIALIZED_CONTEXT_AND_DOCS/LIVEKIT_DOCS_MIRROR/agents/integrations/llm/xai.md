@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Large language models (LLM) › xAI
 
 > How to use xAI LLM with LiveKit Agents.
 
+Available in:
+- [x] Node.js
+- [x] Python
+
 ## Overview
 
 [xAI](https://x.ai/) provides access to Grok models through their OpenAI-compatible API. These models are multilingual and support multimodal capabilities, making them suitable for a variety of agent applications.

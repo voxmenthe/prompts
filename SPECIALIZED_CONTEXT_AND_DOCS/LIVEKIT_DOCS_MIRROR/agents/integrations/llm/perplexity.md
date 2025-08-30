@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Large language models (LLM) › Perplexi
 
 > How to use Perplexity LLM with LiveKit Agents.
 
+Available in:
+- [x] Node.js
+- [x] Python
+
 ## Overview
 
 [Perplexity](https://www.perplexity.ai/) provides access to their Sonar models, which are based on Llama 3.1 but fine-tuned for search, through their inference API. These models are multilingual and text-only, making them suitable for a variety of agent applications.

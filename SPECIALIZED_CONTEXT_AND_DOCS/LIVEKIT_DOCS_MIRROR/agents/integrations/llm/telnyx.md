@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Large language models (LLM) › Telnyx
 
 > How to use Telnyx inference with LiveKit Agents.
 
+Available in:
+- [x] Node.js
+- [x] Python
+
 ## Overview
 
 [Telnyx](https://telnyx.com/) provides access to Llama 3.1 and other models through their inference API. These models are multilingual and text-only, making them suitable for a variety of agent applications.

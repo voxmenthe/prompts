@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Speech-to-text (STT) › Deepgram
 
 > How to use the Deepgram STT plugin for LiveKit Agents.
 
+Available in:
+- [x] Node.js
+- [x] Python
+
 ## Overview
 
 [Deepgram](https://deepgram.com/) provides advanced speech recognition technology and AI-driven audio processing solutions. Customizable speech models allow you to fine tune transcription performance for your specific use case. With LiveKit's Deepgram integration and the Agents framework, you can build AI agents that provide high-accuracy transcriptions.

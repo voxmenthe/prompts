@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Text-to-speech (TTS) › Rime
 
 > How to use the Rime TTS plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Rime](https://rime.ai/) provides text-to-speech synthesis (TTS) optimized for speed and quality. With LiveKit's Rime integration and the Agents framework, you can build voice AI applications that are responsive and sound realistic.

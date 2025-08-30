@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Large language models (LLM) › Anthropi
 
 > How to use the Anthropic Claude LLM plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Anthropic](https://www.anthropic.com/claude) provides Claude, an advanced AI assistant with capabilities including advanced reasoning, vision analysis, code generation, and multilingual processing. With LiveKit's Anthropic integration and the Agents framework, you can build sophisticated voice AI applications.

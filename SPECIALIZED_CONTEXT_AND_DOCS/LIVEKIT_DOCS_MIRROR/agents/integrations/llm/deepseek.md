@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Large language models (LLM) › DeepSeek
 
 > How to use DeepSeek models with LiveKit Agents.
 
+Available in:
+- [x] Node.js
+- [x] Python
+
 ## Overview
 
 [DeepSeek](https://platform.deepseek.com/) provides access to their latest models through their OpenAI-compatible API. These models are multilingual and text-only, making them suitable for a variety of agent applications.

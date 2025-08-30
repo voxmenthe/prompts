@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Large language models (LLM) › Google G
 
 > A guide to using Google Gemini with LiveKit Agents.
 
+Available in:
+- [x] Node.js
+- [x] Python
+
 ## Overview
 
 [Google Gemini](https://ai.google.dev/gemini-api/docs/models/gemini) provides powerful language models with advanced reasoning and multimodal capabilities. With LiveKit's Google plugin and the Agents framework, you can build sophisticated voice AI applications using Vertex AI or Google Gemini API.

@@ -14,14 +14,14 @@ Virtual avatars add lifelike video output for your voice AI agents. You can inte
 
 The following providers are available. Choose a provider from this list for a step-by-step guide:
 
-| Provider | Plugin | Notes |
-| -------- | ------ | ----- |
-| [Anam](https://docs.livekit.io/agents/integrations/avatar/anam.md) | `anam` |  |
-| [Beyond Presence](https://docs.livekit.io/agents/integrations/avatar/bey.md) | `bey` |  |
-| [bitHuman](https://docs.livekit.io/agents/integrations/avatar/bithuman.md) | `bithuman` |  |
-| [Hedra](https://docs.livekit.io/agents/integrations/avatar/hedra.md) | `hedra` |  |
-| [Simli](https://docs.livekit.io/agents/integrations/avatar/simli.md) | `simli` |  |
-| [Tavus](https://docs.livekit.io/agents/integrations/avatar/tavus.md) | `tavus` |  |
+| Provider | Plugin | Notes | Available in |
+| -------- | ------ | ----- | ------------ |
+| [Anam](https://docs.livekit.io/agents/integrations/avatar/anam.md) | `anam` |  | Python |
+| [Beyond Presence](https://docs.livekit.io/agents/integrations/avatar/bey.md) | `bey` |  | Python |
+| [bitHuman](https://docs.livekit.io/agents/integrations/avatar/bithuman.md) | `bithuman` |  | Python |
+| [Hedra](https://docs.livekit.io/agents/integrations/avatar/hedra.md) | `hedra` |  | Python |
+| [Simli](https://docs.livekit.io/agents/integrations/avatar/simli.md) | `simli` |  | Python |
+| [Tavus](https://docs.livekit.io/agents/integrations/avatar/tavus.md) | `tavus` |  | Python |
 
 Have another provider in mind? LiveKit is open source and welcomes [new plugin contributions](https://docs.livekit.io/agents/integrations.md#contribute).
 

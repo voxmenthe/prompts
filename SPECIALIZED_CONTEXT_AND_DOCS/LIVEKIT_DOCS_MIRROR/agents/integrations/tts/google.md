@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Text-to-speech (TTS) › Google Cloud
 
 > How to use the Google Cloud TTS plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Google Cloud TTS](https://cloud.google.com/text-to-speech) provides a wide voice selection and generates speech with humanlike intonation. With LiveKit's Google Cloud TTS integration and the Agents framework, you can build voice AI applications that sound realistic.

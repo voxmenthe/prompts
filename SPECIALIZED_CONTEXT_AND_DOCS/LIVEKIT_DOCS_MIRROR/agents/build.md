@@ -18,6 +18,8 @@ Each session requires at least one `Agent` to orchestrate. The agent is responsi
 
 The following example shows how to begin a simple single-agent session:
 
+**Python**:
+
 ```python
 from livekit.agents import AgentSession, Agent, RoomInputOptions
 from livekit.plugins import openai, cartesia, deepgram, noise_cancellation, silero
@@ -38,6 +40,41 @@ await session.start(
         noise_cancellation=noise_cancellation.BVC(),
     ),
 )
+
+```
+
+---
+
+**Node.js**:
+
+```ts
+import { voice } from '@livekit/agents';
+import * as deepgram from '@livekit/agents-plugin-deepgram';
+import * as elevenlabs from '@livekit/agents-plugin-elevenlabs';
+import * as livekit from '@livekit/agents-plugin-livekit';
+import * as openai from '@livekit/agents-plugin-openai';
+import * as silero from '@livekit/agents-plugin-silero';
+import { BackgroundVoiceCancellation } from '@livekit/noise-cancellation-node';
+
+const vad = await silero.VAD.load();
+
+const session = new voice.AgentSession({
+  vad,
+  stt: new deepgram.STT(),
+  llm: new openai.LLM(),
+  tts: new elevenlabs.TTS(),
+  turnDetection: new livekit.turnDetector.MultilingualModel(),
+});
+
+await session.start({
+  room: ctx.room,
+  agent: new voice.Agent({
+    instructions: "You are a helpful voice AI assistant.",
+  }),
+  inputOptions: {
+    noiseCancellation: BackgroundVoiceCancellation(),
+  },
+});
 
 ```
 

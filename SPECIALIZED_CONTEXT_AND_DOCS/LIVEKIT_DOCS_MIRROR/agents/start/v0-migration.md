@@ -1,8 +1,8 @@
-LiveKit Docs › Getting started › Migrating from v0.x
+LiveKit Docs › Getting started › Migrating from v0.x › Python
 
 ---
 
-# Agents v0.x migration guide
+# Agents v0.x migration guide - Python
 
 > Migrate your Python-based agents from version v0.x to 1.0.
 
@@ -14,7 +14,7 @@ Agents 1.0 introduces `AgentSession`, a single, unified [agent orchestrator](htt
 
 > ℹ️ **Note**
 > 
-> The following code highlights the differences between Agents v0.x and Agents 1.0. For a full working example, see the [Voice AI quickstart](https://docs.livekit.io/agents/starts/voice-ai.md).
+> The following code highlights the differences between Agents v0.x and Agents 1.0. For a full working example, see the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md).
 
 **Version 0.x**:
 
@@ -261,7 +261,7 @@ In 0.x, updating the chat context required modifying chat_ctx.messages directly.
 
 In v1.x, there are two supported ways to update the chat context:
 
-- **Agent handoff** – [transferring control](https://docs.livekit.io/agents/build/workflows.md#handing-off-control-to-another-agent) to a new agent, which will have its own chat context.
+- **Agent handoff** – [transferring control](https://docs.livekit.io/agents/build/workflows.md#tool-handoff) to a new agent, which will have its own chat context.
 - **Explicit update** - calling `agent.update_chat_ctx()` to modify the context directly.
 
 ## Transcriptions

@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Text-to-speech (TTS) › LMNT
 
 > How to use the LMNT TTS plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [LMNT](https://lmnt.com/) provides a fast text-to-speech service optimized for realtime voice AI. With LiveKit's LMNT integration and the Agents framework, you can build high-performance and lifelike voice AI at scale.

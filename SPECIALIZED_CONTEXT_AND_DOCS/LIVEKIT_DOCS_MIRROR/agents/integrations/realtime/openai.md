@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Realtime models › OpenAI Realtime API
 
 > How to use the OpenAI Realtime API with LiveKit Agents.
 
+Available in:
+- [x] Node.js
+- [x] Python
+
 - **[OpenAI Playground](https://playground.livekit.io/)**: Experiment with OpenAI's Realtime API in the playground with personalities like the **Snarky Teenager** or **Opera Singer**.
 
 ## Overview
@@ -22,10 +26,21 @@ This section includes a basic usage example and some reference material. For lin
 
 ### Installation
 
-Install the OpenAI plugin from PyPI:
+Install the OpenAI plugin:
+
+**Python**:
 
 ```bash
 pip install "livekit-agents[openai]~=1.2"
+
+```
+
+---
+
+**Node.js**:
+
+```bash
+pnpm install "@livekit/agents-plugin-openai@1.x"
 
 ```
 
@@ -39,12 +54,27 @@ Set `OPENAI_API_KEY` in your `.env` file.
 
 Use the OpenAI Realtime API within an `AgentSession`. For example, you can use it in the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md).
 
+**Python**:
+
 ```python
 from livekit.plugins import openai
 
 session = AgentSession(
     llm=openai.realtime.RealtimeModel(),
 )
+
+```
+
+---
+
+**Node.js**:
+
+```typescript
+import * as openai from '@livekit/agents-plugin-openai';
+
+const session = new voice.AgentSession({
+   llm: new openai.realtime.RealtimeModel(),
+});
 
 ```
 
@@ -75,6 +105,8 @@ There are two modes for VAD:
 
 Server VAD is the default mode and can be configured with the following properties:
 
+**Python**:
+
 ```python
 from livekit.plugins.openai import realtime
 from openai.types.beta.realtime.session import TurnDetection
@@ -94,6 +126,28 @@ session = AgentSession(
 
 ```
 
+---
+
+**Node.js**:
+
+```typescript
+import * as openai from '@livekit/agents-plugin-openai';
+
+const session = new voice.AgentSession({
+   llm: new openai.realtime.RealtimeModel({
+      turnDetection: {
+         type: "server_vad",
+         threshold: 0.5,
+         prefix_padding_ms: 300,
+         silence_duration_ms: 500,
+         create_response: true,
+         interrupt_response: true,
+      },
+   }),
+});
+
+```
+
 - `threshold`: Higher values require louder audio to activate, better for noisy environments.
 - `prefix_padding_ms`: Amount of audio to include before detected speech.
 - `silence_duration_ms`: Duration of silence to detect speech stop (shorter = faster turn detection).
@@ -101,6 +155,8 @@ session = AgentSession(
 ### Semantic VAD
 
 Semantic VAD uses a classifier to determine when the user is done speaking based on their words. This mode is less likely to interrupt users mid-sentence or chunk transcripts prematurely.
+
+**Python**:
 
 ```python
 from livekit.plugins.openai import realtime
@@ -119,6 +175,26 @@ session = AgentSession(
 
 ```
 
+---
+
+**Node.js**:
+
+```typescript
+import * as openai from '@livekit/agents-plugin-openai';
+
+const session = new voice.AgentSession({
+   llm: new openai.realtime.RealtimeModel({
+      turnDetection: {
+         type: "semantic_vad",
+         eagerness: "auto",
+         create_response: true,
+         interrupt_response: true,
+      },
+   }),
+});
+
+```
+
 The `eagerness` property controls how quickly the model responds:
 
 - `auto` (default) - Equivalent to `medium`.
@@ -132,11 +208,30 @@ For more information about turn detection in general, see the [Turn detection gu
 
 To use the OpenAI Realtime API with a different [TTS provider](https://docs.livekit.io/agents/integrations/tts.md), configure it with a text-only response modality and include a TTS plugin in your `AgentSession` configuration. This configuration allows you to gain the benefits of realtime speech comprehension while maintaining complete control over the speech output.
 
+**Python**:
+
 ```python
 session = AgentSession(
     llm=openai.realtime.RealtimeModel(modalities=["text"]),
     tts=cartesia.TTS() # Or other TTS plugin of your choice
 )
+
+```
+
+---
+
+**Node.js**:
+
+```typescript
+import * as openai from '@livekit/agents-plugin-openai';
+import * as elevenlabs from '@livekit/agents-plugin-elevenlabs';
+
+const session = new voice.AgentSession({
+   llm: new openai.realtime.RealtimeModel({ 
+      modalities: ["text"]
+   }),
+   tts: new elevenlabs.TTS(), // Or other TTS plugin of your choice
+});
 
 ```
 
@@ -149,12 +244,6 @@ For additional workaround options, see the OpenAI [thread](https://community.ope
 ## Additional resources
 
 The following resources provide more information about using OpenAI with LiveKit Agents.
-
-- **[Python package](https://pypi.org/project/livekit-plugins-openai/)**: The `livekit-plugins-openai` package on PyPI.
-
-- **[Plugin reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/openai/realtime/index.html.md)**: Reference for the OpenAI Realtime API plugin.
-
-- **[GitHub repo](https://github.com/livekit/agents/tree/main/livekit-plugins/livekit-plugins-openai)**: View the source or contribute to the LiveKit OpenAI LLM plugin.
 
 - **[Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md)**: Build a simple realtime model voice assistant using the OpenAI Realtime API in less than 10 minutes.
 

@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Speech-to-text (STT) › Google Cloud
 
 > How to use the Google Cloud STT plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Google Cloud](https://cloud.google.com/) provides a streaming [STT service](https://cloud.google.com/speech-to-text) with support for over 125 languages and access to the foundational model `chirp`, which provides improved recognition and transcription for spoken languages and accents. You can use the open source Google Cloud plugin for LiveKit Agents to build voice AI with fast, accurate transcription.

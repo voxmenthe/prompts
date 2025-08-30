@@ -12,28 +12,29 @@ Speech-to-text (STT) models process incoming audio and convert it to text in rea
 
 ## Available providers
 
-The agents framework includes plugins for the following STT providers out-of-the-box. Choose a provider from the list for a step-by-step guide. You can also implement the [STT node](https://docs.livekit.io/agents/build/nodes.md#stt-node) to provide custom behavior or an alternative provider.
+The agents framework includes plugins for the following STT providers out-of-the-box. Choose a provider from the list for a step-by-step guide. You can also implement the [STT node](https://docs.livekit.io/agents/build/nodes.md#stt_node) to provide custom behavior or an alternative provider.
 
 All STT providers support low-latency multilingual transcription. Support for other features is noted in the following table.
 
-| Provider | Plugin | Notes |
-| -------- | ------ | ----- |
-| [AssemblyAI](https://docs.livekit.io/agents/integrations/stt/assemblyai.md) | `assemblyai` |  |
-| [Amazon Transcribe](https://docs.livekit.io/agents/integrations/stt/aws.md) | `aws` |  |
-| [Azure AI Speech](https://docs.livekit.io/agents/integrations/stt/azure.md) | `azure` |  |
-| [Azure OpenAI](https://docs.livekit.io/agents/integrations/stt/azure-openai.md) | `openai` |  |
-| [Baseten](https://docs.livekit.io/agents/integrations/stt/baseten.md) | `baseten` |  |
-| [Cartesia](https://docs.livekit.io/agents/integrations/stt/cartesia.md) | `cartesia` |  |
-| [Clova](https://docs.livekit.io/agents/integrations/stt/clova.md) | `clova` |  |
-| [Deepgram](https://docs.livekit.io/agents/integrations/stt/deepgram.md) | `deepgram` |  |
-| [fal](https://docs.livekit.io/agents/integrations/stt/fal.md) | `fal` |  |
-| [Gladia](https://docs.livekit.io/agents/integrations/stt/gladia.md) | `gladia` |  |
-| [Google Cloud](https://docs.livekit.io/agents/integrations/stt/google.md) | `google` |  |
-| [Groq](https://docs.livekit.io/agents/integrations/stt/groq.md) | `groq` |  |
-| [OpenAI](https://docs.livekit.io/agents/integrations/stt/openai.md) | `openai` |  |
-| [Sarvam](https://docs.livekit.io/agents/integrations/stt/sarvam.md) | `sarvam` |  |
-| [Speechmatics](https://docs.livekit.io/agents/integrations/stt/speechmatics.md) | `speechmatics` |  |
-| [Spitch](https://docs.livekit.io/agents/integrations/stt/spitch.md) | `spitch` |  |
+| Provider | Plugin | Notes | Available in |
+| -------- | ------ | ----- | ------------ |
+| [AssemblyAI](https://docs.livekit.io/agents/integrations/stt/assemblyai.md) | `assemblyai` |  | Python |
+| [Amazon Transcribe](https://docs.livekit.io/agents/integrations/stt/aws.md) | `aws` |  | Python |
+| [Azure AI Speech](https://docs.livekit.io/agents/integrations/stt/azure.md) | `azure` |  | Python |
+| [Azure OpenAI](https://docs.livekit.io/agents/integrations/stt/azure-openai.md) | `openai` |  | Python |
+| [Baseten](https://docs.livekit.io/agents/integrations/stt/baseten.md) | `baseten` |  | Python |
+| [Cartesia](https://docs.livekit.io/agents/integrations/stt/cartesia.md) | `cartesia` |  | Python, Nodejs |
+| [Clova](https://docs.livekit.io/agents/integrations/stt/clova.md) | `clova` |  | Python |
+| [Deepgram](https://docs.livekit.io/agents/integrations/stt/deepgram.md) | `deepgram` |  | Python, Nodejs |
+| [fal](https://docs.livekit.io/agents/integrations/stt/fal.md) | `fal` |  | Python |
+| [Gladia](https://docs.livekit.io/agents/integrations/stt/gladia.md) | `gladia` |  | Python |
+| [Google Cloud](https://docs.livekit.io/agents/integrations/stt/google.md) | `google` |  | Python |
+| [Groq](https://docs.livekit.io/agents/integrations/stt/groq.md) | `groq` |  | Python, Nodejs |
+| [Mistral AI](https://docs.livekit.io/agents/integrations/stt/mistralai.md) | `mistralai` |  | Python |
+| [OpenAI](https://docs.livekit.io/agents/integrations/stt/openai.md) | `openai` |  | Python, Nodejs |
+| [Sarvam](https://docs.livekit.io/agents/integrations/stt/sarvam.md) | `sarvam` |  | Python |
+| [Speechmatics](https://docs.livekit.io/agents/integrations/stt/speechmatics.md) | `speechmatics` |  | Python |
+| [Spitch](https://docs.livekit.io/agents/integrations/stt/spitch.md) | `spitch` |  | Python |
 
 Have another provider in mind? LiveKit is open source and welcomes [new plugin contributions](https://docs.livekit.io/agents/integrations.md#contribute).
 

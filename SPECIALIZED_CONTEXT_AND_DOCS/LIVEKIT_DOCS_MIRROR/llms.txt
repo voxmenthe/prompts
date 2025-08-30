@@ -132,7 +132,11 @@ The following document is a comprehensive list of all available documentation an
 - [Telephony integration](https://docs.livekit.io/agents/start/telephony.md): Enable your voice AI agent to make and receive phone calls.
 - [Web & mobile frontends](https://docs.livekit.io/agents/start/frontend.md): Bring your agent to life through a web or mobile app.
 - [Agents playground](https://docs.livekit.io/agents/start/playground.md): A virtual workbench to test your multimodal AI agent.
-- [Migrating from v0.x](https://docs.livekit.io/agents/start/v0-migration.md): Migrate your Python-based agents from version v0.x to 1.0.
+
+#### Migrating from v0.x
+
+- [Python](https://docs.livekit.io/agents/start/v0-migration.md): Migrate your Python-based agents from version v0.x to 1.0.
+- [Node.js](https://docs.livekit.io/agents/start/v0-migration/nodejs.md): Migrate your Node.js agents from version 0.x to 1.0.
 - [Deeplearning.ai course](https://www.deeplearning.ai/short-courses/building-ai-voice-agents-for-production/)
 
 ### Building voice agents
@@ -244,6 +248,7 @@ The following document is a comprehensive list of all available documentation an
 - [Groq](https://docs.livekit.io/agents/integrations/llm/groq.md): How to use the Groq LLM plugin for LiveKit Agents.
 - [LangChain](https://docs.livekit.io/agents/integrations/llm/langchain.md): How to use LangGraph workflows with LiveKit Agents.
 - [Letta](https://docs.livekit.io/agents/integrations/llm/letta.md): How to use a Letta agent for your LLM with LiveKit Agents.
+- [Mistral AI](https://docs.livekit.io/agents/integrations/llm/mistralai.md): How to integrate Mistral AI's La Plateforme inference service with LiveKit Agents.
 - [Ollama](https://docs.livekit.io/agents/integrations/llm/ollama.md): How to run models locally using Ollama with LiveKit Agents.
 - [OpenAI](https://docs.livekit.io/agents/integrations/llm/openai.md): How to use the OpenAI LLM plugin for LiveKit Agents.
 - [Azure OpenAI](https://docs.livekit.io/agents/integrations/llm/azure-openai.md): How to use the Azure OpenAI LLM plugin for LiveKit Agents.
@@ -267,6 +272,7 @@ The following document is a comprehensive list of all available documentation an
 - [Gladia](https://docs.livekit.io/agents/integrations/stt/gladia.md): How to use the Gladia STT plugin for LiveKit Agents.
 - [Google Cloud](https://docs.livekit.io/agents/integrations/stt/google.md): How to use the Google Cloud STT plugin for LiveKit Agents.
 - [Groq](https://docs.livekit.io/agents/integrations/stt/groq.md): How to use the Groq STT plugin for LiveKit Agents.
+- [Mistral AI](https://docs.livekit.io/agents/integrations/stt/mistralai.md): How to use the Mistral STT plugin for LiveKit Agents.
 - [OpenAI](https://docs.livekit.io/agents/integrations/stt/openai.md): How to use the OpenAI STT plugin for LiveKit Agents.
 - [Sarvam](https://docs.livekit.io/agents/integrations/stt/sarvam.md): How to use the Sarvam STT plugin for LiveKit Agents.
 - [Speechmatics](https://docs.livekit.io/agents/integrations/stt/speechmatics.md): How to use the Speechmatics STT plugin for LiveKit Agents.
@@ -467,5 +473,5 @@ The following document is a comprehensive list of all available documentation an
 
 ---
 
-This document was rendered at 2025-08-22T18:41:19.918Z.
+This document was rendered at 2025-08-27T23:35:14.032Z.
 For the latest version of this document, see [https://docs.livekit.io/llms.txt](https://docs.livekit.io/llms.txt).

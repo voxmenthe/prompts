@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Text-to-speech (TTS) › Resemble AI
 
 > How to use the Resemble AI TTS plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Resemble AI](https://resemble.ai/) provides natural and human-like text-to-speech. You can use the Resemble AI TTS plugin for LiveKit Agents to build your voice AI applications.

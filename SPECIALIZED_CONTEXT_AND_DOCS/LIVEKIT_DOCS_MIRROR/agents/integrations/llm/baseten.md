@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Large language models (LLM) › Baseten
 
 > How to use the Baseten LLM plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Baseten](https://www.baseten.co/) is a hosted inference platform that includes a Model API for a variety of popular open source LLMs from Llama, DeepSeek, and more. With LiveKit's Baseten integration and the Agents framework, you can build AI agents on top of these models.

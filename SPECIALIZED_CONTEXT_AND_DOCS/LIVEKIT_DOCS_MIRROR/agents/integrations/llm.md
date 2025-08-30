@@ -12,27 +12,28 @@ Large language models (LLMs) are a type of AI model that can generate text outpu
 
 ## Available providers
 
-The agents framework includes plugins for the following LLM providers out-of-the-box. Choose a provider from the list below for a step-by-step guide. You can also implement the [LLM node](https://docs.livekit.io/agents/build/nodes.md#llm-node) to provide custom behavior or an alternative provider. All providers support high-performance, low-latency streaming and tool calls. Support for other features is noted in the following table.
+The agents framework includes plugins for the following LLM providers out-of-the-box. Choose a provider from the list below for a step-by-step guide. You can also implement the [LLM node](https://docs.livekit.io/agents/build/nodes.md#llm_node) to provide custom behavior or an alternative provider. All providers support high-performance, low-latency streaming and tool calls. Support for other features is noted in the following table.
 
-| Provider | Plugin | Notes |
-| -------- | ------ | ----- |
-| [Anthropic](https://docs.livekit.io/agents/integrations/llm/anthropic.md) | `anthropic` | Claude family of models. |
-| [Amazon Bedrock](https://docs.livekit.io/agents/integrations/llm/aws.md) | `aws` | Wide range of models from Llama, DeepSeek, Mistral, and more. |
-| [Baseten](https://docs.livekit.io/agents/integrations/llm/baseten.md) | `baseten` |  |
-| [Cerebras](https://docs.livekit.io/agents/integrations/llm/cerebras.md) | `openai` | Models from Llama and DeepSeek. |
-| [DeepSeek](https://docs.livekit.io/agents/integrations/llm/deepseek.md) | `openai` |  |
-| [Fireworks](https://docs.livekit.io/agents/integrations/llm/fireworks.md) | `openai` | Wide range of models from Llama, DeepSeek, Mistral, and more. |
-| [Google Gemini](https://docs.livekit.io/agents/integrations/llm/gemini.md) | `google` |  |
-| [Groq](https://docs.livekit.io/agents/integrations/llm/groq.md) | `groq` | Models from Llama, DeepSeek, and more. |
-| [LangChain](https://docs.livekit.io/agents/integrations/llm/langchain.md) | `langchain` | Use a LangGraph workflow for your agent LLM. |
-| [Letta](https://docs.livekit.io/agents/integrations/llm/letta.md) | `openai` | Stateful API with memory features. |
-| [Ollama](https://docs.livekit.io/agents/integrations/llm/ollama.md) | `openai` | Self-hosted models from Llama, DeepSeek, and more. |
-| [OpenAI](https://docs.livekit.io/agents/integrations/llm/openai.md) | `openai` |  |
-| [Azure OpenAI](https://docs.livekit.io/agents/integrations/llm/azure-openai.md) | `openai` |  |
-| [Perplexity](https://docs.livekit.io/agents/integrations/llm/perplexity.md) | `openai` |  |
-| [Telnyx](https://docs.livekit.io/agents/integrations/llm/telnyx.md) | `openai` | Models from Llama, DeepSeek, OpenAI, and Mistral, and more. |
-| [Together AI](https://docs.livekit.io/agents/integrations/llm/together.md) | `openai` | Models from Llama, DeepSeek, Mistral, and more. |
-| [xAI](https://docs.livekit.io/agents/integrations/llm/xai.md) | `openai` | Grok family of models. |
+| Provider | Plugin | Notes | Available in |
+| -------- | ------ | ----- | ------------ |
+| [Anthropic](https://docs.livekit.io/agents/integrations/llm/anthropic.md) | `anthropic` | Claude family of models. | Python |
+| [Amazon Bedrock](https://docs.livekit.io/agents/integrations/llm/aws.md) | `aws` | Wide range of models from Llama, DeepSeek, Mistral, and more. | Python |
+| [Baseten](https://docs.livekit.io/agents/integrations/llm/baseten.md) | `baseten` |  | Python |
+| [Cerebras](https://docs.livekit.io/agents/integrations/llm/cerebras.md) | `openai` | Models from Llama and DeepSeek. | Python, Nodejs |
+| [DeepSeek](https://docs.livekit.io/agents/integrations/llm/deepseek.md) | `openai` |  | Python, Nodejs |
+| [Fireworks](https://docs.livekit.io/agents/integrations/llm/fireworks.md) | `openai` | Wide range of models from Llama, DeepSeek, Mistral, and more. | Python |
+| [Google Gemini](https://docs.livekit.io/agents/integrations/llm/gemini.md) | `google` |  | Python, Nodejs |
+| [Groq](https://docs.livekit.io/agents/integrations/llm/groq.md) | `groq` | Models from Llama, DeepSeek, and more. | Python |
+| [LangChain](https://docs.livekit.io/agents/integrations/llm/langchain.md) | `langchain` | Use a LangGraph workflow for your agent LLM. | Python |
+| [Letta](https://docs.livekit.io/agents/integrations/llm/letta.md) | `openai` | Stateful API with memory features. | Python |
+| [Mistral AI](https://docs.livekit.io/agents/integrations/llm/mistralai.md) | `mistralai` | Mistral family of models (for use with La Plateforme). | Python |
+| [Ollama](https://docs.livekit.io/agents/integrations/llm/ollama.md) | `openai` | Self-hosted models from Llama, DeepSeek, and more. | Python |
+| [OpenAI](https://docs.livekit.io/agents/integrations/llm/openai.md) | `openai` |  | Python, Nodejs |
+| [Azure OpenAI](https://docs.livekit.io/agents/integrations/llm/azure-openai.md) | `openai` |  | Python, Nodejs |
+| [Perplexity](https://docs.livekit.io/agents/integrations/llm/perplexity.md) | `openai` |  | Python, Nodejs |
+| [Telnyx](https://docs.livekit.io/agents/integrations/llm/telnyx.md) | `openai` | Models from Llama, DeepSeek, OpenAI, and Mistral, and more. | Python, Nodejs |
+| [Together AI](https://docs.livekit.io/agents/integrations/llm/together.md) | `openai` | Models from Llama, DeepSeek, Mistral, and more. | Python, Nodejs |
+| [xAI](https://docs.livekit.io/agents/integrations/llm/xai.md) | `openai` | Grok family of models. | Python, Nodejs |
 
 Have another provider in mind? LiveKit is open source and welcomes [new plugin contributions](https://docs.livekit.io/agents/integrations.md#contribute).
 

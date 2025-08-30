@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Speech-to-text (STT) › Speechmatics
 
 > How to use the Speechmatics STT plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Speechmatics](https://www.speechmatics.com/) provides enterprise-grade speech-to-text APIs. Their advanced speech models deliver highly accurate transcriptions across diverse languages, dialects, and accents. You can use the LiveKit Speechmatics plugin with the Agents framework to build voice AI agents that provide reliable, realtime transcriptions.

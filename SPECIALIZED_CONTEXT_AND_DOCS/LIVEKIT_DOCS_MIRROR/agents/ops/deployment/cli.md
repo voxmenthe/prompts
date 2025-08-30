@@ -72,19 +72,6 @@ lk agent create \
 
 ```
 
-### Config
-
-Generate a new `livekit.toml` in the working directory for an existing agent:
-
-```bash
-lk agent config --id AGENT_ID [options] [working-dir]
-
-```
-
-Options for `config`:
-
-- `--id AGENT_ID`: Agent ID. Uses the provided ID to generate a new `livekit.toml` file.
-
 ### Deploy
 
 [Build and deploy](https://docs.livekit.io/agents/ops/deployment/builds.md) a new agent version based on the working directory. You must have a `livekit.toml` and `Dockerfile` in the working directory.
@@ -441,6 +428,39 @@ Overwrite existing keys explicitly:
 lk agent update-secrets --id CA_MyAgentId \
   --secrets OPENAI_API_KEY=sk-xxx \
   --overwrite
+
+```
+
+### Config
+
+Generate a new `livekit.toml` in the working directory for an existing agent:
+
+```bash
+lk agent config --id AGENT_ID [options] [working-dir]
+
+```
+
+Options for `config`:
+
+- `--id AGENT_ID`: Agent ID. Uses the provided ID to generate a new `livekit.toml` file.
+
+### Generate Dockerfile
+
+Generate a new `Dockerfile` and `.dockerignore` file in the working directory. To overwrite existing files, use the `--overwrite` flag.
+
+```bash
+lk agent dockerfile [options] [working-dir]
+
+```
+
+Options for `dockerfile`:
+
+- `--overwrite`: Overwrite existing files. Default: `false`.
+
+#### Examples
+
+```bash
+lk agent dockerfile
 
 ```
 

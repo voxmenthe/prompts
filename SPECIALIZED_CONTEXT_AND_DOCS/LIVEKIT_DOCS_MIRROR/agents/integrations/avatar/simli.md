@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Virtual avatars › Simli
 
 > How to use the Simli virtual avatar plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Simli](https://simli.com/) provides realtime low-latency video avatars. You can use the open source Simli integration for LiveKit Agents to add virtual avatars to your voice AI app.

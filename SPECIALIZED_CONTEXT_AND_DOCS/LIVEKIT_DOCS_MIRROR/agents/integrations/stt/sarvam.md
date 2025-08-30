@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Speech-to-text (STT) › Sarvam
 
 > How to use the Sarvam STT plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Sarvam](https://docs.sarvam.ai/) provides advanced speech recognition technology optimized for Indian languages. With LiveKit's Sarvam integration and the Agents framework, you can build AI agents that provide high-accuracy transcriptions for Indian languages and accents.

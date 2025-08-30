@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Speech-to-text (STT) › Groq
 
 > How to use the Groq STT plugin for LiveKit Agents.
 
+Available in:
+- [x] Node.js
+- [x] Python
+
 ## Overview
 
 [Groq](https://groq.com/) provides fast STT using fine-tuned and distilled models based on Whisper V3 Large. With LiveKit's Groq integration and the Agents framework, you can build AI voice applications with fluent and conversational voices.

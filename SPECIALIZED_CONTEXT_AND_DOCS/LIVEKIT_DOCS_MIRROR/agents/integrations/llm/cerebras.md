@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Large language models (LLM) › Cerebras
 
 > How to use the Cerebras inference with LiveKit Agents.
 
+Available in:
+- [x] Node.js
+- [x] Python
+
 ## Overview
 
 [Cerebras](https://www.cerebras.net/) provides access to Llama 3.1 and 3.3 models through their inference API. These models are multilingual and text-only, making them suitable for a variety of agent applications.

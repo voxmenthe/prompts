@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Realtime models › Gemini Live API
 
 > How to use the Gemini Live API with LiveKit Agents.
 
+Available in:
+- [x] Node.js
+- [x] Python
+
 ## Overview
 
 Google's [Gemini Live API](https://ai.google.dev/gemini-api/docs/live) enables low-latency, two-way interactions that use text, audio, and video input, with audio and text output. LiveKit's Google plugin includes a `RealtimeModel` class that allows you to use this API to create agents with natural, human-like voice conversations.
@@ -16,10 +20,21 @@ This section includes a basic usage example and some reference material. For lin
 
 ### Installation
 
-Install the Google plugin from PyPI:
+Install the Google plugin:
+
+**Python**:
 
 ```bash
 pip install "livekit-agents[google]~=1.2"
+
+```
+
+---
+
+**Node.js**:
+
+```bash
+pnpm install "@livekit/agents-plugin-google@1.x"
 
 ```
 
@@ -34,6 +49,8 @@ The Google plugin requires authentication based on your chosen service:
 
 Use the Gemini Live API within an `AgentSession`. For example, you can use it in the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md).
 
+**Python**:
+
 ```python
 from livekit.plugins import google
 
@@ -45,6 +62,24 @@ session = AgentSession(
         instructions="You are a helpful assistant",
     ),
 )
+
+```
+
+---
+
+**Node.js**:
+
+```typescript
+import * as google from '@livekit/agents-plugin-google';
+
+const session = new voice.AgentSession({
+   llm: new google.beta.realtime.RealtimeModel({
+      model: "gemini-2.0-flash-exp",
+      voice: "Puck",
+      temperature: 0.8,
+      instructions: "You are a helpful assistant",
+   }),
+});
 
 ```
 
@@ -82,6 +117,8 @@ This section describes some of the available parameters. For a complete referenc
 
 The `_gemini_tools` parameter allows you to use built-in Google tools with the Gemini model. For example, you can use this feature to implement [Grounding with Google Search](https://ai.google.dev/gemini-api/docs/live-tools#google-search):
 
+**Python**:
+
 ```python
 from google.genai import types
 
@@ -94,9 +131,28 @@ session = AgentSession(
 
 ```
 
+---
+
+**Node.js**:
+
+```typescript
+
+import * as google from '@livekit/agents-plugin-google';
+
+const session = new voice.AgentSession({
+   llm: new google.beta.realtime.RealtimeModel({
+      model: "gemini-2.0-flash-exp",
+      geminiTools: [new google.types.GoogleSearch()],
+   }),
+});
+
+```
+
 ## Turn detection
 
 The Gemini Live API includes built-in VAD-based turn detection, enabled by default. To use LiveKit’s turn detection model instead, configure the model to disable automatic activity detection. A separate streaming STT model is required in order to use LiveKit’s turn detection model.
+
+**Python**:
 
 ```python
 from google.genai import types
@@ -117,9 +173,35 @@ session = AgentSession(
 
 ```
 
+---
+
+**Node.js**:
+
+```typescript
+
+import * as google from '@livekit/agents-plugin-google';
+import * as livekit from '@livekit/agents-plugin-livekit';
+
+const session = new voice.AgentSession({
+   turnDetection: new MultilingualModel(),
+   llm: new google.beta.realtime.RealtimeModel({
+      model: "gemini-2.0-flash-exp",
+      realtimeInputConfig: {
+         automaticActivityDetection: {
+            disabled: true,
+         },
+      },
+   }),
+   turnDetection: new livekit.turnDetector.MultilingualModel(),
+});
+
+```
+
 ## Usage with separate TTS
 
 To use the Gemini Live API with a different [TTS provider](https://docs.livekit.io/agents/integrations/tts.md), configure it with a text-only response modality and include a TTS plugin in your `AgentSession` configuration. This configuration allows you to gain the benefits of realtime speech comprehension while maintaining complete control over the speech output.
+
+**Python**:
 
 ```python
 from google.genai.types import Modality
@@ -131,15 +213,28 @@ session = AgentSession(
 
 ```
 
+---
+
+**Node.js**:
+
+```typescript
+
+import * as google from '@livekit/agents-plugin-google';
+import * as elevenlabs from '@livekit/agents-plugin-elevenlabs';
+
+const session = new voice.AgentSession({
+   llm: new google.beta.realtime.RealtimeModel({
+      model: "gemini-2.0-flash-exp",
+      modalities: [google.types.Modality.TEXT],
+   }),
+   tts: new elevenlabs.TTS(),
+});
+
+```
+
 ## Additional resources
 
 The following resources provide more information about using Gemini with LiveKit Agents.
-
-- **[Python package](https://pypi.org/project/livekit-plugins-google/)**: The `livekit-plugins-google` package on PyPI.
-
-- **[Plugin reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/google/beta/realtime/index.html.md)**: Reference for the Gemini Live API plugin.
-
-- **[GitHub repo](https://github.com/livekit/agents/tree/main/livekit-plugins/livekit-plugins-google)**: View the source or contribute to the LiveKit Google plugin.
 
 - **[Gemini docs](https://ai.google.dev/gemini-api/docs/live)**: Gemini Live API documentation.
 

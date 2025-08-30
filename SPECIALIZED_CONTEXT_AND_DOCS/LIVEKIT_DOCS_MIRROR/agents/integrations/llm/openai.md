@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Large language models (LLM) › OpenAI
 
 > How to use the OpenAI LLM plugin for LiveKit Agents.
 
+Available in:
+- [x] Node.js
+- [x] Python
+
 ## Overview
 
 [OpenAI](https://openai.com/) provides powerful language models like `gpt-4o` and `o1`. With LiveKit's OpenAI integration and the Agents framework, you can build sophisticated voice AI applications using their industry-leading models.

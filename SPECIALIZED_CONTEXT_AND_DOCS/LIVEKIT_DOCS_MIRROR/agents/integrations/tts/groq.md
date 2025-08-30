@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Text-to-speech (TTS) › Groq
 
 > How to use the Groq TTS plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Groq](https://groq.com/) provides fast TTS using models from PlayAI. With LiveKit's Groq integration and the Agents framework, you can build voice AI applications with fluent and conversational voices. Groq TTS supports English and Arabic speech.

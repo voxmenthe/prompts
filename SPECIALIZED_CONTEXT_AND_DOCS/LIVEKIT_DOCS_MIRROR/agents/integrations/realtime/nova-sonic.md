@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Realtime models › Amazon Nova Sonic
 
 > How to use the Amazon Nova Sonic model with LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 Amazon [Nova Sonic](https://aws.amazon.com/ai/generative-ai/nova/speech/) is a state of the art speech-to-speech model with a bidirectional audio streaming API. Nova Sonic processes and responds to realtime speech as it occurs, enabling natural, human-like conversational experiences. LiveKit's AWS plugin includes support for Nova Sonic on AWS Bedrock, allowing you to use this model to create true realtime conversational agents.

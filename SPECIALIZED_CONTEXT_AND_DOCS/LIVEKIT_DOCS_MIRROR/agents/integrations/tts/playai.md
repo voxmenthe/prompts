@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Text-to-speech (TTS) › PlayHT
 
 > How to use the PlayHT TTS plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [PlayHT](https://www.play.ht/) provides realistic TTS voice generation. With LiveKit's PlayHT integration and the Agents framework, you can build voice AI applications with fluent and conversational voices.

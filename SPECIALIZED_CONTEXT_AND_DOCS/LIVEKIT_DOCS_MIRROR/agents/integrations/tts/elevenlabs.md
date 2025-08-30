@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Text-to-speech (TTS) › ElevenLabs
 
 > How to use the ElevenLabs TTS plugin for LiveKit Agents.
 
+Available in:
+- [x] Node.js
+- [x] Python
+
 ## Overview
 
 [ElevenLabs](https://elevenlabs.io/) provides an AI text-to-speech (TTS) service with thousands of human-like voices across a number of different languages. With LiveKit's ElevenLabs integration and the Agents framework, you can build voice AI applications that sound realistic.

@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Realtime models › Azure OpenAI Realtim
 
 > How to use the Azure OpenAI Realtime API with LiveKit Agents.
 
+Available in:
+- [x] Node.js
+- [x] Python
+
 ## Overview
 
 [Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/) provides an implementation of OpenAI's Realtime API that enables low-latency, multimodal interactions with realtime audio and text processing through Azure's managed service. Use LiveKit's Azure OpenAI plugin to create an agent that uses the Realtime API.

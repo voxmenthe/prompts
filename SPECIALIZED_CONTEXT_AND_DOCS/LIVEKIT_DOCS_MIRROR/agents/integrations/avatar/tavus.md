@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Virtual avatars › Tavus
 
 > How to use the Tavus virtual avatar plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Tavus](https://tavus.io/) provides hyper-realistic interactive avatars for conversational video AI agents. You can use the open source Tavus integration for LiveKit Agents to add virtual avatars to your voice AI app.

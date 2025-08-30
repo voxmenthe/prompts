@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Speech-to-text (STT) › Clova
 
 > How to use the Clova STT plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [CLOVA Speech Recognition](https://guide.ncloud-docs.com/docs/en/csr-overview) is the NAVER Cloud Platform's service to convert human voice into text. You can use the open source CLOVA plugin for LiveKit Agents to build voice AI with fast, accurate transcription.

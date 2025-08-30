@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Large language models (LLM) › LangChai
 
 > How to use LangGraph workflows with LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [LangChain](https://www.langchain.com/) is a framework for developing applications powered by large language models. The LiveKit LangChain plugin allows you to integrate existing LangGraph workflows as LLMs in your voice AI applications.

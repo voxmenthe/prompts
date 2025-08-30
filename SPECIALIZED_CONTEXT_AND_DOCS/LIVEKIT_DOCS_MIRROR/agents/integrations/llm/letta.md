@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Large language models (LLM) › Letta
 
 > How to use a Letta agent for your LLM with LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Letta](https://docs.letta.com/overview) enables you to build and deploy stateful AI agents that maintain memory and context across long-running conversations. You can build sophisticated voice AI applications using a Letta agent as the LLM in your STT-LLM-TTS pipeline.

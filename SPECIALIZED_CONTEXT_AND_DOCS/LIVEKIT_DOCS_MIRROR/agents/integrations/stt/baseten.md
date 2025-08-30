@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Speech-to-text (STT) › Baseten
 
 > How to use the Baseten STT plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Baseten](https://www.baseten.co/) is a hosted inference platform that allows you to deploy and serve any machine learning model. With LiveKit's Baseten integration and the Agents framework, you can build AI agents that provide high-accuracy transcriptions using models like Whisper.

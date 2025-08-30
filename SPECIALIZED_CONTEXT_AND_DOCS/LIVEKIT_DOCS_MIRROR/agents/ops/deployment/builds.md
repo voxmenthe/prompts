@@ -226,10 +226,12 @@ RUN adduser \
 
 # Install build dependencies required for Python packages with native extensions
 # gcc: C compiler needed for building Python packages with C extensions
+# g++: C++ compiler needed for building Python packages with C++ extensions
 # python3-dev: Python development headers needed for compilation
 # We clean up the apt cache after installation to keep the image size down
 RUN apt-get update && apt-get install -y \
     gcc \
+    g++ \
     python3-dev \
   && rm -rf /var/lib/apt/lists/*
 
@@ -260,11 +262,11 @@ USER appuser
 # Pre-download any ML models or files the agent needs
 # This ensures the container is ready to run immediately without downloading
 # dependencies at runtime, which improves startup time and reliability
-RUN python src/agent.py download-files
+RUN python agent.py download-files
 
 # Run the application
 # The "start" command tells the worker to connect to LiveKit and begin waiting for jobs.
-CMD ["python", "src/agent.py", "start"]
+CMD ["python", "agent.py", "start"]
 
 ```
 
@@ -326,14 +328,16 @@ evals/
 
 **Node.js**:
 
-This template uses [pnpm](https://pnpm.io/) but can be modified for other package managers. This also assumes that you are using TypeScript and your project requires a `build` step. You can modify this to suit your needs.
+This template uses [pnpm](https://pnpm.io/) and TypeScript but can be modified for other environments.
+
+The Dockerfile assumes that your project contains `build`, `download-files`, and `start` scripts. See the `package.json` file template for examples.
 
 ** Filename: `Dockerfile`**
 
 ```dockerfile
 # syntax=docker/dockerfile:1
 
-# Use the official Node.js v22 base image
+# Use the official Node.js v22 base image with Node.js 22.10.0
 # We use the slim variant to keep the image size smaller while still having essential tools
 ARG NODE_VERSION=22
 FROM node:${NODE_VERSION}-slim AS base
@@ -348,15 +352,11 @@ ENV PATH="$PNPM_HOME:$PATH"
 RUN apt-get update -qq && apt-get install --no-install-recommends -y ca-certificates && rm -rf /var/lib/apt/lists/*
 
 # Pin pnpm version for reproducible builds
-RUN npm install -g pnpm@9.15.9
+RUN npm install -g pnpm@10
 
 # Create a new directory for our application code
 # And set it as the working directory
 WORKDIR /app
-
-# Build stage
-# We use a multi-stage build to keep the runtime image minimal
-FROM base AS build
 
 # Copy just the dependency files first, for more efficient layer caching
 COPY package.json pnpm-lock.yaml ./
@@ -371,13 +371,8 @@ RUN pnpm install --frozen-lockfile
 COPY . .
 
 # Build the project
-RUN pnpm run build
-
-# Remove development-only dependencies to reduce the runtime image size
-RUN pnpm prune --prod
-
-# Create the runtime image
-FROM base AS runtime
+# Your package.json must contain a "build" script, such as `"build": "tsc"`
+RUN pnpm build
 
 # Create a non-privileged user that the app will run under
 # See https://docs.docker.com/develop/develop-images/dockerfile_best_practices/#user
@@ -390,14 +385,19 @@ RUN adduser \
     --uid "${UID}" \
     appuser
 
-# Copy built application and production dependencies from the build stage
-COPY --from=build /app /app
-
-# Copy system CA certificates to ensure HTTPS works correctly at runtime
-COPY --from=build /etc/ssl/certs /etc/ssl/certs
-
-# Ensure ownership of app files and drop privileges for better security
+# Set proper permissions
 RUN chown -R appuser:appuser /app
+USER appuser
+
+# Pre-download any ML models or files the agent needs
+# This ensures the container is ready to run immediately without downloading
+# dependencies at runtime, which improves startup time and reliability
+# Your package.json must contain a "download-files" script, such as `"download-files": "pnpm run build && node dist/agent.js download-files"`
+RUN pnpm download-files
+
+# Switch back to root to remove dev dependencies and finalize setup
+USER root
+RUN pnpm prune --prod && chown -R appuser:appuser /app
 USER appuser
 
 # Set Node.js to production mode
@@ -405,7 +405,8 @@ ENV NODE_ENV=production
 
 # Run the application
 # The "start" command tells the worker to connect to LiveKit and begin waiting for jobs.
-CMD [ "node", "./dist/agent.js", "start" ]
+# Your package.json must contain a "start" script, such as `"start": "node dist/agent.js start"`
+CMD [ "pnpm", "start" ]
 
 ```
 
@@ -446,6 +447,22 @@ coverage/
 # Project docs and misc
 README.md
 LICENSE
+
+```
+
+** Filename: `package.json`**
+
+```json
+{
+  "scripts": {
+    // ... other scripts ...
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "download-files": "pnpm run build && node dist/agent.js download-files",
+    "start": "node dist/agent.js start"
+  },
+  // ... other config ...
+}
 
 ```
 

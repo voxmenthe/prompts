@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Text-to-speech (TTS) › Speechify
 
 > How to use the Speechify TTS plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Speechify](https://speechify.com) provides an ultra low latency, human quality, and affordable text to speech API with voice cloning features. You can use the Speechify TTS plugin for LiveKit Agents to build high-quality voice AI applications.

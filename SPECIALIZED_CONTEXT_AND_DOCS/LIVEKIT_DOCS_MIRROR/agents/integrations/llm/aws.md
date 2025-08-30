@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Large language models (LLM) › Amazon B
 
 > How to use the Amazon Bedrock LLM plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html) is a fully managed service that provides a wide range of pre-trained models. With LiveKit's open source Bedrock integration and the Agents framework, you can build sophisticated voice AI applications using models from a wide variety of providers.

@@ -160,7 +160,7 @@ Returns [SIPParticipantInfo](#sipparticipantinfo)
 | hide_phone_number | bool |  | If true, use a random value for participant identity and phone number ommitted from attributes. By default, the participant identity is created using the phone number (if the participant identity isn't explicitly set). |
 | headers | map<string, string> |  | SIP X-* headers for INVITE request. These headers are sent as-is and may help identify this call as coming from LiveKit. |
 | include_headers | [SIPHeaderOptions](#sipheaderoptions) |  | Specify how SIP headers should be mapped to attributes. |
-| ringing_timeout | google.protobuf.Duration |  | Maximum time for the callee to answer the call. |
+| ringing_timeout | google.protobuf.Duration |  | Maximum time for the callee to answer the call. The upper limit is 80 seconds. |
 | max_call_duration | google.protobuf.Duration |  | Maximum call duration. |
 | krisp_enabled | bool |  | True to enable [Krisp noise cancellation](https://docs.livekit.io/sip.md#noise-cancellation-for-calls) for the callee. |
 | media_encryption | [SIPMediaEncryption](#sipmediaencryption) |  | Whether or not to encrypt media. |

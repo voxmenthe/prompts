@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Virtual avatars › bitHuman
 
 > How to use the bitHuman virtual avatar plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [bitHuman](https://www.bithuman.ai/) provides realtime virtual avatars that run locally on CPU only for low latency and high quality. You can use the open source bitHuman integration for LiveKit Agents to add virtual avatars to your voice AI app.

@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Text-to-speech (TTS) › Neuphonic
 
 > How to use the Neuphonic TTS plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Neuphonic](https://neuphonic.com/) provides hyper realistic realtime voice synthesis. You can use the Neuphonic TTS plugin for LiveKit Agents to build voice AI applications that sound realistic.

@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Text-to-speech (TTS) › Baseten
 
 > How to use the Baseten TTS plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Baseten](https://www.baseten.co/) is a hosted inference platform that allows you to deploy and serve any machine learning model. With LiveKit's Baseten integration and the Agents framework, you can build AI agents that provide high-quality speech synthesis using models like Orpheus.

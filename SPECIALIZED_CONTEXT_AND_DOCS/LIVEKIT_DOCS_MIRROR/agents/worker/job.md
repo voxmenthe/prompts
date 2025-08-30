@@ -47,12 +47,53 @@ async def entrypoint(ctx: JobContext):
 
     # when connected, room.local_participant represents the agent
     await room.local_participant.send_text('hello world', topic='hello-world')
-)
+
     # iterate through currently connected remote participants
     for rp in room.remote_participants.values():
         print(rp.identity)
 
 ```
+
+---
+
+**Node.js**:
+
+```typescript
+async function doSomething(track: RemoteTrack) {
+  for await (const frame of new AudioStream(track)) {
+    // do something with the frame
+  }
+}
+
+export default defineAgent({
+  entry: async (ctx: JobContext) => {
+    // an rtc.Room instance from the LiveKit Node.js SDK
+    const room = ctx.room;
+
+    // set up listeners on the room before connecting
+    room.on(RoomEvent.TrackSubscribed, async (track: RemoteTrack) => {
+      if (track.kind === TrackKind.KIND_AUDIO) {
+        doSomething(track);
+      }
+    });
+
+    await ctx.connect(undefined, AutoSubscribe.AUDIO_ONLY);
+
+    // when connected, room.localParticipant represents the agent
+    await room.localParticipant?.sendText('hello world', {
+      topic: 'hello-world',
+    });
+
+    // iterate through currently connected remote participants
+    for (const rp of ctx.room.remoteParticipants.values()) {
+      console.log(rp.identity);
+    }
+  },
+});
+
+```
+
+Working examples of LiveKit Agents for Node.js are available in the [repository](https://github.com/livekit/agents-js/tree/main/examples/src).
 
 - **[Echo Agent](https://github.com/livekit/agents/blob/main/examples/primitives/echo-agent.py)**: This programmatic participant example demonstrates how to subscribe to audio tracks and play them back to the room.
 
@@ -71,6 +112,10 @@ You can also add a participant entrypoint function to the `JobContext` using the
 - **[Participant entrypoint function](https://github.com/livekit/agents/blob/main/examples/primitives/participant_entrypoint.py)**: This example shows how to add a participant entrypoint function to the `JobContext` to log the participant's identity when they join the room.
 
 ## Adding custom fields to agent logs
+
+Available in:
+- [ ] Node.js
+- [x] Python
 
 Each job outputs JSON-formatted logs that include the user transcript, turn detection data, job ID, process ID, and more. You can include custom fields in the logs using `ctx.log_fields_context` for additional diagnostic context.
 
@@ -93,9 +138,11 @@ You can customize a job with user or job-specific data using either job metadata
 
 ### Job metadata
 
-Job metadata is a freeform string field defined in the [dispatch request](https://docs.livekit.io/agents/worker/agent-dispatch.md#via-api) and consumed in the `entrypoint`. Use JSON or similar structured data to pass complex information.
+Job metadata is a freeform string field defined in the [dispatch request](https://docs.livekit.io/agents/worker/agent-dispatch.md#via-api) and consumed in the `entrypoint` function. Use JSON or similar structured data to pass complex information.
 
-For instance, you can pass the user's ID, name, and phone number:
+The following example assumes your agent dispatch request includes the `user_id`, `user_name`, and `user_phone` fields in the metadata. You can access this data in the `entrypoint` function:
+
+**Python**:
 
 ```python
 import json
@@ -109,6 +156,23 @@ async def entrypoint(ctx: JobContext):
 
 ```
 
+---
+
+**Node.js**:
+
+```typescript
+export default defineAgent({
+  entry: async (ctx: JobContext) => {
+    const metadata = JSON.parse(ctx.job.metadata);
+    const userId = metadata.user_id;
+    const userName = metadata.user_name;
+    const userPhone = metadata.user_phone;
+    // ...
+  },
+});
+
+```
+
 For more information on dispatch, see the following article:
 
 - **[Agent dispatch](https://docs.livekit.io/agents/worker/agent-dispatch.md#via-api)**: Learn how to dispatch an agent with custom metadata.
@@ -118,6 +182,8 @@ For more information on dispatch, see the following article:
 You can also use properties such as the room's name, metadata, and participant attributes to customize agent behavior.
 
 Here's an example showing how to access various properties:
+
+**Python**:
 
 ```python
 async def entrypoint(ctx: JobContext):
@@ -142,11 +208,45 @@ async def entrypoint(ctx: JobContext):
 
 ```
 
-For more information, see the following articles:
+---
+
+**Node.js**:
+
+```typescript
+export default defineAgent({
+  entry: async (ctx: JobContext) => {
+    // connect to the room
+    await ctx.connect(undefined, AutoSubscribe.AUDIO_ONLY);
+
+    // wait for the first participant to arrive
+    const participant = await ctx.waitForParticipant();
+
+    // customize behavior based on the participant
+    console.log(`connected to room ${ctx.room.name} with participant ${participant.identity}`);
+
+    // inspect the current value of the attribute
+    let language = participant.attributes['user.language'];
+
+    // listen to when the attribute is changed
+    ctx.room.on(
+      'participantAttributesChanged',
+      (changedAttrs: Record<string, string>, p: Participant) => {
+        if (p === participant) {
+          language = p.attributes['user.language'];
+          console.log(`participant ${p.identity} changed language to ${language}`);
+        }
+      },
+    );
+  },
+});
+
+```
+
+For more information, see the following topics:
 
 - **[Room metadata](https://docs.livekit.io/home/client/state/room-metadata.md)**: Learn how to set and use room metadata.
 
-- **[Participant attributes & metadata](https://docs.livekit.io/home/client/data.md#participant-attributes)**: Learn how to set and use participant attributes and metadata.
+- **[Participant attributes & metadata](https://docs.livekit.io/home/client/state/participant-attributes.md)**: Learn how to set and use participant attributes and metadata.
 
 ## Ending the session
 
@@ -163,6 +263,22 @@ async def entrypoint(ctx: JobContext):
 
     # disconnect from the room
     ctx.shutdown(reason="Session ended")
+
+```
+
+---
+
+**Node.js**:
+
+```typescript
+export default defineAgent({
+  entry: async (ctx: JobContext) => {
+    // do some work...
+
+    // disconnect from the room
+    ctx.shutdown('Session ended');
+  },
+});
 
 ```
 
@@ -192,6 +308,26 @@ async def entrypoint(ctx: JobContext):
 
 ```
 
+---
+
+**Node.js**:
+
+```typescript
+export default defineAgent({
+  entry: async (ctx: JobContext) => {
+    // do some work...
+
+    const roomServiceClient = new RoomServiceClient(
+      process.env.LIVEKIT_URL,
+      process.env.LIVEKIT_API_KEY,
+      process.env.LIVEKIT_API_SECRET,
+    );
+    await roomServiceClient.deleteRoom(ctx.job.room.name);
+  },
+});
+
+```
+
 ## Post-processing and cleanup
 
 After a session ends, you can perform post-processing or cleanup tasks using shutdown hooks. For example, you might want to save user state in a database.
@@ -204,6 +340,21 @@ async def entrypoint(ctx: JobContext):
         # save user state
         ...
     ctx.add_shutdown_callback(my_shutdown_hook)
+
+```
+
+---
+
+**Node.js**:
+
+```typescript
+export default defineAgent({
+  entry: async (ctx: JobContext) => {
+    ctx.addShutdownCallback(() => {
+      // save user state...
+    });
+  },
+});
 
 ```
 

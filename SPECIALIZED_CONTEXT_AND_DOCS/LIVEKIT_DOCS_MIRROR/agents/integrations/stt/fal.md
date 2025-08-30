@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Speech-to-text (STT) › fal
 
 > How to use the fal STT plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [fal](https://fal.ai/) provides a hosted inference platform for a wide variety of model types, including [Wizper](https://fal.ai/models/fal-ai/wizper/api), a speech-to-text model based on Whisper v3 Large. With LiveKit's fal integration and the Agents framework, you can build AI agents that integrate Wizper for fast and accurate transcription.

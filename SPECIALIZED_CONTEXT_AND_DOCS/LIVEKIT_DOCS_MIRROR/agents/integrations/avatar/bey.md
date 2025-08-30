@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Virtual avatars › Beyond Presence
 
 > How to use the Beyond Presence virtual avatar plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Beyond Presence](https://www.beyondpresence.ai/) provides hyper-realistic interactive avatars for conversational video AI agents. You can use the open source Beyond Presence integration for LiveKit Agents to add virtual avatars to your voice AI app.

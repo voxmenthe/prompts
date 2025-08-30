@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Virtual avatars › Hedra
 
 > How to use the Hedra virtual avatar plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Hedra's](https://hedra.ai/) Realtime Avatars let you create your own avatar that can participate in live, interactive conversations. You can use the open source Hedra integration for LiveKit Agents in your voice AI app.

@@ -6,6 +6,10 @@ LiveKit Docs › Integration guides › Virtual avatars › Anam
 
 > How to use the Anam virtual avatar plugin for LiveKit Agents.
 
+Available in:
+- [ ] Node.js
+- [x] Python
+
 ## Overview
 
 [Anam](https://anam.ai/) provides lifelike avatars for realtime conversational AI. You can use the open source Anam integration for LiveKit Agents to enable seamless integration of Anam avatars into your voice AI app.
