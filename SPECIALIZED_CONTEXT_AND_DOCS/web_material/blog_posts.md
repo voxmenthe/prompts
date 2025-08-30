@@ -66,6 +66,7 @@ https://simonxin.com/blogs/index.html
 https://snimu.github.io/
 https://steipete.me/posts
 https://qipeng.me/blog/
+https://quagmire.bearblog.dev/blog/
 https://research.google/blog/
 https://rupeshks.cc/blog/
 https://sander.ai/posts/
