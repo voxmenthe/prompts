@@ -2,6 +2,7 @@ Search the following blog URLs for new posts published within the month of Augus
 
 https://alexshtf.github.io/
 https://www.aihero.dev/posts
+https://www.aleksagordic.com/blog
 https://andyljones.com/
 https://www.answer.ai/
 https://www.anyscale.com/blog
