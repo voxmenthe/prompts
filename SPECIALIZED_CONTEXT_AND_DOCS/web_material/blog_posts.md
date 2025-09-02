@@ -43,6 +43,7 @@ https://huggingface.co/blog
 https://insujang.github.io/posts/
 https://www.interconnects.ai/
 https://jeremybernste.in/writing/
+https://jonathanc.net/blog/
 https://jyopari.github.io/
 https://jxnl.co/writing/
 https://koaning.io/posts/
