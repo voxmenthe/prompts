@@ -64,6 +64,16 @@ lk agent update-secrets --secrets "DATADOG_TOKEN=your-client-token"
 
 - **`DATADOG_REGION`** _(string)_ (optional) - Default: `us1`: Your Datadog region. Supported regions are `us1`, `us3`, `us5`, `us1-fed`, `eu`, and `ap1`.
 
+#### Log fields
+
+The following log fields are set in Datadog for all log lines sent from LiveKit Cloud:
+
+| Field | Value | Description |
+| host | <worker-id> | A unique identifier for the specific worker instance emitting the log. |
+| source | <agent-id> | The ID of the agent, as in `livekit.toml` and the dashboard, |
+| service | `"cloud.livekit.io"` |  |
+| stream | `stdout` or `stderr` | Indicates whether the log originated from stdout or stderr. |
+
 ## Log levels
 
 Your agent worker configuration determines the log levels that are collected and forwarded. The default log level is `INFO`. To use a different value, set the log level in your Dockerfile:

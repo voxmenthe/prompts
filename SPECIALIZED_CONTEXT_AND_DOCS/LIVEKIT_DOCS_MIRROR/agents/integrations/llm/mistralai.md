@@ -10,7 +10,7 @@ LiveKit Docs › Integration guides › Large language models (LLM) › Mistral 
 
 LiveKit's [Mistral AI](https://mistral.ai/) plugin provides access to their instruction-tuned, code, and vision chat models through [La Plateforme](https://mistral.ai/products/la-plateforme). You can use Mistral AI with LiveKit Agents for conversation, reasoning, and other text-generation tasks.
 
-The Mistral AI plugin also supports [STT models](https://docs.livekit.io/reference/agents/integrations/stt/mistralai.md).
+The Mistral AI plugin also supports [STT models](https://docs.livekit.io/agents/integrations/stt/mistralai.md).
 
 ## Quick reference
 

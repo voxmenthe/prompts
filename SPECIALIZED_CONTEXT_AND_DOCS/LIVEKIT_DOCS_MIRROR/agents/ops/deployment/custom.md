@@ -126,6 +126,10 @@ For example, if deploying on Kubernetes using a Horizontal Pod Autoscaler, see [
 
 You can use LiveKit Cloud for media transport even if your agents are deployed to a custom environment.  In this case, the LiveKit Cloud dashboard will show general information your self-deployed agents, including session count, the current load, and a list of running workers.
 
+## Job crashes
+
+Job crashes are written to worker logs for monitoring. If a job process crashes, it doesn't affect the worker or other jobs. If the worker crashes, all child jobs are terminated.
+
 ---
 
 

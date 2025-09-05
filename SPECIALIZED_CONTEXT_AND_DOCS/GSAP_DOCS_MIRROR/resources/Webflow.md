@@ -1,10 +1,8 @@
 # Webflow
 
-[Webflow Interactions is here!](https://webflow.com/interactions-animations) It's powered by GSAP and it's available for free to all Webflow customers!
+[Try out the first iteration of the GSAP powered Webflow iteractions.](https://webflow.com/interactions-animations) Available for free to all Webflow customers.
 
-Now you have the power to **animate your way.** Build visually with an intuitive horizontal timeline, or drop into custom code for more power and control.
-
-Interested in building interactions right in the Webflow Designer? You’ll get:
+You’ll get:
 
 * A horizontal timeline with precise, granular controls
 * Visual feedback so you can scrub, preview, and perfect
@@ -142,16 +140,3 @@ If you would rather load GSAP or a specific plugin on a per page basis we recomm
 [GPT for GSAP & Webflow](https://www.youtube.com/watch?v=GTS72OESDvw)
 
 [More great learning content on his site](https://www.timothyricks.com/)
-
-## **Demos**[​](#demos "Direct link to demos")
-
-If you're looking for inspo, take a look at [all of these amazing Webflow + GSAP sites](https://gsap.com/showcase/?tags=Webflow) or check out these official [GSAP x Webflow Templates](https://webflow.com/templates/search/gsap).
-
-Webflow Demos
-
-Search..
-
-\[x]All
-
-Play Demo videos\[ ]
-

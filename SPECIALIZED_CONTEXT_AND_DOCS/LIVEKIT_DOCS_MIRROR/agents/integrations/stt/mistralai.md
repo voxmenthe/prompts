@@ -10,7 +10,7 @@ LiveKit Docs › Integration guides › Speech-to-text (STT) › Mistral AI
 
 LiveKit's [Mistral AI](https://mistral.ai/) plugin provides access to their STT models from the [Voxtral](https://mistral.ai/products/voxtral) family through [La Plateforme](https://mistral.ai/products/la-plateforme). You can use Mistral AI with LiveKit Agents for real-time transcription and other speech-understanding tasks.
 
-The Mistral AI plugin also supports [LLM models](https://docs.livekit.io/reference/agents/integrations/llm/mistralai.md).
+The Mistral AI plugin also supports [LLM models](https://docs.livekit.io/agents/integrations/llm/mistralai.md).
 
 ## Quick reference
 

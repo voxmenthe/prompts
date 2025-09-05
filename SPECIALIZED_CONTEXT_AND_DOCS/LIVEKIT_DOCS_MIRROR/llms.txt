@@ -473,5 +473,5 @@ The following document is a comprehensive list of all available documentation an
 
 ---
 
-This document was rendered at 2025-08-27T23:35:14.032Z.
+This document was rendered at 2025-09-05T06:42:50.410Z.
 For the latest version of this document, see [https://docs.livekit.io/llms.txt](https://docs.livekit.io/llms.txt).
