@@ -1,0 +1,481 @@
+#!/usr/bin/env bash
+
+# Bash 5.3-compatible version of codex_resume (macOS)
+# - Scopes sessions to a target directory (default: current dir)
+# - Caches matches in ~/.codex/session_cache to speed lookups
+# - Interactive picker via fzf with a rich preview (optional)
+# - Graceful fallbacks when rg/jq/fzf are not installed
+# - Adds -h/--help to print usage information
+
+codex_resume() {
+  set -o pipefail
+  shopt -s nullglob
+
+  local want_last=0 list_any=0 refresh=0 limit=200 target_dir="" sep=$'\t'
+  local head_lines=2 foot_lines=2
+  local -a passthru
+
+  _print_help() {
+    cat <<'USAGE'
+Usage: codex_resume [options] [-- <codex-args>...]
+
+Resume a previous Codex CLI session by selecting a JSONL log from
+~/.codex/sessions/YYYY/MM/DD and passing it to Codex via:
+  codex --config experimental_resume="<session-file>"
+
+Options:
+  -h, --help       Show this help and exit
+      --last       Resume the most recent matching session without prompting
+      --any        Ignore directory scoping; browse recent sessions across all dirs
+      --dir PATH   Scope sessions to the specified working directory (default: $PWD)
+      --limit N    Limit number of candidates to consider (default: 200)
+      --refresh    Force a rescan of sessions (ignore cache delta)
+      --head N     Show N-line preview from the beginning of the session (default: 2; 0 to disable)
+      --foot N     Show N-line preview from the end of the session (default: 2; 0 to disable)
+
+Notes:
+  - By default, sessions are filtered to those associated with the target directory.
+  - A per-directory cache is stored at ~/.codex/session_cache to accelerate matching.
+  - If fzf is available, a colorized interactive menu with preview is used.
+  - jq is used for rich JSON preview; grep/sed fallbacks are provided.
+  - Config file: ~/.codex/resume.conf (or set CODEX_RESUME_CONFIG) can set defaults:
+      any=0|1, last=0|1, refresh=0|1, dir=/path, limit=200, head=2, foot=2
+
+Examples:
+  codex_resume --last
+  codex_resume
+  codex_resume --any --limit 50
+  codex_resume --dir /path/to/repo
+  codex_resume -- --plan --model o4-mini
+USAGE
+  }
+
+  # Load config defaults, if present (config < CLI)
+  local CONFIG_PATH="${CODEX_RESUME_CONFIG:-$HOME/.codex/resume.conf}"
+  if [[ -f "$CONFIG_PATH" ]]; then
+    # shellcheck disable=SC2013
+    while IFS='=' read -r _k _v; do
+      # Skip empty and comments
+      [[ -z "$_k$_v" ]] && continue
+      case "$_k" in ("#"*) continue;; esac
+      # Trim whitespace
+      local k v
+      k=${_k%%[[:space:]]*}; k=${k##[[:space:]]*}
+      v=${_v##[[:space:]]}; v=${v%%[[:space:]]}
+      # Remove optional surrounding quotes
+      [[ ${v:0:1} == '"' && ${v: -1} == '"' ]] && v=${v:1:${#v}-2}
+      case "$k" in
+        any)      [[ "$v" =~ ^(1|true|yes|on)$ ]] && list_any=1 || list_any=0 ;;
+        last)     [[ "$v" =~ ^(1|true|yes|on)$ ]] && want_last=1 || want_last=0 ;;
+        refresh)  [[ "$v" =~ ^(1|true|yes|on)$ ]] && refresh=1  || refresh=0 ;;
+        dir)      target_dir="$v" ;;
+        limit)    [[ "$v" =~ ^[0-9]+$ ]] && limit="$v" ;;
+        head)     [[ "$v" =~ ^[0-9]+$ ]] && head_lines="$v" ;;
+        foot)     [[ "$v" =~ ^[0-9]+$ ]] && foot_lines="$v" ;;
+      esac
+    done < <(grep -v -E '^[[:space:]]*(#|$)' -- "$CONFIG_PATH")
+  fi
+
+  # Parse arguments
+  while (( $# > 0 )); do
+    case "$1" in
+      -h|--help) _print_help; return 0 ;;
+      --last) want_last=1; shift ;;
+      --any)  list_any=1; shift ;;
+      --dir)  target_dir=${2:-}; shift 2 ;;
+      --limit) limit=${2:-200}; shift 2 ;;
+      --refresh) refresh=1; shift ;;
+      --head) head_lines=${2:-2}; shift 2 ;;
+      --foot) foot_lines=${2:-2}; shift 2 ;;
+      --) shift; passthru=("$@"); break ;;
+      --*) echo "codex_resume: unknown option: $1" >&2; return 2 ;;
+      *) passthru+=("$1"); shift ;;
+    esac
+  done
+
+  if [[ -z "$target_dir" ]]; then
+    target_dir=$(pwd -P)
+  else
+    if [[ -d "$target_dir" ]]; then
+      target_dir=$(cd "$target_dir" 2>/dev/null && pwd -P)
+    else
+      echo "codex_resume: --dir path does not exist: $target_dir" >&2
+      return 2
+    fi
+  fi
+
+  # Tools detection
+  local __have_rg=0; command -v rg >/dev/null 2>&1 && __have_rg=1
+
+  __codex_extract_dir() {
+    local f="$1" line path
+    if (( __have_rg )); then
+      line=$(rg -m 1 -o 'CurrentDir=[^\n]+' --no-line-number -- "$f" 2>/dev/null)
+    else
+      line=$(grep -a -m 1 -o "CurrentDir=[^\n]*" -- "$f" 2>/dev/null)
+    fi
+    [[ -z "$line" ]] && return 1
+    path=${line#CurrentDir=}
+    # Strip common ANSI/OSC sequences and BEL terminators
+    path=$(printf '%s' "$path" | sed -E 's/\x07.*$//; s/\x1B\][^\a]*\x07//g; s/\x1B\[[0-9;]*[A-Za-z]//g')
+    printf '%s\n' "$path"
+    return 0
+  }
+
+  __codex_matches_dir_file() {
+    local f="$1" curdir
+    if curdir=$(__codex_extract_dir "$f" 2>/dev/null); then
+      [[ "$curdir" == "$target_dir" ]] && return 0
+    fi
+    if (( __have_rg )); then
+      rg -m 1 -F --quiet -- "$target_dir" "$f" 2>/dev/null && return 0
+    else
+      grep -a -m 1 -F -q -- "$target_dir" "$f" 2>/dev/null && return 0
+    fi
+    return 1
+  }
+
+  __codex_append_tsv() {
+    local mtime="$1" file="$2" cur="-"
+    if cur=$(__codex_extract_dir "$file" 2>/dev/null); then :; else cur="-"; fi
+    printf '%s%s%s%s%s\n' "$mtime" "$sep" "$file" "$sep" "$cur" >> "$tsv_path"
+  }
+
+  # Per-workdir cache under ~/.codex/session_cache
+  local cache_root="$HOME/.codex/session_cache"
+  [[ -d "$cache_root" ]] || mkdir -p "$cache_root" 2>/dev/null
+  local key hash_cmd
+  if hash_cmd=$(command -v shasum); then
+    key=$(printf '%s' "$target_dir" | shasum -a 256 | awk '{print $1}')
+  else
+    key=$(printf '%s' "$target_dir" | openssl dgst -sha256 2>/dev/null | awk '{print $2}')
+  fi
+  [[ -n "$key" ]] || key=$(printf '%s' "${target_dir//\//_}" | tr ' ' '_')
+  local meta_path="$cache_root/$key.meta"
+  local tsv_path="$cache_root/$key.tsv"
+
+  # Read meta (if present)
+  local last_date="0000-00-00" last_mtime=0 fmt_ver=1 meta_workdir=""
+  if [[ -f "$meta_path" && $refresh -eq 0 ]]; then
+    local k v
+    while IFS='=' read -r k v; do
+      case "$k" in
+        workdir) meta_workdir="$v" ;;
+        format_version) fmt_ver="$v" ;;
+        last_scan_date) last_date="$v" ;;
+        last_scan_mtime) last_mtime="$v" ;;
+      esac
+    done < "$meta_path"
+  fi
+  # If meta workdir mismatches (e.g., moved), reset
+  if [[ -n "$meta_workdir" && "$meta_workdir" != "$target_dir" ]]; then
+    last_date="0000-00-00"; last_mtime=0
+  fi
+
+  # Delta scan date-based sessions to update cache for this workdir
+  local -a datedirs tmp
+  datedirs=()
+  for d in "$HOME/.codex/sessions"/*/*/*; do
+    [[ -d "$d" ]] && datedirs+=("$d")
+  done
+  if (( ${#datedirs[@]} == 0 )); then
+    echo "No session files found in ~/.codex/sessions" >&2
+    return 1
+  fi
+  IFS=$'\n' read -r -d '' -a datedirs < <(printf '%s\n' "${datedirs[@]}" | sort && printf '\0')
+  IFS=$' \t\n'
+
+  local max_date="$last_date" max_mtime=$last_mtime
+  local dd yyyy mm ddpart date_str __cr_fp __cr_mtime max_mtime_this_date
+  for dd in "${datedirs[@]}"; do
+    ddpart=$(basename "$dd")
+    mm=$(basename "$(dirname "$dd")")
+    yyyy=$(basename "$(dirname "$(dirname "$dd")")")
+    date_str="$yyyy-$mm-$ddpart"
+    [[ "$date_str" < "$last_date" ]] && continue
+    max_mtime_this_date=0
+    local -a files_in_date=("$dd"/*.jsonl)
+    for __cr_fp in "${files_in_date[@]}"; do
+      __cr_mtime=$(stat -f %m -- "$__cr_fp" 2>/dev/null || echo 0)
+      (( __cr_mtime > max_mtime_this_date )) && max_mtime_this_date=$__cr_mtime
+      if [[ "$date_str" > "$last_date" || ( "$date_str" == "$last_date" && $__cr_mtime -gt $last_mtime ) ]]; then
+        if __codex_matches_dir_file "$__cr_fp"; then
+          __codex_append_tsv "$__cr_mtime" "$__cr_fp"
+        fi
+      fi
+    done
+    if [[ "$date_str" > "$max_date" ]]; then
+      max_date="$date_str"; max_mtime=$max_mtime_this_date
+    elif [[ "$date_str" == "$max_date" ]]; then
+      (( max_mtime_this_date > max_mtime )) && max_mtime=$max_mtime_this_date
+    fi
+  done
+
+  # Write meta atomically
+  {
+    printf 'workdir=%s\n' "$target_dir"
+    printf 'format_version=1\n'
+    printf 'last_scan_date=%s\n' "$max_date"
+    printf 'last_scan_mtime=%s\n' "$max_mtime"
+  } > "$meta_path.tmp.$$" 2>/dev/null && mv -f "$meta_path.tmp.$$" "$meta_path" 2>/dev/null
+
+  # Compact TSV cache: keep newest unique entries, drop missing files
+  if [[ -f "$tsv_path" ]]; then
+    local -a __tsv
+    mapfile -t __tsv < <(LC_ALL=C sort -t"$sep" -k1,1nr "$tsv_path" 2>/dev/null)
+    declare -A __seen=()
+    local __line __path __keep=0 __max_keep=2000
+    : > "$tsv_path.tmp.$$"
+    for __line in "${__tsv[@]}"; do
+      IFS=$'\t' read -r _ __path _ <<< "$__line"
+      [[ -f "$__path" ]] || continue
+      [[ -n "${__seen[$__path]}" ]] && continue
+      printf '%s\n' "$__line" >> "$tsv_path.tmp.$$"
+      __seen[$__path]=1
+      (( ++__keep >= __max_keep )) && break
+    done
+    mv -f "$tsv_path.tmp.$$" "$tsv_path" 2>/dev/null || rm -f "$tsv_path.tmp.$$" 2>/dev/null
+  fi
+
+  local -a matched
+  matched=()
+  if (( list_any )); then
+    # Live scan across all sessions, sorted by mtime (desc), limited
+    local -a allfiles=()
+    for f in "$HOME/.codex/sessions"/*/*/*/*.jsonl; do
+      [[ -f "$f" ]] && allfiles+=("$f")
+    done
+    if (( ${#allfiles[@]} == 0 )); then
+      echo "No session files found in ~/.codex/sessions" >&2
+      return 1
+    fi
+    local -a sorted_all
+    mapfile -t sorted_all < <(
+      for f in "${allfiles[@]}"; do
+        m=$(stat -f %m -- "$f" 2>/dev/null || echo 0)
+        printf '%s\t%s\n' "$m" "$f"
+      done | LC_ALL=C sort -t$'\t' -k1,1nr | head -n "$limit"
+    )
+    local line
+    for line in "${sorted_all[@]}"; do
+      matched+=("${line#*$'\t'}")
+    done
+  else
+    # Load from cache TSV, dedupe, validate existence, sort by mtime desc
+    if [[ -f "$tsv_path" ]]; then
+      local -a tsv_lines
+      mapfile -t tsv_lines < <(LC_ALL=C sort -t"$sep" -k1,1nr "$tsv_path" 2>/dev/null)
+      declare -A seen=()
+      local __cr_line __cr_fpath
+      for __cr_line in "${tsv_lines[@]}"; do
+        IFS=$'\t' read -r _ __cr_fpath _ <<< "$__cr_line"
+        [[ -f "$__cr_fpath" ]] || continue
+        if [[ -z "${seen[$__cr_fpath]}" ]]; then
+          matched+=("$__cr_fpath")
+          seen[$__cr_fpath]=1
+        fi
+        (( ${#matched[@]} >= limit )) && break
+      done
+    fi
+  fi
+
+  local count=${#matched[@]}
+  if (( count == 0 )); then
+    echo "No sessions found for: $target_dir" >&2
+    echo "Tip: use 'codex_resume --any' to browse all recent sessions." >&2
+    return 1
+  fi
+
+  local picked=""
+  if (( want_last || count == 1 )); then
+    picked="${matched[0]}"
+  else
+    local -a menu_lines
+    local __cr_pf ts base label clean_filename
+    base=$(basename "$target_dir")
+    for __cr_pf in "${matched[@]}"; do
+      if ts=$(stat -f "%Sm" -t "%Y-%m-%d %H:%M" -- "$__cr_pf" 2>/dev/null); then :; else
+        local m; m=$(stat -f %m -- "$__cr_pf" 2>/dev/null)
+        ts=$(date -r "$m" +"%Y-%m-%d %H:%M" 2>/dev/null)
+      fi
+      clean_filename=$(basename "$__cr_pf")
+      clean_filename=${clean_filename#rollout-}
+      clean_filename=${clean_filename%.jsonl}
+      # gray ts, green base, gray separator, blue filename
+      label=$'\033[90m'"$ts"$'\033[0m  \033[32m'"$base"$'\033[0m  \033[90m—\033[0m  \033[94m'"$clean_filename"$'\033[0m'
+      menu_lines+=("$label$sep$__cr_pf")
+    done
+
+    if command -v fzf >/dev/null 2>&1 && [[ -t 1 ]]; then
+      local sel
+      # Colorized preview command
+      local preview_cmd='
+        f={2}
+        if [[ ! -f "$f" ]]; then
+          echo "File not found: $f"
+          exit 1
+        fi
+
+        # Extract session metadata for prettier display
+        if command -v jq >/dev/null 2>&1; then
+          session_id=$(head -1 "$f" 2>/dev/null | jq -r ".id // \"\"" 2>/dev/null)
+          branch=$(head -1 "$f" 2>/dev/null | jq -r ".git.branch // \"\"" 2>/dev/null)
+          commit=$(head -1 "$f" 2>/dev/null | jq -r ".git.commit_hash // \"\"" 2>/dev/null | cut -c1-8)
+          repo_url=$(head -1 "$f" 2>/dev/null | jq -r ".git.repository_url // \"\"" 2>/dev/null)
+          timestamp=$(head -1 "$f" 2>/dev/null | jq -r ".timestamp // \"\"" 2>/dev/null | cut -c1-19 | tr T " ")
+          instruction=$(head -1 "$f" 2>/dev/null | jq -r ".instructions // \"\"" 2>/dev/null | head -c 120)
+        else
+          session_id=$(grep -a -m 1 -o "\"id\":\"[^\"]*\"" "$f" 2>/dev/null | sed "s/\"id\":\"\([^\"]*\)\"/\1/")
+          branch=$(grep -a -m 1 -o "\"branch\":\"[^\"]*\"" "$f" 2>/dev/null | sed "s/\"branch\":\"\([^\"]*\)\"/\1/")
+          commit=$(grep -a -m 1 -o "\"commit_hash\":\"[^\"]*\"" "$f" 2>/dev/null | sed "s/\"commit_hash\":\"\([^\"]*\)\"/\1/" | cut -c1-8)
+          repo_url=$(grep -a -m 1 -o "\"repository_url\":\"[^\"]*\"" "$f" 2>/dev/null | sed "s/\"repository_url\":\"\([^\"]*\)\"/\1/")
+          timestamp=$(grep -a -m 1 -o "\"timestamp\":\"[^\"]*\"" "$f" 2>/dev/null | sed "s/\"timestamp\":\"\([^\"]*\)\"/\1/" | cut -c1-19 | tr T " ")
+          instruction=$(grep -a -m 1 -o "\"instructions\":\"[^\"]*\"" "$f" 2>/dev/null | sed "s/\"instructions\":\"\([^\"]*\)\"/\1/" | head -c 120)
+        fi
+
+        # Get repo name from URL
+        repo_name=$(echo "$repo_url" | sed "s|.*[/:]||" | sed "s|\.git||")
+
+        # Count messages
+        msg_count=$(grep -a -c "\"type\":\"message\"" "$f" 2>/dev/null || echo "0")
+
+        # Show session header with dynamic width
+        header_line1="Session: ${session_id:-unknown}"
+        header_line2="${repo_name:-unknown}"
+        [[ -n "$branch" ]] && header_line2="$header_line2 ($branch)"
+        header_line3="$timestamp"
+        [[ "$msg_count" != "0" ]] && header_line3="$header_line3 • $msg_count msgs"
+
+        # Calculate max width needed
+        max_width=60
+        line1_len=${#header_line1}
+        line2_len=${#header_line2}
+        line3_len=${#header_line3}
+
+        [[ $line1_len -gt $max_width ]] && max_width=$line1_len
+        [[ $line2_len -gt $max_width ]] && max_width=$line2_len
+        [[ $line3_len -gt $max_width ]] && max_width=$line3_len
+
+        # Add padding
+        ((max_width += 4))
+
+        # Create top border
+        printf "\033[90m┌"
+        printf "%.0s─" $(seq 1 $max_width)
+        printf "┐\033[0m\n"
+
+        # Session ID line
+        printf "\033[90m│\033[0m \033[33m%s\033[0m" "$header_line1"
+        padding=$((max_width - line1_len - 1))
+        printf "%*s" $padding ""
+        printf "\033[90m│\033[0m\n"
+
+        # Repo/branch line
+        printf "\033[90m│\033[0m \033[32m%s\033[0m" "$repo_name"
+        [[ -n "$branch" ]] && printf " \033[90m(\033[36m%s\033[90m)\033[0m" "$branch"
+        # Calculate actual printed length (without color codes)
+        actual_len=${#repo_name}
+        [[ -n "$branch" ]] && actual_len=$((actual_len + ${#branch} + 3))
+        padding=$((max_width - actual_len - 1))
+        printf "%*s" $padding ""
+        printf "\033[90m│\033[0m\n"
+
+        # Timestamp/messages line
+        printf "\033[90m│\033[0m \033[37m%s\033[0m" "$timestamp"
+        [[ "$msg_count" != "0" ]] && printf " \033[90m•\033[0m \033[37m%s msgs\033[0m" "$msg_count"
+        padding=$((max_width - line3_len - 1))
+        printf "%*s" $padding ""
+        printf "\033[90m│\033[0m\n"
+
+        # Bottom border
+        printf "\033[90m└"
+        printf "%.0s─" $(seq 1 $max_width)
+        printf "┘\033[0m\n\n"
+
+        # Optional header/footer raw previews
+        if [[ -n "$HEAD_N" && "$HEAD_N" -gt 0 ]]; then
+          printf "\033[95m▌ Start preview (%s lines)\033[0m\n" "$HEAD_N"
+          head -n "$HEAD_N" "$f" | sed "s/^/  /"
+          printf "\n"
+        fi
+        if [[ -n "$FOOT_N" && "$FOOT_N" -gt 0 ]]; then
+          printf "\033[96m▌ End preview (%s lines)\033[0m\n" "$FOOT_N"
+          tail -n "$FOOT_N" "$f" | sed "s/^/  /"
+          printf "\n"
+        fi
+
+        # Show full conversation history
+        if command -v jq >/dev/null 2>&1; then
+          sed -E "s/\x1b\\[[0-9;]*[A-Za-z]//g" "$f" | jq -Rr "fromjson? | select(.type==\"message\") | [.role // \"\", .content[0].text // \"\"] | @tsv" 2>/dev/null | while IFS=$'"'"'\t'"'"' read -r role text; do
+            # Skip messages with empty/null roles or text
+            if [[ -z "$role" || -z "$text" ]]; then
+              continue
+            fi
+
+            # Skip template blocks but show real content
+            if [[ "$text" == "<user_instructions>"* ]] || [[ "$text" == "<environment_context>"* ]]; then
+              continue
+            fi
+
+            # Format role with color
+            if [[ "$role" == "user" ]]; then
+              printf "\033[94m▌ User:\033[0m\n"
+            elif [[ "$role" == "assistant" ]]; then
+              printf "\033[92m▌ Assistant:\033[0m\n"
+            else
+              printf "\033[90m▌ %s:\033[0m\n" "$role"
+            fi
+
+            # Show message content (wrapped and formatted)
+            echo "$text" | fold -s -w 80 | sed "s/^/  /"
+            printf "\n"
+          done
+        else
+          # Fallback: show raw content with basic formatting
+          printf "\033[90mFull conversation:\033[0m\n\n"
+          grep -a "\"type\":\"message\"" "$f" | while IFS= read -r line; do
+            # Extract role and basic text without jq
+            role=$(echo "$line" | sed -n "s/.*\"role\":\"\([^\"]*\)\".*/\1/p")
+            if [[ "$role" == "user" ]]; then
+              printf "\033[94m▌ User:\033[0m\n"
+            elif [[ "$role" == "assistant" ]]; then
+              printf "\033[92m▌ Assistant:\033[0m\n"
+            fi
+            echo "  [Message content]"
+            printf "\n"
+          done
+        fi
+      '
+
+      HEAD_N="$head_lines" FOOT_N="$foot_lines" \
+      sel=$(printf '%s\n' "${menu_lines[@]}" | fzf --ansi --with-nth=1 --delimiter="$sep" --prompt="codex sessions » " --height=80% --reverse --preview-window=up:60% --preview="$preview_cmd") || return 130
+      picked=${sel#*$sep}
+    else
+      local i=1 f
+      for f in "${matched[@]}"; do
+        echo "[$i] $(basename "$f")"
+        (( i++ ))
+      done
+      local choice
+      printf "Select [1-%d]: " $((i-1))
+      read -r choice || return 130
+      if [[ -z "$choice" || ! "$choice" =~ ^[0-9]+$ || $choice -lt 1 || $choice -ge $i ]]; then
+        echo "Invalid selection" >&2; return 2
+      fi
+      picked="${matched[$((choice-1))]}"
+    fi
+  fi
+
+  [[ -z "$picked" ]] && { echo "No session selected" >&2; return 1; }
+  echo "Resuming from: $picked"
+  if (( ${#passthru[@]} )); then
+    codex --config experimental_resume="$picked" "${passthru[@]}"
+  else
+    codex --config experimental_resume="$picked"
+  fi
+}
+
+# If executed directly, run; if sourced, provide the function
+if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
+  codex_resume "$@"
+fi
