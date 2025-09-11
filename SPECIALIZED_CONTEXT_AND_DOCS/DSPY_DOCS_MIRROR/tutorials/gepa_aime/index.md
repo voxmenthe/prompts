@@ -1,7 +1,61 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/gepa_aime/index.ipynb on 2025-08-30T20:09:29.502075Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/gepa_aime/index.ipynb on 2025-09-07T07:08:23.226697Z -->
 
 # Tutorial: GEPA for AIME (Math)
 In this tutorial, we optimize GPT-4.1 Mini's Chain of Thought (`dspy.ChainOfThought`) for solving math problems (AIME) using the `dspy.GEPA` optimizer!
+
+<details>
+<summary>Recommended: Set up MLflow Autologging to understand what's happening under the hood.</summary>
+
+### MLflow DSPy Integration
+
+<a href="https://mlflow.org/">MLflow</a> is an LLMOps tool that natively integrates with DSPy and offer explainability and experiment tracking. MLflow's autologging capability automatically tracks progress of GEPA optimization, as well as visualizes prompts and module executions as traces to understand the DSPy's behavior better. You can set up MLflow easily by following the four steps below.
+
+**Visualize module executions as traces**
+
+![MLflow Trace](./mlflow-tracing-gepa-aime.png)
+
+**Automatically track optimization progress and results**
+
+![MLflow Tracking](./mlflow-tracking-gepa-aime-optimization.png)
+
+
+**Setup MLflow**
+
+1. Install MLflow
+
+```bash
+%pip install mlflow>=3.0.0
+```
+
+2. Start MLflow UI in a separate terminal
+```bash
+mlflow ui --port 5000 --backend-store-uri sqlite:///mlruns.db
+```
+
+3. Connect the notebook to MLflow
+```python
+import mlflow
+
+mlflow.set_tracking_uri("http://localhost:5000")
+mlflow.set_experiment("DSPy")
+```
+
+4. Enabling autologging.
+
+```python
+mlflow.dspy.autolog(
+    # Log the optimization progress
+    log_compiles=True,
+    # Log the evaluation results
+    log_evals=True,
+    # Log traces from module executions
+    log_traces=True
+)
+```
+
+
+To learn more about the integration, visit [MLflow DSPy Documentation](https://mlflow.org/docs/latest/llms/dspy/index.html) as well.
+</details>
 
 ```python
 api_key = input("Enter your OpenAI API key: ")

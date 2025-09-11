@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/customer_service_agent/index.ipynb on 2025-08-30T20:09:29.522773Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/customer_service_agent/index.ipynb on 2025-09-07T07:08:23.249287Z -->
 
 # Build AI Agents with DSPy
 
@@ -21,6 +21,43 @@ Before starting, let's install the required packages:
 ```
 !pip install -qU dspy pydantic
 ```
+
+<details>
+<summary>Recommended: Set up MLflow Tracing to understand what's happening under the hood.</summary>
+
+### MLflow DSPy Integration
+
+<a href="https://mlflow.org/">MLflow</a> is an LLMOps tool that natively integrates with DSPy and offer explainability and experiment tracking. In this tutorial, you can use MLflow to visualize prompts and optimization progress as traces to understand the DSPy's behavior better. You can set up MLflow easily by following the four steps below.
+
+![MLflow Trace](./mlflow-tracing-customer-service-agent.png)
+
+1. Install MLflow
+
+```bash
+%pip install mlflow>=3.0.0
+```
+
+2. Start MLflow UI in a separate terminal
+```bash
+mlflow ui --port 5000 --backend-store-uri sqlite:///mlruns.db
+```
+
+3. Connect the notebook to MLflow
+```python
+import mlflow
+
+mlflow.set_tracking_uri("http://localhost:5000")
+mlflow.set_experiment("DSPy")
+```
+
+4. Enabling tracing.
+```python
+mlflow.dspy.autolog()
+```
+
+
+To learn more about the integration, visit [MLflow DSPy Documentation](https://mlflow.org/docs/latest/llms/dspy/index.html) as well.
+</details>
 
 ## Define Tools
 

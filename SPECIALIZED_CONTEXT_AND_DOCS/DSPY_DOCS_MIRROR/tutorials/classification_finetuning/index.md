@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/classification_finetuning/index.ipynb on 2025-08-30T20:09:29.497572Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/classification_finetuning/index.ipynb on 2025-09-07T07:08:23.222024Z -->
 
 # Tutorial: Classification Fine-tuning
 

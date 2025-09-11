@@ -3,7 +3,7 @@
 ## dspy.LM
 
 ```python
-class LM(model, model_type='chat', temperature=0.0, max_tokens=4000, cache=True, cache_in_memory=True, callbacks=None, num_retries=3, provider=None, finetuning_model=None, launch_kwargs=None, train_kwargs=None, **kwargs)
+class LM(model, model_type='chat', temperature=0.0, max_tokens=4000, cache=True, callbacks=None, num_retries=3, provider=None, finetuning_model=None, launch_kwargs=None, train_kwargs=None, use_developer_role=False, **kwargs)
 ```
 
 A language model supporting chat or text completion requests for use with DSPy modules.
@@ -56,5 +56,5 @@ def launch(self, launch_kwargs=None)
 ```python
 def reinforce(self, train_kwargs)
 ```
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/clients/lm.py` (lines 24–265)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/clients/lm.py` (lines 25–293)
 

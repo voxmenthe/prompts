@@ -5,7 +5,7 @@
 ## dspy.GEPA
 
 ```python
-class GEPA(metric, *, auto=None, max_full_evals=None, max_metric_calls=None, reflection_minibatch_size=3, candidate_selection_strategy='pareto', reflection_lm=None, skip_perfect_score=True, add_format_failure_as_feedback=False, use_merge=True, max_merge_invocations=5, num_threads=None, failure_score=0.0, perfect_score=1.0, log_dir=None, track_stats=False, use_wandb=False, wandb_api_key=None, wandb_init_kwargs=None, track_best_outputs=False, seed=0)
+class GEPA(metric, *, auto=None, max_full_evals=None, max_metric_calls=None, reflection_minibatch_size=3, candidate_selection_strategy='pareto', reflection_lm=None, skip_perfect_score=True, add_format_failure_as_feedback=False, instruction_proposer=None, use_merge=True, max_merge_invocations=5, num_threads=None, failure_score=0.0, perfect_score=1.0, log_dir=None, track_stats=False, use_wandb=False, wandb_api_key=None, wandb_init_kwargs=None, track_best_outputs=False, seed=0)
 ```
 
 GEPA is an evolutionary optimizer, which uses reflection to evolve text components
@@ -75,6 +75,18 @@ Args:
         a strong reflection model. Consider using `dspy.LM(model='gpt-5', temperature=1.0, max_tokens=32000)` 
         for optimal performance.
     skip_perfect_score: Whether to skip examples with perfect scores during reflection. Default is True.
+    instruction_proposer: Optional custom instruction proposer implementing GEPA's ProposalFn protocol. 
+        If provided, GEPA will use this custom proposer instead of its default instruction proposal 
+        mechanism to generate improved instructions based on feedback from failed examples. This is 
+        particularly useful when you need specialized instruction generation for multimodal inputs 
+        (like dspy.Image) or custom types. Use `MultiModalInstructionProposer()` from 
+        `dspy.teleprompt.gepa.instruction_proposal` for handling visual content. If None (default), 
+        GEPA uses its built-in text-optimized proposer (see `gepa.strategies.instruction_proposal.InstructionProposalSignature` 
+        for reference implementation).
+        
+        Note: When both instruction_proposer and reflection_lm are set, the instruction_proposer is called 
+        in the reflection_lm context. However, reflection_lm is optional when using a custom instruction_proposer. 
+        Custom instruction proposers can invoke their own LLMs if needed.
     add_format_failure_as_feedback: Whether to add format failures as feedback. Default is False.
     use_merge: Whether to use merge-based optimization. Default is True.
     max_merge_invocations: The maximum number of merge invocations to perform. Default is 5.
@@ -132,7 +144,7 @@ Parameters:
 - trainset: The training set to use for reflective updates.
 - valset: The validation set to use for tracking Pareto scores. If not provided, GEPA will use the trainset for both.
 
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/teleprompt/gepa/gepa.py` (lines 144–502)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/teleprompt/gepa/gepa.py` (lines 143–523)
 
 
 One of the key insights behind GEPA is its ability to leverage domain-specific textual feedback. Users should provide a feedback function as the GEPA metric, which has the following call signature:
@@ -166,7 +178,7 @@ If not available at the predictor level, the metric can also return a text feedb
 If no feedback is returned, GEPA will use a simple text feedback consisting of just the score: 
 f"This trajectory got a score of {score}."
 
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/teleprompt/gepa/gepa.py` (lines 24–51)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/teleprompt/gepa/gepa.py` (lines 23–50)
 
 
 When `track_stats=True`, GEPA returns detailed results about all of the proposed candidates, and metadata about the optimization run. The results are available in the `detailed_results` attribute of the optimized program returned by GEPA, and has the following type:
@@ -194,7 +206,7 @@ Fields:
 - best_idx: candidate index with the highest val_aggregate_scores
 - best_candidate: the program text mapping for best_idx
 
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/teleprompt/gepa/gepa.py` (lines 54–142)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/teleprompt/gepa/gepa.py` (lines 53–141)
 
 
 ## Usage Examples

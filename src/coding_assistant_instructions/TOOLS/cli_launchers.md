@@ -25,6 +25,7 @@ kimi() {
 }
 ```
 
+# an original deepseek version for use w/ claude code
 export DEEPSEEK_API_KEY="sk-YOUR-DEEPSEEK-API-KEY"
 
 deepseek() {

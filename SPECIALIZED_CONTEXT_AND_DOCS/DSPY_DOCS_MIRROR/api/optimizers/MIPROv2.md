@@ -5,7 +5,7 @@
 ## dspy.MIPROv2
 
 ```python
-class MIPROv2(metric, prompt_model=None, task_model=None, teacher_settings=None, max_bootstrapped_demos=4, max_labeled_demos=4, auto='light', num_candidates=None, num_threads=None, max_errors=None, seed=9, init_temperature=0.5, verbose=False, track_stats=True, log_dir=None, metric_threshold=None)
+class MIPROv2(metric, prompt_model=None, task_model=None, teacher_settings=None, max_bootstrapped_demos=4, max_labeled_demos=4, auto='light', num_candidates=None, num_threads=None, max_errors=None, seed=9, init_temperature=1.0, verbose=False, track_stats=True, log_dir=None, metric_threshold=None)
 ```
 
 ### compile

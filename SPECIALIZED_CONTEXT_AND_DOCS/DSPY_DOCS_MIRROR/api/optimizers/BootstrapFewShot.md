@@ -11,5 +11,5 @@ class BootstrapFewShot(metric=None, metric_threshold=None, teacher_settings=None
 ```python
 def compile(self, student, *, teacher=None, trainset)
 ```
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/teleprompt/bootstrap.py` (lines 36–265)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/teleprompt/bootstrap.py` (lines 36–269)
 

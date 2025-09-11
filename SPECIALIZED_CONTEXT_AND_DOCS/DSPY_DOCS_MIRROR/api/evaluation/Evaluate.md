@@ -3,7 +3,7 @@
 ## dspy.Evaluate
 
 ```python
-class Evaluate(*, devset, metric=None, num_threads=None, display_progress=False, display_table=False, max_errors=None, provide_traceback=None, failure_score=0.0, **kwargs)
+class Evaluate(*, devset, metric=None, num_threads=None, display_progress=False, display_table=False, max_errors=None, provide_traceback=None, failure_score=0.0, save_as_csv=None, save_as_json=None, **kwargs)
 ```
 
 DSPy Evaluate class.
@@ -15,7 +15,7 @@ a metric function in order to use this class. This class supports parallel evalu
 ### __call__
 
 ```python
-def __call__(self, program, metric=None, devset=None, num_threads=None, display_progress=None, display_table=None, callback_metadata=None)
+def __call__(self, program, metric=None, devset=None, num_threads=None, display_progress=None, display_table=None, callback_metadata=None, save_as_csv=None, save_as_json=None)
 ```
 
 Args:
@@ -37,5 +37,5 @@ Returns:
 
     - results: a list of (example, prediction, score) tuples for each example in devset
 
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/evaluate/evaluate.py` (lines 62–251)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/evaluate/evaluate.py` (lines 64–298)
 

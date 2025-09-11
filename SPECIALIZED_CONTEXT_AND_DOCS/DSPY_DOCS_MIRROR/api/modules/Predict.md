@@ -6,6 +6,20 @@
 class Predict(signature, callbacks=None, **config)
 ```
 
+Basic DSPy module that maps inputs to outputs using a language model.
+
+Args:
+    signature: The input/output signature describing the task.
+    callbacks: Optional list of callbacks for instrumentation.
+    **config: Default keyword arguments forwarded to the underlying
+        language model. These values can be overridden for a single
+        invocation by passing a ``config`` dictionary when calling the
+        module. For example::
+
+            predict = dspy.Predict("q -> a", rollout_id=1, temperature=1.0)
+            predict(q="What is 1 + 52?", config={"rollout_id": 2, "temperature": 1.0})
+
+
 ### __call__
 
 ```python
@@ -68,5 +82,5 @@ def reset(self)
 ```python
 def update_config(self, **kwargs)
 ```
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/predict/predict.py` (lines 19–202)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/predict/predict.py` (lines 19–216)
 

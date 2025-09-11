@@ -11,5 +11,5 @@ class Refine(module, N, reward_fn, threshold, fail_count=None)
 ```python
 def forward(self, **kwargs)
 ```
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/predict/refine.py` (lines 41–176)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/predict/refine.py` (lines 41–177)
 

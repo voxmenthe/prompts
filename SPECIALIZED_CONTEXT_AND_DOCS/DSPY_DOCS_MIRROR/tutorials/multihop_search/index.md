@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/multihop_search/index.ipynb on 2025-08-30T20:09:29.498405Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/multihop_search/index.ipynb on 2025-09-07T07:08:23.222861Z -->
 
 # Tutorial: Multi-Hop Retrieval
 

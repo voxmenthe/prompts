@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/games/index.ipynb on 2025-08-30T20:09:29.516808Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/games/index.ipynb on 2025-09-07T07:08:23.243154Z -->
 
 # Tutorial: Fine-tuning Agents
 
