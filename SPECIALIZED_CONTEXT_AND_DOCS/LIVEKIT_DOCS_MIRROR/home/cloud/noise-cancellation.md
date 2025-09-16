@@ -134,21 +134,14 @@ npm install @livekit/noise-cancellation-node
 
 #### Usage in LiveKit Agents
 
-Pass the model to the `VoicePipelineAgent` or `MultimodalAgent` constructor:
+Pass the model to the `Agent` constructor:
 
 ```typescript
 import { BackgroundVoiceCancellation } from '@livekit/noise-cancellation-node';
 
-// MultimodalAgent usage
-const multimodalAgent = new multimodal.MultimodalAgent({
+const assistant = new voice.Agent({
   noiseCancellation: BackgroundVoiceCancellation(),
   // ... model, etc.
-});
-
-// VoicePipelineAgent usage
-const voicePipelineAgent = new pipeline.VoicePipelineAgent({
-  // vad, stt, tts, llm...
-  { noiseCancellation: BackgroundVoiceCancellation(), /* ... other options ... */ },
 });
 
 ```

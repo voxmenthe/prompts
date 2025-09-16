@@ -78,6 +78,7 @@ https://supaiku.com/
 https://sustcsonglin.github.io/blog/
 https://tech.instacart.com/
 https://publish.obsidian.md/the-tensor-throne/
+https://thinkingmachines.ai/blog/
 https://www.tilderesearch.com/blog
 https://yidingjiang.github.io/blog/
 https://ysymyth.github.io/blog/

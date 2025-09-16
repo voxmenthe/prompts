@@ -21,7 +21,7 @@ The agents framework includes plugins for the following LLM providers out-of-the
 | [Baseten](https://docs.livekit.io/agents/integrations/llm/baseten.md) | `baseten` |  | Python |
 | [Cerebras](https://docs.livekit.io/agents/integrations/llm/cerebras.md) | `openai` | Models from Llama and DeepSeek. | Python, Nodejs |
 | [DeepSeek](https://docs.livekit.io/agents/integrations/llm/deepseek.md) | `openai` |  | Python, Nodejs |
-| [Fireworks](https://docs.livekit.io/agents/integrations/llm/fireworks.md) | `openai` | Wide range of models from Llama, DeepSeek, Mistral, and more. | Python |
+| [Fireworks](https://docs.livekit.io/agents/integrations/llm/fireworks.md) | `openai` | Wide range of models from Llama, DeepSeek, Mistral, and more. | Python, Nodejs |
 | [Google Gemini](https://docs.livekit.io/agents/integrations/llm/gemini.md) | `google` |  | Python, Nodejs |
 | [Groq](https://docs.livekit.io/agents/integrations/llm/groq.md) | `groq` | Models from Llama, DeepSeek, and more. | Python |
 | [LangChain](https://docs.livekit.io/agents/integrations/llm/langchain.md) | `langchain` | Use a LangGraph workflow for your agent LLM. | Python |

@@ -24,10 +24,21 @@ This section includes a basic usage example and some reference material. For lin
 
 ### Installation
 
-Install the plugin from PyPI:
+Install the plugin:
+
+**Python**:
 
 ```bash
 pip install "livekit-agents[openai]~=1.2"
+
+```
+
+---
+
+**Node.js**:
+
+```bash
+pnpm add @livekit/agents-plugin-openai@1.x
 
 ```
 
@@ -45,6 +56,8 @@ Set the following environment variables in your `.env` file:
 
 Use Azure OpenAI within an `AgentSession` or as a standalone LLM service. For example, you can use this LLM in the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md).
 
+**Python**:
+
 ```python
 from livekit.plugins import openai
 
@@ -60,23 +73,44 @@ session = AgentSession(
 
 ```
 
+---
+
+**Node.js**:
+
+```typescript
+import * as openai from '@livekit/agents-plugin-openai';
+
+const session = new voice.AgentSession({
+    llm: openai.LLM.withAzure({
+        azureDeployment: "<model-deployment>",
+        azureEndpoint: "https://<endpoint>.openai.azure.com/", // or AZURE_OPENAI_ENDPOINT
+        apiKey: "<api-key>", // or AZURE_OPENAI_API_KEY
+        apiVersion: "2024-10-01-preview", // or OPENAI_API_VERSION
+    }),
+    // ... tts, stt, vad, turn_detection, etc.
+});
+
+```
+
 ### Parameters
 
-This section describes the Azure-specific parameters. For a complete list of all available parameters, see the [plugin documentation](https://docs.livekit.io/reference/python/v1/livekit/plugins/openai/index.html.md#livekit.plugins.openai.LLM.with_azure).
+This section describes the Azure-specific parameters. For a complete list of all available parameters, see the plugin reference links in the [Additional resources](#additional-resources) section.
 
 - **`azure_deployment`** _(string)_: Name of your model deployment.
 
 - **`entra_token`** _(string)_ (optional): Microsoft Entra ID authentication token. Required if not using API key authentication. To learn more see Azure's [Authentication](https://learn.microsoft.com/en-us/azure/ai-services/openai/realtime-audio-reference#authentication) documentation.
 
+- **`temperature`** _(float)_ (optional) - Default: `0.1`: Controls the randomness of the model's output. Higher values, for example 0.8, make the output more random, while lower values, for example 0.2, make it more focused and deterministic.
+
+Valid values are between `0` and `2`.
+
+- **`parallel_tool_calls`** _(bool)_ (optional): Controls whether the model can make multiple tool calls in parallel. When enabled, the model can make multiple tool calls simultaneously, which can improve performance for complex tasks.
+
+- **`tool_choice`** _(ToolChoice | Literal['auto', 'required', 'none'])_ (optional) - Default: `auto`: Controls how the model uses tools. Set to 'auto' to let the model decide, 'required' to force tool usage, or 'none' to disable tool usage.
+
 ## Additional resources
 
 The following links provide more information about the Azure OpenAI LLM plugin.
-
-- **[Python package](https://pypi.org/project/livekit-plugins-openai/)**: The `livekit-plugins-openai` package on PyPI.
-
-- **[Plugin reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/openai/index.html.md#livekit.plugins.openai.LLM.with_azure)**: Reference for the Azure OpenAI LLM plugin.
-
-- **[GitHub repo](https://github.com/livekit/agents/tree/main/livekit-plugins/livekit-plugins-openai)**: View the source or contribute to the LiveKit OpenAI LLM plugin.
 
 - **[Azure OpenAI docs](https://learn.microsoft.com/en-us/azure/ai-services/openai/)**: Azure OpenAI service documentation.
 

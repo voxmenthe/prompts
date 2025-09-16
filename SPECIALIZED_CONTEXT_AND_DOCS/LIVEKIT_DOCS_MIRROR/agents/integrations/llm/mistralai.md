@@ -36,7 +36,7 @@ Set the `MISTRAL_API_KEY` in your `.env` file.
 Use Mistral AI within an `AgentSession` or as a standalone LLM service. For example, you can use this LLM in the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md).
 
 ```python
-from livekit.plugins import openai
+from livekit.plugins import mistralai
 
 session = AgentSession(
     llm=mistralai.LLM(
@@ -53,7 +53,7 @@ This section describes some of the available parameters. See the [plugin referen
 
 - **`model`** _(string | ChatModels)_ (optional) - Default: `ministral-8b-2410`: Which Mistral AI model to use. You can pass a string or a typed enum from `ChatModels`.
 
-- **`temperature`** _(float)_ (optional): A measure of randomness in output. A lower value results in more predictable output, while a higher value results in more creative output.
+- **`temperature`** _(float)_ (optional): Controls the randomness of the model's output. Higher values, for example 0.8, make the output more random, while lower values, for example 0.2, make it more focused and deterministic.
 
 ## Additional resources
 

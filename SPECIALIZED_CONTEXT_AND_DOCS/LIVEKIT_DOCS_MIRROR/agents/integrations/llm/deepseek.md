@@ -22,8 +22,19 @@ Available in:
 
 Use the OpenAI plugin's `with_deepseek` method to set the default agent session LLM to DeepSeek:
 
+**Python**:
+
 ```shell
 pip install "livekit-agents[openai]~=1.2"
+
+```
+
+---
+
+**Node.js**:
+
+```shell
+pnpm add @livekit/agents-plugin-openai@1.x
 
 ```
 
@@ -34,23 +45,41 @@ DEEPSEEK_API_KEY=<your-deepseek-api-key>
 
 ```
 
+**Python**:
+
 ```python
 from livekit.plugins import openai
 
-deepseek_llm = openai.LLM.with_deepseek(
-    model="deepseek-chat",  # this is DeepSeek-V3
-    temperature=0.7
+session = AgentSession(
+    llm=openai.LLM.with_deepseek(
+        model="deepseek-chat", # this is DeepSeek-V3
+    ),
 )
+
+```
+
+---
+
+**Node.js**:
+
+```typescript
+import * as openai from '@livekit/agents-plugin-openai';
+
+const session = new voice.AgentSession({
+   llm: openai.LLM.withDeepSeek({
+    model: "deepseek-chat",  // this is DeepSeek-V3
+   })
+});
 
 ```
 
 ## Parameters
 
-This section describes some of the available parameters. For a complete reference of all available parameters, see the [method reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/openai/index.html.md#livekit.plugins.openai.LLM.with_deepseek).
+This section describes some of the available parameters. For a complete reference of all available parameters, see the plugin reference links in the [Additional resources](#additional-resources) section.
 
 - **`model`** _(str | DeepSeekChatModels)_ (optional) - Default: `deepseek-chat`: DeepSeek model to use. See [models and pricing](https://api-docs.deepseek.com/quick_start/pricing) for a complete list.
 
-- **`temperature`** _(float)_ (optional) - Default: `1.0`: Controls the randomness of the model's output. Higher values (e.g., 0.8) make the output more random, while lower values (e.g., 0.2) make it more focused and deterministic.
+- **`temperature`** _(float)_ (optional) - Default: `1.0`: Controls the randomness of the model's output. Higher values, for example 0.8, make the output more random, while lower values, for example 0.2, make it more focused and deterministic.
 
 Valid values are between `0` and `2`.
 
@@ -58,15 +87,9 @@ Valid values are between `0` and `2`.
 
 - **`tool_choice`** _(ToolChoice | Literal['auto', 'required', 'none'])_ (optional) - Default: `auto`: Controls how the model uses tools. Set to 'auto' to let the model decide, 'required' to force tool usage, or 'none' to disable tool usage.
 
-## Links
+## Additional resources
 
 The following links provide more information about the DeepSeek LLM integration.
-
-- **[Python package](https://pypi.org/project/livekit-plugins-openai/)**: The `livekit-plugins-openai` package on PyPI.
-
-- **[Plugin reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/openai/index.html.md#livekit.plugins.openai.LLM.with_deepseek)**: Reference for the `with_deepseek` method of the OpenAI LLM plugin.
-
-- **[GitHub repo](https://github.com/livekit/agents/tree/main/livekit-plugins/livekit-plugins-openai)**: View the source or contribute to the LiveKit OpenAI LLM plugin.
 
 - **[DeepSeek docs](https://platform.deepseek.com/docs)**: DeepSeek API documentation.
 

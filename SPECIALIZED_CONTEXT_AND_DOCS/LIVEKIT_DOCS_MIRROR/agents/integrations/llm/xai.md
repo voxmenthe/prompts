@@ -18,8 +18,19 @@ Available in:
 
 Install the OpenAI plugin to add xAI support:
 
+**Python**:
+
 ```shell
 pip install "livekit-agents[openai]~=1.2"
+
+```
+
+---
+
+**Node.js**:
+
+```shell
+pnpm add @livekit/agents-plugin-openai@1.x
 
 ```
 
@@ -32,26 +43,43 @@ XAI_API_KEY=<your-xai-api-key>
 
 Create a Grok LLM using the `with_x_ai` method:
 
+**Python**:
+
 ```python
 from livekit.plugins import openai
 
 session = AgentSession(
     llm=openai.LLM.with_x_ai(
-        model="grok-2-public",
-        temperature=1.0,
+        model="grok-3-mini",
     ),
     # ... tts, stt, vad, turn_detection, etc.
 )
 
 ```
 
+---
+
+**Node.js**:
+
+```typescript
+import * as openai from '@livekit/agents-plugin-openai';
+
+const session = new voice.AgentSession({
+    llm: openai.LLM.withXAI({
+        model: "grok-3-mini",
+    }),
+    // ... tts, stt, vad, turn_detection, etc.
+});
+
+```
+
 ## Parameters
 
-This section describes some of the available parameters. For a complete reference of all available parameters, see the [method reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/openai/index.html.md#livekit.plugins.openai.LLM.with_x_ai).
+This section describes some of the available parameters. For a complete reference of all available parameters, see the plugin reference links in the [Additional resources](#additional-resources) section.
 
 - **`model`** _(str | XAIChatModels)_ (optional) - Default: `grok-2-public`: Grok model to use. To learn more, see the [xAI Grok models](https://docs.x.ai/docs/models) page.
 
-- **`temperature`** _(float)_ (optional) - Default: `1.0`: Controls the randomness of the model's output. Higher values (e.g., 0.8) make the output more random, while lower values (e.g., 0.2) make it more focused and deterministic.
+- **`temperature`** _(float)_ (optional) - Default: `1.0`: Controls the randomness of the model's output. Higher values, for example 0.8, make the output more random, while lower values, for example 0.2, make it more focused and deterministic.
 
 Valid values are between `0` and `2`. To learn more, see the optional parameters for [Chat completions](https://docs.x.ai/docs/api-reference#chat-completions)
 
@@ -59,15 +87,9 @@ Valid values are between `0` and `2`. To learn more, see the optional parameters
 
 - **`tool_choice`** _(ToolChoice | Literal['auto', 'required', 'none'])_ (optional) - Default: `auto`: Controls how the model uses tools. Set to 'auto' to let the model decide, 'required' to force tool usage, or 'none' to disable tool usage.
 
-## Links
+## Additional resources
 
 The following links provide more information about the xAI Grok LLM integration.
-
-- **[Python package](https://pypi.org/project/livekit-plugins-openai/)**: The `livekit-plugins-openai` package on PyPI.
-
-- **[Plugin reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/openai/index.html.md#livekit.plugins.openai.LLM.with_x_ai)**: Reference for the `with_x_ai` method of the OpenAI LLM plugin.
-
-- **[GitHub repo](https://github.com/livekit/agents/tree/main/livekit-plugins/livekit-plugins-openai)**: View the source or contribute to the LiveKit OpenAI LLM plugin.
 
 - **[xAI docs](https://docs.x.ai/docs/overview)**: xAI Grok documentation.
 

@@ -40,7 +40,7 @@ pip install "livekit-agents[openai]~=1.2"
 **Node.js**:
 
 ```bash
-pnpm install "@livekit/agents-plugin-openai@1.x"
+pnpm add "@livekit/agents-plugin-openai@1.x"
 
 ```
 
@@ -80,7 +80,7 @@ const session = new voice.AgentSession({
 
 ### Parameters
 
-This section describes some of the available parameters. For a complete reference of all available parameters, see the [plugin reference](https://docs.livekit.io/python/v1/livekit/plugins/openai/realtime/index.html.md).
+This section describes some of the available parameters. For a complete reference of all available parameters, see the plugin reference links in the [Additional resources](#additional-resources) section.
 
 - **`model`** _(str)_ (optional) - Default: `'gpt-4o-realtime-preview'`: ID of the Realtime model to use. For a list of available models, see the [Models](https://platform.openai.com/docs/models#gpt-4o-realtime).
 
@@ -184,13 +184,9 @@ import * as openai from '@livekit/agents-plugin-openai';
 
 const session = new voice.AgentSession({
    llm: new openai.realtime.RealtimeModel({
-      turnDetection: {
-         type: "semantic_vad",
-         eagerness: "auto",
-         create_response: true,
-         interrupt_response: true,
-      },
-   }),
+      turnDetection: null,
+   })
+   turnDetection: new livekit.turnDetector.EnglishModel(),
 });
 
 ```
@@ -230,7 +226,7 @@ const session = new voice.AgentSession({
    llm: new openai.realtime.RealtimeModel({ 
       modalities: ["text"]
    }),
-   tts: new elevenlabs.TTS(), // Or other TTS plugin of your choice
+   tts: new cartesia.TTS(), // Or other TTS plugin of your choice
 });
 
 ```

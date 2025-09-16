@@ -214,15 +214,82 @@ def entrypoint(ctx: agents.JobContext):
 
 ```
 
-### Make a call with your agent
+** Filename: `agent.ts`**
+
+```typescript
+import { SipClient } from 'livekit-server-sdk';
+// ... any existing code / imports ...
+
+
+// Set the outbound trunk ID and room name
+const outboundTrunkId = '<outbound-trunk-id>';
+const sipRoom = 'new-room';
+
+
+entry: async (ctx: JobContext) => {
+    // If a phone number was provided, then place an outbound call
+    // By having a condition like this, you can use the same agent for inbound/outbound telephony as well as web/mobile/etc.
+    const dialInfo = JSON.parse(ctx.job.metadata);
+
+    const phoneNumber = dialInfo["phone_number"];
+
+    // The participant's identity can be anything you want, but this example uses the phone number itself
+    const sipParticipantIdentity = phoneNumber;
+    if (phoneNumber) {
+        const sipParticipantOptions = {
+            participantIdentity: sipParticipantIdentity,
+            participantName: 'Test callee',
+            waitUntilAnswered: true,
+        };
+        const sipClient = new SipClient(process.env.LIVEKIT_URL!,
+                                        process.env.LIVEKIT_API_KEY!,
+                                        process.env.LIVEKIT_API_SECRET!);
+
+        try {
+            const participant = await sipClient.createSipParticipant(
+                outboundTrunkId,
+                phoneNumber,
+                sipRoom,
+                sipParticipantOptions
+            );  
+
+            console.log('Participant created:', participant);
+        } catch (error) {
+            console.error('Error creating SIP participant:', error);
+        }
+    }
+
+    // .. create and start your AgentSession as usual ...
+
+    // Add this guard to ensure the agent only speaks first in an inbound scenario.
+    // When placing an outbound call, its more customary for the recipient to speak first
+    // The agent will automatically respond after the user's turn has ended.
+    if (!phoneNumber) {
+        session.generateReply({
+            instructions: 'Greet the user and offer your assistance.',
+        });
+    }
+}
+
+```
+
+Start the agent and follow the instructions in the next section to call your agent.
+
+#### Make a call with your agent
 
 Use either the LiveKit CLI or the Python API to instruct your agent to place an outbound phone call.
 
 In this example, the job's metadata includes the phone number to call. You can extend this to include more information if needed for your use case.
 
+The agent name must match the name you assigned to your agent. If you set it earlier in the [agent dispatch](#agent-dispatch) section, this is `my-telephony-agent`.
+
+> ❗ **Room name must match for Node.js**
+> 
+> For Node.js, the room name must match the name you use for the `CreateSIPParticipant` API call. If you use the sample code from the [Dialing a number](#dialing) section, this is `new-room`. Otherwise, the agent dials the number, but doesn't join the correct room.
+
 **LiveKit CLI**:
 
-The following command creates a new room and dispatches your agent to it with the phone number to call. Ensure the agent name matches the name you set earlier in the [agent dispatch](#agent-dispatch) section.
+The following command creates a new room and dispatches your agent to it with the phone number to call.
 
 ```shell
 lk dispatch create \
@@ -256,6 +323,8 @@ await lkapi.agent_dispatch.create_dispatch(
 
 Your agent may still encounter an automated system such as an answering machine or voicemail. You can give your LLM the ability to detect a likely voicemail system via tool call, and then perform special actions such as leaving a message and [hanging up](#hangup).
 
+** Filename: `agent.py`**
+
 ```python
 import asyncio # add this import at the top of your file
 
@@ -273,11 +342,39 @@ class Assistant(Agent):
 
 ```
 
-## Hangup
+** Filename: `agent.ts`**
 
-Available in:
-- [ ] Node.js
-- [x] Python
+```typescript
+class VoicemailAgent extends voice.Agent {
+  constructor() {
+      super({
+          // ... existing init code ...
+          tools: {
+              leaveVoicemail: llm.tool({
+                  description: 'Call this tool if you detect a voicemail system, AFTER your hear the voicemail greeting',
+                  execute: async (_, { ctx }: llm.ToolOptions) => {
+                      const handle = ctx.session.generateReply({
+                          instructions:
+                              "Leave a brief voicemail message for the user telling them you are sorry you missed them, but you will call back later. You don't need to mention you're going to leave a voicemail, just say the message.",
+                      });
+                  
+                      handle.waitForPlayout().then(async () => {
+                  
+                          await new Promise((resolve) => setTimeout(resolve, 500));
+                  
+                          // See the Hangup section for more details
+                          await hangUpCall();
+                      });
+                  }
+              }),
+          }
+      })
+  }
+}
+
+```
+
+## Hangup
 
 To end a call for all participants, use the `delete_room` API. If only the agent session ends, the user will continue to hear silence until they hang up. The example below shows a basic `hangup_call` function you can use as a starting point.
 
@@ -308,24 +405,69 @@ class MyAgent(Agent):
     @function_tool
     async def end_call(self, ctx: RunContext):
         """Called when the user wants to end the call"""
-        # let the agent finish speaking
-        current_speech = ctx.session.current_speech
-        if current_speech:
-            await current_speech.wait_for_playout()
+        await ctx.wait_for_playout() # let the agent finish speaking
 
         await hangup_call()
 
 ```
 
+** Filename: `agent.ts`**
+
+```typescript
+import { RoomServiceClient } from 'livekit-server-sdk';
+import { getJobContext } from '@livekit/agents';
+
+const hangUpCall = async () => {
+  const jobContext = getJobContext();
+  if (!jobContext) {
+    return;
+  }
+
+  const roomServiceClient = new RoomServiceClient(process.env.LIVEKIT_URL!,
+                                                  process.env.LIVEKIT_API_KEY!,
+                                                  process.env.LIVEKIT_API_SECRET!);
+
+  if (jobContext.room.name) {
+    await roomServiceClient.deleteRoom(
+      jobContext.room.name,
+    );
+  }
+}
+
+class MyAgent extends voice.Agent {
+  constructor() {
+    super({
+        instructions: 'You are a helpful voice AI assistant.',
+        // ... existing code ...
+        tools: {
+          hangUpCall: llm.tool({
+            description: 'Call this tool if the user wants to hang up the call.',
+            execute: async (_, { ctx }: llm.ToolOptions<UserData>) => {
+              await hangUpCall();
+              return "Hung up the call";
+            },
+          }),
+        },
+    });
+ }
+}
+
+```
+
 ## Transferring call to another number
 
-Available in:
-- [ ] Node.js
-- [x] Python
+In case the agent needs to transfer the call to another number or SIP destination, you can use the [`TranserSIPParticipant`](https://docs.livekit.io/sip/api.md#transfersipparticipant) API.
 
-In case the agent needs to transfer the call to another number or SIP destination, you can use the `transfer_sip_participant` API.
+This is a [cold transfer](https://docs.livekit.io/sip/transfer-cold.md), where the agent hands the call off to another party without staying on the line. The current session ends after the transfer is complete.
 
-This is a "cold" transfer, where the agent hands the call off to another party without staying on the line. The current session ends after the transfer is complete.
+> ℹ️ **Node.js required package**
+> 
+> To use the Node.js example, you must install the `@livekit/rtc-node` package:
+> 
+> ```bash
+> pnpm add @livekit/rtc-node
+> 
+> ```
 
 ** Filename: `agent.py`**
 
@@ -362,17 +504,42 @@ class Assistant(Agent):
 
 ```
 
+** Filename: `agent.ts`**
+
+```typescript
+// Add these imports at the top of your file
+import { SipClient } from 'livekit-server-sdk';
+import { RemoteParticipant } from '@livekit/rtc-node';
+
+// Add this function definition
+async function transferParticipant(participant: RemoteParticipant, roomName: string) {
+  console.log("transfer participant initiated for participant: ", participant.identity);
+
+  const sipTransferOptions = {
+    playDialtone: false
+  };
+
+  const sipClient = new SipClient(process.env.LIVEKIT_URL!,
+                                  process.env.LIVEKIT_API_KEY!,
+                                  process.env.LIVEKIT_API_SECRET!);
+
+  const transferTo = "tel:+15105550123";
+
+  await sipClient.transferSipParticipant(roomName, participant.identity, transferTo, sipTransferOptions);
+  console.log('transferred participant');
+}
+
+```
+
 > ℹ️ **SIP REFER**
 > 
-> You must enable SIP REFER on your SIP trunk provider to use `transfer_sip_participant`. For Twilio, you must also enable `Enable PSTN Transfer`.
+> You must enable SIP REFER on your SIP trunk provider to use `transfer_sip_participant`. For Twilio, you must also enable `Enable PSTN Transfer`. To learn more, see [Cold transfer](https://docs.livekit.io/sip/transfer-cold.md).
 
 ## Recipes
 
 The following recipes are particular helpful to learn more about telephony integration.
 
 - **[Company Directory](https://docs.livekit.io/recipes/company-directory.md)**: Build a AI company directory agent. The agent can respond to DTMF tones and voice prompts, then redirect callers.
-
-- **[SIP Warm Handoff](https://github.com/livekit-examples/python-agents-examples/tree/main/telephony/warm_handoff.py)**: Transfer calls from an AI agent to a human operator seamlessly.
 
 - **[SIP Lifecycle](https://github.com/livekit-examples/python-agents-examples/tree/main/telephony/sip_lifecycle.py)**: Complete lifecycle management for SIP calls.
 

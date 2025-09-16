@@ -7,7 +7,7 @@ LiveKit Docs › Integration guides › Speech-to-text (STT) › Cartesia
 > How to use the Cartesia STT plugin for LiveKit Agents.
 
 Available in:
-- [x] Node.js
+- [ ] Node.js
 - [x] Python
 
 ## Overview

@@ -171,9 +171,9 @@ session = AgentSession(
 
 **Node.js**:
 
-The following example is based off the [multimodal-agent-node](https://github.com/livekit-examples/multimodal-agent-node) example app.
+The following example is based off the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md).
 
-The agent definition is modified to identify SIP participants and greet them based on their phone number.
+Modify the example to identify SIP participants and greet them based on their phone number.
 
 1. Install the LiveKit SDK for Node.js:
 
@@ -187,60 +187,51 @@ pnpm install '@livekit/rtc-node'
 import { ParticipantKind } from '@livekit/rtc-node';
 
 ```
-3. Replace the `defineAgent` function in `src/agent.ts` with this updated version:
+3. Replace the `assistant` in `agent.ts` with this updated version:
 
 ```typescript
-export default defineAgent({
-  entry: async (ctx: JobContext) => {
-    await ctx.connect();
-    console.log('waiting for participant');
-    const participant = await ctx.waitForParticipant();
-    console.log(`starting assistant example agent for ${participant.identity}`);
-
-    let initialChatText = 'Say "How can I help you today?"';
-    if (participant.kind == ParticipantKind.SIP) {
-      initialChatText =
-        'Find the location for the area code from phone number ' +
-        participant.attributes['sip.phoneNumber'] +
-        ' and say "Hi, I see you\'re calling from area code," ' +
-        'my area code. Pause, then tell me the general weather for the area.';
-    }
-
-    const model = new openai.realtime.RealtimeModel({
-      instructions: 'You are a helpful assistant.',
-    });
-
-    const fncCtx: llm.FunctionContext = {
-      weather: {
-        description: 'Get the weather in a location',
-        parameters: z.object({
-          location: z.string().describe('The location to get the weather for'),
-        }),
-        execute: async ({ location }) => {
-          console.debug(`executing weather function for ${location}`);
-          const response = await fetch(`https://wttr.in/${location}?format=%C+%t`);
-          if (!response.ok) {
-            throw new Error(`Weather API returned status: ${response.status}`);
-          }
-          const weather = await response.text();
-          return `The weather in ${location} right now is ${weather}.`;
-        },
+const assistant = new voice.Agent({
+  instructions: 'You are a helpful voice AI assistant.',
+  tools: {
+    weather: llm.tool({
+      description: 'Get the weather in a location',
+      parameters: z.object({
+      location: z.string().describe('The location to get the weather for'),
+      }),
+      execute: async ({ location: string }) => {
+        const response = await fetch(`https://wttr.in/${location}?format=%C+%t`);
+        if (!response.ok) {
+          throw new Error(`Weather API returned status: ${response.status}`);
+        }
+        const weather = await response.text();
+        return `The weather in ${location} right now is ${weather}.`;
       },
-    };
-
-    const agent = new multimodal.MultimodalAgent({ model, fncCtx });
-    const session = await agent
-      .start(ctx.room, participant)
-      .then((session) => session as openai.realtime.RealtimeSession);
-    
-    session.conversation.item.create({
-      type: 'message',
-      role: 'assistant',
-      content: [{ type: 'text', text: initialChatText }],
-    });
-    session.response.create();
+    }),
   },
 });
+
+// ... Add this after the await ctx.connect()
+
+const participant = await ctx.waitForParticipant();
+let initialChatText = 'Say "How can I help you today?"';
+
+if (participant.kind === ParticipantKind.SIP) {
+  // Add a custom message based on caller's phone number
+  initialChatText =
+    'Find the location for the area code from phone number ' +
+    participant.attributes['sip.phoneNumber'] +
+    ' and say "Hi, I see you're calling from area code," ' +
+    'my area code. Pause, then tell me the general weather for the area.';
+
+  const chatCtx = session.chatCtx.copy();
+  chatCtx.addMessage({
+    role: 'assistant',
+    content: initialChatText,
+  });
+  assistant.updateChatCtx(chatCtx);
+}
+
+// ... rest of your entrypoint function
 
 ```
 

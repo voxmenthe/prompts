@@ -39,7 +39,7 @@ pip install \
 ** Filename: `Install plugins`**
 
 ```shell
-pnpm install \
+pnpm add \
   "@livekit/agents@1.x" \
   "@livekit/agents-plugins-elevenlabs@1.x" \
   "@livekit/agents-plugins-deepgram@1.x" \

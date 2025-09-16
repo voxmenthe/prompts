@@ -8,7 +8,7 @@ LiveKit Docs › Server APIs › Participant management
 
 ## Initialize RoomServiceClient
 
-Participant management is done with a RoomServiceClient, created like so:
+Participant management is done through the room service. Create a `RoomServiceClient`:
 
 **Go**:
 
@@ -57,6 +57,8 @@ const roomService = new RoomServiceClient(livekitHost, 'api-key', 'secret-key');
 
 ## List Participants
 
+List all the participants in a room.
+
 **Go**:
 
 ```go
@@ -99,6 +101,8 @@ lk room participants list <ROOM_NAME>
 
 ## Get details on a Participant
 
+Get detailed information about a participant in a room.
+
 **Go**:
 
 ```go
@@ -137,17 +141,19 @@ const res = await roomService.getParticipant(roomName, identity);
 **LiveKit CLI**:
 
 ```shell
-lk room participants get --room <ROOM_NAME> <ID>
+lk room participants get --room <ROOM_NAME> <PARTICIPANT_ID>
 
 ```
 
 ## Updating permissions
 
-You can modify a participant's permissions on-the-fly using `UpdateParticipant`. When there's a change in permissions, connected clients will be notified through the `ParticipantPermissionChanged` event.
+You can modify a participant's permissions using the `UpdateParticipant` API. When there's a change in permissions, connected clients are notified through the `ParticipantPermissionChanged` event.
 
-This comes in handy, for instance, when transitioning an audience member to a speaker role within a room.
+This is useful, for example, when transitioning an audience member to a speaker role within a room.
 
-Note that if you revoke the `CanPublish` permission from a participant, all tracks they've published will be automatically unpublished.
+> ℹ️ **Revoking permissions unpublishes tracks**
+> 
+> When you revoke the `CanPublish` permission from a participant, all tracks they've published are automatically unpublished.
 
 **Go**:
 
@@ -236,13 +242,13 @@ await roomService.updateParticipant(roomName, identity, undefined, {
 lk room participants update \
   --permissions '{"can_publish":true,"can_subscribe":true,"can_publish_data":true}' \
   --room <ROOM_NAME> \
-  <ID>
+  <PARTICIPANT_ID>
 
 ```
 
 ## Updating metadata
 
-You can modify a Participant's metadata whenever necessary. Once changed, connected clients will receive a `ParticipantMetadataChanged` event.
+You can modify a Participant's metadata whenever necessary. When metadata is changed, connected clients receive a `ParticipantMetadataChanged` event.
 
 **Go**:
 
@@ -292,13 +298,63 @@ await roomService.updateParticipant(roomName, identity, data);
 lk room participants update \
   --metadata '{"some":"values"}' \
   --room <ROOM_NAME> \
-  <ID>
+  <PARTICIPANT_ID>
+
+```
+
+## Move a Participant
+
+Move a participant from one room to a different room.
+
+**Go**:
+
+```go
+res, err := roomClient.MoveParticipant(context.Background(), &livekit.MoveParticipantRequest{
+  Room: roomName,
+  Identity: identity,
+  DestinationRoom: destinationRoom,
+})
+
+```
+
+---
+
+**Python**:
+
+```python
+from livekit.api import MoveParticipantRequest
+
+await lkapi.room.move_participant(MoveParticipantRequest(
+  room="<CURRENT_ROOM_NAME>",
+  identity="<PARTICIPANT_ID>",
+  destination_room="<NEW_ROOM_NAME>",
+))
+
+```
+
+---
+
+**Node.js**:
+
+```js
+await roomService.moveParticipant(roomName, identity, destinationRoom);
+
+```
+
+---
+
+**LiveKit CLI**:
+
+```shell
+lk room participants move --room <CURRENT_ROOM_NAME> \
+  --identity <PARTICIPANT_ID> \
+  --destination-room <NEW_ROOM_NAME>
 
 ```
 
 ## Remove a Participant
 
-`RemoteParticipant` will forcibly disconnect the participant from the room. However, this action doesn't invalidate the participant's token.
+`RemoveParticipant` forcibly disconnects the participant from the room. However, this action doesn't invalidate the participant's token.
 
 To prevent the participant from rejoining the same room, consider the following measures:
 
@@ -343,13 +399,13 @@ await roomService.removeParticipant(roomName, identity);
 **LiveKit CLI**:
 
 ```shell
-lk room participants remove <ID>
+lk room participants remove <PARTICIPANT_ID>
 
 ```
 
-## Mute/unmute a Participant's Track
+## Mute or unmute a Participant's Track
 
-To mute a particular Track from a Participant, first get the TrackSid from `GetParticipant` (above), then call `MutePublishedTrack`:
+To mute a particular Track from a Participant, you must first get the TrackSid using the `GetParticipant` [API](#getparticipant), then call the `MutePublishedTrack` API:
 
 **Go**:
 
@@ -395,16 +451,16 @@ await roomService.mutePublishedTrack(roomName, identity, 'track_sid', true);
 ```shell
 lk room mute-track \
   --room <ROOM_NAME> \
-  --identity <ID> \
+  --identity <PARTICIPANT_ID> \
   <TRACK_SID>
 
 ```
 
-You may also unmute the track by setting `muted` to `false`.
+You can also unmute the track by setting `muted` to `false`.
 
 > ℹ️ **Note**
 > 
-> Being remotely unmuted can catch users by surprise, so it's disabled by default.
+> Being remotely unmuted can catch users by surprise, so it's turned off by default.
 > 
 > To allow remote unmute, select the `Admins can remotely unmute tracks` option in your [project settings](https://cloud.livekit.io/projects/p_/settings/project).
 > 

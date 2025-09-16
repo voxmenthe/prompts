@@ -7,7 +7,7 @@ LiveKit Docs › Integration guides › Text-to-speech (TTS) › Cartesia
 > How to use the Cartesia TTS plugin for LiveKit Agents.
 
 Available in:
-- [ ] Node.js
+- [x] Node.js
 - [x] Python
 
 ## Overview
@@ -22,8 +22,19 @@ This section includes a brief overview of the Cartesia TTS plugin. For more info
 
 Install the plugin from PyPI:
 
+**Python**:
+
 ```bash
 pip install "livekit-agents[cartesia]~=1.2"
+
+```
+
+---
+
+**Node.js**:
+
+```bash
+pnpm add @livekit/agents-plugin-cartesia@1.x
 
 ```
 
@@ -36,6 +47,8 @@ Set `CARTESIA_API_KEY` in your `.env` file.
 ### Usage
 
 Use Cartesia TTS within an `AgentSession` or as a standalone speech generator. For example, you can use this TTS in the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md).
+
+**Python**:
 
 ```python
 from livekit.plugins import cartesia
@@ -50,9 +63,26 @@ session = AgentSession(
 
 ```
 
+---
+
+**Node.js**:
+
+```typescript
+import * as cartesia from '@livekit/agents-plugin-cartesia';
+
+const session = new voice.AgentSession({
+    tts: cartesia.TTS(
+        model: "sonic-2",
+        voice: "f786b574-daa5-4673-aa0c-cbe3e8534c02",
+    ),
+    // ... llm, stt, etc.
+});
+
+```
+
 ### Parameters
 
-This section describes some of the available parameters. See the [plugin reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/cartesia/index.html.md#livekit.plugins.cartesia.TTS) for a complete list of all available parameters.
+This section describes some of the available parameters. See the plugin reference links in the [Additional resources](#additional-resources) section for a complete list of all available parameters.
 
 - **`model`** _(string)_ (optional) - Default: `sonic-2`: ID of the model to use for generation. See [supported models](https://docs.cartesia.ai/build-with-cartesia/models/tts).
 
@@ -71,12 +101,6 @@ Cartesia TTS supports aligned transcription forwarding, which improves transcrip
 ## Additional resources
 
 The following resources provide more information about using Cartesia with LiveKit Agents.
-
-- **[Python package](https://pypi.org/project/livekit-plugins-cartesia/)**: The `livekit-plugins-cartesia` package on PyPI.
-
-- **[Plugin reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/cartesia/index.html.md#livekit.plugins.cartesia.TTS)**: Reference for the Cartesia TTS plugin.
-
-- **[GitHub repo](https://github.com/livekit/agents/tree/main/livekit-plugins/livekit-plugins-cartesia)**: View the source or contribute to the LiveKit Cartesia TTS plugin.
 
 - **[Cartesia docs](https://docs.cartesia.ai/build-with-cartesia/models/tts)**: Cartesia TTS docs.
 

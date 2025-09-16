@@ -129,7 +129,7 @@ Returns [SIPDispatchRuleInfo](#sipdispatchruleinfo).
 | dispatch_rule | [SIPDispatchRuleInfo](#sipdispatchruleinfo) | yes | Dispatch rule to create. |
 | trunk_ids | array<string> |  | List of associated trunk IDs. If empty, all trunks match this dispatch rule. |
 | hide_phone_number | bool |  | If true, use a random value for participant identity and phone number ommitted from attributes. By default, the participant identity is created using the phone number (if the participant identity isn't explicitly set). |
-| inbound_numbers | array<string> |  | If set, the dispatch rule only accepts calls made to numbers in the list. |
+| inbound_numbers | array<string> |  | If set, the dispatch rule only accepts calls made from numbers in the list. |
 | name | string | yes | Human-readable name for the dispatch rule. |
 | metadata | string |  | Optional metadata for the dispatch rule. If defined, participants created by the rule inherit this metadata. |
 | attributes | map<string, string> |  | Key-value mapping of user-defined attributes. Participants created by this rule inherit these attributes. |
@@ -233,7 +233,11 @@ Returns [google.protobuf.Empty](https://github.com/protocolbuffers/protobuf/blob
 | Parameter | Type | Required | Description |
 | participant_identity | string | yes | Identity of the participant to transfer. |
 | room_name | string | yes | Name of the room the participant is currently in. |
-| transfer_to | string | yes | Phone number or SIP endpoint to transfer participant to. |
+| transfer_to | string | yes | Phone number or SIP endpoint to transfer participant to. This value can either be a valid telephone number or a SIP URI. The following examples are valid values:
+
+- `tel:+15105550100`
+- `sip:+15105550100@sip.telnyx.com`
+- `sip:+15105550100@my-livekit-demo.pstn.twilio.com` |
 | play_dialtone | bool |  | Optionally play dial tone during the transfer. By default, the room audio is played during the transfer. |
 
 ### UpdateSIPDispatchRule

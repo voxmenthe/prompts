@@ -22,7 +22,7 @@ All TTS providers support high quality, low-latency, and lifelike multilingual v
 | [Azure AI Speech](https://docs.livekit.io/agents/integrations/tts/azure.md) | `azure` |  | Python |
 | [Azure OpenAI](https://docs.livekit.io/agents/integrations/tts/azure-openai.md) | `openai` |  | Python |
 | [Baseten](https://docs.livekit.io/agents/integrations/tts/baseten.md) | `baseten` |  | Python |
-| [Cartesia](https://docs.livekit.io/agents/integrations/tts/cartesia.md) | `cartesia` |  | Python |
+| [Cartesia](https://docs.livekit.io/agents/integrations/tts/cartesia.md) | `cartesia` |  | Python, Nodejs |
 | [Deepgram](https://docs.livekit.io/agents/integrations/tts/deepgram.md) | `deepgram` |  | Python |
 | [ElevenLabs](https://docs.livekit.io/agents/integrations/tts/elevenlabs.md) | `elevenlabs` |  | Python, Nodejs |
 | [Gemini](https://docs.livekit.io/agents/integrations/tts/gemini.md) | `google` |  | Python, Nodejs |

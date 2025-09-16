@@ -343,7 +343,7 @@ export default defineAgent({
 
     const session = new voice.AgentSession({
       vad,
-      stt: new deepgram.STT({ model: 'nova-3', language: 'multi' }),
+      stt: new deepgram.STT({ model: 'nova-3' }),
       llm: new openai.LLM({ model: 'gpt-4o-mini' }),
       tts: new cartesia.TTS({ 
         model: 'sonic-2', 

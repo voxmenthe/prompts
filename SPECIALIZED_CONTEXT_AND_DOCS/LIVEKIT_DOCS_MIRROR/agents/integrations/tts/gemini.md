@@ -22,8 +22,19 @@ This section includes a basic usage example and some reference material. For lin
 
 Install the plugin from PyPI:
 
+**Python**:
+
 ```bash
 pip install "livekit-agents[google]~=1.2"
+
+```
+
+---
+
+**Node.js**:
+
+```bash
+pnpm add @livekit/agents-plugin-google@1.x
 
 ```
 
@@ -38,6 +49,8 @@ Credentials must be provided by one of the following methods:
 
 Use a Gemini TTS in an `AgentSession` or as a standalone speech generator. For example, you can use this TTS in the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md).
 
+**Python**:
+
 ```python
 from livekit.plugins import google
 
@@ -47,14 +60,32 @@ session = AgentSession(
    voice_name="Zephyr",
    instructions="Speak in a friendly and engaging tone.",
   ),
-  # ... llm, stt, etc.
-)
+    # ... llm, stt, etc.
+  )
+
+```
+
+---
+
+**Node.js**:
+
+```typescript
+import * as google from '@livekit/agents-plugin-google';
+
+const session = new voice.AgentSession({
+    tts: new google.beta.TTS(
+        model: "gemini-2.5-flash-preview-tts",
+        voiceName: "Zephyr",
+        instructions: "Speak in a friendly and engaging tone.",
+    ),
+    // ... llm, stt, etc.
+});
 
 ```
 
 ### Parameters
 
-This section describes some of the available parameters. See the [plugin reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/google/index.html.md#livekit.plugins.google.TTS) for a complete list of all available parameters.
+This section describes some of the available parameters. See the plugin reference links in the [Additional resources](#additional-resources) section for a complete list of all available parameters.
 
 - **`model`** _(string)_ (optional) - Default: `gemini-2.5-flash-preview-tts`: The model to use for speech generation. For a list of models, see [Supported models](https://ai.google.dev/gemini-api/docs/speech-generation#supported-models).
 
@@ -67,12 +98,6 @@ This section describes some of the available parameters. See the [plugin referen
 ## Additional resources
 
 The following resources provide more information about using Gemini TTS with LiveKit Agents.
-
-- **[Python package](https://pypi.org/project/livekit-plugins-google/)**: The `livekit-plugins-google` package on PyPI.
-
-- **[Plugin reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/google/beta/index.html.md#livekit.plugins.google.beta.TTS)**: Reference for the Gemini TTS plugin.
-
-- **[GitHub repo](https://github.com/livekit/agents/tree/main/livekit-plugins/livekit-plugins-google)**: View the source or contribute to the LiveKit Google plugin.
 
 - **[Gemini TTS docs](https://ai.google.dev/gemini-api/docs/speech-generation)**: Gemini Developer API docs for TTS.
 

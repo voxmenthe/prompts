@@ -62,11 +62,11 @@ This section describes some of the available parameters. For a complete referenc
 
 - **`region`** _(string)_ (optional) - Default: `us-east-1`: The region to use for AWS API requests.
 
-- **`temperature`** _(float)_ (optional): A measure of randomness in output. A lower value results in more predictable output, while a higher value results in more creative output.
+- **`temperature`** _(float)_ (optional): Controls the randomness of the model's output. Higher values, for example 0.8, make the output more random, while lower values, for example 0.2, make it more focused and deterministic.
 
 Default values vary depending on the model you select. To learn more, see [Inference request parameters and response fields for foundation models](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html).
 
-- **`tool_choice`** _([ToolChoice | Literal['auto', 'required', 'none']])_ (optional) - Default: `auto`: Specifies whether to use tools during response generation.
+- **`tool_choice`** _([ToolChoice | Literal['auto', 'required', 'none']])_ (optional) - Default: `auto`: Controls how the model uses tools. Set to 'auto' to let the model decide, 'required' to force tool usage, or 'none' to disable tool usage.
 
 ## Amazon Nova Sonic
 

@@ -23,7 +23,7 @@ All STT providers support low-latency multilingual transcription. Support for ot
 | [Azure AI Speech](https://docs.livekit.io/agents/integrations/stt/azure.md) | `azure` |  | Python |
 | [Azure OpenAI](https://docs.livekit.io/agents/integrations/stt/azure-openai.md) | `openai` |  | Python |
 | [Baseten](https://docs.livekit.io/agents/integrations/stt/baseten.md) | `baseten` |  | Python |
-| [Cartesia](https://docs.livekit.io/agents/integrations/stt/cartesia.md) | `cartesia` |  | Python, Nodejs |
+| [Cartesia](https://docs.livekit.io/agents/integrations/stt/cartesia.md) | `cartesia` |  | Python |
 | [Clova](https://docs.livekit.io/agents/integrations/stt/clova.md) | `clova` |  | Python |
 | [Deepgram](https://docs.livekit.io/agents/integrations/stt/deepgram.md) | `deepgram` |  | Python, Nodejs |
 | [fal](https://docs.livekit.io/agents/integrations/stt/fal.md) | `fal` |  | Python |

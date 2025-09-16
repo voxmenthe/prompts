@@ -6,14 +6,62 @@
   ],
   "output_root": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR",
   "counts": {
-    "total": 205,
-    "succeeded": 203,
+    "total": 206,
+    "succeeded": 204,
     "failed": 2,
-    "created": 13,
-    "modified": 4,
-    "unchanged": 186
+    "created": 1,
+    "modified": 44,
+    "unchanged": 159
   },
   "results": [
+    {
+      "relative_path": "home/get-started/intro-to-livekit.md",
+      "url_used": "https://docs.livekit.io/home/get-started/intro-to-livekit.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/get-started/intro-to-livekit.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/client/connect.md",
+      "url_used": "https://docs.livekit.io/home/client/connect.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/connect.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/get-started/api-primitives.md",
+      "url_used": "https://docs.livekit.io/home/get-started/api-primitives.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/get-started/api-primitives.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/client.md",
+      "url_used": "https://docs.livekit.io/home/client.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "sip.md",
+      "url_used": "https://docs.livekit.io/sip.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip.md",
+      "error": null,
+      "change": "modified"
+    },
+    {
+      "relative_path": "home/client/tracks/noise-cancellation.md",
+      "url_used": "https://docs.livekit.io/home/client/tracks/noise-cancellation.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/tracks/noise-cancellation.md",
+      "error": null,
+      "change": "unchanged"
+    },
     {
       "relative_path": "home/client/tracks/publish.md",
       "url_used": "https://docs.livekit.io/home/client/tracks/publish.md",
@@ -23,10 +71,74 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "home/client.md",
-      "url_used": "https://docs.livekit.io/home/client.md",
+      "relative_path": "home/get-started/authentication.md",
+      "url_used": "https://docs.livekit.io/home/get-started/authentication.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/get-started/authentication.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/client/tracks/subscribe.md",
+      "url_used": "https://docs.livekit.io/home/client/tracks/subscribe.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/tracks/subscribe.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/client/tracks/raw-tracks.md",
+      "url_used": "https://docs.livekit.io/home/client/tracks/raw-tracks.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/tracks/raw-tracks.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/client/tracks/advanced.md",
+      "url_used": "https://docs.livekit.io/home/client/tracks/advanced.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/tracks/advanced.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/client/tracks/encryption.md",
+      "url_used": "https://docs.livekit.io/home/client/tracks/encryption.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/tracks/encryption.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/client/data.md",
+      "url_used": "https://docs.livekit.io/home/client/data.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/data.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/client/data/text-streams.md",
+      "url_used": "https://docs.livekit.io/home/client/data/text-streams.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/data/text-streams.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/client/data/rpc.md",
+      "url_used": "https://docs.livekit.io/home/client/data/rpc.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/data/rpc.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/client/data/byte-streams.md",
+      "url_used": "https://docs.livekit.io/home/client/data/byte-streams.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/data/byte-streams.md",
       "error": null,
       "change": "unchanged"
     },
@@ -43,118 +155,6 @@
       "url_used": "https://docs.livekit.io/home/client/tracks.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/tracks.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "sip.md",
-      "url_used": "https://docs.livekit.io/sip.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/get-started/api-primitives.md",
-      "url_used": "https://docs.livekit.io/home/get-started/api-primitives.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/get-started/api-primitives.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/client/tracks/subscribe.md",
-      "url_used": "https://docs.livekit.io/home/client/tracks/subscribe.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/tracks/subscribe.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/client/connect.md",
-      "url_used": "https://docs.livekit.io/home/client/connect.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/connect.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/get-started/authentication.md",
-      "url_used": "https://docs.livekit.io/home/get-started/authentication.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/get-started/authentication.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/get-started/intro-to-livekit.md",
-      "url_used": "https://docs.livekit.io/home/get-started/intro-to-livekit.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/get-started/intro-to-livekit.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/client/tracks/raw-tracks.md",
-      "url_used": "https://docs.livekit.io/home/client/tracks/raw-tracks.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/tracks/raw-tracks.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/client/tracks/noise-cancellation.md",
-      "url_used": "https://docs.livekit.io/home/client/tracks/noise-cancellation.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/tracks/noise-cancellation.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/client/tracks/encryption.md",
-      "url_used": "https://docs.livekit.io/home/client/tracks/encryption.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/tracks/encryption.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/client/data/byte-streams.md",
-      "url_used": "https://docs.livekit.io/home/client/data/byte-streams.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/data/byte-streams.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/client/data/text-streams.md",
-      "url_used": "https://docs.livekit.io/home/client/data/text-streams.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/data/text-streams.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/client/tracks/advanced.md",
-      "url_used": "https://docs.livekit.io/home/client/tracks/advanced.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/tracks/advanced.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/client/data.md",
-      "url_used": "https://docs.livekit.io/home/client/data.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/data.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/client/data/rpc.md",
-      "url_used": "https://docs.livekit.io/home/client/data/rpc.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/data/rpc.md",
       "error": null,
       "change": "unchanged"
     },
@@ -180,21 +180,13 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/state/room-metadata.md",
       "error": null,
-      "change": "unchanged"
+      "change": "modified"
     },
     {
-      "relative_path": "home/client/events.md",
-      "url_used": "https://docs.livekit.io/home/client/events.md",
+      "relative_path": "home/quickstarts/unity-web.md",
+      "url_used": "https://docs.livekit.io/home/quickstarts/unity-web.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/events.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/quickstarts/react.md",
-      "url_used": "https://docs.livekit.io/home/quickstarts/react.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/quickstarts/react.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/quickstarts/unity-web.md",
       "error": null,
       "change": "unchanged"
     },
@@ -207,14 +199,6 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "home/quickstarts/unity-web.md",
-      "url_used": "https://docs.livekit.io/home/quickstarts/unity-web.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/quickstarts/unity-web.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
       "relative_path": "home/quickstarts/javascript.md",
       "url_used": "https://docs.livekit.io/home/quickstarts/javascript.md",
       "success": true,
@@ -223,18 +207,26 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "home/quickstarts/react-native.md",
-      "url_used": "https://docs.livekit.io/home/quickstarts/react-native.md",
+      "relative_path": "home/quickstarts/react.md",
+      "url_used": "https://docs.livekit.io/home/quickstarts/react.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/quickstarts/react-native.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/quickstarts/react.md",
       "error": null,
       "change": "unchanged"
     },
     {
-      "relative_path": "home/quickstarts/flutter.md",
-      "url_used": "https://docs.livekit.io/home/quickstarts/flutter.md",
+      "relative_path": "home/client/events.md",
+      "url_used": "https://docs.livekit.io/home/client/events.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/quickstarts/flutter.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/events.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/quickstarts/android-compose.md",
+      "url_used": "https://docs.livekit.io/home/quickstarts/android-compose.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/quickstarts/android-compose.md",
       "error": null,
       "change": "unchanged"
     },
@@ -255,10 +247,18 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "home/quickstarts/android-compose.md",
-      "url_used": "https://docs.livekit.io/home/quickstarts/android-compose.md",
+      "relative_path": "home/quickstarts/flutter.md",
+      "url_used": "https://docs.livekit.io/home/quickstarts/flutter.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/quickstarts/android-compose.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/quickstarts/flutter.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/quickstarts/react-native.md",
+      "url_used": "https://docs.livekit.io/home/quickstarts/react-native.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/quickstarts/react-native.md",
       "error": null,
       "change": "unchanged"
     },
@@ -279,18 +279,18 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "home/cli/projects.md",
-      "url_used": "https://docs.livekit.io/home/cli/projects.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cli/projects.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
       "relative_path": "home/cli.md",
       "url_used": "https://docs.livekit.io/home/cli.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cli.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/cli/projects.md",
+      "url_used": "https://docs.livekit.io/home/cli/projects.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cli/projects.md",
       "error": null,
       "change": "unchanged"
     },
@@ -303,18 +303,26 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "home/server/webhooks.md",
-      "url_used": "https://docs.livekit.io/home/server/webhooks.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/server/webhooks.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
       "relative_path": "home/server/managing-rooms.md",
       "url_used": "https://docs.livekit.io/home/server/managing-rooms.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/server/managing-rooms.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/server/managing-participants.md",
+      "url_used": "https://docs.livekit.io/home/server/managing-participants.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/server/managing-participants.md",
+      "error": null,
+      "change": "modified"
+    },
+    {
+      "relative_path": "home/server/webhooks.md",
+      "url_used": "https://docs.livekit.io/home/server/webhooks.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/server/webhooks.md",
       "error": null,
       "change": "unchanged"
     },
@@ -335,34 +343,10 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "home/server/managing-participants.md",
-      "url_used": "https://docs.livekit.io/home/server/managing-participants.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/server/managing-participants.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
       "relative_path": "home/egress/overview.md",
       "url_used": "https://docs.livekit.io/home/egress/overview.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/egress/overview.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/egress/participant.md",
-      "url_used": "https://docs.livekit.io/home/egress/participant.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/egress/participant.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/egress/track.md",
-      "url_used": "https://docs.livekit.io/home/egress/track.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/egress/track.md",
       "error": null,
       "change": "unchanged"
     },
@@ -375,10 +359,10 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "home/egress/outputs.md",
-      "url_used": "https://docs.livekit.io/home/egress/outputs.md",
+      "relative_path": "home/egress/participant.md",
+      "url_used": "https://docs.livekit.io/home/egress/participant.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/egress/outputs.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/egress/participant.md",
       "error": null,
       "change": "unchanged"
     },
@@ -391,50 +375,26 @@
       "change": "unchanged"
     },
     {
+      "relative_path": "home/egress/track.md",
+      "url_used": "https://docs.livekit.io/home/egress/track.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/egress/track.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/egress/outputs.md",
+      "url_used": "https://docs.livekit.io/home/egress/outputs.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/egress/outputs.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
       "relative_path": "home/cloud.md",
       "url_used": "https://docs.livekit.io/home/cloud.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cloud.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/egress/custom-template.md",
-      "url_used": "https://docs.livekit.io/home/egress/custom-template.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/egress/custom-template.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/egress/examples.md",
-      "url_used": "https://docs.livekit.io/home/egress/examples.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/egress/examples.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/cloud/architecture.md",
-      "url_used": "https://docs.livekit.io/home/cloud/architecture.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cloud/architecture.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/cloud/sandbox.md",
-      "url_used": "https://docs.livekit.io/home/cloud/sandbox.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cloud/sandbox.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/cloud/region-pinning.md",
-      "url_used": "https://docs.livekit.io/home/cloud/region-pinning.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cloud/region-pinning.md",
       "error": null,
       "change": "unchanged"
     },
@@ -447,10 +407,34 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "home/cloud/firewall.md",
-      "url_used": "https://docs.livekit.io/home/cloud/firewall.md",
+      "relative_path": "home/egress/examples.md",
+      "url_used": "https://docs.livekit.io/home/egress/examples.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cloud/firewall.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/egress/examples.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/egress/custom-template.md",
+      "url_used": "https://docs.livekit.io/home/egress/custom-template.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/egress/custom-template.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/cloud/sandbox.md",
+      "url_used": "https://docs.livekit.io/home/cloud/sandbox.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cloud/sandbox.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/cloud/architecture.md",
+      "url_used": "https://docs.livekit.io/home/cloud/architecture.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cloud/architecture.md",
       "error": null,
       "change": "unchanged"
     },
@@ -463,10 +447,34 @@
       "change": "unchanged"
     },
     {
+      "relative_path": "home/cloud/region-pinning.md",
+      "url_used": "https://docs.livekit.io/home/cloud/region-pinning.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cloud/region-pinning.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/cloud/firewall.md",
+      "url_used": "https://docs.livekit.io/home/cloud/firewall.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cloud/firewall.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
       "relative_path": "home/cloud/noise-cancellation.md",
       "url_used": "https://docs.livekit.io/home/cloud/noise-cancellation.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cloud/noise-cancellation.md",
+      "error": null,
+      "change": "modified"
+    },
+    {
+      "relative_path": "home/self-hosting/local.md",
+      "url_used": "https://docs.livekit.io/home/self-hosting/local.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/local.md",
       "error": null,
       "change": "unchanged"
     },
@@ -479,10 +487,10 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "home/self-hosting/local.md",
-      "url_used": "https://docs.livekit.io/home/self-hosting/local.md",
+      "relative_path": "home/self-hosting/deployment.md",
+      "url_used": "https://docs.livekit.io/home/self-hosting/deployment.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/local.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/deployment.md",
       "error": null,
       "change": "unchanged"
     },
@@ -495,34 +503,10 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "home/self-hosting/deployment.md",
-      "url_used": "https://docs.livekit.io/home/self-hosting/deployment.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/deployment.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/self-hosting/vm.md",
-      "url_used": "https://docs.livekit.io/home/self-hosting/vm.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/vm.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
       "relative_path": "home/self-hosting/kubernetes.md",
       "url_used": "https://docs.livekit.io/home/self-hosting/kubernetes.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/kubernetes.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "home/self-hosting/distributed.md",
-      "url_used": "https://docs.livekit.io/home/self-hosting/distributed.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/distributed.md",
       "error": null,
       "change": "unchanged"
     },
@@ -535,18 +519,34 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "home/self-hosting/egress.md",
-      "url_used": "https://docs.livekit.io/home/self-hosting/egress.md",
+      "relative_path": "home/self-hosting/benchmark.md",
+      "url_used": "https://docs.livekit.io/home/self-hosting/benchmark.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/egress.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/benchmark.md",
       "error": null,
       "change": "unchanged"
     },
     {
-      "relative_path": "home/self-hosting/sip-server.md",
-      "url_used": "https://docs.livekit.io/home/self-hosting/sip-server.md",
+      "relative_path": "home/self-hosting/distributed.md",
+      "url_used": "https://docs.livekit.io/home/self-hosting/distributed.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/sip-server.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/distributed.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/self-hosting/vm.md",
+      "url_used": "https://docs.livekit.io/home/self-hosting/vm.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/vm.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "home/self-hosting/egress.md",
+      "url_used": "https://docs.livekit.io/home/self-hosting/egress.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/egress.md",
       "error": null,
       "change": "unchanged"
     },
@@ -559,6 +559,14 @@
       "change": "unchanged"
     },
     {
+      "relative_path": "home/self-hosting/sip-server.md",
+      "url_used": "https://docs.livekit.io/home/self-hosting/sip-server.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/sip-server.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
       "relative_path": "agents.md",
       "url_used": "https://docs.livekit.io/agents.md",
       "success": true,
@@ -567,18 +575,26 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "home/self-hosting/benchmark.md",
-      "url_used": "https://docs.livekit.io/home/self-hosting/benchmark.md",
+      "relative_path": "agents/start/voice-ai.md",
+      "url_used": "https://docs.livekit.io/agents/start/voice-ai.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/benchmark.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/start/voice-ai.md",
       "error": null,
-      "change": "unchanged"
+      "change": "modified"
     },
     {
-      "relative_path": "agents/start/frontend.md",
-      "url_used": "https://docs.livekit.io/agents/start/frontend.md",
+      "relative_path": "agents/start/telephony.md",
+      "url_used": "https://docs.livekit.io/agents/start/telephony.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/start/frontend.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/start/telephony.md",
+      "error": null,
+      "change": "modified"
+    },
+    {
+      "relative_path": "agents/start/v0-migration.md",
+      "url_used": "https://docs.livekit.io/agents/start/v0-migration.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/start/v0-migration.md",
       "error": null,
       "change": "unchanged"
     },
@@ -591,22 +607,6 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "agents/start/voice-ai.md",
-      "url_used": "https://docs.livekit.io/agents/start/voice-ai.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/start/voice-ai.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "agents/start/telephony.md",
-      "url_used": "https://docs.livekit.io/agents/start/telephony.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/start/telephony.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
       "relative_path": "agents/start/v0-migration/nodejs.md",
       "url_used": "https://docs.livekit.io/agents/start/v0-migration/nodejs.md",
       "success": true,
@@ -615,10 +615,26 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "agents/start/v0-migration.md",
-      "url_used": "https://docs.livekit.io/agents/start/v0-migration.md",
+      "relative_path": "agents/start/frontend.md",
+      "url_used": "https://docs.livekit.io/agents/start/frontend.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/start/v0-migration.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/start/frontend.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "agents/build/tools.md",
+      "url_used": "https://docs.livekit.io/agents/build/tools.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/tools.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "agents/build/vision.md",
+      "url_used": "https://docs.livekit.io/agents/build/vision.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/vision.md",
       "error": null,
       "change": "unchanged"
     },
@@ -628,39 +644,7 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/workflows.md",
       "error": null,
-      "change": "created"
-    },
-    {
-      "relative_path": "agents/build/audio.md",
-      "url_used": "https://docs.livekit.io/agents/build/audio.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/audio.md",
-      "error": null,
-      "change": "created"
-    },
-    {
-      "relative_path": "agents/build/vision.md",
-      "url_used": "https://docs.livekit.io/agents/build/vision.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/vision.md",
-      "error": null,
-      "change": "created"
-    },
-    {
-      "relative_path": "agents/build/tools.md",
-      "url_used": "https://docs.livekit.io/agents/build/tools.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/tools.md",
-      "error": null,
-      "change": "created"
-    },
-    {
-      "relative_path": "agents/build.md",
-      "url_used": "https://docs.livekit.io/agents/build.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build.md",
-      "error": null,
-      "change": "unchanged"
+      "change": "modified"
     },
     {
       "relative_path": "agents/build/nodes.md",
@@ -668,7 +652,15 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/nodes.md",
       "error": null,
-      "change": "created"
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "agents/build/audio.md",
+      "url_used": "https://docs.livekit.io/agents/build/audio.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/audio.md",
+      "error": null,
+      "change": "unchanged"
     },
     {
       "relative_path": "agents/build/text.md",
@@ -676,7 +668,7 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/text.md",
       "error": null,
-      "change": "created"
+      "change": "modified"
     },
     {
       "relative_path": "agents/build/turns.md",
@@ -684,15 +676,7 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/turns.md",
       "error": null,
-      "change": "created"
-    },
-    {
-      "relative_path": "agents/build/turns/turn-detector.md",
-      "url_used": "https://docs.livekit.io/agents/build/turns/turn-detector.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/turns/turn-detector.md",
-      "error": null,
-      "change": "created"
+      "change": "modified"
     },
     {
       "relative_path": "agents/build/turns/vad.md",
@@ -700,7 +684,15 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/turns/vad.md",
       "error": null,
-      "change": "created"
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "agents/build/turns/turn-detector.md",
+      "url_used": "https://docs.livekit.io/agents/build/turns/turn-detector.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/turns/turn-detector.md",
+      "error": null,
+      "change": "unchanged"
     },
     {
       "relative_path": "agents/build/external-data.md",
@@ -708,15 +700,7 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/external-data.md",
       "error": null,
-      "change": "created"
-    },
-    {
-      "relative_path": "agents/build/events.md",
-      "url_used": "https://docs.livekit.io/agents/build/events.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/events.md",
-      "error": null,
-      "change": "created"
+      "change": "unchanged"
     },
     {
       "relative_path": "agents/build/metrics.md",
@@ -724,7 +708,7 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/metrics.md",
       "error": null,
-      "change": "created"
+      "change": "unchanged"
     },
     {
       "relative_path": "agents/build/testing.md",
@@ -732,13 +716,21 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/testing.md",
       "error": null,
-      "change": "created"
+      "change": "unchanged"
     },
     {
       "relative_path": "agents/worker.md",
       "url_used": "https://docs.livekit.io/agents/worker.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/worker.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "agents/build/events.md",
+      "url_used": "https://docs.livekit.io/agents/build/events.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/events.md",
       "error": null,
       "change": "unchanged"
     },
@@ -759,6 +751,14 @@
       "change": "unchanged"
     },
     {
+      "relative_path": "agents/ops/deployment.md",
+      "url_used": "https://docs.livekit.io/agents/ops/deployment.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/ops/deployment.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
       "relative_path": "agents/worker/options.md",
       "url_used": "https://docs.livekit.io/agents/worker/options.md",
       "success": true,
@@ -767,10 +767,10 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "agents/ops/deployment.md",
-      "url_used": "https://docs.livekit.io/agents/ops/deployment.md",
+      "relative_path": "agents/build.md",
+      "url_used": "https://docs.livekit.io/agents/build.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/ops/deployment.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build.md",
       "error": null,
       "change": "unchanged"
     },
@@ -783,12 +783,12 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "agents/ops/deployment/logs.md",
-      "url_used": "https://docs.livekit.io/agents/ops/deployment/logs.md",
+      "relative_path": "agents/ops/deployment/cli.md",
+      "url_used": "https://docs.livekit.io/agents/ops/deployment/cli.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/ops/deployment/logs.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/ops/deployment/cli.md",
       "error": null,
-      "change": "modified"
+      "change": "unchanged"
     },
     {
       "relative_path": "agents/ops/deployment/builds.md",
@@ -799,34 +799,10 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "agents/ops/deployment/custom.md",
-      "url_used": "https://docs.livekit.io/agents/ops/deployment/custom.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/ops/deployment/custom.md",
-      "error": null,
-      "change": "modified"
-    },
-    {
       "relative_path": "agents/ops/recording.md",
       "url_used": "https://docs.livekit.io/agents/ops/recording.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/ops/recording.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "agents/ops/deployment/cli.md",
-      "url_used": "https://docs.livekit.io/agents/ops/deployment/cli.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/ops/deployment/cli.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "agents/integrations/realtime/openai.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/realtime/openai.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/realtime/openai.md",
       "error": null,
       "change": "unchanged"
     },
@@ -839,12 +815,36 @@
       "change": "unchanged"
     },
     {
+      "relative_path": "agents/ops/deployment/logs.md",
+      "url_used": "https://docs.livekit.io/agents/ops/deployment/logs.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/ops/deployment/logs.md",
+      "error": null,
+      "change": "modified"
+    },
+    {
+      "relative_path": "agents/integrations/realtime/openai.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/realtime/openai.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/realtime/openai.md",
+      "error": null,
+      "change": "modified"
+    },
+    {
+      "relative_path": "agents/ops/deployment/custom.md",
+      "url_used": "https://docs.livekit.io/agents/ops/deployment/custom.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/ops/deployment/custom.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
       "relative_path": "agents/integrations/llm/openai.md",
       "url_used": "https://docs.livekit.io/agents/integrations/llm/openai.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/openai.md",
       "error": null,
-      "change": "unchanged"
+      "change": "modified"
     },
     {
       "relative_path": "agents/integrations/tts/openai.md",
@@ -852,7 +852,7 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/tts/openai.md",
       "error": null,
-      "change": "unchanged"
+      "change": "modified"
     },
     {
       "relative_path": "agents/integrations/stt/openai.md",
@@ -860,7 +860,15 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/stt/openai.md",
       "error": null,
-      "change": "unchanged"
+      "change": "modified"
+    },
+    {
+      "relative_path": "agents/integrations/realtime/gemini.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/realtime/gemini.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/realtime/gemini.md",
+      "error": null,
+      "change": "modified"
     },
     {
       "relative_path": "agents/integrations/google.md",
@@ -871,20 +879,12 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "agents/integrations/realtime/gemini.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/realtime/gemini.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/realtime/gemini.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
       "relative_path": "agents/integrations/llm/gemini.md",
       "url_used": "https://docs.livekit.io/agents/integrations/llm/gemini.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/gemini.md",
       "error": null,
-      "change": "unchanged"
+      "change": "modified"
     },
     {
       "relative_path": "agents/integrations/tts/google.md",
@@ -919,26 +919,18 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "agents/integrations/stt/azure.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/stt/azure.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/stt/azure.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
       "relative_path": "agents/integrations/realtime/azure-openai.md",
       "url_used": "https://docs.livekit.io/agents/integrations/realtime/azure-openai.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/realtime/azure-openai.md",
       "error": null,
-      "change": "unchanged"
+      "change": "modified"
     },
     {
-      "relative_path": "agents/integrations/llm/azure-openai.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/llm/azure-openai.md",
+      "relative_path": "agents/integrations/stt/azure.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/stt/azure.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/azure-openai.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/stt/azure.md",
       "error": null,
       "change": "unchanged"
     },
@@ -951,28 +943,12 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "agents/integrations/aws.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/aws.md",
+      "relative_path": "agents/integrations/llm/azure-openai.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/llm/azure-openai.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/aws.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/azure-openai.md",
       "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "agents/integrations/llm/aws.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/llm/aws.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/aws.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "agents/integrations/stt/aws.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/stt/aws.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/stt/aws.md",
-      "error": null,
-      "change": "unchanged"
+      "change": "modified"
     },
     {
       "relative_path": "agents/integrations/stt/azure-openai.md",
@@ -983,10 +959,10 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "agents/integrations/realtime/nova-sonic.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/realtime/nova-sonic.md",
+      "relative_path": "agents/integrations/aws.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/aws.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/realtime/nova-sonic.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/aws.md",
       "error": null,
       "change": "unchanged"
     },
@@ -999,10 +975,26 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "agents/integrations/llm/groq.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/llm/groq.md",
+      "relative_path": "agents/integrations/llm/aws.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/llm/aws.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/groq.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/aws.md",
+      "error": null,
+      "change": "modified"
+    },
+    {
+      "relative_path": "agents/integrations/stt/aws.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/stt/aws.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/stt/aws.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "agents/integrations/realtime/nova-sonic.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/realtime/nova-sonic.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/realtime/nova-sonic.md",
       "error": null,
       "change": "unchanged"
     },
@@ -1015,12 +1007,12 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "agents/integrations/tts/groq.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/tts/groq.md",
+      "relative_path": "agents/integrations/llm/groq.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/llm/groq.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/tts/groq.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/groq.md",
       "error": null,
-      "change": "unchanged"
+      "change": "modified"
     },
     {
       "relative_path": "agents/integrations/stt/groq.md",
@@ -1028,15 +1020,7 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/stt/groq.md",
       "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "agents/integrations/cerebras.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/cerebras.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/cerebras.md",
-      "error": null,
-      "change": "unchanged"
+      "change": "modified"
     },
     {
       "relative_path": "agents/integrations/llama.md",
@@ -1052,13 +1036,13 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations.md",
       "error": null,
-      "change": "unchanged"
+      "change": "modified"
     },
     {
-      "relative_path": "agents/integrations/llm.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/llm.md",
+      "relative_path": "agents/integrations/tts/groq.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/tts/groq.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/tts/groq.md",
       "error": null,
       "change": "unchanged"
     },
@@ -1071,12 +1055,28 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "agents/integrations/llm/cerebras.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/llm/cerebras.md",
+      "relative_path": "agents/integrations/llm.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/llm.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/cerebras.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm.md",
+      "error": null,
+      "change": "modified"
+    },
+    {
+      "relative_path": "agents/integrations/cerebras.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/cerebras.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/cerebras.md",
       "error": null,
       "change": "unchanged"
+    },
+    {
+      "relative_path": "agents/integrations/llm/anthropic.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/llm/anthropic.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/anthropic.md",
+      "error": null,
+      "change": "modified"
     },
     {
       "relative_path": "agents/integrations/llm/baseten.md",
@@ -1087,18 +1087,34 @@
       "change": "unchanged"
     },
     {
+      "relative_path": "agents/integrations/llm/cerebras.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/llm/cerebras.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/cerebras.md",
+      "error": null,
+      "change": "modified"
+    },
+    {
       "relative_path": "agents/integrations/llm/deepseek.md",
       "url_used": "https://docs.livekit.io/agents/integrations/llm/deepseek.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/deepseek.md",
       "error": null,
-      "change": "unchanged"
+      "change": "modified"
     },
     {
-      "relative_path": "agents/integrations/llm/anthropic.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/llm/anthropic.md",
+      "relative_path": "agents/integrations/llm/fireworks.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/llm/fireworks.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/anthropic.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/fireworks.md",
+      "error": null,
+      "change": "modified"
+    },
+    {
+      "relative_path": "agents/integrations/llm/langchain.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/llm/langchain.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/langchain.md",
       "error": null,
       "change": "unchanged"
     },
@@ -1111,28 +1127,12 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "agents/integrations/llm/langchain.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/llm/langchain.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/langchain.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
       "relative_path": "agents/integrations/llm/mistralai.md",
       "url_used": "https://docs.livekit.io/agents/integrations/llm/mistralai.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/mistralai.md",
       "error": null,
       "change": "modified"
-    },
-    {
-      "relative_path": "agents/integrations/llm/fireworks.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/llm/fireworks.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/fireworks.md",
-      "error": null,
-      "change": "unchanged"
     },
     {
       "relative_path": "agents/integrations/llm/ollama.md",
@@ -1148,23 +1148,7 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/perplexity.md",
       "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "agents/integrations/llm/xai.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/llm/xai.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/xai.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "agents/integrations/llm/together.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/llm/together.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/together.md",
-      "error": null,
-      "change": "unchanged"
+      "change": "modified"
     },
     {
       "relative_path": "agents/integrations/llm/telnyx.md",
@@ -1172,7 +1156,23 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/telnyx.md",
       "error": null,
-      "change": "unchanged"
+      "change": "modified"
+    },
+    {
+      "relative_path": "agents/integrations/llm/together.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/llm/together.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/together.md",
+      "error": null,
+      "change": "modified"
+    },
+    {
+      "relative_path": "agents/integrations/llm/xai.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/llm/xai.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/llm/xai.md",
+      "error": null,
+      "change": "modified"
     },
     {
       "relative_path": "agents/integrations/stt.md",
@@ -1180,7 +1180,7 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/stt.md",
       "error": null,
-      "change": "unchanged"
+      "change": "modified"
     },
     {
       "relative_path": "agents/integrations/stt/assemblyai.md",
@@ -1189,6 +1189,14 @@
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/stt/assemblyai.md",
       "error": null,
       "change": "unchanged"
+    },
+    {
+      "relative_path": "agents/integrations/stt/cartesia.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/stt/cartesia.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/stt/cartesia.md",
+      "error": null,
+      "change": "modified"
     },
     {
       "relative_path": "agents/integrations/stt/baseten.md",
@@ -1212,13 +1220,13 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/stt/deepgram.md",
       "error": null,
-      "change": "unchanged"
+      "change": "modified"
     },
     {
-      "relative_path": "agents/integrations/stt/cartesia.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/stt/cartesia.md",
+      "relative_path": "agents/integrations/stt/gladia.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/stt/gladia.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/stt/cartesia.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/stt/gladia.md",
       "error": null,
       "change": "unchanged"
     },
@@ -1227,6 +1235,14 @@
       "url_used": "https://docs.livekit.io/agents/integrations/stt/fal.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/stt/fal.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "agents/integrations/stt/mistralai.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/stt/mistralai.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/stt/mistralai.md",
       "error": null,
       "change": "unchanged"
     },
@@ -1247,14 +1263,6 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "agents/integrations/stt/gladia.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/stt/gladia.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/stt/gladia.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
       "relative_path": "agents/integrations/stt/spitch.md",
       "url_used": "https://docs.livekit.io/agents/integrations/stt/spitch.md",
       "success": true,
@@ -1263,18 +1271,26 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "agents/integrations/stt/mistralai.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/stt/mistralai.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/stt/mistralai.md",
-      "error": null,
-      "change": "modified"
-    },
-    {
       "relative_path": "agents/integrations/tts.md",
       "url_used": "https://docs.livekit.io/agents/integrations/tts.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/tts.md",
+      "error": null,
+      "change": "modified"
+    },
+    {
+      "relative_path": "agents/integrations/tts/cartesia.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/tts/cartesia.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/tts/cartesia.md",
+      "error": null,
+      "change": "modified"
+    },
+    {
+      "relative_path": "agents/integrations/tts/baseten.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/tts/baseten.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/tts/baseten.md",
       "error": null,
       "change": "unchanged"
     },
@@ -1287,20 +1303,12 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "agents/integrations/tts/baseten.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/tts/baseten.md",
+      "relative_path": "agents/integrations/tts/gemini.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/tts/gemini.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/tts/baseten.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/tts/gemini.md",
       "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "agents/integrations/tts/cartesia.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/tts/cartesia.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/tts/cartesia.md",
-      "error": null,
-      "change": "unchanged"
+      "change": "modified"
     },
     {
       "relative_path": "agents/integrations/tts/elevenlabs.md",
@@ -1308,15 +1316,7 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/tts/elevenlabs.md",
       "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "agents/integrations/tts/gemini.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/tts/gemini.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/tts/gemini.md",
-      "error": null,
-      "change": "unchanged"
+      "change": "modified"
     },
     {
       "relative_path": "agents/integrations/tts/hume.md",
@@ -1327,10 +1327,10 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "agents/integrations/tts/resemble.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/tts/resemble.md",
+      "relative_path": "agents/integrations/tts/lmnt.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/tts/lmnt.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/tts/resemble.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/tts/lmnt.md",
       "error": null,
       "change": "unchanged"
     },
@@ -1339,6 +1339,22 @@
       "url_used": "https://docs.livekit.io/agents/integrations/tts/inworld.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/tts/inworld.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "agents/integrations/tts/neuphonic.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/tts/neuphonic.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/tts/neuphonic.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "agents/integrations/tts/resemble.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/tts/resemble.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/tts/resemble.md",
       "error": null,
       "change": "unchanged"
     },
@@ -1359,34 +1375,10 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "agents/integrations/tts/lmnt.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/tts/lmnt.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/tts/lmnt.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "agents/integrations/tts/neuphonic.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/tts/neuphonic.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/tts/neuphonic.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
       "relative_path": "agents/integrations/tts/sarvam.md",
       "url_used": "https://docs.livekit.io/agents/integrations/tts/sarvam.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/tts/sarvam.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "agents/integrations/tts/speechify.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/tts/speechify.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/tts/speechify.md",
       "error": null,
       "change": "unchanged"
     },
@@ -1399,18 +1391,18 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "agents/integrations/avatar.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/avatar.md",
+      "relative_path": "agents/integrations/tts/speechify.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/tts/speechify.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/avatar.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/tts/speechify.md",
       "error": null,
       "change": "unchanged"
     },
     {
-      "relative_path": "agents/integrations/avatar/simli.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/avatar/simli.md",
+      "relative_path": "agents/integrations/avatar.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/avatar.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/avatar/simli.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/avatar.md",
       "error": null,
       "change": "unchanged"
     },
@@ -1423,18 +1415,34 @@
       "change": "unchanged"
     },
     {
+      "relative_path": "agents/integrations/avatar/anam.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/avatar/anam.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/avatar/anam.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
       "relative_path": "agents/integrations/avatar/bithuman.md",
       "url_used": "https://docs.livekit.io/agents/integrations/avatar/bithuman.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/avatar/bithuman.md",
       "error": null,
-      "change": "unchanged"
+      "change": "modified"
     },
     {
-      "relative_path": "agents/integrations/avatar/anam.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/avatar/anam.md",
+      "relative_path": "agents/integrations/avatar/hedra.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/avatar/hedra.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/avatar/anam.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/avatar/hedra.md",
+      "error": null,
+      "change": "modified"
+    },
+    {
+      "relative_path": "agents/integrations/avatar/simli.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/avatar/simli.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/avatar/simli.md",
       "error": null,
       "change": "unchanged"
     },
@@ -1455,14 +1463,6 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "sip/quickstarts/configuring-sip-trunk.md",
-      "url_used": "https://docs.livekit.io/sip/quickstarts/configuring-sip-trunk.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/quickstarts/configuring-sip-trunk.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
       "relative_path": "sip/quickstarts/configuring-twilio-trunk.md",
       "url_used": "https://docs.livekit.io/sip/quickstarts/configuring-twilio-trunk.md",
       "success": true,
@@ -1471,34 +1471,10 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "sip/quickstarts/configuring-telnyx-trunk.md",
-      "url_used": "https://docs.livekit.io/sip/quickstarts/configuring-telnyx-trunk.md",
+      "relative_path": "sip/quickstarts/configuring-sip-trunk.md",
+      "url_used": "https://docs.livekit.io/sip/quickstarts/configuring-sip-trunk.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/quickstarts/configuring-telnyx-trunk.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "agents/integrations/avatar/hedra.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/avatar/hedra.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/avatar/hedra.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "sip/accepting-calls.md",
-      "url_used": "https://docs.livekit.io/sip/accepting-calls.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/accepting-calls.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "sip/trunk-inbound.md",
-      "url_used": "https://docs.livekit.io/sip/trunk-inbound.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/trunk-inbound.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/quickstarts/configuring-sip-trunk.md",
       "error": null,
       "change": "unchanged"
     },
@@ -1511,6 +1487,30 @@
       "change": "unchanged"
     },
     {
+      "relative_path": "sip/accepting-calls.md",
+      "url_used": "https://docs.livekit.io/sip/accepting-calls.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/accepting-calls.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "sip/quickstarts/configuring-telnyx-trunk.md",
+      "url_used": "https://docs.livekit.io/sip/quickstarts/configuring-telnyx-trunk.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/quickstarts/configuring-telnyx-trunk.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "sip/trunk-inbound.md",
+      "url_used": "https://docs.livekit.io/sip/trunk-inbound.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/trunk-inbound.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
       "relative_path": "sip/accepting-calls-twilio-voice.md",
       "url_used": "https://docs.livekit.io/sip/accepting-calls-twilio-voice.md",
       "success": true,
@@ -1519,18 +1519,18 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "sip/making-calls.md",
-      "url_used": "https://docs.livekit.io/sip/making-calls.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/making-calls.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
       "relative_path": "sip/dispatch-rule.md",
       "url_used": "https://docs.livekit.io/sip/dispatch-rule.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/dispatch-rule.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "sip/making-calls.md",
+      "url_used": "https://docs.livekit.io/sip/making-calls.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/making-calls.md",
       "error": null,
       "change": "unchanged"
     },
@@ -1551,20 +1551,28 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "sip/transfer-cold.md",
-      "url_used": "https://docs.livekit.io/sip/transfer-cold.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/transfer-cold.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
       "relative_path": "sip/dtmf.md",
       "url_used": "https://docs.livekit.io/sip/dtmf.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/dtmf.md",
       "error": null,
       "change": "unchanged"
+    },
+    {
+      "relative_path": "sip/transfer-warm.md",
+      "url_used": "https://docs.livekit.io/sip/transfer-warm.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/transfer-warm.md",
+      "error": null,
+      "change": "created"
+    },
+    {
+      "relative_path": "sip/transfer-cold.md",
+      "url_used": "https://docs.livekit.io/sip/transfer-cold.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/transfer-cold.md",
+      "error": null,
+      "change": "modified"
     },
     {
       "relative_path": "sip/hd-voice.md",
@@ -1588,15 +1596,7 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/sip-participant.md",
       "error": null,
-      "change": "unchanged"
-    },
-    {
-      "relative_path": "recipes/ivr-navigator.md",
-      "url_used": "https://docs.livekit.io/recipes/ivr-navigator.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/recipes/ivr-navigator.md",
-      "error": null,
-      "change": "unchanged"
+      "change": "modified"
     },
     {
       "relative_path": "sip/troubleshooting.md",
@@ -1607,18 +1607,26 @@
       "change": "unchanged"
     },
     {
-      "relative_path": "recipes/company-directory.md",
-      "url_used": "https://docs.livekit.io/recipes/company-directory.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/recipes/company-directory.md",
-      "error": null,
-      "change": "unchanged"
-    },
-    {
       "relative_path": "sip/api.md",
       "url_used": "https://docs.livekit.io/sip/api.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/api.md",
+      "error": null,
+      "change": "modified"
+    },
+    {
+      "relative_path": "recipes/ivr-navigator.md",
+      "url_used": "https://docs.livekit.io/recipes/ivr-navigator.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/recipes/ivr-navigator.md",
+      "error": null,
+      "change": "unchanged"
+    },
+    {
+      "relative_path": "recipes/company-directory.md",
+      "url_used": "https://docs.livekit.io/recipes/company-directory.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/recipes/company-directory.md",
       "error": null,
       "change": "unchanged"
     },

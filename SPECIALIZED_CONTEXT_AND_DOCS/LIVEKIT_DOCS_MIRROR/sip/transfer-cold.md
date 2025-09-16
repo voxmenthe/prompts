@@ -1,16 +1,26 @@
-LiveKit Docs › Features › Cold transfer
+LiveKit Docs › Features › Transfers › Call forwarding
 
 ---
 
-# Transferring calls
+# Call forwarding
 
-> Using the TransferSIPParticipant API for cold transfers.
+> Transfer calls to another number or SIP endpoint using SIP REFER.
 
-A "cold transfer" refers to transferring a caller (SIP participant) to another number or SIP endpoint without a hand off. A cold transfer shuts down the room (that is, the session) of the original call.
+A _cold transfer_ refers to forwarding a caller to another phone number or SIP endpoint. Performing a cold transfer closes the caller’s LiveKit session.
+
+For transfers that include an AI agent to provide context, see the [Agent-assisted transfer](https://docs.livekit.io/sip/transfer-warm.md) guide.
+
+## How it works
+
+To transfer a caller out of a LiveKit room to another phone number, use the following steps:
+
+1. Call the `TransferSIPParticipant` API.
+2. LiveKit sends a SIP REFER through your trunk, instructing the provider to connect the caller to the new number or SIP endpoint.
+3. The caller leaves the LiveKit room, ending the session.
 
 ## Transferring a SIP participant using SIP REFER
 
-REFER is a SIP method that allows you to move an active session to another endpoint (that is, transfer a call). For LiveKit telephony apps, you can use the `TransferSIPParticipant` server API to transfer a caller to another phone number or SIP endpoint.
+REFER is a SIP method that allows you to move an active session to another endpoint (that is, transfer a call). For LiveKit telephony apps, you can use the [`TransferSIPParticipant`](https://docs.livekit.io/sip/api.md#transfersipparticipant) server API to transfer a caller to another phone number or SIP endpoint.
 
 In order to successfully transfer calls, you must configure your provider trunks to allow call transfers.
 
@@ -46,20 +56,6 @@ twilio api trunking v1 trunks update --sid <twilio-trunk-sid> \
 4. In the **Caller ID for Transfer Target** field, select an option.
 5. Select **Enable PSTN Transfer**.
 6. Save your changes.
-
-### TransferSIPParticipant server API parameters
-
-- **`transfer_to`** _(string)_: The `transfer_to` value can either be a valid telephone number or a SIP URI. The following examples are valid values:
-
-- `tel:+15105550100`
-- `sip:+15105550100@sip.telnyx.com`
-- `sip:+15105550100@my-livekit-demo.pstn.twilio.com`
-
-- **`participant_identity`** _(string)_: Identity of the SIP participant that should be transferred.
-
-- **`room_name`** _(string)_: Source room name for the transfer.
-
-- **`play_dialtone`** _(bool)_: Play dial tone to the user being transferred when a transfer is initiated.
 
 ### Usage
 
@@ -206,6 +202,23 @@ func transferParticipant(ctx context.Context, participantIdentity string) {
 }
 
 ```
+
+---
+
+**CLI**:
+
+```shell
+lk sip participant transfer --room <CURRENT_ROOM> \
+   --identity <PARTICIPANT_ID> \
+  --to "<SIP_ENDPOINT>
+
+```
+
+Where `<SIP_ENDPOINT>` is a valid SIP endpoint or telephone number. The following examples are valid formats:
+
+- `tel:+15105550100`
+- `sip:+15105550100@sip.telnyx.com`
+- `sip:+15105550100@my-livekit-demo.pstn.twilio.com`
 
 ---
 

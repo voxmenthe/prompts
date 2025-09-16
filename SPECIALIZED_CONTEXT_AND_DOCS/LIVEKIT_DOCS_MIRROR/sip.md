@@ -69,7 +69,7 @@ LiveKit SIP supports the following functionality.
 
 | Feature | Description |
 | DTMF | You can configure DTMF when making outbound calls by adding them to the `CreateSIPParticipant` request. To learn more, see [Making a call with extension codes (DTMF)](https://docs.livekit.io/sip/outbound-calls.md#dtmf). |
-| SIP REFER | You can transfer calls using the `TransferSIPParticipant` API. Calls can be transferred to any valid telephone number or SIP URI. To learn more, see [Cold transfer](https://docs.livekit.io/sip/transfer-cold.md). |
+| SIP REFER | You can transfer calls using the `TransferSIPParticipant` API. Calls can be transferred to any valid telephone number or SIP URI. To learn more, see [Cold transfer](https://docs.livekit.io/sip/transfer-cold.md) and [Warm transfer](https://docs.livekit.io/sip/transfer-warm.md). |
 | SIP headers | You can map custom `X-*` SIP headers to participant attributes. For example, custom headers can be used to route calls to different workflows. To learn more, see [Custom attributes](https://docs.livekit.io/sip/sip-participant.md#custom-attributes). |
 | Noise cancellation | You can enable noise cancellation for callers and callees using Krisp. To learn more, see [Noise cancellation for calls](#noise-cancellation-for-calls). |
 | Region pinning | You can restrict incoming and outgoing calls to a specific region to comply with local telephony regulations. To learn more, see [Region pinning for SIP](https://docs.livekit.io/sip/cloud.md#region-pinning). |

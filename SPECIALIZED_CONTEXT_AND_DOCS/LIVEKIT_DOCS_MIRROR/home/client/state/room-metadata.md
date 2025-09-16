@@ -16,6 +16,10 @@ To set room metadata, use the [CreateRoom](https://docs.livekit.io/home/server/m
 
 To subscribe to updates, you must [handle](https://docs.livekit.io/home/client/events.md#events) the `RoomMetadataChanged` event.
 
+### Size limits
+
+Room metadata is limited to 64 KiB.
+
 ---
 
 

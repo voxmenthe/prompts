@@ -22,8 +22,21 @@ This section includes a basic usage example and some reference material. For lin
 
 Install the plugin from PyPI:
 
+**Python**:
+
 ```bash
 pip install "livekit-agents[groq]~=1.2"
+
+```
+
+---
+
+**Node.js**:
+
+For Node.js, support for Groq STT is available using the OpenAI plugin.
+
+```bash
+pnpm add @livekit/agents-plugin-openai@1.x
 
 ```
 
@@ -36,6 +49,8 @@ Set `GROQ_API_KEY` in your `.env` file.
 ### Usage
 
 Use Groq STT in your `AgentSession` or as a standalone transcription service. For example, you can use this STT in the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md).
+
+**Python**:
 
 ```python
 from livekit.plugins import groq
@@ -50,9 +65,25 @@ session = AgentSession(
 
 ```
 
+---
+
+**Node.js**:
+
+```typescript
+import * as openai from '@livekit/agents-plugin-openai';
+
+const session = new voice.AgentSession({
+    stt: new openai.STT.withGroq(
+        model: "whisper-large-v3-turbo"
+    ),
+    // ... tts, llm, vad, turn_detection, etc.
+});
+
+```
+
 ### Parameters
 
-This section describes some of the available parameters. See the [plugin reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/groq/index.html.md#livekit.plugins.groq.STT) for a complete list of all available parameters.
+This section describes some of the available parameters. See the plugin reference links in the [Additional resources](#additional-resources) section for a complete list of all available parameters.
 
 - **`model`** _(string)_ (optional) - Default: `whisper-large-v3-turbo`: Name of the STT model to use. For help with model selection, see the [Groq STT documentation](https://console.groq.com/docs/speech-to-text).
 
@@ -63,12 +94,6 @@ This section describes some of the available parameters. See the [plugin referen
 ## Additional resources
 
 The following resources provide more information about using Groq with LiveKit Agents.
-
-- **[Python package](https://pypi.org/project/livekit-plugins-groq/)**: The `livekit-plugins-groq` package on PyPI.
-
-- **[Plugin reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/groq/services.html.md#livekit.plugins.groq.services.STT)**: Reference for the Groq STT plugin.
-
-- **[GitHub repo](https://github.com/livekit/agents/tree/main/livekit-plugins/livekit-plugins-groq)**: View the source or contribute to the LiveKit Groq STT plugin.
 
 - **[Groq docs](https://console.groq.com/docs/speech-to-text)**: Groq STT docs.
 

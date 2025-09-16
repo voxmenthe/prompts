@@ -1,0 +1,11 @@
+# Setting `profile` is equivalent to specifying `--profile o3` on the command
+# line, though the `--profile` flag can still be used to override this value.
+
+model = "gpt-5-codex"
+model_reasoning_effort = "high"
+model_reasoning_summary = "detailed"
+model_reasoning_summary_format = "experimental"
+approval_policy = "never"
+# hide_agent_reasoning = true
+
+projects = { "/Volumes/cdrive/repos/voice-agent-experiments/src/agent_turn_wfn/PLANS" = { trust_level = "trusted" } , "/Volumes/cdrive/repos/voice-agent-experiments/src/agent_turn_wfn" = { trust_level = "trusted" } , "/Volumes/cdrive/repos/voice-agent-experiments" = { trust_level = "trusted" } , "/Volumes/cdrive/repos/SMITH/connect-mfe-backend" = { trust_level = "trusted" } , "/Volumes/cdrive/repos/SMITH/connect-mfe-backend/demos" = { trust_level = "trusted" }  , "/Volumes/cdrive/repos/av" = { trust_level = "trusted" } }

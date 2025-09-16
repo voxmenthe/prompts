@@ -228,6 +228,7 @@ LIVEKIT_DOCS_MIRROR
 │   ├── secure-trunking.md
 │   ├── sip-participant.md
 │   ├── transfer-cold.md
+│   ├── transfer-warm.md
 │   ├── troubleshooting.md
 │   ├── trunk-inbound.md
 │   └── trunk-outbound.md

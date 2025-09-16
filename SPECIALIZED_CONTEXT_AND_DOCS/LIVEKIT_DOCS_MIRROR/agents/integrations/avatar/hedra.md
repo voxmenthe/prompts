@@ -29,6 +29,13 @@ pip install "livekit-agents[hedra]~=1.2"
 
 ```
 
+If you plan to upload images directly, also install the LiveKit images dependency, which includes Pillow version 10.3 and above:
+
+```bash
+pip install "livekit-agents[images]"
+
+```
+
 ### Authentication
 
 The Hedra plugin requires a [Hedra API key](https://www.hedra.com/api-profile).

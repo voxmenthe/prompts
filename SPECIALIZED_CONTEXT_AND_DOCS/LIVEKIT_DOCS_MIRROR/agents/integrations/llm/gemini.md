@@ -22,8 +22,19 @@ This section includes a basic usage example and some reference material. For lin
 
 Install the plugin from PyPI:
 
+**Python**:
+
 ```bash
 pip install "livekit-agents[google]~=1.2"
+
+```
+
+---
+
+**Node.js**:
+
+```bash
+pnpm add @livekit/agents-plugin-google@1.x
 
 ```
 
@@ -38,16 +49,33 @@ The Google plugin requires authentication based on your chosen service:
 
 Use Gemini within an `AgentSession` or as a standalone LLM service. For example, you can use this LLM in the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md).
 
+**Python**:
+
 ```python
 from livekit.plugins import google
 
 session = AgentSession(
     llm=google.LLM(
         model="gemini-2.0-flash-exp",
-        temperature=0.8,
     ),
     # ... tts, stt, vad, turn_detection, etc.
 )
+
+```
+
+---
+
+**Node.js**:
+
+```typescript
+import * as google from '@livekit/agents-plugin-google';
+
+const session = new voice.AgentSession({
+    llm: google.LLM(
+        model: "gemini-2.0-flash-exp",
+    ),
+    // ... tts, stt, vad, turn_detection, etc.
+});
 
 ```
 
@@ -71,6 +99,8 @@ This section describes some of the available parameters. For a complete referenc
 
 The `gemini_tools` parameter allows you to use built-in Google tools with the Gemini model. For example, you can use this feature to implement [Grounding with Google Search](https://ai.google.dev/gemini-api/docs/google-search):
 
+**Python**:
+
 ```python
 from livekit.plugins import google
 from google.genai import types
@@ -85,6 +115,23 @@ session = AgentSession(
 
 ```
 
+---
+
+**Node.js**:
+
+```typescript
+import * as google from '@livekit/agents-plugin-google';
+
+const session = new voice.AgentSession({
+    llm: google.LLM(
+        model: "gemini-2.0-flash-exp",
+        geminiTools: [new google.types.GoogleSearch()],
+    ),
+    // ... tts, stt, vad, turn_detection, etc.
+});
+
+```
+
 The full list of supported tools, depending on the model, is:
 
 - `google.genai.types.GoogleSearchRetrieval()`
@@ -96,12 +143,6 @@ The full list of supported tools, depending on the model, is:
 ## Additional resources
 
 The following resources provide more information about using Google Gemini with LiveKit Agents.
-
-- **[Python package](https://pypi.org/project/livekit-plugins-google/)**: The `livekit-plugins-google` package on PyPI.
-
-- **[Plugin reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/google/index.html.md#livekit.plugins.google.LLM)**: Reference for the Google Gemini LLM plugin.
-
-- **[GitHub repo](https://github.com/livekit/agents/tree/main/livekit-plugins/livekit-plugins-google)**: View the source or contribute to the LiveKit Google Gemini LLM plugin.
 
 - **[Gemini docs](https://ai.google.dev/gemini-api/docs/models/gemini)**: Google Gemini documentation.
 

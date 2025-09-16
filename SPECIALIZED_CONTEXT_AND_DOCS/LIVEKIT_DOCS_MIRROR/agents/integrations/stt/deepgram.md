@@ -22,8 +22,19 @@ This section includes a basic usage example and some reference material. For lin
 
 Install the plugin from PyPI:
 
+**Python**:
+
 ```bash
 pip install "livekit-agents[deepgram]~=1.2"
+
+```
+
+---
+
+**Node.js**:
+
+```bash
+pnpm add @livekit/agents-plugin-deepgram@1.x
 
 ```
 
@@ -37,6 +48,8 @@ Set `DEEPGRAM_API_KEY` in your `.env` file.
 
 Use Deepgram STT in an `AgentSession` or as a standalone transcription service. For example, you can use this STT in the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md).
 
+**Python**:
+
 ```python
 from livekit.plugins import deepgram
 
@@ -49,9 +62,25 @@ session = AgentSession(
 
 ```
 
+---
+
+**Node.js**:
+
+```typescript
+import * as deepgram from '@livekit/agents-plugin-deepgram';
+
+const session = new voice.AgentSession({
+    stt: new deepgram.STT(
+        model: "nova-3"
+    ),
+    // ... llm, tts, etc.
+});
+
+```
+
 ### Parameters
 
-This section describes the available parameters. See the [plugin reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/deepgram/index.html.md#livekit.plugins.deepgram.STT) for more details.
+This section describes the available parameters. See the plugin reference links in the [Additional resources](#additional-resources) section for more details.
 
 - **`model`** _(string)_ (optional) - Default: `nova-3`: The Deepgram model to use for speech recognition.
 
@@ -64,12 +93,6 @@ This section describes the available parameters. See the [plugin reference](http
 ## Additional resources
 
 The following resources provide more information about using Deepgram with LiveKit Agents.
-
-- **[Python package](https://pypi.org/project/livekit-plugins-deepgram/)**: The `livekit-plugins-deepgram` package on PyPI.
-
-- **[Plugin reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/deepgram/index.html.md#livekit.plugins.deepgram.STT)**: Reference for the Deepgram STT plugin.
-
-- **[GitHub repo](https://github.com/livekit/agents/tree/main/livekit-plugins/livekit-plugins-deepgram)**: View the source or contribute to the LiveKit Deepgram STT plugin.
 
 - **[Deepgram docs](https://developers.deepgram.com/docs)**: Deepgram's full docs site.
 

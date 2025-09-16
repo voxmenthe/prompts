@@ -343,7 +343,11 @@ The following document is a comprehensive list of all available documentation an
 ### Features
 
 - [DTMF](https://docs.livekit.io/sip/dtmf.md): Sending and receiving DTMF tones.
-- [Cold transfer](https://docs.livekit.io/sip/transfer-cold.md): Using the TransferSIPParticipant API for cold transfers.
+
+#### Transfers
+
+- [Call forwarding](https://docs.livekit.io/sip/transfer-cold.md): Transfer calls to another number or SIP endpoint using SIP REFER.
+- [Agent-assisted transfer](https://docs.livekit.io/sip/transfer-warm.md): How to transfer a call from an AI agent to a human operator while providing a contextual summary.
 - [HD voice](https://docs.livekit.io/sip/hd-voice.md): LiveKit SIP supports high fidelity calls by enabling HD voice.
 - [Secure trunking](https://docs.livekit.io/sip/secure-trunking.md): How to enable secure trunking for LiveKit SIP.
 
@@ -455,6 +459,8 @@ The following document is a comprehensive list of all available documentation an
 
 - **[Tavus Avatar Agent](https://github.com/livekit-examples/python-agents-examples/blob/main/avatars/tavus)**: An educational AI agent that uses Tavus to create an interactive study partner.
 
+- **[Toggle Audio](https://github.com/livekit/agents/blob/main/examples/voice_agents/toggle_io.py)**: An example of dynamically toggling audio input and output.
+
 - **[Rover Teleop](https://github.com/livekit-examples/rover-teleop)**: Build a high performance robot tele-op system using LiveKit.
 
 - **[VR Spatial Video](https://github.com/livekit-examples/spatial-video)**: Stream spatial video from a stereoscopic camera to a Meta Quest using LiveKit.
@@ -469,9 +475,11 @@ The following document is a comprehensive list of all available documentation an
 
 - **[Python Voice Agent](https://github.com/livekit-examples/agent-starter-python)**: A complete sample project for a voice AI agent built with Python.
 
+- **[Warm Transfer](https://github.com/livekit/agents/tree/main/examples/warm-transfer)**: Transfer calls from an AI agent to a human operator with context.
+
 - **[Node.js Voice Agent](https://github.com/livekit-examples/agent-starter-node)**: A complete sample project for a voice AI agent built with Node.js.
 
 ---
 
-This document was rendered at 2025-09-05T06:42:50.410Z.
+This document was rendered at 2025-09-16T01:52:21.203Z.
 For the latest version of this document, see [https://docs.livekit.io/llms.txt](https://docs.livekit.io/llms.txt).

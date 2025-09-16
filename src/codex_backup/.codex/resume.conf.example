@@ -1,0 +1,17 @@
+# codex_resume defaults config (example)
+# Copy to: ~/.codex/resume.conf
+# Or set CODEX_RESUME_CONFIG=/path/to/your.conf
+
+# Scope and selection
+any=0        # 1 to scan across all directories (ignore current dir scope)
+last=0       # 1 to auto-pick most recent match
+refresh=0    # 1 to force rescan (ignore cache delta)
+# dir=/absolute/path/to/target/repo  # leave unset to use current directory
+
+# Limits
+limit=50    # max number of candidates to consider
+
+# Preview
+head=2       # N lines from start of session (0 disables)
+foot=2       # N lines from end of session (0 disables)
+

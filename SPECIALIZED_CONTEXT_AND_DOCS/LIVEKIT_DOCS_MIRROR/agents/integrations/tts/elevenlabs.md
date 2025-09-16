@@ -22,8 +22,19 @@ This section provides a quick reference for the ElevenLabs TTS plugin. For more 
 
 Install the plugin from PyPI:
 
+**Python**:
+
 ```bash
 pip install "livekit-agents[elevenlabs]~=1.2"
+
+```
+
+---
+
+**Node.js**:
+
+```bash
+pnpm add @livekit/agents-plugin-elevenlabs@1.x
 
 ```
 
@@ -36,6 +47,8 @@ Set `ELEVEN_API_KEY` in your `.env` file.
 ### Usage
 
 Use ElevenLabs TTS within an `AgentSession` or as a standalone speech generator. For example, you can use this TTS in the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md).
+
+**Python**:
 
 ```python
 from livekit.plugins import elevenlabs
@@ -50,9 +63,26 @@ session = AgentSession(
 
 ```
 
+---
+
+**Node.js**:
+
+```typescript
+import * as elevenlabs from '@livekit/agents-plugin-elevenlabs';
+
+const session = new voice.AgentSession({
+    tts: new elevenlabs.TTS(
+      voice: { id: "ODq5zmih8GrVes37Dizd" },
+      model: "eleven_multilingual_v2"
+    ),
+    // ... llm, stt, etc.
+});
+
+```
+
 ### Parameters
 
-This section describes some of the parameters you can set when you create an ElevenLabs TTS. See the [plugin reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/elevenlabs/index.html.md#livekit.plugins.elevenlabs.TTS) for a complete list of all available parameters.
+This section describes some of the parameters you can set when you create an ElevenLabs TTS. See the plugin reference links in the [Additional resources](#additional-resources) section for a complete list of all available parameters.
 
 - **`model`** _(string)_ (optional) - Default: `eleven_flash_v2_5`: ID of the model to use for generation. To learn more, see the [ElevenLabs documentation](https://elevenlabs.io/docs/api-reference/text-to-speech/convert#/docs/api-reference/text-to-speech/convert#request.body.model_id).
 
@@ -85,12 +115,6 @@ ElevenLabs TTS supports aligned transcription forwarding, which improves transcr
 ## Additional resources
 
 The following resources provide more information about using ElevenLabs with LiveKit Agents.
-
-- **[Python package](https://pypi.org/project/livekit-plugins-elevenlabs/)**: The `livekit-plugins-elevenlabs` package on PyPI.
-
-- **[Plugin reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/elevenlabs/index.html.md#livekit.plugins.elevenlabs.TTS)**: Reference for the ElevenLabs TTS plugin.
-
-- **[GitHub repo](https://github.com/livekit/agents/tree/main/livekit-plugins/livekit-plugins-elevenlabs)**: View the source or contribute to the LiveKit ElevenLabs TTS plugin.
 
 - **[ElevenLabs docs](https://elevenlabs.io/docs)**: ElevenLabs TTS docs.
 

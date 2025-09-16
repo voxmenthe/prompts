@@ -34,7 +34,7 @@ pip install "livekit-agents[google]~=1.2"
 **Node.js**:
 
 ```bash
-pnpm install "@livekit/agents-plugin-google@1.x"
+pnpm add "@livekit/agents-plugin-google@1.x"
 
 ```
 
@@ -89,7 +89,7 @@ const session = new voice.AgentSession({
 
 ### Parameters
 
-This section describes some of the available parameters. For a complete reference of all available parameters, see the [plugin reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/google/beta/realtime/index.html.md).
+This section describes some of the available parameters. For a complete reference of all available parameters, see the plugin reference links in the [Additional resources](#additional-resources) section.
 
 - **`instructions`** _(string)_ (optional): System instructions to better control the model's output and specify tone and sentiment of responses. To learn more, see [System instructions](https://ai.google.dev/gemini-api/docs/live#system-instructions).
 

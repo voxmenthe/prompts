@@ -26,8 +26,19 @@ This section includes a basic usage example and some reference material. For lin
 
 Install the OpenAI plugin from PyPI:
 
+**Python**:
+
 ```bash
 pip install "livekit-agents[openai]~=1.2"
+
+```
+
+---
+
+**Node.js**:
+
+```bash
+pnpm add @livekit/agents-plugin-openai@1.x
 
 ```
 
@@ -48,6 +59,8 @@ OPENAI_API_VERSION=2024-10-01-preview
 
 Use the Azure OpenAI Realtime API within an `AgentSession`:
 
+**Python**:
+
 ```python
 from livekit.plugins import openai
 
@@ -62,11 +75,29 @@ session = AgentSession(
 
 ```
 
+---
+
+**Node.js**:
+
+```typescript
+import * as openai from '@livekit/agents-plugin-openai';
+
+const session = new voice.AgentSession({
+    llm: openai.realtime.RealtimeModel.withAzure({
+        azureDeployment: "<model-deployment>",
+        azureEndpoint: "wss://<endpoint>.openai.azure.com/",
+        apiKey: "<api-key>",
+        apiVersion: "2024-10-01-preview",
+    }),
+});
+
+```
+
 For a more comprehensive agent example, see the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md).
 
 ### Parameters
 
-This section describes the Azure-specific parameters. For a complete list of all available parameters, see the [plugin documentation](https://docs.livekit.io/reference/python/v1/livekit/plugins/openai/realtime/index.html.md#livekit.plugins.openai.realtime.RealtimeModel.with_azure).
+This section describes the Azure-specific parameters. For a complete list of all available parameters, see the plugin reference links in the [Additional resources](#additional-resources) section.
 
 - **`azure_deployment`** _(string)_: Name of your model deployment.
 
@@ -74,7 +105,9 @@ This section describes the Azure-specific parameters. For a complete list of all
 
 - **`voice`** _(string)_ (optional) - Default: `alloy`: Voice to use for speech. To learn more, see [Voice options](https://platform.openai.com/docs/guides/text-to-speech#voice-options).
 
-- **`temperature`** _(float)_ (optional) - Default: `1.0`: A measure of randomness of completions. A lower temperature is more deterministic. To learn more, see [chat completions](https://platform.openai.com/docs/api-reference/chat/create#chat-create-temperature).
+- **`temperature`** _(float)_ (optional) - Default: `1.0`: Controls the randomness of the model's output. Higher values, for example 0.8, make the output more random, while lower values, for example 0.2, make it more focused and deterministic.
+
+To learn more, see [chat completions](https://platform.openai.com/docs/api-reference/chat/create#chat-create-temperature).
 
 - **`instructions`** _(string)_ (optional) - Default: ``: Initial system instructions.
 
@@ -94,6 +127,8 @@ There is one supported mode for VAD:
 
 Server VAD is the default mode and can be configured with the following properties:
 
+**Python**:
+
 ```python
 from livekit.plugins.openai import realtime
 from openai.types.beta.realtime.session import TurnDetection
@@ -109,7 +144,26 @@ session = AgentSession(
             interrupt_response=True,
         )
     ),
+    # ... vad, tts, stt, etc.
 )
+
+```
+
+---
+
+**Node.js**:
+
+```typescript
+import * as openai from '@livekit/agents-plugin-openai';
+import * as livekit from '@livekit/agents-plugin-livekit';
+
+const session = new voice.AgentSession({
+    llm: new openai.realtime.RealtimeModel(
+        turnDetection: null,
+    ),
+    turnDetection: new livekit.turnDetector.EnglishModel(),
+    // ... vad, tts, stt, etc.
+});
 
 ```
 
@@ -120,6 +174,8 @@ session = AgentSession(
 ## Usage with separate TTS
 
 To use the Azure OpenAI Realtime API with a different [TTS provider](https://docs.livekit.io/agents/integrations/tts.md), configure it with a text-only response modality and include a TTS plugin in your `AgentSession` configuration. This configuration allows you to gain the benefits of direct speech understanding while maintaining complete control over the speech output.
+
+**Python**:
 
 ```python
 session = AgentSession(
@@ -132,6 +188,24 @@ session = AgentSession(
 
 ```
 
+---
+
+**Node.js**:
+
+```typescript
+import * as openai from '@livekit/agents-plugin-openai';
+import * as cartesia from '@livekit/agents-plugin-cartesia';
+
+const session = new voice.AgentSession({
+    llm: openai.realtime.RealtimeModel.withAzure({
+        // ... endpoint and auth params ...,
+        modalities: ["text"]
+    }),
+    tts: cartesia.TTS(), // Or other TTS plugin of your choice
+});
+
+```
+
 ## Loading conversation history
 
 If you load conversation history into the model, it might respond with text output even if configured for audio response. To work around this issue, use the model [with a separate TTS plugin](#separate-tts) and text-only response modality. You can use the [Azure OpenAI TTS plugin](https://docs.livekit.io/agents/integrations/tts/azure-openai.md) to continue using the same voices supported by the Realtime API.
@@ -141,12 +215,6 @@ For additional workaround options, see the OpenAI [thread](https://community.ope
 ## Additional resources
 
 The following resources provide more information about using Azure OpenAI with LiveKit Agents.
-
-- **[Python package](https://pypi.org/project/livekit-plugins-openai/)**: The `livekit-plugins-openai` package on PyPI.
-
-- **[Plugin reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/openai/realtime/index.html.md#livekit.plugins.openai.realtime.RealtimeModel.with_azure)**: Reference for the Azure OpenAI Realtime plugin.
-
-- **[GitHub repo](https://github.com/livekit/agents/tree/main/livekit-plugins/livekit-plugins-openai)**: View the source or contribute to the LiveKit OpenAI Realtime plugin.
 
 - **[Azure OpenAI docs](https://learn.microsoft.com/en-us/azure/ai-services/openai/)**: Azure OpenAI service documentation.
 
