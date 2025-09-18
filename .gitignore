@@ -156,3 +156,4 @@ cython_debug/
 .qodo
 .DS_Store
 **/.DS_Store
+.vincent
