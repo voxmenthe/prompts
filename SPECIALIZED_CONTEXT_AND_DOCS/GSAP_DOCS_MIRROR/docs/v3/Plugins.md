@@ -1,0 +1,193 @@
+# Plugins
+
+info
+
+A plugin adds extra capabilities to GSAP's core. This allows the GSAP core to remain relatively small and lets you add features only when you need them.
+
+## Plugin Overview[​](#plugin-overview "Direct link to Plugin Overview")
+
+## Included in GSAP's Core
+
+* ## [GSAP](/docs/v3/GSAP/.md)
+  CDN
+
+[Tween](/docs/v3/GSAP/Tween.md)
+
+<!-- -->
+
+and
+
+<!-- -->
+
+[Timeline](/docs/v3/GSAP/Timeline.md)
+
+### Animate anything
+
+* [CSS properties](/docs/v3/GSAP/CorePlugins/CSS.md)
+* [Attributes](/docs/v3/GSAP/CorePlugins/Attributes.md)
+* [Array Values](/docs/v3/GSAP/CorePlugins/EndArray.md)
+* [and more...](/resources/get-started.md#any-numeric-value-color-or-complex-string-containing-numbers)
+
+### [Eases](/docs/v3/Eases.md)
+
+* ["none"](/docs/v3/Eases.md)
+* ["power1"](/docs/v3/Eases.md)
+* ["power2"](/docs/v3/Eases.md)
+* ["power3"](/docs/v3/Eases.md)
+* ["power4"](/docs/v3/Eases.md)
+* ["back"](/docs/v3/Eases.md)
+* ["bounce"](/docs/v3/Eases.md)
+* ["circ"](/docs/v3/Eases.md)
+* ["elastic"](/docs/v3/Eases.md)
+* ["expo"](/docs/v3/Eases.md)
+* ["sine"](/docs/v3/Eases.md)
+* ["steps(n)"](/docs/v3/Eases/SteppedEase.md)
+
+### Animate efficiently
+
+* [Staggers](/resources/getting-started/Staggers.md)
+* [Callbacks](/resources/getting-started/control.md#callbacks)
+* [Snapping](/docs/v3/GSAP/CorePlugins/Snap.md)
+* [Modifiers](/docs/v3/GSAP/CorePlugins/Modifiers.md)
+* [Keyframes](/resources/keyframes.md)
+* [Ticker with lag smoothing](/docs/v3/GSAP/gsap.ticker\(\))
+* [Cleanup - context() & revert()](/docs/v3/GSAP/gsap.context\(\).md)
+* [Responsivity & Accessibility - matchMedia()](/docs/v3/GSAP/gsap.matchMedia\(\).md)
+
+### [Utility Methods](/docs/v3/GSAP/UtilityMethods.md)
+
+* [checkPrefix()](/docs/v3/GSAP/UtilityMethods/checkPrefix\(\).md)
+* [clamp()](/docs/v3/GSAP/UtilityMethods/clamp\(\).md)
+* [distribute()](/docs/v3/GSAP/UtilityMethods/distribute\(\).md)
+* [getUnit()](/docs/v3/GSAP/UtilityMethods/getUnit\(\).md)
+* [interpolate()](/docs/v3/GSAP/UtilityMethods/interpolate\(\).md)
+* [mapRange()](/docs/v3/GSAP/UtilityMethods/mapRange\(\).md)
+* [normalize()](/docs/v3/GSAP/UtilityMethods/normalize\(\).md)
+* [pipe()](/docs/v3/GSAP/UtilityMethods/pipe\(\).md)
+* [random()](/docs/v3/GSAP/UtilityMethods/random\(\).md)
+* [selector()](/docs/v3/GSAP/UtilityMethods/selector\(\).md)
+* [shuffle()](/docs/v3/GSAP/UtilityMethods/shuffle\(\).md)
+* [snap()](/docs/v3/GSAP/UtilityMethods/snap\(\).md)
+* [splitColor()](/docs/v3/GSAP/UtilityMethods/splitColor\(\).md)
+* [toArray()](/docs/v3/GSAP/UtilityMethods/toArray\(\).md)
+* [unitize()](/docs/v3/GSAP/UtilityMethods/unitize\(\).md)
+* [wrap()](/docs/v3/GSAP/UtilityMethods/wrap\(\).md)
+* [wrapYoyo()](/docs/v3/GSAP/UtilityMethods/wrapYoyo\(\).md)
+
+### Scroll Plugins
+
+* [ScrollTrigger](/docs/v3/Plugins/ScrollTrigger/.md)popular
+
+  CDN
+* [ScrollTo](/docs/v3/Plugins/ScrollToPlugin.md)
+
+  CDN
+* [ScrollSmoother](/docs/v3/Plugins/ScrollSmoother/.md)
+
+  requires [ScrollTrigger](/docs/v3/Plugins/ScrollTrigger/.md)
+
+  CDN
+
+### Text Plugins
+
+* [SplitText](/docs/v3/Plugins/SplitText/.md)popular
+
+  CDN
+* [ScrambleText](/docs/v3/Plugins/ScrambleTextPlugin.md)
+
+  CDN
+* [Text Replacement](/docs/v3/Plugins/TextPlugin.md)
+
+  CDN
+
+### SVG Plugins
+
+* [DrawSVG](/docs/v3/Plugins/DrawSVGPlugin.md)popular
+
+  CDN
+* [MorphSVG](/docs/v3/Plugins/MorphSVGPlugin.md)
+
+  CDN
+* [MotionPath](/docs/v3/Plugins/MotionPathPlugin.md)
+
+  CDN
+* [MotionPathHelper](/docs/v3/Plugins/MotionPathHelper)
+
+  CDN
+
+### UI Plugins
+
+* [Flip](/docs/v3/Plugins/Flip/.md)popular
+
+  CDN
+* [Draggable](/docs/v3/Plugins/Draggable/.md)
+
+  CDN
+* [Inertia](/docs/v3/Plugins/InertiaPlugin/.md)
+
+  CDN
+* [Observer](/docs/v3/Plugins/Observer/.md)
+
+  CDN
+
+### Other Plugins
+
+* [Physics2D](/docs/v3/Plugins/Physics2DPlugin.md)
+
+  CDN
+* [PhysicsProps](/docs/v3/Plugins/PhysicsPropsPlugin.md)
+
+  CDN
+* [GSDevTools](/docs/v3/Plugins/GSDevTools.md)
+
+  CDN
+* [Easel](/docs/v3/Plugins/EaselPlugin.md)
+
+  CDN
+* [Pixi](/docs/v3/Plugins/PixiPlugin/.md)
+
+  CDN
+
+### Eases
+
+* [CustomEase](/docs/v3/Eases/CustomEase.md)popular
+
+  CDN
+* [EasePack](/docs/v3/Eases/CustomWiggle.md)
+
+  [rough](/docs/v3/Eases/RoughEase.md), [slow](/docs/v3/Eases/SlowMo.md), and [expoScale](/docs/v3/Eases/ExpoScaleEase.md)
+
+  CDN
+* [CustomWiggle](/docs/v3/Eases/CustomWiggle.md)
+
+  requires [CustomEase](/docs/v3/Eases/CustomEase.md)
+
+  CDN
+* [CustomBounce](/docs/v3/Eases/CustomBounce.md)
+
+  requires [CustomEase](/docs/v3/Eases/CustomEasee)
+
+  CDN
+
+### React
+
+* [useGSAP()](https://gsap.com/resources/React)popular
+
+  npm
+
+## Installing/Loading a plugin[​](#installingloading-a-plugin "Direct link to Installing/Loading a plugin")
+
+At the end of the day, all the plugins are just JS files - just like the core library. You can install them with script tags, via npm, with yarn, or even with a tgz file.
+
+Head on over to our [install helper](/docs/v3/Installation) to choose your own adventure.
+
+## Registering a plugin[​](#registering-a-plugin "Direct link to Registering a plugin")
+
+Registering a plugin with the GSAP core ensures that the two work seamlessly together and also prevents tree shaking issues in build tools/bundlers. You only need to register a plugin once before using it, like:
+
+```
+//list as many as you'd like
+gsap.registerPlugin(MotionPathPlugin, ScrollTrigger, MorphSVGPlugin);
+```
+
+Obviously you need to load the plugin file first. There is no harm in registering the same plugin multiple times (but it doesn't help either).

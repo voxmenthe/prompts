@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# ------------------------------------------------------------------
+#  Global Claude interceptor: block raw “pytest” calls
+# ------------------------------------------------------------------
+
+# Keep the message short but explicit.
+cat <<'MSG'
+❌  Direct invocation of Python has been disabled for this shell.
+   Use the uv‑managed interpreter instead:
+
+       uv run pytest <args…>
+MSG
+exit 1            # non‑zero so upstream scripts bail out

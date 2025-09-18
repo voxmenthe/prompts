@@ -157,3 +157,6 @@ cython_debug/
 .DS_Store
 **/.DS_Store
 .vincent
+
+# ignore local Claude project backups
+src/claude-code-backup/**/.claude/projects/**

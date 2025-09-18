@@ -1,0 +1,13 @@
+version: '3'
+services:
+  shelf-ci-rag-chat-sandbox:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8051:8501"
+    command: ["streamlit", "run", "app.py"]
+    env_file:
+      - .env
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t

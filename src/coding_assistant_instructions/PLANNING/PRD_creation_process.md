@@ -1,0 +1,4 @@
+- Start by throwing everything the client shared into LLM.
+- Ask it to list core features + nice to have features.
+- Use the MoSCoW framework to prioritize the MVP features.
+- Take the refined list along with a description of the MVP to ChatPRD to finalize the PRD.

@@ -60,7 +60,7 @@
    4. Commit with message and short rationale.
 4. **Post-refactor polish**
 
-   * Run linters/formatters (`black`, `eslint --fix`, etc.).
+   * Run linters/formatters (`mypy`, `ruff`, `black`, `eslint --fix`, etc.).
    * Update docs & diagrams if structure changed.
    * Generate a **migration guide** if any semver-relevant surface changed.
 5. **Final deliverables** (see §6).

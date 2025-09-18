@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# ------------------------------------------------------------------
+#  Global Claude interceptor: block raw “python” calls
+# ------------------------------------------------------------------
+
+# Keep the message short but explicit.
+cat <<'MSG'
+❌  Direct invocation of Python has been disabled for this shell.
+   Use the uv‑managed interpreter instead:
+
+       uv run python <args…>
+
+   or
+       uv venv    # create venv
+       python …   # once inside the uv environment
+MSG
+
+exit 1            # non‑zero so upstream scripts bail out
