@@ -89,14 +89,14 @@ The following document is a comprehensive list of all available documentation an
 ### Recording & export
 
 - [Overview](https://docs.livekit.io/home/egress/overview.md): Use LiveKit's egress service to record or livestream a room.
-- [Composite & web recordings](https://docs.livekit.io/home/egress/composite-recording.md): LiveKit web-based recorder gives you flexible compositing options
+- [Composite & web recordings](https://docs.livekit.io/home/egress/composite-recording.md): LiveKit web-based recorder gives you flexible compositing options.
 - [Recording participants](https://docs.livekit.io/home/egress/participant.md): Record participants individually with the Egress API.
 - [Recording individual tracks](https://docs.livekit.io/home/egress/track.md): Track egress allows you export a single track without transcoding.
 - [Output and streaming options](https://docs.livekit.io/home/egress/outputs.md): Export content anywhere, in any format.
 - [Auto Egress](https://docs.livekit.io/home/egress/autoegress.md): Automatically start recording with a room.
 - [Custom recording templates](https://docs.livekit.io/home/egress/custom-template.md): Create your own recording layout to use with Room Composite Egress.
 - [Egress API](https://docs.livekit.io/home/egress/api.md): Use LiveKit's egress service to record or livestream a Room.
-- [Examples](https://docs.livekit.io/home/egress/examples.md): Usage examples for Egress APIs.
+- [Examples](https://docs.livekit.io/home/egress/examples.md): Usage examples for Egress APIs to record or livestream a room or individual tracks.
 
 ### LiveKit Cloud
 
@@ -326,6 +326,7 @@ The following document is a comprehensive list of all available documentation an
 - [Twilio](https://docs.livekit.io/sip/quickstarts/configuring-twilio-trunk.md): Step-by-step instructions for creating inbound and outbound SIP trunks using Twilio.
 - [Telnyx](https://docs.livekit.io/sip/quickstarts/configuring-telnyx-trunk.md): Step-by-step instructions for creating inbound and outbound SIP trunks using Telnyx.
 - [Plivo](https://docs.livekit.io/sip/quickstarts/configuring-plivo-trunk.md): Step-by-step instructions for creating inbound and outbound SIP trunks using Plivo.
+- [Wavix](https://docs.livekit.io/sip/quickstarts/configuring-wavix-trunk.md): Step-by-step instructions for configuring inbound and outbound calls using Wavix and LiveKit.
 
 ### Accepting calls
 
@@ -403,8 +404,6 @@ The following document is a comprehensive list of all available documentation an
 
 - **[Phone Caller](https://github.com/livekit-examples/python-agents-examples/tree/main/telephony/make_call)**: Agent that can make outbound phone calls and handle conversations.
 
-- **[SIP Warm Handoff](https://github.com/livekit-examples/python-agents-examples/tree/main/telephony/warm_handoff.py)**: Transfer calls from an AI agent to a human operator seamlessly.
-
 - **[SIP Lifecycle](https://github.com/livekit-examples/python-agents-examples/tree/main/telephony/sip_lifecycle.py)**: Complete lifecycle management for SIP calls.
 
 - **[Answer Incoming Calls](https://github.com/livekit-examples/python-agents-examples/tree/main/telephony/answer_call.py)**: Set up an agent to answer incoming SIP calls.
@@ -479,7 +478,11 @@ The following document is a comprehensive list of all available documentation an
 
 - **[Node.js Voice Agent](https://github.com/livekit-examples/agent-starter-node)**: A complete sample project for a voice AI agent built with Node.js.
 
+- **[Agent-assisted warm transfer](https://docs.livekit.io/sip/transfer-warm.md)**: A comprehensive guide to transferring calls using an AI agent to provide context.
+
+- **[Call forwarding using SIP REFER](https://docs.livekit.io/sip/transfer-cold.md)**: How to forward calls to another number or SIP endpoint with SIP REFER.
+
 ---
 
-This document was rendered at 2025-09-16T01:52:21.203Z.
+This document was rendered at 2025-09-19T01:48:12.746Z.
 For the latest version of this document, see [https://docs.livekit.io/llms.txt](https://docs.livekit.io/llms.txt).

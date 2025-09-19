@@ -215,7 +215,8 @@ LIVEKIT_DOCS_MIRROR
 │   │   ├── configuring-plivo-trunk.md
 │   │   ├── configuring-sip-trunk.md
 │   │   ├── configuring-telnyx-trunk.md
-│   │   └── configuring-twilio-trunk.md
+│   │   ├── configuring-twilio-trunk.md
+│   │   └── configuring-wavix-trunk.md
 │   ├── accepting-calls-twilio-voice.md
 │   ├── accepting-calls.md
 │   ├── api.md

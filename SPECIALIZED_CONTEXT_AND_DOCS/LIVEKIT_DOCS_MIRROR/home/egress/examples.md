@@ -4,17 +4,17 @@ LiveKit Docs › Recording & export › Examples
 
 # Egress examples
 
-> Usage examples for Egress APIs.
+> Usage examples for Egress APIs to record or livestream a room or individual tracks.
 
-## Recording Room Composite as HLS
+## Recording room composite as HLS
 
-This example records a room composite layout as HLS segments to a S3 bucket.
+This example records a [room composite](https://docs.livekit.io/home/egress/composite-recording.md#roomcomposite-egress) layout as HLS segments to an S3-compatible bucket.
 
 **LiveKit CLI**:
 
 > ℹ️ **Note**
 > 
-> When `live_playlist_name` is provided, we'll generate a playlist containing only the last few segments. This can be useful to live-stream the recording via HLS.
+> When `live_playlist_name` is provided, a playlist is generated containing only the last few segments. This can be useful to livestream the recording via HLS.
 
 ```json
 {
@@ -236,14 +236,14 @@ public class Main {
 
 ```
 
-## Recording Web In Portrait
+## Recording web in portrait
 
-This example records a web page in portrait mode to Google Cloud Storage and streaming to RTMP.
+This example records a [web page](https://docs.livekit.io/home/egress/composite-recording.md#web-egress) in portrait mode to Google Cloud Storage, streaming to RTMP.
 
-Portrait orientation can be specified by either setting a preset or advanced options. Egress will resize the Chrome compositor to your specified resolution. However, keep in mind:
+Portrait orientation can be specified by either using a `preset` option or setting `advanced` options. Egress automatically resizes the Chrome compositor to your specified resolution. However, keep in mind the following requirements:
 
-- Chrome has a minimum browser width limit of 500px.
-- Your application should maintain a portrait layout, even when the browser reports a width larger than typical mobile phones. (e.g., 720px width or higher).
+- Chrome has a minimum browser width of 500px.
+- Your application must maintain a portrait layout, even when the browser reports a width larger than typical mobile phones. (for example, 720px width or larger).
 
 **LiveKit CLI**:
 
@@ -459,9 +459,9 @@ public void startEgress() throws IOException {
 
 ```
 
-## SRT Streaming With Thumbnails
+## SRT streaming with thumbnails
 
-This examples shows streaming a Participant Egress to a SRT server, and generating thumbnails every 5 seconds. Thumbnails are stored in Azure.
+This example streams an [individual participant](https://docs.livekit.io/home/egress/participant.md) to an SRT server, generating thumbnails every 5 seconds. Thumbnails are stored in Azure Blob Storage.
 
 **LiveKit CLI**:
 
@@ -738,9 +738,9 @@ public void startEgress() throws IOException {
 
 ```
 
-## Adding RTMP To Track Composite Egress
+## Adding RTMP to track composite egress
 
-This example demonstrates a TrackComposite Egress that starts by saving to HLS, with RTMP output added later.
+Create a TrackComposite Egress recorded as HLS segments, with RTMP output added later.
 
 **LiveKit CLI**:
 
@@ -1015,9 +1015,13 @@ public void startEgress() throws IOException {
 
 ```
 
-## Exporting Individual Tracks Without Transcode
+## Exporting individual tracks without transcoding
 
-This example exports video tracks to Azure Blob Storage without transcoding. Note: video and audio tracks must be exported separately using Track Egress.
+Export video tracks to Azure Blob Storage without transcoding.
+
+> ℹ️ **Separate video and audio tracks**
+> 
+> Video and audio tracks must be exported separately using Track Egress.
 
 **LiveKit CLI**:
 
@@ -1151,6 +1155,10 @@ public void startEgress() throws IOException {
 }
 
 ```
+
+## Stop an active egress
+
+To stop an active egress, see the API reference for [StopEgress](https://docs.livekit.io/home/egress/api.md#stopegress) for examples.
 
 ---
 

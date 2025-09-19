@@ -35,6 +35,18 @@ Okay, let's break down how to use `git worktree` for comparing, modifying, and c
         git worktree add ../feature-2-wt feature-branch-2
         ```
 
+**Workflow: Create a new worktree that starts from a specific commit hash**
+
+   *   **Capture the commit hash you want to branch from:** Run `git log --oneline` (or your preferred history viewer) in the main repository to copy the commit hash that should become the base for your new work.
+   *   **Create and check out the branch in a new worktree with a single command:** Supply `-b` with the branch name you want, and pass the commit hash as the final argument. Example:
+
+        ```bash
+        git worktree add ../feature-from-commit-wt -b feature/from-commit abc1234
+        ```
+
+        This creates `../feature-from-commit-wt`, initializes a new branch named `feature/from-commit`, and points that branch at commit `abc1234` so you can start committing immediately.
+   *   **Open the worktree and verify:** `cd ../feature-from-commit-wt` and run `git status` to confirm you are on the new branch with a clean tree before you begin editing.
+
 **2. Open Both Worktrees in VS Code:**
 
    *   **Method 1: Open Folders Individually:**

@@ -4,7 +4,7 @@ LiveKit Docs › Recording & export › Composite & web recordings
 
 # Composite and web recordings
 
-> LiveKit web-based recorder gives you flexible compositing options
+> LiveKit web-based recorder gives you flexible compositing options.
 
 ## Composite recording
 

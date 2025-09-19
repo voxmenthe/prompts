@@ -31,13 +31,15 @@ For example, if your SIP URI is `sip:vjnxecm0tjk.sip.livekit.cloud`, your SIP en
 
 ## Provider-specific instructions
 
-For step-by-step instructions for Telnyx, Twilio, or Plivo, see the following quickstarts:
+For step-by-step instructions for Telnyx, Twilio, or Plivo, Wavix, see the following quickstarts:
 
 - **[Twilio Setup](https://docs.livekit.io/sip/quickstarts/configuring-twilio-trunk.md)**: Step-by-step instructions for setting up a SIP trunk with Twilio.
 
 - **[Telnyx Setup](https://docs.livekit.io/sip/quickstarts/configuring-telnyx-trunk.md)**: Step-by-step instructions for setting up a SIP trunk with Telnyx.
 
 - **[Plivo Setup](https://docs.livekit.io/sip/quickstarts/configuring-plivo-trunk.md)**: Step-by-step instructions for setting up a SIP trunk with Plivo.
+
+- **[Wavix Setup](https://docs.livekit.io/sip/quickstarts/configuring-wavix-trunk.md)**: Step-by-step instructions for setting up a SIP trunk with Wavix.
 
 ## LiveKit setup
 
