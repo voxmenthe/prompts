@@ -4,6 +4,7 @@ This mirror was generated from `docs/en/docs` preserving structure. Links point 
 
 
 ## . (root)
+- [FastAPI – Local Docs Mirror (English)](README.md)
 - [Alternatives, Inspiration and Comparisons](alternatives.md)
 - [Concurrency and async / await](async.md)
 - [Benchmarks](benchmarks.md)

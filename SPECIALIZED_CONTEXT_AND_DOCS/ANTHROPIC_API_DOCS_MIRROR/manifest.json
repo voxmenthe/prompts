@@ -1,0 +1,325 @@
+{
+  "source": "https://docs.claude.com",
+  "section": "api",
+  "languages": [
+    "en"
+  ],
+  "generated_at": "2025-09-20T15:29:49.596436+00:00",
+  "documents": [
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/apikeys/get-api-key",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/apikeys/get-api-key.md",
+      "relative_path": "admin-api/apikeys/get-api-key.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/apikeys/list-api-keys",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/apikeys/list-api-keys.md",
+      "relative_path": "admin-api/apikeys/list-api-keys.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/apikeys/update-api-key",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/apikeys/update-api-key.md",
+      "relative_path": "admin-api/apikeys/update-api-key.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/claude-code/get-claude-code-usage-report",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/claude-code/get-claude-code-usage-report.md",
+      "relative_path": "admin-api/claude-code/get-claude-code-usage-report.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/invites/create-invite",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/invites/create-invite.md",
+      "relative_path": "admin-api/invites/create-invite.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/invites/delete-invite",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/invites/delete-invite.md",
+      "relative_path": "admin-api/invites/delete-invite.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/invites/get-invite",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/invites/get-invite.md",
+      "relative_path": "admin-api/invites/get-invite.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/invites/list-invites",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/invites/list-invites.md",
+      "relative_path": "admin-api/invites/list-invites.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/organization/get-me",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/organization/get-me.md",
+      "relative_path": "admin-api/organization/get-me.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/usage-cost/get-cost-report",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/usage-cost/get-cost-report.md",
+      "relative_path": "admin-api/usage-cost/get-cost-report.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/usage-cost/get-messages-usage-report",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/usage-cost/get-messages-usage-report.md",
+      "relative_path": "admin-api/usage-cost/get-messages-usage-report.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/users/get-user",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/users/get-user.md",
+      "relative_path": "admin-api/users/get-user.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/users/list-users",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/users/list-users.md",
+      "relative_path": "admin-api/users/list-users.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/users/remove-user",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/users/remove-user.md",
+      "relative_path": "admin-api/users/remove-user.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/users/update-user",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/users/update-user.md",
+      "relative_path": "admin-api/users/update-user.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/workspace_members/create-workspace-member",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/workspace_members/create-workspace-member.md",
+      "relative_path": "admin-api/workspace_members/create-workspace-member.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/workspace_members/delete-workspace-member",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/workspace_members/delete-workspace-member.md",
+      "relative_path": "admin-api/workspace_members/delete-workspace-member.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/workspace_members/get-workspace-member",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/workspace_members/get-workspace-member.md",
+      "relative_path": "admin-api/workspace_members/get-workspace-member.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/workspace_members/list-workspace-members",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/workspace_members/list-workspace-members.md",
+      "relative_path": "admin-api/workspace_members/list-workspace-members.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/workspace_members/update-workspace-member",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/workspace_members/update-workspace-member.md",
+      "relative_path": "admin-api/workspace_members/update-workspace-member.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/workspaces/archive-workspace",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/workspaces/archive-workspace.md",
+      "relative_path": "admin-api/workspaces/archive-workspace.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/workspaces/create-workspace",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/workspaces/create-workspace.md",
+      "relative_path": "admin-api/workspaces/create-workspace.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/workspaces/get-workspace",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/workspaces/get-workspace.md",
+      "relative_path": "admin-api/workspaces/get-workspace.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/workspaces/list-workspaces",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/workspaces/list-workspaces.md",
+      "relative_path": "admin-api/workspaces/list-workspaces.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/admin-api/workspaces/update-workspace",
+      "markdown_url": "https://docs.claude.com/en/api/admin-api/workspaces/update-workspace.md",
+      "relative_path": "admin-api/workspaces/update-workspace.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/administration-api",
+      "markdown_url": "https://docs.claude.com/en/api/administration-api.md",
+      "relative_path": "administration-api.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/beta-headers",
+      "markdown_url": "https://docs.claude.com/en/api/beta-headers.md",
+      "relative_path": "beta-headers.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/canceling-message-batches",
+      "markdown_url": "https://docs.claude.com/en/api/canceling-message-batches.md",
+      "relative_path": "canceling-message-batches.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/claude-code-analytics-api",
+      "markdown_url": "https://docs.claude.com/en/api/claude-code-analytics-api.md",
+      "relative_path": "claude-code-analytics-api.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/claude-on-amazon-bedrock",
+      "markdown_url": "https://docs.claude.com/en/api/claude-on-amazon-bedrock.md",
+      "relative_path": "claude-on-amazon-bedrock.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/claude-on-vertex-ai",
+      "markdown_url": "https://docs.claude.com/en/api/claude-on-vertex-ai.md",
+      "relative_path": "claude-on-vertex-ai.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/client-sdks",
+      "markdown_url": "https://docs.claude.com/en/api/client-sdks.md",
+      "relative_path": "client-sdks.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/creating-message-batches",
+      "markdown_url": "https://docs.claude.com/en/api/creating-message-batches.md",
+      "relative_path": "creating-message-batches.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/deleting-message-batches",
+      "markdown_url": "https://docs.claude.com/en/api/deleting-message-batches.md",
+      "relative_path": "deleting-message-batches.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/errors",
+      "markdown_url": "https://docs.claude.com/en/api/errors.md",
+      "relative_path": "errors.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/files-content",
+      "markdown_url": "https://docs.claude.com/en/api/files-content.md",
+      "relative_path": "files-content.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/files-create",
+      "markdown_url": "https://docs.claude.com/en/api/files-create.md",
+      "relative_path": "files-create.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/files-delete",
+      "markdown_url": "https://docs.claude.com/en/api/files-delete.md",
+      "relative_path": "files-delete.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/files-list",
+      "markdown_url": "https://docs.claude.com/en/api/files-list.md",
+      "relative_path": "files-list.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/files-metadata",
+      "markdown_url": "https://docs.claude.com/en/api/files-metadata.md",
+      "relative_path": "files-metadata.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/getting-help",
+      "markdown_url": "https://docs.claude.com/en/api/getting-help.md",
+      "relative_path": "getting-help.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/handling-stop-reasons",
+      "markdown_url": "https://docs.claude.com/en/api/handling-stop-reasons.md",
+      "relative_path": "handling-stop-reasons.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/ip-addresses",
+      "markdown_url": "https://docs.claude.com/en/api/ip-addresses.md",
+      "relative_path": "ip-addresses.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/listing-message-batches",
+      "markdown_url": "https://docs.claude.com/en/api/listing-message-batches.md",
+      "relative_path": "listing-message-batches.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/messages",
+      "markdown_url": "https://docs.claude.com/en/api/messages.md",
+      "relative_path": "messages.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/messages-batch-examples",
+      "markdown_url": "https://docs.claude.com/en/api/messages-batch-examples.md",
+      "relative_path": "messages-batch-examples.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/messages-count-tokens",
+      "markdown_url": "https://docs.claude.com/en/api/messages-count-tokens.md",
+      "relative_path": "messages-count-tokens.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/messages-examples",
+      "markdown_url": "https://docs.claude.com/en/api/messages-examples.md",
+      "relative_path": "messages-examples.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/migrating-from-text-completions-to-messages",
+      "markdown_url": "https://docs.claude.com/en/api/migrating-from-text-completions-to-messages.md",
+      "relative_path": "migrating-from-text-completions-to-messages.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/models",
+      "markdown_url": "https://docs.claude.com/en/api/models.md",
+      "relative_path": "models.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/models-list",
+      "markdown_url": "https://docs.claude.com/en/api/models-list.md",
+      "relative_path": "models-list.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/openai-sdk",
+      "markdown_url": "https://docs.claude.com/en/api/openai-sdk.md",
+      "relative_path": "openai-sdk.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/overview",
+      "markdown_url": "https://docs.claude.com/en/api/overview.md",
+      "relative_path": "overview.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/prompt-tools-generate",
+      "markdown_url": "https://docs.claude.com/en/api/prompt-tools-generate.md",
+      "relative_path": "prompt-tools-generate.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/prompt-tools-improve",
+      "markdown_url": "https://docs.claude.com/en/api/prompt-tools-improve.md",
+      "relative_path": "prompt-tools-improve.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/prompt-tools-templatize",
+      "markdown_url": "https://docs.claude.com/en/api/prompt-tools-templatize.md",
+      "relative_path": "prompt-tools-templatize.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/rate-limits",
+      "markdown_url": "https://docs.claude.com/en/api/rate-limits.md",
+      "relative_path": "rate-limits.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/retrieving-message-batch-results",
+      "markdown_url": "https://docs.claude.com/en/api/retrieving-message-batch-results.md",
+      "relative_path": "retrieving-message-batch-results.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/retrieving-message-batches",
+      "markdown_url": "https://docs.claude.com/en/api/retrieving-message-batches.md",
+      "relative_path": "retrieving-message-batches.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/service-tiers",
+      "markdown_url": "https://docs.claude.com/en/api/service-tiers.md",
+      "relative_path": "service-tiers.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/supported-regions",
+      "markdown_url": "https://docs.claude.com/en/api/supported-regions.md",
+      "relative_path": "supported-regions.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/usage-cost-api",
+      "markdown_url": "https://docs.claude.com/en/api/usage-cost-api.md",
+      "relative_path": "usage-cost-api.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/versioning",
+      "markdown_url": "https://docs.claude.com/en/api/versioning.md",
+      "relative_path": "versioning.md"
+    }
+  ]
+}
