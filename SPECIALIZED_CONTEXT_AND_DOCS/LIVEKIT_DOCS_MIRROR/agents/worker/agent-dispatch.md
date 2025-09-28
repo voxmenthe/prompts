@@ -137,7 +137,7 @@ The room, `my-room`, is automatically created during dispatch if it doesn't alre
 
 #### Job metadata
 
-Explicit dispatch allows you to pass metadata to the agent, available in the `JobContext`. This is useful for including details the like the user's ID, name, or phone number.
+Explicit dispatch allows you to pass metadata to the agent, available in the `JobContext`. This is useful for including details such as the user's ID, name, or phone number.
 
 The metadata field is a string. LiveKit recommends using JSON to pass structured data.
 

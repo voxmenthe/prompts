@@ -132,11 +132,6 @@ The following document is a comprehensive list of all available documentation an
 - [Telephony integration](https://docs.livekit.io/agents/start/telephony.md): Enable your voice AI agent to make and receive phone calls.
 - [Web & mobile frontends](https://docs.livekit.io/agents/start/frontend.md): Bring your agent to life through a web or mobile app.
 - [Agents playground](https://docs.livekit.io/agents/start/playground.md): A virtual workbench to test your multimodal AI agent.
-
-#### Migrating from v0.x
-
-- [Python](https://docs.livekit.io/agents/start/v0-migration.md): Migrate your Python-based agents from version v0.x to 1.0.
-- [Node.js](https://docs.livekit.io/agents/start/v0-migration/nodejs.md): Migrate your Node.js agents from version 0.x to 1.0.
 - [Deeplearning.ai course](https://www.deeplearning.ai/short-courses/building-ai-voice-agents-for-production/)
 
 ### Building voice agents
@@ -275,6 +270,7 @@ The following document is a comprehensive list of all available documentation an
 - [Mistral AI](https://docs.livekit.io/agents/integrations/stt/mistralai.md): How to use the Mistral STT plugin for LiveKit Agents.
 - [OpenAI](https://docs.livekit.io/agents/integrations/stt/openai.md): How to use the OpenAI STT plugin for LiveKit Agents.
 - [Sarvam](https://docs.livekit.io/agents/integrations/stt/sarvam.md): How to use the Sarvam STT plugin for LiveKit Agents.
+- [Soniox](https://docs.livekit.io/agents/integrations/stt/soniox.md): How to use the Soniox STT plugin for LiveKit Agents.
 - [Speechmatics](https://docs.livekit.io/agents/integrations/stt/speechmatics.md): How to use the Speechmatics STT plugin for LiveKit Agents.
 - [Spitch](https://docs.livekit.io/agents/integrations/stt/spitch.md): How to use the Spitch STT plugin for LiveKit Agents.
 
@@ -300,6 +296,7 @@ The following document is a comprehensive list of all available documentation an
 - [Resemble AI](https://docs.livekit.io/agents/integrations/tts/resemble.md): How to use the Resemble AI TTS plugin for LiveKit Agents.
 - [Rime](https://docs.livekit.io/agents/integrations/tts/rime.md): How to use the Rime TTS plugin for LiveKit Agents.
 - [Sarvam](https://docs.livekit.io/agents/integrations/tts/sarvam.md): How to use the Sarvam TTS plugin for LiveKit Agents.
+- [Smallest AI](https://docs.livekit.io/agents/integrations/tts/smallestai.md): How to use the Smallest AI Waves TTS plugin for LiveKit Agents.
 - [Speechify](https://docs.livekit.io/agents/integrations/tts/speechify.md): How to use the Speechify TTS plugin for LiveKit Agents.
 - [Spitch](https://docs.livekit.io/agents/integrations/tts/spitch.md): How to use the Spitch TTS plugin for LiveKit Agents.
 
@@ -312,6 +309,11 @@ The following document is a comprehensive list of all available documentation an
 - [Hedra](https://docs.livekit.io/agents/integrations/avatar/hedra.md): How to use the Hedra virtual avatar plugin for LiveKit Agents.
 - [Simli](https://docs.livekit.io/agents/integrations/avatar/simli.md): How to use the Simli virtual avatar plugin for LiveKit Agents.
 - [Tavus](https://docs.livekit.io/agents/integrations/avatar/tavus.md): How to use the Tavus virtual avatar plugin for LiveKit Agents.
+
+### v0.x migration guides
+
+- [Python](https://docs.livekit.io/agents/v0-migration/python.md): Migrate your Python-based agents from version v0.x to 1.0.
+- [Node.js](https://docs.livekit.io/agents/v0-migration/node.md): Migrate your Node.js agents from version 0.x to 1.0.
 
 ## Telephony
 
@@ -484,5 +486,5 @@ The following document is a comprehensive list of all available documentation an
 
 ---
 
-This document was rendered at 2025-09-20T15:29:43.271Z.
+This document was rendered at 2025-09-28T07:54:51.242Z.
 For the latest version of this document, see [https://docs.livekit.io/llms.txt](https://docs.livekit.io/llms.txt).

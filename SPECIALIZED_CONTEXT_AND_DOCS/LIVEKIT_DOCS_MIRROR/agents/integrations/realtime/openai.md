@@ -60,7 +60,7 @@ Use the OpenAI Realtime API within an `AgentSession`. For example, you can use i
 from livekit.plugins import openai
 
 session = AgentSession(
-    llm=openai.realtime.RealtimeModel(),
+    llm=openai.realtime.RealtimeModel(voice="marin"),
 )
 
 ```
@@ -73,7 +73,7 @@ session = AgentSession(
 import * as openai from '@livekit/agents-plugin-openai';
 
 const session = new voice.AgentSession({
-   llm: new openai.realtime.RealtimeModel(),
+   llm: new openai.realtime.RealtimeModel({ voice: "marin" }),
 });
 
 ```
@@ -82,7 +82,7 @@ const session = new voice.AgentSession({
 
 This section describes some of the available parameters. For a complete reference of all available parameters, see the plugin reference links in the [Additional resources](#additional-resources) section.
 
-- **`model`** _(str)_ (optional) - Default: `'gpt-4o-realtime-preview'`: ID of the Realtime model to use. For a list of available models, see the [Models](https://platform.openai.com/docs/models#gpt-4o-realtime).
+- **`model`** _(str)_ (optional) - Default: `'gpt-realtime'`: ID of the Realtime model to use. For a list of available models, see the [Models](https://platform.openai.com/docs/models).
 
 - **`voice`** _(str)_ (optional) - Default: `'alloy'`: Voice to use for speech generation. For a list of available voices, see [Voice options](https://platform.openai.com/docs/guides/realtime-conversations#voice-options).
 

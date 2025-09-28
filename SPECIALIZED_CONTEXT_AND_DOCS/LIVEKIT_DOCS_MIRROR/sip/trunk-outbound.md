@@ -226,6 +226,43 @@ func main() {
 
 ---
 
+**Kotlin**:
+
+```kotlin
+import io.livekit.server.SipServiceClient
+import io.livekit.server.CreateSipOutboundTrunkOptions
+
+
+val sipClient = SipServiceClient.createClient(
+  host = System.getenv("LIVEKIT_URL").replaceFirst(Regex("^ws"), "http"),
+  apiKey = System.getenv("LIVEKIT_API_KEY"),
+  secret = System.getenv("LIVEKIT_API_SECRET")
+)
+
+val response = sipClient.createSipOutboundTrunk(
+    name = "My outbound trunk",
+    address = "sip.telnyx.com",
+    numbers = listOf("+16265550100"),
+    options = CreateSipOutboundTrunkOptions(
+        authUsername = "username",
+        authPassword = "password"
+    )
+).execute()
+
+if (!response.isSuccessful) {
+    println(response.errorBody())
+} else {
+    val trunk = response.body()
+
+    if (trunk != null) {
+        println("Created outbound trunk: ${trunk.sipTrunkId}")
+    }
+}
+
+```
+
+---
+
 **LiveKit Cloud**:
 
 1. Sign in to the **LiveKit Cloud** [dashboard](https://cloud.livekit.io/).
@@ -422,6 +459,33 @@ func main() {
 
 ---
 
+**Kotlin**:
+
+```kotlin
+import io.livekit.server.SipServiceClient
+
+val sipClient = SipServiceClient.createClient(
+  host = System.getenv("LIVEKIT_URL").replaceFirst(Regex("^ws"), "http"),
+  apiKey = System.getenv("LIVEKIT_API_KEY"),
+  secret = System.getenv("LIVEKIT_API_SECRET")
+)
+
+val response = sipClient.listSipOutboundTrunk().execute()
+
+if (!response.isSuccessful) {
+  println(response.errorBody())
+} else {
+  val trunks = response.body()
+
+  if (trunks != null) {
+    println("Outbound trunks: ${trunks}")
+  }
+}
+
+```
+
+---
+
 **LiveKit Cloud**:
 
 1. Sign in to the **LiveKit Cloud** [dashboard](https://cloud.livekit.io/).
@@ -606,6 +670,43 @@ func main() {
 
 ---
 
+**Kotlin**:
+
+```kotlin
+import io.livekit.server.SipServiceClient
+import io.livekit.server.UpdateSipOutboundTrunkOptions
+
+val sipClient = SipServiceClient.createClient(
+  host = System.getenv("LIVEKIT_URL").replaceFirst(Regex("^ws"), "http"),
+  apiKey = System.getenv("LIVEKIT_API_KEY"),
+  secret = System.getenv("LIVEKIT_API_SECRET")
+)
+
+val response = sipClient.updateSipOutboundTrunk(
+    sipTrunkId = trunkId,
+    options = UpdateSipOutboundTrunkOptions(
+        name = "My updated outbound trunk",
+        numbers = listOf("+16265550100")
+        metadata = "{'key1': 'value1', 'key2': 'value2'}",
+        authUsername = "updated-username",
+        authPassword = "updated-password"
+    )
+).execute()
+
+if (!response.isSuccessful) {
+    println(response.errorBody())
+} else {
+    val trunk = response.body()
+
+    if (trunk != null) {
+        println("Updated outbound trunk: ${trunk}")
+    }
+}
+
+```
+
+---
+
 **LiveKit Cloud**:
 
 Update and replace functions are the same in the LiveKit Cloud dashboard. For an example, see the [replace an outbound trunk](#replace-trunk) section.
@@ -709,6 +810,12 @@ To replace a trunk, use the previous example with the following `trunkInfo` and 
   }
 
 ```
+
+---
+
+**Kotlin**:
+
+Replacing an outbound trunk is not supported in Kotlin.
 
 ---
 

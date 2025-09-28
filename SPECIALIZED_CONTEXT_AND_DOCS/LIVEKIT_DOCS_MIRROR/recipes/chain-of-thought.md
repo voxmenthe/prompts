@@ -6,7 +6,7 @@ In this recipe, build an agent that speaks chain-of-thought reasoning aloud whil
 
 ## Prerequisites
 
-To complete this guide, you need to create an agent using the [Voice agent quickstart](https://docs.livekit.io/agents/v0/quickstarts/voice-agent.md).
+To complete this guide, you need to create an agent using the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md).
 
 ## Modifying LLM output before TTS
 

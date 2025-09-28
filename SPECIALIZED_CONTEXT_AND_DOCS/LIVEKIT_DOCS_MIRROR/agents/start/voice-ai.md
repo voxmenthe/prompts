@@ -414,7 +414,7 @@ async def entrypoint(ctx: agents.JobContext):
     )
 
     await session.generate_reply(
-        instructions="Greet the user and offer your assistance."
+        instructions="Greet the user and offer your assistance. You should start by speaking in English."
     )
 
 
@@ -469,7 +469,7 @@ export default defineAgent({
     await ctx.connect();
 
     const handle = session.generateReply({
-      instructions: 'Greet the user and offer your assistance.',
+      instructions: 'Greet the user and offer your assistance. You should start by speaking in English.',
     });
     await handle.waitForPlayout();
   },

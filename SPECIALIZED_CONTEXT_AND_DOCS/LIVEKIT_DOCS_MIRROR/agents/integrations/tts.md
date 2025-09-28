@@ -37,6 +37,7 @@ All TTS providers support high quality, low-latency, and lifelike multilingual v
 | [Resemble AI](https://docs.livekit.io/agents/integrations/tts/resemble.md) | `resemble` |  | Python |
 | [Rime](https://docs.livekit.io/agents/integrations/tts/rime.md) | `rime` |  | Python |
 | [Sarvam](https://docs.livekit.io/agents/integrations/tts/sarvam.md) | `sarvam` |  | Python |
+| [Smallest AI](https://docs.livekit.io/agents/integrations/tts/smallestai.md) | `smallestai` |  | Python |
 | [Speechify](https://docs.livekit.io/agents/integrations/tts/speechify.md) | `speechify` |  | Python |
 | [Spitch](https://docs.livekit.io/agents/integrations/tts/spitch.md) | `spitch` |  | Python |
 

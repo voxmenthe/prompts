@@ -63,6 +63,7 @@ LIVEKIT_DOCS_MIRROR
 │   │   │   ├── mistralai.md
 │   │   │   ├── openai.md
 │   │   │   ├── sarvam.md
+│   │   │   ├── soniox.md
 │   │   │   ├── speechmatics.md
 │   │   │   └── spitch.md
 │   │   ├── tts
@@ -85,6 +86,7 @@ LIVEKIT_DOCS_MIRROR
 │   │   │   ├── resemble.md
 │   │   │   ├── rime.md
 │   │   │   ├── sarvam.md
+│   │   │   ├── smallestai.md
 │   │   │   ├── speechify.md
 │   │   │   └── spitch.md
 │   │   ├── avatar.md
@@ -116,6 +118,9 @@ LIVEKIT_DOCS_MIRROR
 │   │   ├── telephony.md
 │   │   ├── v0-migration.md
 │   │   └── voice-ai.md
+│   ├── v0-migration
+│   │   ├── node.md
+│   │   └── python.md
 │   ├── worker
 │   │   ├── agent-dispatch.md
 │   │   ├── job.md

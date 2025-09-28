@@ -33,6 +33,7 @@ All STT providers support low-latency multilingual transcription. Support for ot
 | [Mistral AI](https://docs.livekit.io/agents/integrations/stt/mistralai.md) | `mistralai` |  | Python |
 | [OpenAI](https://docs.livekit.io/agents/integrations/stt/openai.md) | `openai` |  | Python, Nodejs |
 | [Sarvam](https://docs.livekit.io/agents/integrations/stt/sarvam.md) | `sarvam` |  | Python |
+| [Soniox](https://docs.livekit.io/agents/integrations/stt/soniox.md) | `soniox` |  | Python |
 | [Speechmatics](https://docs.livekit.io/agents/integrations/stt/speechmatics.md) | `speechmatics` |  | Python |
 | [Spitch](https://docs.livekit.io/agents/integrations/stt/spitch.md) | `spitch` |  | Python |
 

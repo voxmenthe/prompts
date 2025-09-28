@@ -8,7 +8,7 @@ In this recipe, build an AI agent that calls phone numbers and navigates automat
 
 To complete this guide, you need the following prerequisites:
 
-- Create an agent using the [Voice agent quickstart](https://docs.livekit.io/agents/v0/quickstarts/voice-agent.md).
+- Create an agent using the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md).
 - Set up LiveKit SIP to make outgoing calls:
 
 - [Create and configure a SIP trunk](https://docs.livekit.io/sip/quickstarts/configuring-sip-trunk.md) with your trunking provider.

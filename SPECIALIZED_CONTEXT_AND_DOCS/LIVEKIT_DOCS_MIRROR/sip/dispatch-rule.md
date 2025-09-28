@@ -194,6 +194,45 @@ func main() {
 
 ---
 
+**Kotlin**:
+
+The SIP service client in Kotlin requires the HTTPS URL for the `host` parameter. This is your LIVEKIT_URL with the `wss` scheme replaced with the `https` scheme. For example, `https://<your-subdomain>.livekit.cloud`.
+
+> ℹ️ **Agent dispatch not supported**
+> 
+> Adding a room configuration to a dispatch rule to enable agent dispatch is not supported in Kotlin.
+
+```kotlin
+import io.livekit.server.SipServiceClient
+import io.livekit.server.SIPDispatchRuleIndividual
+import io.livekit.server.CreateSipDispatchRuleOptions
+
+val sipClient = SipServiceClient.createClient(
+  host = System.getenv("LIVEKIT_URL").replaceFirst(Regex("^ws"), "http"),
+  apiKey = System.getenv("LIVEKIT_API_KEY"),
+  secret = System.getenv("LIVEKIT_API_SECRET")
+)
+
+val rule = SIPDispatchRuleIndividual(
+    roomPrefix = "call-"
+)
+
+val response = sipClient.createSipDispatchRule(
+    rule = rule,
+    options = CreateSipDispatchRuleOptions(
+      name = "My dispatch rule"
+    )
+).execute()
+
+if (response.isSuccessful) {
+    val dispatchRule = response.body()
+    println("Dispatch rule created: ${dispatchRule}")
+}
+
+```
+
+---
+
 **LiveKit Cloud**:
 
 1. Sign in to the **LiveKit Cloud** [dashboard](https://cloud.livekit.io/).
@@ -415,6 +454,43 @@ func main() {
 
 ---
 
+**Kotlin**:
+
+> ℹ️ **Agent dispatch not supported**
+> 
+> Adding a room configuration to a dispatch rule to enable agent dispatch is not supported in Kotlin.
+
+```kotlin
+import io.livekit.server.SipServiceClient
+import io.livekit.server.SIPDispatchRuleDirect
+import io.livekit.server.CreateSipDispatchRuleOptions
+
+val sipClient = SipServiceClient.createClient(
+  host = System.getenv("LIVEKIT_URL").replaceFirst(Regex("^ws"), "http"),
+  apiKey = System.getenv("LIVEKIT_API_KEY"),
+  secret = System.getenv("LIVEKIT_API_SECRET")
+)
+
+val rule = SIPDispatchRuleDirect(
+    roomName = "open-room"
+)
+
+val response = sipClient.createSipDispatchRule(
+    rule = rule,
+    options = CreateSipDispatchRuleOptions(
+      name = "My dispatch rule"
+    )
+).execute()
+
+if (response.isSuccessful) {
+    val dispatchRule = response.body()
+    println("Dispatch rule created: ${dispatchRule}")
+}
+
+```
+
+---
+
 **LiveKit Cloud**:
 
 1. Sign in to the **LiveKit Cloud** [dashboard](https://cloud.livekit.io/).
@@ -541,6 +617,12 @@ For an executable example, replace the rule in the [Direct dispatch rule](#direc
   }
 
 ```
+
+---
+
+**Kotlin**:
+
+Callee dispatch rules can't be created using Kotlin.
 
 ---
 
@@ -677,6 +759,12 @@ For an executable example, replace `request` in the [Direct dispatch rule](#dire
 
 ---
 
+**Kotlin**:
+
+Setting participant attributes in dispatch rules is not supported in Kotlin.
+
+---
+
 **LiveKit Cloud**:
 
 1. Sign in to the **LiveKit Cloud** [dashboard](https://cloud.livekit.io/).
@@ -790,6 +878,23 @@ For an executable example, replace `request` in the [Direct dispatch rule](#dire
 			Metadata: "{\"is_internal\": true}",
 		},
 	}
+
+```
+
+---
+
+**Kotlin**:
+
+For an executable example, modify the parameters for `CreateSipDispatchRuleOptions` in the [Direct dispatch rule](#direct-dispatch-rule) example to include the `metadata` parameter:
+
+```kotlin
+val response = sipClient.createSipDispatchRule(
+    rule = rule,
+    options = CreateSipDispatchRuleOptions(
+      name = "My dispatch rule",
+      metadata = "{\"is_internal\": true}"
+    )
+).execute()
 
 ```
 
@@ -979,6 +1084,40 @@ func main() {
 
 ---
 
+**Kotlin**:
+
+The following updates the dispatch rule created in the [Direct dispatch rule](#direct-dispatch-rule) example. To update an individual dispatch rule, pass in a `SIPDispatchRuleIndividual` object instead of a `SIPDispatchRuleDirect` object.
+
+```kotlin
+import io.livekit.server.SipServiceClient
+import io.livekit.server.SIPDispatchRuleDirect
+import io.livekit.server.UpdateSipDispatchRuleOptions
+
+val sipClient = SipServiceClient.createClient(
+  host = System.getenv("LIVEKIT_URL").replaceFirst(Regex("^ws"), "http"),
+  apiKey = System.getenv("LIVEKIT_API_KEY"),
+  secret = System.getenv("LIVEKIT_API_SECRET")
+)
+
+val response = sipClient.updateSipDispatchRule(
+    sipDispatchRuleId = <rule-id>,
+    options = UpdateSipDispatchRuleOptions(
+        name = "My updated dispatch rule",
+        metadata = "{'key1': 'value1', 'key2': 'value2'}",
+        rule = SipDispatchRuleDirect(
+            roomName = "new-room"
+        )
+    )).execute()
+
+if (response.isSuccessful) {
+    val dispatchRule = response.body()
+    println("Dispatch rule updated: ${dispatchRule}")
+}
+
+```
+
+---
+
 **LiveKit Cloud**:
 
 Update and replace functions are the same in the LiveKit Cloud dashboard. For an example, see the [replace dispatch rule](#replace-dispatch-rule) section.
@@ -1146,6 +1285,12 @@ func main() {
 
 ---
 
+**Kotlin**:
+
+Replacing a dispatch rule is not supported in Kotlin.
+
+---
+
 **LiveKit Cloud**:
 
 1. Sign in to the **LiveKit Cloud** [dashboard](https://cloud.livekit.io/).
@@ -1275,6 +1420,28 @@ func main() {
   } else {
     fmt.Println(dispatchRules)
   }
+}
+
+```
+
+---
+
+**Kotlin**:
+
+```kotlin
+import livekit.LivekitSip
+import io.livekit.server.SipServiceClient
+
+val sipClient = SipServiceClient.createClient(
+  host = System.getenv("LIVEKIT_URL").replaceFirst(Regex("^ws"), "http"),
+  apiKey = System.getenv("LIVEKIT_API_KEY"),
+  secret = System.getenv("LIVEKIT_API_SECRET")
+)
+
+val response = sipClient.listSipDispatchRule().execute()
+if (response.isSuccessful) {
+    val dispatchRules = response.body()
+    println("Number of dispatch rules: ${dispatchRules?.size}")
 }
 
 ```

@@ -91,7 +91,7 @@ The following resources provide more information about using AssemblyAI with Liv
 
 - **[Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md)**: Get started with LiveKit Agents and AssemblyAI.
 
-- **[AssemblyAI LiveKit guide](https://www.assemblyai.com/docs/speech-to-text/universal-streaming/livekit)**: Guide to using AssemblyAI Universal Streaming STT with LiveKit.
+- **[AssemblyAI LiveKit guide](https://www.assemblyai.com/docs/integrations/livekit)**: Guide to using AssemblyAI Universal Streaming STT with LiveKit.
 
 ---
 

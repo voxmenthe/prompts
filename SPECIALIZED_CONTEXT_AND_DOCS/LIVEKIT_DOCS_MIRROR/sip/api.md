@@ -165,6 +165,7 @@ Returns [SIPParticipantInfo](#sipparticipantinfo)
 | krisp_enabled | bool |  | True to enable [Krisp noise cancellation](https://docs.livekit.io/sip.md#noise-cancellation-for-calls) for the callee. |
 | media_encryption | [SIPMediaEncryption](#sipmediaencryption) |  | Whether or not to encrypt media. |
 | wait_until_answered | bool |  | If true, return after the call is answered — including if it goes to voicemail. |
+| display_name | string |  | Optional display name for the caller's number. If empty, results in a CNAM lookup by destination carrier. If ommitted, defaults to caller's number. |
 
 ### DeleteSIPDispatchRule
 

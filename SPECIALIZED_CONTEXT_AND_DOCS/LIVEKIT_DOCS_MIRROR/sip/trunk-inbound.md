@@ -188,6 +188,37 @@ func main() {
 
 ---
 
+**Kotlin**:
+
+```kotlin
+import io.livekit.server.SipServiceClient
+import io.livekit.server.CreateSipInboundTrunkOptions
+
+val sipClient = SipServiceClient.createClient(
+  host = System.getenv("LIVEKIT_URL").replaceFirst(Regex("^ws"), "http"),
+  apiKey = System.getenv("LIVEKIT_API_KEY"),
+  secret = System.getenv("LIVEKIT_API_SECRET")
+)
+
+val response = sipClient.createSipInboundTrunk(
+    name = "My inbound trunk",
+    numbers = listOf("+15105550100")
+).execute()
+
+if (!response.isSuccessful) {
+    println(response.errorBody())
+} else {
+    val trunk = response.body()
+
+    if (trunk != null) {
+        println("Created inbound trunk: ${trunk.sipTrunkId}")
+    }
+}
+
+```
+
+---
+
 **LiveKit Cloud**:
 
 1. Sign in to the **LiveKit Cloud** [dashboard](https://cloud.livekit.io/).
@@ -324,6 +355,41 @@ trunkInfo := &livekit.SIPInboundTrunkInfo{
 
 ---
 
+**Kotlin**:
+
+```kotlin
+
+import io.livekit.server.SipServiceClient
+import io.livekit.server.CreateSipInboundTrunkOptions
+
+val sipClient = SipServiceClient.createClient(
+  host = System.getenv("LIVEKIT_URL").replaceFirst(Regex("^ws"), "http"),
+  apiKey = System.getenv("LIVEKIT_API_KEY"),
+  secret = System.getenv("LIVEKIT_API_SECRET")
+)
+
+val response = sipClient.createSipInboundTrunk(
+  name = "My inbound trunk",
+  numbers = listOf("+15105550100"),
+  options = CreateSipInboundTrunkOptions(
+    allowedNumbers = listOf("+13105550100", "+17145550100")
+  )
+).execute()
+
+if (!response.isSuccessful) {
+  println(response.errorBody())
+} else {
+  val trunk = response.body()
+
+  if (trunk != null) {
+    println("Created inbound trunk: ${trunk.sipTrunkId}")
+  }
+}
+
+```
+
+---
+
 **LiveKit Cloud**:
 
 1. Sign in to the **LiveKit Cloud** [dashboard](https://cloud.livekit.io/).
@@ -454,6 +520,33 @@ func main() {
     fmt.Println(err)
   } else {
     fmt.Println(trunks)
+  }
+}
+
+```
+
+---
+
+**Kotlin**:
+
+```kotlin
+import io.livekit.server.SipServiceClient
+
+val sipClient = SipServiceClient.createClient(
+  host = System.getenv("LIVEKIT_URL").replaceFirst(Regex("^ws"), "http"),
+  apiKey = System.getenv("LIVEKIT_API_KEY"),
+  secret = System.getenv("LIVEKIT_API_SECRET")
+)
+
+val response = sipClient.listSipInboundTrunk().execute()
+
+if (!response.isSuccessful) {
+  println(response.errorBody())
+} else {
+  val trunks = response.body()
+
+  if (trunks != null) {
+    println("Inbound trunks: ${trunks}")
   }
 }
 
@@ -622,6 +715,40 @@ func main() {
 
 ---
 
+**Kotlin**:
+
+```kotlin
+import io.livekit.server.SipServiceClient
+import io.livekit.server.UpdateSipInboundTrunkOptions
+
+val sipClient = SipServiceClient.createClient(
+  host = System.getenv("LIVEKIT_URL").replaceFirst(Regex("^ws"), "http"),
+  apiKey = System.getenv("LIVEKIT_API_KEY"),
+  secret = System.getenv("LIVEKIT_API_SECRET")
+)
+
+val response = sipClient.updateSipInboundTrunk(
+    sipTrunkId = trunkId,
+    options = UpdateSipInboundTrunkOptions(
+        name = "My updated trunk",
+        numbers = listOf("+15105550123")
+    )
+).execute()
+
+if (!response.isSuccessful) {
+    println(response.errorBody())
+} else {
+    val trunk = response.body()
+
+    if (trunk != null) {
+        println("Updated inbound trunk: ${trunk}")
+    }
+}
+
+```
+
+---
+
 **LiveKit Cloud**:
 
 Update and replace functions are the same in the LiveKit Cloud dashboard. For an example, see the [replace inbound trunk](#replace-inbound-trunk) section.
@@ -722,6 +849,12 @@ To replace the trunk, update the previous example with the following `trunkInfo`
   }
 
 ```
+
+---
+
+**Kotlin**:
+
+Replacing an inbound trunk is not supported in Kotlin.
 
 ---
 

@@ -104,7 +104,7 @@ There are three noise cancellation models available:
 # Standard enhanced noise cancellation
 noise_cancellation.NC()
 
-# Background voice cancellation (NC + removes non-primary voices 
+# Background voice cancellation (NC + removes non-primary voices
 # that would confuse transcription or turn detection)
 noise_cancellation.BVC()
 
@@ -154,8 +154,8 @@ Apply the filter to any individual inbound AudioStream:
 import { BackgroundVoiceCancellation } from '@livekit/noise-cancellation-node';
 
 // Create AudioStream with noise cancellation
-const stream = new AudioStream(track, { 
-  noiseCancellation: BackgroundVoiceCancellation() 
+const stream = new AudioStream(track, {
+  noiseCancellation: BackgroundVoiceCancellation()
 });
 
 ```
@@ -169,7 +169,7 @@ import {
   // Standard enhanced noise cancellation
   NoiseCancellation,
 
-  // Background voice cancellation (NC + removes non-primary voices 
+  // Background voice cancellation (NC + removes non-primary voices
   // that would confuse transcription or turn detection)
   BackgroundVoiceCancellation,
 
@@ -383,19 +383,18 @@ import LiveKit
 import SwiftUI
 import LiveKitKrispNoiseFilter
 
+// Keep this as a global variable or somewhere that won't be deallocated
+let krispProcessor = LiveKitKrispNoiseFilter()
+
 struct ContentView: View {
     @StateObject private var room = Room()
 
-    private let krispProcessor = LiveKitKrispNoiseFilter()
-    
-    init() {
-        AudioManager.shared.capturePostProcessingDelegate = krispProcessor
-    }
-    
     var body: some View {
         MyOtherView()
         .environmentObject(room)
         .onAppear {
+            // Attach the processor
+            AudioManager.shared.capturePostProcessingDelegate = krispProcessor
             // This must be done before calling `room.connect()`
             room.add(delegate: krispProcessor)
 
