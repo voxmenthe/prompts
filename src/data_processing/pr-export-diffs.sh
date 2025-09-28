@@ -113,20 +113,21 @@ parse_args "$@"
 resolve_repo_and_pr "$PR_INPUT"
 
 # Pull PR metadata (including head/base OIDs and names)
-PR_META_JSON="$(gh pr view "$PR_NUMBER" -R "$REPO" --json number,title,url,author,headRefName,baseRefName,headRefOid,baseRefOid,additions,deletions,changedFiles)"
+PR_META_JSON="$(gh pr view "$PR_NUMBER" -R "$REPO" --json number,title,url,author,headRefName,baseRefName,headRefOid,baseRefOid,additions,deletions,changedFiles,body)"
 PR_URL=$(jq -r '.url' <<<"$PR_META_JSON")
 PR_TITLE=$(jq -r '.title' <<<"$PR_META_JSON")
-HEAD_OID=$(jq -r '.headRefOid' <<<"$PR_META_JSON")
-BASE_OID=$(jq -r '.baseRefOid' <<<"$PR_META_JSON")
-BASE_REF=$(jq -r '.baseRefName' <<<"$PR_META_JSON")
-AUTHOR=$(jq -r '.author.login // "unknown"' <<<"$PR_META_JSON")
-TOTAL_ADDS=$(jq -r '.additions // 0' <<<"$PR_META_JSON")
-TOTAL_DELS=$(jq -r '.deletions // 0' <<<"$PR_META_JSON")
-TOTAL_FILES=$(jq -r '.changedFiles // 0' <<<"$PR_META_JSON")
+  HEAD_OID=$(jq -r '.headRefOid' <<<"$PR_META_JSON")
+  BASE_OID=$(jq -r '.baseRefOid' <<<"$PR_META_JSON")
+  BASE_REF=$(jq -r '.baseRefName' <<<"$PR_META_JSON")
+  AUTHOR=$(jq -r '.author.login // "unknown"' <<<"$PR_META_JSON")
+  TOTAL_ADDS=$(jq -r '.additions // 0' <<<"$PR_META_JSON")
+  TOTAL_DELS=$(jq -r '.deletions // 0' <<<"$PR_META_JSON")
+  TOTAL_FILES=$(jq -r '.changedFiles // 0' <<<"$PR_META_JSON")
+  PR_BODY="$(jq -r '.body // ""' <<<"$PR_META_JSON")"
 
-# Ensure we have the commits locally
-git fetch -q origin "pull/${PR_NUMBER}/head:refs/remotes/origin/pr/${PR_NUMBER}" || true
-git fetch -q origin "${BASE_REF}:${BASE_REF}" || true
+  # Ensure we have the commits locally
+  git fetch -q origin "pull/${PR_NUMBER}/head:refs/remotes/origin/pr/${PR_NUMBER}" || true
+  git fetch -q origin "${BASE_REF}:${BASE_REF}" || true
 
 timestamp="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
 [[ -n "$OUT_MD" ]] || OUT_MD="pr-${PR_NUMBER}-diffs.md"
@@ -139,7 +140,6 @@ if [[ -z "$FILES_JSON" || "$FILES_JSON" == "null" || "$(jq 'length' <<<"$FILES_J
   # Fallback via git; note: rename appears as "Rxxx old\tnew"
   _ns_tmp="$(mktemp)" || die "Failed to create temp file"
   git diff --name-status -M "$BASE_OID" "$HEAD_OID" > "$_ns_tmp"
-  if [[ ! -s "$_ns_tmp" ]]; then rm -f "$_ns_tmp"; die "No changed files found between $BASE_OID..$HEAD_OID"; fi
   FILES_JSON="$(jq -n '[]')"
   while IFS=$'\t' read -r st a b || [[ -n "$st" ]]; do
     [[ -n "$st" ]] || continue
@@ -185,6 +185,14 @@ fi
   echo "- Files changed: ${TOTAL_FILES}  (+${TOTAL_ADDS} / -${TOTAL_DELS})"
   (( IGNORE_WS )) && echo "- Whitespace: ignored (git diff -w)"
   echo ""
+  echo "## PR Description"
+  echo ""
+  if [[ -n "$PR_BODY" ]]; then
+    printf "%s\n\n" "$PR_BODY"
+  else
+    echo "_No PR description set._"
+    echo ""
+  fi
 
   # Table of contents
   echo "## Contents"
