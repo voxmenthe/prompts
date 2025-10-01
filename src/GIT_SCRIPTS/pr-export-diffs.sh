@@ -144,7 +144,7 @@ load_pr_metadata() {
 
   # Ensure we have the commits locally (best-effort, tolerate fetch failure)
   git fetch -q origin "pull/${PR_NUMBER}/head:refs/remotes/origin/pr/${PR_NUMBER}" || true
-  git fetch -q origin "${BASE_REF}:${BASE_REF}" || true
+  git fetch -q origin "refs/heads/${BASE_REF}:refs/remotes/origin/${BASE_REF}" || true
 
   DEFAULT_BASENAME="pr-${PR_NUMBER}-diffs"
 }
