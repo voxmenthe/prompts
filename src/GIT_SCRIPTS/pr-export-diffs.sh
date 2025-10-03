@@ -8,6 +8,8 @@
 #                        [--ignore-space] [--glob 'src/**' --glob '!**/*.lock'] [--patch out.patch]
 #   ./pr-export-diffs.sh --commit <COMMIT_SHA> [-r owner/repo] [-c 5] [-o out.md] [--json out.json]
 #                        [--ignore-space] [--glob 'src/**' --glob '!**/*.lock'] [--patch out.patch]
+#   ./pr-export-diffs.sh --pr-set 62,63,69,86 [-r owner/repo] [-c 5] [-o out.md] [--json out.json]
+#                        [--ignore-space] [--glob 'src/**' --glob '!**/*.lock'] [--patch out.patch]
 #
 # Examples:
 #   ./pr-export-diffs.sh -p 123
@@ -18,6 +20,7 @@
 # - Run inside a clone of the repository or pass -r owner/repo.
 # - We fetch the PR head and base to ensure commits exist locally.
 # - Diff context uses git's -U<context> hunks; we do not download full files.
+# - --pr-set stacks PRs inside a temporary worktree; your repo history remains untouched.
 
 set -euo pipefail
 
@@ -48,6 +51,15 @@ IGNORE_WS=0
 TOTAL_FILES=0
 TOTAL_ADDS=0
 TOTAL_DELS=0
+declare -a PR_SET_INPUTS=()
+declare -a PR_SET_NUMBERS=()
+PR_SET_LABEL=""
+PR_SET_METADATA_JSON=""
+PR_SET_DISPLAY_LIST=""
+declare -a PR_SET_BASE_OIDS=()
+declare -a PR_SET_HEAD_OIDS=()
+PR_SET_WORKTREE_DIR=""
+PR_SET_SYNTH_HEAD=""
 declare -a DEFAULT_IGNORED_FILE_GLOBS=(
   '**/package.json'
   '**/package-lock.json'
@@ -55,6 +67,9 @@ declare -a DEFAULT_IGNORED_FILE_GLOBS=(
   '**/yarn.lock'
   '**/pnpm-lock.yaml'
   '**/bun.lockb'
+  '**/test/**'
+  '**/*test*/**'
+  '**/*test*'
 )
 
 declare -a GLOBS=("${DEFAULT_IGNORED_FILE_GLOBS[@]/#/!}")   # start with default excludes
@@ -85,6 +100,17 @@ parse_args() {
         COMMIT_INPUT="${2:-}"
         shift 2
         ;;
+      --pr-set)
+        [[ "$TARGET_MODE" != "commit" ]] || die "Cannot combine --pr-set with --commit"
+        if [[ -n "$TARGET_MODE" && "$TARGET_MODE" != "pr_set" ]]; then
+          die "Cannot combine --pr-set with -p/--pr"
+        fi
+        TARGET_MODE="pr_set"
+        local pr_set_arg="${2:-}"
+        [[ -n "$pr_set_arg" ]] || die "--pr-set requires a value"
+        PR_SET_INPUTS+=("$pr_set_arg")
+        shift 2
+        ;;
       -r|--repo) REPO="${2:-}"; shift 2;;
       -c|--context) CONTEXT="${2:-}"; shift 2;;
       -o|--out) OUT_MD="${2:-}"; shift 2;;
@@ -100,11 +126,25 @@ parse_args() {
     [[ -n "$PR_INPUT" ]] || die "Must provide -p <PR_NUMBER|PR_URL>"
   elif [[ "$TARGET_MODE" == "commit" ]]; then
     [[ -n "$COMMIT_INPUT" ]] || die "Must provide --commit <COMMIT_SHA>"
+  elif [[ "$TARGET_MODE" == "pr_set" ]]; then
+    (( ${#PR_SET_INPUTS[@]} >= 1 )) || die "Must provide at least one --pr-set value"
   else
-    die "Must provide either -p <PR_NUMBER|PR_URL> or --commit <COMMIT_SHA>"
+    die "Must provide either -p <PR_NUMBER|PR_URL>, --pr-set <PR_LIST>, or --commit <COMMIT_SHA>"
   fi
 
   [[ "$CONTEXT" =~ ^[0-9]+$ ]] || die "--context must be an integer"
+}
+
+normalize_pr_identifier() {
+  local input="$1" pr=""
+  if [[ "$input" =~ ^https?:// ]]; then
+    pr="$(basename "$input")"
+  else
+    pr="$input"
+  fi
+
+  [[ "$pr" =~ ^[0-9]+$ ]] || return 1
+  printf '%s' "$pr"
 }
 
 resolve_repo() {
@@ -149,6 +189,172 @@ load_pr_metadata() {
   DEFAULT_BASENAME="pr-${PR_NUMBER}-diffs"
 }
 
+load_pr_set_metadata() {
+  declare -A seen_prs=()
+  PR_SET_NUMBERS=()
+  PR_SET_BASE_OIDS=()
+  PR_SET_HEAD_OIDS=()
+
+  for raw in "${PR_SET_INPUTS[@]}"; do
+    IFS=',' read -r -a split <<<"$raw"
+    for item in "${split[@]}"; do
+      local trimmed
+      trimmed="${item//[[:space:]]/}"
+      [[ -n "$trimmed" ]] || continue
+      local pr_number
+      if ! pr_number="$(normalize_pr_identifier "$trimmed")"; then
+        die "Invalid PR identifier for --pr-set: $trimmed"
+      fi
+      if [[ -n "${seen_prs[$pr_number]:-}" ]]; then
+        echo "Warning: duplicate PR #$pr_number in --pr-set; ignoring subsequent occurrence" >&2
+        continue
+      fi
+      seen_prs[$pr_number]=1
+      PR_SET_NUMBERS+=("$pr_number")
+    done
+  done
+
+  if (( ${#PR_SET_NUMBERS[@]} < 2 )); then
+    die "Provide at least two unique PR numbers via --pr-set"
+  fi
+
+  local first_pr="${PR_SET_NUMBERS[0]}"
+  local last_index=$(( ${#PR_SET_NUMBERS[@]} - 1 ))
+  local last_pr="${PR_SET_NUMBERS[$last_index]}"
+
+  PR_SET_LABEL="$first_pr"
+  PR_SET_DISPLAY_LIST="#${first_pr}"
+  for pr in "${PR_SET_NUMBERS[@]:1}"; do
+    PR_SET_LABEL+="-$pr"
+    PR_SET_DISPLAY_LIST+=", #${pr}"
+  done
+
+  local meta_list='[]'
+  local idx=0
+
+  for pr_number in "${PR_SET_NUMBERS[@]}"; do
+    local pr_meta_json
+    pr_meta_json="$(gh pr view "$pr_number" -R "$REPO" --json number,title,url,author,headRefName,baseRefName,headRefOid,baseRefOid,body)"
+
+    local base_ref_oid head_ref_oid base_ref_name
+    base_ref_oid=$(jq -r '.baseRefOid' <<<"$pr_meta_json")
+    head_ref_oid=$(jq -r '.headRefOid' <<<"$pr_meta_json")
+    base_ref_name=$(jq -r '.baseRefName' <<<"$pr_meta_json")
+
+    git fetch -q origin "pull/${pr_number}/head:refs/remotes/origin/pr/${pr_number}" || true
+    git fetch -q origin "refs/heads/${base_ref_name}:refs/remotes/origin/${base_ref_name}" || true
+
+    if (( idx == 0 )); then
+      BASE_OID="$base_ref_oid"
+      BASE_REF="$base_ref_name"
+    fi
+
+    PR_SET_BASE_OIDS+=("$base_ref_oid")
+    PR_SET_HEAD_OIDS+=("$head_ref_oid")
+
+    meta_list="$(jq --argjson pr "$pr_meta_json" '. + [$pr]' <<<"$meta_list")"
+    (( idx += 1 ))
+  done
+
+  HEAD_OID="${PR_SET_HEAD_OIDS[-1]}"
+
+  TARGET_IDENTIFIER="PR set ${first_pr}->${last_pr}"
+  TARGET_TITLE="Combined diff for PR set (${#PR_SET_NUMBERS[@]} PRs)"
+  TARGET_AUTHOR="multiple"
+  TARGET_URL=""
+  DESCRIPTION_HEADING="PR Set Summary"
+  DESCRIPTION_FALLBACK="_No PR details available._"
+
+  PR_SET_METADATA_JSON="$meta_list"
+
+  local description
+  description="$(jq -r '[.[] | "- PR #" + (.number|tostring) + ": " + (.title // "(no title)") + " (base: " + (.baseRefName // "unknown") + " @ " + ((.baseRefOid // "")[:7]) + ", head: " + (.headRefName // "unknown") + " @ " + ((.headRefOid // "")[:7]) + ", author: @" + (.author.login // "unknown") + ")" ] | join("\n")' <<<"$PR_SET_METADATA_JSON")"
+  if [[ -n "$description" && "$description" != "null" ]]; then
+    TARGET_DESCRIPTION="$description"
+  else
+    TARGET_DESCRIPTION=""
+  fi
+
+  DEFAULT_BASENAME="pr-set-${PR_SET_LABEL}-diffs"
+}
+
+cleanup_pr_set_worktree() {
+  if [[ -n "$PR_SET_WORKTREE_DIR" && -d "$PR_SET_WORKTREE_DIR" ]]; then
+    git worktree remove --force "$PR_SET_WORKTREE_DIR" >/dev/null 2>&1 || true
+    rm -rf "$PR_SET_WORKTREE_DIR"
+    PR_SET_WORKTREE_DIR=""
+  fi
+}
+
+apply_pr_commits_to_stack() {
+  local worktree_dir="$1"
+  local base_oid="$2"
+  local head_oid="$3"
+  local pr_number="$4"
+
+  local commits
+  commits="$(git rev-list --reverse "${base_oid}..${head_oid}" 2>/dev/null || true)"
+
+  if [[ -z "$commits" ]]; then
+    echo "Warning: PR #${pr_number} has no commits beyond base; skipping" >&2
+    return
+  fi
+
+  local commit
+  for commit in $commits; do
+    if git -C "$worktree_dir" cherry-pick --allow-empty "$commit" >/dev/null 2>&1; then
+      continue
+    fi
+
+    echo "Warning: encountered conflicts cherry-picking ${commit} from PR #${pr_number}; keeping conflict markers" >&2
+
+    if ! git -C "$worktree_dir" add -A; then
+      git -C "$worktree_dir" cherry-pick --abort >/dev/null 2>&1 || true
+      cleanup_pr_set_worktree
+      die "Failed to stage conflict files for commit ${commit} from PR #${pr_number}"
+    fi
+
+    if git -C "$worktree_dir" ls-files -u | grep -q .; then
+      git -C "$worktree_dir" cherry-pick --abort >/dev/null 2>&1 || true
+      cleanup_pr_set_worktree
+      die "Unresolved merge entries remain after staging conflicts for commit ${commit} from PR #${pr_number}"
+    fi
+
+    if ! GIT_EDITOR=true git -C "$worktree_dir" cherry-pick --continue >/dev/null 2>&1; then
+      if ! git -C "$worktree_dir" status --porcelain | grep -q .; then
+        GIT_EDITOR=true git -C "$worktree_dir" cherry-pick --skip >/dev/null 2>&1 || true
+        continue
+      fi
+      git -C "$worktree_dir" cherry-pick --abort >/dev/null 2>&1 || true
+      cleanup_pr_set_worktree
+      die "Failed to finalize conflicted cherry-pick for commit ${commit} from PR #${pr_number}"
+    fi
+  done
+}
+
+prepare_pr_set_worktree() {
+  local base_commit="$BASE_OID"
+  PR_SET_WORKTREE_DIR="$(mktemp -d -t pr-export-stack.XXXXXXXX)"
+  [[ -n "$PR_SET_WORKTREE_DIR" && -d "$PR_SET_WORKTREE_DIR" ]] || die "Failed to create temporary worktree directory"
+
+  trap cleanup_pr_set_worktree EXIT
+
+  git worktree add --detach "$PR_SET_WORKTREE_DIR" "$base_commit" >/dev/null 2>&1
+  git -C "$PR_SET_WORKTREE_DIR" config --worktree core.hooksPath /dev/null >/dev/null 2>&1 || true
+
+  local idx=0
+  local total=${#PR_SET_NUMBERS[@]}
+  while (( idx < total )); do
+    local pr_number="${PR_SET_NUMBERS[$idx]}"
+    local pr_base="${PR_SET_BASE_OIDS[$idx]}"
+    local pr_head="${PR_SET_HEAD_OIDS[$idx]}"
+    apply_pr_commits_to_stack "$PR_SET_WORKTREE_DIR" "$pr_base" "$pr_head" "$pr_number"
+    (( idx += 1 ))
+  done
+
+  PR_SET_SYNTH_HEAD="$(git -C "$PR_SET_WORKTREE_DIR" rev-parse HEAD)"
+  HEAD_OID="$PR_SET_SYNTH_HEAD"
+}
 load_commit_metadata() {
   COMMIT_SHA="$(git rev-parse --verify "${COMMIT_INPUT}^{commit}" 2>/dev/null)" || die "Unknown commit: ${COMMIT_INPUT}"
   HEAD_OID="$COMMIT_SHA"
@@ -222,20 +428,27 @@ build_files_json() {
 path_matches() {
   local p="$1" inc_ok=0 exc_hit=0 had_inc=0
   if (( ${#GLOBS[@]} == 0 )); then return 0; fi
+  contains_test_token "$p" && return 1
   shopt -s extglob nullglob globstar
   for g in "${GLOBS[@]}"; do
     if [[ "$g" == !* ]]; then
       local neg="${g:1}"
-      [[ "$p" == $neg ]] && exc_hit=1
+      # shellcheck disable=SC2053  # pattern match against glob
+      [[ $p == $neg ]] && exc_hit=1
     else
       had_inc=1
-      [[ "$p" == $g ]] && inc_ok=1
+      # shellcheck disable=SC2053
+      [[ $p == $g ]] && inc_ok=1
     fi
   done
   # If any exclude matches -> reject
   (( exc_hit )) && return 1
   # If we had any includes -> require one matches; else accept
-  (( had_inc )) && (( inc_ok )) || { (( had_inc )) && return 1 || return 0; }
+  if (( had_inc )); then
+    (( inc_ok )) && return 0
+    return 1
+  fi
+  return 0
 }
 
 # Small JSON escaper for patches
@@ -246,6 +459,37 @@ json_escape() {
 slugify_anchor() {
   local input="$1"
   printf '%s' "$input" | sed -E 's/[^A-Za-z0-9]+/-/g' | tr '[:upper:]' '[:lower:]'
+}
+
+contains_test_token() {
+  local path="$1" segment lower before after has_left has_right
+  IFS='/' read -r -a segments <<<"$path"
+  for segment in "${segments[@]}"; do
+    lower="${segment,,}"
+    while [[ "$lower" == *test* ]]; do
+      before=${lower%%test*}
+      after=${lower#*test}
+      has_left=0
+      has_right=0
+      if [[ -z "$before" ]]; then
+        has_left=1
+      else
+        case "${before: -1}" in
+          -|_|.) has_left=1;;
+        esac
+      fi
+      if [[ -n "$after" ]]; then
+        case "${after:0:1}" in
+          -|_|.) has_right=1;;
+        esac
+      fi
+      if (( has_left || has_right )); then
+        return 0
+      fi
+      lower="$after"
+    done
+  done
+  return 1
 }
 
 # ---------- Start ----------
@@ -261,6 +505,9 @@ resolve_repo
 if [[ "$TARGET_MODE" == "pr" ]]; then
   resolve_pr_number "$PR_INPUT"
   load_pr_metadata
+elif [[ "$TARGET_MODE" == "pr_set" ]]; then
+  load_pr_set_metadata
+  prepare_pr_set_worktree
 else
   load_commit_metadata
 fi
@@ -299,6 +546,9 @@ fi
   if [[ "$TARGET_MODE" == "pr" ]]; then
     echo "- PR URL: ${TARGET_URL}"
     echo "- Author: @${TARGET_AUTHOR}"
+  elif [[ "$TARGET_MODE" == "pr_set" ]]; then
+    echo "- PR set: ${PR_SET_DISPLAY_LIST}"
+    echo "- Authors: multiple (see PR Set Overview)"
   else
     if [[ -n "$TARGET_URL" ]]; then
       echo "- Commit URL: ${TARGET_URL}"
@@ -310,6 +560,8 @@ fi
   echo "- Exported: ${timestamp}"
   echo "- Context radius: ${CONTEXT} line(s)"
   echo "- Files changed: ${TOTAL_FILES}  (+${TOTAL_ADDS} / -${TOTAL_DELS})"
+  echo "- Base commit: ${BASE_OID:0:7}"
+  echo "- Head commit: ${HEAD_OID:0:7}"
   (( IGNORE_WS )) && echo "- Whitespace: ignored (git diff -w)"
   echo ""
   echo "## ${DESCRIPTION_HEADING}"
@@ -318,6 +570,13 @@ fi
     printf "%s\n\n" "$TARGET_DESCRIPTION"
   elif [[ -n "$DESCRIPTION_FALLBACK" ]]; then
     echo "$DESCRIPTION_FALLBACK"
+    echo ""
+  fi
+
+  if [[ "$TARGET_MODE" == "pr_set" ]]; then
+    echo "## PR Set Overview"
+    echo ""
+    jq -r '.[] | "- PR #" + (.number|tostring) + " — " + (.title // "(no title)") + " • base " + (.baseRefName // "unknown") + " @ " + ((.baseRefOid // "")[:7]) + " • head " + (.headRefName // "unknown") + " @ " + ((.headRefOid // "")[:7]) + " • author @" + (.author.login // "unknown") + (if (.url != null) then " • " + .url else "" end)' <<<"$PR_SET_METADATA_JSON"
     echo ""
   fi
 
@@ -429,6 +688,33 @@ if [[ -n "$OUT_JSON" ]]; then
         oids: {base: $baseOid, head: $headOid},
         mode: $mode,
         identifier: $identifier
+      }' > "$OUT_JSON"
+  elif [[ "$TARGET_MODE" == "pr_set" ]]; then
+    jq -n \
+      --arg repo "$REPO" \
+      --arg exported "$timestamp" \
+      --argjson context "$CONTEXT" \
+      --argjson totals "$totals_json" \
+      --argjson files "$files_for_json" \
+      --arg baseOid "$BASE_OID" \
+      --arg headOid "$HEAD_OID" \
+      --arg mode "$TARGET_MODE" \
+      --arg identifier "$TARGET_IDENTIFIER" \
+      --arg prSetLabel "$PR_SET_LABEL" \
+      --arg prSetDisplay "$PR_SET_DISPLAY_LIST" \
+      --argjson prSet "$PR_SET_METADATA_JSON" \
+      '{
+        repo: $repo,
+        pr_set_label: $prSetLabel,
+        pr_set_display: $prSetDisplay,
+        exported_at: $exported,
+        context_radius: $context,
+        totals: $totals,
+        files: $files,
+        oids: {base: $baseOid, head: $headOid},
+        mode: $mode,
+        identifier: $identifier,
+        pr_set: $prSet
       }' > "$OUT_JSON"
   else
     jq -n \
