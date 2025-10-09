@@ -119,6 +119,22 @@ If wildcard hostnames are not allowed by your firewall or security policy, the f
 > 
 > This list of domains is subject to change. Last updated 2025-06-27.
 
+## Static IPs
+
+Static IPs are currently available for the following regions:
+
+| Region | IP blocks |
+| US | `143.223.88.0/21` `161.115.160.0/19` |
+
+> ℹ️ **Note**
+> 
+> All other regions must use wildcard domains.
+
+Static IPs apply to the following services:
+
+- Realtime
+- SIP signalling and media
+
 ---
 
 

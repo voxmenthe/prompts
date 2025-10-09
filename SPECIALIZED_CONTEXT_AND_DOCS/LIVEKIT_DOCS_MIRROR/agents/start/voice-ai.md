@@ -32,9 +32,9 @@ The following sections describe the minimum requirements to get started with Liv
 
 ### LiveKit Cloud
 
-This guide assumes you have signed up for a free [LiveKit Cloud](https://cloud.livekit.io/) account. LiveKit Cloud offers realtime media transport and agent deployment. Create a free project and use the API keys in the following steps to get started.
+This guide assumes you have signed up for a free [LiveKit Cloud](https://cloud.livekit.io/) account. LiveKit Cloud includes agent deployment, model inference, and realtime media transport. Create a free project and use the API keys in the following steps to get started.
 
-While this guide assumes LiveKit Cloud, the instructions can be adapted for [self-hosting](https://docs.livekit.io/home/self-hosting/local.md) the open-source LiveKit server instead. You will need your own [custom deployment](https://docs.livekit.io/agents/ops/deployment/custom.md) environment in production, and should remove the [enhanced noise cancellation](https://docs.livekit.io/home/cloud/noise-cancellation.md) plugin from the agent code.
+While this guide assumes LiveKit Cloud, the instructions can be adapted for [self-hosting](https://docs.livekit.io/home/self-hosting/local.md) the open-source LiveKit server instead. For self-hosting in production, set up a [custom deployment](https://docs.livekit.io/agents/ops/deployment/custom.md) environment, and make the following changes: remove the [enhanced noise cancellation](https://docs.livekit.io/home/cloud/noise-cancellation.md) plugin from the agent code, and use [plugins](https://docs.livekit.io/agents/models.md#plugins) for your own AI providers.
 
 ### LiveKit CLI
 
@@ -97,22 +97,22 @@ lk cloud auth
 
 This opens a browser window to authenticate and link your project to the CLI.
 
-### AI providers
+### AI models
 
-LiveKit Agents [integrates with most AI model providers](https://docs.livekit.io/agents/integrations.md) and supports both high-performance STT-LLM-TTS voice pipelines, as well as lifelike multimodal models.
+Voice agents require one or more [AI models](https://docs.livekit.io/agents/models.md) to provide understanding, intelligence, and speech. LiveKit Agents supports both high-performance STT-LLM-TTS voice pipelines constructed from multiple specialized models, as well as realtime models with direct speech-to-speech capabilities.
 
 The rest of this guide assumes you use one of the following two starter packs, which provide the best combination of value, features, and ease of setup.
 
 **STT-LLM-TTS pipeline**:
 
-Your agent strings together three specialized providers into a high-performance voice pipeline. You need accounts and API keys for each.
+Your agent strings together three specialized providers into a high-performance voice pipeline powered by LiveKit Inference. No additional setup is required.
 
 ![Diagram showing STT-LLM-TTS pipeline.](/images/agents/stt-llm-tts-pipeline.svg)
 
-| Component | Provider | Required Key | Alternatives |
-| STT | [Deepgram](https://deepgram.com/) | `DEEPGRAM_API_KEY` | [STT integrations](https://docs.livekit.io/agents/integrations/stt.md#providers) |
-| LLM | [OpenAI](https://platform.openai.com/) | `OPENAI_API_KEY` | [LLM integrations](https://docs.livekit.io/agents/integrations/llm.md#providers) |
-| TTS | [Cartesia](https://cartesia.ai) | `CARTESIA_API_KEY` | [TTS integrations](https://docs.livekit.io/agents/integrations/tts.md#providers) |
+| Component | Model | Alternatives |
+| STT | AssemblyAI Universal-Streaming | [STT models](https://docs.livekit.io/agents/models/stt.md) |
+| LLM | OpenAI GPT-4.1 mini | [LLM models](https://docs.livekit.io/agents/models/llm.md) |
+| TTS | Cartesia Sonic-2 | [TTS models](https://docs.livekit.io/agents/models/tts.md) |
 
 ---
 
@@ -122,8 +122,8 @@ Your agent uses a single realtime model to provide an expressive and lifelike vo
 
 ![Diagram showing realtime model.](/images/agents/realtime-model.svg)
 
-| Component | Provider | Required Key | Alternatives |
-| Realtime model | [OpenAI](https://platform.openai.com/docs/guides/realtime) | `OPENAI_API_KEY` | [Realtime models](https://docs.livekit.io/agents/integrations/realtime.md#providers) |
+| Model | Required Key | Alternatives |
+| [OpenAI Realtime API](https://platform.openai.com/docs/guides/realtime) | `OPENAI_API_KEY` | [Realtime models](https://docs.livekit.io/agents/models/realtime.md) |
 
 ## Setup
 
@@ -168,7 +168,7 @@ Install the following packages to build a complete voice AI agent with your STT-
 
 ```shell
 uv add \
-  "livekit-agents[deepgram,openai,cartesia,silero,turn-detector]~=1.2" \
+  "livekit-agents[silero,turn-detector]~=1.2" \
   "livekit-plugins-noise-cancellation~=0.2" \
   "python-dotenv"
 
@@ -178,9 +178,6 @@ uv add \
 
 ```shell
 pnpm add @livekit/agents@1.x \
-    @livekit/agents-plugin-deepgram@1.x \
-    @livekit/agents-plugin-openai@1.x \
-    @livekit/agents-plugin-cartesia@1.x \
     @livekit/agents-plugin-silero@1.x \
     @livekit/agents-plugin-livekit@1.x \
     @livekit/noise-cancellation-node@0.x \
@@ -223,14 +220,11 @@ lk app env -w
 
 ```
 
-Now open this file and add keys for your selected AI provider. The file should look like this:
+The file should look like this:
 
 **STT-LLM-TTS pipeline**:
 
 ```shell
-DEEPGRAM_API_KEY=<Your Deepgram API Key>
-OPENAI_API_KEY=<Your OpenAI API Key>
-CARTESIA_API_KEY=<Your Cartesia API Key>
 LIVEKIT_API_KEY=%{apiKey}%
 LIVEKIT_API_SECRET=%{apiSecret}%
 LIVEKIT_URL=%{wsURL}%
@@ -241,11 +235,13 @@ LIVEKIT_URL=%{wsURL}%
 
 **Realtime model**:
 
+You must also set the `OPENAI_API_KEY` environment variable, using your own [OpenAI platform account](https://platform.openai.com/account/api-keys).
+
 ```shell
-OPENAI_API_KEY=<Your OpenAI API Key>
 LIVEKIT_API_KEY=%{apiKey}%
 LIVEKIT_API_SECRET=%{apiSecret}%
 LIVEKIT_URL=%{wsURL}%
+OPENAI_API_KEY=<Your OpenAI API Key>
 
 ```
 
@@ -262,13 +258,7 @@ from dotenv import load_dotenv
 
 from livekit import agents
 from livekit.agents import AgentSession, Agent, RoomInputOptions
-from livekit.plugins import (
-    openai,
-    cartesia,
-    deepgram,
-    noise_cancellation,
-    silero,
-)
+from livekit.plugins import noise_cancellation, silero
 from livekit.plugins.turn_detector.multilingual import MultilingualModel
 
 load_dotenv(".env.local")
@@ -276,14 +266,19 @@ load_dotenv(".env.local")
 
 class Assistant(Agent):
     def __init__(self) -> None:
-        super().__init__(instructions="You are a helpful voice AI assistant.")
+        super().__init__(
+            instructions="""You are a helpful voice AI assistant.
+            You eagerly assist users with their questions by providing information from your extensive knowledge.
+            Your responses are concise, to the point, and without any complex formatting or punctuation including emojis, asterisks, or other symbols.
+            You are curious, friendly, and have a sense of humor.""",
+        )
 
 
 async def entrypoint(ctx: agents.JobContext):
     session = AgentSession(
-        stt=deepgram.STT(model="nova-3", language="multi"),
-        llm=openai.LLM(model="gpt-4o-mini"),
-        tts=cartesia.TTS(model="sonic-2", voice="f786b574-daa5-4673-aa0c-cbe3e8534c02"),
+        stt="assemblyai/universal-streaming:en",
+        llm="openai/gpt-4.1-mini",
+        tts="cartesia/sonic-2:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
         vad=silero.VAD.load(),
         turn_detection=MultilingualModel(),
     )
@@ -319,10 +314,7 @@ import {
   defineAgent,
   voice,
 } from '@livekit/agents';
-import * as cartesia from '@livekit/agents-plugin-cartesia';
-import * as deepgram from '@livekit/agents-plugin-deepgram';
 import * as livekit from '@livekit/agents-plugin-livekit';
-import * as openai from '@livekit/agents-plugin-openai';
 import * as silero from '@livekit/agents-plugin-silero';
 import { BackgroundVoiceCancellation } from '@livekit/noise-cancellation-node';
 import { fileURLToPath } from 'node:url';
@@ -343,12 +335,9 @@ export default defineAgent({
 
     const session = new voice.AgentSession({
       vad,
-      stt: new deepgram.STT({ model: 'nova-3' }),
-      llm: new openai.LLM({ model: 'gpt-4o-mini' }),
-      tts: new cartesia.TTS({ 
-        model: 'sonic-2', 
-        voice: 'f786b574-daa5-4673-aa0c-cbe3e8534c02' 
-      }),
+      stt: "assemblyai/universal-streaming:en",
+      llm: "openai/gpt-4.1-mini",
+      tts: "cartesia/sonic-2:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
       turnDetection: new livekit.turnDetector.MultilingualModel(),
     });
 
@@ -424,7 +413,7 @@ if __name__ == "__main__":
 
 ```
 
-** Filename: `Node.js`**
+** Filename: `agent.ts`**
 
 ```typescript
 import {
@@ -621,7 +610,7 @@ Follow these guides bring your voice AI app to life in the real world.
 
 - **[Deploying to LiveKit Cloud](https://docs.livekit.io/agents/ops/deployment.md)**: Learn more about deploying and scaling your agent in production.
 
-- **[Integration guides](https://docs.livekit.io/agents/integrations.md)**: Explore the full list of AI providers available for LiveKit Agents.
+- **[AI Models](https://docs.livekit.io/agents/models.md)**: Explore the full list of AI models available with LiveKit Agents.
 
 - **[Recipes](https://docs.livekit.io/recipes.md)**: A comprehensive collection of examples, guides, and recipes for LiveKit Agents.
 

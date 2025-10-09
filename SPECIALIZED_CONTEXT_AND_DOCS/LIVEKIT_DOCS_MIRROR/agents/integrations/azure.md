@@ -13,13 +13,51 @@ Microsoft's [Azure AI Services](https://azure.microsoft.com/en-us/products/ai-se
 - **Azure OpenAI**: Run OpenAI models, including the Realtime API, with the security and reliability of Azure.
 - **Azure Speech**: Speech-to-text and text-to-speech services.
 
-The LiveKit Agents OpenAI plugin supports Azure OpenAI, and the Azure plugin supports Azure Speech.
+LiveKit Inference and the LiveKit Agents OpenAI plugin support Azure OpenAI, and the Azure plugin supports Azure Speech.
 
 ## Getting started
 
 Use the voice AI quickstart to build a voice AI app with Azure OpenAI. Select a realtime model type and add the following components to use the Azure OpenAI Realtime API:
 
 - **[Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md)**: Build your first voice AI app with Azure OpenAI.
+
+### LiveKit Inference
+
+Use an Azure OpenAI model in your agent session:
+
+**Python**:
+
+```python
+from livekit.agents import AgentSession, inference
+
+session = AgentSession(
+    llm=inference.LLM(
+        model="openai/gpt-4.1-mini",
+        provider="azure",
+    ),
+    # ... tts, stt, vad, turn_detection, etc.
+)
+
+```
+
+---
+
+**Node.js**:
+
+```typescript
+import { AgentSession, inference } from '@livekit/agents';
+
+session = new AgentSession({
+    llm: new inference.LLM({
+        model: "openai/gpt-4.1-mini",
+        provider: "azure",
+    }),
+    // ... tts, stt, vad, turn_detection, etc.
+});
+
+```
+
+### Azure OpenAI Realtime API
 
 Install the OpenAI plugin:
 
@@ -67,17 +105,19 @@ LiveKit provides SIP support for [telephony integration](https://docs.livekit.io
 
 ## Azure plugin documentation
 
-- **[Azure OpenAI Realtime API](https://docs.livekit.io/agents/integrations/realtime/azure-openai.md)**: LiveKit Agents docs for Azure OpenAI Realtime API.
+- **[Azure OpenAI in LiveKit Inference](https://docs.livekit.io/agents/models/llm/inference/openai.md)**: Azure OpenAI models in LiveKit Inference.
 
-- **[Azure OpenAI LLM](https://docs.livekit.io/agents/integrations/llm/azure-openai.md)**: LiveKit Agents docs for Azure OpenAI LLMs.
+- **[Azure OpenAI Realtime API](https://docs.livekit.io/agents/models/realtime/plugins/azure-openai.md)**: Docs for Azure OpenAI Realtime API with the OpenAI plugin.
 
-- **[Azure OpenAI STT](https://docs.livekit.io/agents/integrations/stt/azure-openai.md)**: LiveKit Agents docs for Azure OpenAI STT.
+- **[Azure OpenAI LLM plugin](https://docs.livekit.io/agents/models/llm/plugins/azure-openai.md)**: Docs for Azure OpenAI LLMs with the OpenAI plugin.
 
-- **[Azure OpenAI TTS](https://docs.livekit.io/agents/integrations/tts/azure-openai.md)**: LiveKit Agents docs for Azure OpenAI TTS.
+- **[Azure OpenAI STT plugin](https://docs.livekit.io/agents/models/stt/plugins/azure-openai.md)**: Docs for Azure OpenAI STT with the OpenAI plugin.
 
-- **[Azure Speech STT](https://docs.livekit.io/agents/integrations/stt/azure.md)**: LiveKit Agents docs for Azure Speech STT.
+- **[Azure OpenAI TTS plugin](https://docs.livekit.io/agents/models/tts/plugins/azure-openai.md)**: Docs for Azure OpenAI TTS with the OpenAI plugin.
 
-- **[Azure Speech TTS](https://docs.livekit.io/agents/integrations/tts/azure.md)**: LiveKit Agents docs for Azure Speech TTS.
+- **[Azure Speech STT plugin](https://docs.livekit.io/agents/models/stt/plugins/azure.md)**: Docs for the Azure Speech STT plugin.
+
+- **[Azure Speech TTS plugin](https://docs.livekit.io/agents/models/tts/plugins/azure.md)**: Docs for the Azure Speech TTS plugin.
 
 ---
 

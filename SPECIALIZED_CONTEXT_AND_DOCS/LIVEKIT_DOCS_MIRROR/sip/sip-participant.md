@@ -146,12 +146,12 @@ Before starting your `AgentSession`, select the best Deepgram STT model for the 
 from livekit import rtc
 
 participant = await ctx.wait_for_participant()
-dg_model = "nova-2-general"
+stt_model = "deepgram/nova-2-general"
 
 # Check if the participant is a SIP participant
 if participant.kind == rtc.ParticipantKind.PARTICIPANT_KIND_SIP:
     # Use a Deepgram model better suited for phone calls
-    dg_model = "nova-2-phonecall"
+    stt_model = "deepgram/nova-2-phonecall"
 
     if participant.attributes['sip.phoneNumber'] == '+15105550100':
         logger.info("Caller phone number is +1-510-555-0100")
@@ -159,7 +159,7 @@ if participant.kind == rtc.ParticipantKind.PARTICIPANT_KIND_SIP:
  
 
 session = AgentSession(
-    stt=deepgram.STT(model=dg_model),
+    stt=stt_model,
     # ... llm, vad, tts, etc.
 )
 

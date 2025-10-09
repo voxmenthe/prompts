@@ -21,16 +21,16 @@ The following example shows how to begin a simple single-agent session:
 **Python**:
 
 ```python
-from livekit.agents import AgentSession, Agent, RoomInputOptions
-from livekit.plugins import openai, cartesia, deepgram, noise_cancellation, silero
+from livekit.agents import AgentSession, Agent, RoomInputOptions, inference
+from livekit.plugins import noise_cancellation, silero
 from livekit.plugins.turn_detector.multilingual import MultilingualModel
 
 session = AgentSession(
-    stt=deepgram.STT(),
-    llm=openai.LLM(),
-    tts=cartesia.TTS(),
+    stt="assemblyai/universal-streaming:en",
+    llm="openai/gpt-4.1-mini",
+    tts="cartesia/sonic-2:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
     vad=silero.VAD.load(),
-    turn_detection=turn_detector.MultilingualModel(),
+    turn_detection=MultilingualModel(),
 )
 
 await session.start(
@@ -48,11 +48,8 @@ await session.start(
 **Node.js**:
 
 ```ts
-import { voice } from '@livekit/agents';
-import * as deepgram from '@livekit/agents-plugin-deepgram';
-import * as elevenlabs from '@livekit/agents-plugin-elevenlabs';
+import { voice, inference } from '@livekit/agents';
 import * as livekit from '@livekit/agents-plugin-livekit';
-import * as openai from '@livekit/agents-plugin-openai';
 import * as silero from '@livekit/agents-plugin-silero';
 import { BackgroundVoiceCancellation } from '@livekit/noise-cancellation-node';
 
@@ -60,9 +57,9 @@ const vad = await silero.VAD.load();
 
 const session = new voice.AgentSession({
   vad,
-  stt: new deepgram.STT(),
-  llm: new openai.LLM(),
-  tts: new elevenlabs.TTS(),
+  stt: "assemblyai/universal-streaming:en",
+  llm: "openai/gpt-4.1-mini",
+  tts: "cartesia/sonic-2:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
   turnDetection: new livekit.turnDetector.MultilingualModel(),
 });
 
@@ -106,17 +103,17 @@ To replace the default one created in `AgentSession`, create a `RoomIO` object i
 
 ## Voice AI providers
 
-You can choose from a variety of providers for each part of the voice pipeline to fit your needs. The framework supports both high-performance STT-LLM-TTS pipelines and speech-to-speech models. In either case, it automatically manages interruptions, transcription forwarding, turn detection, and more.
+You can choose from a variety of providers for each part of the voice pipeline to fit your needs. The framework supports both high-performance STT-LLM-TTS pipelines and speech-to-speech models. In either case, the framework automatically manages interruptions, transcription forwarding, turn detection, and more.
 
 You may add these components to the `AgentSession`, where they act as global defaults within the app, or to each individual `Agent` if needed.
 
-- **[TTS](https://docs.livekit.io/agents/integrations/tts.md)**: Text-to-speech integrations
+- **[TTS](https://docs.livekit.io/agents/models/tts.md)**: Text-to-speech models
 
-- **[STT](https://docs.livekit.io/agents/integrations/stt.md)**: Speech-to-text integrations
+- **[STT](https://docs.livekit.io/agents/models/stt.md)**: Speech-to-text models
 
-- **[LLM](https://docs.livekit.io/agents/integrations/llm.md)**: Language model integrations
+- **[LLM](https://docs.livekit.io/agents/models/llm.md)**: Language model models
 
-- **[Multimodal](https://docs.livekit.io/agents/integrations/realtime.md)**: Realtime multimodal APIs
+- **[Realtime](https://docs.livekit.io/agents/models/realtime.md)**: Realtime models
 
 ## Capabilities
 

@@ -89,12 +89,17 @@ This will return a JSON object like this:
       sessionId,     // string
       roomName,      // string
       createdAt,     // Timestamp
+      endedAt,       // Timestamp
       lastActive,    // Timestamp
       bandwidthIn,   // bytes of bandwidth uploaded
       bandwidthOut,  // bytes of bandwidth downloaded
-      egress,         // 0 = never started, 1 = active, 2 = ended
+      egress,        // 0 = never started, 1 = active, 2 = ended
       numParticipants,        // int
-      numActiveParticipants, // int
+      numActiveParticipants,  // int
+      connectionCounts: {
+        attempts,    // int
+        success      // int
+      },
     },
     // ...
   ]
@@ -181,36 +186,59 @@ This will return a JSON object like this:
 
 ```json
 {
-  roomId,    // string
-  roomName,  // string
-  bandwidth,  // billable bytes of bandwidth used
-  startTime, // Timestamp
-  endTime,   // Timestamp
-  numParticipants, // int
+  roomId,            // string
+  roomName,          // string
+  bandwidth,         // billable bytes of bandwidth used
+  startTime,         // Timestamp (e.g., "2025-09-29T13:59:40Z")
+  endTime,           // Timestamp (e.g., "2025-09-29T14:59:40Z")
+  numParticipants,   // int
+  connectionMinutes, // int: billable number of connection minutes for this session
+  quality: [
+    {
+      timestamp: // Timestamp (e.g., "2025-09-25T16:46:00Z")
+      value:     // int
+    },
+    // ...
+  ],
+  publishBps: [
+    {
+      timestamp: // Timestamp (e.g., "2025-09-25T16:46:00Z")
+      value:     // int
+    },
+    // ...
+  ]
   participants: [
     {
       participantIdentity, // string
       participantName,     // string
       roomId,              // string
-      joinedAt,            // Timestamp
-      leftAt,              // Timestamp
+      joinedAt,            // Timestamp (e.g., "2025-09-29T13:59:40Z")
+      leftAt,              // Timestamp (e.g., "2025-09-29T14:59:40Z")
+      location,            // string
+      region,              // string
+      connectionType,      // string (e.g., "UDP")
+      connectionTimeMs,    // int
+      deviceModel,         // string (e.g., "Mac")
+      os,                  // string (e.g., "mac os x 10.15.7")
+      browser,             // string (e.g., "Chrome 140.0.0")
+      sdkVersion,          // string (e.g., "JS 2.15.7")
       publishedSources: {
         cameraTrack,       // boolean
         microphoneTrack,   // boolean
-        screenShareTrack, // boolean
-        screenShareAudio, // boolean
+        screenShareTrack,  // boolean
+        screenShareAudio,  // boolean
       },
       sessions: [
         {
-          sessionId, // string
-          joinedAt,  // Timestamp
-          leftAt,    // Timestamp
+          participantId, // string
+          joinedAt,      // Timestamp (e.g., "2025-09-29T13:59:40Z")
+          leftAt,        // Timestamp (e.g., "2025-09-29T14:59:40Z")
         },
         // ...
       ],
     },
     // ...
-  ],
+  ]
 }
 
 ```

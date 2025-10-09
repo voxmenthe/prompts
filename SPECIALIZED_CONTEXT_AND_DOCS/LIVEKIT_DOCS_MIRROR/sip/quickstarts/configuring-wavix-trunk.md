@@ -159,11 +159,15 @@ The following guides provide next steps for building your telephony app.
 
 - **[Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md)**: A quickstart guide to build a voice AI agent to answer incoming calls.
 
-- **[Agents telephony integration](https://docs.livekit.io/agents/start/telephony.md)**: Learn how to receive and make calls with a voice AI agent.
+- **[Agents telephony integration](https://docs.livekit.io/agents/start/telephony.md)**: Learn how to receive and make calls with a voice AI agent
 
-- **[Call forwarding using SIP REFER](https://docs.livekit.io/sip/transfer-cold.md)**: Forward calls to another number or SIP endpoint with SIP REFER.
+- **[Call forwarding using SIP REFER](https://docs.livekit.io/sip/transfer-cold.md)**: How to forward calls to another number or SIP endpoint with SIP REFER.
 
-- **[Agent-assisted warm transfer](https://docs.livekit.io/sip/transfer-warm.md)**: A guide for transferring calls using a voice AI agent to provide context.
+- **[Agent-assisted warm transfer](https://docs.livekit.io/sip/transfer-warm.md)**: A comprehensive guide to transferring calls using an AI agent to provide context.
+
+- **[Secure trunking for SIP calls](https://docs.livekit.io/sip/secure-trunking.md)**: How to enable secure trunking for LiveKit SIP.
+
+- **[Region pinning for SIP](https://docs.livekit.io/sip/cloud.md)**: Use region pinning to restrict calls to a specific region.
 
 ---
 

@@ -32,7 +32,7 @@ from livekit.agents import (
 )
 from livekit.agents.llm import function_tool
 from livekit.agents.voice import Agent, AgentSession
-from livekit.plugins import cartesia, deepgram, openai, silero
+from livekit.plugins import silero
 
 from datetime import datetime
 
@@ -150,10 +150,10 @@ async def entrypoint(ctx: JobContext):
     userdata = {"movie_api": MovieAPI()}
     session = AgentSession(
         userdata=userdata,
-        stt=deepgram.STT(),         # Speech-to-Text
-        llm=openai.LLM(),           # Large Language Model
-        tts=cartesia.TTS(),         # Text-to-Speech
-        vad=silero.VAD.load(),      # Voice Activity Detection
+        stt="assemblyai/universal-streaming:en",
+        llm="openai/gpt-4.1-mini",
+        tts="cartesia/sonic-2:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
+        vad=silero.VAD.load(),
     )
 
     await session.start(agent=MovieAssistant(), room=ctx.room)

@@ -154,6 +154,125 @@ The following document is a comprehensive list of all available documentation an
 - [Events & error handling](https://docs.livekit.io/agents/build/events.md): Guides and reference for events and error handling in LiveKit Agents.
 - [Testing & evaluation](https://docs.livekit.io/agents/build/testing.md): Write tests to control and evaluate agent behavior.
 
+### Models
+
+- [Overview](https://docs.livekit.io/agents/models.md): Choose the right AI models for your voice agent.
+
+#### Speech-to-text (STT)
+
+- [Overview](https://docs.livekit.io/agents/models/stt.md): Models and plugins for realtime transcription in your voice agents.
+
+##### LiveKit Inference
+
+- [AssemblyAI](https://docs.livekit.io/agents/models/stt/inference/assemblyai.md): Reference for AssemblyAI STT in LiveKit Inference.
+- [Cartesia](https://docs.livekit.io/agents/models/stt/inference/cartesia.md): Reference for Cartesia STT in LiveKit Inference.
+- [Deepgram](https://docs.livekit.io/agents/models/stt/inference/deepgram.md): Reference for Deepgram STT in LiveKit Inference.
+- [Plugins](https://docs.livekit.io/agents/models/stt/plugins.md)- [AssemblyAI](https://docs.livekit.io/agents/models/stt/plugins/assemblyai.md): How to use the AssemblyAI STT plugin for LiveKit Agents.
+- [Amazon Transcribe](https://docs.livekit.io/agents/models/stt/plugins/aws.md): How to use the Amazon Transcribe STT plugin for LiveKit Agents.
+- [Azure AI Speech](https://docs.livekit.io/agents/models/stt/plugins/azure.md): How to use the Azure Speech STT plugin for LiveKit Agents.
+- [Azure OpenAI](https://docs.livekit.io/agents/models/stt/plugins/azure-openai.md): How to use the Azure OpenAI STT plugin for LiveKit Agents.
+- [Baseten](https://docs.livekit.io/agents/models/stt/plugins/baseten.md): How to use the Baseten STT plugin for LiveKit Agents.
+- [Cartesia](https://docs.livekit.io/agents/models/stt/plugins/cartesia.md): How to use the Cartesia STT plugin for LiveKit Agents.
+- [Clova](https://docs.livekit.io/agents/models/stt/plugins/clova.md): How to use the Clova STT plugin for LiveKit Agents.
+- [Deepgram](https://docs.livekit.io/agents/models/stt/plugins/deepgram.md): How to use the Deepgram STT plugin for LiveKit Agents.
+- [fal](https://docs.livekit.io/agents/models/stt/plugins/fal.md): How to use the fal STT plugin for LiveKit Agents.
+- [Gladia](https://docs.livekit.io/agents/models/stt/plugins/gladia.md): How to use the Gladia STT plugin for LiveKit Agents.
+- [Google Cloud](https://docs.livekit.io/agents/models/stt/plugins/google.md): How to use the Google Cloud STT plugin for LiveKit Agents.
+- [Groq](https://docs.livekit.io/agents/models/stt/plugins/groq.md): How to use the Groq STT plugin for LiveKit Agents.
+- [Mistral AI](https://docs.livekit.io/agents/models/stt/plugins/mistralai.md): How to use the Mistral STT plugin for LiveKit Agents.
+- [OpenAI](https://docs.livekit.io/agents/models/stt/plugins/openai.md): How to use the OpenAI STT plugin for LiveKit Agents.
+- [Sarvam](https://docs.livekit.io/agents/models/stt/plugins/sarvam.md): How to use the Sarvam STT plugin for LiveKit Agents.
+- [Soniox](https://docs.livekit.io/agents/models/stt/plugins/soniox.md): How to use the Soniox STT plugin for LiveKit Agents.
+- [Speechmatics](https://docs.livekit.io/agents/models/stt/plugins/speechmatics.md): How to use the Speechmatics STT plugin for LiveKit Agents.
+- [Spitch](https://docs.livekit.io/agents/models/stt/plugins/spitch.md): How to use the Spitch STT plugin for LiveKit Agents.
+
+#### Large language models (LLM)
+
+- [Overview](https://docs.livekit.io/agents/models/llm.md): Conversational intelligence for your voice agents.
+
+##### LiveKit Inference
+
+- [OpenAI](https://docs.livekit.io/agents/models/llm/inference/openai.md): Reference for OpenAI models served via LiveKit Inference.
+- [Gemini](https://docs.livekit.io/agents/models/llm/inference/gemini.md): Reference for the Google Gemini models served via LiveKit Inference.
+- [Qwen](https://docs.livekit.io/agents/models/llm/inference/qwen.md): Reference for Qwen models served via LiveKit Inference.
+- [Kimi](https://docs.livekit.io/agents/models/llm/inference/kimi.md): Reference for Kimi models served via LiveKit Inference.
+- [DeepSeek](https://docs.livekit.io/agents/models/llm/inference/deepseek.md): Reference for DeepSeek models served via LiveKit Inference.
+
+##### Plugins
+
+- [Anthropic](https://docs.livekit.io/agents/models/llm/plugins/anthropic.md): How to use the Anthropic Claude LLM plugin for LiveKit Agents.
+- [Amazon Bedrock](https://docs.livekit.io/agents/models/llm/plugins/aws.md): How to use the Amazon Bedrock LLM plugin for LiveKit Agents.
+- [Baseten](https://docs.livekit.io/agents/models/llm/plugins/baseten.md): How to use the Baseten LLM plugin for LiveKit Agents.
+- [Cerebras](https://docs.livekit.io/agents/models/llm/plugins/cerebras.md): How to use the Cerebras inference with LiveKit Agents.
+- [DeepSeek](https://docs.livekit.io/agents/models/llm/plugins/deepseek.md): How to use DeepSeek models with LiveKit Agents.
+- [Fireworks](https://docs.livekit.io/agents/models/llm/plugins/fireworks.md): How to use Fireworks AI with LiveKit Agents.
+- [Google Gemini](https://docs.livekit.io/agents/models/llm/plugins/gemini.md): A guide to using Google Gemini with LiveKit Agents.
+- [Groq](https://docs.livekit.io/agents/models/llm/plugins/groq.md): How to use the Groq LLM plugin for LiveKit Agents.
+- [LangChain](https://docs.livekit.io/agents/models/llm/plugins/langchain.md): How to use LangGraph workflows with LiveKit Agents.
+- [Letta](https://docs.livekit.io/agents/models/llm/plugins/letta.md): How to use a Letta agent for your LLM with LiveKit Agents.
+- [Mistral AI](https://docs.livekit.io/agents/models/llm/plugins/mistralai.md): How to integrate Mistral AI's La Plateforme inference service with LiveKit Agents.
+- [Ollama](https://docs.livekit.io/agents/models/llm/plugins/ollama.md): How to run models locally using Ollama with LiveKit Agents.
+- [OpenAI](https://docs.livekit.io/agents/models/llm/plugins/openai.md): How to use the OpenAI LLM plugin for LiveKit Agents.
+- [Azure OpenAI](https://docs.livekit.io/agents/models/llm/plugins/azure-openai.md): How to use the Azure OpenAI LLM plugin for LiveKit Agents.
+- [Perplexity](https://docs.livekit.io/agents/models/llm/plugins/perplexity.md): How to use Perplexity LLM with LiveKit Agents.
+- [Telnyx](https://docs.livekit.io/agents/models/llm/plugins/telnyx.md): How to use Telnyx inference with LiveKit Agents.
+- [Together AI](https://docs.livekit.io/agents/models/llm/plugins/together.md): How to use Together AI Llama models with LiveKit Agents.
+- [xAI](https://docs.livekit.io/agents/models/llm/plugins/xai.md): How to use xAI LLM with LiveKit Agents.
+
+#### Text-to-speech (TTS)
+
+- [Overview](https://docs.livekit.io/agents/models/tts.md): Voices and plugins to add realtime speech to your voice agents.
+
+##### LiveKit Inference
+
+- [Cartesia](https://docs.livekit.io/agents/models/tts/inference/cartesia.md): Reference for Cartesia TTS in LiveKit Inference.
+- [ElevenLabs](https://docs.livekit.io/agents/models/tts/inference/elevenlabs.md): Reference for ElevenLabs TTS in LiveKit Inference.
+- [Inworld](https://docs.livekit.io/agents/models/tts/inference/inworld.md): Reference for Inworld TTS in LiveKit Inference.
+- [Rime](https://docs.livekit.io/agents/models/tts/inference/rime.md): Reference for Rime TTS in LiveKit Inference.
+
+##### Plugins
+
+- [Amazon Polly](https://docs.livekit.io/agents/models/tts/plugins/aws.md): How to use the Amazon Polly TTS plugin for LiveKit Agents.
+- [Azure AI Speech](https://docs.livekit.io/agents/models/tts/plugins/azure.md): How to use the Azure Speech TTS plugin for LiveKit Agents.
+- [Azure OpenAI](https://docs.livekit.io/agents/models/tts/plugins/azure-openai.md): How to use the Azure OpenAI TTS plugin for LiveKit Agents.
+- [Baseten](https://docs.livekit.io/agents/models/tts/plugins/baseten.md): How to use the Baseten TTS plugin for LiveKit Agents.
+- [Cartesia](https://docs.livekit.io/agents/models/tts/plugins/cartesia.md): How to use the Cartesia TTS plugin for LiveKit Agents.
+- [Deepgram](https://docs.livekit.io/agents/models/tts/plugins/deepgram.md): How to use the Deepgram TTS plugin for LiveKit Agents.
+- [ElevenLabs](https://docs.livekit.io/agents/models/tts/plugins/elevenlabs.md): How to use the ElevenLabs TTS plugin for LiveKit Agents.
+- [Gemini](https://docs.livekit.io/agents/models/tts/plugins/gemini.md): How to use the Gemini TTS plugin for LiveKit Agents.
+- [Google Cloud](https://docs.livekit.io/agents/models/tts/plugins/google.md): How to use the Google Cloud TTS plugin for LiveKit Agents.
+- [Groq](https://docs.livekit.io/agents/models/tts/plugins/groq.md): How to use the Groq TTS plugin for LiveKit Agents.
+- [Hume](https://docs.livekit.io/agents/models/tts/plugins/hume.md): How to use the Hume TTS plugin for LiveKit Agents.
+- [Inworld](https://docs.livekit.io/agents/models/tts/plugins/inworld.md): How to use the Inworld TTS plugin for LiveKit Agents.
+- [LMNT](https://docs.livekit.io/agents/models/tts/plugins/lmnt.md): How to use the LMNT TTS plugin for LiveKit Agents.
+- [Neuphonic](https://docs.livekit.io/agents/models/tts/plugins/neuphonic.md): How to use the Neuphonic TTS plugin for LiveKit Agents.
+- [OpenAI](https://docs.livekit.io/agents/models/tts/plugins/openai.md): How to use the OpenAI TTS plugin for LiveKit Agents.
+- [PlayHT](https://docs.livekit.io/agents/models/tts/plugins/playai.md): How to use the PlayHT TTS plugin for LiveKit Agents.
+- [Resemble AI](https://docs.livekit.io/agents/models/tts/plugins/resemble.md): How to use the Resemble AI TTS plugin for LiveKit Agents.
+- [Rime](https://docs.livekit.io/agents/models/tts/plugins/rime.md): How to use the Rime TTS plugin for LiveKit Agents.
+- [Sarvam](https://docs.livekit.io/agents/models/tts/plugins/sarvam.md): How to use the Sarvam TTS plugin for LiveKit Agents.
+- [Smallest AI](https://docs.livekit.io/agents/models/tts/plugins/smallestai.md): How to use the Smallest AI Waves TTS plugin for LiveKit Agents.
+- [Speechify](https://docs.livekit.io/agents/models/tts/plugins/speechify.md): How to use the Speechify TTS plugin for LiveKit Agents.
+- [Spitch](https://docs.livekit.io/agents/models/tts/plugins/spitch.md): How to use the Spitch TTS plugin for LiveKit Agents.
+
+#### Realtime models
+
+- [Overview](https://docs.livekit.io/agents/models/realtime.md): Guides for adding realtime model integrations to your agents.
+- [Plugins](https://docs.livekit.io/agents/models/realtime/plugins.md)- [Gemini Live API](https://docs.livekit.io/agents/models/realtime/plugins/gemini.md): How to use the Gemini Live API with LiveKit Agents.
+- [Amazon Nova Sonic](https://docs.livekit.io/agents/models/realtime/plugins/nova-sonic.md): How to use the Amazon Nova Sonic model with LiveKit Agents.
+- [OpenAI Realtime API](https://docs.livekit.io/agents/models/realtime/plugins/openai.md): How to use the OpenAI Realtime API with LiveKit Agents.
+- [Azure OpenAI Realtime API](https://docs.livekit.io/agents/models/realtime/plugins/azure-openai.md): How to use the Azure OpenAI Realtime API with LiveKit Agents.
+
+#### Virtual avatars
+
+- [Overview](https://docs.livekit.io/agents/models/avatar.md): Guides for adding virtual avatars to your agents.
+- [Plugins](https://docs.livekit.io/agents/models/avatar/plugins.md)- [Anam](https://docs.livekit.io/agents/models/avatar/plugins/anam.md): How to use the Anam virtual avatar plugin for LiveKit Agents.
+- [Beyond Presence](https://docs.livekit.io/agents/models/avatar/plugins/bey.md): How to use the Beyond Presence virtual avatar plugin for LiveKit Agents.
+- [bitHuman](https://docs.livekit.io/agents/models/avatar/plugins/bithuman.md): How to use the bitHuman virtual avatar plugin for LiveKit Agents.
+- [Hedra](https://docs.livekit.io/agents/models/avatar/plugins/hedra.md): How to use the Hedra virtual avatar plugin for LiveKit Agents.
+- [Simli](https://docs.livekit.io/agents/models/avatar/plugins/simli.md): How to use the Simli virtual avatar plugin for LiveKit Agents.
+- [Tavus](https://docs.livekit.io/agents/models/avatar/plugins/tavus.md): How to use the Tavus virtual avatar plugin for LiveKit Agents.
+
 ### Worker lifecycle
 
 - [Overview](https://docs.livekit.io/agents/worker.md): How the worker coordinates with LiveKit server to manage agent jobs.
@@ -178,137 +297,47 @@ The following document is a comprehensive list of all available documentation an
 #### OpenAI
 
 - [Overview](https://docs.livekit.io/agents/integrations/openai.md): Build world-class realtime AI apps with OpenAI and LiveKit Agents.
-- [Realtime API](https://docs.livekit.io/agents/integrations/realtime/openai.md): How to use the OpenAI Realtime API with LiveKit Agents.
-- [OpenAI LLM](https://docs.livekit.io/agents/integrations/llm/openai.md): How to use the OpenAI LLM plugin for LiveKit Agents.
-- [OpenAI TTS](https://docs.livekit.io/agents/integrations/tts/openai.md): How to use the OpenAI TTS plugin for LiveKit Agents.
-- [OpenAI STT](https://docs.livekit.io/agents/integrations/stt/openai.md): How to use the OpenAI STT plugin for LiveKit Agents.
+- [OpenAI in LiveKit Inference](https://docs.livekit.io/agents/models/llm/inference/openai.md): Reference for OpenAI models served via LiveKit Inference.
+- [Realtime API Plugin](https://docs.livekit.io/agents/models/realtime/plugins/openai.md): How to use the OpenAI Realtime API with LiveKit Agents.
+- [OpenAI LLM Plugin](https://docs.livekit.io/agents/models/llm/plugins/openai.md): How to use the OpenAI LLM plugin for LiveKit Agents.
+- [OpenAI TTS Plugin](https://docs.livekit.io/agents/models/tts/plugins/openai.md): How to use the OpenAI TTS plugin for LiveKit Agents.
+- [OpenAI STT Plugin](https://docs.livekit.io/agents/models/stt/plugins/openai.md): How to use the OpenAI STT plugin for LiveKit Agents.
 
 #### Google
 
 - [Overview](https://docs.livekit.io/agents/integrations/google.md): Build world-class realtime AI apps with Google AI and LiveKit Agents.
-- [Gemini Live API](https://docs.livekit.io/agents/integrations/realtime/gemini.md): How to use the Gemini Live API with LiveKit Agents.
-- [Gemini LLM](https://docs.livekit.io/agents/integrations/llm/gemini.md): A guide to using Google Gemini with LiveKit Agents.
-- [Google Cloud TTS](https://docs.livekit.io/agents/integrations/tts/google.md): How to use the Google Cloud TTS plugin for LiveKit Agents.
-- [Google Cloud STT](https://docs.livekit.io/agents/integrations/stt/google.md): How to use the Google Cloud STT plugin for LiveKit Agents.
+- [Gemini in LiveKit Inference](https://docs.livekit.io/agents/models/llm/inference/gemini.md): Reference for the Google Gemini models served via LiveKit Inference.
+- [Gemini Live API Plugin](https://docs.livekit.io/agents/models/realtime/plugins/gemini.md): How to use the Gemini Live API with LiveKit Agents.
+- [Gemini LLM Plugin](https://docs.livekit.io/agents/models/llm/plugins/gemini.md): A guide to using Google Gemini with LiveKit Agents.
+- [Google Cloud TTS Plugin](https://docs.livekit.io/agents/models/tts/plugins/google.md): How to use the Google Cloud TTS plugin for LiveKit Agents.
+- [Google Cloud STT Plugin](https://docs.livekit.io/agents/models/stt/plugins/google.md): How to use the Google Cloud STT plugin for LiveKit Agents.
 
 #### Azure
 
 - [Overview](https://docs.livekit.io/agents/integrations/azure.md): An overview of the Azure AI integrations with LiveKit Agents.
-- [Azure AI Speech TTS](https://docs.livekit.io/agents/integrations/tts/azure.md): How to use the Azure Speech TTS plugin for LiveKit Agents.
-- [Azure AI Speech STT](https://docs.livekit.io/agents/integrations/stt/azure.md): How to use the Azure Speech STT plugin for LiveKit Agents.
-- [Azure OpenAI Realtime API](https://docs.livekit.io/agents/integrations/realtime/azure-openai.md): How to use the Azure OpenAI Realtime API with LiveKit Agents.
-- [Azure OpenAI LLM](https://docs.livekit.io/agents/integrations/llm/azure-openai.md): How to use the Azure OpenAI LLM plugin for LiveKit Agents.
-- [Azure OpenAI TTS](https://docs.livekit.io/agents/integrations/tts/azure-openai.md): How to use the Azure OpenAI TTS plugin for LiveKit Agents.
-- [Azure OpenAI STT](https://docs.livekit.io/agents/integrations/stt/azure-openai.md): How to use the Azure OpenAI STT plugin for LiveKit Agents.
+- [Azure OpenAI in LiveKit Inference](https://docs.livekit.io/agents/models/llm/inference/openai.md): Reference for OpenAI models served via LiveKit Inference.
+- [Azure AI Speech TTS Plugin](https://docs.livekit.io/agents/models/tts/plugins/azure.md): How to use the Azure Speech TTS plugin for LiveKit Agents.
+- [Azure AI Speech STT Plugin](https://docs.livekit.io/agents/models/stt/plugins/azure.md): How to use the Azure Speech STT plugin for LiveKit Agents.
+- [Azure OpenAI Realtime API Plugin](https://docs.livekit.io/agents/models/realtime/plugins/azure-openai.md): How to use the Azure OpenAI Realtime API with LiveKit Agents.
+- [Azure OpenAI LLM Plugin](https://docs.livekit.io/agents/models/llm/plugins/azure-openai.md): How to use the Azure OpenAI LLM plugin for LiveKit Agents.
+- [Azure OpenAI TTS Plugin](https://docs.livekit.io/agents/models/tts/plugins/azure-openai.md): How to use the Azure OpenAI TTS plugin for LiveKit Agents.
+- [Azure OpenAI STT Plugin](https://docs.livekit.io/agents/models/stt/plugins/azure-openai.md): How to use the Azure OpenAI STT plugin for LiveKit Agents.
 
 #### AWS
 
 - [Overview](https://docs.livekit.io/agents/integrations/aws.md): An overview of the AWS AI integrations with LiveKit Agents.
-- [Amazon Bedrock LLM](https://docs.livekit.io/agents/integrations/llm/aws.md): How to use the Amazon Bedrock LLM plugin for LiveKit Agents.
-- [Amazon Polly TTS](https://docs.livekit.io/agents/integrations/tts/aws.md): How to use the Amazon Polly TTS plugin for LiveKit Agents.
-- [Amazon Transcribe STT](https://docs.livekit.io/agents/integrations/stt/aws.md): How to use the Amazon Transcribe STT plugin for LiveKit Agents.
-- [Amazon Nova Sonic](https://docs.livekit.io/agents/integrations/realtime/nova-sonic.md): How to use the Amazon Nova Sonic model with LiveKit Agents.
+- [Amazon Bedrock LLM Plugin](https://docs.livekit.io/agents/models/llm/plugins/aws.md): How to use the Amazon Bedrock LLM plugin for LiveKit Agents.
+- [Amazon Polly TTS Plugin](https://docs.livekit.io/agents/models/tts/plugins/aws.md): How to use the Amazon Polly TTS plugin for LiveKit Agents.
+- [Amazon Transcribe STT Plugin](https://docs.livekit.io/agents/models/stt/plugins/aws.md): How to use the Amazon Transcribe STT plugin for LiveKit Agents.
+- [Amazon Nova Sonic Plugin](https://docs.livekit.io/agents/models/realtime/plugins/nova-sonic.md): How to use the Amazon Nova Sonic model with LiveKit Agents.
 
 #### Groq
 
 - [Overview](https://docs.livekit.io/agents/integrations/groq.md): Ship lightning-fast voice AI with Groq and LiveKit Agents.
-- [Groq LLM](https://docs.livekit.io/agents/integrations/llm/groq.md): How to use the Groq LLM plugin for LiveKit Agents.
-- [Groq TTS](https://docs.livekit.io/agents/integrations/tts/groq.md): How to use the Groq TTS plugin for LiveKit Agents.
-- [Groq STT](https://docs.livekit.io/agents/integrations/stt/groq.md): How to use the Groq STT plugin for LiveKit Agents.
+- [Groq LLM Plugin](https://docs.livekit.io/agents/models/llm/plugins/groq.md): How to use the Groq LLM plugin for LiveKit Agents.
+- [Groq TTS Plugin](https://docs.livekit.io/agents/models/tts/plugins/groq.md): How to use the Groq TTS plugin for LiveKit Agents.
+- [Groq STT Plugin](https://docs.livekit.io/agents/models/stt/plugins/groq.md): How to use the Groq STT plugin for LiveKit Agents.
 - [Cerebras](https://docs.livekit.io/agents/integrations/cerebras.md): Build voice AI on the world's fastest inference.
-- [Llama](https://docs.livekit.io/agents/integrations/llama.md): Build voice AI on open source models from Meta AI.
-
-### Integration guides
-
-- [Overview](https://docs.livekit.io/agents/integrations.md): Guides for integrating supported AI providers into LiveKit Agents.
-
-#### Realtime models
-
-- [Overview](https://docs.livekit.io/agents/integrations/realtime.md): Guides for adding realtime model integrations to your agents.
-- [Gemini Live API](https://docs.livekit.io/agents/integrations/realtime/gemini.md): How to use the Gemini Live API with LiveKit Agents.
-- [Amazon Nova Sonic](https://docs.livekit.io/agents/integrations/realtime/nova-sonic.md): How to use the Amazon Nova Sonic model with LiveKit Agents.
-- [OpenAI Realtime API](https://docs.livekit.io/agents/integrations/realtime/openai.md): How to use the OpenAI Realtime API with LiveKit Agents.
-- [Azure OpenAI Realtime API](https://docs.livekit.io/agents/integrations/realtime/azure-openai.md): How to use the Azure OpenAI Realtime API with LiveKit Agents.
-
-#### Large language models (LLM)
-
-- [Overview](https://docs.livekit.io/agents/integrations/llm.md): Guides for adding LLM integrations to your agents.
-- [Anthropic](https://docs.livekit.io/agents/integrations/llm/anthropic.md): How to use the Anthropic Claude LLM plugin for LiveKit Agents.
-- [Amazon Bedrock](https://docs.livekit.io/agents/integrations/llm/aws.md): How to use the Amazon Bedrock LLM plugin for LiveKit Agents.
-- [Baseten](https://docs.livekit.io/agents/integrations/llm/baseten.md): How to use the Baseten LLM plugin for LiveKit Agents.
-- [Cerebras](https://docs.livekit.io/agents/integrations/llm/cerebras.md): How to use the Cerebras inference with LiveKit Agents.
-- [DeepSeek](https://docs.livekit.io/agents/integrations/llm/deepseek.md): How to use DeepSeek models with LiveKit Agents.
-- [Fireworks](https://docs.livekit.io/agents/integrations/llm/fireworks.md): How to use Fireworks AI Llama models with LiveKit Agents.
-- [Google Gemini](https://docs.livekit.io/agents/integrations/llm/gemini.md): A guide to using Google Gemini with LiveKit Agents.
-- [Groq](https://docs.livekit.io/agents/integrations/llm/groq.md): How to use the Groq LLM plugin for LiveKit Agents.
-- [LangChain](https://docs.livekit.io/agents/integrations/llm/langchain.md): How to use LangGraph workflows with LiveKit Agents.
-- [Letta](https://docs.livekit.io/agents/integrations/llm/letta.md): How to use a Letta agent for your LLM with LiveKit Agents.
-- [Mistral AI](https://docs.livekit.io/agents/integrations/llm/mistralai.md): How to integrate Mistral AI's La Plateforme inference service with LiveKit Agents.
-- [Ollama](https://docs.livekit.io/agents/integrations/llm/ollama.md): How to run models locally using Ollama with LiveKit Agents.
-- [OpenAI](https://docs.livekit.io/agents/integrations/llm/openai.md): How to use the OpenAI LLM plugin for LiveKit Agents.
-- [Azure OpenAI](https://docs.livekit.io/agents/integrations/llm/azure-openai.md): How to use the Azure OpenAI LLM plugin for LiveKit Agents.
-- [Perplexity](https://docs.livekit.io/agents/integrations/llm/perplexity.md): How to use Perplexity LLM with LiveKit Agents.
-- [Telnyx](https://docs.livekit.io/agents/integrations/llm/telnyx.md): How to use Telnyx inference with LiveKit Agents.
-- [Together AI](https://docs.livekit.io/agents/integrations/llm/together.md): How to use Together AI Llama models with LiveKit Agents.
-- [xAI](https://docs.livekit.io/agents/integrations/llm/xai.md): How to use xAI LLM with LiveKit Agents.
-
-#### Speech-to-text (STT)
-
-- [Overview](https://docs.livekit.io/agents/integrations/stt.md): Guides for adding STT integrations to your agents.
-- [AssemblyAI](https://docs.livekit.io/agents/integrations/stt/assemblyai.md): How to use the AssemblyAI STT plugin for LiveKit Agents.
-- [Amazon Transcribe](https://docs.livekit.io/agents/integrations/stt/aws.md): How to use the Amazon Transcribe STT plugin for LiveKit Agents.
-- [Azure AI Speech](https://docs.livekit.io/agents/integrations/stt/azure.md): How to use the Azure Speech STT plugin for LiveKit Agents.
-- [Azure OpenAI](https://docs.livekit.io/agents/integrations/stt/azure-openai.md): How to use the Azure OpenAI STT plugin for LiveKit Agents.
-- [Baseten](https://docs.livekit.io/agents/integrations/stt/baseten.md): How to use the Baseten STT plugin for LiveKit Agents.
-- [Cartesia](https://docs.livekit.io/agents/integrations/stt/cartesia.md): How to use the Cartesia STT plugin for LiveKit Agents.
-- [Clova](https://docs.livekit.io/agents/integrations/stt/clova.md): How to use the Clova STT plugin for LiveKit Agents.
-- [Deepgram](https://docs.livekit.io/agents/integrations/stt/deepgram.md): How to use the Deepgram STT plugin for LiveKit Agents.
-- [fal](https://docs.livekit.io/agents/integrations/stt/fal.md): How to use the fal STT plugin for LiveKit Agents.
-- [Gladia](https://docs.livekit.io/agents/integrations/stt/gladia.md): How to use the Gladia STT plugin for LiveKit Agents.
-- [Google Cloud](https://docs.livekit.io/agents/integrations/stt/google.md): How to use the Google Cloud STT plugin for LiveKit Agents.
-- [Groq](https://docs.livekit.io/agents/integrations/stt/groq.md): How to use the Groq STT plugin for LiveKit Agents.
-- [Mistral AI](https://docs.livekit.io/agents/integrations/stt/mistralai.md): How to use the Mistral STT plugin for LiveKit Agents.
-- [OpenAI](https://docs.livekit.io/agents/integrations/stt/openai.md): How to use the OpenAI STT plugin for LiveKit Agents.
-- [Sarvam](https://docs.livekit.io/agents/integrations/stt/sarvam.md): How to use the Sarvam STT plugin for LiveKit Agents.
-- [Soniox](https://docs.livekit.io/agents/integrations/stt/soniox.md): How to use the Soniox STT plugin for LiveKit Agents.
-- [Speechmatics](https://docs.livekit.io/agents/integrations/stt/speechmatics.md): How to use the Speechmatics STT plugin for LiveKit Agents.
-- [Spitch](https://docs.livekit.io/agents/integrations/stt/spitch.md): How to use the Spitch STT plugin for LiveKit Agents.
-
-#### Text-to-speech (TTS)
-
-- [Overview](https://docs.livekit.io/agents/integrations/tts.md): Guides for adding TTS integrations to your agents.
-- [Amazon Polly](https://docs.livekit.io/agents/integrations/tts/aws.md): How to use the Amazon Polly TTS plugin for LiveKit Agents.
-- [Azure AI Speech](https://docs.livekit.io/agents/integrations/tts/azure.md): How to use the Azure Speech TTS plugin for LiveKit Agents.
-- [Azure OpenAI](https://docs.livekit.io/agents/integrations/tts/azure-openai.md): How to use the Azure OpenAI TTS plugin for LiveKit Agents.
-- [Baseten](https://docs.livekit.io/agents/integrations/tts/baseten.md): How to use the Baseten TTS plugin for LiveKit Agents.
-- [Cartesia](https://docs.livekit.io/agents/integrations/tts/cartesia.md): How to use the Cartesia TTS plugin for LiveKit Agents.
-- [Deepgram](https://docs.livekit.io/agents/integrations/tts/deepgram.md): How to use the Deepgram TTS plugin for LiveKit Agents.
-- [ElevenLabs](https://docs.livekit.io/agents/integrations/tts/elevenlabs.md): How to use the ElevenLabs TTS plugin for LiveKit Agents.
-- [Gemini](https://docs.livekit.io/agents/integrations/tts/gemini.md): How to use the Gemini TTS plugin for LiveKit Agents.
-- [Google Cloud](https://docs.livekit.io/agents/integrations/tts/google.md): How to use the Google Cloud TTS plugin for LiveKit Agents.
-- [Groq](https://docs.livekit.io/agents/integrations/tts/groq.md): How to use the Groq TTS plugin for LiveKit Agents.
-- [Hume](https://docs.livekit.io/agents/integrations/tts/hume.md): How to use the Hume TTS plugin for LiveKit Agents.
-- [Inworld](https://docs.livekit.io/agents/integrations/tts/inworld.md): How to use the Inworld TTS plugin for LiveKit Agents.
-- [LMNT](https://docs.livekit.io/agents/integrations/tts/lmnt.md): How to use the LMNT TTS plugin for LiveKit Agents.
-- [Neuphonic](https://docs.livekit.io/agents/integrations/tts/neuphonic.md): How to use the Neuphonic TTS plugin for LiveKit Agents.
-- [OpenAI](https://docs.livekit.io/agents/integrations/tts/openai.md): How to use the OpenAI TTS plugin for LiveKit Agents.
-- [PlayHT](https://docs.livekit.io/agents/integrations/tts/playai.md): How to use the PlayHT TTS plugin for LiveKit Agents.
-- [Resemble AI](https://docs.livekit.io/agents/integrations/tts/resemble.md): How to use the Resemble AI TTS plugin for LiveKit Agents.
-- [Rime](https://docs.livekit.io/agents/integrations/tts/rime.md): How to use the Rime TTS plugin for LiveKit Agents.
-- [Sarvam](https://docs.livekit.io/agents/integrations/tts/sarvam.md): How to use the Sarvam TTS plugin for LiveKit Agents.
-- [Smallest AI](https://docs.livekit.io/agents/integrations/tts/smallestai.md): How to use the Smallest AI Waves TTS plugin for LiveKit Agents.
-- [Speechify](https://docs.livekit.io/agents/integrations/tts/speechify.md): How to use the Speechify TTS plugin for LiveKit Agents.
-- [Spitch](https://docs.livekit.io/agents/integrations/tts/spitch.md): How to use the Spitch TTS plugin for LiveKit Agents.
-
-#### Virtual avatars
-
-- [Overview](https://docs.livekit.io/agents/integrations/avatar.md): Guides for adding virtual avatars to your agents.
-- [Anam](https://docs.livekit.io/agents/integrations/avatar/anam.md): How to use the Anam virtual avatar plugin for LiveKit Agents.
-- [Beyond Presence](https://docs.livekit.io/agents/integrations/avatar/bey.md): How to use the Beyond Presence virtual avatar plugin for LiveKit Agents.
-- [bitHuman](https://docs.livekit.io/agents/integrations/avatar/bithuman.md): How to use the bitHuman virtual avatar plugin for LiveKit Agents.
-- [Hedra](https://docs.livekit.io/agents/integrations/avatar/hedra.md): How to use the Hedra virtual avatar plugin for LiveKit Agents.
-- [Simli](https://docs.livekit.io/agents/integrations/avatar/simli.md): How to use the Simli virtual avatar plugin for LiveKit Agents.
-- [Tavus](https://docs.livekit.io/agents/integrations/avatar/tavus.md): How to use the Tavus virtual avatar plugin for LiveKit Agents.
 
 ### v0.x migration guides
 
@@ -396,7 +425,7 @@ The following document is a comprehensive list of all available documentation an
 
 - **[Transcriber](https://github.com/livekit-examples/python-agents-examples/tree/main/pipeline-stt/transcriber.py)**: Real-time speech transcription with high accuracy.
 
-- **[Keyword Detection](https://github.com/livekit-examples/python-agents-examples/tree/main/pipeline-stt/keyword_detection.py)**: Detect specific keywords in speech in real-time.
+- **[Keyword Detection](https://github.com/livekit-examples/python-agents-examples/blob/main/pipeline-stt/keyword-detection/keyword_detection.py)**: Detect specific keywords in speech in real-time.
 
 - **[Using Twilio Voice](https://docs.livekit.io/sip/accepting-calls-twilio-voice.md)**: Use TwiML to accept incoming calls and bridge Twilio conferencing to LiveKit via SIP.
 
@@ -484,7 +513,13 @@ The following document is a comprehensive list of all available documentation an
 
 - **[Call forwarding using SIP REFER](https://docs.livekit.io/sip/transfer-cold.md)**: How to forward calls to another number or SIP endpoint with SIP REFER.
 
+- **[Secure trunking for SIP calls](https://docs.livekit.io/sip/secure-trunking.md)**: How to enable secure trunking for LiveKit SIP.
+
+- **[Region pinning for SIP](https://docs.livekit.io/sip/cloud.md)**: Use region pinning to restrict calls to a specific region.
+
+- **[Agents telephony integration](https://docs.livekit.io/agents/start/telephony.md)**: Learn how to receive and make calls with a voice AI agent
+
 ---
 
-This document was rendered at 2025-09-28T07:54:51.242Z.
+This document was rendered at 2025-10-07T22:54:20.402Z.
 For the latest version of this document, see [https://docs.livekit.io/llms.txt](https://docs.livekit.io/llms.txt).

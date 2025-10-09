@@ -98,7 +98,7 @@ Follow these guides to learn more and get started with LiveKit Agents.
 
 - **[Deploying to production](https://docs.livekit.io/agents/ops/deployment.md)**: Guide to deploying your voice agent in a production environment.
 
-- **[Integration guides](https://docs.livekit.io/agents/integrations.md)**: Explore the full list of AI providers available for LiveKit Agents.
+- **[AI models](https://docs.livekit.io/agents/models.md)**: Explore the full list of AI models available for LiveKit Agents.
 
 ---
 

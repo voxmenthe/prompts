@@ -4,7 +4,7 @@
   "languages": [
     "en"
   ],
-  "generated_at": "2025-09-28T07:54:57.297846+00:00",
+  "generated_at": "2025-10-07T22:54:31.137642+00:00",
   "documents": [
     {
       "doc_url": "https://docs.claude.com/en/api/admin-api/apikeys/get-api-key",
@@ -135,6 +135,71 @@
       "doc_url": "https://docs.claude.com/en/api/administration-api",
       "markdown_url": "https://docs.claude.com/en/api/administration-api.md",
       "relative_path": "administration-api.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/agent-sdk/cost-tracking",
+      "markdown_url": "https://docs.claude.com/en/api/agent-sdk/cost-tracking.md",
+      "relative_path": "agent-sdk/cost-tracking.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/agent-sdk/custom-tools",
+      "markdown_url": "https://docs.claude.com/en/api/agent-sdk/custom-tools.md",
+      "relative_path": "agent-sdk/custom-tools.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/agent-sdk/mcp",
+      "markdown_url": "https://docs.claude.com/en/api/agent-sdk/mcp.md",
+      "relative_path": "agent-sdk/mcp.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/agent-sdk/modifying-system-prompts",
+      "markdown_url": "https://docs.claude.com/en/api/agent-sdk/modifying-system-prompts.md",
+      "relative_path": "agent-sdk/modifying-system-prompts.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/agent-sdk/overview",
+      "markdown_url": "https://docs.claude.com/en/api/agent-sdk/overview.md",
+      "relative_path": "agent-sdk/overview.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/agent-sdk/permissions",
+      "markdown_url": "https://docs.claude.com/en/api/agent-sdk/permissions.md",
+      "relative_path": "agent-sdk/permissions.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/agent-sdk/python",
+      "markdown_url": "https://docs.claude.com/en/api/agent-sdk/python.md",
+      "relative_path": "agent-sdk/python.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/agent-sdk/sessions",
+      "markdown_url": "https://docs.claude.com/en/api/agent-sdk/sessions.md",
+      "relative_path": "agent-sdk/sessions.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/agent-sdk/slash-commands",
+      "markdown_url": "https://docs.claude.com/en/api/agent-sdk/slash-commands.md",
+      "relative_path": "agent-sdk/slash-commands.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/agent-sdk/streaming-vs-single-mode",
+      "markdown_url": "https://docs.claude.com/en/api/agent-sdk/streaming-vs-single-mode.md",
+      "relative_path": "agent-sdk/streaming-vs-single-mode.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/agent-sdk/subagents",
+      "markdown_url": "https://docs.claude.com/en/api/agent-sdk/subagents.md",
+      "relative_path": "agent-sdk/subagents.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/agent-sdk/todo-tracking",
+      "markdown_url": "https://docs.claude.com/en/api/agent-sdk/todo-tracking.md",
+      "relative_path": "agent-sdk/todo-tracking.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/agent-sdk/typescript",
+      "markdown_url": "https://docs.claude.com/en/api/agent-sdk/typescript.md",
+      "relative_path": "agent-sdk/typescript.md"
     },
     {
       "doc_url": "https://docs.claude.com/en/api/beta-headers",

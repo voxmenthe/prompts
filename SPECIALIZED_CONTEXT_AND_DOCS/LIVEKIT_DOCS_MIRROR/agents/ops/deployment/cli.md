@@ -10,12 +10,16 @@ LiveKit Docs › Deployment & operations › Deploying to LiveKit Cloud › CLI 
 
 The LiveKit CLI is the primary interface for managing agents [deployed to LiveKit Cloud](https://docs.livekit.io/agents/ops/deployment.md). All agent commands are prefixed with `lk agent`.
 
-For instructions to install the CLI, see the LiveKit CLI [Getting started](https://docs.livekit.io/home/cli.md) guide.
+For instructions on installing the CLI, see the LiveKit CLI [Getting started](https://docs.livekit.io/home/cli.md) guide.
 
 ```bash
 lk agent [command] [command options] [working-dir]
 
 ```
+
+> 🔥 **Caution**
+> 
+> You must have the latest version of the CLI to deploy and manage agents. See [Update the CLI](https://docs.livekit.io/home/cli.md#updates) for instructions.
 
 ### Working directory
 

@@ -20,7 +20,7 @@ Follow these steps to deploy your first agent to LiveKit Cloud.
 
 This guide assumes that you already have:
 
-- [LiveKit CLI](https://docs.livekit.io/home/cli.md) version 2.6 or later
+- The latest version of the [LiveKit CLI](https://docs.livekit.io/home/cli.md)
 - A [LiveKit Cloud](https://cloud.livekit.io) project
 - A working agent. Create one using the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md) or one of the following starter templates:
 

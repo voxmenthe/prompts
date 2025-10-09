@@ -64,19 +64,19 @@ LiveKit Agents is an open source framework for building realtime AI apps in Pyth
 
 LiveKit provides SIP support for [telephony integration](https://docs.livekit.io/agents/start/telephony.md) and full-featured [frontend SDKs](https://docs.livekit.io/agents/start/frontend.md) in multiple languages. It uses [WebRTC](https://docs.livekit.io/home/get-started/intro-to-livekit.md#what-is-webrtc) transport for end-user devices, enabling high-quality, low-latency realtime experiences. To learn more, see [LiveKit Agents](https://docs.livekit.io/agents.md).
 
-## Google plugin documentation
+## Additional resources
 
 The following links provide more information on each available Google component in LiveKit Agents.
 
-- **[Gemini LLM](https://docs.livekit.io/agents/integrations/llm/gemini.md)**: LiveKit Agents docs for Google Gemini models.
+- **[Gemini LLM](https://docs.livekit.io/agents/models/llm/plugins/gemini.md)**: LiveKit Agents plugin for Google Gemini models.
 
-- **[Gemini TTS](https://docs.livekit.io/agents/integrations/tts/gemini.md)**: LiveKit Agents docs for Gemini TTS.
+- **[Gemini TTS](https://docs.livekit.io/agents/models/tts/plugins/gemini.md)**: LiveKit Agents plugin for Gemini TTS.
 
-- **[Gemini Live API](https://docs.livekit.io/agents/integrations/realtime/gemini.md)**: LiveKit Agents docs for the Gemini Live API.
+- **[Gemini Live API](https://docs.livekit.io/agents/models/realtime/plugins/gemini.md)**: LiveKit Agents plugin for the Gemini Live API.
 
-- **[Google Cloud STT](https://docs.livekit.io/agents/integrations/stt/google.md)**: LiveKit Agents docs for Google Cloud STT.
+- **[Google Cloud STT](https://docs.livekit.io/agents/models/stt/plugins/google.md)**: LiveKit Agents plugin for Google Cloud STT.
 
-- **[Google Cloud TTS](https://docs.livekit.io/agents/integrations/tts/google.md)**: LiveKit Agents docs for Google Cloud TTS.
+- **[Google Cloud TTS](https://docs.livekit.io/agents/models/tts/plugins/google.md)**: LiveKit Agents plugin for Google Cloud TTS.
 
 ---
 

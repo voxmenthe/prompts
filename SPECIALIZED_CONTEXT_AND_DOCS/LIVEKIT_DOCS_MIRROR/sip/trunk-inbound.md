@@ -244,9 +244,13 @@ if (!response.isSuccessful) {
 ```
 7. Select **Create**.
 
+## Accepting calls to any phone number
+
+You can configure an inbound trunk to accept incoming calls to any phone number by setting the `numbers` parameter to an empty string or wildcard character, for example, `*`. This is useful if you want to use the same inbound trunk for incoming calls to all your phone numbers.
+
 ## Accepting calls from specific phone numbers
 
-The configuration for inbound trunk accepts inbound calls to number `+1-510-555-0100` from caller numbers `+1-310-555-1100` and `+1-714-555-0100`.
+You can configure an inbound trunk to accept phone call only from specific numbers. The following example configuration accepts inbound calls to the number `+1-510-555-0100` from caller numbers `+1-310-555-1100` and `+1-714-555-0100`.
 
 > ❗ **Important**
 > 

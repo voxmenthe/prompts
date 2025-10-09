@@ -18,7 +18,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from livekit.agents import JobContext, WorkerOptions, cli
 from livekit.agents.voice import Agent, AgentSession
-from livekit.plugins import openai, deepgram, silero
+from livekit.plugins import silero
 
 load_dotenv()
 

@@ -98,11 +98,12 @@ The following regions are available for region pinning for SIP:
 | `india` | India |
 | `sa` | Saudi Arabia |
 | `us` | US Central, US East B, US West B |
-| `australia` | Australia |
+| `aus` | Australia |
+| `uk` | United Kingdom |
 
 > ℹ️ **Note**
 > 
-> This list of regions is subject to change. Last updated 2025-09-22.
+> This list of regions is subject to change. Last updated 2025-09-29.
 
 ---
 

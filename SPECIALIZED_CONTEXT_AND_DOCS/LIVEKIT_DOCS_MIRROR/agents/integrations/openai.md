@@ -15,7 +15,7 @@ LiveKit Docs › Partner spotlight › OpenAI › Overview
 - **STT models**: From industry-standard `whisper-1` to leading-edge `gpt-4o-transcribe`.
 - **TTS models**: Use OpenAI's latest `gpt-4o-mini-tts` to generate lifelike speech in a voice pipeline.
 
-LiveKit Agents supports OpenAI models through the [OpenAI developer platform](https://platform.openai.com/) as well as [Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/ai-services/openai/overview). See the [Azure AI integration guide](https://docs.livekit.io/agents/integrations/azure.md) for more information on Azure OpenAI.
+OpenAI LLM models are available in LiveKit Inference, via Azure, with billing and integration handled automatically. The OpenAI plugin for LiveKit Agents provides support for the full [OpenAI developer platform](https://platform.openai.com/) as well as [Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/ai-services/openai/overview).
 
 ## Getting started
 
@@ -62,17 +62,49 @@ rtapi <-."Tool calls".-> agents
 
 - **[Recipes](https://docs.livekit.io/recipes.md)**: Get inspired by LiveKit's collection of recipes and example apps.
 
+## LiveKit Inference
+
+Use the following code to use an OpenAI LLM in your `AgentSession`:
+
+**Python**:
+
+```python
+from livekit.agents import AgentSession
+
+session = AgentSession(
+    llm="openai/gpt-4.1-mini",
+)
+
+```
+
+---
+
+**Node.js**:
+
+```typescript
+import { AgentSession } from '@livekit/agents';
+
+session = new AgentSession({
+    llm: "openai/gpt-4.1-mini",
+});
+
+```
+
+For more information, see the following guide:
+
+- **[OpenAI in LiveKit Inference](https://docs.livekit.io/agents/models/llm/inference/openai.md)**: Using OpenAI models with LiveKit Inference.
+
 ## OpenAI plugin documentation
 
 The following links provide more information on each available OpenAI component in LiveKit Agents.
 
-- **[Realtime API](https://docs.livekit.io/agents/integrations/realtime/openai.md)**: LiveKit Agents docs for the OpenAI Realtime API.
+- **[Realtime API](https://docs.livekit.io/agents/models/realtime/plugins/openai.md)**: LiveKit Agents plugin for the OpenAI Realtime API.
 
-- **[OpenAI Models](https://docs.livekit.io/agents/integrations/llm/openai.md)**: LiveKit Agents docs for `gpt-4o`, `o1-mini`, and other OpenAI LLMs.
+- **[OpenAI Models](https://docs.livekit.io/agents/models/llm/plugins/openai.md)**: LiveKit Agents plugin for `gpt-4o`, `o1-mini`, and other OpenAI LLMs.
 
-- **[OpenAI STT](https://docs.livekit.io/agents/integrations/stt/openai.md)**: LiveKit Agents docs for `whisper-1`, `gpt-4o-transcribe`, and other OpenAI STT models.
+- **[OpenAI STT](https://docs.livekit.io/agents/models/stt/plugins/openai.md)**: LiveKit Agents plugin for `whisper-1`, `gpt-4o-transcribe`, and other OpenAI STT models.
 
-- **[OpenAI TTS](https://docs.livekit.io/agents/integrations/tts/openai.md)**: LiveKit Agents docs for `tts-1`, `gpt-4o-mini-tts`, and other OpenAI TTS models.
+- **[OpenAI TTS](https://docs.livekit.io/agents/models/tts/plugins/openai.md)**: LiveKit Agents plugin for `tts-1`, `gpt-4o-mini-tts`, and other OpenAI TTS models.
 
 ---
 

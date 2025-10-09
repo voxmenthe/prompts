@@ -545,7 +545,7 @@ The following recipes are particular helpful to learn more about telephony integ
 
 - **[Survey Caller](https://github.com/livekit-examples/python-agents-examples/tree/main/telephony/survey_caller/)**: Automated survey calling system.
 
-## Further reading
+## Additional resources
 
 The following guides provide more information on building voice agents for telephony.
 

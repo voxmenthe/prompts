@@ -92,13 +92,13 @@ session = AgentSession(
 
 ## AWS plugin documentation
 
-- **[Amazon Bedrock LLM](https://docs.livekit.io/agents/integrations/llm/aws.md)**: LiveKit Agents docs for Amazon Bedrock LLM.
+- **[Amazon Bedrock LLM](https://docs.livekit.io/agents/models/llm/plugins/aws.md)**: LiveKit Agents docs for Amazon Bedrock LLM.
 
-- **[Amazon Polly TTS](https://docs.livekit.io/agents/integrations/tts/aws.md)**: LiveKit Agents docs for Amazon Polly TTS.
+- **[Amazon Polly TTS](https://docs.livekit.io/agents/models/tts/plugins/aws.md)**: LiveKit Agents docs for Amazon Polly TTS.
 
-- **[Amazon Transcribe STT](https://docs.livekit.io/agents/integrations/stt/aws.md)**: LiveKit Agents docs for Amazon Transcribe STT.
+- **[Amazon Transcribe STT](https://docs.livekit.io/agents/models/stt/plugins/aws.md)**: LiveKit Agents docs for Amazon Transcribe STT.
 
-- **[Amazon Nova Sonic](https://docs.livekit.io/agents/integrations/realtime/nova-sonic.md)**: LiveKit Agents docs for the Amazon Nova Sonic speech-to-speech model.
+- **[Amazon Nova Sonic](https://docs.livekit.io/agents/models/realtime/plugins/nova-sonic.md)**: LiveKit Agents docs for the Amazon Nova Sonic speech-to-speech model.
 
 ---
 

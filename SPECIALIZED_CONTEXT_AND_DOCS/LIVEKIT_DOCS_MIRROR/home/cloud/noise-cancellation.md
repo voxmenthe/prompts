@@ -12,7 +12,7 @@ LiveKit Cloud includes advanced models licensed from [Krisp](https://krisp.ai/) 
 
 The feature includes a background voice cancellation (BVC) model, which removes extra background speakers in addition to background noise, providing the best possible experience for voice AI applications. You can also use the standard NC model if desired.
 
-The following comparison shows the effect of the models on the audio as perceived by a user, and also as perceived by a voice AI agent running an STT model ([Deepgram Nova 3](https://docs.livekit.io/agents/integrations/stt/deepgram.md) in these samples). The segments marked with a strikethrough indicate unwanted content that would confuse the agent. These samples illustrate that BVC is necessary to achieve clean STT in noisy multi-speaker environments.
+The following comparison shows the effect of the models on the audio as perceived by a user, and also as perceived by a voice AI agent running an STT model ([Deepgram Nova 3](https://docs.livekit.io/agents/models/stt/deepgram.md) in these samples). The segments marked with a strikethrough indicate unwanted content that would confuse the agent. These samples illustrate that BVC is necessary to achieve clean STT in noisy multi-speaker environments.
 
 Try the free [noise canceller tool](https://github.com/livekit-examples/noise-canceller) with your LiveKit Cloud account to test your own audio samples.
 
@@ -41,11 +41,9 @@ Use the following instructions to integrate the filter into your app, either ins
 > 
 > Leaving default settings on is strongly recommended. Learn more about these defaults in the [Noise & echo cancellation](https://docs.livekit.io/home/client/tracks/noise-cancellation.md) docs.
 
-### Agent code ("inbound") implementation
+### LiveKit Agents
 
 The following examples show how to set up noise cancellation inside your agent code. This applies noise cancellation to inbound audio and is the recommended approach for most voice AI use cases.
-
-**Python**:
 
 > 💡 **Tip**
 > 
@@ -55,16 +53,29 @@ The following examples show how to set up noise cancellation inside your agent c
 
 #### Installation
 
-Install the noise cancellation package from PyPI:
+Install the noise cancellation plugin:
+
+**Python**:
 
 ```bash
 pip install "livekit-plugins-noise-cancellation~=0.2"
 
 ```
 
-#### Usage in LiveKit Agents
+---
 
-Include the filter in `RoomInputOptions` when starting your `AgentSession`:
+**Node.js**:
+
+```bash
+pnpm add @livekit/noise-cancellation-node
+
+```
+
+#### Usage
+
+Include the filter in the room input options when starting your agent session:
+
+**Python**:
 
 ```python
 from livekit.plugins import noise_cancellation
@@ -80,25 +91,60 @@ await session.start(
 
 ```
 
-> 💡 **Agents v0.12 compatibility**
-> 
-> In LiveKit Agents v0.12, pass the `noise_cancellation` parameter to the `VoicePipelineAgent` or `MultimodalAgent` constructor.
+---
+
+**Node.js**:
+
+```typescript
+import { BackgroundVoiceCancellation } from '@livekit/noise-cancellation-node';
+
+// ...
+await session.start({
+  // ...,
+  inputOptions: {
+    noiseCancellation: BackgroundVoiceCancellation(),
+  },
+});
+// ...
+
+```
 
 #### Usage with AudioStream
 
 Apply the filter to any individual inbound AudioStream:
 
+**Python**:
+
 ```python
-stream = rtc.AudioStream.from_track(
+from livekit.rtc import AudioStream
+from livekit.plugins import noise_cancellation
+
+stream = AudioStream.from_track(
     track=track,
-    noise_cancellation=noise_cancellation.NC(),
+    noise_cancellation=noise_cancellation.BVC(),
 )
+
+```
+
+---
+
+**Node.js**:
+
+```typescript
+import { BackgroundVoiceCancellation } from '@livekit/noise-cancellation-node';
+import { AudioStream } from '@livekit/rtc-node';
+
+const stream = new AudioStream(track, {
+  noiseCancellation: BackgroundVoiceCancellation(),
+});
 
 ```
 
 #### Available models
 
 There are three noise cancellation models available:
+
+**Python**:
 
 ```python
 # Standard enhanced noise cancellation
@@ -117,53 +163,6 @@ noise_cancellation.BVCTelephony()
 
 **Node.js**:
 
-> 💡 **Tip**
-> 
-> When using noise or background voice cancellation in the agent code, do not enable Krisp noise cancellation in the frontend. Noise cancellation models are trained on raw audio and might produce unexpected results if the input has already been processed by Krisp in the frontend.
-> 
-> Standard noise cancellation and the separate echo cancellation feature can be left enabled.
-
-#### Installation
-
-Install the noise cancellation package from NPM:
-
-```bash
-npm install @livekit/noise-cancellation-node
-
-```
-
-#### Usage in LiveKit Agents
-
-Pass the model to the `Agent` constructor:
-
-```typescript
-import { BackgroundVoiceCancellation } from '@livekit/noise-cancellation-node';
-
-const assistant = new voice.Agent({
-  noiseCancellation: BackgroundVoiceCancellation(),
-  // ... model, etc.
-});
-
-```
-
-#### Usage with AudioStream
-
-Apply the filter to any individual inbound AudioStream:
-
-```typescript
-import { BackgroundVoiceCancellation } from '@livekit/noise-cancellation-node';
-
-// Create AudioStream with noise cancellation
-const stream = new AudioStream(track, {
-  noiseCancellation: BackgroundVoiceCancellation()
-});
-
-```
-
-#### Available models
-
-There are three noise cancellation models available:
-
 ```typescript
 import {
   // Standard enhanced noise cancellation
@@ -179,13 +178,13 @@ import {
 
 ```
 
----
+### Telephony
 
-**SIP**:
+Noise cancellation can be applied directly at your SIP trunk for inbound or outbound calls. This uses the standard noise cancellation (NC) model. Other models are not available for SIP.
 
-#### Installation (inbound)
+#### Inbound
 
-Include `krisp_enabled: true` in the trunk configuration.
+Include `krisp_enabled: true` in the inbound trunk configuration.
 
 ```json
 {
@@ -200,11 +199,26 @@ Include `krisp_enabled: true` in the trunk configuration.
 
 See the full [inbound trunk docs](https://docs.livekit.io/sip/trunk-inbound.md) for more information.
 
-#### Available models
+#### Outbound
 
-The Telephony noise filter supports only the standard noise cancellation (NC) model.
+Include `krisp_enabled: true` in the [`CreateSipParticipant`](https://docs.livekit.io/sip/api.md#createsipparticipant) request.
 
-### Frontend ("outbound") implementation
+```python
+request = CreateSIPParticipantRequest(
+  sip_trunk_id = "<trunk_id>",
+  sip_call_to = "<phone_number>",
+  room_name = "my-sip-room",
+  participant_identity = "sip-test",
+  participant_name = "Test Caller",
+  krisp_enabled = True,
+  wait_until_answered = True
+)
+
+```
+
+See the full [outbound call docs](https://docs.livekit.io/sip/outbound-calls.md) for more information.
+
+### Frontend
 
 The following examples show how to set up noise cancellation in the frontend. This applies noise cancellation to outbound audio.
 
@@ -516,33 +530,6 @@ The Flutter noise filter supports only the standard noise cancellation (NC) mode
 #### Compatibility
 
 The Flutter noise filter is currently supported only on iOS, macOS, and Android platforms.
-
----
-
-**SIP**:
-
-#### Installation (outbound)
-
-Include `krisp_enabled: true` in the [`CreateSipParticipant`](https://docs.livekit.io/sip/api.md#createsipparticipant) request.
-
-```python
-request = CreateSIPParticipantRequest(
-  sip_trunk_id = "<trunk_id>",
-  sip_call_to = "<phone_number>",
-  room_name = "my-sip-room",
-  participant_identity = "sip-test",
-  participant_name = "Test Caller",
-  krisp_enabled = True,
-  wait_until_answered = True
-)
-
-```
-
-See the full [outbound call docs](https://docs.livekit.io/sip/outbound-calls.md) for more information.
-
-#### Available models
-
-The Telephony noise filter supports only the standard noise cancellation (NC) model.
 
 ---
 

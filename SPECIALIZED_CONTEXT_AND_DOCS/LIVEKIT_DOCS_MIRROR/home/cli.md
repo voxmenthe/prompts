@@ -2,11 +2,17 @@ LiveKit Docs › LiveKit CLI › Getting started
 
 ---
 
-# LiveKit CLI Setup
+# Getting started with the LiveKit CLI
 
 > Install the LiveKit CLI and test your setup using an example frontend application.
 
-## Install LiveKit CLI
+## Set up the CLI
+
+`lk` is LiveKit's suite of CLI utilities. It lets you conveniently access server APIs, create tokens, and generate test traffic all from your command line.
+
+### Install the CLI
+
+Install the CLI using the relevant command below.
 
 **macOS**:
 
@@ -55,7 +61,59 @@ make install
 
 ```
 
-`lk` is LiveKit's suite of CLI utilities. It lets you conveniently access server APIs, create tokens, and generate test traffic all from your command line. For more details, refer to the docs in the `livekit-cli` [GitHub repo](https://github.com/livekit/livekit-cli#usage).
+For more details, view the `livekit-cli` [GitHub repo](https://github.com/livekit/livekit-cli#usage).
+
+### Update the CLI
+
+Updating the CLI regularly is recommended to ensure you have the latest features and bug fixes.
+
+**macOS**:
+
+Update the LiveKit CLI with [Homebrew](https://brew.sh/):
+
+```text
+brew update && brew upgrade livekit-cli
+
+```
+
+---
+
+**Linux**:
+
+```text
+curl -sSL https://get.livekit.io/cli | bash
+
+```
+
+> 💡 **Tip**
+> 
+> You can also download the latest precompiled binaries [here](https://github.com/livekit/livekit-cli/releases/latest).
+
+---
+
+**Windows**:
+
+```text
+winget upgrade LiveKit.LiveKitCLI
+
+```
+
+> 💡 **Tip**
+> 
+> You can also download the latest precompiled binaries [here](https://github.com/livekit/livekit-cli/releases/latest).
+
+---
+
+**From Source**:
+
+This repo uses [Git LFS](https://git-lfs.github.com/) for embedded video resources. Please ensure git-lfs is installed on your machine before proceeding.
+
+Before updating, make sure you've recently pulled the latest changes from `main`.
+
+```text
+make install
+
+```
 
 ## Add a project
 

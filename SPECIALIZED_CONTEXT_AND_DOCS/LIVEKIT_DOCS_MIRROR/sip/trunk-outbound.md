@@ -6,6 +6,10 @@ LiveKit Docs › Making calls › Outbound trunk
 
 > How to create and configure a outbound trunk to make outgoing calls.
 
+## Overview
+
+After you purchase a phone number and [configure your SIP trunking provider](https://docs.livekit.io/sip/quickstarts/configuring-sip-trunk.md), you need to create an outbound trunk to make outgoing calls. The outbound trunk includes the authentication credentials and the provider's endpoint to use to verify authorization to make calls using the SIP trunking provider's phone number.
+
 To provision an outbound trunk with the SIP Service, use the [`CreateSIPOutboundTrunk`](https://docs.livekit.io/sip/api.md#createsipoutboundtrunk) API. It returns an `SIPOutboundTrunkInfo` object that describes the created SIP trunk. You can query these parameters any time using the `ListSIPOutboundTrunk` API.
 
 ## Restricting calls to a region
@@ -290,9 +294,9 @@ if (!response.isSuccessful) {
 ```
 7. Select **Create**.
 
-### Configuring an outbound trunk for any phone number
+### Calls from any phone number
 
-The `numbers` parameter for outbound trunks is a required field. However, you can set the parameter to any string (for example, `*`) to use the outbound trunk for calls from any number. This is useful if you want to use the same outbound trunk for all calls or if you want to use a different phone number for each call.
+You can configure an outbound trunk to allow calls from any phone number by setting the `numbers` parameter to an empty string or wildcard character, for example, `*`. This is useful if you want to use the same outbound trunk for all calls or if you want to use a different phone number for each call.
 
 Instead of setting the number on the trunk, you can set the phone number to call from using the `sip_number` parameter for the [CreateSIPParticipant](https://docs.livekit.io/sip/api.md#createsipparticipant) API.
 

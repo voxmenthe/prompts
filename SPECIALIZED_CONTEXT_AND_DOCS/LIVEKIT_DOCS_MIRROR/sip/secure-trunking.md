@@ -22,13 +22,15 @@ To secure calls you must complete all of the following steps:
 2. Update your SIP URIs to use TLS for transport.
 3. Enable media encryption for your LiveKit SIP trunks.
 
-## Step 1: Enable secure trunking with your SIP trunking provider
-
-Depending on your SIP trunking provider, you might need to explicitly enable secure trunking. The following instructions provide steps for Twilio and Telnyx. If you're using a different provider, check with them to see if you need to enable secure trunking.
-
-### Enable secure trunking with Twilio and Telnyx
+## Prerequisites
 
 The following instructions assume you have already configured trunking with your SIP provider. If you haven't, see the [SIP trunk setup](https://docs.livekit.io/sip/quickstarts/configuring-sip-trunk.md) quickstart or select your provider-specific instructions from the navigation menu.
+
+## Step 1: Enable secure trunking with your SIP trunking provider
+
+Depending on your SIP trunking provider, you might need to explicitly enable secure trunking.
+
+### Enable secure trunking with Twilio and Telnyx
 
 **Twilio**:
 
@@ -50,30 +52,17 @@ The following instructions assume you have already configured trunking with your
 6. For **Encrypted media**, select **SRTP**.
 7. Save your changes.
 
+### Enable secure trunking for other providers
+
+If you're using a different provider, check with them to see if you need to enable secure trunking.
+
 ## Step 2: Update your SIP URIs to use TLS
 
-The following instructions apply to inbound calls for Twilio or Telnyx. For other providers, set the origination URI to your SIP URI with `;transport=tls` appended to it. For example, if your SIP URI is:
+Enable TLS to encrypt signaling traffic.
 
-`sip:bwwn08a2m4o.sip.livekit.cloud`
+### Update the origination URI in Telnyx or Twilio
 
-Set the origination URI to:
-
-`sip:bwwn08a2m4o.sip.livekit.cloud;transport=tls`.
-
-You can find your SIP URI on your LiveKit Cloud [project settings](https://cloud.livekit.io/projects/p_/settings) page.
-
-If your provider doesn't support a SIP URI with URI parameters, you must enable TLS another way:
-
-- Enable TLS in the trunk settings (required).
-- If supported, set the port to `5061`, the default port for SIP over TLS.
-
-> ℹ️ **TLS must be enabled**
-> 
-> Changing only the port number without enabling TLS is not enough. Some providers might treat port `5061` as a non-standard port for insecure UDP or TCP traffic.
-
-Check your provider's documentation for exact steps.
-
-For outbound calls, you must set the transport protocol to TLS in the outbound trunk settings in the following section.
+The following instructions apply to inbound calls for Twilio or Telnyx.
 
 **Twilio**:
 
@@ -95,6 +84,29 @@ For outbound calls, you must set the transport protocol to TLS in the outbound t
 6. Add your SIP domain and port `5061` for TLS and save.
 7. In the **Inbound calls routing** section, select the option you just added with port `5061`.
 8. Save your changes.
+
+### Update the origination URI for other providers
+
+For other providers, set the origination URI to your SIP URI with `;transport=tls` appended to it. For example, if your SIP URI is:
+
+`sip:bwwn08a2m4o.sip.livekit.cloud`
+
+Set the origination URI to:
+
+`sip:bwwn08a2m4o.sip.livekit.cloud;transport=tls`.
+
+You can find your SIP URI on your LiveKit Cloud [project settings](https://cloud.livekit.io/projects/p_/settings) page.
+
+If your provider doesn't support a SIP URI with URI parameters, you must enable TLS another way:
+
+- Enable TLS in the trunk settings (required).
+- If supported, set the port to `5061`, the default port for SIP over TLS.
+
+> ℹ️ **TLS must be enabled**
+> 
+> Changing only the port number without enabling TLS is not enough. Some providers might treat port `5061` as a non-standard port for insecure UDP or TCP traffic.
+
+Check your provider's documentation for exact steps.
 
 ## Step 3: Enable media encryption for your SIP trunks
 
@@ -168,7 +180,10 @@ Edit an existing inbound or outbound trunk to enable media encryption using the 
 
 ### Enable media encryption per call
 
-You can enable media encryption on a per-call basis by setting the `media_encryption` parameter in the `CreateSIPParticipant` request.
+You can enable media encryption on a per-call basis by setting the `media_encryption` parameter in the `CreateSIPParticipant` request. Valid values are as follows:
+
+- `SIP_MEDIA_ENCRYPT_ALLOW`: Use media encryption if available.
+- `SIP_MEDIA_ENCRYPT_REQUIRE`: Require media encryption.
 
 > ℹ️ **SRTP must be enabled**
 > 

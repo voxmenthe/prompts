@@ -8,7 +8,7 @@ LiveKit Docs › Partner spotlight › Cerebras
 
 ## Cerebras ecosystem support
 
-[Cerebras](https://cerebras.ai/) provides high-throughput, low-latency AI inference for open models like Llama and DeepSeek. Cerebras is an OpenAI-compatible LLM provider and LiveKit Agents provides full support for Cerebras inference via the OpenAI plugin.
+[Cerebras](https://cerebras.ai/) provides high-throughput, low-latency AI inference for open models like Qwen and GPT-OSS. Cerebras is an OpenAI-compatible LLM provider and LiveKit Agents provides full support for Cerebras inference via the OpenAI plugin. Additionally, some Cerebras models are also available in LiveKit Inference, with billing and integration handled automatically.
 
 ## Getting started
 
@@ -50,7 +50,7 @@ session = AgentSession(
 
 ```
 
-For a full list of supported models, including DeepSeek, see the [Cerebras docs](https://inference-docs.cerebras.ai/introduction).
+For a full list of supported models, see the [Cerebras docs](https://inference-docs.cerebras.ai/introduction).
 
 ## LiveKit Agents overview
 
@@ -58,11 +58,11 @@ LiveKit Agents is an open source framework for building realtime AI apps in Pyth
 
 LiveKit provides SIP support for [telephony integration](https://docs.livekit.io/agents/start/telephony.md) and full-featured [frontend SDKs](https://docs.livekit.io/agents/start/frontend.md) in multiple languages. It uses [WebRTC](https://docs.livekit.io/home/get-started/intro-to-livekit.md#what-is-webrtc) transport for end-user devices, enabling high-quality, low-latency realtime experiences. To learn more, see [LiveKit Agents](https://docs.livekit.io/agents.md).
 
-## Further reading
+## Additional resources
 
 More information about integrating Llama is available in the following article:
 
-- **[Cerebras integration guide](https://docs.livekit.io/agents/integrations/llm/cerebras.md)**: LiveKit docs on Cerebras integration.
+- **[Cerebras LLM plugin](https://docs.livekit.io/agents/models/llm/plugins/cerebras.md)**: Cerebras LLM plugin for LiveKit Agents.
 
 ---
 

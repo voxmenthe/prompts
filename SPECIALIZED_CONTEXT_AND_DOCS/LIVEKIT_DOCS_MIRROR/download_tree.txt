@@ -101,6 +101,105 @@ LIVEKIT_DOCS_MIRROR
 │   │   ├── realtime.md
 │   │   ├── stt.md
 │   │   └── tts.md
+│   ├── models
+│   │   ├── avatar
+│   │   │   └── plugins
+│   │   │       ├── anam.md
+│   │   │       ├── bey.md
+│   │   │       ├── bithuman.md
+│   │   │       ├── hedra.md
+│   │   │       ├── simli.md
+│   │   │       └── tavus.md
+│   │   ├── llm
+│   │   │   ├── inference
+│   │   │   │   ├── deepseek.md
+│   │   │   │   ├── gemini.md
+│   │   │   │   ├── kimi.md
+│   │   │   │   ├── openai.md
+│   │   │   │   └── qwen.md
+│   │   │   └── plugins
+│   │   │       ├── anthropic.md
+│   │   │       ├── aws.md
+│   │   │       ├── azure-openai.md
+│   │   │       ├── baseten.md
+│   │   │       ├── cerebras.md
+│   │   │       ├── deepseek.md
+│   │   │       ├── fireworks.md
+│   │   │       ├── gemini.md
+│   │   │       ├── groq.md
+│   │   │       ├── langchain.md
+│   │   │       ├── letta.md
+│   │   │       ├── mistralai.md
+│   │   │       ├── ollama.md
+│   │   │       ├── openai.md
+│   │   │       ├── perplexity.md
+│   │   │       ├── telnyx.md
+│   │   │       ├── together.md
+│   │   │       └── xai.md
+│   │   ├── realtime
+│   │   │   └── plugins
+│   │   │       ├── azure-openai.md
+│   │   │       ├── gemini.md
+│   │   │       ├── nova-sonic.md
+│   │   │       └── openai.md
+│   │   ├── stt
+│   │   │   ├── inference
+│   │   │   │   ├── assemblyai.md
+│   │   │   │   ├── cartesia.md
+│   │   │   │   └── deepgram.md
+│   │   │   └── plugins
+│   │   │       ├── assemblyai.md
+│   │   │       ├── aws.md
+│   │   │       ├── azure-openai.md
+│   │   │       ├── azure.md
+│   │   │       ├── baseten.md
+│   │   │       ├── cartesia.md
+│   │   │       ├── clova.md
+│   │   │       ├── deepgram.md
+│   │   │       ├── fal.md
+│   │   │       ├── gladia.md
+│   │   │       ├── google.md
+│   │   │       ├── groq.md
+│   │   │       ├── mistralai.md
+│   │   │       ├── openai.md
+│   │   │       ├── sarvam.md
+│   │   │       ├── soniox.md
+│   │   │       ├── speechmatics.md
+│   │   │       └── spitch.md
+│   │   ├── tts
+│   │   │   ├── inference
+│   │   │   │   ├── cartesia.md
+│   │   │   │   ├── elevenlabs.md
+│   │   │   │   ├── inworld.md
+│   │   │   │   └── rime.md
+│   │   │   └── plugins
+│   │   │       ├── aws.md
+│   │   │       ├── azure-openai.md
+│   │   │       ├── azure.md
+│   │   │       ├── baseten.md
+│   │   │       ├── cartesia.md
+│   │   │       ├── deepgram.md
+│   │   │       ├── elevenlabs.md
+│   │   │       ├── gemini.md
+│   │   │       ├── google.md
+│   │   │       ├── groq.md
+│   │   │       ├── hume.md
+│   │   │       ├── inworld.md
+│   │   │       ├── lmnt.md
+│   │   │       ├── neuphonic.md
+│   │   │       ├── openai.md
+│   │   │       ├── playai.md
+│   │   │       ├── resemble.md
+│   │   │       ├── rime.md
+│   │   │       ├── sarvam.md
+│   │   │       ├── smallestai.md
+│   │   │       ├── speechify.md
+│   │   │       └── spitch.md
+│   │   ├── avatar.md
+│   │   ├── llm.md
+│   │   ├── realtime.md
+│   │   ├── stt.md
+│   │   └── tts.md
 │   ├── ops
 │   │   ├── deployment
 │   │   │   ├── builds.md
@@ -127,6 +226,7 @@ LIVEKIT_DOCS_MIRROR
 │   │   └── options.md
 │   ├── build.md
 │   ├── integrations.md
+│   ├── models.md
 │   └── worker.md
 ├── home
 │   ├── cli
