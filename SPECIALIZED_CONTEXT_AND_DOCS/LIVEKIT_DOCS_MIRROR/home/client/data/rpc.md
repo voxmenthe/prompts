@@ -116,7 +116,11 @@ room.LocalParticipant.RegisterRpcMethod("greet", greetHandler)
 
 ## Method invocation
 
-Use `localParticipant.performRpc` to invoke the registered RPC method on a remote participant by providing the destination participant's identity, the method name, and the payload. This is an asynchronous operation that returns a string, and may raise an error.
+Use `localParticipant.performRpc` to invoke the registered RPC method on a remote participant by providing the destination participant's identity, the method name, and the payload. This is an asynchronous operation that returns a string, and might raise an error.
+
+> ℹ️ **Hidden participants**
+> 
+> Hidden participants cannot invoke RPC methods. A participant is hidden if their token [grant](https://docs.livekit.io/home/get-started/authentication.md#video-grant) has `hidden` set to `true`. Any RPC attempt by a hidden participant fails with an error.
 
 **JavaScript**:
 

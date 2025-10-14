@@ -281,6 +281,13 @@ The SIP service includes the following types.
 | Field | Type | Description |
 | trunk | [SIPOutboundTrunkInfo](#sipoutboundtrunkinfo) | Outbound trunk. |
 
+### ListUpdate
+
+| Field | Type | Description |
+| add | array<string> | Optional set of items to add. |
+| set | array<string> | Optional set of items to set. If this field is present, it replaces the existing list. |
+| remove | array<string> | Optional set of items to remove. |
+
 ### SIPDispatchRule
 
 Valid values include:
@@ -317,7 +324,7 @@ Enum. Valid values are as follows:
 ### SIPDispatchRuleUpdate
 
 | Field | Type | Description |
-| trunk_ids | array<string> | List of trunk IDs to associate with the dispatch rule. |
+| trunk_ids | array<string> | [ListUpdate](#listupdate) | List of trunk IDs to associate with the dispatch rule. |
 | rule | [SIPDispatchRule](#sipdispatchrule) | Type of dispatch rule. |
 | name | string | Human-readable name for the dispatch rule. |
 | metadata | string | User-defined metadata for the dispatch rule. Participants created by this rule inherit this metadata. |
@@ -329,7 +336,7 @@ Enum. Valid values are as follows:
 | Field | Type | Description |
 | sip_trunk_id | string | Trunk ID |
 | name | string | Human-readable name for the trunk. |
-| numbers | array<string> | Phone numbers associated with the trunk. The trunk only accepts calls made to the phone numbers in the list. |
+| numbers | array<string> | [ListUpdate](#listupdate) | Phone numbers associated with the trunk. The trunk only accepts calls made to the phone numbers in the list. |
 | allowed_addresses | array<string> | IP addresses or CIDR blocks that are allowed to use the trunk. If this list is populated, the trunk only accepts traffic from the IP addresses in the list. |
 | allowed_numbers | array<string> | Phone numbers that are allowed to dial in. If this list is populated, the trunk only accepts calls from the numbers in the list. |
 | auth_username | string | Username used to authenticate inbound SIP invites. |
@@ -343,9 +350,9 @@ Enum. Valid values are as follows:
 ### SIPInboundTrunkUpdate
 
 | Field | Type | Description |
-| numbers | list[<string>] | List of phone numbers associated with the trunk. |
-| allowed_addresses | list[<string>] | List of IP addresses or CIDR blocks that are allowed to use the trunk. |
-| allowed_numbers | list[<string>] | List of phone numbers that are allowed to use the trunk. |
+| numbers | array<string> | [ListUpdate](#listupdate) | List of phone numbers associated with the trunk. |
+| allowed_addresses | array<string> | [ListUpdate](#listupdate) | List of IP addresses or CIDR blocks that are allowed to use the trunk. |
+| allowed_numbers | array<string> | [ListUpdate](#listupdate) | List of phone numbers that are allowed to use the trunk. |
 | auth_username | string | Username used to authenticate inbound SIP invites. |
 | auth_password | string | Password used to authenticate inbound SIP invites. |
 | name | string | Human-readable name for the trunk. |
@@ -373,7 +380,7 @@ Enum. Valid values are as follows:
 | address | string | Hostname or IP address the SIP request message (SIP INVITE) is sent to. |
 | transport | [SIPTransport](#siptransport) | Protocol to use for SIP transport: auto, TCP, or UDP. |
 | destination_country | string | Two letter [country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) for the country the call terminates in. LiveKit uses the country code to route calls. To learn more, see [Restricting calls to a region](https://docs.livekit.io/sip/trunk-outbound.md#region-pinning). |
-| numbers | array<string> | Phone numbers used to make calls. A random number in the list is selected whenever a call is made. |
+| numbers | array<string> | [ListUpdate](#listupdate) | Phone numbers used to make calls. A random number in the list is selected whenever a call is made. |
 | auth_username | string | Username used to authenticate with the SIP server. |
 | auth_password | string | Password used to authenticate with the SIP server. |
 | name | string | Human-readable name for the trunk. |

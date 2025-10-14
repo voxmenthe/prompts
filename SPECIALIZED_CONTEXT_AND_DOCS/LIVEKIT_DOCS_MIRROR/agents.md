@@ -16,7 +16,7 @@ You can deploy your agents to [LiveKit Cloud](https://docs.livekit.io/agents/ops
 
 If you want to get your hands on the code for building an agent right away, follow the Voice AI quickstart guide. It takes just a few minutes to build your first voice agent.
 
-- **[Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md)**: Build and deploy a simple voice assistant with Python in less than 10 minutes.
+- **[Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md)**: Build and deploy a simple voice assistant with Python or Node.js in less than 10 minutes.
 
 - **[Deeplearning.ai course](https://www.deeplearning.ai/short-courses/building-ai-voice-agents-for-production/)**: Learn to build and deploy voice agents with LiveKit in this free course from Deeplearning.ai.
 
@@ -82,7 +82,7 @@ To learn more about how LiveKit works overall, see the [Intro to LiveKit](https:
 
 Follow these guides to learn more and get started with LiveKit Agents.
 
-- **[Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md)**: Build a simple voice assistant with Python in less than 10 minutes.
+- **[Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md)**: Build a simple voice assistant with Python or Node.js in less than 10 minutes.
 
 - **[Recipes](https://docs.livekit.io/recipes.md)**: A comprehensive collection of examples, guides, and recipes for LiveKit Agents.
 

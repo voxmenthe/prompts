@@ -206,7 +206,7 @@ uv add \
 ```shell
 pnpm add @livekit/agents@1.x \
          @livekit/agents-plugin-openai@1.x \
-         livekit-plugins-noise-cancellation@0.x \
+         @livekit/noise-cancellation-node@0.x \
          dotenv
 
 ```

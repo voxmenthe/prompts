@@ -1,5 +1,6 @@
 Search the following blog URLs for new posts published within the month of August 2025, and summarize each of these posts with 3-5 sentences each, and a direct link, grouped by blog. If there was no content published within August 2025, then just pick the most recent post from that blog. If after searching diligently on the site, you can't identify the date, then pick the top-most post AND the bottom post. Every blog should have at least 1 summary. Some of the blogs have multiple categories, so you'll need to check each category for new posts. Some of the blogs need you to click in to one or two levels down to actually get to the blog, so that may be needed as well.
 
+https://1a3orn.com/
 https://alexshtf.github.io/
 https://www.aihero.dev/posts
 https://www.aleksagordic.com/blog
@@ -37,6 +38,7 @@ https://gerred.github.io/building-an-agentic-system/index.html
 https://ghuntley.com/
 https://goyalpramod.github.io/blog/
 https://grantslatton.com/
+https://ggrigorev.me/posts/
 https://hamel.dev/
 https://www.harvey.ai/blog
 https://huggingface.co/blog

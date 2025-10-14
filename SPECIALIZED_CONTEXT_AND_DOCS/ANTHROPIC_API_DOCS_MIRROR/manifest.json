@@ -4,7 +4,7 @@
   "languages": [
     "en"
   ],
-  "generated_at": "2025-10-07T22:54:31.137642+00:00",
+  "generated_at": "2025-10-14T05:40:12.224950+00:00",
   "documents": [
     {
       "doc_url": "https://docs.claude.com/en/api/admin-api/apikeys/get-api-key",
@@ -145,6 +145,11 @@
       "doc_url": "https://docs.claude.com/en/api/agent-sdk/custom-tools",
       "markdown_url": "https://docs.claude.com/en/api/agent-sdk/custom-tools.md",
       "relative_path": "agent-sdk/custom-tools.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/agent-sdk/hosting",
+      "markdown_url": "https://docs.claude.com/en/api/agent-sdk/hosting.md",
+      "relative_path": "agent-sdk/hosting.md"
     },
     {
       "doc_url": "https://docs.claude.com/en/api/agent-sdk/mcp",

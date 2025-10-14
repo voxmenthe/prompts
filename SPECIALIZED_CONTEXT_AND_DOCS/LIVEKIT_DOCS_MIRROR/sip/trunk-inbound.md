@@ -602,27 +602,28 @@ lk sip inbound update --id <trunk-id> inbound-trunk.json
 **Node.js**:
 
 ```typescript
-import { SipClient,  } from 'livekit-server-sdk';
+import { ListUpdate } from "@livekit/protocol";
+import { SipClient } from "livekit-server-sdk";
 
-
-const sipClient = new SipClient(process.env.LIVEKIT_URL,
-                                process.env.LIVEKIT_API_KEY,
-                                process.env.LIVEKIT_API_SECRET);
+const sipClient = new SipClient(
+  process.env.LIVEKIT_URL,
+  process.env.LIVEKIT_API_KEY,
+  process.env.LIVEKIT_API_SECRET,
+);
 
 async function main() {
-
   const updatedTrunkFields = {
-    allowedNumbers: ['+14155550100'],
-    name: 'My updated trunk',
-  }
-  
-  const trunk = await sipClient.updateSipInboundTrunkFields (
-    <inbound-trunk-id>,
+    numbers: new ListUpdate({ set: ["+15105550100"] }),        // Replace existing list
+    allowedNumbers: new ListUpdate({ add: ["+14155550100"] }), // Add to existing list
+    name: "My updated trunk",
+  };
+
+  const trunk = await sipClient.updateSipInboundTrunkFields(
+    "<inbound-trunk-id>",
     updatedTrunkFields,
   );
 
-  console.log('updated trunk ', trunk);
-
+  console.log("updated trunk ", trunk);
 }
 
 await main();
@@ -636,8 +637,8 @@ await main();
 ```python
 import asyncio
 
-from livekit import api 
-from livekit.protocol.sip import SIPInboundTrunkInfo
+from livekit import api
+from livekit.protocol.models import ListUpdate
 
 
 async def main():
@@ -646,7 +647,8 @@ async def main():
   # To update specific trunk fields, use the update_sip_inbound_trunk_fields method.
   trunk = await livekit_api.sip.update_sip_inbound_trunk_fields(
     trunk_id = "<sip-trunk-id>",
-    allowed_numbers = ["+13105550100", "+17145550100"],
+    numbers = ListUpdate(add=['+15105550100']),         # Add to existing list
+    allowed_numbers = ["+13105550100", "+17145550100"], # Replace existing list
     name = "My updated trunk",
   )
   
@@ -682,8 +684,8 @@ import (
 
 func main() {
   trunkName := "My updated inbound trunk"
-  numbers := &livekit.ListUpdate{Set: []string{"+16265550100"}}
-  allowedNumbers := &livekit.ListUpdate{Set: []string{"+13105550100", "+17145550100"}}
+  numbers := &livekit.ListUpdate{Set: []string{"+16265550100"}}                        // Replace existing list
+  allowedNumbers := &livekit.ListUpdate{Add: []string{"+13105550100", "+17145550100"}} // Add to existing list
 
   trunkId := "<sip-trunk-id>"
 

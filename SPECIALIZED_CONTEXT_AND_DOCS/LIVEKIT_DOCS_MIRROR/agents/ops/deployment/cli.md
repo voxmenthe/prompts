@@ -17,9 +17,9 @@ lk agent [command] [command options] [working-dir]
 
 ```
 
-> 🔥 **Caution**
+> 🔥 **CLI version requirement**
 > 
-> You must have the latest version of the CLI to deploy and manage agents. See [Update the CLI](https://docs.livekit.io/home/cli.md#updates) for instructions.
+> Update the CLI regularly to ensure you have the latest version. You must have an up-to-date CLI to deploy and manage agents. See [Update the CLI](https://docs.livekit.io/home/cli.md#updates) for instructions.
 
 ### Working directory
 

@@ -28,7 +28,7 @@ To use ElevenLabs, pass a descriptor with the model and voice to the `tts` argum
 from livekit.agents import AgentSession
 
 session = AgentSession(
-    tts="elevenlabs/eleven_turbo_v2_5:alice",
+    tts="elevenlabs/eleven_turbo_v2_5:Xb7hH8MSUJpSbSDYk0k2",
     # ... llm, stt, vad, turn_detection, etc.
 )
 
@@ -42,7 +42,7 @@ session = AgentSession(
 import { AgentSession } from '@livekit/agents';
 
 session = new AgentSession({
-    tts: "elevenlabs/eleven_turbo_v2_5:alice",
+    tts: "elevenlabs/eleven_turbo_v2_5:Xb7hH8MSUJpSbSDYk0k2",
     // ... tts, stt, vad, turn_detection, etc.
 });
 
@@ -60,7 +60,7 @@ from livekit.agents import AgentSession, inference
 session = AgentSession(
     tts=inference.TTS(
         model="elevenlabs/eleven_turbo_v2_5", 
-        voice="alice", 
+        voice="Xb7hH8MSUJpSbSDYk0k2", 
         language="en"
     ),
     # ... tts, stt, vad, turn_detection, etc.
@@ -78,7 +78,7 @@ import { AgentSession } from '@livekit/agents';
 session = new AgentSession({
     tts: new inference.TTS({ 
         model: "elevenlabs/eleven_turbo_v2_5", 
-        voice: "alice", 
+        voice: "Xb7hH8MSUJpSbSDYk0k2", 
         language: "en" 
     }),
     // ... tts, stt, vad, turn_detection, etc.

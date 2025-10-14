@@ -966,6 +966,7 @@ lk sip dispatch update --id <dispatch-rule-id> \
 **Node.js**:
 
 ```typescript
+import { ListUpdate } from '@livekit/protocol';
 import { SipClient } from 'livekit-server-sdk';
 
 const sipClient = new SipClient(process.env.LIVEKIT_URL,
@@ -974,7 +975,7 @@ const sipClient = new SipClient(process.env.LIVEKIT_URL,
 
 const updatedRuleFields = {
   name: 'My updated dispatch rule',
-  trunkIds: ["<trunk-id1>", "<trunk-id2>"],
+  trunkIds: new ListUpdate({ add: ["<trunk-id1>", "<trunk-id2>"] }), // Add trunk IDs to the dispatch rule
   hidePhoneNumber: true,
   metadata: "{\"is_internal\": false}",
 }
@@ -996,6 +997,7 @@ return rule;
 import asyncio
 
 from livekit import api
+from livekit.protocol.models import ListUpdate
 
 
 async def main():
@@ -1009,7 +1011,8 @@ async def main():
   try:
     dispatchRule = await livekit_api.sip.update_sip_dispatch_rule_fields(
         rule_id=rule_id,
-        metadata = "{\"is_internal\": false}",
+        trunk_ids=ListUpdate(add=["<trunk-id1>", "<trunk-id2>"]), # Add trunk IDs to the dispatch rule
+        metadata="{\"is_internal\": false}",
         attributes={
           "<updated_key1>": "<updated_value1>",
           "<updated_key2>": "<updated_value2>",

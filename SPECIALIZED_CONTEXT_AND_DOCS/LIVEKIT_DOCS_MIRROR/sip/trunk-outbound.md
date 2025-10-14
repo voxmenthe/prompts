@@ -554,6 +554,7 @@ SIPTrunkID: <your-trunk-id>
 **Node.js**:
 
 ```typescript
+import { ListUpdate } from "@livekit/protocol";
 import { SipClient } from 'livekit-server-sdk';
 
 const sipClient = new SipClient(process.env.LIVEKIT_URL,
@@ -570,11 +571,15 @@ async function updateTrunk(trunkId) {
   const updatedTrunkFields = {
     name: 'My updated trunk',
     address: 'my-trunk.pstn.twilio.com',
+    numbers: new ListUpdate({
+      add: ['+15220501011'],    // Add specific numbers to the trunk
+      remove: ['+15105550100'], // Remove specific numbers from the trunk
+    }),
   }
   
-  const trunk = await sipClient.updateSipOutboundTrunkFields (
-    trunkId,
-    updatedTrunkFields,
+  const trunk = await sipclient.updatesipoutboundtrunkfields (
+    trunkid,
+    updatedtrunkfields,
   );
 
   return trunk;
@@ -592,6 +597,7 @@ updateTrunk('<outbound-trunk-id>');
 import asyncio
 
 from livekit import api
+from livekit.protocol.models import ListUpdate
 
 
 async def main():
@@ -601,7 +607,10 @@ async def main():
     trunk_id = "<sip-trunk-id>",
     name = "My updated outbound trunk",
     address = "sip.telnyx.com",
-    numbers = ['+15105550100']
+    numbers = ListUpdate(
+      add=['+15225550101'],
+      remove=['+15105550100'],
+    ) # Add and remove specific numbers from the trunk
   )
 
   print(f"Successfully updated {trunk}")
