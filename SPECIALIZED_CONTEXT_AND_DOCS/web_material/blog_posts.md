@@ -33,6 +33,7 @@ https://eugeneyan.com/writing/
 https://every.to/
 https://www.fabianfalck.com/posts/
 https://fleetwood.dev/
+https://florianbrand.de/posts/
 https://gene.ttic.edu/blog/
 https://gerred.github.io/building-an-agentic-system/index.html
 https://ghuntley.com/

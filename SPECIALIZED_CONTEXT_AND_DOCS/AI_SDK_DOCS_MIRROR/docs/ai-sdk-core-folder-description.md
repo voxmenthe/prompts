@@ -1,0 +1,17 @@
+# AI SDK Core
+
+- [Overview Learn about AI SDK Core and how to work with Large Language Models (LLMs).](ai-sdk-core/overview.md)
+- [Generating Text Learn how to generate text.](ai-sdk-core/generating-text.md)
+- [Generating Structured Data Learn how to generate structured data.](ai-sdk-core/generating-structured-data.md)
+- [Tool Calling Learn how to do tool calling with AI SDK Core.](ai-sdk-core/tools-and-tool-calling.md)
+- [Prompt Engineering Learn how to write prompts with AI SDK Core.](ai-sdk-core/prompt-engineering.md)
+- [Settings Learn how to set up settings for language models generations.](ai-sdk-core/settings.md)
+- [Embeddings Learn how to use embeddings with AI SDK Core.](ai-sdk-core/embeddings.md)
+- [Image Generation Learn how to generate images with AI SDK Core.](ai-sdk-core/image-generation.md)
+- [Transcription Learn how to transcribe audio with AI SDK Core.](ai-sdk-core/transcription.md)
+- [Speech Learn how to generate speech with AI SDK Core.](ai-sdk-core/speech.md)
+- [Provider Management Learn how to work with multiple providers.](ai-sdk-core/provider-management.md)
+- [Middleware Learn how to use middleware with AI SDK Core.](ai-sdk-core/middleware.md)
+- [Error Handling Learn how to handle errors with AI SDK Core.](ai-sdk-core/error-handling.md)
+- [Testing Learn how to test with AI SDK Core.](ai-sdk-core/testing.md)
+- [Telemetry Learn how to use telemetry with AI SDK Core.](ai-sdk-core/telemetry.md)

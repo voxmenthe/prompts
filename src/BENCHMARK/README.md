@@ -1,0 +1,1 @@
+uv run src/BENCHMARK/macos_python_free_thread_test.py --size 100_000 --iters 5 --repeats 1 --workers 8 
