@@ -1,4 +1,4 @@
-LiveKit Docs › Partner spotlight › Azure › Azure OpenAI TTS Plugin
+LiveKit docs › Partner spotlight › Azure › Azure OpenAI TTS Plugin
 
 ---
 
@@ -24,8 +24,8 @@ Support for Azure OpenAI TTS is available in the `openai` plugin.
 
 Install the plugin from PyPI:
 
-```bash
-pip install "livekit-agents[openai]~=1.2"
+```shell
+uv add "livekit-agents[openai]~=1.2"
 
 ```
 

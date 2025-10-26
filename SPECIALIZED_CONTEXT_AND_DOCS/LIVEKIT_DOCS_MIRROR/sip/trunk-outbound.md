@@ -1,4 +1,4 @@
-LiveKit Docs › Making calls › Outbound trunk
+LiveKit docs › Making calls › Outbound trunk
 
 ---
 
@@ -361,7 +361,7 @@ Use the [`ListSIPOutboundTrunk`](https://docs.livekit.io/sip/api.md#listsipoutbo
 
 **LiveKit CLI**:
 
-```bash
+```shell
 lk sip outbound list
 
 ```

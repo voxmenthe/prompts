@@ -1,4 +1,4 @@
-LiveKit Docs › Server APIs › Room management
+LiveKit docs › Server APIs › Room management
 
 ---
 
@@ -30,7 +30,7 @@ roomClient := lksdk.NewRoomServiceClient(host, "api-key", "secret-key")
 **Python**:
 
 ```shell
-pip install livekit-api
+uv add livekit-api
 
 ```
 

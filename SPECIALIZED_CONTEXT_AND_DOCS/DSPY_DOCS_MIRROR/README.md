@@ -1,6 +1,6 @@
 # DSPY_DOCS (Local Mirror)
 
-- Generated: 2025-09-07T07:08:23.331133Z
+- Generated: 2025-10-26T02:21:50.617550Z
 - Source: /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs
 
 This directory mirrors the DSPy documentation as Markdown.

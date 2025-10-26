@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Large language models (LLM) › Plugins › LangChain
+LiveKit docs › Models › Large language models (LLM) › Plugins › LangChain
 
 ---
 
@@ -22,8 +22,8 @@ This section includes a basic usage example and some reference material. For lin
 
 Install the LiveKit LangChain plugin from PyPI:
 
-```bash
-pip install "livekit-plugins-langchain~=1.1"
+```shell
+uv add "livekit-agents[langchain]~=1.2"
 
 ```
 

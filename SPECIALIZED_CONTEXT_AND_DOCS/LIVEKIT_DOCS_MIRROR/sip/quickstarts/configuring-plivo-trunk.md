@@ -1,4 +1,4 @@
-LiveKit Docs › Provider-specific guides › Plivo
+LiveKit docs › Provider-specific guides › Plivo
 
 ---
 
@@ -30,7 +30,7 @@ Create an inbound trunk in Plivo, setting your LiveKit SIP endpoint as the prima
 
 If you're signed in to LiveKit Cloud, your SIP endpoint is automatically included in the following example:
 
-```bash
+```shell
 %{regionalEndpointSubdomain}%.sip.livekit.cloud;transport=tcp
 
 ```

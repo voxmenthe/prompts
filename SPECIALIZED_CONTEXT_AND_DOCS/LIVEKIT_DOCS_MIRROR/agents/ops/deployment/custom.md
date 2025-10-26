@@ -1,4 +1,4 @@
-LiveKit Docs › Deployment & operations › Custom deployments
+LiveKit docs › Deployment & operations › Custom deployments
 
 ---
 

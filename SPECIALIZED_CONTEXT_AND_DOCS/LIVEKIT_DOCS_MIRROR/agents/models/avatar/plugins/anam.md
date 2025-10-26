@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Virtual avatars › Plugins › Anam
+LiveKit docs › Models › Virtual avatars › Plugins › Anam
 
 ---
 
@@ -22,8 +22,8 @@ This section includes a basic usage example and some reference material. For lin
 
 Install the plugin from PyPI:
 
-```bash
-pip install "livekit-agents[anam]~=1.2"
+```shell
+uv add "livekit-agents[anam]~=1.2"
 
 ```
 

@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit Cloud › Architecture
+LiveKit docs › LiveKit Cloud › Architecture
 
 ---
 

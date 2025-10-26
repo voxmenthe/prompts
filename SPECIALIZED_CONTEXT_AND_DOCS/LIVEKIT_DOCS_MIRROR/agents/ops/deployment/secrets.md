@@ -1,4 +1,4 @@
-LiveKit Docs › Deployment & operations › Deploying to LiveKit Cloud › Secrets management
+LiveKit docs › Deployment & operations › Deploying to LiveKit Cloud › Secrets management
 
 ---
 
@@ -34,7 +34,7 @@ The CLI looks for the following environment files:
 
 You can explicitly specify a secrets file with the `--secrets-file` option. The file must contain one secret per line, in `KEY=value` format.
 
-```bash
+```shell
 lk agent create --secrets-file=path/to/secrets.env
 
 ```
@@ -45,7 +45,7 @@ The CLI copies all values form the file, [except for LiveKit Cloud credentials](
 
 You can provide each secret individually with the CLI using the `--secrets` flag. Pass the secret in `KEY=value` format. To pass multiple secrets, use multiple `--secrets` flags.
 
-```bash
+```shell
 lk agent update-secrets --secrets "SECRET_A=foo" --secrets "SECRET_B=bar"
 
 ```
@@ -54,7 +54,7 @@ lk agent update-secrets --secrets "SECRET_A=foo" --secrets "SECRET_B=bar"
 
 By default, the CLI adds or updates the provided secrets, while leaving other existing secrets as-is. To delete all existing secrets and replace them with the provided secrets, use the `--overwrite` flag.
 
-```bash
+```shell
 lk agent update-secrets --secrets-file=new-secrets.env --overwrite
 
 ```

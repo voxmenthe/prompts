@@ -1,4 +1,4 @@
-LiveKit Docs › Deployment & operations › Deploying to LiveKit Cloud › Getting started
+LiveKit docs › Deployment & operations › Deploying to LiveKit Cloud › Getting started
 
 ---
 
@@ -34,13 +34,13 @@ Use the following steps with the LiveKit CLI to deploy your agent.
 
 1. Navigate to your project directory:
 
-```bash
+```shell
 cd your-agent-project
 
 ```
 2. Authenticate with LiveKit Cloud:
 
-```bash
+```shell
 lk cloud auth
 
 ```
@@ -48,7 +48,7 @@ lk cloud auth
 This opens a browser window to link your LiveKit Cloud project to the CLI. If you've already authenticated and have linked projects, use `lk project list` to list all linked projects. Then, set the default project for agent deployment with `lk project set-default "<project-name>"`.
 3. Deploy your agent:
 
-```bash
+```shell
 lk agent create
 
 ```
@@ -65,7 +65,7 @@ Use the CLI to monitor the [status](https://docs.livekit.io/agents/ops/deploymen
 
 1. Monitor agent status:
 
-```bash
+```shell
 lk agent status
 
 ```
@@ -73,7 +73,7 @@ lk agent status
 This shows status, replica count, and other details for your running agent.
 2. Tail agent logs:
 
-```bash
+```shell
 lk agent logs
 
 ```
@@ -84,7 +84,7 @@ This shows a live tail of the logs for the new instance of your deployed agent.
 
 To deploy a new version of your agent, run the following command:
 
-```bash
+```shell
 lk agent deploy
 
 ```
@@ -109,7 +109,7 @@ When you run `lk agent deploy`, LiveKit Cloud follows this process:
 
 You can quickly rollback to a previous version of your agent, without a rebuild, by using the following command:
 
-```bash
+```shell
 lk agent rollback
 
 ```
@@ -155,7 +155,7 @@ The `livekit.toml` file contains your agent's deployment configuration. The CLI 
 
 To generate a new `livekit.toml` file, run:
 
-```bash
+```shell
 lk agent config
 
 ```

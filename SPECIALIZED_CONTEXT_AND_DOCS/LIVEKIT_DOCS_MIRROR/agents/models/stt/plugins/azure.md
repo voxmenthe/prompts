@@ -1,4 +1,4 @@
-LiveKit Docs › Partner spotlight › Azure › Azure AI Speech STT Plugin
+LiveKit docs › Partner spotlight › Azure › Azure AI Speech STT Plugin
 
 ---
 
@@ -22,8 +22,8 @@ This section provides a brief overview of the Azure Speech STT plugin. For more 
 
 Install the plugin from PyPI:
 
-```bash
-pip install "livekit-agents[azure]~=1.2"
+```shell
+uv add "livekit-agents[azure]~=1.2"
 
 ```
 

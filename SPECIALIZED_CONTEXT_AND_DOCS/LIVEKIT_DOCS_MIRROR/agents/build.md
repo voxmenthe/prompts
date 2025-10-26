@@ -1,4 +1,4 @@
-LiveKit Docs › Building voice agents › Overview
+LiveKit docs › Building voice agents › Overview
 
 ---
 

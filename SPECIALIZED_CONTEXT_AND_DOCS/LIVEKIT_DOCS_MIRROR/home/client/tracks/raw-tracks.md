@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit SDKs › Realtime media › Processing raw tracks
+LiveKit docs › LiveKit SDKs › Realtime media › Processing raw tracks
 
 ---
 

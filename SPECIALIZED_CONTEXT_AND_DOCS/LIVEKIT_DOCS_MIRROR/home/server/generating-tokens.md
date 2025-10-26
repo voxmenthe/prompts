@@ -1,4 +1,4 @@
-LiveKit Docs › Server APIs › Token generation
+LiveKit docs › Server APIs › Token generation
 
 ---
 
@@ -12,7 +12,7 @@ In order for frontend apps to connect to LiveKit rooms, they need a token genera
 
 **Go**:
 
-```bash
+```shell
 go get github.com/livekit/server-sdk-go/v2
 
 ```
@@ -21,7 +21,7 @@ go get github.com/livekit/server-sdk-go/v2
 
 **Node.js**:
 
-```bash
+```shell
 # yarn:
 yarn add livekit-server-sdk
 
@@ -44,8 +44,8 @@ gem 'livekit-server-sdk'
 
 **Python**:
 
-```bash
-pip install livekit-api
+```shell
+uv add livekit-api
 
 ```
 
@@ -74,7 +74,7 @@ tokio = { version = "1", features = ["full"] }
 
 **PHP**:
 
-```bash
+```shell
 composer require agence104/livekit-server-sdk
 
 ```
@@ -83,7 +83,7 @@ composer require agence104/livekit-server-sdk
 
 Create a new file at `development.env` and with your API Key and Secret:
 
-```bash
+```shell
 export LIVEKIT_API_KEY=%{apiKey}%
 export LIVEKIT_API_SECRET=%{apiSecret}%
 
@@ -301,7 +301,7 @@ Load the environment variables and run the server:
 
 **Go**:
 
-```bash
+```shell
 $ source development.env
 $ go run server.go
 
@@ -311,7 +311,7 @@ $ go run server.go
 
 **Node.js**:
 
-```bash
+```shell
 $ source development.env
 $ node server.js
 
@@ -321,7 +321,7 @@ $ node server.js
 
 **Ruby**:
 
-```bash
+```shell
 $ source development.env
 $ ruby server.rb
 
@@ -331,7 +331,7 @@ $ ruby server.rb
 
 **Python**:
 
-```bash
+```shell
 $ source development.env
 $ python server.py
 
@@ -341,7 +341,7 @@ $ python server.py
 
 **Rust**:
 
-```bash
+```shell
 $ source development.env
 $ cargo r src/main.rs
 
@@ -351,7 +351,7 @@ $ cargo r src/main.rs
 
 **PHP**:
 
-```bash
+```shell
 $ source development.env
 $ php server.php
 

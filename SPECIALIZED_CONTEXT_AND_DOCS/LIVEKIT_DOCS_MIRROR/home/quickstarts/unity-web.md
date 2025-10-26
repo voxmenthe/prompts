@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit SDKs › Platform-specific quickstarts › Unity (WebGL)
+LiveKit docs › LiveKit SDKs › Platform-specific quickstarts › Unity (WebGL)
 
 ---
 

@@ -1,4 +1,4 @@
-LiveKit Docs › Reference › Troubleshooting
+LiveKit docs › Reference › Troubleshooting
 
 ---
 

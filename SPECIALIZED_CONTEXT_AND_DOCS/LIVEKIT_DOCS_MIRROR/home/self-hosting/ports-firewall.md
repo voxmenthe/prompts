@@ -1,4 +1,4 @@
-LiveKit Docs › Self-hosting › Firewall configuration
+LiveKit docs › Self-hosting › Firewall configuration
 
 ---
 

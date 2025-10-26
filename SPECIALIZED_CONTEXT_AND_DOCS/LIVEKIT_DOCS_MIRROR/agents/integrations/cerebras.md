@@ -1,4 +1,4 @@
-LiveKit Docs › Partner spotlight › Cerebras
+LiveKit docs › Partner spotlight › Cerebras
 
 ---
 
@@ -19,7 +19,7 @@ Use the Voice AI quickstart to build a voice AI app with Cerebras. Select an STT
 Install the OpenAI plugin:
 
 ```shell
-pip install "livekit-agents[openai]~=1.2"
+uv add "livekit-agents[openai]~=1.2"
 
 ```
 

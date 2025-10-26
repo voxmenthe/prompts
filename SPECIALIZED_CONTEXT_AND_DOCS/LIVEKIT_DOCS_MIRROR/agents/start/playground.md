@@ -1,4 +1,4 @@
-LiveKit Docs › Getting started › Agents playground
+LiveKit docs › Getting started › Agents playground
 
 ---
 

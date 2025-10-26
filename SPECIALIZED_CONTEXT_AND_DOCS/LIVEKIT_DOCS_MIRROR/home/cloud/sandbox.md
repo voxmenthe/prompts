@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit Cloud › Sandbox
+LiveKit docs › LiveKit Cloud › Sandbox
 
 ---
 
@@ -21,14 +21,14 @@ Once you've created a LiveKit Cloud account, you can head to the [Sandboxes](htt
 1. Create a LiveKit Cloud account and [Install the LiveKit CLI](https://docs.livekit.io/home/cli.md).
 2. If you're setting up the CLI for the first time, authenticate with your LiveKit Cloud account:
 
-```bash
+```shell
 lk cloud auth
 
 ```
 3. Navigate to the [Sandboxes](https://cloud.livekit.io/projects/p_/sandbox) page to create a new sandbox, choosing from one of our templates.
 4. Some templates (for example, [Next.js Voice Agent](https://github.com/livekit-examples/agent-starter-react)) require you to run some code on your local machine. This might be an AI agent, a web server, or some other component depending on that template's use case. If present, follow the instructions under the `Code` tab to clone and set up the component:
 
-```bash
+```shell
 lk app create \
     --template <template-name> \
     --sandbox <my-sandbox-id>
@@ -39,7 +39,7 @@ lk app create \
 
 When you're ready to move on from the prototyping stage and own the code yourself, every sandbox app can be cloned to your local machine, ready for customization. The quickest way to do this is via the [LiveKit CLI](https://docs.livekit.io/home/cli.md):
 
-```bash
+```shell
 lk app create --template <template-name>
 
 ```

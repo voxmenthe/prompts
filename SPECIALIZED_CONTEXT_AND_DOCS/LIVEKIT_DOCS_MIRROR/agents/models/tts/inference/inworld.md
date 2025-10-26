@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Text-to-speech (TTS) › LiveKit Inference › Inworld
+LiveKit docs › Models › Text-to-speech (TTS) › LiveKit Inference › Inworld
 
 ---
 
@@ -89,6 +89,8 @@ session = new AgentSession({
 - **`language`** _(string)_ (optional): Language code for the input text. If not set, the model default applies.
 
 - **`extra_kwargs`** _(dict)_ (optional): Additional parameters to pass to the Inworld TTS API. See the provider's [documentation](#additional-resources) for more information.
+
+In Node.js this parameter is called `modelOptions`.
 
 ## Voices
 

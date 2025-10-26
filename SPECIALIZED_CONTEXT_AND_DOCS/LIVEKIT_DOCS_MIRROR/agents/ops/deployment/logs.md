@@ -1,4 +1,4 @@
-LiveKit Docs › Deployment & operations › Deploying to LiveKit Cloud › Log collection
+LiveKit docs › Deployment & operations › Deploying to LiveKit Cloud › Log collection
 
 ---
 
@@ -21,7 +21,7 @@ LiveKit Cloud collects two types of logs for your agents:
 
 Use the LiveKit CLI to follow logs from your deployed agents in realtime.
 
-```bash
+```shell
 lk agent logs
 
 ```
@@ -36,7 +36,7 @@ This command continuously streams logs from the latest running instance of your 
 
 Use the LiveKit CLI to view the Docker build logs from the currently deployed version of your agent.
 
-```bash
+```shell
 lk agent logs --log-type=build
 
 ```
@@ -55,7 +55,7 @@ The currently supported destinations are Datadog, CloudWatch, Sentry, and New Re
 
 Add a [Datadog](https://docs.livekit.io/agents/ops/deployment/secrets.md) client token as a [secret](https://docs.livekit.io/agents/ops/deployment/secrets.md) to automatically enable log forwarding. If your account is in a region other than `us1`, you can also set the region. All runtime logs are automatically forwarded to your Datadog account.
 
-```bash
+```shell
 lk agent update-secrets --secrets "DATADOG_TOKEN=your-client-token"
 
 ```
@@ -78,7 +78,7 @@ The following log fields are set in Datadog for all log lines sent from LiveKit 
 
 Add a [CloudWatch](https://docs.livekit.io/agents/ops/deployment/secrets.md) `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` as [secrets](https://docs.livekit.io/agents/ops/deployment/secrets.md) to automatically enable log forwarding. The AWS region defaults to `us-west-2`, you can set it by setting the `AWS_REGION` secret. All runtime logs are automatically forwarded to your CloudWatch account.
 
-```bash
+```shell
 lk agent update-secrets --secrets "AWS_ACCESS_KEY_ID=your-access-key-id" --secrets "AWS_SECRET_ACCESS_KEY=your-secret-access-key"
 
 ```
@@ -93,7 +93,7 @@ lk agent update-secrets --secrets "AWS_ACCESS_KEY_ID=your-access-key-id" --secre
 
 Add a [Sentry](https://docs.livekit.io/agents/ops/deployment/secrets.md) `SENTRY_DSN` as a [secret](https://docs.livekit.io/agents/ops/deployment/secrets.md) to automatically enable log forwarding. All runtime logs are automatically forwarded to your Sentry account.
 
-```bash
+```shell
 lk agent update-secrets --secrets "SENTRY_DSN=your-sentry-dsn"
 
 ```
@@ -104,7 +104,7 @@ lk agent update-secrets --secrets "SENTRY_DSN=your-sentry-dsn"
 
 Add a [New Relic](https://docs.livekit.io/agents/ops/deployment/secrets.md) `NEW_RELIC_LICENSE_KEY` as a [secret](https://docs.livekit.io/agents/ops/deployment/secrets.md) to automatically enable log forwarding. All runtime logs are automatically forwarded to your New Relic account.
 
-```bash
+```shell
 lk agent update-secrets --secrets "NEW_RELIC_LICENSE_KEY=your-license-key"
 
 ```

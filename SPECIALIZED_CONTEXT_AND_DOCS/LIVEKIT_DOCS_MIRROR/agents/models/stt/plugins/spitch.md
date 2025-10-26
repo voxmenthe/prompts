@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Speech-to-text (STT) › Plugins › Spitch
+LiveKit docs › Models › Speech-to-text (STT) › Plugins › Spitch
 
 ---
 
@@ -22,8 +22,8 @@ This section provides a quick reference for the Spitch STT plugin. For more info
 
 Install the plugin from PyPI:
 
-```bash
-pip install "livekit-agents[spitch]~=1.2"
+```shell
+uv add "livekit-agents[spitch]~=1.2"
 
 ```
 

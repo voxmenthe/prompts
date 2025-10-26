@@ -1,4 +1,4 @@
-LiveKit Docs › Worker lifecycle › Job lifecycle
+LiveKit docs › Worker lifecycle › Job lifecycle
 
 ---
 

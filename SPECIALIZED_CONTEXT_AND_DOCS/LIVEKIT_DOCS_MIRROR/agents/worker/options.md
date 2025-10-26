@@ -1,4 +1,4 @@
-LiveKit Docs › Worker lifecycle › Worker options
+LiveKit docs › Worker lifecycle › Worker options
 
 ---
 
@@ -364,8 +364,8 @@ By default, your worker and all of its job processes output logs at the `INFO` l
 
 **Python**:
 
-```bash
-python agent.py start --log-level=DEBUG
+```shell
+uv run agent.py start --log-level=DEBUG
 
 ```
 
@@ -377,7 +377,7 @@ python agent.py start --log-level=DEBUG
 > 
 > The `start` script must be set up in your `package.json` file to run the following command. If you haven't already, see [Agent CLI modes](https://docs.livekit.io/agents/start/voice-ai.md#cli-modes) for the command to add it.
 
-```bash
+```shell
 pnpm run start --log-level=debug
 
 ```

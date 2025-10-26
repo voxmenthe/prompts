@@ -1,4 +1,4 @@
-LiveKit Docs › Features › Transfers › Call forwarding
+LiveKit docs › Features › Transfers › Call forwarding
 
 ---
 

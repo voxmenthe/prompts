@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Virtual avatars › Overview
+LiveKit docs › Models › Virtual avatars › Overview
 
 ---
 

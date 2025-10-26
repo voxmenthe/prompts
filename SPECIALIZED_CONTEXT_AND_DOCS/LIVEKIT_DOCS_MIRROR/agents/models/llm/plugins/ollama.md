@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Large language models (LLM) › Plugins › Ollama
+LiveKit docs › Models › Large language models (LLM) › Plugins › Ollama
 
 ---
 
@@ -18,8 +18,8 @@ This plugin allows you to use a local [Ollama](https://ollama.com/library) insta
 
 Install the OpenAI plugin to add Ollama support:
 
-```bash
-pip install "livekit-agents[openai]~=1.2"
+```shell
+uv add "livekit-agents[openai]~=1.2"
 
 ```
 

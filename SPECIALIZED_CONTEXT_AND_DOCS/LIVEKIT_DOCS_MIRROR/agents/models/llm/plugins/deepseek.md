@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Large language models (LLM) › Plugins › DeepSeek
+LiveKit docs › Models › Large language models (LLM) › Plugins › DeepSeek
 
 ---
 
@@ -25,7 +25,7 @@ Use the OpenAI plugin's `with_deepseek` method to set the default agent session 
 **Python**:
 
 ```shell
-pip install "livekit-agents[openai]~=1.2"
+uv add "livekit-agents[openai]~=1.2"
 
 ```
 

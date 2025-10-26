@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit SDKs › Realtime media › Camera & microphone
+LiveKit docs › LiveKit SDKs › Realtime media › Camera & microphone
 
 ---
 

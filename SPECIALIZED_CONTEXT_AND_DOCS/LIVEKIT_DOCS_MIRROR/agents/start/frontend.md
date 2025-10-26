@@ -1,4 +1,4 @@
-LiveKit Docs › Getting started › Web & mobile frontends
+LiveKit docs › Getting started › Web & mobile frontends
 
 ---
 
@@ -169,7 +169,7 @@ fun AgentAudioVisualizer(modifier: Modifier = Modifier) {
 
 First install the components package from [https://github.com/livekit/components-flutter](https://github.com/livekit/components-flutter).
 
-```bash
+```shell
 flutter pub add livekit_components
 
 ```

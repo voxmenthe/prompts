@@ -1,4 +1,4 @@
-LiveKit Docs › Getting started › SIP trunk setup
+LiveKit docs › Getting started › SIP trunk setup
 
 ---
 

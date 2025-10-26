@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Large language models (LLM) › Plugins › Cerebras
+LiveKit docs › Models › Large language models (LLM) › Plugins › Cerebras
 
 ---
 
@@ -25,7 +25,7 @@ Install the OpenAI plugin to add Cerebras support:
 **Python**:
 
 ```shell
-pip install "livekit-agents[openai]~=1.2"
+uv add "livekit-agents[openai]~=1.2"
 
 ```
 

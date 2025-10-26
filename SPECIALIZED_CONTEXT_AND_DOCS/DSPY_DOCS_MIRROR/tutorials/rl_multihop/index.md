@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/rl_multihop/index.ipynb on 2025-09-07T07:08:23.224092Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/rl_multihop/index.ipynb on 2025-10-26T02:21:50.502624Z -->
 
 # Tutorial: Online RL for Multi-Hop Research
 
@@ -7,25 +7,15 @@ WARNING: This feature is new and extremely EXPERIMENTAL. Unlike almost everythin
 For this tutorial, you will also need DSPy's Arbor RL server.
 
 ```bash
-> pip install arbor-ai
-> python -m arbor.cli serve --arbor-config arbor.yaml
+> pip install -U arbor-ai
 ```
-
-where you create `arbor.yaml` in your directory, containing a plan like:
-
-```text
-inference:
-  gpu_ids: '0'
-
-training:
-  gpu_ids: '1, 2'
-```
-
-which assigns GPU 0 for inference and GPUs 1 and 2 for training.
 
 ```python
 import dspy
 from dspy.clients.lm_local_arbor import ArborProvider
+
+import arbor
+arbor_server_info = arbor.init() # Initialize the Arbor server in the background
 
 port = 7453
 local_lm_name = "Qwen/Qwen2.5-7B-Instruct"
@@ -33,8 +23,7 @@ local_lm = dspy.LM(
     model=f"openai/arbor:{local_lm_name}",
     provider=ArborProvider(),
     temperature=0.7,
-    api_base=f"http://localhost:{port}/v1/",
-    api_key="arbor",
+    api_base=arbor_server_info["api_base"],
 )
 
 dspy.configure(lm=local_lm)
@@ -175,10 +164,10 @@ program.set_lm(local_lm)
 # NOTE: Training on 6 GPUs.
 train_kwargs = {
     "per_device_train_batch_size": 2,
-    "gradient_accumulation_steps": 4,
-    "temperature": 0.7,
+    "gradient_accumulation_steps": 8,
+    "temperature": 1.0,
     "beta": 0.04,
-    "learning_rate": 2e-5,
+    "learning_rate": 1e-5,
     "gradient_checkpointing": True,
     "gradient_checkpointing_kwargs": {"use_reentrant": False},
     "bf16": True,
@@ -192,12 +181,11 @@ train_kwargs = {
 
 compiler = GRPO(
     metric=recall,
-    multitask=True,
     num_dspy_examples_per_grpo_step=6,
-    num_samples_per_input=8,
+    num_rollouts_per_grpo_step=4,
     exclude_demos=True,
-    num_train_steps=500,
-    num_threads=24,
+    num_train_steps=100,
+    num_threads=16,
     use_train_as_val=False,
     num_steps_for_val=10,
     train_kwargs=train_kwargs,

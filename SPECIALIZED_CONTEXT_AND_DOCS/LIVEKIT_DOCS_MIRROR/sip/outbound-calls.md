@@ -1,4 +1,4 @@
-LiveKit Docs › Making calls › Make outbound calls
+LiveKit docs › Making calls › Make outbound calls
 
 ---
 

@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit SDKs › Platform-specific quickstarts › Flutter
+LiveKit docs › LiveKit SDKs › Platform-specific quickstarts › Flutter
 
 ---
 
@@ -20,7 +20,7 @@ This guide covers the basic setup for a new Flutter app for iOS, Android, or web
 
 ### Install LiveKit SDK
 
-```bash
+```shell
 flutter pub add livekit_client
 
 ```

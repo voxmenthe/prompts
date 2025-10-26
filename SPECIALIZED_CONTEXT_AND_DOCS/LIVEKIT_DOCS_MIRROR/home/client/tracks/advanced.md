@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit SDKs › Realtime media › Codecs & more
+LiveKit docs › LiveKit SDKs › Realtime media › Codecs & more
 
 ---
 

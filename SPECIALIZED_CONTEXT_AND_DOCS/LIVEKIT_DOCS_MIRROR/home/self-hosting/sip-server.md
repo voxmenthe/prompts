@@ -1,4 +1,4 @@
-LiveKit Docs › Self-hosting › SIP server
+LiveKit docs › Self-hosting › SIP server
 
 ---
 

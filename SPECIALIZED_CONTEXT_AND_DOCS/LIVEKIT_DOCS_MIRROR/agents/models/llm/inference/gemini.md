@@ -1,4 +1,4 @@
-LiveKit Docs › Partner spotlight › Google › Gemini in LiveKit Inference
+LiveKit docs › Partner spotlight › Google › Gemini in LiveKit Inference
 
 ---
 
@@ -79,7 +79,7 @@ import { AgentSession, inference } from '@livekit/agents';
 session = new AgentSession({
     llm: new inference.LLM({ 
         model: "google/gemini-2.5-flash-lite", 
-        extraKwargs: { 
+        modelOptions: { 
             max_completion_tokens: 1000 
         }
     }),
@@ -93,6 +93,8 @@ session = new AgentSession({
 - **`provider`** _(string)_ (optional): Set a specific provider to use for the LLM. Refer to the [models list](#models) for available providers. If not set, LiveKit Inference uses the best available provider, and bills accordingly.
 
 - **`extra_kwargs`** _(dict)_ (optional): Additional parameters to pass to the Gemini Chat Completions API, such as `max_completion_tokens`.
+
+In Node.js this parameter is called `modelOptions`.
 
 ## Additional resources
 

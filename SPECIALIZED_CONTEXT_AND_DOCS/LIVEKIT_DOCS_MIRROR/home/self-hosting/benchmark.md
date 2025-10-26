@@ -1,4 +1,4 @@
-LiveKit Docs › Self-hosting › Benchmarks
+LiveKit docs › Self-hosting › Benchmarks
 
 ---
 

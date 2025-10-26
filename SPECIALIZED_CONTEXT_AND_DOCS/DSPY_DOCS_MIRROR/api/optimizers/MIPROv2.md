@@ -13,7 +13,7 @@ class MIPROv2(metric, prompt_model=None, task_model=None, teacher_settings=None,
 ```python
 def compile(self, student, *, trainset, teacher=None, valset=None, num_trials=None, max_bootstrapped_demos=None, max_labeled_demos=None, seed=None, minibatch=True, minibatch_size=35, minibatch_full_eval_steps=5, program_aware_proposer=True, data_aware_proposer=True, view_data_batch_size=10, tip_aware_proposer=True, fewshot_aware_proposer=True, requires_permission_to_run=None, provide_traceback=None)
 ```
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/teleprompt/mipro_optimizer_v2.py` (lines 47–782)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/teleprompt/mipro_optimizer_v2.py` (lines 47–787)
 
 
 ## Example Usage

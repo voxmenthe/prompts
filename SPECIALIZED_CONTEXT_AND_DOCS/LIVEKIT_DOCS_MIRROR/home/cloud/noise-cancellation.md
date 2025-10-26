@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit Cloud › Enhanced noise cancellation
+LiveKit docs › LiveKit Cloud › Enhanced noise cancellation
 
 ---
 
@@ -57,8 +57,8 @@ Install the noise cancellation plugin:
 
 **Python**:
 
-```bash
-pip install "livekit-plugins-noise-cancellation~=0.2"
+```shell
+uv add "livekit-plugins-noise-cancellation~=0.2"
 
 ```
 
@@ -66,7 +66,7 @@ pip install "livekit-plugins-noise-cancellation~=0.2"
 
 **Node.js**:
 
-```bash
+```shell
 pnpm add @livekit/noise-cancellation-node
 
 ```
@@ -232,7 +232,7 @@ The following examples show how to set up noise cancellation in the frontend. Th
 
 #### Installation
 
-```bash
+```shell
 npm install @livekit/krisp-noise-filter
 
 ```
@@ -442,7 +442,7 @@ The Swift noise filter supports only the standard noise cancellation (NC) model.
 
 #### Installation
 
-```bash
+```shell
 npm install @livekit/react-native-krisp-noise-filter
 
 ```

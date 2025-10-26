@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit SDKs › Platform-specific quickstarts › React Native
+LiveKit docs › LiveKit SDKs › Platform-specific quickstarts › React Native
 
 ---
 

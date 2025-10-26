@@ -4,7 +4,7 @@
   "languages": [
     "en"
   ],
-  "generated_at": "2025-10-14T05:40:12.224950+00:00",
+  "generated_at": "2025-10-26T02:21:37.369034+00:00",
   "documents": [
     {
       "doc_url": "https://docs.claude.com/en/api/admin-api/apikeys/get-api-key",
@@ -182,6 +182,11 @@
       "relative_path": "agent-sdk/sessions.md"
     },
     {
+      "doc_url": "https://docs.claude.com/en/api/agent-sdk/skills",
+      "markdown_url": "https://docs.claude.com/en/api/agent-sdk/skills.md",
+      "relative_path": "agent-sdk/skills.md"
+    },
+    {
       "doc_url": "https://docs.claude.com/en/api/agent-sdk/slash-commands",
       "markdown_url": "https://docs.claude.com/en/api/agent-sdk/slash-commands.md",
       "relative_path": "agent-sdk/slash-commands.md"
@@ -277,16 +282,6 @@
       "relative_path": "files-metadata.md"
     },
     {
-      "doc_url": "https://docs.claude.com/en/api/getting-help",
-      "markdown_url": "https://docs.claude.com/en/api/getting-help.md",
-      "relative_path": "getting-help.md"
-    },
-    {
-      "doc_url": "https://docs.claude.com/en/api/handling-stop-reasons",
-      "markdown_url": "https://docs.claude.com/en/api/handling-stop-reasons.md",
-      "relative_path": "handling-stop-reasons.md"
-    },
-    {
       "doc_url": "https://docs.claude.com/en/api/ip-addresses",
       "markdown_url": "https://docs.claude.com/en/api/ip-addresses.md",
       "relative_path": "ip-addresses.md"
@@ -375,6 +370,51 @@
       "doc_url": "https://docs.claude.com/en/api/service-tiers",
       "markdown_url": "https://docs.claude.com/en/api/service-tiers.md",
       "relative_path": "service-tiers.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/skills-guide",
+      "markdown_url": "https://docs.claude.com/en/api/skills-guide.md",
+      "relative_path": "skills-guide.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/skills/create-skill",
+      "markdown_url": "https://docs.claude.com/en/api/skills/create-skill.md",
+      "relative_path": "skills/create-skill.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/skills/create-skill-version",
+      "markdown_url": "https://docs.claude.com/en/api/skills/create-skill-version.md",
+      "relative_path": "skills/create-skill-version.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/skills/delete-skill",
+      "markdown_url": "https://docs.claude.com/en/api/skills/delete-skill.md",
+      "relative_path": "skills/delete-skill.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/skills/delete-skill-version",
+      "markdown_url": "https://docs.claude.com/en/api/skills/delete-skill-version.md",
+      "relative_path": "skills/delete-skill-version.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/skills/get-skill",
+      "markdown_url": "https://docs.claude.com/en/api/skills/get-skill.md",
+      "relative_path": "skills/get-skill.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/skills/get-skill-version",
+      "markdown_url": "https://docs.claude.com/en/api/skills/get-skill-version.md",
+      "relative_path": "skills/get-skill-version.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/skills/list-skill-versions",
+      "markdown_url": "https://docs.claude.com/en/api/skills/list-skill-versions.md",
+      "relative_path": "skills/list-skill-versions.md"
+    },
+    {
+      "doc_url": "https://docs.claude.com/en/api/skills/list-skills",
+      "markdown_url": "https://docs.claude.com/en/api/skills/list-skills.md",
+      "relative_path": "skills/list-skills.md"
     },
     {
       "doc_url": "https://docs.claude.com/en/api/supported-regions",

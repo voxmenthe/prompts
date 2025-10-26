@@ -1,4 +1,4 @@
-LiveKit Docs › Partner spotlight › OpenAI › Overview
+LiveKit docs › Partner spotlight › OpenAI › Overview
 
 ---
 
@@ -10,12 +10,12 @@ LiveKit Docs › Partner spotlight › OpenAI › Overview
 
 [OpenAI](https://openai.com/) provides some of the most powerful AI models and services today, which integrate into LiveKit Agents in the following ways:
 
-- **Realtime API**: The original production-grade speech-to-speech model. Build lifelike voice assistants with just one model.
-- **GPT 4o, o1-mini, and more**: Smart and creative models for voice AI.
+- **Realtime API**: A speech-to-speech realtime model with live video input.
+- **GPT 4.1, GPT 5, GPT 4o, and more**: Smart and creative models for voice AI.
 - **STT models**: From industry-standard `whisper-1` to leading-edge `gpt-4o-transcribe`.
 - **TTS models**: Use OpenAI's latest `gpt-4o-mini-tts` to generate lifelike speech in a voice pipeline.
 
-OpenAI LLM models are available in LiveKit Inference, via Azure, with billing and integration handled automatically. The OpenAI plugin for LiveKit Agents provides support for the full [OpenAI developer platform](https://platform.openai.com/) as well as [Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/ai-services/openai/overview).
+OpenAI LLM models are available in LiveKit Inference with billing and integration handled automatically. The OpenAI plugin for LiveKit Agents provides support for the full [OpenAI developer platform](https://platform.openai.com/) as well as [Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/ai-services/openai/overview).
 
 ## Getting started
 

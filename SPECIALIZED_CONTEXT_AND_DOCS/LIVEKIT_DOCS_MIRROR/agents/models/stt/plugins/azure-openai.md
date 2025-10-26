@@ -1,4 +1,4 @@
-LiveKit Docs › Partner spotlight › Azure › Azure OpenAI STT Plugin
+LiveKit docs › Partner spotlight › Azure › Azure OpenAI STT Plugin
 
 ---
 
@@ -24,8 +24,8 @@ Support for Azure OpenAI STT is available in the `openai` plugin.
 
 Install the plugin from PyPI:
 
-```bash
-pip install "livekit-agents[openai]~=1.2"
+```shell
+uv add "livekit-agents[openai]~=1.2"
 
 ```
 

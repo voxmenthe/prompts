@@ -1,4 +1,4 @@
-LiveKit Docs › Partner spotlight › AWS › Amazon Nova Sonic Plugin
+LiveKit docs › Partner spotlight › AWS › Amazon Nova Sonic Plugin
 
 ---
 
@@ -22,9 +22,8 @@ This section includes a basic usage example and some reference material. For lin
 
 Install the AWS plugin from PyPI with the `realtime` extra:
 
-```bash
-pip install "livekit-plugins-aws[realtime]"
-
+```shell
+uv add "livekit-plugins-aws[realtime]"
 
 ```
 

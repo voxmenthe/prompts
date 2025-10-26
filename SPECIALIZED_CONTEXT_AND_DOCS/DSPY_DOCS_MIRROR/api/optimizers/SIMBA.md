@@ -3,7 +3,7 @@
 ## dspy.SIMBA
 
 ```python
-class SIMBA(*, metric, bsize=32, num_candidates=6, max_steps=8, max_demos=4, demo_input_field_maxlen=100000, num_threads=None, temperature_for_sampling=0.2, temperature_for_candidates=0.2)
+class SIMBA(*, metric, bsize=32, num_candidates=6, max_steps=8, max_demos=4, prompt_model=None, teacher_settings=None, demo_input_field_maxlen=100000, num_threads=None, temperature_for_sampling=0.2, temperature_for_candidates=0.2)
 ```
 
 SIMBA (Stochastic Introspective Mini-Batch Ascent) optimizer for DSPy.
@@ -32,7 +32,7 @@ Args:
 Returns:
     The optimized module with candidate_programs and trial_logs attached
 
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/teleprompt/simba.py` (lines 14–366)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/teleprompt/simba.py` (lines 16–376)
 
 
 ## Example Usage

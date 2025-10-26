@@ -1,4 +1,4 @@
-LiveKit Docs › Reference › SIP participant
+LiveKit docs › Reference › SIP participant
 
 ---
 

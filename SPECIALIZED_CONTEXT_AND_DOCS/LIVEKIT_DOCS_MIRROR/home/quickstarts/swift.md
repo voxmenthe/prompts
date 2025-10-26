@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit SDKs › Platform-specific quickstarts › Swift
+LiveKit docs › LiveKit SDKs › Platform-specific quickstarts › Swift
 
 ---
 

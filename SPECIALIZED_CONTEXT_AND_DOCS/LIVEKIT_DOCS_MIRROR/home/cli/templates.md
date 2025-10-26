@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit CLI › App templates
+LiveKit docs › LiveKit CLI › App templates
 
 ---
 

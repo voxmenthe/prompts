@@ -1,4 +1,4 @@
-LiveKit Docs › Partner spotlight › Google › Gemini Live API Plugin
+LiveKit docs › Partner spotlight › Google › Gemini Live API Plugin
 
 ---
 
@@ -24,8 +24,8 @@ Install the Google plugin:
 
 **Python**:
 
-```bash
-pip install "livekit-agents[google]~=1.2"
+```shell
+uv add "livekit-agents[google]~=1.2"
 
 ```
 
@@ -33,7 +33,7 @@ pip install "livekit-agents[google]~=1.2"
 
 **Node.js**:
 
-```bash
+```shell
 pnpm add "@livekit/agents-plugin-google@1.x"
 
 ```
@@ -43,7 +43,7 @@ pnpm add "@livekit/agents-plugin-google@1.x"
 The Google plugin requires authentication based on your chosen service:
 
 - For Vertex AI, you must set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to the path of the service account key file.
-- For Google Gemini API, set the `GOOGLE_API_KEY` environment variable.
+- For the Google Gemini API, set the `GOOGLE_API_KEY` environment variable.
 
 ### Usage
 
@@ -55,7 +55,7 @@ Use the Gemini Live API within an `AgentSession`. For example, you can use it in
 from livekit.plugins import google
 
 session = AgentSession(
-    llm=google.beta.realtime.RealtimeModel(
+    llm=google.realtime.RealtimeModel(
         model="gemini-2.0-flash-exp",
         voice="Puck",
         temperature=0.8,
@@ -73,8 +73,8 @@ session = AgentSession(
 import * as google from '@livekit/agents-plugin-google';
 
 const session = new voice.AgentSession({
-   llm: new google.beta.realtime.RealtimeModel({
-      model: "gemini-2.0-flash-exp",
+   llm: new google.realtime.RealtimeModel({
+      model: "gemini-2.5-flash-native-audio-preview-09-2025",
       voice: "Puck",
       temperature: 0.8,
       instructions: "You are a helpful assistant",
@@ -82,10 +82,6 @@ const session = new voice.AgentSession({
 });
 
 ```
-
-> 🔥 **Limitations with Gemini 2.5**
-> 
-> Gemini 2.5 Live is currently in preview and does not handle function calling correctly. The Gemini team is actively working on a fix. See [GH issue](https://github.com/googleapis/python-genai/issues/843).
 
 ### Parameters
 
@@ -107,6 +103,12 @@ This section describes some of the available parameters. For a complete referenc
 
 - **`location`** _(string)_ (optional) - Environment: `GOOGLE_CLOUD_LOCATION`: Google Cloud location to use for the API (if `vertextai=True`). By default, it uses the location from the service account key file or `us-central1`.
 
+- **`thinking_config`** _(ThinkingConfig)_ (optional): Configuration for the model's thinking mode, if supported. For more information, see [Thinking](#thinking).
+
+- **`enable_affective_dialog`** _(boolean)_ (optional) - Default: `false`: Enable affective dialog on supported native audio models. For more information, see [Affective dialog](https://ai.google.dev/gemini-api/docs/live-guide#affective-dialog).
+
+- **`proactivity`** _(boolean)_ (optional) - Default: `false`: Enable proactive audio, where the model can decide not to respond to certain inputs. Requires a native audio model. For more information, see [Proactive audio](https://ai.google.dev/gemini-api/docs/live-guide#proactive-audio).
+
 - **`_gemini_tools`** _(list[GeminiTool])_ (optional): List of built-in Google tools, such as Google Search. For more information, see [Gemini tools](#gemini-tools).
 
 ### Gemini tools
@@ -123,8 +125,8 @@ The `_gemini_tools` parameter allows you to use built-in Google tools with the G
 from google.genai import types
 
 session = AgentSession(
-    llm=google.beta.realtime.RealtimeModel(
-        model="gemini-2.0-flash-exp",
+    llm=google.realtime.RealtimeModel(
+        model="gemini-2.5-flash-native-audio-preview-09-2025",
         _gemini_tools=[types.GoogleSearch()],
     )
 )
@@ -140,7 +142,7 @@ session = AgentSession(
 import * as google from '@livekit/agents-plugin-google';
 
 const session = new voice.AgentSession({
-   llm: new google.beta.realtime.RealtimeModel({
+   llm: new google.realtime.RealtimeModel({
       model: "gemini-2.0-flash-exp",
       geminiTools: [new google.types.GoogleSearch()],
    }),
@@ -150,7 +152,7 @@ const session = new voice.AgentSession({
 
 ## Turn detection
 
-The Gemini Live API includes built-in VAD-based turn detection, enabled by default. To use LiveKit’s turn detection model instead, configure the model to disable automatic activity detection. A separate streaming STT model is required in order to use LiveKit’s turn detection model.
+The Gemini Live API includes built-in VAD-based turn detection, enabled by default. To use LiveKit's turn detection model instead, configure the model to disable automatic activity detection. A separate streaming STT model is required in order to use LiveKit's turn detection model.
 
 **Python**:
 
@@ -161,7 +163,7 @@ from livekit.plugins.turn_detector.multilingual import MultilingualModel
 
 session = AgentSession(
    turn_detection=MultilingualModel(),
-   llm=google.beta.realtime.RealtimeModel(
+   llm=google.realtime.RealtimeModel(
       realtime_input_config=types.RealtimeInputConfig(
       automatic_activity_detection=types.AutomaticActivityDetection(
          disabled=True,
@@ -184,7 +186,7 @@ import * as livekit from '@livekit/agents-plugin-livekit';
 
 const session = new voice.AgentSession({
    turnDetection: new MultilingualModel(),
-   llm: new google.beta.realtime.RealtimeModel({
+   llm: new google.realtime.RealtimeModel({
       model: "gemini-2.0-flash-exp",
       realtimeInputConfig: {
          automaticActivityDetection: {
@@ -198,6 +200,29 @@ const session = new voice.AgentSession({
 
 ```
 
+## Thinking
+
+The latest model, `gemini-2.5-flash-native-audio-preview-09-2025`, supports thinking. You can configure its behavior with the `thinking_config` parameter.
+
+By default, the model's thoughts are forwarded like other transcripts. To disable this, set `include_thoughts=False`:
+
+```python
+from google.genai import types
+
+# ...
+
+session = AgentSession(
+    llm=google.realtime.RealtimeModel(
+        thinking_config=types.ThinkingConfig(
+            include_thoughts=False,
+        ),
+    ),
+)
+
+```
+
+For other available parameters, such as `thinking_budget`, see the [Gemini thinking docs](https://ai.google.dev/gemini-api/docs/thinking).
+
 ## Usage with separate TTS
 
 To use the Gemini Live API with a different [TTS instance](https://docs.livekit.io/agents/models/tts.md), configure it with a text-only response modality and include a TTS instance in your `AgentSession` configuration. This configuration allows you to gain the benefits of realtime speech comprehension while maintaining complete control over the speech output.
@@ -208,7 +233,7 @@ To use the Gemini Live API with a different [TTS instance](https://docs.livekit.
 from google.genai.types import Modality
 
 session = AgentSession(
-    llm=google.beta.realtime.RealtimeModel(modalities=[Modality.TEXT]),
+    llm=google.realtime.RealtimeModel(modalities=[Modality.TEXT]),
     tts="cartesia/sonic-2",
 )
 
@@ -223,7 +248,7 @@ session = AgentSession(
 import * as google from '@livekit/agents-plugin-google';
 
 const session = new voice.AgentSession({
-   llm: new google.beta.realtime.RealtimeModel({
+   llm: new google.realtime.RealtimeModel({
       model: "gemini-2.0-flash-exp",
       modalities: [google.types.Modality.TEXT],
    }),

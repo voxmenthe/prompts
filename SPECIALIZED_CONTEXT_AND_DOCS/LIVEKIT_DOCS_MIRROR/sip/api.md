@@ -1,4 +1,4 @@
-LiveKit Docs › Reference › SIP API
+LiveKit docs › Reference › SIP API
 
 ---
 
@@ -27,7 +27,7 @@ To learn more about additional APIs, see [Server APIs](https://docs.livekit.io/r
 
 The SIP API is accessible via `/twirp/livekit.SIP/<MethodName>`. For example, if you're using LiveKit Cloud the following URL is for the [CreateSIPInboundTrunk](#createsipinoundtrunk) API endpoint:
 
-```bash
+```shell
 https://%{projectDomain}%/twirp/livekit.SIP/CreateSIPInboundTrunk
 
 ```
@@ -51,7 +51,7 @@ Twirp expects an HTTP POST request. The body of the request must be a JSON objec
 
 For example, create an inbound trunk using [CreateSIPInboundTrunk](#createsipinboundtrunk):
 
-```bash
+```shell
 curl -X POST https://%{projectDomain}%/twirp/livekit.SIP/CreateSIPInboundTrunk \
 	-H "Authorization: Bearer <token-with-sip-admin>" \
 	-H 'Content-Type: application/json' \
@@ -61,7 +61,7 @@ curl -X POST https://%{projectDomain}%/twirp/livekit.SIP/CreateSIPInboundTrunk \
 
 List inbound trunks using [ListSIPInboundTrunk](#listsipinboundtrunk) API endpoint to list inbound trunks:
 
-```bash
+```shell
 curl -X POST https://%{projectDomain}%/twirp/livekit.SIP/ListSIPInboundTrunk \
 	-H "Authorization: Bearer <token-with-sip-admin>" \
 	-H 'Content-Type: application/json' \
@@ -88,7 +88,10 @@ Returns [SIPInboundTrunkInfo](#sipinboundtrunkinfo).
 | metadata | string |  | Initial metadata to assign to the trunk. This metadata is added to every SIP participant that uses the trunk. |
 | numbers | array<string> | yes | Array of provider phone numbers associated with the trunk. |
 | allowed_addresses | array<string> |  | List of IP addresses that are allowed to use the trunk. Each item in the list can be an individual IP address or a Classless Inter-Domain Routing notation representing a CIDR block. |
-| allowed_numbers | array<string> |  | List of phone numbers that are allowed to use the trunk. |
+| allowed_numbers | array<string> |  | List of phone numbers that are allowed to use the trunk. If this [list is empty](https://docs.livekit.io/sip/trunk-inbound.md#accepting-calls-to-any-phone-number), trunk access must be limited by using one of the following options:
+
+- Set `auth_username` and `auth_password` _or_
+- Set `allowed_addresses` |
 | auth_username | string |  | If configured, the username for authorized use of the provider's SIP trunk. |
 | auth_password | string |  | If configured, the password for authorized use of the provider's SIP trunk. |
 | headers | map<string, string> |  | SIP X-* headers for INVITE request. These headers are sent as-is and may help identify this call as coming from LiveKit for the other SIP endpoint. |
@@ -165,6 +168,7 @@ Returns [SIPParticipantInfo](#sipparticipantinfo)
 | krisp_enabled | bool |  | True to enable [Krisp noise cancellation](https://docs.livekit.io/sip.md#noise-cancellation-for-calls) for the callee. |
 | media_encryption | [SIPMediaEncryption](#sipmediaencryption) |  | Whether or not to encrypt media. |
 | wait_until_answered | bool |  | If true, return after the call is answered — including if it goes to voicemail. |
+| display_name | string |  | Optional display name for the caller's number. If empty, results in a CNAM lookup by destination carrier. If ommitted, defaults to caller's number. |
 
 ### DeleteSIPDispatchRule
 

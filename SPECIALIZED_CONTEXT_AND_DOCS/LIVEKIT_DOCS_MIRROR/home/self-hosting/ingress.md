@@ -1,4 +1,4 @@
-LiveKit Docs › Self-hosting › Ingress
+LiveKit docs › Self-hosting › Ingress
 
 ---
 

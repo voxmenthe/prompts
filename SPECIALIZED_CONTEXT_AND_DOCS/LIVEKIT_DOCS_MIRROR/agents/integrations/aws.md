@@ -1,4 +1,4 @@
-LiveKit Docs › Partner spotlight › AWS › Overview
+LiveKit docs › Partner spotlight › AWS › Overview
 
 ---
 
@@ -25,8 +25,8 @@ Use the voice AI quickstart to build a voice AI app with AWS services. Select a 
 
 Install the AWS plugin:
 
-```bash
-pip install "livekit-agents[aws]~=1.2"
+```shell
+uv add "livekit-agents[aws]~=1.2"
 
 ```
 
@@ -71,8 +71,8 @@ session = AgentSession(
 
 Or use Amazon Nova Sonic, a state of the art speech-to-speech model:
 
-```bash
-pip install "livekit-agents-aws[realtime]~=1.2"
+```shell
+uv add "livekit-agents-aws[realtime]~=1.2"
 
 ```
 

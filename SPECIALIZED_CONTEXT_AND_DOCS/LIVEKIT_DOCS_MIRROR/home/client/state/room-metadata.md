@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit SDKs › State synchronization › Room metadata
+LiveKit docs › LiveKit SDKs › State synchronization › Room metadata
 
 ---
 

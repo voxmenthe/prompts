@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Speech-to-text (STT) › Plugins › Sarvam
+LiveKit docs › Models › Speech-to-text (STT) › Plugins › Sarvam
 
 ---
 
@@ -22,8 +22,8 @@ This section provides a quick reference for the Sarvam STT plugin. For more info
 
 Install the plugin from PyPI:
 
-```bash
-pip install "livekit-agents[sarvam]~=1.2"
+```shell
+uv add "livekit-agents[sarvam]~=1.2"
 
 ```
 

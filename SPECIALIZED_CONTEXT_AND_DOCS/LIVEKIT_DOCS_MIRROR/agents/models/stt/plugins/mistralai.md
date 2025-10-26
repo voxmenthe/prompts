@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Speech-to-text (STT) › Plugins › Mistral AI
+LiveKit docs › Models › Speech-to-text (STT) › Plugins › Mistral AI
 
 ---
 
@@ -18,8 +18,8 @@ This section includes a basic usage example and some reference material. For lin
 
 Install the LiveKit Mistral AI plugin from PyPI:
 
-```bash
-pip install "livekit-agents[mistralai]~=1.2"
+```shell
+uv add "livekit-agents[mistralai]~=1.2"
 
 ```
 

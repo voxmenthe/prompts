@@ -1,4 +1,4 @@
-LiveKit Docs › v0.x migration guides › Node.js
+LiveKit docs › v0.x migration guides › Node.js
 
 ---
 

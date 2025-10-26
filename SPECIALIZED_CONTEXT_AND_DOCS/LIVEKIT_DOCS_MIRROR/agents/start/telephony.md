@@ -1,4 +1,4 @@
-LiveKit Docs › Getting started › Telephony integration
+LiveKit docs › Getting started › Telephony integration
 
 ---
 
@@ -126,7 +126,7 @@ After you start your agent with the following command, dial the number you set u
 ** Filename: `shell`**
 
 ```shell
-python agent.py dev
+uv run agent.py dev
 
 ```
 
@@ -464,7 +464,7 @@ This is a [cold transfer](https://docs.livekit.io/sip/transfer-cold.md), where t
 > 
 > To use the Node.js example, you must install the `@livekit/rtc-node` package:
 > 
-> ```bash
+> ```shell
 > pnpm add @livekit/rtc-node
 > 
 > ```

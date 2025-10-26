@@ -1,4 +1,4 @@
-LiveKit Docs › Partner spotlight › Azure › Overview
+LiveKit docs › Partner spotlight › Azure › Overview
 
 ---
 
@@ -61,8 +61,8 @@ session = new AgentSession({
 
 Install the OpenAI plugin:
 
-```bash
-pip install "livekit-agents[openai]~=1.2"
+```shell
+uv add "livekit-agents[openai]~=1.2"
 
 ```
 

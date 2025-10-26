@@ -1,4 +1,4 @@
-LiveKit Docs › Partner spotlight › Groq › Overview
+LiveKit docs › Partner spotlight › Groq › Overview
 
 ---
 

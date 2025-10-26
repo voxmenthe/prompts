@@ -17,5 +17,5 @@ def __call__(self, query)
 ```python
 def forward(self, query)
 ```
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/retrievers/embeddings.py` (lines 10–89)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/retrievers/embeddings.py` (lines 10–216)
 

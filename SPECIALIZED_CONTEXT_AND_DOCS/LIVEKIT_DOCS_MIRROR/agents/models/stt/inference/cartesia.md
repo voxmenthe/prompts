@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Speech-to-text (STT) › LiveKit Inference › Cartesia
+LiveKit docs › Models › Speech-to-text (STT) › LiveKit Inference › Cartesia
 
 ---
 
@@ -85,6 +85,8 @@ session = new AgentSession({
 - **`language`** _(string)_ (optional): Language code for the transcription. If not set, the provider default applies.
 
 - **`extra_kwargs`** _(dict)_ (optional): Additional parameters to pass to the Cartesia STT API, including `min_volume`, and `max_silence_duration_secs`. See the provider's [documentation](#additional-resources) for more information.
+
+In Node.js this parameter is called `modelOptions`.
 
 ## Additional resources
 

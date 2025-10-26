@@ -1,4 +1,4 @@
-LiveKit Docs › Accepting calls › Inbound trunk
+LiveKit docs › Accepting calls › Inbound trunk
 
 ---
 
@@ -246,7 +246,9 @@ if (!response.isSuccessful) {
 
 ## Accepting calls to any phone number
 
-You can configure an inbound trunk to accept incoming calls to any phone number by setting the `numbers` parameter to an empty string or wildcard character, for example, `*`. This is useful if you want to use the same inbound trunk for incoming calls to all your phone numbers.
+You can configure an inbound trunk to accept incoming calls to any phone number by setting the `numbers` parameter to an empty array. This is useful if you want to use the same inbound trunk for incoming calls to all your phone numbers.
+
+When you use an empty `numbers` parameter, you must set either a username and password for authentication or the `allowed_addresses` parameter. See [CreateSIPInboundTrunk](https://docs.livekit.io/sip/api.md#createsipinboundtrunk) for parameter details.
 
 ## Accepting calls from specific phone numbers
 
@@ -429,7 +431,7 @@ Use the [`ListSIPInboundTrunk`](https://docs.livekit.io/sip/api.md#listsipinboun
 
 **LiveKit CLI**:
 
-```bash
+```shell
 lk sip inbound list
 
 ```

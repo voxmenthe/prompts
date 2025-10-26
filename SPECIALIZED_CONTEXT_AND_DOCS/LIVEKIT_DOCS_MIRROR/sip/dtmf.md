@@ -1,4 +1,4 @@
-LiveKit Docs › Features › DTMF
+LiveKit docs › Features › DTMF
 
 ---
 

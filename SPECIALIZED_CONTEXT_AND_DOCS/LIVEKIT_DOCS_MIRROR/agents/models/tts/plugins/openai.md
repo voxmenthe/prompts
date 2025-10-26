@@ -1,4 +1,4 @@
-LiveKit Docs › Partner spotlight › OpenAI › OpenAI TTS Plugin
+LiveKit docs › Partner spotlight › OpenAI › OpenAI TTS Plugin
 
 ---
 

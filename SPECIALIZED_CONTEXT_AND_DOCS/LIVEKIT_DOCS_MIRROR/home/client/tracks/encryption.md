@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit SDKs › Realtime media › End-to-end encryption
+LiveKit docs › LiveKit SDKs › Realtime media › End-to-end encryption
 
 ---
 

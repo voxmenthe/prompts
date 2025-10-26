@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit Cloud › Analytics API
+LiveKit docs › LiveKit Cloud › Analytics API
 
 ---
 
@@ -127,7 +127,7 @@ This will return a JSON object like this:
 
 #### Examples
 
-```bash
+```shell
 # Get the first page and limit the number of sessions to 100.
 curl -H "Authorization: Bearer $TOKEN" \
   "https://cloud-api.livekit.io/api/project/$PROJECT_ID/sessions\
@@ -147,7 +147,7 @@ To get more details about a specific session, you can use the session_id returne
 
 **Shell**:
 
-```bash
+```shell
 curl -H "Authorization: Bearer $TOKEN" \
   "cloud-api.livekit.io/api/project/$PROJECT_ID/sessions/$SESSION_ID"
 

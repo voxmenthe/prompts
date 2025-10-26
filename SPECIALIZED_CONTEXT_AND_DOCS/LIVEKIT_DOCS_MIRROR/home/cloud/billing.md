@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit Cloud › Billing
+LiveKit docs › LiveKit Cloud › Billing
 
 ---
 

@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit SDKs › Realtime media › Screen sharing
+LiveKit docs › LiveKit SDKs › Realtime media › Screen sharing
 
 ---
 

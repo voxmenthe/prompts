@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Text-to-speech (TTS) › Plugins › Deepgram
+LiveKit docs › Models › Text-to-speech (TTS) › Plugins › Deepgram
 
 ---
 
@@ -22,8 +22,8 @@ This section provides a quick reference for the Deepgram TTS plugin. For more in
 
 Install the plugin from PyPI:
 
-```bash
-pip install "livekit-agents[deepgram]~=1.2"
+```shell
+uv add "livekit-agents[deepgram]~=1.2"
 
 ```
 

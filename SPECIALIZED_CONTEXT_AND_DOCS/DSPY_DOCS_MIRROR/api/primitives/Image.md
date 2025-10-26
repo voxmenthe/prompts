@@ -3,7 +3,7 @@
 ## dspy.Image
 
 ```python
-class Image
+class Image(url=None, *, download=False, **data)
 ```
 
 ### format
@@ -29,11 +29,5 @@ def from_file(cls, file_path)
 ```python
 def from_url(cls, url, download=False)
 ```
-
-### validate_input
-
-```python
-def validate_input(cls, values)
-```
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/adapters/types/image.py` (lines 21–74)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/adapters/types/image.py` (lines 23–112)
 

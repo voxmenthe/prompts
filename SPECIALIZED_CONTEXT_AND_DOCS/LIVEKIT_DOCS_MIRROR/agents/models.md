@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Overview
+LiveKit docs › Models › Overview
 
 ---
 
@@ -126,7 +126,7 @@ LiveKit Agents includes a large ecosystem of open source plugins for a variety o
 For Python, the plugins are offered as optional dependencies on the base SDK. For instance, to install the SDK with the OpenAI plugin, run the following command:
 
 ```shell
-pip install "livekit-agents[openai]~=1.2"
+uv add "livekit-agents[openai]~=1.2"
 
 ```
 

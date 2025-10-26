@@ -1,4 +1,4 @@
-LiveKit Docs › Recording & export › Examples
+LiveKit docs › Recording & export › Examples
 
 ---
 
@@ -271,7 +271,7 @@ Portrait orientation can be specified by either using a `preset` option or setti
 
 ```
 
-```bash
+```shell
 lk egress start --type web egress.json
 
 ```

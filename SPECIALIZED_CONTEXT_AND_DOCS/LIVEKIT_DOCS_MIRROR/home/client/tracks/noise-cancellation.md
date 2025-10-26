@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit SDKs › Realtime media › Noise & echo cancellation
+LiveKit docs › LiveKit SDKs › Realtime media › Noise & echo cancellation
 
 ---
 

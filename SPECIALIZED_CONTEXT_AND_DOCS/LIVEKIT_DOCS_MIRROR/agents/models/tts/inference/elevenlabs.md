@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Text-to-speech (TTS) › LiveKit Inference › ElevenLabs
+LiveKit docs › Models › Text-to-speech (TTS) › LiveKit Inference › ElevenLabs
 
 ---
 
@@ -93,6 +93,8 @@ session = new AgentSession({
 - **`language`** _(string)_ (optional): Language code for the input text. If not set, the model default applies.
 
 - **`extra_kwargs`** _(dict)_ (optional): Additional parameters to pass to the ElevenLabs TTS API, including `inactivity_timeout`, and `apply_text_normalization`. See the provider's [documentation](#additional-resources) for more information.
+
+In Node.js this parameter is called `modelOptions`.
 
 ## Voices
 

@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit SDKs › Platform-specific quickstarts › Next.js
+LiveKit docs › LiveKit SDKs › Platform-specific quickstarts › Next.js
 
 ---
 
@@ -64,7 +64,7 @@ To start, your app needs an LiveKit API key and secret, as well as your LiveKit 
 
 In your project root create the file `.env.local` with the following contents. Do not commit this file because it contains your secrets!
 
-```bash
+```shell
 LIVEKIT_API_KEY=%{apiKey}%
 LIVEKIT_API_SECRET=%{apiSecret}%
 LIVEKIT_URL=%{wsURL}%

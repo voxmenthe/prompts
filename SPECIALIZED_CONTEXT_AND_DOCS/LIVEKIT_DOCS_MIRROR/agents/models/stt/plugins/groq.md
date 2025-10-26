@@ -1,4 +1,4 @@
-LiveKit Docs › Partner spotlight › Groq › Groq STT Plugin
+LiveKit docs › Partner spotlight › Groq › Groq STT Plugin
 
 ---
 
@@ -24,8 +24,8 @@ Install the plugin from PyPI:
 
 **Python**:
 
-```bash
-pip install "livekit-agents[groq]~=1.2"
+```shell
+uv add "livekit-agents[groq]~=1.2"
 
 ```
 
@@ -35,7 +35,7 @@ pip install "livekit-agents[groq]~=1.2"
 
 For Node.js, support for Groq STT is available using the OpenAI plugin.
 
-```bash
+```shell
 pnpm add @livekit/agents-plugin-openai@1.x
 
 ```

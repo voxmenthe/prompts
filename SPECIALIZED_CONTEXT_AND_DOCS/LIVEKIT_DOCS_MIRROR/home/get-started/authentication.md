@@ -1,4 +1,4 @@
-LiveKit Docs › Get Started › Authentication
+LiveKit docs › Get Started › Authentication
 
 ---
 
@@ -18,7 +18,7 @@ Access tokens also carry an expiration time, after which the server will reject 
 
 **LiveKit CLI**:
 
-```bash
+```shell
 lk token create \
   --api-key <KEY> \
   --api-secret <SECRET> \
@@ -226,6 +226,7 @@ Room permissions are specified in the `video` field of a decoded join token. It 
 | canUpdateOwnMetadata | bool | Allow participant to update its own metadata |
 | hidden | bool | Hide participant from others in the room |
 | kind | string | Type of participant (standard, ingress, egress, sip, or agent). this field is typically set by LiveKit internals. |
+| destinationRoom | string | Name of the room a participant can be [forwarded](https://docs.livekit.io/home/server/managing-participants.md#forwardparticipant) to. |
 
 ### Example: subscribe-only token
 

@@ -1,4 +1,4 @@
-LiveKit Docs › Partner spotlight › AWS › Amazon Transcribe STT Plugin
+LiveKit docs › Partner spotlight › AWS › Amazon Transcribe STT Plugin
 
 ---
 
@@ -22,8 +22,8 @@ This section provides a brief overview of the Amazon Transcribe STT plugin. For 
 
 Install the plugin from PyPI:
 
-```bash
-pip install "livekit-agents[aws]~=1.2"
+```shell
+uv add "livekit-agents[aws]~=1.2"
 
 ```
 

@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Speech-to-text (STT) › Plugins › fal
+LiveKit docs › Models › Speech-to-text (STT) › Plugins › fal
 
 ---
 
@@ -22,8 +22,8 @@ This section includes a basic usage example and some reference material. For lin
 
 Install the plugin from PyPI:
 
-```bash
-pip install "livekit-agents[fal]~=1.2"
+```shell
+uv add "livekit-agents[fal]~=1.2"
 
 ```
 

@@ -1,4 +1,4 @@
-LiveKit Docs › Making calls › Workflow
+LiveKit docs › Making calls › Workflow
 
 ---
 

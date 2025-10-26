@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit Cloud › Quotas & limits
+LiveKit docs › LiveKit Cloud › Quotas & limits
 
 ---
 

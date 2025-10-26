@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit SDKs › State synchronization › Participant attributes
+LiveKit docs › LiveKit SDKs › State synchronization › Participant attributes
 
 ---
 

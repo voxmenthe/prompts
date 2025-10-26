@@ -1,4 +1,4 @@
-LiveKit Docs › Partner spotlight › AWS › Amazon Bedrock LLM Plugin
+LiveKit docs › Partner spotlight › AWS › Amazon Bedrock LLM Plugin
 
 ---
 
@@ -22,8 +22,8 @@ This section includes a basic usage example and some reference material. For lin
 
 Install the plugin from PyPI:
 
-```bash
-pip install "livekit-agents[aws]~=1.2"
+```shell
+uv add "livekit-agents[aws]~=1.2"
 
 ```
 

@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit SDKs › Overview
+LiveKit docs › LiveKit SDKs › Overview
 
 ---
 

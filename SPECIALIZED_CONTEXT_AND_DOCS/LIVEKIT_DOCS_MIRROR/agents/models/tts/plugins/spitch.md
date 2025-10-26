@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Text-to-speech (TTS) › Plugins › Spitch
+LiveKit docs › Models › Text-to-speech (TTS) › Plugins › Spitch
 
 ---
 
@@ -22,8 +22,8 @@ This section provides a quick reference for the Spitch TTS plugin. For more info
 
 Install the plugin from PyPI:
 
-```bash
-pip install "livekit-agents[spitch]~=1.2"
+```shell
+uv add "livekit-agents[spitch]~=1.2"
 
 ```
 

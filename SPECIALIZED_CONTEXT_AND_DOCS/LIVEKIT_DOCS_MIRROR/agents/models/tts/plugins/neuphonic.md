@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Text-to-speech (TTS) › Plugins › Neuphonic
+LiveKit docs › Models › Text-to-speech (TTS) › Plugins › Neuphonic
 
 ---
 
@@ -22,8 +22,8 @@ This section includes a brief overview of the Neuphonic TTS plugin. For more inf
 
 Install the plugin from PyPI:
 
-```bash
-pip install "livekit-agents[neuphonic]~=1.2"
+```shell
+uv add "livekit-agents[neuphonic]~=1.2"
 
 ```
 

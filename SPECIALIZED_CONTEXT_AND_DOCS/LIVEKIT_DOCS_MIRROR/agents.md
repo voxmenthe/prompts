@@ -1,4 +1,4 @@
-LiveKit Docs › Getting started › Introduction
+LiveKit docs › Getting started › Introduction
 
 ---
 

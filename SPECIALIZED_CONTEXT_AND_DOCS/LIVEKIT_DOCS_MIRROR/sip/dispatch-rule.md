@@ -1,4 +1,4 @@
-LiveKit Docs › Accepting calls › Dispatch rule
+LiveKit docs › Accepting calls › Dispatch rule
 
 ---
 
@@ -1328,7 +1328,7 @@ Use the [`ListSIPDispatchRule`](https://docs.livekit.io/sip/api.md#listsipdispat
 
 **LiveKit CLI**:
 
-```bash
+```shell
 lk sip dispatch list
 
 ```

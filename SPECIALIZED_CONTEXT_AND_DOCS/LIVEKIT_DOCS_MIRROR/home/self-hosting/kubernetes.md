@@ -1,4 +1,4 @@
-LiveKit Docs › Self-hosting › Kubernetes
+LiveKit docs › Self-hosting › Kubernetes
 
 ---
 

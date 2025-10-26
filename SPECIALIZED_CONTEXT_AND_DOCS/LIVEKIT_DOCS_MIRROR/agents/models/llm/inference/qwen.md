@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Large language models (LLM) › LiveKit Inference › Qwen
+LiveKit docs › Models › Large language models (LLM) › LiveKit Inference › Qwen
 
 ---
 
@@ -57,7 +57,7 @@ session = AgentSession(
     llm=inference.LLM(
         model="qwen/qwen3-235b-a22b-instruct", 
         provider="baseten",
-        extraKwargs={
+        extra_kwargs={
             "max_completion_tokens": 1000
         }
     ),
@@ -77,7 +77,7 @@ session = new AgentSession({
     llm: new inference.LLM({ 
         model: "qwen/qwen3-235b-a22b-instruct", 
         provider: "baseten",
-        extraKwargs: { 
+        modelOptions: { 
             max_completion_tokens: 1000
         }
     }),
@@ -91,6 +91,8 @@ session = new AgentSession({
 - **`provider`** _(string)_ (optional): Set a specific provider to use for the LLM. Refer to the [models list](#models) for available providers. If not set, LiveKit Inference uses the best available provider, and bills accordingly.
 
 - **`extra_kwargs`** _(dict)_ (optional): Additional parameters to pass to the provider's Chat Completions API, such as `max_completion_tokens`. See the provider's [documentation](#additional-resources) for more information.
+
+In Node.js this parameter is called `modelOptions`.
 
 ## Additional resources
 

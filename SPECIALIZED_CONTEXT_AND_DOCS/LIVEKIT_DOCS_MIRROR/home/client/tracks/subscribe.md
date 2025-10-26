@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit SDKs › Realtime media › Subscribing to tracks
+LiveKit docs › LiveKit SDKs › Realtime media › Subscribing to tracks
 
 ---
 

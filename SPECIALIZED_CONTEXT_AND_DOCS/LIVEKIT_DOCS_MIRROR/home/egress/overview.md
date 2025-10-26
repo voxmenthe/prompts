@@ -1,4 +1,4 @@
-LiveKit Docs › Recording & export › Overview
+LiveKit docs › Recording & export › Overview
 
 ---
 

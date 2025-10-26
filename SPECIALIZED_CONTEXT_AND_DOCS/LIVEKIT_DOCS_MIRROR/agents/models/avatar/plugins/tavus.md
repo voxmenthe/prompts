@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Virtual avatars › Plugins › Tavus
+LiveKit docs › Models › Virtual avatars › Plugins › Tavus
 
 ---
 
@@ -24,8 +24,8 @@ This section includes a basic usage example and some reference material. For lin
 
 Install the plugin from PyPI:
 
-```bash
-pip install "livekit-agents[tavus]~=1.2"
+```shell
+uv add "livekit-agents[tavus]~=1.2"
 
 ```
 
@@ -46,7 +46,7 @@ You can use any replica with the Tavus plugin, but must setup a persona with the
 
 Here is a simple `curl` command to create a persona with the correct settings using the [Create Persona endpoint](https://docs.tavus.io/api-reference/personas/create-persona):
 
-```bash
+```shell
 curl --request POST \
   --url https://tavusapi.com/v2/personas \
   -H "Content-Type: application/json" \

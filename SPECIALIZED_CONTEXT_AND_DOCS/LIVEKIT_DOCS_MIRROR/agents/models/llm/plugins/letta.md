@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Large language models (LLM) › Plugins › Letta
+LiveKit docs › Models › Large language models (LLM) › Plugins › Letta
 
 ---
 
@@ -22,8 +22,8 @@ This section includes a basic usage example and some reference material. For lin
 
 Install the OpenAI plugin to add Letta support:
 
-```bash
-pip install "livekit-agents[openai]~=1.2"
+```shell
+uv add "livekit-agents[openai]~=1.2"
 
 ```
 

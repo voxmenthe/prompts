@@ -1,4 +1,4 @@
-LiveKit Docs › Recording & export › Egress API
+LiveKit docs › Recording & export › Egress API
 
 ---
 
@@ -158,7 +158,7 @@ try {
 
 **LiveKit CLI**:
 
-```bash
+```shell
 lk egress update-layout --id <EGRESS_ID> --layout speaker
 
 ```

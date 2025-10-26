@@ -1,4 +1,4 @@
-LiveKit Docs › Server APIs › Participant management
+LiveKit docs › Server APIs › Participant management
 
 ---
 
@@ -30,7 +30,7 @@ roomClient := lksdk.NewRoomServiceClient(host, "api-key", "secret-key")
 **Python**:
 
 ```shell
-pip install livekit-api
+uv add livekit-api
 
 ```
 
@@ -55,9 +55,17 @@ const roomService = new RoomServiceClient(livekitHost, 'api-key', 'secret-key');
 
 ```
 
-## List Participants
+Use the `RoomServiceClient` to manage participants in a room with the APIs in the following sections. To learn more about grants and the required privileges for each API, see [Authentication](https://docs.livekit.io/home/get-started/authentication.md).
 
-List all the participants in a room.
+## List participants
+
+You can list all the participants in a room using the `ListParticipants` API.
+
+### Required privileges
+
+You must have the `roomList` grant to list participants.
+
+### Examples
 
 **Go**:
 
@@ -99,9 +107,21 @@ lk room participants list <ROOM_NAME>
 
 ```
 
-## Get details on a Participant
+## Get participant details
 
-Get detailed information about a participant in a room.
+Get detailed information about a participant in a room using the `GetParticipant` API.
+
+### Required privileges
+
+You must have the [`roomAdmin`](https://docs.livekit.io/home/get-started/authentication.md#video-grant) grant to get detailed participant information.
+
+### Parameters
+
+| Name | Type | Required | Description |
+| `room` | string | ✓ | Room participant is currently in. |
+| `identity` | string | ✓ | Identity of the participant to get. |
+
+### Examples
 
 **Go**:
 
@@ -145,11 +165,31 @@ lk room participants get --room <ROOM_NAME> <PARTICIPANT_ID>
 
 ```
 
-## Updating permissions
+## Update participant
 
-You can modify a participant's permissions using the `UpdateParticipant` API. When there's a change in permissions, connected clients are notified through the `ParticipantPermissionChanged` event.
+You can modify a participant's permissions and metadata using the `UpdateParticipant` API.
 
-This is useful, for example, when transitioning an audience member to a speaker role within a room.
+### Required privileges
+
+You must have the `roomAdmin` grant to update a participant.
+
+### Parameters
+
+At least one of `permission` or `metadata` must be set, along with the required `room` and `identity` fields.
+
+| Name | Type | Required | Description |
+| `room` | string | ✓ | Room participant is currently in. |
+| `identity` | string | ✓ | Identity of the participant to update. |
+| `permission` | [ParticipantPermission](https://docs.livekit.io/reference/server/server-apis.md#participantpermission) |  | Permissions to update for the participant. Required if `metadata` is _not_ set. |
+| `metadata` | string |  | Metadata to update for the participant. Required if `permission` is _not_ set. |
+| `name` | string |  | Display name to update for the participant. |
+| `attributes` | map[string]string |  | Attributes to update for the participant. |
+
+### Updating participant permissions
+
+You can update a participant's permissions using the `Permission` field in the `UpdateParticipantRequest`. When there's a change in permissions, connected clients are notified through a `ParticipantPermissionChanged` event.
+
+This is useful, for example, to promote an audience member to a speaker role within a room by granting them the `CanPublish` privilege.
 
 > ℹ️ **Revoking permissions unpublishes tracks**
 > 
@@ -169,7 +209,7 @@ res, err := c.UpdateParticipant(context.Background(), &livekit.UpdateParticipant
   },
 })
 
-// ...and later move them back to audience
+// ...and later revokes their publishing permissions as speaker
 res, err := c.UpdateParticipant(context.Background(), &livekit.UpdateParticipantRequest{
   Room: roomName,
   Identity: identity,
@@ -246,9 +286,9 @@ lk room participants update \
 
 ```
 
-## Updating metadata
+### Updating participant metadata
 
-You can modify a Participant's metadata whenever necessary. When metadata is changed, connected clients receive a `ParticipantMetadataChanged` event.
+You can modify a participant's metadata using the `Metadata` field in the `UpdateParticipantRequest`. When metadata is changed, connected clients receive a `ParticipantMetadataChanged` event.
 
 **Go**:
 
@@ -302,9 +342,26 @@ lk room participants update \
 
 ```
 
-## Move a Participant
+## Move participant
 
-Move a participant from one room to a different room.
+> ℹ️ **LiveKit Cloud feature**
+> 
+> This feature is only available in LiveKit Cloud.
+
+You can move a participant from one room to a different room using the `MoveParticipant` API. Moving a participant removes them from the source room and adds them to the destination room. For example, this API can be used to move a participant from a call room to another room in an [agent-assisted call transfer](https://docs.livekit.io/sip/transfer-warm.md) workflow.
+
+### Required privileges
+
+You must have the `roomAdmin` grant to move a participant.
+
+### Parameters
+
+| Name | Type | Required | Description |
+| `room` | string | ✓ | Room participant is currently in. |
+| `identity` | string | ✓ | Identity of the participant to move. |
+| `destination_room` | string | ✓ | Room to move participant into. |
+
+### Examples
 
 **Go**:
 
@@ -352,14 +409,95 @@ lk room participants move --room <CURRENT_ROOM_NAME> \
 
 ```
 
-## Remove a Participant
+## Forward participant
 
-`RemoveParticipant` forcibly disconnects the participant from the room. However, this action doesn't invalidate the participant's token.
+> ℹ️ **LiveKit Cloud feature**
+> 
+> This feature is only available in LiveKit Cloud.
+
+You can forward a participant to one or more rooms using the `ForwardParticipant` API. Forwarding allows you to share a participant's tracks with other rooms. For example, if you have a single ingress feed that you want simultaneously share to multiple rooms.
+
+A forwarded participant's tracks are shared to destination rooms until the participant leaves the room or is removed from a destination room using `RemoveParticipant`.
+
+### Required privileges
+
+You must have the `roomAdmin` and `destinationRoom` grants to forward a participant to the room specified for the `destinationRoom` in the grant.
+
+### Parameters
+
+| Name | Type | Required | Description |
+| `room` | string | ✓ | Room participant is currently in. |
+| `identity` | string | ✓ | Identity of the participant to forward. |
+| `destination_room` | string | ✓ | Room to forward participant's tracks to. |
+
+### Examples
+
+**Go**:
+
+```go
+res, err := roomClient.ForwardParticipant(context.Background(), &livekit.ForwardParticipantRequest{
+  Room: roomName,
+  Identity: identity,
+  DestinationRoom: destinationRoom,
+})
+
+```
+
+---
+
+**Python**:
+
+```python
+from livekit.api import ForwardParticipantRequest
+
+await lkapi.room.forward_participant(ForwardParticipantRequest(
+  room="<CURRENT_ROOM_NAME>",
+  identity="<PARTICIPANT_ID>",
+  destination_room="<NEW_ROOM_NAME>",
+))
+
+```
+
+---
+
+**Node.js**:
+
+```js
+await roomService.fowardParticipant(roomName, identity, destinationRoom);
+
+```
+
+---
+
+**LiveKit CLI**:
+
+```shell
+lk room participants forward --room <CURRENT_ROOM_NAME> \
+  --identity <PARTICIPANT_ID> \
+  --destination-room <NEW_ROOM_NAME>
+
+```
+
+## Remove participant
+
+The `RemoveParticipant` API forcibly disconnects the participant from the room. However, this action doesn't invalidate the participant's token.
 
 To prevent the participant from rejoining the same room, consider the following measures:
 
 - Generate access tokens with a short TTL (Time-To-Live).
 - Refrain from providing a new token to the same participant via your application's backend.
+
+### Required privileges
+
+You must have the `roomAdmin` grant to remove a participant.
+
+### Parameters
+
+| Name | Type | Required | Description |
+| `room` | string | ✓ | Room participant is currently in. |
+| `identity` | string | ✓ | Identity of the participant to remove. |
+
+### Examples
 
 **Go**:
 
@@ -403,9 +541,24 @@ lk room participants remove <PARTICIPANT_ID>
 
 ```
 
-## Mute or unmute a Participant's Track
+## Mute or unmute participant
 
-To mute a particular Track from a Participant, you must first get the TrackSid using the `GetParticipant` [API](#getparticipant), then call the `MutePublishedTrack` API:
+To mute or unmute a specific participant track, you must first get the `TrackSid` using the `GetParticipant` [API](#getparticipant). You can then call the `MutePublishedTrack` API with the track SID.
+
+### Required privileges
+
+You must have the `roomAdmin` grant to mute or unmute a participant's published track.
+
+### Parameters
+
+| Name | Type | Required | Description |
+| `room` | string | ✓ | Room participant is currently in. |
+| `identity` | string | ✓ | Identity of the participant to mute. |
+| `track_sid` | string | ✓ | SID of the track to mute. |
+| `muted` | bool | ✓ | Whether to mute the track:- `true` to mute
+- `false` to unmute |
+
+### Examples
 
 **Go**:
 
@@ -462,7 +615,7 @@ You can also unmute the track by setting `muted` to `false`.
 > 
 > Being remotely unmuted can catch users by surprise, so it's turned off by default.
 > 
-> To allow remote unmute, select the `Admins can remotely unmute tracks` option in your [project settings](https://cloud.livekit.io/projects/p_/settings/project).
+> To allow remote unmute, select the **Admins can remotely unmute tracks** option in your [project settings](https://cloud.livekit.io/projects/p_/settings/project).
 > 
 > If you're self-hosting, configure `room.enable_remote_unmute: true` in your config YAML.
 

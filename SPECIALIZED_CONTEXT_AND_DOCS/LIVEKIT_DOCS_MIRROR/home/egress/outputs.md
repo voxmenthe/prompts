@@ -1,4 +1,4 @@
-LiveKit Docs › Recording & export › Output and streaming options
+LiveKit docs › Recording & export › Output and streaming options
 
 ---
 

@@ -1,4 +1,4 @@
-LiveKit Docs › Recording & export › Recording participants
+LiveKit docs › Recording & export › Recording participants
 
 ---
 

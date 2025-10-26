@@ -1,4 +1,4 @@
-LiveKit Docs › Self-hosting › Virtual machine
+LiveKit docs › Self-hosting › Virtual machine
 
 ---
 

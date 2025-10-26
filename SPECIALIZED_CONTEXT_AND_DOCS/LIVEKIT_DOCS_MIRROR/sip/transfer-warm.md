@@ -1,4 +1,4 @@
-LiveKit Docs › Features › Transfers › Agent-assisted transfer
+LiveKit docs › Features › Transfers › Agent-assisted transfer
 
 ---
 
@@ -217,7 +217,7 @@ consult_room = rtc.Room()
 
 Install the `@livekit/rtc-node` package:
 
-```bash
+```shell
 pnpm add @livekit/rtc-node
 
 ```

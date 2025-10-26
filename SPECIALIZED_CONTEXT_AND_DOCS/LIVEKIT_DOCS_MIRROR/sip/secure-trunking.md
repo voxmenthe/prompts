@@ -1,4 +1,4 @@
-LiveKit Docs › Features › Secure trunking
+LiveKit docs › Features › Secure trunking
 
 ---
 

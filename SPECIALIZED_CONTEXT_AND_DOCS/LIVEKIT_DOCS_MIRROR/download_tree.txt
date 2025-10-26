@@ -141,7 +141,8 @@ LIVEKIT_DOCS_MIRROR
 │   │   │       ├── azure-openai.md
 │   │   │       ├── gemini.md
 │   │   │       ├── nova-sonic.md
-│   │   │       └── openai.md
+│   │   │       ├── openai.md
+│   │   │       └── ultravox.md
 │   │   ├── stt
 │   │   │   ├── inference
 │   │   │   │   ├── assemblyai.md
@@ -276,7 +277,8 @@ LIVEKIT_DOCS_MIRROR
 │   ├── get-started
 │   │   ├── api-primitives.md
 │   │   ├── authentication.md
-│   │   └── intro-to-livekit.md
+│   │   ├── intro-to-livekit.md
+│   │   └── mcp-server.md
 │   ├── ingress
 │   │   ├── configure-streaming-software.md
 │   │   └── overview.md

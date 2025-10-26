@@ -1,4 +1,4 @@
-LiveKit Docs › Deployment & operations › Session recording & transcripts
+LiveKit docs › Deployment & operations › Session recording & transcripts
 
 ---
 
@@ -12,10 +12,6 @@ There are many reasons to record or persist the sessions that occur in your app,
 
 ## Video or audio recording
 
-Available in:
-- [ ] Node.js
-- [x] Python
-
 Use the [Egress feature](https://docs.livekit.io/home/egress/overview.md) to record audio and/or video. The simplest way to do this is to start a [room composite recorder](https://docs.livekit.io/home/egress/composite-recording.md) in your agent's entrypoint. This starts recording when the agent enters the room and automatically captures all audio and video shared in the room. Recording ends when all participants leave. Recordings are stored in the cloud storage provider of your choice.
 
 ### Example
@@ -24,7 +20,7 @@ This example shows how to modify the [Voice AI quickstart](https://docs.livekit.
 
 For additional egress examples using Google and Azure, see the [Egress examples](https://docs.livekit.io/home/egress/examples.md).
 
-To modify the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md) to record sessions, add the following code:
+To modify the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md) to record sessions, add the following code. The following example assumes your AWS credentials are stored in environment variables.
 
 ** Filename: `agent.py`**
 
@@ -32,7 +28,7 @@ To modify the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-a
 from livekit import api
 
 async def entrypoint(ctx: JobContext):
-    # Add the following code to the top, before calling ctx.connect()
+    # Add the following code to the top of your entrypoint function
 
     # Set up recording
     req = api.RoomCompositeEgressRequest(
@@ -42,10 +38,10 @@ async def entrypoint(ctx: JobContext):
             file_type=api.EncodedFileType.OGG,
             filepath="livekit/my-room-test.ogg",
             s3=api.S3Upload(
-                bucket="<S3 bucket name>",
-                region="<S3 region>",
-                access_key="<S3 access key>",
-                secret="<S3 secret key>",
+                bucket=os.getenv("AWS_BUCKET_NAME"),
+                region=os.getenv("AWS_REGION"),
+                access_key=os.getenv("AWS_ACCESS_KEY_ID"),
+                secret=os.getenv("AWS_SECRET_ACCESS_KEY"),
             ),
         )],
     )
@@ -59,20 +55,80 @@ async def entrypoint(ctx: JobContext):
 
 ```
 
+** Filename: `agent.ts`**
+
+```typescript
+import {
+  EgressClient,
+  EncodedFileOutput,
+  EncodedFileType,
+  EncodingOptionsPreset
+} from 'livekit-server-sdk';
+
+
+// Create the egress client
+const egressClient = new EgressClient(
+    process.env.LIVEKIT_URL.replace("wss://", "https://"),
+    process.env.LIVEKIT_API_KEY,
+    process.env.LIVEKIT_API_SECRET);
+
+// Define the output for the egress
+const output = new EncodedFileOutput({
+    fileType: EncodedFileType.MP4,
+    filepath: 'likekit/my-room-test.mp4',
+    output: {
+        case: 's3',
+        value: {
+            accessKey: process.env.AWS_ACCESS_KEY_ID,
+            secret: process.env.AWS_SECRET_ACCESS_KEY,
+            bucket: process.env.AWS_BUCKET_NAME,
+            region: process.env.AWS_REGION,
+            forcePathStyle: true,
+        },
+    },
+});
+
+export default defineAgent({
+    // ...
+    entry: async (ctx: JobContext) => {
+        // .. Your entrypoint code follows ...
+        
+        // Add the following code after the AgentSession.start() function
+        await egressClient.startRoomCompositeEgress(ctx.room.name ? ctx.room.name : 'open-room', output, {
+            layout: 'grid',
+            encodingOptions: EncodingOptionsPreset.H264_1080P_30,
+            audioOnly: false,
+        });
+
+        // ... The rest of your entrypoint code follows ...
+    },
+});
+
+```
+
+** Filename: `package.json`**
+
+```json
+  "dependencies": {
+    "livekit-server-sdk": "^2.14.0"
+  }
+{% /pane %}
+{% /panel %}
+
 ## Text transcripts
 
-Text transcripts are available in realtime via the `llm_node` or the `transcription_node` as detailed in the docs on [Pipeline nodes](https://docs.livekit.io/agents/build/nodes.md). You can use this along with other events and callbacks to record your session and any other data you need.
+Text transcripts are available in realtime via the `llm_node` or the `transcription_node` as detailed in the docs on [Pipeline nodes](/agents/build/nodes). You can use this along with other events and callbacks to record your session and any other data you need.
 
 Additionally, you can access the `session.history property` at any time to get the entire conversation history. Using the `add_shutdown_callback` method, you can save the conversation history to a file after the user leaves and the room closes.
 
-For more immediate access to conversation as it happens, you can listen for related [events](https://docs.livekit.io/agents/build/events.md). A `conversation_item_added` event is emitted whenever an item is added to the chat history. The `user_input_transcribed` event is emitted whenever user input is transcribed. These results might differ from the final transcription.
+For more immediate access to conversation as it happens, you can listen for related [events](/agents/build/events). A `conversation_item_added` event is emitted whenever an item is added to the chat history. The `user_input_transcribed` event is emitted whenever user input is transcribed. These results might differ from the final transcription.
 
 ### Example
 
-This example shows how to modify the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md) to save the conversation history to a JSON file.
+This example shows how to modify the [Voice AI quickstart](/agents/start/voice-ai/) to save the conversation history to a JSON file.
 
-** Filename: `agent.py`**
-
+{% panel copy=true download=false %}
+{% pane category="Python" label="agent.py" %}
 ```python
 from datetime import datetime
 import json
@@ -94,30 +150,6 @@ def entrypoint(ctx: JobContext):
     ctx.add_shutdown_callback(write_transcript)
 
     # .. The rest of your entrypoint code follows ...
-
-```
-
-** Filename: `agent.ts`**
-
-```typescript
-import fs from 'node:fs';
-
-export default defineAgent({
-  entry: async (ctx: JobContext) => {
-    // Add the following code to the top, before calling ctx.connect()
-
-    ctx.addShutdownCallback(async () => {
-      const currentDate = new Date().toISOString();
-      const filename = `/tmp/transcript_${ctx.room.name}_${currentDate}.json`;
-
-      await fs.promises.writeFile(filename, JSON.stringify(session.history.toJSON(), null, 2));
-
-      console.log(`Transcript for ${ctx.room.name} saved to ${filename}`);
-    });
-
-    // .. The rest of your entrypoint code follows ...
-  },
-});
 
 ```
 

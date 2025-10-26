@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Realtime models › Overview
+LiveKit docs › Models › Realtime models › Overview
 
 ---
 
@@ -70,7 +70,7 @@ const session = new voice.AgentSession({
 
 ```
 
-This feature requires support for a text-only response modality. Consult the following table for information about which providers support this feature.
+This feature requires support for a text-only response modality. Visit the relevant provider page for details about supported features.
 
 ## Available plugins
 
@@ -82,6 +82,7 @@ The following table lists the available realtime model providers.
 | [Azure OpenAI Realtime API](https://docs.livekit.io/agents/models/realtime/plugins/azure-openai.md) | ✓ | ✓ |
 | [Gemini Live API](https://docs.livekit.io/agents/models/realtime/plugins/gemini.md) | ✓ | ✓ |
 | [OpenAI Realtime API](https://docs.livekit.io/agents/models/realtime/plugins/openai.md) | ✓ | ✓ |
+| [Ultravox Realtime API](https://docs.livekit.io/agents/models/realtime/plugins/ultravox.md) | ✓ | — |
 
 ## Considerations and limitations
 

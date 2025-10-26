@@ -1,4 +1,4 @@
-LiveKit Docs › Features › HD voice
+LiveKit docs › Features › HD voice
 
 ---
 

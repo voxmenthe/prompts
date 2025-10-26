@@ -1,4 +1,4 @@
-LiveKit Docs › Server APIs › Webhooks
+LiveKit docs › Server APIs › Webhooks
 
 ---
 

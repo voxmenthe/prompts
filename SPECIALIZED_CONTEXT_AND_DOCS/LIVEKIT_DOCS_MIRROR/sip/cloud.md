@@ -1,4 +1,4 @@
-LiveKit Docs › Getting started › Cloud
+LiveKit docs › Getting started › Cloud
 
 ---
 
@@ -44,7 +44,7 @@ For example to create a SIP endpoint for India, see the following:
 > 
 > Sign in to LiveKit Cloud to automatically include the subdomain for your project in the example.
 
-```bash
+```shell
 %{regionalEndpointSubdomain}%.india.sip.livekit.cloud
 
 ```

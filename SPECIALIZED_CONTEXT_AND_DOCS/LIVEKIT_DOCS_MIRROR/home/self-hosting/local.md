@@ -1,4 +1,4 @@
-LiveKit Docs › Self-hosting › Running locally
+LiveKit docs › Self-hosting › Running locally
 
 ---
 

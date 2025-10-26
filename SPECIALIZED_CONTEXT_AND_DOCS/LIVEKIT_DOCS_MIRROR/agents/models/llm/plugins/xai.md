@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Large language models (LLM) › Plugins › xAI
+LiveKit docs › Models › Large language models (LLM) › Plugins › xAI
 
 ---
 
@@ -21,7 +21,7 @@ Install the OpenAI plugin to add xAI support:
 **Python**:
 
 ```shell
-pip install "livekit-agents[openai]~=1.2"
+uv add "livekit-agents[openai]~=1.2"
 
 ```
 

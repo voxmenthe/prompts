@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Speech-to-text (STT) › Plugins › AssemblyAI
+LiveKit docs › Models › Speech-to-text (STT) › Plugins › AssemblyAI
 
 ---
 
@@ -26,8 +26,8 @@ This section provides a brief overview of the AssemblyAI STT plugin. For more in
 
 Install the plugin from PyPI:
 
-```bash
-pip install "livekit-agents[assemblyai]~=1.2"
+```shell
+uv add "livekit-agents[assemblyai]~=1.2"
 
 ```
 

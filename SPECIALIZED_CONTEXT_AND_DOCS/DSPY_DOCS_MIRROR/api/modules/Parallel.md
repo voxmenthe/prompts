@@ -17,5 +17,5 @@ def __call__(self, *args, **kwargs)
 ```python
 def forward(self, exec_pairs, num_threads=None)
 ```
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/predict/parallel.py` (lines 9–73)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/predict/parallel.py` (lines 9–81)
 

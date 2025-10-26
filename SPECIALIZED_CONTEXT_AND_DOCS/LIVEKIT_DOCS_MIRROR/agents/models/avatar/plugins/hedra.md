@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Virtual avatars › Plugins › Hedra
+LiveKit docs › Models › Virtual avatars › Plugins › Hedra
 
 ---
 
@@ -24,15 +24,15 @@ This section includes a basic usage example and some reference material. For lin
 
 Install the plugin from PyPI:
 
-```bash
-pip install "livekit-agents[hedra]~=1.2"
+```shell
+uv add "livekit-agents[hedra]~=1.2"
 
 ```
 
 If you plan to upload images directly, also install the LiveKit images dependency, which includes Pillow version 10.3 and above:
 
-```bash
-pip install "livekit-agents[images]"
+```shell
+uv add "livekit-agents[images]"
 
 ```
 
@@ -90,7 +90,7 @@ Generate or upload an image in the [Hedra web studio](https://www.hedra.com/app/
 
 To upload an image with the Hedra API, first create a new asset:
 
-```bash
+```shell
 curl -X POST \
   -H "X-API-Key: <your-api-key>" \
   -H "Content-Type: application/json" \
@@ -103,7 +103,7 @@ The response includes an asset `id`, which you need for the next step.
 
 Then upload the image:
 
-```bash
+```shell
 curl -X POST \
   -H "X-API-Key: <your-api-key>" \
   -H "Content-Type: multipart/form-data" \

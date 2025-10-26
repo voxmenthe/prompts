@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit SDKs › Realtime text & data › Data packets
+LiveKit docs › LiveKit SDKs › Realtime text & data › Data packets
 
 ---
 

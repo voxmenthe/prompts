@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Text-to-speech (TTS) › Overview
+LiveKit docs › Models › Text-to-speech (TTS) › Overview
 
 ---
 
@@ -104,7 +104,6 @@ The LiveKit Agents framework also includes a variety of open source [plugins](ht
 | [LMNT](https://docs.livekit.io/agents/models/tts/plugins/lmnt.md) | ✓ | — |
 | [Neuphonic](https://docs.livekit.io/agents/models/tts/plugins/neuphonic.md) | ✓ | ✓ |
 | [OpenAI](https://docs.livekit.io/agents/models/tts/plugins/openai.md) | ✓ | ✓ |
-| [PlayHT](https://docs.livekit.io/agents/models/tts/plugins/playai.md) | ✓ | — |
 | [Resemble AI](https://docs.livekit.io/agents/models/tts/plugins/resemble.md) | ✓ | ✓ |
 | [Rime](https://docs.livekit.io/agents/models/tts/plugins/rime.md) | ✓ | ✓ |
 | [Sarvam](https://docs.livekit.io/agents/models/tts/plugins/sarvam.md) | ✓ | — |

@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Speech-to-text (STT) › Overview
+LiveKit docs › Models › Speech-to-text (STT) › Overview
 
 ---
 

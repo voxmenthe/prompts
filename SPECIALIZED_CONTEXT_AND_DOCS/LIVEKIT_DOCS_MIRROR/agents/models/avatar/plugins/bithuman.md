@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Virtual avatars › Plugins › bitHuman
+LiveKit docs › Models › Virtual avatars › Plugins › bitHuman
 
 ---
 
@@ -22,15 +22,15 @@ This section includes a basic usage example and some reference material. For lin
 
 Install the plugin from PyPI:
 
-```bash
-pip install "livekit-agents[bithuman]~=1.2"
+```shell
+uv add "livekit-agents[bithuman]~=1.2"
 
 ```
 
 If you plan to use cloud-hosted models with images, also install the LiveKit images dependency, which includes Pillow version 10.3 and above:
 
-```bash
-pip install "livekit-agents[images]"
+```shell
+uv add "livekit-agents[images]"
 
 ```
 

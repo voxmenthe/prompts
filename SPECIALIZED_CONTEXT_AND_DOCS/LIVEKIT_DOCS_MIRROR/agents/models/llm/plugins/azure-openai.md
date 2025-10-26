@@ -1,4 +1,4 @@
-LiveKit Docs › Partner spotlight › Azure › Azure OpenAI LLM Plugin
+LiveKit docs › Partner spotlight › Azure › Azure OpenAI LLM Plugin
 
 ---
 
@@ -28,8 +28,8 @@ Install the plugin:
 
 **Python**:
 
-```bash
-pip install "livekit-agents[openai]~=1.2"
+```shell
+uv add "livekit-agents[openai]~=1.2"
 
 ```
 
@@ -37,7 +37,7 @@ pip install "livekit-agents[openai]~=1.2"
 
 **Node.js**:
 
-```bash
+```shell
 pnpm add @livekit/agents-plugin-openai@1.x
 
 ```

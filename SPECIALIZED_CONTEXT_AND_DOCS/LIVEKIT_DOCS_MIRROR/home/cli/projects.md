@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit CLI › Project management
+LiveKit docs › LiveKit CLI › Project management
 
 ---
 
@@ -12,7 +12,7 @@ Use the `lk project` commands to manage LiveKit projects used by the CLI. A proj
 
 For instructions to install the CLI, see the LiveKit CLI [Getting started](https://docs.livekit.io/home/cli.md) guide.
 
-```bash
+```shell
 lk project [command [command options]]
 
 ```
@@ -21,7 +21,7 @@ lk project [command [command options]]
 
 Use the `lk cloud` command to authenticate with LiveKit Cloud and link your Cloud-hosted projects to the CLI. LiveKit Cloud automatically generates a new API key for your CLI instance and performs a [project add](#add) for you.
 
-```bash
+```shell
 lk cloud [command [command options]]
 
 ```
@@ -30,7 +30,7 @@ lk cloud [command [command options]]
 
 Authenticate a LiveKit Cloud account to link a single project. The command opens a browser-based flow to sign in to LiveKit Cloud and select a single project. To link multiple projects, run this command multiple times.
 
-```bash
+```shell
 lk cloud auth [options]
 
 ```
@@ -44,7 +44,7 @@ Options for `cloud auth`:
 
 Link your LiveKit Cloud account and import a project.
 
-```bash
+```shell
 lk cloud auth
 
 ```
@@ -53,7 +53,7 @@ lk cloud auth
 
 Revoke an authorization for an existing project. This revokes the API keys that were issued with `lk cloud auth`, and then performs a [project remove](#remove) for you.
 
-```bash
+```shell
 lk cloud auth --revoke
 
 ```
@@ -76,7 +76,7 @@ Add a new project to your CLI instance.
 
 For LiveKit Cloud projects, use the [cloud auth](#cloud-auth) command to link your account and import projects through your browser.
 
-```bash
+```shell
 lk project add PROJECT_NAME --url LIVEKIT_URL --api-key API_KEY --api-secret API_SECRET [--default]
 
 ```
@@ -93,7 +93,7 @@ Options for `add`:
 
 Add a self-hosted project and set it as default:
 
-```bash
+```shell
 lk project add my-project \
   --url http://localhost:7880 \
   --api-key <my-api-key> \
@@ -106,7 +106,7 @@ lk project add my-project \
 
 List all configured projects.
 
-```bash
+```shell
 lk project list [options]
 
 ```
@@ -119,14 +119,14 @@ Options for `list`:
 
 Human-readable output (current default is marked with `*`):
 
-```bash
+```shell
 lk project list
 
 ```
 
 Example output:
 
-```bash
+```shell
 ┌──────────────────────┬──────────────────────────────────────────────────┬───────────────┐
 │ Name                 │ URL                                              │ API Key       │
 ├──────────────────────┼──────────────────────────────────────────────────┼───────────────┤
@@ -139,7 +139,7 @@ Example output:
 
 JSON output:
 
-```bash
+```shell
 lk project list --json
 
 ```
@@ -176,14 +176,14 @@ Remove an existing project from your local CLI configuration. This does not affe
 
 For LiveKit Cloud projects, use the [cloud auth revoke](#cloud-auth-revoke) command to revoke the API keys and remove the project from the CLI.
 
-```bash
+```shell
 lk project remove PROJECT_NAME
 
 ```
 
 #### Examples
 
-```bash
+```shell
 lk project remove dev-local
 
 ```
@@ -192,28 +192,28 @@ lk project remove dev-local
 
 Set a project as the default to use with other commands.
 
-```bash
+```shell
 lk project set-default PROJECT_NAME
 
 ```
 
 #### Examples
 
-```bash
+```shell
 lk project set-default production
 
 ```
 
 List projects to see the current default, change it, then list again:
 
-```bash
+```shell
 lk project list
 
 ```
 
 Example output:
 
-```bash
+```shell
 ┌──────────────────────┬──────────────────────────────────────────────────┬───────────────┐
 │ Name                 │ URL                                              │ API Key       │
 ├──────────────────────┼──────────────────────────────────────────────────┼───────────────┤
@@ -226,21 +226,21 @@ Example output:
 
 Change the default to `production`:
 
-```bash
+```shell
 lk project set-default production
 
 ```
 
 List again to confirm the change:
 
-```bash
+```shell
 lk project list
 
 ```
 
 Example output:
 
-```bash
+```shell
 ┌──────────────────────┬──────────────────────────────────────────────────┬───────────────┐
 │ Name                 │ URL                                              │ API Key       │
 ├──────────────────────┼──────────────────────────────────────────────────┼───────────────┤

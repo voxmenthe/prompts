@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Speech-to-text (STT) › Plugins › Soniox
+LiveKit docs › Models › Speech-to-text (STT) › Plugins › Soniox
 
 ---
 
@@ -22,8 +22,8 @@ This section provides a quick reference for the Soniox STT plugin. For more info
 
 Install the plugin from PyPI:
 
-```bash
-pip install livekit-plugins-soniox
+```shell
+uv add "livekit-agents[soniox]~=1.2"
 
 ```
 

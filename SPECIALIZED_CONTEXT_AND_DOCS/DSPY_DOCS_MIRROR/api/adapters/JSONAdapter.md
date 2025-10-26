@@ -63,5 +63,5 @@ def parse(self, signature, completion)
 ```python
 def user_message_output_requirements(self, signature)
 ```
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/adapters/json_adapter.py` (lines 41–207)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/adapters/json_adapter.py` (lines 41–211)
 

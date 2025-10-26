@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit SDKs › Realtime text & data › Sending files & bytes
+LiveKit docs › LiveKit SDKs › Realtime text & data › Sending files & bytes
 
 ---
 

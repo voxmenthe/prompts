@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Text-to-speech (TTS) › Plugins › Rime
+LiveKit docs › Models › Text-to-speech (TTS) › Plugins › Rime
 
 ---
 
@@ -28,8 +28,8 @@ Install the plugin:
 
 **Python**:
 
-```bash
-pip install "livekit-agents[rime]~=1.2"
+```shell
+uv add "livekit-agents[rime]~=1.2"
 
 ```
 
@@ -37,7 +37,7 @@ pip install "livekit-agents[rime]~=1.2"
 
 **Node.js**:
 
-```bash
+```shell
 pnpm add @livekit/agents-plugin-rime@1.x
 
 ```

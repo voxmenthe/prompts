@@ -1,4 +1,4 @@
-LiveKit Docs › Get Started › Rooms, participants, and tracks
+LiveKit docs › Get Started › Rooms, participants, and tracks
 
 ---
 

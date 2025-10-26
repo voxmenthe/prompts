@@ -1,4 +1,4 @@
-LiveKit Docs › Recording & export › Custom recording templates
+LiveKit docs › Recording & export › Custom recording templates
 
 ---
 

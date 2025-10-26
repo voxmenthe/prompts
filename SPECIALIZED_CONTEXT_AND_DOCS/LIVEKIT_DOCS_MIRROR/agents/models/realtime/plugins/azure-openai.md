@@ -1,4 +1,4 @@
-LiveKit Docs › Partner spotlight › Azure › Azure OpenAI Realtime API Plugin
+LiveKit docs › Partner spotlight › Azure › Azure OpenAI Realtime API Plugin
 
 ---
 
@@ -28,8 +28,8 @@ Install the OpenAI plugin from PyPI:
 
 **Python**:
 
-```bash
-pip install "livekit-agents[openai]~=1.2"
+```shell
+uv add "livekit-agents[openai]~=1.2"
 
 ```
 
@@ -37,7 +37,7 @@ pip install "livekit-agents[openai]~=1.2"
 
 **Node.js**:
 
-```bash
+```shell
 pnpm add @livekit/agents-plugin-openai@1.x
 
 ```
@@ -48,7 +48,7 @@ The Azure OpenAI plugin requires an [Azure OpenAI API key](https://learn.microso
 
 Set the following environment variables in your `.env` file:
 
-```bash
+```shell
 AZURE_OPENAI_API_KEY=<your-azure-openai-api-key>
 AZURE_OPENAI_ENDPOINT=<your-azure-openai-endpoint>
 OPENAI_API_VERSION=2024-10-01-preview

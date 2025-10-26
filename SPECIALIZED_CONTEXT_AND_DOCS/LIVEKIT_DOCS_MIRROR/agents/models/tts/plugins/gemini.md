@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Text-to-speech (TTS) › Plugins › Gemini
+LiveKit docs › Models › Text-to-speech (TTS) › Plugins › Gemini
 
 ---
 
@@ -24,8 +24,8 @@ Install the plugin from PyPI:
 
 **Python**:
 
-```bash
-pip install "livekit-agents[google]~=1.2"
+```shell
+uv add "livekit-agents[google]~=1.2"
 
 ```
 
@@ -33,7 +33,7 @@ pip install "livekit-agents[google]~=1.2"
 
 **Node.js**:
 
-```bash
+```shell
 pnpm add @livekit/agents-plugin-google@1.x
 
 ```

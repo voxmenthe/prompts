@@ -1,4 +1,4 @@
-LiveKit Docs › Self-hosting › Distributed multi-region
+LiveKit docs › Self-hosting › Distributed multi-region
 
 ---
 

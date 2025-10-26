@@ -1,4 +1,4 @@
-LiveKit Docs › Partner spotlight › OpenAI › OpenAI STT Plugin
+LiveKit docs › Partner spotlight › OpenAI › OpenAI STT Plugin
 
 ---
 
@@ -24,8 +24,8 @@ Install the plugin from PyPI:
 
 **Python**:
 
-```bash
-pip install "livekit-agents[openai]~=1.2"
+```shell
+uv add "livekit-agents[openai]~=1.2"
 
 ```
 
@@ -33,7 +33,7 @@ pip install "livekit-agents[openai]~=1.2"
 
 **Node.js**:
 
-```bash
+```shell
 pnpm add @livekit/agents-plugin-openai@1.x
 
 ```

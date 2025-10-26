@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/rag/index.ipynb on 2025-09-07T07:08:23.252983Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/rag/index.ipynb on 2025-10-26T02:21:50.536980Z -->
 
 # Tutorial: Retrieval-Augmented Generation (RAG)
 
@@ -615,7 +615,7 @@ optimized_rag = tp.compile(RAG(), trainset=trainset,
                            max_bootstrapped_demos=2, max_labeled_demos=2)
 ```
 
-The prompt optimization process here is pretty systematic, you can learn about it for example in this paper. Importantly, it's not a magic button. It's very possible that it can overfit your training set for instance and not generalize well to a held-out set, making it essential that we iteratively validate our programs.
+The prompt optimization process here is pretty systematic, you can learn about it for example in [this paper](https://arxiv.org/abs/2406.11695). Importantly, it's not a magic button. It's very possible that it can overfit your training set for instance and not generalize well to a held-out set, making it essential that we iteratively validate our programs.
 
 Let's check on an example here, asking the same question to the baseline `rag = RAG()` program, which was not optimized, and to the `optimized_rag = MIPROv2(..)(..)` program, after prompt optimization.
 

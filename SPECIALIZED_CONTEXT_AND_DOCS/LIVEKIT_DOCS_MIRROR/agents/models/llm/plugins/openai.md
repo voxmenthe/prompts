@@ -1,4 +1,4 @@
-LiveKit Docs › Partner spotlight › OpenAI › OpenAI LLM Plugin
+LiveKit docs › Partner spotlight › OpenAI › OpenAI LLM Plugin
 
 ---
 
@@ -16,7 +16,7 @@ This plugin allows you to use the [OpenAI platform](https://platform.openai.com/
 
 > 💡 **LiveKit Inference**
 > 
-> OpenAI models are also available in LiveKit Inference, via Azure, with billing and integration handled automatically. See [the docs](https://docs.livekit.io/agents/models/llm/inference/openai.md) for more information.
+> OpenAI models are also available in LiveKit Inference with billing and integration handled automatically. See [the docs](https://docs.livekit.io/agents/models/llm/inference/openai.md) for more information.
 
 ## Quick reference
 
@@ -28,8 +28,8 @@ Install the plugin from PyPI:
 
 **Python**:
 
-```bash
-pip install "livekit-agents[openai]~=1.2"
+```shell
+uv add "livekit-agents[openai]~=1.2"
 
 ```
 
@@ -37,7 +37,7 @@ pip install "livekit-agents[openai]~=1.2"
 
 **Node.js**:
 
-```bash
+```shell
 pnpm add @livekit/agents-plugin-openai@1.x
 
 ```

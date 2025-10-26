@@ -1,4 +1,4 @@
-LiveKit Docs › Accepting calls › Inbound calls with Twilio Voice
+LiveKit docs › Accepting calls › Inbound calls with Twilio Voice
 
 ---
 
@@ -72,7 +72,7 @@ Use the LiveKit CLI to create an [inbound trunk](https://docs.livekit.io/sip/tru
 > Be sure to use the same username and password that's specified in the TwiML Bin.
 2. Use the CLI to create an inbound trunk:
 
-```bash
+```shell
 lk sip inbound create inbound-trunk.json
 
 ```
@@ -98,7 +98,7 @@ Use the LiveKit CLI to create a [dispatch rule](https://docs.livekit.io/sip/disp
 ```
 2. Create the dispatch rule using the CLI:
 
-```bash
+```shell
 lk sip dispatch create dispatch-rule.json
 
 ```
@@ -121,7 +121,7 @@ The example in this section uses [Node](https://nodejs.org) and the [Twilio Node
 
 You can find these values in your [Twilio Console](https://console.twilio.com/):
 
-```bash
+```shell
 export TWILIO_ACCOUNT_SID=<twilio_account_sid>
 export TWILIO_AUTH_TOKEN=<twilio_auth_token>
 
@@ -175,7 +175,7 @@ await twilioClient.conferences(conferenceSid).participants.create({
 
 When you run the file, it bridges the Twilio conference to a new LiveKit session using the previously configured dispatch rule. This allows you to automatically [dispatch an agent](https://docs.livekit.io/agents/worker/agent-dispatch.md) to the Twilio conference.
 
-```bash
+```shell
 node bridge.js
 
 ```

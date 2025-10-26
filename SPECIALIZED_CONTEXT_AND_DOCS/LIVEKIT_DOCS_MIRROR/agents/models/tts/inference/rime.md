@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Text-to-speech (TTS) › LiveKit Inference › Rime
+LiveKit docs › Models › Text-to-speech (TTS) › LiveKit Inference › Rime
 
 ---
 
@@ -91,6 +91,8 @@ session = new AgentSession({
 - **`language`** _(string)_ (optional): Two-letter language code for the input text. Note that the Rime API uses three-letter abbreviations (e.g. `eng` for English), but LiveKit Inference uses two-letter codes instead for consistency with other providers.
 
 - **`extra_kwargs`** _(dict)_ (optional): Additional parameters to pass to the Rime TTS API. See the provider's [documentation](#additional-resources) for more information.
+
+In Node.js this parameter is called `modelOptions`.
 
 ## Voices
 

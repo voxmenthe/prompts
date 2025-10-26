@@ -9,7 +9,7 @@ This feature is experimental and may change or be removed in the future.
 ## Import
 
 ```
-import { experimental_createMCPClient } from "ai"
+import { experimental_createMCPClient } from "@ai-sdk/mcp"
 ```
 
 ## API Signature
@@ -68,11 +68,11 @@ A method that is called when the transport encounters an error
 
 A method that is called when the transport receives a message
 
-McpSSEServerConfig
+MCPTransportConfig
 
 ### type:
 
-'sse'
+'sse' | 'http
 
 Use Server-Sent Events for communication
 
@@ -87,6 +87,12 @@ URL of the MCP server
 Record<string, string>
 
 Additional HTTP headers to be sent with requests.
+
+### authProvider?:
+
+OAuthClientProvider
+
+Optional OAuth provider for authorization to access protected remote MCP servers.
 
 ### name?:
 
@@ -129,8 +135,8 @@ Closes the connection to the MCP server and cleans up resources.
 ## Example
 
 ```typescript
-import { experimental_createMCPClient, generateText } from 'ai';
-import { Experimental_StdioMCPTransport } from 'ai/mcp-stdio';
+import { experimental_createMCPClient, generateText } from '@ai-sdk/mcp';
+import { Experimental_StdioMCPTransport } from '@ai-sdk/mcp/mcp-stdio';
 import { openai } from '@ai-sdk/openai';
 
 let client;

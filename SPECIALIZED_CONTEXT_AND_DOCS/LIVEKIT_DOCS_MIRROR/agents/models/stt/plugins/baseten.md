@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Speech-to-text (STT) › Plugins › Baseten
+LiveKit docs › Models › Speech-to-text (STT) › Plugins › Baseten
 
 ---
 
@@ -22,8 +22,8 @@ This section provides a quick reference for the Baseten STT plugin. For more inf
 
 Install the plugin from PyPI:
 
-```bash
-pip install "livekit-agents[baseten]~=1.2"
+```shell
+uv add "livekit-agents[baseten]~=1.2"
 
 ```
 

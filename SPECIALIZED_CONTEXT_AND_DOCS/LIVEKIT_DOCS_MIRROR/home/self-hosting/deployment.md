@@ -1,4 +1,4 @@
-LiveKit Docs › Self-hosting › Deployment overview
+LiveKit docs › Self-hosting › Deployment overview
 
 ---
 

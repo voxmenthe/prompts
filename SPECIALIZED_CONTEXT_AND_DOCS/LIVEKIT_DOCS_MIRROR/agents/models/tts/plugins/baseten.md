@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Text-to-speech (TTS) › Plugins › Baseten
+LiveKit docs › Models › Text-to-speech (TTS) › Plugins › Baseten
 
 ---
 
@@ -22,8 +22,8 @@ This section provides a quick reference for the Baseten TTS plugin. For more inf
 
 Install the plugin from PyPI:
 
-```bash
-pip install "livekit-agents[baseten]~=1.2"
+```shell
+uv add "livekit-agents[baseten]~=1.2"
 
 ```
 

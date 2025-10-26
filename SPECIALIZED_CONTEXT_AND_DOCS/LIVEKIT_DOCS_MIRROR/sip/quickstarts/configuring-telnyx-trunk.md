@@ -1,4 +1,4 @@
-LiveKit Docs › Provider-specific guides › Telnyx
+LiveKit docs › Provider-specific guides › Telnyx
 
 ---
 

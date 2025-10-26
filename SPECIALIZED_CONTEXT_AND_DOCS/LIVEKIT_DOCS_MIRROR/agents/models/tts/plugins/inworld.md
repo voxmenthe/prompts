@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Text-to-speech (TTS) › Plugins › Inworld
+LiveKit docs › Models › Text-to-speech (TTS) › Plugins › Inworld
 
 ---
 
@@ -26,8 +26,8 @@ This section includes a brief overview of the Inworld TTS plugin. For more infor
 
 Install the plugin from PyPI:
 
-```bash
-pip install "livekit-agents[inworld]~=1.2"
+```shell
+uv add "livekit-agents[inworld]~=1.2"
 
 ```
 

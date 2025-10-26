@@ -1,4 +1,4 @@
-LiveKit Docs › Worker lifecycle › Agent dispatch
+LiveKit docs › Worker lifecycle › Agent dispatch
 
 ---
 

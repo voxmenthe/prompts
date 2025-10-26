@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Speech-to-text (STT) › LiveKit Inference › AssemblyAI
+LiveKit docs › Models › Speech-to-text (STT) › LiveKit Inference › AssemblyAI
 
 ---
 
@@ -85,6 +85,8 @@ session = new AgentSession({
 - **`language`** _(string)_ (optional): Language code for the transcription. If not set, the provider default applies.
 
 - **`extra_kwargs`** _(dict)_ (optional): Additional parameters to pass to the AssemblyAI Universal Streaming API, including `format_turns`, `end_of_turn_confidence_threshold`, `min_end_of_turn_silence_when_confident`, `max_turn_silence`, and `keyterms_prompt`. See the provider's [documentation](#additional-resources) for more information.
+
+In Node.js this parameter is called `modelOptions`.
 
 ## Additional resources
 

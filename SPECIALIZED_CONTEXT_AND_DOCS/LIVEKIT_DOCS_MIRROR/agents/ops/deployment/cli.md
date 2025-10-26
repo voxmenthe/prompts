@@ -1,4 +1,4 @@
-LiveKit Docs › Deployment & operations › Deploying to LiveKit Cloud › CLI reference
+LiveKit docs › Deployment & operations › Deploying to LiveKit Cloud › CLI reference
 
 ---
 
@@ -12,7 +12,7 @@ The LiveKit CLI is the primary interface for managing agents [deployed to LiveKi
 
 For instructions on installing the CLI, see the LiveKit CLI [Getting started](https://docs.livekit.io/home/cli.md) guide.
 
-```bash
+```shell
 lk agent [command] [command options] [working-dir]
 
 ```
@@ -27,14 +27,14 @@ The default working directory for each command is the current directory. You can
 
 For example, this command deploys the agent in the current directory:
 
-```bash
+```shell
 lk agent deploy
 
 ```
 
 While this command deploys the agent in the named directory:
 
-```bash
+```shell
 lk agent deploy ~/my-agent
 
 ```
@@ -53,7 +53,7 @@ The following agent subcommands are available:
 
 Create a new agent using configuration in the working directory and optional secrets. You must not have a `livekit.toml` file in the working directory. If no `Dockerfile` is present, the CLI creates one for you.
 
-```bash
+```shell
 lk agent create [options] [working-dir]
 
 ```
@@ -68,7 +68,7 @@ Options for `create`:
 
 Create and [deploy a new agent](https://docs.livekit.io/agents/ops/deployment.md#create) from the current directory, providing secrets inline and via file:
 
-```bash
+```shell
 lk agent create \
   --secrets OPENAI_API_KEY=sk-xxx,GOOGLE_API_KEY=ya29.xxx \
   --secrets-file ./secrets.env \
@@ -80,7 +80,7 @@ lk agent create \
 
 [Build and deploy](https://docs.livekit.io/agents/ops/deployment/builds.md) a new agent version based on the working directory. You must have a `livekit.toml` and `Dockerfile` in the working directory.
 
-```bash
+```shell
 lk agent deploy [options] [working-dir]
 
 ```
@@ -94,14 +94,14 @@ Options for `deploy`:
 
 Deploy a new version from the current directory:
 
-```bash
+```shell
 lk agent deploy
 
 ```
 
 Deploy a new version from the subdirectory `./agent`:
 
-```bash
+```shell
 lk agent deploy ./agent
 
 ```
@@ -110,7 +110,7 @@ lk agent deploy ./agent
 
 Show the current status of the specified agent:
 
-```bash
+```shell
 lk agent status [options] [working-dir]
 
 ```
@@ -123,21 +123,21 @@ Options for `status`:
 
 Show the status of the agent in the current directory:
 
-```bash
+```shell
 lk agent status
 
 ```
 
 Show the status of the agent with the ID `CA_MyAgentId`:
 
-```bash
+```shell
 lk agent status --id CA_MyAgentId
 
 ```
 
 Example output:
 
-```bash
+```shell
 Using default project [my-project]
 Using agent [CA_MyAgentId]
 ┌─────────────────┬────────────────┬─────────┬──────────┬────────────┬─────────┬───────────┬──────────────────────┐
@@ -188,7 +188,7 @@ These indicate that the agent is in an error state.
 
 Update secrets for an existing agent. This command restarts the agent workers, but does not interrupt any active sessions.
 
-```bash
+```shell
 lk agent update [options] [working-dir]
 
 ```
@@ -203,7 +203,7 @@ Options for `update`:
 
 Update secrets and restart the agent:
 
-```bash
+```shell
 lk agent update \
   --secrets OPENAI_API_KEY=sk-new
 
@@ -213,7 +213,7 @@ lk agent update \
 
 Restart the worker pool for the specified agent. This command does not interrupt any active sessions.
 
-```bash
+```shell
 lk agent restart [options] [working-dir]
 
 ```
@@ -224,7 +224,7 @@ Options for `restart`:
 
 #### Examples
 
-```bash
+```shell
 lk agent restart --id CA_MyAgentId
 
 ```
@@ -233,7 +233,7 @@ lk agent restart --id CA_MyAgentId
 
 [Rollback](https://docs.livekit.io/agents/ops/deployment.md#rollback) the specified agent to a prior version:
 
-```bash
+```shell
 lk agent rollback [options] [working-dir]
 
 ```
@@ -247,7 +247,7 @@ Options for `rollback`:
 
 Roll back to a specific version:
 
-```bash
+```shell
 lk agent rollback --id CA_MyAgentId --version 20250809003117
 
 ```
@@ -256,7 +256,7 @@ lk agent rollback --id CA_MyAgentId --version 20250809003117
 
 Stream [logs](https://docs.livekit.io/agents/ops/deployment/logs.md) for the specified agent and log type. Also available as `tail`.
 
-```bash
+```shell
 lk agent logs [options] [working-dir]
 # or
 lk agent tail [options] [working-dir]
@@ -272,7 +272,7 @@ Options for `logs`/`tail`:
 
 Tail deploy logs:
 
-```bash
+```shell
 lk agent logs --id CA_MyAgentId --log-type deploy
 
 ```
@@ -281,7 +281,7 @@ lk agent logs --id CA_MyAgentId --log-type deploy
 
 Delete the specified agent. Also available as `destroy`.
 
-```bash
+```shell
 lk agent delete [options] [working-dir]
 # or
 lk agent destroy [options] [working-dir]
@@ -294,7 +294,7 @@ Options for `delete`/`destroy`:
 
 #### Examples
 
-```bash
+```shell
 lk agent delete --id CA_MyAgentId
 
 ```
@@ -303,7 +303,7 @@ lk agent delete --id CA_MyAgentId
 
 List versions associated with the specified agent, which can be used to [rollback](https://docs.livekit.io/agents/ops/deployment.md#rollback).
 
-```bash
+```shell
 lk agent versions [options] [working-dir]
 
 ```
@@ -314,14 +314,14 @@ Options for `versions`:
 
 #### Examples
 
-```bash
+```shell
 lk agent versions --id CA_MyAgentId
 
 ```
 
 Example output:
 
-```bash
+```shell
 Using default project [my-project]
 Using agent [CA_MyAgentId]
 ┌────────────────┬─────────┬──────────────────────┐
@@ -336,7 +336,7 @@ Using agent [CA_MyAgentId]
 
 List all deployed agents in the current project:
 
-```bash
+```shell
 lk agent list [options]
 
 ```
@@ -348,14 +348,14 @@ Options for `list`:
 
 #### Examples
 
-```bash
+```shell
 lk agent list
 
 ```
 
 Example output:
 
-```bash
+```shell
 Using default project [my-project]
 ┌─────────────────┬─────────┬────────────────┬──────────────────────┐
 │ ID              │ Regions │ Version        │ Deployed At          │
@@ -369,7 +369,7 @@ Using default project [my-project]
 
 Show the current [secret](https://docs.livekit.io/agents/ops/deployment/secrets.md) keys for the specified agent. Does not include secret values.
 
-```bash
+```shell
 lk agent secrets [options] [working-dir]
 
 ```
@@ -380,14 +380,14 @@ Options for `secrets`:
 
 #### Examples
 
-```bash
+```shell
 lk agent secrets --id CA_MyAgentId
 
 ```
 
 Example output:
 
-```bash
+```shell
 Using default project [my-project]
 Using agent [CA_MyAgentId]
 ┌────────────────┬──────────────────────┬──────────────────────┐
@@ -404,7 +404,7 @@ Using agent [CA_MyAgentId]
 
 Update secrets for the specified agent. This command restarts the agent:
 
-```bash
+```shell
 lk agent update-secrets [options] [working-dir]
 
 ```
@@ -420,7 +420,7 @@ Options for `update-secrets`:
 
 Update secrets without overwriting existing keys:
 
-```bash
+```shell
 lk agent update-secrets --id CA_MyAgentId \
   --secrets-file ./secrets.env
 
@@ -428,7 +428,7 @@ lk agent update-secrets --id CA_MyAgentId \
 
 Overwrite existing keys explicitly:
 
-```bash
+```shell
 lk agent update-secrets --id CA_MyAgentId \
   --secrets OPENAI_API_KEY=sk-xxx \
   --overwrite
@@ -439,7 +439,7 @@ lk agent update-secrets --id CA_MyAgentId \
 
 Generate a new `livekit.toml` in the working directory for an existing agent:
 
-```bash
+```shell
 lk agent config --id AGENT_ID [options] [working-dir]
 
 ```
@@ -452,7 +452,7 @@ Options for `config`:
 
 Generate a new `Dockerfile` and `.dockerignore` file in the working directory. To overwrite existing files, use the `--overwrite` flag.
 
-```bash
+```shell
 lk agent dockerfile [options] [working-dir]
 
 ```
@@ -463,7 +463,7 @@ Options for `dockerfile`:
 
 #### Examples
 
-```bash
+```shell
 lk agent dockerfile
 
 ```

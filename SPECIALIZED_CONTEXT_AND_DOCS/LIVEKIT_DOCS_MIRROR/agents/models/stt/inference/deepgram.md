@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Speech-to-text (STT) › LiveKit Inference › Deepgram
+LiveKit docs › Models › Speech-to-text (STT) › LiveKit Inference › Deepgram
 
 ---
 
@@ -98,6 +98,8 @@ session = new AgentSession({
 - **`language`** _(string)_ (optional): Language code for the transcription. If not set, the provider default applies. Set it to `multi` with supported models for multilingual transcription.
 
 - **`extra_kwargs`** _(dict)_ (optional): Additional parameters to pass to the Deepgram STT API, including `filler_words`, `interim_results`, `endpointing`, `punctuate`, `smart_format`, `keywords`, `keyterms`, `profanity_filter`, `numerals`, and `mip_opt_out`.
+
+In Node.js this parameter is called `modelOptions`.
 
 ## Additional resources
 

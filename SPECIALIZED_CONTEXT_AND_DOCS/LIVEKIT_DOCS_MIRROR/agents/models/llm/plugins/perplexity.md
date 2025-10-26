@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Large language models (LLM) › Plugins › Perplexity
+LiveKit docs › Models › Large language models (LLM) › Plugins › Perplexity
 
 ---
 
@@ -21,7 +21,7 @@ Install the OpenAI plugin to add Perplexity support:
 **Python**:
 
 ```shell
-pip install "livekit-agents[openai]~=1.2"
+uv add "livekit-agents[openai]~=1.2"
 
 ```
 

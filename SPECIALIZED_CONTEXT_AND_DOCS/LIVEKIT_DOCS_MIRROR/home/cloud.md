@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit Cloud › Overview
+LiveKit docs › LiveKit Cloud › Overview
 
 ---
 

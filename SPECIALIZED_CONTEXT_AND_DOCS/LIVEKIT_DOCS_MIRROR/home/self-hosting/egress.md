@@ -1,4 +1,4 @@
-LiveKit Docs › Self-hosting › Egress
+LiveKit docs › Self-hosting › Egress
 
 ---
 

@@ -1,4 +1,4 @@
-LiveKit Docs › Partner spotlight › Google › Overview
+LiveKit docs › Partner spotlight › Google › Overview
 
 ---
 
@@ -26,7 +26,7 @@ Use the Voice AI quickstart to build a voice AI app with Gemini. Select an STT-L
 Install the Google plugin:
 
 ```shell
-pip install "livekit-agents[google]~=1.2"
+uv add "livekit-agents[google]~=1.2"
 
 ```
 

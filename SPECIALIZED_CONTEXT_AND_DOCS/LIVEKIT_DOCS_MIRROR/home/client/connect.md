@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit SDKs › Connecting to LiveKit
+LiveKit docs › LiveKit SDKs › Connecting to LiveKit
 
 ---
 

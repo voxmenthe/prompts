@@ -1,4 +1,4 @@
-LiveKit Docs › Partner spotlight › OpenAI › Realtime API Plugin
+LiveKit docs › Partner spotlight › OpenAI › Realtime API Plugin
 
 ---
 
@@ -14,7 +14,7 @@ Available in:
 
 ## Overview
 
-OpenAI's Realtime API enables low-latency, multimodal interactions with realtime audio and text processing. Use LiveKit's OpenAI plugin to create an agent that uses the Realtime API.
+OpenAI's Realtime API enables low-latency, multimodal interactions with realtime text, audio image, and video features. Use LiveKit's OpenAI plugin to create an agent that uses the Realtime API.
 
 > ℹ️ **Note**
 > 
@@ -30,8 +30,8 @@ Install the OpenAI plugin:
 
 **Python**:
 
-```bash
-pip install "livekit-agents[openai]~=1.2"
+```shell
+uv add "livekit-agents[openai]~=1.2"
 
 ```
 
@@ -39,7 +39,7 @@ pip install "livekit-agents[openai]~=1.2"
 
 **Node.js**:
 
-```bash
+```shell
 pnpm add "@livekit/agents-plugin-openai@1.x"
 
 ```

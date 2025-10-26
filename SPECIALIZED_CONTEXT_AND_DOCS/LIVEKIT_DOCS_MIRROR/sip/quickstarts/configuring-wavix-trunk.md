@@ -1,4 +1,4 @@
-LiveKit Docs › Provider-specific guides › Wavix
+LiveKit docs › Provider-specific guides › Wavix
 
 ---
 

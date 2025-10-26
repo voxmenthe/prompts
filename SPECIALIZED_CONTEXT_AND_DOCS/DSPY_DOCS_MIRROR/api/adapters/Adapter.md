@@ -3,14 +3,46 @@
 ## dspy.Adapter
 
 ```python
-class Adapter(callbacks=None, use_native_function_calling=False)
+class Adapter(callbacks=None, use_native_function_calling=False, native_response_types=None)
 ```
+
+Base Adapter class.
+
+The Adapter serves as the interface layer between DSPy module/signature and Language Models (LMs). It handles the
+complete transformation pipeline from DSPy inputs to LM calls and back to structured outputs.
+
+Key responsibilities:
+    - Transform user inputs and signatures into properly formatted LM prompts, which also instructs the LM to format
+        the response in a specific format.
+    - Parse LM outputs into dictionaries matching the signature's output fields.
+    - Enable/disable native LM features (function calling, citations, etc.) based on configuration.
+    - Handle conversation history, few-shot examples, and custom type processing.
+
+The adapter pattern allows DSPy to work with different LM interfaces while maintaining a consistent programming
+model for users.
+
 
 ### __call__
 
 ```python
 def __call__(self, lm, lm_kwargs, signature, demos, inputs)
 ```
+
+Execute the adapter pipeline: format inputs, call LM, and parse outputs.
+
+Args:
+    lm: The Language Model instance to use for generation. Must be an instance of `dspy.BaseLM`.
+    lm_kwargs: Additional keyword arguments to pass to the LM call (e.g., temperature, max_tokens). These are
+        passed directly to the LM.
+    signature: The DSPy signature associated with this LM call.
+    demos: List of few-shot examples to include in the prompt. Each dictionary should contain keys matching the
+        signature's input and output field names. Examples are formatted as user/assistant message pairs.
+    inputs: The current input values for this call. Keys must match the signature's input field names.
+
+Returns:
+    List of dictionaries representing parsed LM responses. Each dictionary contains keys matching the
+    signature's output field names. For multiple generations (n > 1), returns multiple dictionaries.
+
 
 ### acall
 
@@ -212,5 +244,5 @@ Args:
 Returns:
     A dictionary of the output fields.
 
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/adapters/base.py` (lines 19–448)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/adapters/base.py` (lines 22–519)
 

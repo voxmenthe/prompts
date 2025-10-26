@@ -1,4 +1,4 @@
-LiveKit Docs › Getting started › Voice AI quickstart
+LiveKit docs › Getting started › Voice AI quickstart
 
 ---
 
@@ -9,6 +9,12 @@ LiveKit Docs › Getting started › Voice AI quickstart
 ## Overview
 
 This guide walks you through the setup of your very first voice assistant using LiveKit Agents for Python. In less than 10 minutes, you'll have a voice assistant that you can speak to in your terminal, browser, telephone, or native app.
+
+## Starter projects
+
+The simplest way to get your first agent running with is with one of the following starter projects. Click "Use this template" in the top right to create a new repo on GitHub, then follow the instructions in the project's README.
+
+These projects are constructed with best-practices, a complete working agent, tests, and an AGENTS.md optimized to turn your coding assistant into a LiveKit expert.
 
 - **[Python starter project](https://github.com/livekit-examples/agent-starter-python)**: Ready-to-go Python starter project. Clone a repo with all the code you need to get started.
 
@@ -35,6 +41,10 @@ The following sections describe the minimum requirements to get started with Liv
 This guide assumes you have signed up for a free [LiveKit Cloud](https://cloud.livekit.io/) account. LiveKit Cloud includes agent deployment, model inference, and realtime media transport. Create a free project and use the API keys in the following steps to get started.
 
 While this guide assumes LiveKit Cloud, the instructions can be adapted for [self-hosting](https://docs.livekit.io/home/self-hosting/local.md) the open-source LiveKit server instead. For self-hosting in production, set up a [custom deployment](https://docs.livekit.io/agents/ops/deployment/custom.md) environment, and make the following changes: remove the [enhanced noise cancellation](https://docs.livekit.io/home/cloud/noise-cancellation.md) plugin from the agent code, and use [plugins](https://docs.livekit.io/agents/models.md#plugins) for your own AI providers.
+
+### LiveKit Docs MCP server
+
+If you're using an AI coding assistant, you should install the [LiveKit Docs MCP server](https://docs.livekit.io/home/get-started/docs-mcp.md) to get the most out of it. This ensures your agent has access to the latest documentation and examples. The [starter projects](#starters) also include an `AGENTS.md` file with instructions for using the MCP server and other important information about building agents with LiveKit.
 
 ### LiveKit CLI
 

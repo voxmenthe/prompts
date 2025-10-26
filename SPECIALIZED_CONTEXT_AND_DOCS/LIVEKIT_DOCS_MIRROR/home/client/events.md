@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit SDKs › Handling events
+LiveKit docs › LiveKit SDKs › Handling events
 
 ---
 

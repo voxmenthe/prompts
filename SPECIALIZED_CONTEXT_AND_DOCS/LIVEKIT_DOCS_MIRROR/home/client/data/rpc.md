@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit SDKs › Realtime text & data › Remote method calls
+LiveKit docs › LiveKit SDKs › Realtime text & data › Remote method calls
 
 ---
 

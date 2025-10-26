@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Speech-to-text (STT) › Plugins › Deepgram
+LiveKit docs › Models › Speech-to-text (STT) › Plugins › Deepgram
 
 ---
 
@@ -28,8 +28,8 @@ Install the plugin from PyPI:
 
 **Python**:
 
-```bash
-pip install "livekit-agents[deepgram]~=1.2"
+```shell
+uv add "livekit-agents[deepgram]~=1.2"
 
 ```
 
@@ -37,7 +37,7 @@ pip install "livekit-agents[deepgram]~=1.2"
 
 **Node.js**:
 
-```bash
+```shell
 pnpm add @livekit/agents-plugin-deepgram@1.x
 
 ```

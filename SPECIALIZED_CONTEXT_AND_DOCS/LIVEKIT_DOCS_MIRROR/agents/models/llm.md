@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Large language models (LLM) › Overview
+LiveKit docs › Models › Large language models (LLM) › Overview
 
 ---
 
@@ -18,14 +18,14 @@ The following models are available in [LiveKit Inference](https://docs.livekit.i
 
 | Model family | Model name | Provided by |
 | ------------- | ---------- | ----------- |
-| OpenAI | GPT-4o | Azure |
-|   | GPT-4o mini | Azure |
-|   | GPT-4.1 | Azure |
-|   | GPT-4.1 mini | Azure |
-|   | GPT-4.1 nano | Azure |
-|   | GPT-5 | Azure |
-|   | GPT-5 mini | Azure |
-|   | GPT-5 nano | Azure |
+| OpenAI | GPT-4o | Azure, OpenAI |
+|   | GPT-4o mini | Azure, OpenAI |
+|   | GPT-4.1 | Azure, OpenAI |
+|   | GPT-4.1 mini | Azure, OpenAI |
+|   | GPT-4.1 nano | Azure, OpenAI |
+|   | GPT-5 | Azure, OpenAI |
+|   | GPT-5 mini | Azure, OpenAI |
+|   | GPT-5 nano | Azure, OpenAI |
 |   | GPT OSS 120B | Baseten, Groq, Cerebras |
 | Gemini | Gemini 2.5 Pro | Google |
 |   | Gemini 2.5 Flash | Google |

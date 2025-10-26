@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Text-to-speech (TTS) › Plugins › Smallest AI
+LiveKit docs › Models › Text-to-speech (TTS) › Plugins › Smallest AI
 
 ---
 
@@ -22,8 +22,8 @@ This section includes a brief overview of the Smallest AI TTS plugin. For more i
 
 Install the plugin from PyPI:
 
-```bash
-pip install livekit-plugins-smallestai
+```shell
+uv add "livekit-agents[smallestai]~=1.2"
 
 ```
 

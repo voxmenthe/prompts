@@ -1,4 +1,4 @@
-LiveKit Docs › Worker lifecycle › Overview
+LiveKit docs › Worker lifecycle › Overview
 
 ---
 
@@ -8,7 +8,7 @@ LiveKit Docs › Worker lifecycle › Overview
 
 ## Overview
 
-When you start your app with `python agent.py dev`, it registers as a **worker** with the LiveKit server. The server manages dispatching programmatic participants to rooms by sending requests to available workers.
+When you start your app with `uv run agent.py dev`, it registers as a **worker** with the LiveKit server. The server manages dispatching programmatic participants to rooms by sending requests to available workers.
 
 A [programmatic participant](#programmatic-participants) is any code that joins a LiveKit room as a participant—this includes AI agents, media processors, or custom logic that processes realtime streams. This topic describes the worker lifecycle for AI agents, but the same lifecycle applies to all programmatic participants.
 

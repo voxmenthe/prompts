@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Large language models (LLM) › Plugins › Baseten
+LiveKit docs › Models › Large language models (LLM) › Plugins › Baseten
 
 ---
 
@@ -26,8 +26,8 @@ This section includes a basic usage example and some reference material. For lin
 
 Install the plugin from PyPI:
 
-```bash
-pip install "livekit-agents[baseten]~=1.2"
+```shell
+uv add "livekit-agents[baseten]~=1.2"
 
 ```
 

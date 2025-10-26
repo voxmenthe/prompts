@@ -1,4 +1,4 @@
-LiveKit Docs › LiveKit Cloud › Configuring firewalls
+LiveKit docs › LiveKit Cloud › Configuring firewalls
 
 ---
 

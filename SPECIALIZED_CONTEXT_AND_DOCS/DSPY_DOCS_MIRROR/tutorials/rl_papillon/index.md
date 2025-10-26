@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/rl_papillon/index.ipynb on 2025-09-07T07:08:23.241421Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/rl_papillon/index.ipynb on 2025-10-26T02:21:50.525115Z -->
 
 # Tutorial: Online RL over a Multi-Module DSPy Program
 
@@ -11,34 +11,23 @@ PAPILLON is a system for privacy-preserving delegation, where we will teach a ti
 For this tutorial, you will also need the Arbor RL server.
 
 ```bash
-> pip install arbor-ai
-> python -m arbor.cli serve --arbor-config arbor.yaml
+> pip install -U arbor-ai
 ```
-
-where you create `arbor.yaml` in your directory, containing a plan like:
-
-```text
-inference:
-  gpu_ids: '0'
-
-training:
-  gpu_ids: '1, 2'
-```
-
-which assigns GPU 0 for inference and GPUs 1 and 2 for training.
 
 ```python
 import dspy
 from dspy.clients.lm_local_arbor import ArborProvider
 
+import arbor
+arbor_server_info = arbor.init() # Initialize the Arbor server in the background
+
 port = 7453
-local_lm_name = "Qwen/Qwen3-1.7B"
+local_lm_name = "Qwen/Qwen2.5-7B-Instruct"
 local_lm = dspy.LM(
     model=f"openai/arbor:{local_lm_name}",
     provider=ArborProvider(),
     temperature=0.7,
-    api_base=f"http://localhost:{port}/v1/",
-    api_key="arbor",
+    api_base=arbor_server_info["api_base"],
 )
 
 dspy.configure(lm=local_lm)
@@ -215,7 +204,7 @@ papillon.set_lm(local_lm)
 train_kwargs = {
     "per_device_train_batch_size": 8,
     "gradient_accumulation_steps": 4,
-    "temperature": 0.7,
+    "temperature": 1.0,
     "beta": 0.04,
     "learning_rate": 2e-6,
     "gradient_checkpointing": True,

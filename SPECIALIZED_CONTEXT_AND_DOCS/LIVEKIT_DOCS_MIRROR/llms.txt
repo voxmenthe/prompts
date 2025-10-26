@@ -1,19 +1,26 @@
-# LiveKit Docs
+# LiveKit docs
 
-> LiveKit is an open source platform for developers building realtime media applications. It makes it easy to integrate audio, video, text, data, and AI models while offering scalable realtime infrastructure built on top of WebRTC.
+> LiveKit is a platform for building voice and realtime AI applications. LiveKit Cloud is the hosted commercial offering based on the open-source LiveKit project.
 
 ## Overview
 
-LiveKit contains these primary components:
+LiveKit and [LiveKit Cloud](https://cloud.livekit.io) contains these primary components:
 
-- [Open source WebRTC SFU](https://github.com/livekit/livekit), with a hosted global mesh version available as [LiveKit Cloud](https://cloud.livekit.io)
-- [Open source AI Agents Framework](https://github.com/livekit/agents) for building realtime and Voice AI agents in Python (Node.js beta also [available](https://github.com/livekit/agents-js))
-- [Realtime SDKs](https://docs.livekit.io/home/client/connect.md) to make it easy to add realitme audio, video, and data to your apps (available for Web, iOS, Android, Flutter, React Native, Unity, Python, Node.js, Rust, and more))
+- LiveKit Agents, a framework for realtime voice AI agents in [Python](https://github.com/livekit/agents) or [Node.js](https://github.com/livekit/agents-js)- Includes a [deployment environment](https://docs.livekit.io/agents/ops/deployment.md) for running agents on LiveKit Cloud
+- And a hosted voice ai [inference service](https://docs.livekit.io/agents/models.md#inference) and extensive [plugin system](https://docs.livekit.io/agents/models.md#plugins) for connecting to a wide range of AI providers
+- A global WebRTC-based realtime media server with [realtime SDKs](https://docs.livekit.io/home/client/connect.md) for- [Web](https://github.com/livekit/client-sdk-js)
+- [Swift](https://github.com/livekit/client-sdk-swift)
+- [Android](https://github.com/livekit/client-sdk-android)
+- [Flutter](https://github.com/livekit/client-sdk-flutter)
+- [React Native](https://github.com/livekit/client-sdk-react-native)
+- [Unity](https://github.com/livekit/client-sdk-unity)
+- [Python](https://github.com/livekit/client-sdk-python)
+- [Node.js](https://github.com/livekit/client-sdk-node)
+- [Rust](https://github.com/livekit/client-sdk-rust)
+- [ESP32](https://github.com/livekit/client-sdk-esp32)
+- and more
 - [Telephony integration](https://docs.livekit.io/sip.md) built on SIP for integrating telephony into LiveKit rooms
-
-For greater detail, see [Intro to LiveKit](https://docs.livekit.io/home/get-started/intro-to-livekit.md).
-
-The following document is a comprehensive list of all available documentation and examples for LiveKit.
+- For greater detail, see [Intro to LiveKit](https://docs.livekit.io/home/get-started/intro-to-livekit.md).
 
 ## Home
 
@@ -22,6 +29,7 @@ The following document is a comprehensive list of all available documentation an
 - [Intro to LiveKit](https://docs.livekit.io/home/get-started/intro-to-livekit.md): An overview of the LiveKit ecosystem.
 - [Rooms, participants, and tracks](https://docs.livekit.io/home/get-started/api-primitives.md): Guide to the core API primitives in LiveKit.
 - [Authentication](https://docs.livekit.io/home/get-started/authentication.md): Learn how to authenticate your users to LiveKit sessions.
+- [LiveKit Docs MCP Server](https://docs.livekit.io/home/get-started/mcp-server.md): Turn your AI coding assistant into a LiveKit expert.
 
 ### LiveKit SDKs
 
@@ -247,7 +255,6 @@ The following document is a comprehensive list of all available documentation an
 - [LMNT](https://docs.livekit.io/agents/models/tts/plugins/lmnt.md): How to use the LMNT TTS plugin for LiveKit Agents.
 - [Neuphonic](https://docs.livekit.io/agents/models/tts/plugins/neuphonic.md): How to use the Neuphonic TTS plugin for LiveKit Agents.
 - [OpenAI](https://docs.livekit.io/agents/models/tts/plugins/openai.md): How to use the OpenAI TTS plugin for LiveKit Agents.
-- [PlayHT](https://docs.livekit.io/agents/models/tts/plugins/playai.md): How to use the PlayHT TTS plugin for LiveKit Agents.
 - [Resemble AI](https://docs.livekit.io/agents/models/tts/plugins/resemble.md): How to use the Resemble AI TTS plugin for LiveKit Agents.
 - [Rime](https://docs.livekit.io/agents/models/tts/plugins/rime.md): How to use the Rime TTS plugin for LiveKit Agents.
 - [Sarvam](https://docs.livekit.io/agents/models/tts/plugins/sarvam.md): How to use the Sarvam TTS plugin for LiveKit Agents.
@@ -262,6 +269,7 @@ The following document is a comprehensive list of all available documentation an
 - [Amazon Nova Sonic](https://docs.livekit.io/agents/models/realtime/plugins/nova-sonic.md): How to use the Amazon Nova Sonic model with LiveKit Agents.
 - [OpenAI Realtime API](https://docs.livekit.io/agents/models/realtime/plugins/openai.md): How to use the OpenAI Realtime API with LiveKit Agents.
 - [Azure OpenAI Realtime API](https://docs.livekit.io/agents/models/realtime/plugins/azure-openai.md): How to use the Azure OpenAI Realtime API with LiveKit Agents.
+- [Ultravox Realtime API](https://docs.livekit.io/agents/models/realtime/plugins/ultravox.md): How to use the Ultravox Realtime model with LiveKit Agents.
 
 #### Virtual avatars
 
@@ -453,6 +461,8 @@ The following document is a comprehensive list of all available documentation an
 
 - **[Interrupt User](https://github.com/livekit-examples/python-agents-examples/tree/main/pipeline-llm/interrupt_user.py)**: Example of how to implement user interruption in conversations.
 
+- **[Long running tools](https://github.com/livekit/agents/blob/main/examples/voice_agents/long_running_function.py)**: Interruptions during long-running tools.
+
 - **[LLM Content Filter](https://github.com/livekit-examples/python-agents-examples/tree/main/pipeline-llm/llm_powered_content_filter.py)**: Implement content filtering in the `llm_node`.
 
 - **[Simple Content Filter](https://github.com/livekit-examples/python-agents-examples/tree/main/pipeline-llm/simple_content_filter.py)**: Basic content filtering implementation.
@@ -521,5 +531,5 @@ The following document is a comprehensive list of all available documentation an
 
 ---
 
-This document was rendered at 2025-10-14T05:40:01.507Z.
+This document was rendered at 2025-10-26T02:21:12.665Z.
 For the latest version of this document, see [https://docs.livekit.io/llms.txt](https://docs.livekit.io/llms.txt).

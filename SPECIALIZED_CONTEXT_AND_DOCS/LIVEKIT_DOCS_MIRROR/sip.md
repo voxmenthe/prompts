@@ -1,4 +1,4 @@
-LiveKit Docs › Getting started › Overview
+LiveKit docs › Getting started › Overview
 
 ---
 
@@ -61,7 +61,7 @@ LiveKit SIP has been tested with the following SIP providers:
 > 
 > LiveKit SIP is designed to work with all SIP providers. However, compatibility testing is limited to the providers below.
 
-| [Twilio](https://www.twilio.com/) | [Telnyx](https://telnyx.com/) | [Exotel](https://exotel.com) | [Plivo](https://www.plivo.com) | [Wavix](https://wavix.com/resources/guides/livekit) |
+| [Twilio](https://www.twilio.com/) | [Telnyx](https://telnyx.com/) | [Exotel](https://exotel.com) | [Plivo](https://www.plivo.com) | [Wavix](https://docs.wavix.com/sip-trunking/guides/livekit) |
 
 ## SIP features
 

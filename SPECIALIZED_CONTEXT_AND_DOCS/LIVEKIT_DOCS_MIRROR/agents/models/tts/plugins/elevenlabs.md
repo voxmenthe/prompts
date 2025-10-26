@@ -1,4 +1,4 @@
-LiveKit Docs › Models › Text-to-speech (TTS) › Plugins › ElevenLabs
+LiveKit docs › Models › Text-to-speech (TTS) › Plugins › ElevenLabs
 
 ---
 
@@ -28,8 +28,8 @@ Install the plugin from PyPI:
 
 **Python**:
 
-```bash
-pip install "livekit-agents[elevenlabs]~=1.2"
+```shell
+uv add "livekit-agents[elevenlabs]~=1.2"
 
 ```
 
@@ -37,7 +37,7 @@ pip install "livekit-agents[elevenlabs]~=1.2"
 
 **Node.js**:
 
-```bash
+```shell
 pnpm add @livekit/agents-plugin-elevenlabs@1.x
 
 ```
