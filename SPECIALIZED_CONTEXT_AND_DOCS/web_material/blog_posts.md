@@ -25,6 +25,7 @@ https://www.dbreunig.com/writing.html
 https://developers.googleblog.com/en/
 https://docs.unsloth.ai/
 https://www.eigentales.com/
+https://elanapearl.github.io/blog/
 https://epoch.ai/blog
 https://epoch.ai/gradient-updates
 https://epochai.substack.com/
@@ -62,6 +63,7 @@ https://magazine.sebastianraschka.com/
 https://makingaiagents.substack.com/
 https://mariozechner.at/posts/
 https://mrinalxdev.github.io/mrinalxblogs/blogs/blog.html
+https://nanjiang.cs.illinois.edu/blog/
 https://netflixtechblog.com/
 https://novasky-ai.github.io/category/One/1/
 https://www.perplexity.ai/hub
@@ -86,4 +88,5 @@ https://www.tilderesearch.com/blog
 https://yidingjiang.github.io/blog/
 https://ysymyth.github.io/blog/
 https://www.zhihu.com/people/su-jian-lin-22
+https://www.zhihu.com/people/void-73-73
 https://www.zhihu.com/people/xiao-yi-zhen-ku-bi
