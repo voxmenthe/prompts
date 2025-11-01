@@ -43,6 +43,7 @@ https://grantslatton.com/
 https://ggrigorev.me/posts/
 https://hamel.dev/
 https://www.harvey.ai/blog
+https://hassanjbara.github.io/xela-blog/posts/
 https://huggingface.co/blog
 https://insujang.github.io/posts/
 https://www.interconnects.ai/
@@ -52,6 +53,7 @@ https://jyopari.github.io/
 https://jxnl.co/writing/
 https://koaning.io/posts/
 https://krafton-ai.github.io/blog/
+https://kvfrans.com/
 https://leehanchung.github.io/blogs/
 https://www.leoniemonigatti.com/blog.html
 https://www.leoniemonigatti.com/portfolio.html
@@ -66,6 +68,8 @@ https://mrinalxdev.github.io/mrinalxblogs/blogs/blog.html
 https://nanjiang.cs.illinois.edu/blog/
 https://netflixtechblog.com/
 https://novasky-ai.github.io/category/One/1/
+https://openai.com/news/engineering/
+https://openai.com/news/research/
 https://www.perplexity.ai/hub
 https://www.philschmid.de/
 https://www.sh-reya.com/blog
@@ -78,6 +82,7 @@ https://research.google/blog/
 https://rupeshks.cc/blog/
 https://sander.ai/posts/
 https://www.seangoedecke.com/
+https://sidb.in/posts/
 https://simonwillison.net/
 https://supaiku.com/
 https://sustcsonglin.github.io/blog/
@@ -87,6 +92,11 @@ https://thinkingmachines.ai/blog/
 https://www.tilderesearch.com/blog
 https://yidingjiang.github.io/blog/
 https://ysymyth.github.io/blog/
+https://www.zhihu.com/people/haohai-sun-19
+https://www.zhihu.com/people/jiang-zhuo-70-59
+https://www.zhihu.com/people/mm-junheng
 https://www.zhihu.com/people/su-jian-lin-22
+https://www.zhihu.com/people/tian-xin-80
 https://www.zhihu.com/people/void-73-73
 https://www.zhihu.com/people/xiao-yi-zhen-ku-bi
+https://www.zhihu.com/people/yzhangcs
