@@ -32,10 +32,10 @@ Click the copy icon to copy the voice ID to use in your agent session.
 
 | Provider | Name | Description | Language | ID |
 | -------- | ---- | ----------- | -------- | -------- |
-| Cartesia | Blake | Energetic American adult male | `en-US` | `cartesia/sonic-2:a167e0f3-df7e-4d52-a9c3-f949145efdab` |
-| Cartesia | Daniela | Calm and trusting Mexican female | `es-MX` | `cartesia/sonic-2:5c5ad5e7-1020-476b-8b91-fdcbe9cc313c` |
-| Cartesia | Jacqueline | Confident, young American adult female | `en-US` | `cartesia/sonic-2:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc` |
-| Cartesia | Robyn | Neutral, mature Australian female | `en-AU` | `cartesia/sonic-2:f31cc6a7-c1e8-4764-980c-60a361443dd1` |
+| Cartesia | Blake | Energetic American adult male | `en-US` | `cartesia/sonic-3:a167e0f3-df7e-4d52-a9c3-f949145efdab` |
+| Cartesia | Daniela | Calm and trusting Mexican female | `es-MX` | `cartesia/sonic-3:5c5ad5e7-1020-476b-8b91-fdcbe9cc313c` |
+| Cartesia | Jacqueline | Confident, young American adult female | `en-US` | `cartesia/sonic-3:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc` |
+| Cartesia | Robyn | Neutral, mature Australian female | `en-AU` | `cartesia/sonic-3:f31cc6a7-c1e8-4764-980c-60a361443dd1` |
 | ElevenLabs | Alice | Clear and engaging, friendly British woman | `en-GB` | `elevenlabs/eleven_turbo_v2_5:Xb7hH8MSUJpSbSDYk0k2` |
 | ElevenLabs | Chris | Natural and real American male | `en-US` | `elevenlabs/eleven_turbo_v2_5:iP95p4xoKVk53GoZ742B` |
 | ElevenLabs | Eric | A smooth tenor Mexican male | `es-MX` | `elevenlabs/eleven_turbo_v2_5:cjVigY5qzO86Huf0OWal` |
@@ -59,7 +59,7 @@ To set up TTS in an `AgentSession`, provide a descriptor with both the desired m
 from livekit.agents import AgentSession
 
 session = AgentSession(
-    tts="cartesia/sonic-2:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
+    tts="cartesia/sonic-3:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
     # ... llm, stt, etc.
 )
 
@@ -73,7 +73,7 @@ session = AgentSession(
 import { AgentSession } from '@livekit/agents';
 
 const session = new AgentSession({
-    tts: "cartesia/sonic-2:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
+    tts: "cartesia/sonic-3:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
     // ... llm, stt, etc.
 })
 
@@ -102,6 +102,7 @@ The LiveKit Agents framework also includes a variety of open source [plugins](ht
 | [Hume](https://docs.livekit.io/agents/models/tts/plugins/hume.md) | ✓ | — |
 | [Inworld](https://docs.livekit.io/agents/models/tts/plugins/inworld.md) | ✓ | — |
 | [LMNT](https://docs.livekit.io/agents/models/tts/plugins/lmnt.md) | ✓ | — |
+| [MiniMax](https://docs.livekit.io/agents/models/tts/plugins/minimax.md) | ✓ | — |
 | [Neuphonic](https://docs.livekit.io/agents/models/tts/plugins/neuphonic.md) | ✓ | ✓ |
 | [OpenAI](https://docs.livekit.io/agents/models/tts/plugins/openai.md) | ✓ | ✓ |
 | [Resemble AI](https://docs.livekit.io/agents/models/tts/plugins/resemble.md) | ✓ | ✓ |

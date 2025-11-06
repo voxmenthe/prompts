@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/tool_use/index.ipynb on 2025-10-26T02:21:50.499142Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/tool_use/index.ipynb on 2025-11-06T02:07:55.087684Z -->
 
 # Tutorial: Advanced Tool Use
 

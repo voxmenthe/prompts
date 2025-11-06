@@ -112,23 +112,23 @@ export default defineAgent({
   "dependencies": {
     "livekit-server-sdk": "^2.14.0"
   }
-{% /pane %}
-{% /panel %}
+
+```
 
 ## Text transcripts
 
-Text transcripts are available in realtime via the `llm_node` or the `transcription_node` as detailed in the docs on [Pipeline nodes](/agents/build/nodes). You can use this along with other events and callbacks to record your session and any other data you need.
+Text transcripts are available in realtime via the `llm_node` or the `transcription_node` as detailed in the docs on [Pipeline nodes](https://docs.livekit.io/agents/build/nodes.md). You can use this along with other events and callbacks to record your session and any other data you need.
 
 Additionally, you can access the `session.history property` at any time to get the entire conversation history. Using the `add_shutdown_callback` method, you can save the conversation history to a file after the user leaves and the room closes.
 
-For more immediate access to conversation as it happens, you can listen for related [events](/agents/build/events). A `conversation_item_added` event is emitted whenever an item is added to the chat history. The `user_input_transcribed` event is emitted whenever user input is transcribed. These results might differ from the final transcription.
+For more immediate access to conversation as it happens, you can listen for related [events](https://docs.livekit.io/agents/build/events.md). A `conversation_item_added` event is emitted whenever an item is added to the chat history. The `user_input_transcribed` event is emitted whenever user input is transcribed. These results might differ from the final transcription.
 
 ### Example
 
-This example shows how to modify the [Voice AI quickstart](/agents/start/voice-ai/) to save the conversation history to a JSON file.
+This example shows how to modify the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md) to save the conversation history to a JSON file.
 
-{% panel copy=true download=false %}
-{% pane category="Python" label="agent.py" %}
+** Filename: `agent.py`**
+
 ```python
 from datetime import datetime
 import json

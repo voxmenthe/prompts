@@ -12,9 +12,10 @@ LiveKit Inference offers voice models powered by Cartesia. Pricing information i
 
 | Model ID | Languages |
 | -------- | --------- |
-| `cartesia/sonic` | `en`, `fr`, `de`, `es`, `pt`, `zh`, `ja`, `hi`, `it`, `ko`, `nl`, `pl`, `ru`, `sv`, `tr` |
+| `cartesia/sonic-3` | `en`, `de`, `es`, `fr`, `ja`, `pt`, `zh`, `hi`, `ko`, `it`, `nl`, `pl`, `ru`, `sv`, `tr`, `tl`, `bg`, `ro`, `ar`, `cs`, `el`, `fi`, `hr`, `ms`, `sk`, `da`, `ta`, `uk`, `hu`, `no`, `vi`, `bn`, `th`, `he`, `ka`, `id`, `te`, `gu`, `kn`, `ml`, `mr`, `pa` |
 | `cartesia/sonic-2` | `en`, `fr`, `de`, `es`, `pt`, `zh`, `ja`, `hi`, `it`, `ko`, `nl`, `pl`, `ru`, `sv`, `tr` |
 | `cartesia/sonic-turbo` | `en`, `fr`, `de`, `es`, `pt`, `zh`, `ja`, `hi`, `it`, `ko`, `nl`, `pl`, `ru`, `sv`, `tr` |
+| `cartesia/sonic` | `en`, `fr`, `de`, `es`, `pt`, `zh`, `ja`, `hi`, `it`, `ko`, `nl`, `pl`, `ru`, `sv`, `tr` |
 
 ## Usage
 
@@ -26,7 +27,7 @@ To use Cartesia, pass a descriptor with the model and voice to the `tts` argumen
 from livekit.agents import AgentSession
 
 session = AgentSession(
-    tts="cartesia/sonic-2:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
+    tts="cartesia/sonic-3:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
     # ... llm, stt, vad, turn_detection, etc.
 )
 
@@ -40,7 +41,7 @@ session = AgentSession(
 import { AgentSession } from '@livekit/agents';
 
 session = new AgentSession({
-    tts="cartesia/sonic-2:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
+    tts="cartesia/sonic-3:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
     // ... tts, stt, vad, turn_detection, etc.
 });
 
@@ -57,9 +58,14 @@ from livekit.agents import AgentSession, inference
 
 session = AgentSession(
     tts=inference.TTS(
-        model="cartesia/sonic-2", 
+        model="cartesia/sonic-3", 
         voice="9626c31c-bec5-4cca-baa8-f8ba9e84c8bc", 
-        language="en"
+        language="en",
+        extra_kwargs={
+            "speed": 1.5,
+            "volume": 1.2,
+            "emotion": "excited"
+        }
     ),
     # ... tts, stt, vad, turn_detection, etc.
 )
@@ -75,9 +81,14 @@ import { AgentSession } from '@livekit/agents';
 
 session = new AgentSession({
     tts: new inference.TTS({ 
-        model: "cartesia/sonic-2", 
+        model: "cartesia/sonic-3", 
         voice: "9626c31c-bec5-4cca-baa8-f8ba9e84c8bc", 
-        language: "en" 
+        language: "en",
+        modelOptions: {
+            speed: 1.5,
+            volume: 1.2,
+            emotion: "excited"
+        }
     }),
     // ... tts, stt, vad, turn_detection, etc.
 });
@@ -90,7 +101,7 @@ session = new AgentSession({
 
 - **`language`** _(string)_ (optional): Language code for the input text. If not set, the model default applies.
 
-- **`extra_kwargs`** _(dict)_ (optional): Additional parameters to pass to the Cartesia TTS API, including `duration`, and `speed`. See the provider's [documentation](#additional-resources) for more information.
+- **`extra_kwargs`** _(dict)_ (optional): Additional parameters to pass to the Cartesia TTS API, including `emotion`, `speed`, and `volume`. See the provider's [documentation](#additional-resources) for more information.
 
 In Node.js this parameter is called `modelOptions`.
 
@@ -106,10 +117,10 @@ The following is a small sample of the Cartesia voices available in LiveKit Infe
 
 | Provider | Name | Description | Language | ID |
 | -------- | ---- | ----------- | -------- | -------- |
-| Cartesia | Blake | Energetic American adult male | `en-US` | `cartesia/sonic-2:a167e0f3-df7e-4d52-a9c3-f949145efdab` |
-| Cartesia | Daniela | Calm and trusting Mexican female | `es-MX` | `cartesia/sonic-2:5c5ad5e7-1020-476b-8b91-fdcbe9cc313c` |
-| Cartesia | Jacqueline | Confident, young American adult female | `en-US` | `cartesia/sonic-2:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc` |
-| Cartesia | Robyn | Neutral, mature Australian female | `en-AU` | `cartesia/sonic-2:f31cc6a7-c1e8-4764-980c-60a361443dd1` |
+| Cartesia | Blake | Energetic American adult male | `en-US` | `cartesia/sonic-3:a167e0f3-df7e-4d52-a9c3-f949145efdab` |
+| Cartesia | Daniela | Calm and trusting Mexican female | `es-MX` | `cartesia/sonic-3:5c5ad5e7-1020-476b-8b91-fdcbe9cc313c` |
+| Cartesia | Jacqueline | Confident, young American adult female | `en-US` | `cartesia/sonic-3:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc` |
+| Cartesia | Robyn | Neutral, mature Australian female | `en-AU` | `cartesia/sonic-3:f31cc6a7-c1e8-4764-980c-60a361443dd1` |
 
 ## Additional resources
 

@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/gepa_trusted_monitor/index.ipynb on 2025-10-26T02:21:50.504784Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/gepa_trusted_monitor/index.ipynb on 2025-11-06T02:07:55.096790Z -->
 
 # Tutorial: GEPA for Trusted Monitoring (AI Control + Classification)
 In this tutorial, we optimize a GPT-4.1 Nano classifier to identify backdoors in code written by a larger LM, using `dspy.GEPA` and a comparative metric!

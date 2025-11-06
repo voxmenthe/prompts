@@ -44,7 +44,7 @@ While this guide assumes LiveKit Cloud, the instructions can be adapted for [sel
 
 ### LiveKit Docs MCP server
 
-If you're using an AI coding assistant, you should install the [LiveKit Docs MCP server](https://docs.livekit.io/home/get-started/docs-mcp.md) to get the most out of it. This ensures your agent has access to the latest documentation and examples. The [starter projects](#starters) also include an `AGENTS.md` file with instructions for using the MCP server and other important information about building agents with LiveKit.
+If you're using an AI coding assistant, you should install the [LiveKit Docs MCP server](https://docs.livekit.io/home/get-started/mcp-server.md) to get the most out of it. This ensures your agent has access to the latest documentation and examples. The [starter projects](#starters) also include an `AGENTS.md` file with instructions for using the MCP server and other important information about building agents with LiveKit.
 
 ### LiveKit CLI
 
@@ -122,7 +122,7 @@ Your agent strings together three specialized providers into a high-performance 
 | Component | Model | Alternatives |
 | STT | AssemblyAI Universal-Streaming | [STT models](https://docs.livekit.io/agents/models/stt.md) |
 | LLM | OpenAI GPT-4.1 mini | [LLM models](https://docs.livekit.io/agents/models/llm.md) |
-| TTS | Cartesia Sonic-2 | [TTS models](https://docs.livekit.io/agents/models/tts.md) |
+| TTS | Cartesia Sonic-3 | [TTS models](https://docs.livekit.io/agents/models/tts.md) |
 
 ---
 
@@ -288,7 +288,7 @@ async def entrypoint(ctx: agents.JobContext):
     session = AgentSession(
         stt="assemblyai/universal-streaming:en",
         llm="openai/gpt-4.1-mini",
-        tts="cartesia/sonic-2:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
+        tts="cartesia/sonic-3:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
         vad=silero.VAD.load(),
         turn_detection=MultilingualModel(),
     )
@@ -347,7 +347,7 @@ export default defineAgent({
       vad,
       stt: "assemblyai/universal-streaming:en",
       llm: "openai/gpt-4.1-mini",
-      tts: "cartesia/sonic-2:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
+      tts: "cartesia/sonic-3:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc",
       turnDetection: new livekit.turnDetector.MultilingualModel(),
     });
 

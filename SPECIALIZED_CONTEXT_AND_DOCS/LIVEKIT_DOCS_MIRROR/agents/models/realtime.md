@@ -55,7 +55,7 @@ To use a realtime model with a different [TTS instance](https://docs.livekit.io/
 ```python
 session = AgentSession(
     llm=openai.realtime.RealtimeModel(modalities=["text"]), # Or other realtime model plugin
-    tts="cartesia/sonic-2" # Or other TTS instance of your choice
+    tts="cartesia/sonic-3" # Or other TTS instance of your choice
 )
 
 ```
@@ -65,7 +65,7 @@ session = AgentSession(
 ```typescript
 const session = new voice.AgentSession({
    llm: new openai.realtime.RealtimeModel(modalities=["text"]), // Or other realtime model plugin
-   tts: "cartesia/sonic-2" // Or other TTS instance of your choice
+   tts: "cartesia/sonic-3" // Or other TTS instance of your choice
 });
 
 ```

@@ -1,34 +1,41 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/rl_multihop/index.ipynb on 2025-10-26T02:21:50.502624Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/rl_multihop/index.ipynb on 2025-11-06T02:07:55.093670Z -->
 
 # Tutorial: Online RL for Multi-Hop Research
 
 WARNING: This feature is new and extremely EXPERIMENTAL. Unlike almost everything else in DSPy, it's currently in pure proof of concept and development mode, but we release it to encourage community involvement.
 
-For this tutorial, you will also need DSPy's Arbor RL server.
+For this tutorial, you will also need [DSPy's Arbor RL framework](https://github.com/Ziems/arbor) which you can install with:
 
 ```bash
 > pip install -U arbor-ai
 ```
 
+You may also have to install DSPy from the main branch:
+```bash
+> pip install -U git+https://github.com/stanfordnlp/dspy.git@main
+```
+
 ```python
 import dspy
-from dspy.clients.lm_local_arbor import ArborProvider
-
 import arbor
+from arbor import ArborGRPO, ArborProvider
 arbor_server_info = arbor.init() # Initialize the Arbor server in the background
 
 port = 7453
-local_lm_name = "Qwen/Qwen2.5-7B-Instruct"
+local_lm_name = "Qwen/Qwen2.5-1.5B-Instruct"
 local_lm = dspy.LM(
     model=f"openai/arbor:{local_lm_name}",
     provider=ArborProvider(),
-    temperature=0.7,
-    api_base=arbor_server_info["api_base"],
+    api_base=arbor_server_info["base_url"],
+    # Arbor checks to make sure these match the training config
+    temperature=1.0,
+    top_p=1.0,
+    top_k=-1,
+    repetition_penalty=1.0,
+    max_tokens=2048,
 )
 
 dspy.configure(lm=local_lm)
-
-openai_lm = dspy.LM(model="openai/gpt-4.1-mini")
 ```
 
 ### Install dependencies and download data
@@ -74,6 +81,11 @@ retriever.index(corpus_tokens)
 ### Load the HoVer dataset.
 
 Let's load a dataset for our task. We'll load examples from the HoVer multi-hop task, where the input is a (really!) complex claim and the output we're seeking is the set of Wikipedia pages that are required to fact-check that claim.
+
+You may have to install an older version of the dataset to get it working properly...
+```shell
+> pip install datasets==3.6.0
+```
 
 ```python
 import random
@@ -156,40 +168,53 @@ evaluate = dspy.Evaluate(devset=devset, metric=recall, num_threads=16, display_p
 ## Optimize the `ResearchHop` system with `dspy.GRPO`
 
 ```python
-from dspy.teleprompt.grpo import GRPO
-
 program = ResearchHop(num_docs=4, num_hops=2)
 program.set_lm(local_lm)
 
-# NOTE: Training on 6 GPUs.
+# NOTE: Training on 4 GPUs.
 train_kwargs = {
     "per_device_train_batch_size": 2,
-    "gradient_accumulation_steps": 8,
+    "gradient_accumulation_steps": 24/6,
     "temperature": 1.0,
-    "beta": 0.04,
-    "learning_rate": 1e-5,
+    "top_k": -1,
+    "top_p": 1.0,
+    "repetition_penalty": 1.0,
+    "beta": 0.00,
+    "learning_rate": 1e-6,
     "gradient_checkpointing": True,
-    "gradient_checkpointing_kwargs": {"use_reentrant": False},
     "bf16": True,
     "lr_scheduler_type": "constant_with_warmup",
+    "loss_type": "dapo",
+    "max_steps": 1000,
+    "report_to": "wandb",
+    "log_completions": True,
+    "logging_steps": 1,
     "max_prompt_length": None,
     "max_completion_length": None,
-    "scale_rewards": True,
-    "max_grad_norm": 0.5,
-    "lora": True,
+    "scale_rewards": False,
+    "max_grad_norm": 1.0,
+    "lora_config": {
+        "lora_alpha": 16,
+        "lora_dropout": 0.05,
+        "r": 8,
+        "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "up_proj", "down_proj", "gate_proj"],
+    },
+    "num_training_gpus": 3,
+    "num_inference_gpus": 1,
+    "weight_decay": 0.001,
 }
 
-compiler = GRPO(
+compiler = ArborGRPO(
     metric=recall,
     num_dspy_examples_per_grpo_step=6,
-    num_rollouts_per_grpo_step=4,
+    num_rollouts_per_grpo_step=24,
     exclude_demos=True,
-    num_train_steps=100,
+    num_train_steps=1000,
     num_threads=16,
     use_train_as_val=False,
-    num_steps_for_val=10,
+    num_steps_for_val=50,
     train_kwargs=train_kwargs,
-    report_train_scores=False,
+    checkpoint="single-best",
 )
 
 optimized_program = compiler.compile(
@@ -197,6 +222,7 @@ optimized_program = compiler.compile(
     trainset=trainset,
     valset=devset,
 )
+
 ```
 
 Now, you can use the GRPO'ed program.
@@ -206,4 +232,4 @@ example = devset[0]
 optimized_program(**example.inputs())
 ```
 
-In our preliminary experiments, training above for about 18 hours boosts the recall (devset) from 61.8% to 66.2%. This is _typically_ worse on cost/quality basis than you'd get from running prompt optimizers dspy.MIPROv2 or dspy.SIMBA, but it's still a very solid start for online RL over arbitrary LM programs for small LMs.
+In our preliminary experiments, training about 18 hours boosts the recall (devset) from 61.8% to 66.2%. This is _typically_ worse on cost/quality basis than you'd get from running prompt optimizers dspy.MIPROv2 or dspy.SIMBA, but it's still a very solid start for online RL over arbitrary LM programs for small LMs.

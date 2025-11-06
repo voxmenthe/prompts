@@ -12,7 +12,7 @@ LiveKit Cloud includes advanced models licensed from [Krisp](https://krisp.ai/) 
 
 The feature includes a background voice cancellation (BVC) model, which removes extra background speakers in addition to background noise, providing the best possible experience for voice AI applications. You can also use the standard NC model if desired.
 
-The following comparison shows the effect of the models on the audio as perceived by a user, and also as perceived by a voice AI agent running an STT model ([Deepgram Nova 3](https://docs.livekit.io/agents/models/stt/deepgram.md) in these samples). The segments marked with a strikethrough indicate unwanted content that would confuse the agent. These samples illustrate that BVC is necessary to achieve clean STT in noisy multi-speaker environments.
+The following comparison shows the effect of the models on the audio as perceived by a user, and also as perceived by a voice AI agent running an STT model ([Deepgram Nova 3](https://docs.livekit.io/agents/models/stt/inference/deepgram.md) in these samples). The segments marked with a strikethrough indicate unwanted content that would confuse the agent. These samples illustrate that BVC is necessary to achieve clean STT in noisy multi-speaker environments.
 
 Try the free [noise canceller tool](https://github.com/livekit-examples/noise-canceller) with your LiveKit Cloud account to test your own audio samples.
 

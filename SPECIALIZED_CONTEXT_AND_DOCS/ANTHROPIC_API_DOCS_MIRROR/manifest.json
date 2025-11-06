@@ -4,7 +4,7 @@
   "languages": [
     "en"
   ],
-  "generated_at": "2025-10-26T02:21:37.369034+00:00",
+  "generated_at": "2025-11-06T02:07:40.101528+00:00",
   "documents": [
     {
       "doc_url": "https://docs.claude.com/en/api/admin-api/apikeys/get-api-key",
@@ -172,6 +172,11 @@
       "relative_path": "agent-sdk/permissions.md"
     },
     {
+      "doc_url": "https://docs.claude.com/en/api/agent-sdk/plugins",
+      "markdown_url": "https://docs.claude.com/en/api/agent-sdk/plugins.md",
+      "relative_path": "agent-sdk/plugins.md"
+    },
+    {
       "doc_url": "https://docs.claude.com/en/api/agent-sdk/python",
       "markdown_url": "https://docs.claude.com/en/api/agent-sdk/python.md",
       "relative_path": "agent-sdk/python.md"
@@ -297,19 +302,9 @@
       "relative_path": "messages.md"
     },
     {
-      "doc_url": "https://docs.claude.com/en/api/messages-batch-examples",
-      "markdown_url": "https://docs.claude.com/en/api/messages-batch-examples.md",
-      "relative_path": "messages-batch-examples.md"
-    },
-    {
       "doc_url": "https://docs.claude.com/en/api/messages-count-tokens",
       "markdown_url": "https://docs.claude.com/en/api/messages-count-tokens.md",
       "relative_path": "messages-count-tokens.md"
-    },
-    {
-      "doc_url": "https://docs.claude.com/en/api/messages-examples",
-      "markdown_url": "https://docs.claude.com/en/api/messages-examples.md",
-      "relative_path": "messages-examples.md"
     },
     {
       "doc_url": "https://docs.claude.com/en/api/migrating-from-text-completions-to-messages",

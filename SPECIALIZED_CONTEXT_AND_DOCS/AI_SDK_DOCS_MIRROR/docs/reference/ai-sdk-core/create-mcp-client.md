@@ -1,6 +1,10 @@
 # `experimental_createMCPClient()`
 
-Creates a lightweight Model Context Protocol (MCP) client that connects to an MCP server. The client's primary purpose is tool conversion between MCP tools and AI SDK tools.
+Creates a lightweight Model Context Protocol (MCP) client that connects to an MCP server. The client provides:
+
+- **Tools**: Automatic conversion between MCP tools and AI SDK tools
+- **Resources**: Methods to list, read, and discover resource templates from MCP servers
+- **Prompts**: Methods to list available prompts and retrieve prompt messages
 
 It currently does not support accepting notifications from an MCP server, and custom configuration of the client.
 
@@ -125,6 +129,121 @@ options
 TOOL_SCHEMAS
 
 Schema definitions for compile-time type checking. When not provided, schemas are inferred from the server.
+
+### listResources:
+
+async (options?: {
+params?: PaginatedRequest['params'];
+options?: RequestOptions;
+}) => Promise<ListResourcesResult>
+
+Lists all available resources from the MCP server.
+
+options
+
+### params?:
+
+PaginatedRequest['params']
+
+Optional pagination parameters including cursor.
+
+### options?:
+
+RequestOptions
+
+Optional request options including signal and timeout.
+
+### readResource:
+
+async (args: {
+uri: string;
+options?: RequestOptions;
+}) => Promise<ReadResourceResult>
+
+Reads the contents of a specific resource by URI.
+
+args
+
+### uri:
+
+string
+
+The URI of the resource to read.
+
+### options?:
+
+RequestOptions
+
+Optional request options including signal and timeout.
+
+### listResourceTemplates:
+
+async (options?: {
+options?: RequestOptions;
+}) => Promise<ListResourceTemplatesResult>
+
+Lists all available resource templates from the MCP server.
+
+options
+
+### options?:
+
+RequestOptions
+
+Optional request options including signal and timeout.
+
+### listPrompts:
+
+async (options?: {
+params?: PaginatedRequest['params'];
+options?: RequestOptions;
+}) => Promise<ListPromptsResult>
+
+Lists available prompts from the MCP server.
+
+options
+
+### params?:
+
+PaginatedRequest['params']
+
+Optional pagination parameters including cursor.
+
+### options?:
+
+RequestOptions
+
+Optional request options including signal and timeout.
+
+### getPrompt:
+
+async (args: {
+name: string;
+arguments?: Record<string, unknown>;
+options?: RequestOptions;
+}) => Promise<GetPromptResult>
+
+Retrieves a prompt by name, optionally passing arguments.
+
+args
+
+### name:
+
+string
+
+Prompt name to retrieve.
+
+### arguments?:
+
+Record<string, unknown>
+
+Optional arguments to fill into the prompt.
+
+### options?:
+
+RequestOptions
+
+Optional request options including signal and timeout.
 
 ### close:
 

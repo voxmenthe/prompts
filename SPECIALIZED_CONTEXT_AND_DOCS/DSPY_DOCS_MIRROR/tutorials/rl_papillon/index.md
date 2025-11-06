@@ -1,33 +1,41 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/rl_papillon/index.ipynb on 2025-10-26T02:21:50.525115Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/rl_papillon/index.ipynb on 2025-11-06T02:07:55.143555Z -->
 
 # Tutorial: Online RL over a Multi-Module DSPy Program
 
 WARNING: This feature is new and extremely EXPERIMENTAL. Unlike almost everything else in DSPy, it's currently in pure proof of concept and development mode, but we release it to encourage community involvement.
 
-In this tutorial, we optimize the LM weights of [PAPILLON](https://dspy.ai/tutorials/papillon/) with `dspy.GRPO`, a generalization of the popular GRPO online RL algorithm of LLMs to sophisticated multi-module LM programs.
+In this tutorial, we optimize the LM weights of [PAPILLON](https://dspy.ai/tutorials/papillon/) with `ArborGRPO`, a generalization of the popular GRPO online RL algorithm of LLMs to sophisticated multi-module LM programs.
 
-PAPILLON is a system for privacy-preserving delegation, where we will teach a tiny model (1.7B parameters) to use an "untrusted" external LLM, which is more powerful but may save your private data, to balance high-quality and private chat.
+PAPILLON is a system for privacy-preserving delegation, where we will teach a tiny model (1.5B parameters) to use an "untrusted" external LLM, which is more powerful but may save your private data, to balance high-quality and private chat.
 
-For this tutorial, you will also need the Arbor RL server.
-
+For this tutorial, you will also need [DSPy's Arbor RL framework](https://github.com/Ziems/arbor) which you can install with:
 ```bash
 > pip install -U arbor-ai
 ```
 
+You may also have to install DSPy from the main branch:
+```bash
+> pip install -U git+https://github.com/stanfordnlp/dspy.git@main
+```
+
 ```python
 import dspy
-from dspy.clients.lm_local_arbor import ArborProvider
-
 import arbor
+from arbor import ArborGRPO, ArborProvider
 arbor_server_info = arbor.init() # Initialize the Arbor server in the background
 
 port = 7453
-local_lm_name = "Qwen/Qwen2.5-7B-Instruct"
+local_lm_name = "Qwen/Qwen2.5-1.5B-Instruct"
 local_lm = dspy.LM(
     model=f"openai/arbor:{local_lm_name}",
     provider=ArborProvider(),
-    temperature=0.7,
-    api_base=arbor_server_info["api_base"],
+    api_base=arbor_server_info["base_url"],
+    # Arbor checks to make sure these match the training config
+    temperature=1.0,
+    top_p=1.0,
+    top_k=-1,
+    repetition_penalty=1.0,
+    max_tokens=2048,
 )
 
 dspy.configure(lm=local_lm)
@@ -195,30 +203,43 @@ Let's run the `dspy.GRPO` optimizer to maximize the `compute_overall_score` metr
 We ran this on 4xH100 GPUs for a couple of hours. But first, you'll need to set up Arbor (as above).
 
 ```python
-from dspy.teleprompt.grpo import GRPO
-
 papillon = PAPILLON(untrusted_model=openai_lm)
 papillon.set_lm(local_lm)
 
-# NOTE: Training on 3 GPUs.
+# NOTE: Training on 4 GPUs.
 train_kwargs = {
     "per_device_train_batch_size": 8,
     "gradient_accumulation_steps": 4,
     "temperature": 1.0,
-    "beta": 0.04,
-    "learning_rate": 2e-6,
+    "top_k": -1,
+    "top_p": 1.0,
+    "repetition_penalty": 1.0,
+    "beta": 0.00,
+    "learning_rate": 1e-6,
     "gradient_checkpointing": True,
-    "gradient_checkpointing_kwargs": {"use_reentrant": False},
     "bf16": True,
     "lr_scheduler_type": "constant_with_warmup",
+    "loss_type": "dapo",
+    "max_steps": 1000,
+    "report_to": "wandb",
+    "log_completions": True,
+    "logging_steps": 1,
     "max_prompt_length": None,
     "max_completion_length": None,
-    "scale_rewards": True,
-    "max_grad_norm": 0.5,
-    "lora": True,
+    "scale_rewards": False,
+    "max_grad_norm": 1.0,
+    "lora_config": {
+        "lora_alpha": 16,
+        "lora_dropout": 0.05,
+        "r": 8,
+        "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "up_proj", "down_proj", "gate_proj"],
+    },
+    "num_training_gpus": 3,
+    "num_inference_gpus": 1,
+    "weight_decay": 0.001,
 }
 
-compiler = GRPO(
+compiler = ArborGRPO(
     metric=compute_overall_score,
     multitask=True,
     num_dspy_examples_per_grpo_step=4,
@@ -246,4 +267,4 @@ example = devset[0]
 optimized_papillon(**example.inputs())
 ```
 
-In our preliminary experiments, training above for three hours boosts the composite score (devset) from 54.6% to 60.0%. This is _typically_ worse on cost/quality basis than you'd get from running prompt optimizers like dspy.MIPROv2 or dspy.SIMBA, but it's still a very solid start for online RL over arbitrary LM programs for tiny LMs.
+In our preliminary experiments, training three hours boosts the composite score (devset) from 54.6% to 60.0%. This is _typically_ worse on cost/quality basis than you'd get from running prompt optimizers like dspy.MIPROv2 or dspy.SIMBA, but it's still a very solid start for online RL over arbitrary LM programs for tiny LMs.

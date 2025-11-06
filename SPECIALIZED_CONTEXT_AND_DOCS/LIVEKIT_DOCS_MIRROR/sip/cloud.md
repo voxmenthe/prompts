@@ -8,7 +8,7 @@ LiveKit docs › Getting started › Cloud
 
 ## Overview
 
-LiveKit SIP is part of [LiveKit Cloud](https://docs.livekit.io/home/cloud/overview.md) and runs as a globally distributed service, providing redundancy and high availability. By default, SIP endpoints are global, and calls are routed through the region closest to the origination point. Incoming calls are routed to the region closest to the SIP trunking provider's endpoint. Outgoing calls originate from the same region where the `CreateSIPParticipant` API call is made.
+LiveKit SIP is part of [LiveKit Cloud](https://docs.livekit.io/home/cloud.md) and runs as a globally distributed service, providing redundancy and high availability. By default, SIP endpoints are global, and calls are routed through the region closest to the origination point. Incoming calls are routed to the region closest to the SIP trunking provider's endpoint. Outgoing calls originate from the same region where the `CreateSIPParticipant` API call is made.
 
 In most cases, using the global endpoint is the recommended approach. However, if you need to exercise more control over call routing—for example, to comply with local telephony regulations—LiveKit SIP supports region pinning. This allows you to restrict both incoming and outgoing calls to a specific region.
 

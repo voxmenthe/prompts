@@ -209,7 +209,7 @@ To use the OpenAI Realtime API with a different [TTS instance](https://docs.live
 ```python
 session = AgentSession(
     llm=openai.realtime.RealtimeModel(modalities=["text"]),
-    tts="cartesia/sonic-2" # Or other TTS instance of your choice
+    tts="cartesia/sonic-3" # Or other TTS instance of your choice
 )
 
 ```
@@ -225,7 +225,7 @@ const session = new voice.AgentSession({
    llm: new openai.realtime.RealtimeModel({ 
       modalities: ["text"]
    }),
-   tts: "cartesia/sonic-2", // Or other TTS instance of your choice
+   tts: "cartesia/sonic-3", // Or other TTS instance of your choice
 });
 
 ```

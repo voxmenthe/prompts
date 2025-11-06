@@ -19,13 +19,6 @@
   },
   "results": [
     {
-      "relative_path": "/docs/v3/GSAP/CorePlugins/Modifiers.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/CorePlugins/Modifiers.md",
-      "error": null
-    },
-    {
       "relative_path": "/docs/v3.md",
       "url_used": null,
       "success": true,
@@ -33,24 +26,10 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/GSAP/CorePlugins/CSS.md",
+      "relative_path": "/docs/v3/GSAP/gsap.globalTimeline.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/CorePlugins/CSS.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/GSAP.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/GSAP/CorePlugins/EndArray.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/CorePlugins/EndArray.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/gsap.globalTimeline.md",
       "error": null
     },
     {
@@ -61,10 +40,24 @@
       "error": null
     },
     {
+      "relative_path": "/docs/v3/GSAP.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP.md",
+      "error": null
+    },
+    {
       "relative_path": "/docs/v3/GSAP/gsap.effects.md",
       "url_used": null,
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/gsap.effects.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/GSAP/gsap.utils.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/gsap.utils.md",
       "error": null
     },
     {
@@ -82,66 +75,17 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/GSAP/gsap.globalTimeline.md",
+      "relative_path": "/docs/v3/GSAP/CorePlugins/EndArray.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/gsap.globalTimeline.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/CorePlugins/EndArray.md",
       "error": null
     },
     {
-      "relative_path": "/docs/v3/GSAP/gsap.version.md",
+      "relative_path": "/docs/v3/GSAP/CorePlugins/CSS.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/gsap.version.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/GSAP/gsap.utils.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/gsap.utils.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/GSAP/Timeline/smoothChildTiming.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/Timeline/smoothChildTiming.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/GSAP/Timeline/autoRemoveChildren.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/Timeline/autoRemoveChildren.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/GSAP/Timeline/data.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/Timeline/data.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/GSAP/Timeline/scrollTrigger.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/Timeline/scrollTrigger.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/GSAP/Timeline/labels.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/Timeline/labels.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/GSAP/Tween/data.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/Tween/data.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/CorePlugins/CSS.md",
       "error": null
     },
     {
@@ -152,10 +96,17 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/GSAP/Timeline/vars.md",
+      "relative_path": "/docs/v3/GSAP/Timeline/autoRemoveChildren.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/Timeline/vars.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/Timeline/autoRemoveChildren.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/GSAP/Timeline/scrollTrigger.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/Timeline/scrollTrigger.md",
       "error": null
     },
     {
@@ -166,17 +117,31 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/GSAP/Tween/vars.md",
+      "relative_path": "/docs/v3/GSAP/CorePlugins/Modifiers.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/Tween/vars.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/CorePlugins/Modifiers.md",
       "error": null
     },
     {
-      "relative_path": "/docs/v3/Eases.md",
+      "relative_path": "/docs/v3/GSAP/Timeline/labels.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Eases.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/Timeline/labels.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/GSAP/gsap.version.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/gsap.version.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/GSAP/Timeline/data.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/Timeline/data.md",
       "error": null
     },
     {
@@ -187,10 +152,38 @@
       "error": null
     },
     {
+      "relative_path": "/docs/v3/GSAP/Timeline/vars.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/Timeline/vars.md",
+      "error": null
+    },
+    {
       "relative_path": "/docs/v3/GSAP/Tween/ratio.md",
       "url_used": null,
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/Tween/ratio.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/GSAP/Tween/scrollTrigger.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/Tween/scrollTrigger.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/GSAP/Tween/data.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/Tween/data.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Eases.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Eases.md",
       "error": null
     },
     {
@@ -208,66 +201,10 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/HelperFunctions/helpers/addWeightedEases.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/addWeightedEases.md",
-      "error": null
-    },
-    {
       "relative_path": "/docs/v3/Eases/CustomBounce.md",
       "url_used": null,
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Eases/CustomBounce.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Eases/SlowMo.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Eases/SlowMo.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Eases/CustomEase.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Eases/CustomEase.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Eases/RoughEase.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Eases/RoughEase.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/GSAP/Tween/scrollTrigger.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/Tween/scrollTrigger.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Eases/SteppedEase.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Eases/SteppedEase.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/HelperFunctions/helpers/anchorsToProgress.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/anchorsToProgress.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/HelperFunctions.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions.md",
       "error": null
     },
     {
@@ -278,10 +215,59 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/HelperFunctions/helpers/alignOrigins.md",
+      "relative_path": "/docs/v3/GSAP/Timeline/smoothChildTiming.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/alignOrigins.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/Timeline/smoothChildTiming.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Eases/CustomEase.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Eases/CustomEase.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/HelperFunctions.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Eases/SlowMo.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Eases/SlowMo.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Eases/RoughEase.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Eases/RoughEase.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/HelperFunctions/helpers/addWeightedEases.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/addWeightedEases.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Eases/SteppedEase.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Eases/SteppedEase.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/GSAP/Tween/vars.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/GSAP/Tween/vars.md",
       "error": null
     },
     {
@@ -292,59 +278,10 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/HelperFunctions/helpers/blendEases.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/blendEases.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/HelperFunctions/helpers/easeToLinear.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/easeToLinear.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/HelperFunctions/helpers/callAfterResize.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/callAfterResize.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/HelperFunctions/helpers/getScrollPosition.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/getScrollPosition.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/HelperFunctions/helpers/formatNumber.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/formatNumber.md",
-      "error": null
-    },
-    {
       "relative_path": "/docs/v3/HelperFunctions/helpers/compensatedSkew.md",
       "url_used": null,
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/compensatedSkew.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/HelperFunctions/helpers/nestedLinesSplit.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/nestedLinesSplit.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/HelperFunctions/helpers/getNestedLabelTime.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/getNestedLabelTime.md",
       "error": null
     },
     {
@@ -355,10 +292,80 @@
       "error": null
     },
     {
+      "relative_path": "/docs/v3/HelperFunctions/helpers/anchorsToProgress.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/anchorsToProgress.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/HelperFunctions/helpers/easeToLinear.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/easeToLinear.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/HelperFunctions/helpers/alignOrigins.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/alignOrigins.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/HelperFunctions/helpers/callAfterResize.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/callAfterResize.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/HelperFunctions/helpers/blendEases.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/blendEases.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/HelperFunctions/helpers/formatNumber.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/formatNumber.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/HelperFunctions/helpers/getScrollPosition.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/getScrollPosition.md",
+      "error": null
+    },
+    {
       "relative_path": "/docs/v3/HelperFunctions/helpers/getDirectionalSnapFunc.md",
       "url_used": null,
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/getDirectionalSnapFunc.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/HelperFunctions/helpers/LottieScrollTrigger.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/LottieScrollTrigger.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/HelperFunctions/helpers/getNestedLabelTime.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/getNestedLabelTime.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/HelperFunctions/helpers/stopOverscroll.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/stopOverscroll.md",
       "error": null
     },
     {
@@ -369,10 +376,10 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/HelperFunctions/helpers/killChildTweensOf.md",
+      "relative_path": "/docs/v3/HelperFunctions/helpers/nestedLinesSplit.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/killChildTweensOf.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/nestedLinesSplit.md",
       "error": null
     },
     {
@@ -390,13 +397,6 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/HelperFunctions/helpers/stopOverscroll.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/stopOverscroll.md",
-      "error": null
-    },
-    {
       "relative_path": "/docs/v3/HelperFunctions/helpers/imageSequenceScrub.md",
       "url_used": null,
       "success": true,
@@ -404,24 +404,17 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/HelperFunctions/helpers/trackDirection.md",
+      "relative_path": "/docs/v3/HelperFunctions/helpers/progressiveBuild.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/trackDirection.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/progressiveBuild.md",
       "error": null
     },
     {
-      "relative_path": "/docs/v3/Plugins.md",
+      "relative_path": "/docs/v3/HelperFunctions/helpers/killChildTweensOf.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/HelperFunctions/helpers/LottieScrollTrigger.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/LottieScrollTrigger.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/killChildTweensOf.md",
       "error": null
     },
     {
@@ -439,10 +432,10 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/HelperFunctions/helpers/weightedRandom.md",
+      "relative_path": "/docs/v3/HelperFunctions/helpers/smoothOriginChange.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/weightedRandom.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/smoothOriginChange.md",
       "error": null
     },
     {
@@ -453,31 +446,45 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/HelperFunctions/helpers/smoothOriginChange.md",
+      "relative_path": "/docs/v3/Plugins.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/smoothOriginChange.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins.md",
       "error": null
     },
     {
-      "relative_path": "/docs/v3/HelperFunctions/helpers/progressiveBuild.md",
+      "relative_path": "/docs/v3/Plugins/Draggable/deltaY.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/progressiveBuild.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/deltaY.md",
       "error": null
     },
     {
-      "relative_path": "/docs/v3/Plugins/Draggable/autoScroll.md",
+      "relative_path": "/docs/v3/HelperFunctions/helpers/weightedRandom.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/autoScroll.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/weightedRandom.md",
       "error": null
     },
     {
-      "relative_path": "/docs/v3/Plugins/Draggable/endY.md",
+      "relative_path": "/docs/v3/Plugins/Draggable/endX.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/endY.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/endX.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/HelperFunctions/helpers/trackDirection.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/HelperFunctions/helpers/trackDirection.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/Draggable/isThrowing.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/isThrowing.md",
       "error": null
     },
     {
@@ -495,38 +502,17 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/Plugins/Draggable/lockAxis.md",
+      "relative_path": "/docs/v3/Plugins/Draggable/endY.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/lockAxis.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/endY.md",
       "error": null
     },
     {
-      "relative_path": "/docs/v3/Plugins/Draggable/endX.md",
+      "relative_path": "/docs/v3/Plugins/Draggable/autoScroll.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/endX.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/Draggable/isPressed.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/isPressed.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/Draggable/deltaY.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/deltaY.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/Draggable/lockedAxis.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/lockedAxis.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/autoScroll.md",
       "error": null
     },
     {
@@ -537,10 +523,17 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/Plugins/Draggable/minX.md",
+      "relative_path": "/docs/v3/Plugins/Draggable/lockAxis.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/minX.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/lockAxis.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/Draggable/isPressed.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/isPressed.md",
       "error": null
     },
     {
@@ -551,45 +544,10 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/Plugins/Draggable/pointerX.md",
+      "relative_path": "/docs/v3/Plugins/Draggable/lockedAxis.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/pointerX.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/Draggable/maxX.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/maxX.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/Draggable/isThrowing.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/isThrowing.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/Draggable/startX.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/startX.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/Draggable/pointerEvent.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/pointerEvent.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/Draggable/startY.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/startY.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/lockedAxis.md",
       "error": null
     },
     {
@@ -597,20 +555,6 @@
       "url_used": null,
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/rotation.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/Draggable/vars.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/vars.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/Draggable/pointerY.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/pointerY.md",
       "error": null
     },
     {
@@ -628,31 +572,45 @@
       "error": null
     },
     {
+      "relative_path": "/docs/v3/Plugins/Draggable/maxX.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/maxX.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/Draggable/minX.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/minX.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/Draggable/pointerEvent.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/pointerEvent.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/Draggable/pointerX.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/pointerX.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/Draggable/startX.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/startX.md",
+      "error": null
+    },
+    {
       "relative_path": "/docs/v3/Plugins/Draggable/zIndex.md",
       "url_used": null,
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/zIndex.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/Flip.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Flip.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/Draggable/tween.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/tween.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/Draggable/y.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/y.md",
       "error": null
     },
     {
@@ -663,38 +621,17 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/Plugins/MorphSVGPlugin.md",
+      "relative_path": "/docs/v3/Plugins/Draggable/vars.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/MorphSVGPlugin.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/vars.md",
       "error": null
     },
     {
-      "relative_path": "/docs/v3/Plugins/GSDevTools.md",
+      "relative_path": "/docs/v3/Plugins/Draggable/tween.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/GSDevTools.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/EaselPlugin.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/EaselPlugin.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/Draggable/x.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/x.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/MorphSVGPlugin/static.convertToPath.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/MorphSVGPlugin/static.convertToPath.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/tween.md",
       "error": null
     },
     {
@@ -705,52 +642,52 @@
       "error": null
     },
     {
+      "relative_path": "/docs/v3/Plugins/GSDevTools.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/GSDevTools.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/Draggable/x.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/x.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/Draggable/startY.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/startY.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/Draggable/y.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/y.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/Flip.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Flip.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/EaselPlugin.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/EaselPlugin.md",
+      "error": null
+    },
+    {
       "relative_path": "/docs/v3/Plugins/InertiaPlugin.md",
       "url_used": null,
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/InertiaPlugin.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/MorphSVGPlugin/static.defaultUpdateTarget.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/MorphSVGPlugin/static.defaultUpdateTarget.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/InertiaPlugin/VelocityTracker/.track.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/InertiaPlugin/VelocityTracker/.track.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/MotionPathPlugin.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/MotionPathPlugin.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/MorphSVGPlugin/static.defaultRender.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/MorphSVGPlugin/static.defaultRender.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/MorphSVGPlugin/static.stringToRawPath.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/MorphSVGPlugin/static.stringToRawPath.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/InertiaPlugin/VelocityTracker.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/InertiaPlugin/VelocityTracker.md",
       "error": null
     },
     {
@@ -768,10 +705,38 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/Plugins/Observer.md",
+      "relative_path": "/docs/v3/Plugins/MorphSVGPlugin/static.defaultUpdateTarget.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/MorphSVGPlugin/static.defaultUpdateTarget.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/InertiaPlugin/VelocityTracker/.track.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/InertiaPlugin/VelocityTracker/.track.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/InertiaPlugin/VelocityTracker.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/InertiaPlugin/VelocityTracker.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/MorphSVGPlugin/static.convertToPath.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/MorphSVGPlugin/static.convertToPath.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/MorphSVGPlugin.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/MorphSVGPlugin.md",
       "error": null
     },
     {
@@ -782,17 +747,31 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/Plugins/Observer/isEnabled.md",
+      "relative_path": "/docs/v3/Plugins/MotionPathPlugin.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer/isEnabled.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/MotionPathPlugin.md",
       "error": null
     },
     {
-      "relative_path": "/docs/v3/Plugins/Observer/deltaX.md",
+      "relative_path": "/docs/v3/Plugins/Draggable/pointerY.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer/deltaX.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Draggable/pointerY.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/MorphSVGPlugin/static.defaultRender.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/MorphSVGPlugin/static.defaultRender.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/MorphSVGPlugin/static.stringToRawPath.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/MorphSVGPlugin/static.stringToRawPath.md",
       "error": null
     },
     {
@@ -803,24 +782,10 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/Plugins/MotionPathPlugin/methods/static-pointsToSegment.md",
+      "relative_path": "/docs/v3/Plugins/Observer.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/MotionPathPlugin/methods/static-pointsToSegment.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/Observer/event.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer/event.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/Observer/isPressed.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer/isPressed.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer.md",
       "error": null
     },
     {
@@ -831,38 +796,31 @@
       "error": null
     },
     {
+      "relative_path": "/docs/v3/Plugins/Observer/deltaX.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer/deltaX.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/Observer/event.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer/event.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/MotionPathPlugin/methods/static-pointsToSegment.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/MotionPathPlugin/methods/static-pointsToSegment.md",
+      "error": null
+    },
+    {
       "relative_path": "/docs/v3/Plugins/Observer/static.isTouch.md",
       "url_used": null,
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer/static.isTouch.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/Observer/vars.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer/vars.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/Observer/x.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer/x.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/PhysicsPropsPlugin.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/PhysicsPropsPlugin.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/Observer/startY.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer/startY.md",
       "error": null
     },
     {
@@ -873,10 +831,45 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/Plugins/Observer/startX.md",
+      "relative_path": "/docs/v3/Plugins/Observer/isEnabled.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer/startX.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer/isEnabled.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/Observer/isPressed.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer/isPressed.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/Observer/vars.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer/vars.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/Observer/startY.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer/startY.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/Observer/velocityY.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer/velocityY.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/PhysicsPropsPlugin.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/PhysicsPropsPlugin.md",
       "error": null
     },
     {
@@ -894,24 +887,17 @@
       "error": null
     },
     {
+      "relative_path": "/docs/v3/Plugins/Observer/startX.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer/startX.md",
+      "error": null
+    },
+    {
       "relative_path": "/docs/v3/Plugins/PixiPlugin.md",
       "url_used": null,
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/PixiPlugin.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/Observer/velocityY.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer/velocityY.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/Observer/velocityX.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer/velocityX.md",
       "error": null
     },
     {
@@ -922,38 +908,17 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/Plugins/ScrollToPlugin.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrollToPlugin.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/ScrollSmoother/vars.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrollSmoother/vars.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/ScrollTrigger.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrollTrigger.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/ScrollTrigger/animation.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrollTrigger/animation.md",
-      "error": null
-    },
-    {
       "relative_path": "/docs/v3/Plugins/ScrambleTextPlugin.md",
       "url_used": null,
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrambleTextPlugin.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/Observer/x.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer/x.md",
       "error": null
     },
     {
@@ -971,10 +936,38 @@
       "error": null
     },
     {
+      "relative_path": "/docs/v3/Plugins/ScrollSmoother/vars.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrollSmoother/vars.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/Observer/velocityX.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/Observer/velocityX.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/ScrollToPlugin.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrollToPlugin.md",
+      "error": null
+    },
+    {
       "relative_path": "/docs/v3/Plugins/ScrollTrigger/end.md",
       "url_used": null,
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrollTrigger/end.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/ScrollTrigger/animation.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrollTrigger/animation.md",
       "error": null
     },
     {
@@ -985,24 +978,17 @@
       "error": null
     },
     {
+      "relative_path": "/docs/v3/Plugins/ScrollTrigger/trigger.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrollTrigger/trigger.md",
+      "error": null
+    },
+    {
       "relative_path": "/docs/v3/Plugins/ScrollTrigger/pin.md",
       "url_used": null,
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrollTrigger/pin.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/ScrollTrigger/progress.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrollTrigger/progress.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/ScrollTrigger/isActive.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrollTrigger/isActive.md",
       "error": null
     },
     {
@@ -1013,17 +999,38 @@
       "error": null
     },
     {
+      "relative_path": "/docs/v3/Plugins/ScrollTrigger/isActive.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrollTrigger/isActive.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/ScrollTrigger.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrollTrigger.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/ScrollTrigger/scroller.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrollTrigger/scroller.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/ScrollTrigger/progress.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrollTrigger/progress.md",
+      "error": null
+    },
+    {
       "relative_path": "/docs/v3/Plugins/ScrollTrigger/vars.md",
       "url_used": null,
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrollTrigger/vars.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/ScrollTrigger/static.isTouch.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrollTrigger/static.isTouch.md",
       "error": null
     },
     {
@@ -1041,13 +1048,6 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/Plugins/ScrollTrigger/trigger.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrollTrigger/trigger.md",
-      "error": null
-    },
-    {
       "relative_path": "/docs/v3/Plugins/SplitText/words.md",
       "url_used": null,
       "success": true,
@@ -1055,108 +1055,10 @@
       "error": null
     },
     {
-      "relative_path": "/docs/v3/Plugins/SplitText/lines.md",
+      "relative_path": "/docs/v3/Plugins/ScrollTrigger/static.isTouch.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/SplitText/lines.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/SplitText/isSplit.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/SplitText/isSplit.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/TextPlugin.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/TextPlugin.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/ScrollTrigger/scroller.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrollTrigger/scroller.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/SplitText/vars.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/SplitText/vars.md",
-      "error": null
-    },
-    {
-      "relative_path": "/resources/a11y.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/a11y.md",
-      "error": null
-    },
-    {
-      "relative_path": "/docs/v3/Plugins/SplitText/chars.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/SplitText/chars.md",
-      "error": null
-    },
-    {
-      "relative_path": "/resources/conflict.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/conflict.md",
-      "error": null
-    },
-    {
-      "relative_path": "/resources/frameworks.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/frameworks.md",
-      "error": null
-    },
-    {
-      "relative_path": "/resources/3-migration.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/3-migration.md",
-      "error": null
-    },
-    {
-      "relative_path": "/resources/getting-started/control.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/getting-started/control.md",
-      "error": null
-    },
-    {
-      "relative_path": "/resources/fouc.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/fouc.md",
-      "error": null
-    },
-    {
-      "relative_path": "/resources/get-started.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/get-started.md",
-      "error": null
-    },
-    {
-      "relative_path": "/resources/immediaterender.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/immediaterender.md",
-      "error": null
-    },
-    {
-      "relative_path": "/resources/getting-started/Staggers.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/getting-started/Staggers.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/ScrollTrigger/static.isTouch.md",
       "error": null
     },
     {
@@ -1167,10 +1069,115 @@
       "error": null
     },
     {
+      "relative_path": "/docs/v3/Plugins/SplitText/chars.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/SplitText/chars.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/TextPlugin.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/TextPlugin.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/SplitText/isSplit.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/SplitText/isSplit.md",
+      "error": null
+    },
+    {
+      "relative_path": "/resources/3-migration.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/3-migration.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/SplitText/vars.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/SplitText/vars.md",
+      "error": null
+    },
+    {
+      "relative_path": "/resources/frameworks.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/frameworks.md",
+      "error": null
+    },
+    {
+      "relative_path": "/docs/v3/Plugins/SplitText/lines.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/docs/v3/Plugins/SplitText/lines.md",
+      "error": null
+    },
+    {
+      "relative_path": "/resources/conflict.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/conflict.md",
+      "error": null
+    },
+    {
+      "relative_path": "/resources/getting-started/Staggers.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/getting-started/Staggers.md",
+      "error": null
+    },
+    {
+      "relative_path": "/resources/fouc.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/fouc.md",
+      "error": null
+    },
+    {
       "relative_path": "/resources/getting-started/Easing.md",
       "url_used": null,
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/getting-started/Easing.md",
+      "error": null
+    },
+    {
+      "relative_path": "/resources/immediaterender.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/immediaterender.md",
+      "error": null
+    },
+    {
+      "relative_path": "/resources/a11y.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/a11y.md",
+      "error": null
+    },
+    {
+      "relative_path": "/resources/getting-started/control.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/getting-started/control.md",
+      "error": null
+    },
+    {
+      "relative_path": "/resources/Plugins.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/Plugins.md",
+      "error": null
+    },
+    {
+      "relative_path": "/resources/react-advanced.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/react-advanced.md",
       "error": null
     },
     {
@@ -1185,6 +1192,41 @@
       "url_used": null,
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/getting-started/timelines.md",
+      "error": null
+    },
+    {
+      "relative_path": "/resources/get-started.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/get-started.md",
+      "error": null
+    },
+    {
+      "relative_path": "/resources/st-mistakes.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/st-mistakes.md",
+      "error": null
+    },
+    {
+      "relative_path": "/resources/private-repo-migration.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/private-repo-migration.md",
+      "error": null
+    },
+    {
+      "relative_path": "/resources/React.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/React.md",
+      "error": null
+    },
+    {
+      "relative_path": "/resources/Webflow.md",
+      "url_used": null,
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/Webflow.md",
       "error": null
     },
     {
@@ -1209,31 +1251,10 @@
       "error": null
     },
     {
-      "relative_path": "/resources/Plugins.md",
+      "relative_path": "/resources/Wordpress.md",
       "url_used": null,
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/Plugins.md",
-      "error": null
-    },
-    {
-      "relative_path": "/resources/react-advanced.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/react-advanced.md",
-      "error": null
-    },
-    {
-      "relative_path": "/resources/st-mistakes.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/st-mistakes.md",
-      "error": null
-    },
-    {
-      "relative_path": "/resources/private-repo-migration.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/private-repo-migration.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/Wordpress.md",
       "error": null
     },
     {
@@ -1241,27 +1262,6 @@
       "url_used": null,
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/svg.md",
-      "error": null
-    },
-    {
-      "relative_path": "/resources/React.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/React.md",
-      "error": null
-    },
-    {
-      "relative_path": "/resources/Webflow.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/Webflow.md",
-      "error": null
-    },
-    {
-      "relative_path": "/resources/Wordpress.md",
-      "url_used": null,
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/GSAP_DOCS_MIRROR/resources/Wordpress.md",
       "error": null
     }
   ]

@@ -234,7 +234,7 @@ from google.genai.types import Modality
 
 session = AgentSession(
     llm=google.realtime.RealtimeModel(modalities=[Modality.TEXT]),
-    tts="cartesia/sonic-2",
+    tts="cartesia/sonic-3",
 )
 
 ```
@@ -252,7 +252,7 @@ const session = new voice.AgentSession({
       model: "gemini-2.0-flash-exp",
       modalities: [google.types.Modality.TEXT],
    }),
-   tts: "cartesia/sonic-2",
+   tts: "cartesia/sonic-3",
 });
 
 ```

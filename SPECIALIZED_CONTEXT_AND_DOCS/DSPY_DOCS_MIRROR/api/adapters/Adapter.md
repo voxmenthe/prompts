@@ -244,5 +244,5 @@ Args:
 Returns:
     A dictionary of the output fields.
 
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/adapters/base.py` (lines 22–519)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/adapters/base.py` (lines 22–528)
 

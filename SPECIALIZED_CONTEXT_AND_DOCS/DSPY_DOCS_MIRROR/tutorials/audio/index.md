@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/audio/index.ipynb on 2025-10-26T02:21:50.523727Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/audio/index.ipynb on 2025-11-06T02:07:55.140339Z -->
 
 # Tutorial: Using Audio in DSPy Programs
 

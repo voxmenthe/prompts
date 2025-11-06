@@ -88,6 +88,7 @@ The LiveKit Agents framework also includes a variety of open source [plugins](ht
 | [Fireworks](https://docs.livekit.io/agents/models/llm/plugins/fireworks.md) | ✓ | ✓ |
 | [Letta](https://docs.livekit.io/agents/models/llm/plugins/letta.md) | ✓ | — |
 | [Ollama](https://docs.livekit.io/agents/models/llm/plugins/ollama.md) | ✓ | ✓ |
+| [OpenRouter](https://docs.livekit.io/agents/models/llm/plugins/openrouter.md) | ✓ | — |
 | [Perplexity](https://docs.livekit.io/agents/models/llm/plugins/perplexity.md) | ✓ | ✓ |
 | [Telnyx](https://docs.livekit.io/agents/models/llm/plugins/telnyx.md) | ✓ | ✓ |
 | [Together AI](https://docs.livekit.io/agents/models/llm/plugins/together.md) | ✓ | ✓ |

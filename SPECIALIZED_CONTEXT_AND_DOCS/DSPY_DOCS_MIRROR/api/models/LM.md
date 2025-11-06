@@ -56,5 +56,5 @@ def launch(self, launch_kwargs=None)
 ```python
 def reinforce(self, train_kwargs)
 ```
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/clients/lm.py` (lines 25–288)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/clients/lm.py` (lines 25–285)
 

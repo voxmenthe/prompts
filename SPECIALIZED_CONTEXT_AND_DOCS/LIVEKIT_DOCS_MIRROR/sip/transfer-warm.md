@@ -36,7 +36,7 @@ While the caller experiences one agent, it's best to use a workflow to orchestra
 
 ## Telephony setup
 
-In order for your agent to transfer calls to another number, you must have an [outbound trunk](https://docs.livekit.io/sip/trunk-outbound.md). If you also want to receive calls, you need an [inbound trunk](https://docs.livekit.io/sip/trunk-inbound.md) and a [dispatch rule](https://docs.livekit.io/sip/dispatch-rules.md). For SIP trunking provider instructions, see [SIP trunk setup](https://docs.livekit.io/sip/quickstarts/configuring-sip-trunk.md).
+In order for your agent to transfer calls to another number, you must have an [outbound trunk](https://docs.livekit.io/sip/trunk-outbound.md). If you also want to receive calls, you need an [inbound trunk](https://docs.livekit.io/sip/trunk-inbound.md) and a [dispatch rule](https://docs.livekit.io/sip/dispatch-rule.md). For SIP trunking provider instructions, see [SIP trunk setup](https://docs.livekit.io/sip/quickstarts/configuring-sip-trunk.md).
 
 > 💡 **Testing warm transfer**
 > 

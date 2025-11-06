@@ -59,7 +59,7 @@ from livekit.plugins import cartesia
 
 session = AgentSession(
    tts=cartesia.TTS(
-      model="sonic-2",
+      model="sonic-3",
       voice="f786b574-daa5-4673-aa0c-cbe3e8534c02",
    )
    # ... llm, stt, etc.
@@ -76,7 +76,7 @@ import * as cartesia from '@livekit/agents-plugin-cartesia';
 
 const session = new voice.AgentSession({
     tts: cartesia.TTS(
-        model: "sonic-2",
+        model: "sonic-3",
         voice: "f786b574-daa5-4673-aa0c-cbe3e8534c02",
     ),
     // ... llm, stt, etc.
@@ -88,15 +88,21 @@ const session = new voice.AgentSession({
 
 This section describes some of the available parameters. See the plugin reference links in the [Additional resources](#additional-resources) section for a complete list of all available parameters.
 
-- **`model`** _(string)_ (optional) - Default: `sonic-2`: ID of the model to use for generation. See [supported models](https://docs.cartesia.ai/build-with-cartesia/models/tts).
+- **`model`** _(string)_ (optional) - Default: `sonic-3`: ID of the model to use for generation. See [supported models](https://docs.cartesia.ai/build-with-cartesia/models/tts).
 
 - **`voice`** _(string | list[float])_ (optional) - Default: `794f9389-aac1-45b6-b726-9d9369183238`: ID of the voice to use for generation, or an embedding array. See [official documentation](https://docs.cartesia.ai/api-reference/tts/tts#send.Generation%20Request.voice).
 
 - **`language`** _(string)_ (optional) - Default: `en`: Language of input text in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) format. For a list of languages support by model, see [supported models](https://docs.cartesia.ai/build-with-cartesia/models/tts).
 
+- **`emotion`** _(string)_ (optional): See [Emotion Controls](https://docs.cartesia.ai/build-with-cartesia/sonic-3/volume-speed-emotion#emotion-controls-beta) for Sonic 3 for supported values.
+
+- **`speed`** _(float)_ (optional) - Default: `1`: Speed of the speech, where 1.0 is the default speed. See [Speed and Volume Controls](https://docs.cartesia.ai/build-with-cartesia/sonic-3/volume-speed-emotion#speed-and-volume-controls) for Sonic 3 for more information.
+
+- **`volume`** _(float)_ (optional) - Default: `1`: Volume of the speech, where 1.0 is the default volume. See [Speed and Volume Controls](https://docs.cartesia.ai/build-with-cartesia/sonic-3/volume-speed-emotion#speed-and-volume-controls) for Sonic 3 for more information.
+
 ## Customizing pronunciation
 
-Cartesia TTS allows you to customize pronunciation using Speech Synthesis Markup Language (SSML). To learn more, see [Specify Custom Pronunciations](https://docs.cartesia.ai/build-with-cartesia/capability-guides/specify-custom-pronunciations).
+Cartesia TTS allows you to customize pronunciation using Speech Synthesis Markup Language (SSML). To learn more, see [Specify Custom Pronunciations](https://docs.cartesia.ai/build-with-cartesia/sonic-3/custom-pronunciations).
 
 ## Transcription timing
 

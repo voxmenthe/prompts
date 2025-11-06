@@ -143,5 +143,5 @@ Returns:
 ```python
 def validate_input(cls, data)
 ```
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/adapters/types/citation.py` (lines 10–218)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/adapters/types/citation.py` (lines 10–215)
 

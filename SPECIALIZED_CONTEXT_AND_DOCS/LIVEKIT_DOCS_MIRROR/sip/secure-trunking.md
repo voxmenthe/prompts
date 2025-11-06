@@ -8,10 +8,6 @@ LiveKit docs › Features › Secure trunking
 
 LiveKit SIP supports secure trunking using Transport Layer Security (TLS) to encrypt signaling traffic, and Secure Real-time Transport (SRTP) to encrypt media traffic. Encryption ensures that an Internet Service Provider (ISP) or a eavesdropping attacker (man-in-the-middle) cannot listen in on the conversation.
 
-> ℹ️ **SIP REFER is not supported when using TLS.**
-> 
-> Transferring calls with SIP REFER is not currently supported over TLS.
-
 ## Configure secure trunking for SIP calls
 
 Setting up secure trunking requires multiple steps and includes enabling SRTP and TLS on your SIP trunking provider side, and enabling media encryption on your LiveKit trunks or on a per-call basis. The following sections provide instructions for enabling secure trunking with Twilio and Telnyx and setting up your LiveKit SIP trunks.

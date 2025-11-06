@@ -2,22 +2,24 @@ LiveKit docs › LiveKit SDKs › Realtime text & data › Remote method calls
 
 ---
 
-# Remote method calls (RPC)
+# Remote method calls
 
-> Use RPC to execute custom methods on other participants in the room and await a response.
+> Use remote procedure calls (RPCs) to execute custom methods on other participants in the room and await a response.
 
 ## Overview
 
-With RPC your application can define methods on one participant that can be invoked remotely by other participants within a room, and may return a response. This feature can be used to request data, coordinate application-specific state, and more. When used to [forward tool calls](https://docs.livekit.io/agents/build/tools.md#forwarding) from an AI Agent, your LLM can directly access data or manipulate UI in your application's frontend.
+An RPC method can be used to request data, coordinate app-specific state, and more. When used to [forward tool calls](https://docs.livekit.io/agents/build/tools.md#forwarding) from an AI agent, your LLM can directly access data or manipulate the UI in your app's frontend.
+
+Your app can pre-register any number of RPC methods before joining a LiveKit room so they are available to call as soon as another participant joins. Participants can remotely call RPC methods on other participants in the same room.
 
 ## Method registration
 
-First register the method at the destination participant with `localParticipant.registerRpcMethod` and provide the method's name and a handler function.  Any number of methods can be registered on a single participant.
+First register the method on the room with `room.registerRpcMethod` and provide the method's name and a handler function. Any number of methods can be registered on a room.
 
 **JavaScript**:
 
 ```typescript
-localParticipant.registerRpcMethod(
+room.registerRpcMethod(
   'greet',
   async (data: RpcInvocationData) => {
     console.log(`Received greeting from ${data.callerIdentity}: ${data.payload}`);
@@ -30,6 +32,8 @@ localParticipant.registerRpcMethod(
 ---
 
 **Python**:
+
+Pre-registration is not available in all SDKs. Use `local_participant.register_rpc_method` to register an RPC method on the local participant instead.
 
 ```python
 @room.local_participant.register_rpc_method("greet")
@@ -44,7 +48,7 @@ async def handle_greet(data: RpcInvocationData):
 **Node.js**:
 
 ```typescript
-localParticipant.registerRpcMethod(
+room.registerRpcMethod(
   'greet',
   async (data: RpcInvocationData) => {
     console.log(`Received greeting from ${data.callerIdentity}: ${data.payload}`);
@@ -57,6 +61,8 @@ localParticipant.registerRpcMethod(
 ---
 
 **Rust**:
+
+Pre-registration is not available in all SDKs. Use `local_participant.register_rpc_method` to register an RPC method on the local participant instead.
 
 ```rust
 room.local_participant().register_rpc_method(
@@ -80,7 +86,7 @@ room.local_participant().register_rpc_method(
 **Android**:
 
 ```kotlin
-localParticipant.registerRpcMethod(
+room.registerRpcMethod(
     "greet"
 ) { data ->
     println("Received greeting from ${data.callerIdentity}: ${data.payload}")
@@ -94,7 +100,7 @@ localParticipant.registerRpcMethod(
 **Swift**:
 
 ```swift
-localParticipant.registerRpcMethod("greet") { data in
+room.registerRpcMethod("greet") { data in
     print("Received greeting from \(data.callerIdentity): \(data.payload)")
     return "Hello, \(data.callerIdentity)!"
 }
@@ -110,17 +116,17 @@ greetHandler := func(data livekit.RpcInvocationData) (string, error) {
   fmt.Printf("Received greeting from %s: %s\n", data.CallerIdentity, data.Payload)
   return "Hello, " + data.CallerIdentity + "!", nil
 }
-room.LocalParticipant.RegisterRpcMethod("greet", greetHandler)
+room.RegisterRpcMethod("greet", greetHandler)
 
 ```
 
-## Method invocation
+## Calling a method
 
-Use `localParticipant.performRpc` to invoke the registered RPC method on a remote participant by providing the destination participant's identity, the method name, and the payload. This is an asynchronous operation that returns a string, and might raise an error.
+Use `localParticipant.performRpc` to call the registered RPC method on a remote participant by providing the destination participant's identity, method name, and payload. This is an asynchronous operation that returns a string, and might raise an error.
 
 > ℹ️ **Hidden participants**
 > 
-> Hidden participants cannot invoke RPC methods. A participant is hidden if their token [grant](https://docs.livekit.io/home/get-started/authentication.md#video-grant) has `hidden` set to `true`. Any RPC attempt by a hidden participant fails with an error.
+> [Hidden participants](https://docs.livekit.io/home/get-started/api-primitives.md#hidden-participants) cannot call RPC methods. Any RPC attempt by a hidden participant fails with an error.
 
 **JavaScript**:
 
@@ -289,6 +295,22 @@ Any other error thrown in a handler will be caught and the caller will receive a
 | 1503 | RECIPIENT_DISCONNECTED | Recipient disconnected |
 | 1504 | RESPONSE_PAYLOAD_TOO_LARGE | Response payload too large |
 | 1505 | SEND_FAILED | Failed to send |
+
+## Examples
+
+The following SDKs have full RPC examples.
+
+- **[RPC in Go](https://github.com/livekit/server-sdk-go/blob/main/examples/rpc/main.go)**: Example showing how to register and call RPC methods in Go.
+
+- **[RPC in JavaScript](https://github.com/livekit/client-sdk-js/tree/main/examples/rpc)**: Example showing how to register and call RPC methods in JavaScript.
+
+- **[RPC in Flutter](https://github.com/livekit-examples/flutter-examples/blob/main/packages/rpc-demo/lib/main.dart)**: Example showing how to register and call RPC methods in Flutter.
+
+- **[RPC in Python](https://github.com/livekit/python-sdks/blob/main/examples/rpc.py)**: Example showing how to register and call RPC methods in Python.
+
+- **[RPC in Rust](https://github.com/livekit/rust-sdks/tree/main/examples/rpc)**: Example showing how to register and call RPC methods in Rust.
+
+- **[RPC in Node.js](https://github.com/livekit/node-sdks/tree/main/examples/rpc)**: Example showing how to register and call RPC methods in Node.js.
 
 ---
 

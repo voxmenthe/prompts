@@ -64,8 +64,8 @@ Unlike STT and TTS, which are served through WebSockets, LLM models are served t
 The following table shows the default rate limits on the Build plan. For rate limits on paid plans, refer to the latest [pricing](https://livekit.io/pricing).
 
 | Limit type | Definition | Free limit |
-| LLM requests | Individual requests to a LiveKit Inference [LLM model](https://docs.livekit.io/agents/models/llm.md), including [tool responses](https://docs.livekit.io/agents/build/tools.md) and [preemptive generations](https://docs.livekit.io/agents/build/llm.md#preemptive-generation). | 100 requests per minute |
-| LLM tokens | Input and output tokens used in requests to a LiveKit Inference [LLM model](https://docs.livekit.io/agents/models/llm.md), including [tool responses](https://docs.livekit.io/agents/build/tools.md) and [preemptive generations](https://docs.livekit.io/agents/build/llm.md#preemptive-generation). | 600,000 tokens per minute |
+| LLM requests | Individual requests to a LiveKit Inference [LLM model](https://docs.livekit.io/agents/models/llm.md), including [tool responses](https://docs.livekit.io/agents/build/tools.md) and [preemptive generations](https://docs.livekit.io/agents/build/audio.md#preemptive-generation). | 100 requests per minute |
+| LLM tokens | Input and output tokens used in requests to a LiveKit Inference [LLM model](https://docs.livekit.io/agents/models/llm.md), including [tool responses](https://docs.livekit.io/agents/build/tools.md) and [preemptive generations](https://docs.livekit.io/agents/build/audio.md#preemptive-generation). | 600,000 tokens per minute |
 
 ### Egress time limits
 
@@ -93,7 +93,7 @@ For high volume video use cases, consider using pagination and [selective subscr
 
 ### Server API rate limits
 
-All projects have a [Server API](https://docs.livekit.io/reference/server/server-apis.md) rate limit of 1,000 requests per minute. This applies to requests such as to the `RoomService` or `EgressService`, not to SDK methods like joining a room or sending data packets. Requests to [LiveKit Inference](https://docs.livekit.io/agents/inference.md) have their [own rate limits](#llm-rate-limits).
+All projects have a [Server API](https://docs.livekit.io/reference/server/server-apis.md) rate limit of 1,000 requests per minute. This applies to requests such as to the `RoomService` or `EgressService`, not to SDK methods like joining a room or sending data packets. Requests to [LiveKit Inference](https://docs.livekit.io/agents/models.md#inference) have their [own rate limits](#llm-rate-limits).
 
 ### Requesting increases
 

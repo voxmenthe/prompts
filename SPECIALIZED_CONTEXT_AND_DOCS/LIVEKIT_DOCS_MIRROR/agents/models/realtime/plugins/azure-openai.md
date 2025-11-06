@@ -183,7 +183,7 @@ session = AgentSession(
         # ... endpoint and auth params ...,
         modalities=["text"]
     ),
-    tts="cartesia/sonic-2" # Or other TTS instance of your choice
+    tts="cartesia/sonic-3" # Or other TTS instance of your choice
 )
 
 ```
@@ -200,7 +200,7 @@ const session = new voice.AgentSession({
         // ... endpoint and auth params ...,
         modalities: ["text"]
     }),
-    tts: "cartesia/sonic-2", // Or other TTS instance of your choice
+    tts: "cartesia/sonic-3", // Or other TTS instance of your choice
 });
 
 ```

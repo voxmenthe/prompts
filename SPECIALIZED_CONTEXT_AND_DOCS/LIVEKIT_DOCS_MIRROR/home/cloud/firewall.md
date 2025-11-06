@@ -124,7 +124,7 @@ If wildcard hostnames are not allowed by your firewall or security policy, the f
 Static IPs are currently available for the following regions:
 
 | Region | IP blocks |
-| US | `143.223.88.0/21` `161.115.160.0/19` |
+| US and India | `143.223.88.0/21` `161.115.160.0/19` |
 
 > ℹ️ **Note**
 > 

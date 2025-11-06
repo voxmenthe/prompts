@@ -33,6 +33,10 @@ There are two kinds of participant objects in the SDKs:
 
 A participant may also [exchange data](https://docs.livekit.io/home/client/data.md) with one or many other participants.
 
+### Hidden participants
+
+A participant is hidden if their participant [permissions](https://docs.livekit.io/reference/server/server-apis.md#participantpermission) has `hidden` set to `true`. You can set this field in the participant's [access token](https://docs.livekit.io/home/get-started/authentication.md#video-grant). A hidden participant is not visible to other participants in the room.
+
 ### Participant fields
 
 | Field | Type | Description |
@@ -40,9 +44,13 @@ A participant may also [exchange data](https://docs.livekit.io/home/client/data.
 | identity | string | Unique identity of the participant, as specified when connecting. |
 | name | string | Optional display name. |
 | state | ParticipantInfo.State | JOINING, JOINED, ACTIVE, or DISCONNECTED. |
-| kind | ParticipantInfo.Kind | The type of participant; more below. |
+| tracks | List<[TrackInfo](https://docs.livekit.io/reference/server/server-apis.md#trackinfo)> | Tracks published by the participant. |
+| metadata | string | User-specified metadata for the participant. |
+| joined_at | int64 | Timestamp when the participant joined the room. |
+| kind | ParticipantInfo.Kind | [Type](#types-of-participants) of participant. |
+| kind_detail | ParticipantInfo.KindDetail | Additional details about participant type. Valide values are `CLOUD_AGENT` or `FORWARDED`. |
 | attributes | string | User-specified [attributes](https://docs.livekit.io/home/client/data.md) for the participant. |
-| permission | ParticipantInfo.Permission | Permissions granted to the participant. |
+| permission | [ParticipantPermission](https://docs.livekit.io/reference/server/server-apis.md#participantpermission) | Permissions granted to the participant. |
 
 ### Types of participants
 

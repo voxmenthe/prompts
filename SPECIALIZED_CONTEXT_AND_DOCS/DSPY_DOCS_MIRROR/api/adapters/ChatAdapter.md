@@ -3,7 +3,7 @@
 ## dspy.ChatAdapter
 
 ```python
-class ChatAdapter
+class ChatAdapter(callbacks=None, use_native_function_calling=False, native_response_types=None, use_json_adapter_fallback=True)
 ```
 
 ### __call__
@@ -112,5 +112,5 @@ Note:
     This is a more lightweight version of `format_field_structure` specifically designed
     for inline reminders within chat messages.
 
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/adapters/chat_adapter.py` (lines 28–248)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/adapters/chat_adapter.py` (lines 28–270)
 
