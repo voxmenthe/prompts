@@ -1,0 +1,4 @@
+claude-code
+mactex-no-gui
+ngrok
+quarto
