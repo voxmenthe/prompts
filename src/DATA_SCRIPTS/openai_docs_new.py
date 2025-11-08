@@ -44,7 +44,7 @@ from markdownify import MarkdownConverter
 # -------------------- Configuration --------------------
 
 REPO_ROOT = Path(__file__).resolve().parent
-DEFAULT_OUTPUT_DIR = REPO_ROOT / "OPENAI_DOCS_MIRROR"
+DEFAULT_OUTPUT_DIR = REPO_ROOT / "SPECIALIZED_CONTEXT_AND_DOCS" / "OPENAI_DOCS_MIRROR"
 
 SITEMAP_URL = "https://platform.openai.com/sitemap.xml"
 
