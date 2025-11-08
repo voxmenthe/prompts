@@ -1,0 +1,699 @@
+{
+  "generated_at": "2025-11-08T06:23:30.402247+00:00",
+  "sitemap_url": "https://platform.openai.com/sitemap.xml",
+  "sections": [
+    "guides"
+  ],
+  "pages": [
+    {
+      "url": "https://platform.openai.com/docs/guides/text",
+      "relative_path": "guides/text",
+      "relative_file": "openai_platform_docs/guides/text/index.md",
+      "status": "written",
+      "bytes": 9748,
+      "sha256": "68231305834ded2fd679a8216082d9f2de458dbbecb2cfa0f60faabfe68f6f13"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/images-vision",
+      "relative_path": "guides/images-vision",
+      "relative_file": "openai_platform_docs/guides/images-vision/index.md",
+      "status": "written",
+      "bytes": 13115,
+      "sha256": "5926e4468f8ac19b3ec637c3a90c2c49f47df5e86177e827205bd61baa911f4e"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/audio",
+      "relative_path": "guides/audio",
+      "relative_file": "openai_platform_docs/guides/audio/index.md",
+      "status": "written",
+      "bytes": 6724,
+      "sha256": "0c49a5ccf982a916b6f64cca90eb8dc9f6d69c13a4dd2b0fdc4d555edb0d1e15"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/structured-outputs",
+      "relative_path": "guides/structured-outputs",
+      "relative_file": "openai_platform_docs/guides/structured-outputs/index.md",
+      "status": "written",
+      "bytes": 32988,
+      "sha256": "00f40ed2b0c55f6e3489288e9bbf7bbbaf62b20be5617dfa06674bdaedd65f7e"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/function-calling",
+      "relative_path": "guides/function-calling",
+      "relative_file": "openai_platform_docs/guides/function-calling/index.md",
+      "status": "written",
+      "bytes": 33597,
+      "sha256": "0d665bc92bd562484db18dcb1dbd7c8998d552a5067d5fb286b5093badaeb5e9"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/latest-model",
+      "relative_path": "guides/latest-model",
+      "relative_file": "openai_platform_docs/guides/latest-model/index.md",
+      "status": "written",
+      "bytes": 17284,
+      "sha256": "4f6ee0d57cda23cf5b252abd6c171b6d4cad0c6bc6ba2ab03a377a0cafbe59d4"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/migrate-to-responses",
+      "relative_path": "guides/migrate-to-responses",
+      "relative_file": "openai_platform_docs/guides/migrate-to-responses/index.md",
+      "status": "written",
+      "bytes": 16224,
+      "sha256": "ec25537a3430ba43076e178ee6987641a750a6fd8be3931d9139fdd3786ae86c"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/agents",
+      "relative_path": "guides/agents",
+      "relative_file": "openai_platform_docs/guides/agents/index.md",
+      "status": "written",
+      "bytes": 4063,
+      "sha256": "3c8eff294947902535a04c9a3a805c5beaa7a40fd3670484bb2acd70e0768d1b"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/agent-builder",
+      "relative_path": "guides/agent-builder",
+      "relative_file": "openai_platform_docs/guides/agent-builder/index.md",
+      "status": "written",
+      "bytes": 4410,
+      "sha256": "7d0b70cf057dee387217613395e19e1e66e7510e11991cb3065d7925333dbcab"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/node-reference",
+      "relative_path": "guides/node-reference",
+      "relative_file": "openai_platform_docs/guides/node-reference/index.md",
+      "status": "written",
+      "bytes": 5457,
+      "sha256": "f203d24ab1eb5b307db34c05768a29385b02328bfc95da4ebd6880d324685153"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/agent-builder-safety",
+      "relative_path": "guides/agent-builder-safety",
+      "relative_file": "openai_platform_docs/guides/agent-builder-safety/index.md",
+      "status": "written",
+      "bytes": 5649,
+      "sha256": "7510adf364cc4563f67c087861e6880c6c5a6dd063234f0f19e43c7992aece5d"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/agents-sdk",
+      "relative_path": "guides/agents-sdk",
+      "relative_file": "openai_platform_docs/guides/agents-sdk/index.md",
+      "status": "written",
+      "bytes": 5935,
+      "sha256": "a366104cda37e68c7c29e59570ead5d6ca8e24c8c8781a533939c32a301e0e36"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/chatkit",
+      "relative_path": "guides/chatkit",
+      "relative_file": "openai_platform_docs/guides/chatkit/index.md",
+      "status": "written",
+      "bytes": 6434,
+      "sha256": "9f4a92c612a625a74b77605a18250460452563fc18607670e079c3b26620cdc4"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/chatkit-themes",
+      "relative_path": "guides/chatkit-themes",
+      "relative_file": "openai_platform_docs/guides/chatkit-themes/index.md",
+      "status": "written",
+      "bytes": 6844,
+      "sha256": "1b0af65e783b900d441f9db50c32e931797fe4d74c6e2b2bffafb5f1efc53957"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/chatkit-widgets",
+      "relative_path": "guides/chatkit-widgets",
+      "relative_file": "openai_platform_docs/guides/chatkit-widgets/index.md",
+      "status": "written",
+      "bytes": 16757,
+      "sha256": "84a7616f5af73c8585bc402babc137495a443bfb18205ec0a87b29307a67eebb"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/chatkit-actions",
+      "relative_path": "guides/chatkit-actions",
+      "relative_file": "openai_platform_docs/guides/chatkit-actions/index.md",
+      "status": "written",
+      "bytes": 33,
+      "sha256": "3ac7e71edaf20cebc800372b0cc1a05c1b374971ae1ac698cdc1295693dfd63b"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/custom-chatkit",
+      "relative_path": "guides/custom-chatkit",
+      "relative_file": "openai_platform_docs/guides/custom-chatkit/index.md",
+      "status": "written",
+      "bytes": 8925,
+      "sha256": "ceb190475abb377ebb7f555bcb5a65fa624a53386a77308aad8ff7fb1ab4a345"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/agent-evals",
+      "relative_path": "guides/agent-evals",
+      "relative_file": "openai_platform_docs/guides/agent-evals/index.md",
+      "status": "written",
+      "bytes": 6405,
+      "sha256": "7376df46c803b51c5ae57286c22a7b48c4aa83cd3951ea9399be19a2556fb85d"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/trace-grading",
+      "relative_path": "guides/trace-grading",
+      "relative_file": "openai_platform_docs/guides/trace-grading/index.md",
+      "status": "written",
+      "bytes": 6953,
+      "sha256": "a5d67fc78f5cc1c7e4b7e0fbd852ed98824e799f22921f93e2731499e24fb71e"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/voice-agents",
+      "relative_path": "guides/voice-agents",
+      "relative_file": "openai_platform_docs/guides/voice-agents/index.md",
+      "status": "written",
+      "bytes": 15112,
+      "sha256": "bc46c25689c020613380c47517e0f895ee62e58be3d5a4ba0ce9c87157f33022"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/tools",
+      "relative_path": "guides/tools",
+      "relative_file": "openai_platform_docs/guides/tools/index.md",
+      "status": "written",
+      "bytes": 11471,
+      "sha256": "88d5a7ad8dc2fd2e9879c6cfb2f353b7b0442070b8f9cc0fe0211f6d5cebbf48"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/tools-connectors-mcp",
+      "relative_path": "guides/tools-connectors-mcp",
+      "relative_file": "openai_platform_docs/guides/tools-connectors-mcp/index.md",
+      "status": "written",
+      "bytes": 25568,
+      "sha256": "668b1dc5e69bd9be0256684c32defc9ef010f5bc6e02eb6feeb2916ead72c821"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/tools-web-search",
+      "relative_path": "guides/tools-web-search",
+      "relative_file": "openai_platform_docs/guides/tools-web-search/index.md",
+      "status": "written",
+      "bytes": 4421,
+      "sha256": "b101053575050917d27206ea481e41b6ce59a98b509a28e99bff8062d92ad435"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/tools-code-interpreter",
+      "relative_path": "guides/tools-code-interpreter",
+      "relative_file": "openai_platform_docs/guides/tools-code-interpreter/index.md",
+      "status": "written",
+      "bytes": 9297,
+      "sha256": "9009f1e777d2fff0516df15491966da8748c6ab5ecfa306ebbfae7114470b40e"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/tools-file-search",
+      "relative_path": "guides/tools-file-search",
+      "relative_file": "openai_platform_docs/guides/tools-file-search/index.md",
+      "status": "written",
+      "bytes": 9110,
+      "sha256": "914664003206e899a18fe63f581821c895262208ab9a193f2dd0159bc1307aa1"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/retrieval",
+      "relative_path": "guides/retrieval",
+      "relative_file": "openai_platform_docs/guides/retrieval/index.md",
+      "status": "written",
+      "bytes": 14126,
+      "sha256": "06c2f5283f5656ce2cdbd7aa0bc196fc1a6d2370f4038b67136291272d333e6a"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/tools-image-generation",
+      "relative_path": "guides/tools-image-generation",
+      "relative_file": "openai_platform_docs/guides/tools-image-generation/index.md",
+      "status": "written",
+      "bytes": 11106,
+      "sha256": "ec525747d870ba608af2d86d91a73be4765b1ceaddf8d19be2dea0600c272eeb"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/tools-computer-use",
+      "relative_path": "guides/tools-computer-use",
+      "relative_file": "openai_platform_docs/guides/tools-computer-use/index.md",
+      "status": "written",
+      "bytes": 40064,
+      "sha256": "da22090507bf0036d823536b6012d3a79d4da79ce8a9af8892ba080162b54614"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/conversation-state",
+      "relative_path": "guides/conversation-state",
+      "relative_file": "openai_platform_docs/guides/conversation-state/index.md",
+      "status": "written",
+      "bytes": 8717,
+      "sha256": "bfbb5e349233290976b3b8177facffec897c803b8e7bd73152fbf09db0020486"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/background",
+      "relative_path": "guides/background",
+      "relative_file": "openai_platform_docs/guides/background/index.md",
+      "status": "written",
+      "bytes": 6075,
+      "sha256": "515b950e5ff1f2fbe03a529488e0b5024ec11197ce735acf3dac74cf75216f53"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/streaming-responses",
+      "relative_path": "guides/streaming-responses",
+      "relative_file": "openai_platform_docs/guides/streaming-responses/index.md",
+      "status": "written",
+      "bytes": 3149,
+      "sha256": "656a0543f7e03b31eca88a413ff7acbfcf8e24b75a0b45827471ecd5d408521d"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/webhooks",
+      "relative_path": "guides/webhooks",
+      "relative_file": "openai_platform_docs/guides/webhooks/index.md",
+      "status": "written",
+      "bytes": 7450,
+      "sha256": "ceba6199f09d3aa1607086f4945e3c1bca3e18f9a0c3536f5dce3d98de1d097e"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/pdf-files",
+      "relative_path": "guides/pdf-files",
+      "relative_file": "openai_platform_docs/guides/pdf-files/index.md",
+      "status": "written",
+      "bytes": 10949,
+      "sha256": "ce9bc0f20f0bd7db056e3e7604242e14529b62b3cca1ca69e26e456f52746a34"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/prompting",
+      "relative_path": "guides/prompting",
+      "relative_file": "openai_platform_docs/guides/prompting/index.md",
+      "status": "written",
+      "bytes": 33,
+      "sha256": "3ac7e71edaf20cebc800372b0cc1a05c1b374971ae1ac698cdc1295693dfd63b"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/prompt-caching",
+      "relative_path": "guides/prompt-caching",
+      "relative_file": "openai_platform_docs/guides/prompt-caching/index.md",
+      "status": "written",
+      "bytes": 6583,
+      "sha256": "4ea9a0f1b1b403a0d6ddf43dbcd78b9d58d66bdd5708f5d4900d892b8f8238b1"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/prompt-engineering",
+      "relative_path": "guides/prompt-engineering",
+      "relative_file": "openai_platform_docs/guides/prompt-engineering/index.md",
+      "status": "written",
+      "bytes": 24812,
+      "sha256": "a24bbb2d1ec12a94ac28336a858052051d6a9126ee6a5543830c7caf3cd00ce3"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/reasoning",
+      "relative_path": "guides/reasoning",
+      "relative_file": "openai_platform_docs/guides/reasoning/index.md",
+      "status": "written",
+      "bytes": 20171,
+      "sha256": "8e051910ca8be4b8444a19f69b4f19f00f9ac71e78c474b6ab9584d041507c9e"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/reasoning-best-practices",
+      "relative_path": "guides/reasoning-best-practices",
+      "relative_file": "openai_platform_docs/guides/reasoning-best-practices/index.md",
+      "status": "written",
+      "bytes": 17253,
+      "sha256": "0279d7fa44f3bc5911903e9b17e52cbaaae6619ee6eeb3cecc08a872cac48d40"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/evaluation-getting-started",
+      "relative_path": "guides/evaluation-getting-started",
+      "relative_file": "openai_platform_docs/guides/evaluation-getting-started/index.md",
+      "status": "written",
+      "bytes": 10141,
+      "sha256": "cefa749787d57be1b98694758d771846d07ece4027f15c8fe2f4bf99d94fae21"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/evals",
+      "relative_path": "guides/evals",
+      "relative_file": "openai_platform_docs/guides/evals/index.md",
+      "status": "written",
+      "bytes": 21569,
+      "sha256": "06e99bb98682ac075e64faa5845fbf0c0724b792e4bbf1a7a66eba323aaae5b6"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/prompt-optimizer",
+      "relative_path": "guides/prompt-optimizer",
+      "relative_file": "openai_platform_docs/guides/prompt-optimizer/index.md",
+      "status": "written",
+      "bytes": 3216,
+      "sha256": "ea62a51152a9829cf903ffb50fc3dca30fcc386a6bc7124565798175d7240e85"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/external-models",
+      "relative_path": "guides/external-models",
+      "relative_file": "openai_platform_docs/guides/external-models/index.md",
+      "status": "written",
+      "bytes": 4303,
+      "sha256": "79b90801272a3148256ca9e10ef548fb22ca17f30b140ccd2565cacdb5ba853f"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/evaluation-best-practices",
+      "relative_path": "guides/evaluation-best-practices",
+      "relative_file": "openai_platform_docs/guides/evaluation-best-practices/index.md",
+      "status": "written",
+      "bytes": 141,
+      "sha256": "a9b4a477c549981fc83bc32dce5a0966c921afe77dc3a78fc802a36a4b96aa12"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/realtime",
+      "relative_path": "guides/realtime",
+      "relative_file": "openai_platform_docs/guides/realtime/index.md",
+      "status": "written",
+      "bytes": 33,
+      "sha256": "3ac7e71edaf20cebc800372b0cc1a05c1b374971ae1ac698cdc1295693dfd63b"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/realtime-webrtc",
+      "relative_path": "guides/realtime-webrtc",
+      "relative_file": "openai_platform_docs/guides/realtime-webrtc/index.md",
+      "status": "written",
+      "bytes": 10637,
+      "sha256": "9ab946983aee97c4c5ab2af1fa78442c15a2ec2206a62b1d78f4f0916563fd1c"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/realtime-websocket",
+      "relative_path": "guides/realtime-websocket",
+      "relative_file": "openai_platform_docs/guides/realtime-websocket/index.md",
+      "status": "written",
+      "bytes": 5366,
+      "sha256": "80dacb82f882249fa9f9ec3c29c4e57bf47c8703be5d0773613d5a15563c1d0c"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/realtime-sip",
+      "relative_path": "guides/realtime-sip",
+      "relative_file": "openai_platform_docs/guides/realtime-sip/index.md",
+      "status": "written",
+      "bytes": 10272,
+      "sha256": "bd6b9098b863d5b74765ac7cbb49d9a13724ece1f8b2b5d644015846491f8483"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/realtime-models-prompting",
+      "relative_path": "guides/realtime-models-prompting",
+      "relative_file": "openai_platform_docs/guides/realtime-models-prompting/index.md",
+      "status": "written",
+      "bytes": 17703,
+      "sha256": "8d4929f9444be36d5035acadd25d43204234f9ac9c3e6cf108a32857ae6cf2d7"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/realtime-conversations",
+      "relative_path": "guides/realtime-conversations",
+      "relative_file": "openai_platform_docs/guides/realtime-conversations/index.md",
+      "status": "written",
+      "bytes": 39253,
+      "sha256": "60fcebc4422385d3465c4fb390f250243393fb400d8182ee7e0773b0b7bd6660"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/realtime-server-controls",
+      "relative_path": "guides/realtime-server-controls",
+      "relative_file": "openai_platform_docs/guides/realtime-server-controls/index.md",
+      "status": "written",
+      "bytes": 4908,
+      "sha256": "9d74c3ec601c35450f2b5b1d1fb94dc36c02fae9f60164b9ea3ce1904f5487dc"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/realtime-costs",
+      "relative_path": "guides/realtime-costs",
+      "relative_file": "openai_platform_docs/guides/realtime-costs/index.md",
+      "status": "written",
+      "bytes": 9612,
+      "sha256": "13086606b9ad79acdef5ee8cf1e60716a2d2de1c7c60c43de25c496d9167082c"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/realtime-transcription",
+      "relative_path": "guides/realtime-transcription",
+      "relative_file": "openai_platform_docs/guides/realtime-transcription/index.md",
+      "status": "written",
+      "bytes": 6210,
+      "sha256": "a1ddcd3b064f734fa8a8b7b1b5b6240dd35c9aad577d210d620bbd5733e1eed8"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/model-optimization",
+      "relative_path": "guides/model-optimization",
+      "relative_file": "openai_platform_docs/guides/model-optimization/index.md",
+      "status": "written",
+      "bytes": 8156,
+      "sha256": "320181a8617e527ad3724b1c98e1d545792f9a127135111a22d5cf425be289e1"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/supervised-fine-tuning",
+      "relative_path": "guides/supervised-fine-tuning",
+      "relative_file": "openai_platform_docs/guides/supervised-fine-tuning/index.md",
+      "status": "written",
+      "bytes": 19402,
+      "sha256": "6daf9d718fb10dbf1f024461c8e16636b38a5c5001ff70b31e6636415f6d98bd"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/vision-fine-tuning",
+      "relative_path": "guides/vision-fine-tuning",
+      "relative_file": "openai_platform_docs/guides/vision-fine-tuning/index.md",
+      "status": "written",
+      "bytes": 141,
+      "sha256": "a9b4a477c549981fc83bc32dce5a0966c921afe77dc3a78fc802a36a4b96aa12"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/direct-preference-optimization",
+      "relative_path": "guides/direct-preference-optimization",
+      "relative_file": "openai_platform_docs/guides/direct-preference-optimization/index.md",
+      "status": "written",
+      "bytes": 8916,
+      "sha256": "90cc2b78f47e528b16974afdc0e8dad127a11cb492dc1d3c58713d96302cd6f7"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/reinforcement-fine-tuning",
+      "relative_path": "guides/reinforcement-fine-tuning",
+      "relative_file": "openai_platform_docs/guides/reinforcement-fine-tuning/index.md",
+      "status": "written",
+      "bytes": 141,
+      "sha256": "a9b4a477c549981fc83bc32dce5a0966c921afe77dc3a78fc802a36a4b96aa12"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/rft-use-cases",
+      "relative_path": "guides/rft-use-cases",
+      "relative_file": "openai_platform_docs/guides/rft-use-cases/index.md",
+      "status": "written",
+      "bytes": 35474,
+      "sha256": "3b9f9e550418f0f91d01c3686faa2aeb416163574b96354c35d47293f544b6e6"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/fine-tuning-best-practices",
+      "relative_path": "guides/fine-tuning-best-practices",
+      "relative_file": "openai_platform_docs/guides/fine-tuning-best-practices/index.md",
+      "status": "written",
+      "bytes": 9515,
+      "sha256": "7d6565dd77d049cdd2183dd9cc90c4e106bfc91019b642fda2e2ae2592f4b382"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/graders",
+      "relative_path": "guides/graders",
+      "relative_file": "openai_platform_docs/guides/graders/index.md",
+      "status": "written",
+      "bytes": 22984,
+      "sha256": "80d0609e29bed1b74815ef3950117b0f2f02a4fbb42af29c7151b95ddaa142ed"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/image-generation",
+      "relative_path": "guides/image-generation",
+      "relative_file": "openai_platform_docs/guides/image-generation/index.md",
+      "status": "written",
+      "bytes": 22506,
+      "sha256": "55e1f1d3c1be51d57b6c77d71d70e47a09eab366b944915a4ace427a0a7da50d"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/video-generation",
+      "relative_path": "guides/video-generation",
+      "relative_file": "openai_platform_docs/guides/video-generation/index.md",
+      "status": "written",
+      "bytes": 13645,
+      "sha256": "cc950d499030373411c2c5fe7d04345c758d0c5ad2509ff510b03453c723c29e"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/text-to-speech",
+      "relative_path": "guides/text-to-speech",
+      "relative_file": "openai_platform_docs/guides/text-to-speech/index.md",
+      "status": "written",
+      "bytes": 5940,
+      "sha256": "fa9ae636c9e49c01e6b64f6c851805cd54b4e9e5c74f94915ce66e2261e51fef"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/speech-to-text",
+      "relative_path": "guides/speech-to-text",
+      "relative_file": "openai_platform_docs/guides/speech-to-text/index.md",
+      "status": "written",
+      "bytes": 26179,
+      "sha256": "55a649d1ce32f49033f72985db5df5f69fb5d941be193dfd9453ddc186aca628"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/deep-research",
+      "relative_path": "guides/deep-research",
+      "relative_file": "openai_platform_docs/guides/deep-research/index.md",
+      "status": "written",
+      "bytes": 32827,
+      "sha256": "03872725c00e1d80f2dd8919b85050e1d243bbf51911cf8513ab09a2f5c92fba"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/embeddings",
+      "relative_path": "guides/embeddings",
+      "relative_file": "openai_platform_docs/guides/embeddings/index.md",
+      "status": "written",
+      "bytes": 22468,
+      "sha256": "ddf910b1351015ee37d4723d9eb10a3d8f7455bf4036595efea297c1832f8b0f"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/moderation",
+      "relative_path": "guides/moderation",
+      "relative_file": "openai_platform_docs/guides/moderation/index.md",
+      "status": "written",
+      "bytes": 33,
+      "sha256": "3ac7e71edaf20cebc800372b0cc1a05c1b374971ae1ac698cdc1295693dfd63b"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/tools-local-shell",
+      "relative_path": "guides/tools-local-shell",
+      "relative_file": "openai_platform_docs/guides/tools-local-shell/index.md",
+      "status": "written",
+      "bytes": 33,
+      "sha256": "3ac7e71edaf20cebc800372b0cc1a05c1b374971ae1ac698cdc1295693dfd63b"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/production-best-practices",
+      "relative_path": "guides/production-best-practices",
+      "relative_file": "openai_platform_docs/guides/production-best-practices/index.md",
+      "status": "written",
+      "bytes": 15470,
+      "sha256": "6153922959a187414bcbaceaa872d44e08e2c1ff4842781b306f6018764b4279"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/latency-optimization",
+      "relative_path": "guides/latency-optimization",
+      "relative_file": "openai_platform_docs/guides/latency-optimization/index.md",
+      "status": "written",
+      "bytes": 22974,
+      "sha256": "0c8f150d484205899ff2b292dfb49586d55ed235bb49f6b4d3f932c97bb75714"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/predicted-outputs",
+      "relative_path": "guides/predicted-outputs",
+      "relative_file": "openai_platform_docs/guides/predicted-outputs/index.md",
+      "status": "written",
+      "bytes": 10983,
+      "sha256": "998f7457b7a8df5c4bc37efb30c0262b2dd4a8bfefcdbea9a73d6b495be4efab"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/priority-processing",
+      "relative_path": "guides/priority-processing",
+      "relative_file": "openai_platform_docs/guides/priority-processing/index.md",
+      "status": "written",
+      "bytes": 3260,
+      "sha256": "453704d9222b1150cb826f02c61b1b6cbd2ed46e1feec7323082a245a54b131e"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/cost-optimization",
+      "relative_path": "guides/cost-optimization",
+      "relative_file": "openai_platform_docs/guides/cost-optimization/index.md",
+      "status": "written",
+      "bytes": 6378,
+      "sha256": "ecd8238b70905771b47341c0becfbb55da3226552764a1d8bfc11298aaaaf679"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/batch",
+      "relative_path": "guides/batch",
+      "relative_file": "openai_platform_docs/guides/batch/index.md",
+      "status": "written",
+      "bytes": 12036,
+      "sha256": "aa361acdae2ef139b64b41cbd47c507fe18d6e7d97d71413318d649a2b08c275"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/flex-processing",
+      "relative_path": "guides/flex-processing",
+      "relative_file": "openai_platform_docs/guides/flex-processing/index.md",
+      "status": "written",
+      "bytes": 4091,
+      "sha256": "562d3f13ce9681c35ac24dd4bda2dba0156a0c2a9634a83348c27b413bd335ae"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/optimizing-llm-accuracy",
+      "relative_path": "guides/optimizing-llm-accuracy",
+      "relative_file": "openai_platform_docs/guides/optimizing-llm-accuracy/index.md",
+      "status": "written",
+      "bytes": 27182,
+      "sha256": "c69bd69d9f44f368cbd639f887a9339438b0b1139aa75b1af1021b847d75aa48"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/safety-best-practices",
+      "relative_path": "guides/safety-best-practices",
+      "relative_file": "openai_platform_docs/guides/safety-best-practices/index.md",
+      "status": "written",
+      "bytes": 5142,
+      "sha256": "7220f5be4accecc1b1551d2c59ce7462b8f07327c2c15a23f817246f2215bbba"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/safety-checks",
+      "relative_path": "guides/safety-checks",
+      "relative_file": "openai_platform_docs/guides/safety-checks/index.md",
+      "status": "written",
+      "bytes": 4968,
+      "sha256": "ad39cc008b02829841282f1bc8575b72acd405da4832aff467c254cbc906c43d"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/your-data",
+      "relative_path": "guides/your-data",
+      "relative_file": "openai_platform_docs/guides/your-data/index.md",
+      "status": "written",
+      "bytes": 17640,
+      "sha256": "f82479fbeaf536229a2615c5592fb9cd548028c6a94e94cbff060831912b823e"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/rate-limits",
+      "relative_path": "guides/rate-limits",
+      "relative_file": "openai_platform_docs/guides/rate-limits/index.md",
+      "status": "written",
+      "bytes": 12440,
+      "sha256": "a193662398e2571a6f6f0605962f16e144efd96cbff6c8307e1625c1ef999e77"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/developer-mode",
+      "relative_path": "guides/developer-mode",
+      "relative_file": "openai_platform_docs/guides/developer-mode/index.md",
+      "status": "written",
+      "bytes": 4630,
+      "sha256": "0136020071ea5a7f6b34af406c66d59d7072dddd29d7face38176be6269eb188"
+    }
+  ],
+  "bundles": [
+    {
+      "key": "llms-api-reference.txt",
+      "url": "https://cdn.openai.com/API/docs/txt/llms-api-reference.txt",
+      "relative_file": "txt/llms-api-reference.txt",
+      "status": "written",
+      "bytes": 1561170,
+      "sha256": "f34e340ee6ffd0f713bb1196a4a86b78e4098e2c3dede041ca072ca76bf4e6bc"
+    },
+    {
+      "key": "llms-guides.txt",
+      "url": "https://cdn.openai.com/API/docs/txt/llms-guides.txt",
+      "relative_file": "txt/llms-guides.txt",
+      "status": "written",
+      "bytes": 1200417,
+      "sha256": "76a67c63db6178fe9fc4ba3e910046dc234c633609f8355101921926c009c35b"
+    },
+    {
+      "key": "llms-models-pricing.txt",
+      "url": "https://cdn.openai.com/API/docs/txt/llms-models-pricing.txt",
+      "relative_file": "txt/llms-models-pricing.txt",
+      "status": "written",
+      "bytes": 79531,
+      "sha256": "ac752c99e8e2c8ddeffc8ce9d4afd0818c36e2681fea59fa7f9f01b169102a72"
+    },
+    {
+      "key": "llms-full.txt",
+      "url": "https://cdn.openai.com/API/docs/txt/llms-full.txt",
+      "relative_file": "txt/llms-full.txt",
+      "status": "written",
+      "bytes": 2761588,
+      "sha256": "ee6bf9f701666a2ed8d51a51c2e10eb01a4939f7c5e03807007c6ca90a126743"
+    },
+    {
+      "key": "openapi.documented.yml",
+      "url": "https://app.stainless.com/api/spec/documented/openai/openapi.documented.yml",
+      "relative_file": "openapi/openapi.documented.yml",
+      "status": "written",
+      "bytes": 2324196,
+      "sha256": "507b88a39f21b52a16cd131b541e7821e279bd5eeafa14d0b6c5890013b9402e"
+    }
+  ]
+}

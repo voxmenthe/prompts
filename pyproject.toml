@@ -27,6 +27,7 @@ dependencies = [
     "readability-lxml",
     "lxml",
     "quickjs",
+    "bs4>=0.0.2",
 ]
 
 [dependency-groups]
