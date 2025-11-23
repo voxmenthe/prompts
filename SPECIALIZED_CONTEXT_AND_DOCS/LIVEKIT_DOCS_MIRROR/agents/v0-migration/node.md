@@ -290,7 +290,7 @@ In 0.x, updating the chat context required modifying chat_ctx.messages directly.
 
 In v1.x, there are two supported ways to update the chat context:
 
-- **Agent handoff** – [transferring control](https://docs.livekit.io/agents/build/workflows.md#tool-handoff) to a new agent, which has its own chat context.
+- **Agent handoff** – [transferring control](https://docs.livekit.io/agents/build/agents-handoffs.md#tool-handoff) to a new agent, which has its own chat context.
 - **Explicit update** - calling `agent.updateChatCtx()` to modify the context directly.
 
 ## Transcriptions

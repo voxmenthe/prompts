@@ -38,10 +38,9 @@ Use the Ultravox Realtime API in an `AgentSession`. For example, you can use it 
 ```python
 from livekit.plugins import ultravox
 
-async def entrypoint(ctx: agents.JobContext):
-   session = AgentSession(
-      llm=ultravox.realtime.RealtimeModel(),
-   )
+session = AgentSession(
+   llm=ultravox.realtime.RealtimeModel(),
+)
 
 ```
 

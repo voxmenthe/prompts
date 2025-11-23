@@ -10,13 +10,15 @@ LiveKit docs › Getting started › Introduction
 
 The Agents framework allows you to add a Python or Node.js program to any LiveKit room as a full realtime participant. It's primarily an SDK that includes a complete set of tools and abstractions that make it easy to feed realtime media and data through an AI pipeline that works with any provider, and to publish realtime results back to the room.
 
-While the framework excels at AI-powered voice agents, it's designed to support any type of programmatic participant. You can deploy custom logic that processes realtime audio, video, and data streams, making it suitable for a wide range of applications beyond traditional AI agents. To learn more about this use case, see [Worker lifecycle](https://docs.livekit.io/agents/worker.md).
+While the framework excels at AI-powered voice agents, it's designed to support any type of programmatic participant. You can deploy custom logic that processes realtime audio, video, and data streams, making it suitable for a wide range of applications beyond traditional AI agents. To learn more about this use case, see [Agent server lifecycle](https://docs.livekit.io/agents/server.md).
 
 You can deploy your agents to [LiveKit Cloud](https://docs.livekit.io/agents/ops/deployment.md) or any other [custom environment](https://docs.livekit.io/agents/ops/deployment/custom.md) of your choice.
 
 If you want to get your hands on the code for building an agent right away, follow the Voice AI quickstart guide. It takes just a few minutes to build your first voice agent.
 
 - **[Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md)**: Build and deploy a simple voice assistant with Python or Node.js in less than 10 minutes.
+
+- **[LiveKit Agent Builder](https://docs.livekit.io/agents/start/builder.md)**: Prototype and deploy voice agents directly in your browser, without writing any code.
 
 - **[Deeplearning.ai course](https://www.deeplearning.ai/short-courses/building-ai-voice-agents-for-production/)**: Learn to build and deploy voice agents with LiveKit in this free course from Deeplearning.ai.
 
@@ -65,14 +67,14 @@ Other framework features include:
 - **Extensive integrations**: Integrate with nearly every AI provider there is for LLMs, STT, TTS, and more.
 - **State-of-the-art turn detection**: Use the custom turn detection model for lifelike conversation flow.
 - **Made for developers**: Build your agents in code, not configuration.
-- **Production ready**: Includes built-in worker orchestration, load balancing, and Kubernetes compatibility.
+- **Production ready**: Includes built-in agent server orchestration, load balancing, and Kubernetes compatibility.
 - **Open source**: The framework and entire LiveKit ecosystem are open source under the Apache 2.0 license.
 
 ## How agents connect to LiveKit
 
 ![Diagram showing a high-level view of how agents work.](/images/agents/agents-jobs-overview.svg)
 
-When your agent code starts, it first registers with a LiveKit server (either [self hosted](https://docs.livekit.io/home/self-hosting/deployment.md) or [LiveKit Cloud](https://cloud.livekit.io)) to run as a "worker" process. The worker waits until it receives a dispatch request. To fulfill this request, the worker boots a "job" subprocess which joins the room. By default, your workers are dispatched to each new room created in your LiveKit Cloud project (or self-hosted server). To learn more about workers, see the [Worker lifecycle](https://docs.livekit.io/agents/worker.md) guide.
+When your agent code starts, it first registers with a LiveKit server (either [self hosted](https://docs.livekit.io/home/self-hosting/deployment.md) or [LiveKit Cloud](https://cloud.livekit.io)) to run as an "agent server" process. The agent server waits until it receives a dispatch request. To fulfill this request, the agent server boots a "job" subprocess which joins the room. By default, your agent servers are dispatched to each new room created in your LiveKit Cloud project (or self-hosted server). To learn more about agent servers, see the [Agent server lifecycle](https://docs.livekit.io/agents/server.md) guide.
 
 After your agent and user join a room, the agent and your frontend app can communicate using LiveKit WebRTC. This enables reliable and fast realtime communication in any network conditions. LiveKit also includes full support for telephony, so the user can join the call from a phone instead of a frontend app.
 
@@ -94,7 +96,7 @@ Follow these guides to learn more and get started with LiveKit Agents.
 
 - **[Building voice agents](https://docs.livekit.io/agents/build.md)**: Comprehensive documentation to build advanced voice AI apps with LiveKit.
 
-- **[Worker lifecycle](https://docs.livekit.io/agents/worker.md)**: Learn how to manage your agents with workers and jobs.
+- **[Agent server lifecycle](https://docs.livekit.io/agents/server.md)**: Learn how to manage your agents with agent servers and jobs.
 
 - **[Deploying to production](https://docs.livekit.io/agents/ops/deployment.md)**: Guide to deploying your voice agent in a production environment.
 

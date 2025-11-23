@@ -10,7 +10,7 @@ LiveKit docs › Accepting calls › Dispatch rule
 
 A _dispatch rule_  controls how callers are added as SIP participants in rooms. When an inbound call reaches your SIP trunking provider and is connected to LiveKit, the SIP service authenticates the inbound trunk (if applicable) and looks for a matching dispatch rule. It then uses the rule to dispatch SIP participants to rooms.
 
-The dispatch rule can also include room configuration options that specify which agents to dispatch to the room. _Agent dispatch_ is a separate feature that handles how agents are dispatched to rooms. To learn more, see [Agent dispatch](https://docs.livekit.io/agents/worker/agent-dispatch.md).
+The dispatch rule can also include room configuration options that specify which agents to dispatch to the room. _Agent dispatch_ is a separate feature that handles how agents are dispatched to rooms. To learn more, see [Agent dispatch](https://docs.livekit.io/agents/server/agent-dispatch.md).
 
 To create a dispatch rule with the SIP service, use the `CreateSIPDispatchRule` API. It returns a `SIPDispatchRuleInfo` object that describes the dispatch rule.
 
@@ -25,7 +25,7 @@ To learn more about, see the following:
 
 An `SIPDispatchRuleIndividual` rule creates a new room for each caller. The name of the created room is the phone number of the caller plus a random suffix. You can optionally add a specific prefix to the room name by using the `roomPrefix` option.
 
-The following examples dispatch callers into individual rooms prefixed with `call-`, and [dispatches an agent](https://docs.livekit.io/agents/worker/agent-dispatch.md) named `inbound-agent` to newly created rooms:
+The following examples dispatch callers into individual rooms prefixed with `call-`, and [dispatches an agent](https://docs.livekit.io/agents/server/agent-dispatch.md) named `inbound-agent` to newly created rooms:
 
 **LiveKit CLI**:
 

@@ -44,7 +44,6 @@ LiveKit and [LiveKit Cloud](https://cloud.livekit.io) contains these primary com
 - [Subscribing to tracks](https://docs.livekit.io/home/client/tracks/subscribe.md): Play and render realtime media tracks in your application.
 - [Processing raw tracks](https://docs.livekit.io/home/client/tracks/raw-tracks.md): How to read, process, and publish raw media tracks and files.
 - [Noise & echo cancellation](https://docs.livekit.io/home/client/tracks/noise-cancellation.md): Achieve crystal-clear audio for video conferencing and voice AI.
-- [End-to-end encryption](https://docs.livekit.io/home/client/tracks/encryption.md): Secure your realtime media tracks with E2EE.
 - [Codecs & more](https://docs.livekit.io/home/client/tracks/advanced.md): Advanced audio and video topics.
 
 #### Realtime text & data
@@ -54,6 +53,7 @@ LiveKit and [LiveKit Cloud](https://cloud.livekit.io) contains these primary com
 - [Sending files & bytes](https://docs.livekit.io/home/client/data/byte-streams.md): Use byte streams to send files, images, or any other kind of data between participants.
 - [Remote method calls](https://docs.livekit.io/home/client/data/rpc.md): Use remote procedure calls (RPCs) to execute custom methods on other participants in the room and await a response.
 - [Data packets](https://docs.livekit.io/home/client/data/packets.md): Low-level API for high frequency or advanced use cases.
+- [End-to-end encryption](https://docs.livekit.io/home/client/encryption.md): Secure your realtime media tracks with E2EE.
 
 #### State synchronization
 
@@ -137,6 +137,7 @@ LiveKit and [LiveKit Cloud](https://cloud.livekit.io) contains these primary com
 
 - [Introduction](https://docs.livekit.io/agents.md): Realtime framework for production-grade multimodal and voice AI agents.
 - [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md): Build and deploy a simple voice assistant in less than 10 minutes.
+- [Agent builder](https://docs.livekit.io/agents/start/builder.md): Prototype simple voice agents directly in your browser.
 - [Telephony integration](https://docs.livekit.io/agents/start/telephony.md): Enable your voice AI agent to make and receive phone calls.
 - [Web & mobile frontends](https://docs.livekit.io/agents/start/frontend.md): Bring your agent to life through a web or mobile app.
 - [Agents playground](https://docs.livekit.io/agents/start/playground.md): A virtual workbench to test your multimodal AI agent.
@@ -146,8 +147,12 @@ LiveKit and [LiveKit Cloud](https://cloud.livekit.io) contains these primary com
 
 - [Overview](https://docs.livekit.io/agents/build.md): In-depth guide to voice AI with LiveKit Agents.
 - [Workflows](https://docs.livekit.io/agents/build/workflows.md): How to model repeatable, accurate workflows through agents, handoffs, and tasks.
+- [Agent sessions](https://docs.livekit.io/agents/build/sessions.md): How to use AgentSession to orchestrate your voice AI app.
+- [Agents & handoffs](https://docs.livekit.io/agents/build/agents-handoffs.md): How to use agents and handoffs as part of a voice AI workflow.
+- [Tasks & task groups](https://docs.livekit.io/agents/build/tasks.md): Use tasks to build complex workflows for your voice AI agents.
 - [Speech & audio](https://docs.livekit.io/agents/build/audio.md): Speech and audio capabilities for LiveKit agents.
 - [Vision](https://docs.livekit.io/agents/build/vision.md): Enhance your agent with visual understanding from images and live video.
+- [Prompting guide](https://docs.livekit.io/agents/build/prompting.md): How to write good instructions to guide your agent's behavior.
 - [Tool definition & use](https://docs.livekit.io/agents/build/tools.md): Let your agents call external tools and more.
 - [Pipeline nodes & hooks](https://docs.livekit.io/agents/build/nodes.md): Learn how to customize the behavior of your agent with nodes and hooks in the voice pipeline.
 - [Text & transcriptions](https://docs.livekit.io/agents/build/text.md): Integrate realtime text features into your agent.
@@ -158,7 +163,6 @@ LiveKit and [LiveKit Cloud](https://cloud.livekit.io) contains these primary com
 - [Turn detector plugin](https://docs.livekit.io/agents/build/turns/turn-detector.md): Open-weights model for contextually-aware voice AI turn detection.
 - [Silero VAD plugin](https://docs.livekit.io/agents/build/turns/vad.md): High-performance voice activity detection for LiveKit Agents.
 - [External data & RAG](https://docs.livekit.io/agents/build/external-data.md): Best practices for adding context and taking external actions.
-- [Logs, metrics, & telemetry](https://docs.livekit.io/agents/build/metrics.md): Collecting logs, metrics, and telemetry data from your agent for debugging and insights.
 - [Events & error handling](https://docs.livekit.io/agents/build/events.md): Guides and reference for events and error handling in LiveKit Agents.
 - [Testing & evaluation](https://docs.livekit.io/agents/build/testing.md): Write tests to control and evaluate agent behavior.
 
@@ -283,14 +287,14 @@ LiveKit and [LiveKit Cloud](https://cloud.livekit.io) contains these primary com
 - [Simli](https://docs.livekit.io/agents/models/avatar/plugins/simli.md): How to use the Simli virtual avatar plugin for LiveKit Agents.
 - [Tavus](https://docs.livekit.io/agents/models/avatar/plugins/tavus.md): How to use the Tavus virtual avatar plugin for LiveKit Agents.
 
-### Worker lifecycle
+### Agent server
 
-- [Overview](https://docs.livekit.io/agents/worker.md): How the worker coordinates with LiveKit server to manage agent jobs.
-- [Agent dispatch](https://docs.livekit.io/agents/worker/agent-dispatch.md): Specifying how and when your agents are assigned to rooms.
-- [Job lifecycle](https://docs.livekit.io/agents/worker/job.md): Learn more about the entrypoint function and how to end and clean up LiveKit sessions.
-- [Worker options](https://docs.livekit.io/agents/worker/options.md): Learn about the options available for creating a worker.
+- [Overview](https://docs.livekit.io/agents/server.md): Guide to managing multiple concurrent sessions with the agent server.
+- [Agent dispatch](https://docs.livekit.io/agents/server/agent-dispatch.md): Specifying how and when your agents are assigned to rooms.
+- [Job lifecycle](https://docs.livekit.io/agents/server/job.md): Learn more about the entrypoint function and how to end and clean up LiveKit sessions.
+- [Server options](https://docs.livekit.io/agents/server/options.md): Learn about the options available for creating an agent server.
 
-### Deployment & operations
+### Agent deployment
 
 #### Deploying to LiveKit Cloud
 
@@ -299,8 +303,12 @@ LiveKit and [LiveKit Cloud](https://cloud.livekit.io) contains these primary com
 - [Log collection](https://docs.livekit.io/agents/ops/deployment/logs.md): Monitor and debug your deployed agents with comprehensive logging.
 - [Builds and Dockerfiles](https://docs.livekit.io/agents/ops/deployment/builds.md): Guide to the LiveKit Cloud build process, plus Dockerfile templates and resources.
 - [CLI reference](https://docs.livekit.io/agents/ops/deployment/cli.md): Reference for the LiveKit Cloud agent deployment commands in the LiveKit CLI.
-- [Session recording & transcripts](https://docs.livekit.io/agents/ops/recording.md): Export session data in video, audio, or text format.
 - [Custom deployments](https://docs.livekit.io/agents/ops/deployment/custom.md): Guide to running LiveKit Agents in a custom environment.
+
+### Agent observability
+
+- [Insights in LiveKit Cloud](https://docs.livekit.io/agents/observability.md): View transcripts, traces, logs, and audio recordings in LiveKit Cloud.
+- [Data hooks](https://docs.livekit.io/agents/observability/data.md): Collect session recordings, transcripts, metrics, and other data within the LiveKit Agents SDK.
 
 ### Partner spotlight
 
@@ -358,8 +366,12 @@ LiveKit and [LiveKit Cloud](https://cloud.livekit.io) contains these primary com
 
 ### Getting started
 
-- [Overview](https://docs.livekit.io/sip.md): Connect LiveKit to a telephone system using Session Initiation Protocol (SIP).
-- [Cloud](https://docs.livekit.io/sip/cloud.md): Overview of SIP cloud global and regional endpoints.
+- [Overview](https://docs.livekit.io/sip.md): LiveKit’s telephony services enable seamless integration between traditional phone networks and LiveKit’s realtime platform.
+
+#### Cloud
+
+- [Region pinning](https://docs.livekit.io/sip/cloud.md): Overview of SIP cloud global and regional endpoints.
+- [Phone numbers](https://docs.livekit.io/sip/cloud/phone-numbers.md): How to purchase and configure phone numbers directly through LiveKit.
 - [SIP trunk setup](https://docs.livekit.io/sip/quickstarts/configuring-sip-trunk.md): Guide to setting up SIP trunks for inbound and outbound calls with LiveKit.
 
 ### Provider-specific guides
@@ -372,7 +384,7 @@ LiveKit and [LiveKit Cloud](https://cloud.livekit.io) contains these primary com
 ### Accepting calls
 
 - [Workflow](https://docs.livekit.io/sip/accepting-calls.md): Workflow and configuration guide for accepting inbound calls.
-- [Inbound trunk](https://docs.livekit.io/sip/trunk-inbound.md): How to create and configure an inbound trunk to accept incoming calls.
+- [Inbound trunk](https://docs.livekit.io/sip/trunk-inbound.md): How to create and configure an inbound trunk to accept incoming calls using a SIP provider.
 - [Dispatch rule](https://docs.livekit.io/sip/dispatch-rule.md): How to create and configure a dispatch rule.
 - [Inbound calls with Twilio Voice](https://docs.livekit.io/sip/accepting-calls-twilio-voice.md): How to use LiveKit SIP with TwiML and Twilio conferencing.
 
@@ -397,6 +409,7 @@ LiveKit and [LiveKit Cloud](https://cloud.livekit.io) contains these primary com
 
 - [SIP participant](https://docs.livekit.io/sip/sip-participant.md): Mapping a caller to a SIP participant.
 - [SIP API](https://docs.livekit.io/sip/api.md): Use LiveKit's built-in SIP APIs to manage your SIP-based apps.
+- [Phone numbers API](https://docs.livekit.io/sip/phone-numbers-api.md): Use LiveKit's Phone Number APIs to manage phone numbers for your telephony apps.
 - [Troubleshooting](https://docs.livekit.io/sip/troubleshooting.md): Common issues and solutions for SIP.
 
 ## Recipes
@@ -425,7 +438,9 @@ LiveKit and [LiveKit Cloud](https://cloud.livekit.io) contains these primary com
 
 - **[Push-to-Talk Agent](https://github.com/livekit/agents/blob/main/examples/voice_agents/push_to_talk.py)**: A voice AI agent that uses push-to-talk for controlled multi-participant conversations, only enabling audio input when explicitly triggered.
 
-- **[Background Audio](https://github.com/livekit/agents/blob/main/examples/voice_agents/background_audio.py)**: A voice AI agent with background audio for thinking states and ambiance.
+- **[Background audio](https://github.com/livekit/agents/blob/main/examples/voice_agents/background_audio.py)**: A voice AI agent with background audio for thinking states and ambiance.
+
+- **[Background audio example in Node.js](https://github.com/livekit/agents-js/blob/main/examples/src/background_audio.ts)**: A voice AI agent with background audio for ambiance.
 
 - **[Uninterruptable Agent](https://github.com/livekit-examples/python-agents-examples/tree/main/basics/uninterruptable.py)**: An agent that continues speaking without being interrupted.
 
@@ -533,5 +548,5 @@ LiveKit and [LiveKit Cloud](https://cloud.livekit.io) contains these primary com
 
 ---
 
-This document was rendered at 2025-11-06T02:07:31.154Z.
+This document was rendered at 2025-11-23T23:33:50.198Z.
 For the latest version of this document, see [https://docs.livekit.io/llms.txt](https://docs.livekit.io/llms.txt).

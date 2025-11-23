@@ -1,4 +1,4 @@
-LiveKit docs › Deployment & operations › Deploying to LiveKit Cloud › Builds and Dockerfiles
+LiveKit docs › Agent deployment › Deploying to LiveKit Cloud › Builds and Dockerfiles
 
 ---
 
@@ -137,7 +137,7 @@ RUN uv run src/agent.py download-files
 
 # Run the application using UV
 # UV will activate the virtual environment and run the agent.
-# The "start" command tells the worker to connect to LiveKit and begin waiting for jobs.
+# The "start" command tells the agent server to connect to LiveKit and begin waiting for jobs.
 CMD ["uv", "run", "src/agent.py", "start"]
 
 ```

@@ -1,4 +1,4 @@
-LiveKit docs › Deployment & operations › Deploying to LiveKit Cloud › Log collection
+LiveKit docs › Agent deployment › Deploying to LiveKit Cloud › Log collection
 
 ---
 
@@ -14,7 +14,7 @@ LiveKit Cloud provides realtime logging for your deployed agents, helping you mo
 
 LiveKit Cloud collects two types of logs for your agents:
 
-- **Runtime logs**: Your agent's app logs, including stdout, stderr, and any other [logging](https://docs.livekit.io/agents/build/metrics.md) you implement.
+- **Runtime logs**: Your agent's app logs, including stdout, stderr, and any other logging you implement.
 - **Build logs**: Output from the container build process, including Dockerfile execution and dependency installation.
 
 ## Follow runtime logs
@@ -30,7 +30,7 @@ This command continuously streams logs from the latest running instance of your 
 
 > ℹ️ **Single instance**
 > 
-> The LiveKit CLI only shows logs from the newest worker instance of your agent, which can include multiple jobs. All logs from this worker are included, but it is not a comprehensive view of all logs from all instances for agents running at scale. To collect logs from all instances, use an external logging service by using the [Forward runtime logs](#forward-runtime-logs) feature.
+> The LiveKit CLI only shows logs from the newest agent server instance of your agent, which can include multiple jobs. All logs from this agent server are included, but it is not a comprehensive view of all logs from all instances for agents running at scale. To collect logs from all instances, use an external logging service by using the [Forward runtime logs](#forward-runtime-logs) feature.
 
 ## View build logs
 
@@ -44,6 +44,10 @@ lk agent logs --log-type=build
 This command prints the logs to stdout, but does not perform a live tail.
 
 Build logs from more versions of your agent are available in the [LiveKit Cloud dashboard](https://cloud.livekit.io/projects/p_/agents).
+
+## View runtime logs
+
+Runtime logs are available as part of the [Agent observability](https://docs.livekit.io/agents/observability.md) feature in the LiveKit Cloud dashboard.
 
 ## Forward runtime logs
 
@@ -69,7 +73,7 @@ lk agent update-secrets --secrets "DATADOG_TOKEN=your-client-token"
 The following log fields are set in Datadog for all log lines sent from LiveKit Cloud:
 
 | Field | Value | Description |
-| host | <worker-id> | A unique identifier for the specific worker instance emitting the log. |
+| host | <agent-server-id> | A unique identifier for the specific agent server instance emitting the log. |
 | source | <agent-id> | The ID of the agent, as in `livekit.toml` and the dashboard, |
 | service | `"cloud.livekit.io"` |  |
 | stream | `stdout` or `stderr` | Indicates whether the log originated from stdout or stderr. |
@@ -113,14 +117,14 @@ lk agent update-secrets --secrets "NEW_RELIC_LICENSE_KEY=your-license-key"
 
 ## Log levels
 
-Your agent worker configuration determines the log levels that are collected and forwarded. The default log level is `INFO`. To use a different value, set the log level in your Dockerfile:
+Your agent server configuration determines the log levels that are collected and forwarded. The default log level is `INFO`. To use a different value, set the log level in your Dockerfile:
 
 ```dockerfile
 CMD ["python", "agent.py", "start", "--log-level=DEBUG"]
 
 ```
 
-For more information on log levels, see the [worker options](https://docs.livekit.io/agents/worker/options.md#log-levels) page.
+For more information on log levels, see the [agent server options](https://docs.livekit.io/agents/server/options.md#log-levels) page.
 
 ## Log retention
 
@@ -130,9 +134,9 @@ LiveKit Cloud does not store runtime logs. Build logs are stored indefinitely fo
 
 The following resources may be helpful to design a logging strategy for your agent:
 
-- **[Logs, metrics, and telemetry](https://docs.livekit.io/agents/build/metrics.md)**: Guide to collecting logs, metrics, and telemetry data from your agent.
+- **[Agent observability](https://docs.livekit.io/agents/observability.md)**: Guide to monitoring your agent's behavior in production.
 
-- **[Worker options](https://docs.livekit.io/agents/worker/options.md)**: Learn how to configure your agent worker.
+- **[Agent server options](https://docs.livekit.io/agents/server/options.md)**: Learn how to configure your agent server.
 
 - **[Secrets management](https://docs.livekit.io/agents/ops/deployment/secrets.md)**: Learn how to securely manage API keys for log forwarding.
 

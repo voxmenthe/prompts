@@ -4,13 +4,15 @@ LiveKit docs › Accepting calls › Inbound trunk
 
 # SIP inbound trunk
 
-> How to create and configure an inbound trunk to accept incoming calls.
+> How to create and configure an inbound trunk to accept incoming calls using a SIP provider.
 
 ## Overview
 
 After you purchase a phone number and [configure your SIP trunking provider](https://docs.livekit.io/sip/quickstarts/configuring-sip-trunk.md), you must create an inbound trunk and [dispatch rule](https://docs.livekit.io/sip/dispatch-rule.md) to accept incoming calls. The inbound trunk allows you to limit incoming calls to those coming from your SIP trunking provider.
 
 You can also configure additional properties for all incoming calls that match the trunk including SIP headers, participant metadata and attributes, and session properties. For a full list of available parameters, see [`CreateSIPInboundTrunk`](https://docs.livekit.io/sip/api.md#createsipinboundtrunk).
+
+If you're using [LiveKit Phone Numbers](https://docs.livekit.io/sip/cloud/phone-numbers.md), you **do not** need to create an inbound trunk.
 
 > ℹ️ **Note**
 > 
@@ -248,13 +250,15 @@ if (!response.isSuccessful) {
 
 You can configure an inbound trunk to accept incoming calls to any phone number by setting the `numbers` parameter to an empty array. This is useful if you want to use the same inbound trunk for incoming calls to all your phone numbers.
 
-When you use an empty `numbers` parameter, you must set either a username and password for authentication or the `allowed_addresses` parameter. See [CreateSIPInboundTrunk](https://docs.livekit.io/sip/api.md#createsipinboundtrunk) for parameter details.
+> ❗ **Requires additional fields**
+> 
+> When you use an empty `numbers` parameter, you must set either a username and password for authentication or the `allowed_addresses` parameter. See [CreateSIPInboundTrunk](https://docs.livekit.io/sip/api.md#createsipinboundtrunk) for parameter details.
 
 ## Accepting calls from specific phone numbers
 
 You can configure an inbound trunk to accept phone call only from specific numbers. The following example configuration accepts inbound calls to the number `+1-510-555-0100` from caller numbers `+1-310-555-1100` and `+1-714-555-0100`.
 
-> ❗ **Important**
+> ❗ **Replace phone numbers**
 > 
 > Remember to replace the numbers in the example with actual phone numbers when creating your trunks.
 

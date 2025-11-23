@@ -77,5 +77,5 @@ def predictors(self)
 ```python
 def set_lm(self, lm)
 ```
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/primitives/module.py` (lines 41–211)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/primitives/module.py` (lines 40–214)
 

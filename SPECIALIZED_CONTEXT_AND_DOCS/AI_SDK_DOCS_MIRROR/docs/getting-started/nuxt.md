@@ -2,7 +2,7 @@
 
 The AI SDK is a powerful Typescript library designed to help developers build AI-powered applications.
 
-In this quickstart tutorial, you'll build a simple AI-chatbot with a streaming user interface. Along the way, you'll learn key concepts and techniques that are fundamental to using the SDK in your own projects.
+In this quickstart tutorial, you'll build a simple agent with a streaming chat user interface. Along the way, you'll learn key concepts and techniques that are fundamental to using the SDK in your own projects.
 
 If you are unfamiliar with the concepts of [Prompt Engineering](../advanced/prompt-engineering.md) and [HTTP Streaming](../advanced/why-streaming.md), you can optionally read these documents first.
 
@@ -11,9 +11,9 @@ If you are unfamiliar with the concepts of [Prompt Engineering](../advanced/prom
 To follow this quickstart, you'll need:
 
 - Node.js 18+ and pnpm installed on your local development machine.
-- An OpenAI API key.
+- A  [Vercel AI Gateway](https://vercel.com/ai-gateway)  API key.
 
-If you haven't obtained your OpenAI API key, you can do so by [signing up](https://platform.openai.com/signup/) on the OpenAI website.
+If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai&title=Go+to+AI+Gateway) on the Vercel website.
 
 ## Setup Your Application
 
@@ -31,7 +31,7 @@ cd my-ai-app
 
 ### Install dependencies
 
-Install `ai` and `@ai-sdk/openai`, the AI SDK's OpenAI provider.
+Install `ai` and `@ai-sdk/vue`. The Vercel AI Gateway provider ships with the `ai` package.
 
 The AI SDK is designed to be a unified interface to interact with any large
 language model. This means that you can change model and providers with just
@@ -40,12 +40,12 @@ one line of code! Learn more about [available providers](/providers) and
 in the [providers](/providers) section.
 
 ```
-pnpm add ai @ai-sdk/openai @ai-sdk/vue zod
+pnpm add ai@beta @ai-sdk/vue@beta zod
 ```
 
-### Configure OpenAI API key
+### Configure Vercel AI Gateway API key
 
-Create a `.env` file in your project root and add your OpenAI API Key. This key is used to authenticate your application with the OpenAI service.
+Create a `.env` file in your project root and add your Vercel AI Gateway API Key. This key is used to authenticate your application with the Vercel AI Gateway service.
 
 ```
 touch .env
@@ -54,35 +54,42 @@ touch .env
 Edit the `.env` file:
 
 ```env
-NUXT_OPENAI_API_KEY=xxxxxxxxx
+NUXT_AI_GATEWAY_API_KEY=xxxxxxxxx
 ```
 
-Replace `xxxxxxxxx` with your actual OpenAI API key and configure the environment variable in `nuxt.config.ts`:
+Replace `xxxxxxxxx` with your actual Vercel AI Gateway API key and configure the environment variable in `nuxt.config.ts`:
 
 ```ts
 export default defineNuxtConfig({
   // rest of your nuxt config
   runtimeConfig: {
-    openaiApiKey: '',
+    aiGatewayApiKey: '',
   },
 });
 ```
 
-The AI SDK's OpenAI Provider will default to using the `OPENAI_API_KEY`
-environment variable.
+This guide uses Nuxt's runtime config to manage the API key. The `NUXT_`
+prefix in the environment variable allows Nuxt to automatically load it into
+the runtime config. While the AI Gateway Provider also supports a default
+`AI_GATEWAY_API_KEY` environment variable, this approach provides better
+integration with Nuxt's configuration system.
 
 ## Create an API route
 
 Create an API route, `server/api/chat.ts` and add the following code:
 
 ```typescript
-import { streamText, UIMessage, convertToModelMessages } from 'ai';
-import { createOpenAI } from '@ai-sdk/openai';
+import {
+  streamText,
+  UIMessage,
+  convertToModelMessages,
+  createGateway,
+} from 'ai';
 
 export default defineLazyEventHandler(async () => {
-  const apiKey = useRuntimeConfig().openaiApiKey;
-  if (!apiKey) throw new Error('Missing OpenAI API key');
-  const openai = createOpenAI({
+  const apiKey = useRuntimeConfig().aiGatewayApiKey;
+  if (!apiKey) throw new Error('Missing AI Gateway API key');
+  const gateway = createGateway({
     apiKey: apiKey,
   });
 
@@ -90,7 +97,7 @@ export default defineLazyEventHandler(async () => {
     const { messages }: { messages: UIMessage[] } = await readBody(event);
 
     const result = streamText({
-      model: openai('gpt-4o'),
+      model: gateway('openai/gpt-5.1'),
       messages: convertToModelMessages(messages),
     });
 
@@ -101,11 +108,47 @@ export default defineLazyEventHandler(async () => {
 
 Let's take a look at what is happening in this code:
 
-1. Create an OpenAI provider instance with the `createOpenAI` function from the `@ai-sdk/openai` package.
+1. Create a gateway provider instance with the `createGateway` function from the `ai` package.
 2. Define an Event Handler and extract `messages` from the body of the request. The `messages` variable contains a history of the conversation between you and the chatbot and provides the chatbot with the necessary context to make the next generation. The `messages` are of UIMessage type, which are designed for use in application UI - they contain the entire message history and associated metadata like timestamps.
 3. Call [`streamText`](../reference/ai-sdk-core/stream-text.md), which is imported from the `ai` package. This function accepts a configuration object that contains a `model` provider (defined in step 1) and `messages` (defined in step 2). You can pass additional [settings](../ai-sdk-core/settings.md) to further customise the model's behaviour. The `messages` key expects a `ModelMessage[]` array. This type is different from `UIMessage` in that it does not include metadata, such as timestamps or sender information. To convert between these types, we use the `convertToModelMessages` function, which strips the UI-specific metadata and transforms the `UIMessage[]` array into the `ModelMessage[]` format that the model expects.
-4. The `streamText` function returns a [`StreamTextResult`](../reference/ai-sdk-core/stream-text.md#result). This result object contains the  [`toDataStreamResponse`](../reference/ai-sdk-core/stream-text.md#to-data-stream-response)  function which converts the result to a streamed response object.
+4. The `streamText` function returns a [`StreamTextResult`](../reference/ai-sdk-core/stream-text.md#result). This result object contains the  [`toUIMessageStreamResponse`](../reference/ai-sdk-core/stream-text.md#to-ui-message-stream-response)  function which converts the result to a streamed response object.
 5. Return the result to the client to stream the response.
+
+## Choosing a Provider
+
+The AI SDK supports dozens of model providers through [first-party](/providers/ai-sdk-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and  [community](/providers/community-providers)  packages.
+
+This quickstart uses the [Vercel AI Gateway](https://vercel.com/ai-gateway) provider, which is the default [global provider](../ai-sdk-core/provider-management.md#global-provider-configuration). This means you can access models using a simple string in the model configuration:
+
+```ts
+model: 'openai/gpt-5.1';
+```
+
+You can also explicitly import and use the gateway provider in two other equivalent ways:
+
+```ts
+// Option 1: Import from 'ai' package (included by default)
+import { gateway } from 'ai';
+model: gateway('openai/gpt-5.1');
+
+// Option 2: Install and import from '@ai-sdk/gateway' package
+import { gateway } from '@ai-sdk/gateway';
+model: gateway('openai/gpt-5.1');
+```
+
+### Using other providers
+
+To use a different provider, install its package and create a provider instance. For example, to use OpenAI directly:
+
+```
+pnpm add @ai-sdk/openai@beta
+```
+
+```ts
+import { openai } from '@ai-sdk/openai';
+
+model: openai('gpt-5.1');
+```
 
 ## Wire up the UI
 
@@ -184,14 +227,19 @@ Let's enhance your chatbot by adding a simple weather tool.
 Modify your `server/api/chat.ts` file to include the new weather tool:
 
 ```typescript
-import { streamText, UIMessage, convertToModelMessages, tool } from 'ai';
-import { createOpenAI } from '@ai-sdk/openai';
+import {
+  createGateway,
+  streamText,
+  UIMessage,
+  convertToModelMessages,
+  tool,
+} from 'ai';
 import { z } from 'zod';
 
 export default defineLazyEventHandler(async () => {
-  const apiKey = useRuntimeConfig().openaiApiKey;
-  if (!apiKey) throw new Error('Missing OpenAI API key');
-  const openai = createOpenAI({
+  const apiKey = useRuntimeConfig().aiGatewayApiKey;
+  if (!apiKey) throw new Error('Missing AI Gateway API key');
+  const gateway = createGateway({
     apiKey: apiKey,
   });
 
@@ -199,7 +247,7 @@ export default defineLazyEventHandler(async () => {
     const { messages }: { messages: UIMessage[] } = await readBody(event);
 
     const result = streamText({
-      model: openai('gpt-4o'),
+      model: gateway('openai/gpt-5.1'),
       messages: convertToModelMessages(messages),
       tools: {
         weather: tool({
@@ -299,19 +347,19 @@ Modify your `server/api/chat.ts` file to include the `stopWhen` condition:
 
 ```typescript
 import {
+  createGateway,
   streamText,
   UIMessage,
   convertToModelMessages,
   tool,
   stepCountIs,
 } from 'ai';
-import { createOpenAI } from '@ai-sdk/openai';
 import { z } from 'zod';
 
 export default defineLazyEventHandler(async () => {
-  const apiKey = useRuntimeConfig().openaiApiKey;
-  if (!apiKey) throw new Error('Missing OpenAI API key');
-  const openai = createOpenAI({
+  const apiKey = useRuntimeConfig().aiGatewayApiKey;
+  if (!apiKey) throw new Error('Missing AI Gateway API key');
+  const gateway = createGateway({
     apiKey: apiKey,
   });
 
@@ -319,7 +367,7 @@ export default defineLazyEventHandler(async () => {
     const { messages }: { messages: UIMessage[] } = await readBody(event);
 
     const result = streamText({
-      model: openai('gpt-4o'),
+      model: gateway('openai/gpt-5.1'),
       messages: convertToModelMessages(messages),
       stopWhen: stepCountIs(5),
       tools: {
@@ -356,19 +404,19 @@ Update your `server/api/chat.ts` file to add a new tool to convert the temperatu
 
 ```typescript
 import {
+  createGateway,
   streamText,
   UIMessage,
   convertToModelMessages,
   tool,
   stepCountIs,
 } from 'ai';
-import { createOpenAI } from '@ai-sdk/openai';
 import { z } from 'zod';
 
 export default defineLazyEventHandler(async () => {
-  const apiKey = useRuntimeConfig().openaiApiKey;
-  if (!apiKey) throw new Error('Missing OpenAI API key');
-  const openai = createOpenAI({
+  const apiKey = useRuntimeConfig().aiGatewayApiKey;
+  if (!apiKey) throw new Error('Missing AI Gateway API key');
+  const gateway = createGateway({
     apiKey: apiKey,
   });
 
@@ -376,7 +424,7 @@ export default defineLazyEventHandler(async () => {
     const { messages }: { messages: UIMessage[] } = await readBody(event);
 
     const result = streamText({
-      model: openai('gpt-4o'),
+      model: gateway('openai/gpt-5.1'),
       messages: convertToModelMessages(messages),
       stopWhen: stepCountIs(5),
       tools: {

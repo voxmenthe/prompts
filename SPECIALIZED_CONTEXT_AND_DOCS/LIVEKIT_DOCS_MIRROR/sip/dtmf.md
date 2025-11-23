@@ -6,15 +6,39 @@ LiveKit docs › Features › DTMF
 
 > Sending and receiving DTMF tones.
 
-LiveKit's Telephony stack fully supports DTMF tones, enabling integration with legacy IVR systems. It also enables agents to receive DTMF tones from telephone users.
+## Overview
 
-## Sending DTMF
+LiveKit's Telephony stack fully supports Dual-tone Multi-Frequency (DTMF) tones, enabling integration with legacy Interactive Voice Response (IVR) systems. It also enables agents to receive DTMF tones from telephone users.
+
+## Agents framework support
+
+If you're building telephony apps with the LiveKit Agents framework, there are additional features that provide support for DTMF:
+
+- The `ivr_detection` option for [`AgentSession`](https://docs.livekit.io/agents/build/sessions.md#session-options). When set to `True`, this automatically makes use of built-in tools to detect IVR systems and relay DTMF tones from the user back to the telephony provider.
+
+To enable IVR detection, set `ivr_detection=True` in the `AgentSession` constructor:
+
+```python
+session = AgentSession(
+  ivr_detection=True,
+  # ... stt, llm, vad, turn_detection, etc.
+)
+
+```
+- A prebuilt task for collecting DTMF inputs. It can be used to collect any number of digits from a caller, including, for example, a phone number or credit card number. The task supports both DTMF tones and spoken digits. To learn more, see [GetDtmfTask](https://docs.livekit.io/agents/build/tasks.md#getdtmftask).
+
+## Sending DTMF using the API
 
 To send DTMF tones, use the `publishDtmf` API on the `localParticipant`.
 
-This API transmits DTMF tones to the room; tones can be sent by any participant in the room.
+Any participant in the room can use the `publishDtmf` API to transmit DTMF tones to the room. SIP participants in the room receive the tones and relay them to the telephone user.
 
-SIP participants in the room receive the tones and relay them to the telephone user.
+The `publishDtmf` API requires two parameters:
+
+- `code`: DTMF code
+- `digit`: DTMF digit
+
+The following examples publishes the DTMF tones `1`, `2`, `3`, and `#` in sequence.
 
 **Node.js**:
 
@@ -75,7 +99,7 @@ localParticipant.PublishDataPacket(&livekit.SipDTMF{
 > 
 > Special characters like `*` and `#` are mapped to their respective numeric codes. See [RFC 4733](https://datatracker.ietf.org/doc/html/rfc4733#section-3.2) for details.
 
-## Receiving DTMF
+## Receiving DTMF by listening to events
 
 When SIP receives DTMF tones, they are relayed to the room as events that participants can listen for.
 

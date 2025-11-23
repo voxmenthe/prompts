@@ -12,7 +12,8 @@ LiveKit Inference offers voice models powered by Inworld. Pricing information is
 
 | Model ID | Languages |
 | -------- | --------- |
-| `inworld/inworld-tts-1` | `en`, `es`, `fr`, `ko`, `nl`, `zh`, `de`, `it`, `ja`, `pl`, `pt` |
+| `inworld/inworld-tts-1-max` | `en`, `es`, `fr`, `ko`, `nl`, `zh`, `de`, `it`, `ja`, `pl`, `pt`, `ru` |
+| `inworld/inworld-tts-1` | `en`, `es`, `fr`, `ko`, `nl`, `zh`, `de`, `it`, `ja`, `pl`, `pt`, `ru` |
 
 ## Usage
 
@@ -24,7 +25,7 @@ To use Inworld, pass a descriptor with the model and voice to the `tts` argument
 from livekit.agents import AgentSession
 
 session = AgentSession(
-    tts="inworld/inworld-tts-1:ashley",
+    tts="inworld/inworld-tts-1-max:Ashley",
     # ... llm, stt, vad, turn_detection, etc.
 )
 
@@ -38,8 +39,8 @@ session = AgentSession(
 import { AgentSession } from '@livekit/agents';
 
 session = new AgentSession({
-    tts: "inworld/inworld-tts-1:ashley",
-    // ... tts, stt, vad, turn_detection, etc.
+    tts: "inworld/inworld-tts-1-max:Ashley",
+    // ... llm, stt, vad, turn_detection, etc.
 });
 
 ```
@@ -55,11 +56,11 @@ from livekit.agents import AgentSession, inference
 
 session = AgentSession(
     tts=inference.TTS(
-        model="inworld/inworld-tts-1", 
-        voice="ashley", 
+        model="inworld/inworld-tts-1-max", 
+        voice="Ashley", 
         language="en"
     ),
-    # ... tts, stt, vad, turn_detection, etc.
+    # ... llm, stt, vad, turn_detection, etc.
 )
 
 ```
@@ -73,11 +74,11 @@ import { AgentSession } from '@livekit/agents';
 
 session = new AgentSession({
     tts: new inference.TTS({ 
-        model: "inworld/inworld-tts-1", 
-        voice: "ashley", 
+        model: "inworld/inworld-tts-1-max", 
+        voice: "Ashley", 
         language: "en" 
     }),
-    // ... tts, stt, vad, turn_detection, etc.
+    // ... llm, stt, vad, turn_detection, etc.
 });
 
 ```

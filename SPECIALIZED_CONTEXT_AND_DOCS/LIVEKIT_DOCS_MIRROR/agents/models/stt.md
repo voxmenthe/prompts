@@ -299,6 +299,7 @@ import asyncio
 from dotenv import load_dotenv
 
 from livekit import agents, rtc
+from livekit.agents import AgentServer
 from livekit.agents.stt import SpeechEventType, SpeechEvent
 from typing import AsyncIterable
 from livekit.plugins import (
@@ -307,7 +308,10 @@ from livekit.plugins import (
 
 load_dotenv()
 
-async def entrypoint(ctx: agents.JobContext):
+server = AgentServer()
+
+@server.rtc_session()
+async def my_agent(ctx: agents.JobContext):
     @ctx.room.on("track_subscribed")
     def on_track_subscribed(track: rtc.RemoteTrack):
         print(f"Subscribed to track: {track.name}")
@@ -349,7 +353,7 @@ async def entrypoint(ctx: agents.JobContext):
 
 
 if __name__ == "__main__":
-    agents.cli.run_app(agents.WorkerOptions(entrypoint_fnc=entrypoint))
+    agents.cli.run_app(server)
 
 
 ```

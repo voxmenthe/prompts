@@ -45,7 +45,7 @@ Use Inworld TTS within an `AgentSession` or as a standalone speech generator. Fo
 from livekit.plugins import inworld
 
 session = AgentSession(
-   tts=inworld.TTS(voice="Hades")
+   tts=inworld.TTS(model="inworld-tts-1-max", voice="Ashley")
    # ... llm, stt, etc.
 )
 

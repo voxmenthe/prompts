@@ -1,4 +1,4 @@
-LiveKit docs › Deployment & operations › Deploying to LiveKit Cloud › Getting started
+LiveKit docs › Agent deployment › Deploying to LiveKit Cloud › Getting started
 
 ---
 
@@ -126,7 +126,37 @@ On certain plans, agents can be scaled down to zero replicas. When a new user co
 
 ## Regions
 
-Currently, LiveKit Cloud deploys all agents to `us-east` (N. Virginia). More regions are coming soon.
+Each agent deployment is isolated to a single region, which you must select during the first deployment. The following regions are currently available for agent deployments:
+
+| Region code | Geographic location |
+| `us-east` | Ashburn, Virginia, USA |
+| `eu-central` | Frankfurt, Germany |
+
+Region assignment is immutable, and cannot be changed after agent creation.
+
+### Multi-region deployments
+
+To deploy an agent in multiple regions, use `lk agent create` once per region. To keep track of the deployments, add the region to the configuration file name. For instance, these commands deploy a new agent to both `us-east` and `eu-central` regions:
+
+```shell
+lk agent create --region us-east --config livekit.us-east.toml
+lk agent create --region eu-central --config livekit.eu-central.toml
+
+```
+
+Now you can deploy the agent to each region as needed by specifying the appropriate configuration file:
+
+```shell
+lk agent deploy --config livekit.us-east.toml
+lk agent deploy --config livekit.eu-central.toml
+
+```
+
+By default, users connect to the agent in the region closest to them. In some cases, if agents are at capacity, users may connect to an agent in a different region. For fine-grained control over which regions users connect to, set a separate agent name for each region and use [explicit dispatch](https://docs.livekit.io/agents/ops/dispatch/explicit.md) to directly assign users to the appropriate agent.
+
+### Moving an agent to a new region
+
+To move an existing agent to a new region, you should follow the preceding steps for [multi-region deployments](#multi-region-deployments) to add a deployment in the new region. Then, you can delete the agent in the old region using `lk agent delete`, specifying the old agent's ID or configuration file.
 
 ## Dashboard
 

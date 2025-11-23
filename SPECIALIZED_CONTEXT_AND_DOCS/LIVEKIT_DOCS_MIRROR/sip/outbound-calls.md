@@ -42,7 +42,7 @@ lk sip participant create sip-participant.json
 **Node.js**:
 
 ```typescript
-import { SipClient } from 'livekit-server-sdk';
+import { SipClient, TwirpError } from 'livekit-server-sdk';
 
 const sipClient = new SipClient(process.env.LIVEKIT_URL,
                                 process.env.LIVEKIT_API_KEY,
@@ -76,6 +76,10 @@ async function main() {
     console.log('Participant created:', participant);
   } catch (error) {
     console.error('Error creating SIP participant:', error);
+    if (error instanceof TwirpError) {
+      console.error("SIP error code: ", error.metadata?.['sip_status_code']);
+      console.error("SIP error message: ", error.metadata?.['sip_status']);
+    }
   }
 }
 
@@ -111,6 +115,10 @@ async def main():
         print(f"Successfully created {participant}")
     except Exception as e:
         print(f"Error creating SIP participant: {e}")
+        # sip_status_code contains the status code from upstream carrier
+        print(f"SIP error code: {e.metadata.get('sip_status_code')}")
+        # sip_status contains the status message from upstream carrier
+        print(f"SIP error message: {e.metadata.get('sip_status')}")
     finally:
         await livekit_api.aclose()
 
@@ -199,6 +207,83 @@ func main() {
 ```
 
 Once the user picks up, they will be connected to `my-sip-room`.
+
+## Custom caller ID
+
+You can set a custom caller ID for outbound calls using the `display_name` field in the`CreateSIPParticipant` request. By default, if this field isn't included in the request, the phone number is used as the display name. If this field is set to an empty string, most SIP trunking providers issue a Caller ID Name (CNAM) lookup and use the result as the display name.
+
+> ℹ️ **SIP provider support**
+> 
+> Your SIP provider must support custom caller ID for the `display_name` value to be used. Confirm with your specific provider to verify support.
+
+**LiveKit CLI**:
+
+```json
+{
+  "sip_trunk_id": "<your-trunk-id>",
+  "sip_call_to": "<phone-number-to-dial>",
+  "room_name": "my-sip-room",
+  "participant_identity": "sip-test",
+  "participant_name": "Test Caller",
+  "display_name": "My Custom Display Name"
+}
+
+```
+
+---
+
+**Node.js**:
+
+```typescript
+const sipParticipantOptions = {
+  participantIdentity: 'sip-test',
+  participantName: 'Test Caller',
+  displayName: 'My Custom Display Name'
+};
+
+```
+
+---
+
+**Python**:
+
+```python
+  request = CreateSIPParticipantRequest(
+    sip_trunk_id = "<trunk_id>",
+    sip_call_to = "<phone_number>",
+    room_name = "my-sip-room",
+    participant_identity = "sip-test",
+    participant_name = "Test Caller",
+    display_name = "My Custom Display Name"
+  )
+
+```
+
+---
+
+**Ruby**:
+
+Custom display name is not yet supported in Ruby.
+
+---
+
+**Go**:
+
+```go
+displayName := "My Custom Display Name"
+
+request := &livekit.CreateSIPParticipantRequest {
+  SipTrunkId: trunkId,
+  SipCallTo: phoneNumber,
+  RoomName: roomName,
+  ParticipantIdentity: participantIdentity,
+  ParticipantName: participantName,
+  KrispEnabled: true,
+  WaitUntilAnswered: true,
+  DisplayName: &displayName,
+}
+
+```
 
 ## Making a call with extension codes (DTMF)
 

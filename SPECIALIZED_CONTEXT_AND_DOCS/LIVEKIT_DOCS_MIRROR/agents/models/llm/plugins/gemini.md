@@ -42,7 +42,7 @@ pnpm add @livekit/agents-plugin-google@1.x
 
 The Google plugin requires authentication based on your chosen service:
 
-- For Vertex AI, you must set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to the path of the service account key file.
+- For Vertex AI, you must set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to the path of the service account key file. For more information about mounting files as secrets when deploying to LiveKit Cloud, see [File-mounted secrets](https://docs.livekit.io/agents/ops/deployment/secrets.md#file-mounted-secrets) .
 - For Google Gemini API, set the `GOOGLE_API_KEY` environment variable.
 
 ### Usage

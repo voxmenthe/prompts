@@ -1247,15 +1247,15 @@ import {
   lastAssistantMessageIsCompleteWithToolCalls,
 } from 'ai';
 
-const { messages, sendMessage, addToolResult } = useChat({
+const { messages, sendMessage, addToolOutput } = useChat({
   // Automatically submit when all tool results are available
   sendAutomaticallyWhen: lastAssistantMessageIsCompleteWithToolCalls,
 
   async onToolCall({ toolCall }) {
     const result = await executeToolCall(toolCall);
 
-    // Important: Don't await addToolResult inside onToolCall to avoid deadlocks
-    addToolResult({
+    // Important: Don't await addToolOutput inside onToolCall to avoid deadlocks
+    addToolOutput({
       tool: toolCall.toolName,
       toolCallId: toolCall.toolCallId,
       output: result,
@@ -1265,7 +1265,7 @@ const { messages, sendMessage, addToolResult } = useChat({
 ```
 
 Important: When using `sendAutomaticallyWhen`, don't use `await` with
-`addToolResult` inside `onToolCall` as it can cause deadlocks. The `await` is
+`addToolOutput` inside `onToolCall` as it can cause deadlocks. The `await` is
 useful when you're not using automatic submission and need to ensure the
 messages are updated before manually calling `sendMessage()`.
 
@@ -1554,9 +1554,9 @@ import type { RequestOptions } from 'ai';
 import type { CompletionRequestOptions } from 'ai';
 ```
 
-#### addToolResult Changes
+#### addToolResult Renamed to addToolOutput
 
-In the `addToolResult` function, the `result` parameter has been renamed to `output` for consistency with other tool-related APIs.
+The `addToolResult` method has been renamed to `addToolOutput`. Additionally, the `result` parameter has been renamed to `output` for consistency with other tool-related APIs.
 
 ```tsx
 const { addToolResult } = useChat();
@@ -1568,24 +1568,27 @@ addToolResult({
 });
 ```
 ```tsx
-const { addToolResult } = useChat();
+const { addToolOutput } = useChat();
 
-// Add tool result with 'output' parameter and 'tool' name for type safety
-addToolResult({
+// Add tool output with 'output' parameter and 'tool' name for type safety
+addToolOutput({
   tool: 'getWeather',
   toolCallId: 'tool-call-123',
   output: 'Weather: 72°F, sunny',
 });
 ```
 
+`addToolResult` is still available but deprecated. It will be removed in
+version 6.
+
 #### Tool Result Submission Changes
 
 The automatic tool result submission behavior has been updated in `useChat` and the `Chat` component. You now have more control and flexibility over when tool results are submitted.
 
 - `onToolCall` no longer supports returning values to automatically submit tool results
-- You must explicitly call `addToolResult` to provide tool results
+- You must explicitly call `addToolOutput` to provide tool results
 - Use `sendAutomaticallyWhen` with `lastAssistantMessageIsCompleteWithToolCalls` helper for automatic submission
-- Important: Don't use `await` with `addToolResult` inside `onToolCall` to avoid deadlocks
+- Important: Don't use `await` with `addToolOutput` inside `onToolCall` to avoid deadlocks
 - The `maxSteps` parameter has been removed from the `Chat` component and `useChat` hook
 - For multi-step tool execution, use server-side `stopWhen` conditions instead (see [maxSteps Removal](#maxsteps-removal))
 
@@ -1609,7 +1612,7 @@ import {
   lastAssistantMessageIsCompleteWithToolCalls,
 } from 'ai';
 
-const { messages, sendMessage, addToolResult } = useChat({
+const { messages, sendMessage, addToolOutput } = useChat({
   // Automatic submission with helper
   sendAutomaticallyWhen: lastAssistantMessageIsCompleteWithToolCalls,
 
@@ -1618,7 +1621,7 @@ const { messages, sendMessage, addToolResult } = useChat({
       const cities = ['New York', 'Los Angeles', 'Chicago', 'San Francisco'];
 
       // Important: Don't await inside onToolCall to avoid deadlocks
-      addToolResult({
+      addToolOutput({
         tool: 'getLocation',
         toolCallId: toolCall.toolCallId,
         output: cities[Math.floor(Math.random() * cities.length)],

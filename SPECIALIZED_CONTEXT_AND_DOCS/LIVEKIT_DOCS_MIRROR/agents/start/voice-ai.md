@@ -10,6 +10,10 @@ LiveKit docs › Getting started › Voice AI quickstart
 
 This guide walks you through the setup of your very first voice assistant using LiveKit Agents for Python. In less than 10 minutes, you'll have a voice assistant that you can speak to in your terminal, browser, telephone, or native app.
 
+> 💡 **LiveKit Agent Builder**
+> 
+> The LiveKit Agent Builder is a quick way to get started with voice agents in your browser, without writing any code. It's perfect for protototyping and exploring ideas, but doesn't have as many features as the full LiveKit Agents SDK. See the [Agent Builder](https://docs.livekit.io/agents/start/builder.md) guide for more details.
+
 ## Starter projects
 
 The simplest way to get your first agent running with is with one of the following starter projects. Click "Use this template" in the top right to create a new repo on GitHub, then follow the instructions in the project's README.
@@ -266,8 +270,8 @@ Create a file with your agent code.
 ```python
 from dotenv import load_dotenv
 
-from livekit import agents
-from livekit.agents import AgentSession, Agent, RoomInputOptions
+from livekit import agents, rtc
+from livekit.agents import AgentServer,AgentSession, Agent, room_io
 from livekit.plugins import noise_cancellation, silero
 from livekit.plugins.turn_detector.multilingual import MultilingualModel
 
@@ -283,8 +287,10 @@ class Assistant(Agent):
             You are curious, friendly, and have a sense of humor.""",
         )
 
+server = AgentServer()
 
-async def entrypoint(ctx: agents.JobContext):
+@server.rtc_session()
+async def my_agent(ctx: agents.JobContext):
     session = AgentSession(
         stt="assemblyai/universal-streaming:en",
         llm="openai/gpt-4.1-mini",
@@ -296,9 +302,10 @@ async def entrypoint(ctx: agents.JobContext):
     await session.start(
         room=ctx.room,
         agent=Assistant(),
-        room_input_options=RoomInputOptions(
-            # For telephony applications, use `BVCTelephony` instead for best results
-            noise_cancellation=noise_cancellation.BVC(), 
+        room_options=room_io.RoomOptions(
+            audio_input=room_io.AudioInputOptions(
+                noise_cancellation=lambda params: noise_cancellation.BVCTelephony() if params.participant.kind == rtc.ParticipantKind.PARTICIPANT_KIND_SIP else noise_cancellation.BVC(),
+            ),
         ),
     )
 
@@ -308,7 +315,7 @@ async def entrypoint(ctx: agents.JobContext):
 
 
 if __name__ == "__main__":
-    agents.cli.run_app(agents.WorkerOptions(entrypoint_fnc=entrypoint))
+    agents.cli.run_app(server)
 
 
 ```
@@ -381,8 +388,8 @@ cli.runApp(new WorkerOptions({ agent: fileURLToPath(import.meta.url) }));
 ```python
 from dotenv import load_dotenv
 
-from livekit import agents
-from livekit.agents import AgentSession, Agent, RoomInputOptions
+from livekit import agents, rtc
+from livekit.agents import AgentServer, AgentSession, Agent, room_io
 from livekit.plugins import (
     openai,
     noise_cancellation,
@@ -390,13 +397,14 @@ from livekit.plugins import (
 
 load_dotenv(".env.local")
 
-
 class Assistant(Agent):
     def __init__(self) -> None:
         super().__init__(instructions="You are a helpful voice AI assistant.")
 
+server = AgentServer()
 
-async def entrypoint(ctx: agents.JobContext):
+@server.rtc_session()
+async def my_agent(ctx: agents.JobContext):
     session = AgentSession(
         llm=openai.realtime.RealtimeModel(
             voice="coral"
@@ -406,9 +414,10 @@ async def entrypoint(ctx: agents.JobContext):
     await session.start(
         room=ctx.room,
         agent=Assistant(),
-        room_input_options=RoomInputOptions(
-            # For telephony applications, use `BVCTelephony` instead for best results
-            noise_cancellation=noise_cancellation.BVC(),
+        room_options=room_io.RoomOptions(
+            audio_input=room_io.AudioInputOptions(
+                noise_cancellation=lambda params: noise_cancellation.BVCTelephony() if params.participant.kind == rtc.ParticipantKind.PARTICIPANT_KIND_SIP else noise_cancellation.BVC(),
+            ),
         ),
     )
 
@@ -418,7 +427,7 @@ async def entrypoint(ctx: agents.JobContext):
 
 
 if __name__ == "__main__":
-    agents.cli.run_app(agents.WorkerOptions(entrypoint_fnc=entrypoint))
+    agents.cli.run_app(server)
 
 
 ```
@@ -616,7 +625,7 @@ Follow these guides bring your voice AI app to life in the real world.
 
 - **[Building voice agents](https://docs.livekit.io/agents/build.md)**: Comprehensive documentation to build advanced voice AI apps with LiveKit.
 
-- **[Worker lifecycle](https://docs.livekit.io/agents/worker.md)**: Learn how to manage your agents with workers and jobs.
+- **[Agent server lifecycle](https://docs.livekit.io/agents/server.md)**: Learn how to manage your agents with agent servers and jobs.
 
 - **[Deploying to LiveKit Cloud](https://docs.livekit.io/agents/ops/deployment.md)**: Learn more about deploying and scaling your agent in production.
 

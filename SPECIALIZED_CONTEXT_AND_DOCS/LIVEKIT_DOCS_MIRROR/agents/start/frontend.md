@@ -265,7 +265,7 @@ In this case, your application will generate a token for the user at login with 
 
 **Option 2: Dispatch agent during token generation**
 
-In this case, your application will optimistically create a room and dispatch the agent at the same time the token is generated, using [explicit agent dispatch](https://docs.livekit.io/agents/worker/agent-dispatch.md#explicit). This allows the user and the agent to connect to the room at the same time.
+In this case, your application will optimistically create a room and dispatch the agent at the same time the token is generated, using [explicit agent dispatch](https://docs.livekit.io/agents/server/agent-dispatch.md#explicit). This allows the user and the agent to connect to the room at the same time.
 
 ### Connection indicators
 

@@ -34,6 +34,16 @@ LiveKit Cloud transport services, including [WebRTC media](https://docs.livekit.
 
 Agents deployed to LiveKit Cloud are metered by the **agent session minute**, in increments of 1 minute. This reflects the amount of time the agent is actively connected to a WebRTC or SIP-based session.
 
+### Agent observability
+
+Agent observability is metered in two ways. First, by [events](https://docs.livekit.io/agents/observability.md#events), which include individual transcripts, observations, and logs. Second, by [recorded audio](https://docs.livekit.io/agents/observability.md#audio), in increments of 1 minute.
+
+The following table shows the units and minimum increments for each resource.
+
+| Resource type | Unit | Minimum increment |
+| Transcripts, observations, and logs | Event | 1 event |
+| Recorded audio | Minute | 1 minute |
+
 ### LiveKit Inference
 
 LiveKit Inference usage is metered by **tokens**, **time**, or **characters**, depending on the specific resource, according to the following table.
@@ -42,6 +52,14 @@ LiveKit Inference usage is metered by **tokens**, **time**, or **characters**, d
 | STT | Seconds (connection time) | 1 second |
 | LLM | Tokens (input and output) | 1 token |
 | TTS | Characters (text) | 1 character |
+
+### LiveKit Phone Numbers
+
+LiveKit Phone Numbers are metered by the **minute** of inbound call time, plus a small fixed monthly fee per number. The following table shows the units and minimum increments for each resource.
+
+| Resource type | Unit | Minimum increment |
+| Inbound call time | Minute | 1 minute |
+| Number rental | Monthly rental | 1 number |
 
 ## Invoices
 

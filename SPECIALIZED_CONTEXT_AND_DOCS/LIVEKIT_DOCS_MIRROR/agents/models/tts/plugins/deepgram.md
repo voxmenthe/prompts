@@ -7,7 +7,7 @@ LiveKit docs › Models › Text-to-speech (TTS) › Plugins › Deepgram
 > How to use the Deepgram TTS plugin for LiveKit Agents.
 
 Available in:
-- [ ] Node.js
+- [x] Node.js
 - [x] Python
 
 ## Overview
@@ -20,10 +20,21 @@ This section provides a quick reference for the Deepgram TTS plugin. For more in
 
 ### Installation
 
-Install the plugin from PyPI:
+Install the plugin:
+
+**Python**:
 
 ```shell
 uv add "livekit-agents[deepgram]~=1.2"
+
+```
+
+---
+
+**Node.js**:
+
+```shell
+pnpm add @livekit/agents-plugin-deepgram@1.x
 
 ```
 
@@ -37,6 +48,8 @@ Set `DEEPGRAM_API_KEY` in your `.env` file.
 
 Use Deepgram TTS within an `AgentSession` or as a standalone speech generator. For example, you can use this TTS in the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md).
 
+**Python**:
+
 ```python
 from livekit.plugins import deepgram
 
@@ -46,6 +59,22 @@ session = AgentSession(
    )
    # ... llm, stt, etc.
 )
+
+```
+
+---
+
+**Node.js**:
+
+```typescript
+import * as deepgram from '@livekit/agents-plugin-deepgram';
+
+const session = new voice.AgentSession({
+    tts: deepgram.TTS(
+        model: "aura-asteria-en",
+    ),
+    // ... llm, stt, etc.
+});
 
 ```
 

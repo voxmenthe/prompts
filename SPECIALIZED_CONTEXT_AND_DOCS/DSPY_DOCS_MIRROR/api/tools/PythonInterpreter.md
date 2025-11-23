@@ -36,5 +36,5 @@ def execute(self, code, variables=None)
 ```python
 def shutdown(self)
 ```
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/primitives/python_interpreter.py` (lines 13–246)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/primitives/python_interpreter.py` (lines 15–294)
 

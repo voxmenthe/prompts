@@ -181,7 +181,7 @@
 
 #### HelperFunctions
 
-- [HelperFunctions](/docs/v3/HelperFunctions.md)
+- [Helper Functions](/docs/v3/HelperFunctions.md)
 
 ##### helpers
 

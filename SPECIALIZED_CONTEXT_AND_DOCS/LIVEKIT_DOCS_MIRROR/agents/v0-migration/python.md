@@ -58,6 +58,7 @@ async def entrypoint(ctx: JobContext):
 
 ```python
 from livekit.agents import (
+    AgentServer,
     AgentSession,
     Agent,
     llm,
@@ -77,8 +78,10 @@ class Assistant(Agent):
     def __init__(self) -> None:
         super().__init__(instructions="You are a helpful voice AI assistant.")
 
+server = AgentServer()
 
-async def entrypoint(ctx: agents.JobContext):
+@server.rtc_session()
+async def my_agent(ctx: agents.JobContext):
     session = AgentSession(
         stt=deepgram.STT(),
         llm=google.LLM(),
@@ -265,7 +268,7 @@ In 0.x, updating the chat context required modifying chat_ctx.messages directly.
 
 In v1.x, there are two supported ways to update the chat context:
 
-- **Agent handoff** – [transferring control](https://docs.livekit.io/agents/build/workflows.md#tool-handoff) to a new agent, which will have its own chat context.
+- **Agent handoff** – [transferring control](https://docs.livekit.io/agents/build/agents-handoffs.md#tool-handoff) to a new agent, which will have its own chat context.
 - **Explicit update** - calling `agent.update_chat_ctx()` to modify the context directly.
 
 ## Transcriptions

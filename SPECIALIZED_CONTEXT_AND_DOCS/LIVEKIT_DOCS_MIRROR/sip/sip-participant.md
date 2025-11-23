@@ -139,7 +139,7 @@ Follow the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.m
 
 **Python**:
 
-Before starting your `AgentSession`, select the best Deepgram STT model for the participant. Add this code to your `entrypoint` function:
+Before starting your `AgentSession`, select the best Deepgram STT model for the participant. Add this code to your entrypoint function:
 
 ```python
 # Add this import to the top of your file

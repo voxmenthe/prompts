@@ -37,7 +37,7 @@ Example:
 import asyncio
 import dspy
 
-dspy.settings.configure(lm=dspy.LM("openai/gpt-4o-mini"))
+dspy.configure(lm=dspy.LM("openai/gpt-4o-mini"))
 # Create the program and wrap it with streaming functionality
 program = dspy.streamify(dspy.Predict("q->a"))
 
@@ -61,7 +61,7 @@ Example with custom status message provider:
 import asyncio
 import dspy
 
-dspy.settings.configure(lm=dspy.LM("openai/gpt-4o-mini"))
+dspy.configure(lm=dspy.LM("openai/gpt-4o-mini"))
 
 class MyStatusMessageProvider(StatusMessageProvider):
     def module_start_status_message(self, instance, inputs):
@@ -94,7 +94,7 @@ Example with stream listeners:
 import asyncio
 import dspy
 
-dspy.settings.configure(lm=dspy.LM("openai/gpt-4o-mini", cache=False))
+dspy.configure(lm=dspy.LM("openai/gpt-4o-mini", cache=False))
 
 # Create the program and wrap it with streaming functionality
 predict = dspy.Predict("question->answer, reasoning")

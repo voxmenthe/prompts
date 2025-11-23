@@ -173,7 +173,7 @@ await twilioClient.conferences(conferenceSid).participants.create({
 
 ### Step 3.  Execute the file
 
-When you run the file, it bridges the Twilio conference to a new LiveKit session using the previously configured dispatch rule. This allows you to automatically [dispatch an agent](https://docs.livekit.io/agents/worker/agent-dispatch.md) to the Twilio conference.
+When you run the file, it bridges the Twilio conference to a new LiveKit session using the previously configured dispatch rule. This allows you to automatically [dispatch an agent](https://docs.livekit.io/agents/server/agent-dispatch.md) to the Twilio conference.
 
 ```shell
 node bridge.js

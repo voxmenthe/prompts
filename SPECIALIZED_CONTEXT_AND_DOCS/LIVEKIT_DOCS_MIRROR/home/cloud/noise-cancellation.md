@@ -79,12 +79,15 @@ Include the filter in the room input options when starting your agent session:
 
 ```python
 from livekit.plugins import noise_cancellation
+from livekit.agents.voice import room_io
 
 # ...
 await session.start(
     # ...,
-    room_input_options=room_io.RoomInputOptions(
-        noise_cancellation=noise_cancellation.BVC(),
+    room_options=room_io.RoomOptions(
+        audio_input=room_io.AudioInputOptions(
+            noise_cancellation=noise_cancellation.BVC(),
+        ),
     ),
 )
 # ...

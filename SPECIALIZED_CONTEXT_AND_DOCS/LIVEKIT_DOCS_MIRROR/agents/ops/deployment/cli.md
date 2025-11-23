@@ -1,4 +1,4 @@
-LiveKit docs › Deployment & operations › Deploying to LiveKit Cloud › CLI reference
+LiveKit docs › Agent deployment › Deploying to LiveKit Cloud › CLI reference
 
 ---
 
@@ -51,7 +51,7 @@ The following agent subcommands are available:
 
 ### Create
 
-Create a new agent using configuration in the working directory and optional secrets. You must not have a `livekit.toml` file in the working directory. If no `Dockerfile` is present, the CLI creates one for you.
+Create a new agent using configuration in the working directory and optional secrets. You must not already have a configuration file for the agent (default name is `livekit.toml`). If no `Dockerfile` is present, the CLI creates one for you.
 
 ```shell
 lk agent create [options] [working-dir]
@@ -60,16 +60,20 @@ lk agent create [options] [working-dir]
 
 Options for `create`:
 
+- `--region REGION`: [Region code](https://docs.livekit.io/agents/ops/deployment.md#regions) for the agent deployment. If no value is provided, the CLI prompts you to select a region.
 - `--secrets KEY=VALUE [--secrets KEY=VALUE]`: Comma-separated `KEY=VALUE` secrets. Injected as environment variables into the agent. Individual values take precedence over values in `--secrets-file`, in the case of duplicate keys.
 - `--secrets-file FILE`: File containing secret `KEY=VALUE` pairs, one per line. Injected as environment variables into the agent.
+- `--secret-mount FILE`: Path to a file to load as a [file-mounted secret](https://docs.livekit.io/agents/ops/deployment/secrets.md#file-mounted-secrets) in the agent container.
+- `--config FILE`: Name of the configuration file to create for the new deployment. If no value is provided, the default name is `livekit.toml`.
 - `--silent`: Do not prompt for interactive confirmation. Default: `false`.
 
 #### Examples
 
-Create and [deploy a new agent](https://docs.livekit.io/agents/ops/deployment.md#create) from the current directory, providing secrets inline and via file:
+Create and [deploy a new agent](https://docs.livekit.io/agents/ops/deployment.md#create) to `us-east` from the current directory, providing secrets inline and via file:
 
 ```shell
 lk agent create \
+  --region us-east \
   --secrets OPENAI_API_KEY=sk-xxx,GOOGLE_API_KEY=ya29.xxx \
   --secrets-file ./secrets.env \
   .
@@ -89,6 +93,7 @@ Options for `deploy`:
 
 - `--secrets KEY=VALUE [--secrets KEY=VALUE]`: Comma-separated `KEY=VALUE` secrets. Injected as environment variables into the agent. Takes precedence over `--secrets-file`.
 - `--secrets-file FILE`: File containing secret `KEY=VALUE` pairs, one per line. Injected as environment variables into the agent.
+- `--secret-mount FILE`: Path to a file to load as a [file-mounted secret](https://docs.livekit.io/agents/ops/deployment/secrets.md#file-mounted-secrets) in the agent container.
 
 #### Examples
 
@@ -186,7 +191,7 @@ These indicate that the agent is in an error state.
 
 ### Update
 
-Update secrets for an existing agent. This command restarts the agent workers, but does not interrupt any active sessions.
+Update secrets for an existing agent. This command restarts the agent servers, but does not interrupt any active sessions.
 
 ```shell
 lk agent update [options] [working-dir]
@@ -197,6 +202,7 @@ Options for `update`:
 
 - `--secrets KEY=VALUE [--secrets KEY=VALUE]`: Comma-separated `KEY=VALUE` secrets. Injected as environment variables into the agent. Takes precedence over `--secrets-file`.
 - `--secrets-file FILE`: File containing secret `KEY=VALUE` pairs, one per line. Injected as environment variables into the agent.
+- `--secret-mount FILE`: Path to a file to load as a [file-mounted secret](https://docs.livekit.io/agents/ops/deployment/secrets.md#file-mounted-secrets) in the agent container.
 - `--id AGENT_ID`: Agent ID. By default, uses the ID found in the `livekit.toml` file in the working directory.
 
 #### Examples
@@ -211,7 +217,7 @@ lk agent update \
 
 ### Restart
 
-Restart the worker pool for the specified agent. This command does not interrupt any active sessions.
+Restart the agent server pool for the specified agent. This command does not interrupt any active sessions.
 
 ```shell
 lk agent restart [options] [working-dir]
@@ -413,6 +419,7 @@ Options for `update-secrets`:
 
 - `--secrets KEY=VALUE [--secrets KEY=VALUE]`: Comma-separated `KEY=VALUE` secrets. Injected as environment variables into the agent. Takes precedence over `--secrets-file`.
 - `--secrets-file FILE`: File containing secret `KEY=VALUE` pairs, one per line. Injected as environment variables into the agent.
+- `--secret-mount FILE`: Path to a file to load as a [file-mounted secret](https://docs.livekit.io/agents/ops/deployment/secrets.md#file-mounted-secrets) in the agent container.
 - `--id ID`: Agent ID. If unset and `livekit.toml` is present, uses the ID found there.
 - `--overwrite`: Overwrite existing secrets. Default: `false`.
 
@@ -432,6 +439,14 @@ Overwrite existing keys explicitly:
 lk agent update-secrets --id CA_MyAgentId \
   --secrets OPENAI_API_KEY=sk-xxx \
   --overwrite
+
+```
+
+Mount a file as a secret:
+
+```shell
+lk agent update-secrets --id CA_MyAgentId \
+  --secret-mount ./google-appplication-credentials.json
 
 ```
 

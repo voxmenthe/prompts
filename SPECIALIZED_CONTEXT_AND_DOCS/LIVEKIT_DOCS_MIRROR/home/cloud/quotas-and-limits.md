@@ -26,12 +26,16 @@ The following table includes a definition of each metered resource as well as th
 
 | Resource | Definition | Free quota |
 | Agent session minutes | Active time that an agent [deployed](https://docs.livekit.io/agents/ops/deployment.md) to LiveKit Cloud is connected to a WebRTC or Telephony session. | 1,000 minutes |
-| SIP participant minutes | Time that a single caller is connected to LiveKit Cloud via [SIP](https://docs.livekit.io/sip.md). | 1,000 minutes |
+| Agent observability events | Individual transcripts, observations, and logs in agent observability. | 100,000 events |
+| Agent audio recordings | Audio session recordings for agent observability. | 1,000 minutes |
+| LiveKit Inference | Aggregated usage for all LiveKit Inference [models](https://docs.livekit.io/agents/models.md), at current [pricing](https://livekit.io/pricing/inference). | $2.50 |
+| US local number rental | Monthly rental for a LiveKit Phone Number. | 1 number |
+| US local inbound minutes | Inbound minutes to a US local number. | 50 minutes |
+| Third-party SIP minutes | Time that a single caller is connected to LiveKit Cloud via a third-party [SIP](https://docs.livekit.io/sip.md) trunk. | 1,000 minutes |
 | WebRTC participant minutes | Time that a single user is connected to LiveKit Cloud via a [LiveKit SDK](https://docs.livekit.io/home/client/connect.md). | 5,000 |
 | Downstream data transfer GB | The total data transferred out of LiveKit Cloud during a session, including [media tracks](https://docs.livekit.io/home/client/tracks.md) and [data packets](https://docs.livekit.io/home/client/data.md). | 50 GB |
 | Transcode minutes | Time spent transcoding an incoming stream with the [Ingress service](https://docs.livekit.io/home/ingress/overview.md) or a composite stream with the [Egress service](https://docs.livekit.io/home/egress/overview.md). | 60 minutes |
 | Track egress minutes | Time spent transcoding a single track with the [Egress service](https://docs.livekit.io/home/egress/track.md). | 60 minutes |
-| LiveKit Inference | Aggregated usage for all LiveKit Inference [models](https://docs.livekit.io/agents/models.md), at current [pricing](https://livekit.io/pricing/inference). | $2.50 |
 
 > 💡 **Inference credits**
 > 
@@ -66,6 +70,18 @@ The following table shows the default rate limits on the Build plan. For rate li
 | Limit type | Definition | Free limit |
 | LLM requests | Individual requests to a LiveKit Inference [LLM model](https://docs.livekit.io/agents/models/llm.md), including [tool responses](https://docs.livekit.io/agents/build/tools.md) and [preemptive generations](https://docs.livekit.io/agents/build/audio.md#preemptive-generation). | 100 requests per minute |
 | LLM tokens | Input and output tokens used in requests to a LiveKit Inference [LLM model](https://docs.livekit.io/agents/models/llm.md), including [tool responses](https://docs.livekit.io/agents/build/tools.md) and [preemptive generations](https://docs.livekit.io/agents/build/audio.md#preemptive-generation). | 600,000 tokens per minute |
+
+### Agent observability limits
+
+Agents continuously stream observabiliy events while connected to a session. Audio recordings are collected locally, and uploaded after the session ends. The following table shows the limits placed on the volume of obsverability events and recordings produced across all sessions, per minute:
+
+| Limit type | Definition | Free limit |
+| Agent observability events | Individual transcripts, observations, and logs streamed to LiveKit Cloud. | 1,000 events per minute |
+| Agent audio recordings | Audio session recordings collected locally and uploaded to LiveKit Cloud. | 5 minutes of audio per minute |
+
+#### Retention window
+
+In addition to the rate limits above, all agent observability data is subject to a **30-day retention window**. See the [agent observability guide](https://docs.livekit.io/agents/observability.md#retention-window) for more information.
 
 ### Egress time limits
 

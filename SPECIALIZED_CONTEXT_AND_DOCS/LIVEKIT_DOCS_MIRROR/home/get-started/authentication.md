@@ -435,7 +435,7 @@ fn create_token() -> Result<String, access_token::AccessTokenError> {
 
 ## Room configuration
 
-You can create an access token for a user that includes room configuration options. When a room is created for a user, the room is created using the configuration stored in the token. For example, you can use this to [explicitly dispatch an agent](https://docs.livekit.io/agents/worker/agent-dispatch.md) when a user joins a room.
+You can create an access token for a user that includes room configuration options. When a room is created for a user, the room is created using the configuration stored in the token. For example, you can use this to [explicitly dispatch an agent](https://docs.livekit.io/agents/server/agent-dispatch.md) when a user joins a room.
 
 For the full list of `RoomConfiguration` fields, see [RoomConfiguration](https://docs.livekit.io/reference/server/server-apis.md#roomconfiguration).
 

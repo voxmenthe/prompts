@@ -47,5 +47,5 @@ def validate_input(cls, values)
 
 Validate input for Audio, expecting 'data' and 'audio_format' keys in dictionary.
 
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/adapters/types/audio.py` (lines 20–112)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/adapters/types/audio.py` (lines 25–123)
 

@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/entity_extraction/index.ipynb on 2025-11-06T02:07:55.142021Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/entity_extraction/index.ipynb on 2025-11-23T23:34:13.849249Z -->
 
 # Tutorial: Entity Extraction
 
@@ -143,7 +143,7 @@ Then, we configure DSPy to use a particular language model (`gpt-4o-mini`) for a
 Specifically, we'll:
 - Create a `PeopleExtraction` DSPy Signature to specify the input (`tokens`) and output (`extracted_people`) fields.
 - Define a `people_extractor` program that uses DSPy's built-in `dspy.ChainOfThought` module to implement the `PeopleExtraction` signature. The program extracts entities referring to people from a list of input tokens using language model (LM) prompting.
-- Use the `dspy.LM` class and `dspy.settings.configure()` method to configure the language model that DSPy will use when invoking the program.
+- Use the `dspy.LM` class and `dspy.configure()` method to configure the language model that DSPy will use when invoking the program.
 
 ```python
 from typing import List
@@ -163,7 +163,7 @@ Here, we tell DSPy to use OpenAI's `gpt-4o-mini` model in our program. To authen
 
 ```python
 lm = dspy.LM(model="openai/gpt-4o-mini")
-dspy.settings.configure(lm=lm)
+dspy.configure(lm=lm)
 ```
 
 ## Define Metric and Evaluation Functions

@@ -261,13 +261,17 @@ In order to publish an audio track, you need to determine the sample rate and nu
 import numpy as np
 
 from livekit import agents,rtc
+from livekit.agents import AgentServer
 
 SAMPLE_RATE = 48000
 NUM_CHANNELS = 1 # mono audio
 AMPLITUDE = 2 ** 8 - 1
 SAMPLES_PER_CHANNEL = 480 # 10 ms at 48kHz
 
-async def entrypoint(ctx: agents.JobContext):
+server = AgentServer()
+
+@server.rtc_session()
+async def my_agent(ctx: agents.JobContext):
 
     source = rtc.AudioSource(SAMPLE_RATE, NUM_CHANNELS)
     track = rtc.LocalAudioTrack.create_audio_track("example-track", source)
@@ -314,7 +318,7 @@ For audio examples using the LiveKit SDK, see the following in the GitHub reposi
 
 Agents publish data to their tracks as a continuous live feed. Video streams can transmit data in any of [11 buffer encodings](https://github.com/livekit/python-sdks/blob/main/livekit-rtc/livekit/rtc/_proto/video_frame_pb2.pyi#L93). When publishing video tracks, you need to establish the frame rate and buffer encoding of the video beforehand.
 
-In this example, the agent connects to the room and starts publishing a solid color frame at 10 frames per second (FPS). Copy the following code into your `entrypoint` function:
+In this example, the agent connects to the room and starts publishing a solid color frame at 10 frames per second (FPS). Copy the following code into your entrypoint function:
 
 **Python**:
 

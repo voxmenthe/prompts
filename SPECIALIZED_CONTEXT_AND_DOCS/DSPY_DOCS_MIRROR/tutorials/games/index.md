@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/games/index.ipynb on 2025-11-06T02:07:55.146801Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/games/index.ipynb on 2025-11-23T23:34:13.853230Z -->
 
 # Tutorial: Fine-tuning Agents
 
@@ -488,7 +488,9 @@ You move the box 2 to the dresser 1.
 
 If you want to load and use the agent program, you can do that as follows.
 
+> **⚠️ Security Warning:** Loading `.pkl` files can execute arbitrary code and may be dangerous. Only save and load pickle files from trusted sources in secure environments. Consider using JSON format when possible for safer serialization.
+
 ```python
 loaded = Agent()
-loaded.load('finetuned_4o_mini_001.pkl')
+loaded.load('finetuned_4o_mini_001.pkl', allow_pickle=True)
 ```

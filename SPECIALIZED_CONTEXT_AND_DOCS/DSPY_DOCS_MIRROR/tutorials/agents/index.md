@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/agents/index.ipynb on 2025-11-06T02:07:55.101922Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/agents/index.ipynb on 2025-11-23T23:34:13.798997Z -->
 
 # Tutorial: Agents
 
@@ -69,7 +69,7 @@ import random
 from dspy.datasets import DataLoader
 
 kwargs = dict(fields=("claim", "supporting_facts", "hpqa_id", "num_hops"), input_keys=("claim",))
-hover = DataLoader().from_huggingface(dataset_name="hover-nlp/hover", split="train", trust_remote_code=True, **kwargs)
+hover = DataLoader().from_huggingface(dataset_name="vincentkoc/hover-parquet", split="train", trust_remote_code=True, **kwargs)
 
 hpqa_ids = set()
 hover = [

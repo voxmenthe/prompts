@@ -8,19 +8,23 @@ LiveKit docs › Getting started › Telephony integration
 
 ## Overview
 
-It's easy to integrate LiveKit Agents with telephony systems using Session Initiation Protocol (SIP). You can choose to support inbound calls, outbound calls, or both. LiveKit also provides features including DTMF, SIP REFER, and more.
+You can integrate LiveKit Agents with telephony systems using Session Initiation Protocol (SIP). You can choose to support inbound calls, outbound calls, or both. LiveKit also provides features including DTMF, SIP REFER, and more. For a full list of supported features, see the [SIP features](https://docs.livekit.io/sip.md#features).
 
 Telephony integration requires no significant changes to your existing agent code, as phone calls are simply bridged into LiveKit rooms using a special participant type.
+
+[Video: LiveKit Phone Numbers](https://www.youtube.com/watch?v=KJ1CgZ0iZbY)
 
 ## Getting started
 
 1. Follow the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md) to get a simple agent up and running.
-2. Set up a SIP trunk for your project.
+2. Set up a SIP trunk for your project or purchase a phone number through [LiveKit Phone Numbers](https://docs.livekit.io/sip/cloud/phone-numbers.md) for inbound calls.
 3. Return to this guide to enable inbound and outbound calls.
 
 - **[Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md)**: Follow the Voice AI quickstart to get your agent up and running.
 
-- **[SIP trunk setup](https://docs.livekit.io/sip/quickstarts/configuring-sip-trunk.md)**: Configure your SIP trunk provider to route calls in LiveKit.
+- **[LiveKit Phone Numbers](https://docs.livekit.io/sip/cloud/phone-numbers.md)**: Purchase a phone number through LiveKit Phone Numbers for inbound calls.
+
+- **[SIP trunk setup](https://docs.livekit.io/sip/quickstarts/configuring-sip-trunk.md)**: If you're using a SIP provider or making outbound calls, configure your provider to route calls to LiveKit.
 
 ## Agent dispatch
 
@@ -31,14 +35,15 @@ To enable explicit dispatch, give your agent a name. This disables automatic dis
 ** Filename: `agent.py`**
 
 ```python
-# ... your existing agent code ...
+
+server = AgentServer()
+
+@server.rtc_session(agent_name="my-telephony-agent")
+async def my_agent(ctx: JobContext):
+    # ... your existing agent code ...
 
 if __name__ == "__main__":
-    agents.cli.run_app(agents.WorkerOptions(
-        entrypoint_fnc=entrypoint,
-        # agent_name is required for explicit dispatch
-        agent_name="my-telephony-agent"
-    ))
+    agents.cli.run_app(server)
 
 ```
 
@@ -58,15 +63,15 @@ if __name__ == "__main__":
 
 > 💡 **Full examples**
 > 
-> See the docs on [agent dispatch](https://docs.livekit.io/agents/worker/agent-dispatch.md) for more complete examples.
+> See the docs on [agent dispatch](https://docs.livekit.io/agents/server/agent-dispatch.md) for more complete examples.
 
 ## Inbound calls
 
-After you configure your [inbound trunk](https://docs.livekit.io/sip/trunk-inbound.md) follow these steps to enable inbound calling for your agent.
+The fastest way to get started with inbound calling is to use [LiveKit Phone Numbers](https://docs.livekit.io/sip/cloud/phone-numbers.md). If you're using a third-party SIP provider, follow the instructions in the [SIP trunk setup](https://docs.livekit.io/sip/quickstarts/configuring-sip-trunk.md) guide to configure your SIP trunk and create an [inbound trunk](https://docs.livekit.io/sip/trunk-inbound.md).
 
 ### Dispatch rules
 
-The following rule routes all inbound calls to a new room and dispatches your agent to that room:
+Create a dispatch rule to route inbound calls to your agent. The following rule routes all inbound calls to a new room and dispatches your agent to that room:
 
 ** Filename: `dispatch-rule.json`**
 
@@ -306,7 +311,7 @@ lk dispatch create \
 ```python
 await lkapi.agent_dispatch.create_dispatch(
     api.CreateAgentDispatchRequest(
-        # Use the agent name you set in the WorkerOptions
+        # Use the agent name you set in the realtime_session decorator
         agent_name="my-telephony-agent", 
 
         # The room name to use. This should be unique for each call
@@ -550,6 +555,8 @@ The following recipes are particular helpful to learn more about telephony integ
 The following guides provide more information on building voice agents for telephony.
 
 - **[Workflows](https://docs.livekit.io/agents/build/workflows.md)**: Orchestrate detailed workflows such as collecting credit card information over the phone.
+
+- **[Handling DTMF](https://docs.livekit.io/sip/dtmf.md)**: Sending and receiving DTMF in LiveKit telephony apps.
 
 - **[Tool definition & use](https://docs.livekit.io/agents/build/tools.md)**: Extend your agent's capabilities with tools.
 

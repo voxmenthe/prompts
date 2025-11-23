@@ -39,10 +39,13 @@ Use the plugin in an `AgentSession`. For example, you can use this avatar in the
 
 ```python
 from livekit import agents
-from livekit.agents import AgentSession, RoomOutputOptions
+from livekit.agents import AgentServer, AgentSession, RoomOutputOptions
 from livekit.plugins import simli
 
-async def entrypoint(ctx: agents.JobContext):
+server = AgentServer()
+
+@server.rtc_session()
+async def my_agent(ctx: agents.JobContext):
    session = AgentSession(
       # ... stt, llm, tts, etc.
    )

@@ -8,7 +8,7 @@ LiveKit docs › Reference › SIP API
 
 ## Overview
 
-LiveKit has built-in APIs that let you to manage SIP trunks, dispatch rules, and SIP participants. The SIP API is available with LiveKit server SDKs and CLI:
+LiveKit has built-in APIs that let you manage SIP trunks, dispatch rules, and SIP participants. These APIs are available with LiveKit server SDKs and CLI:
 
 - [Go SIP client](https://pkg.go.dev/github.com/livekit/server-sdk-go/v2#SIPClient)
 - [JS SIP client](https://docs.livekit.io/server-sdk-js/classes/SipClient.html.md)
@@ -21,11 +21,13 @@ LiveKit has built-in APIs that let you to manage SIP trunks, dispatch rules, and
 > 
 > Requests to the SIP API require the SIP `admin` permission unless otherwise noted. To create a token with the appropriate grant, see [SIP grant](https://docs.livekit.io/home/get-started/authentication.md#sip-grant).
 
+For phone number management APIs, see [Phone Number APIs](https://docs.livekit.io/sip/phone-numbers-api.md).
+
 To learn more about additional APIs, see [Server APIs](https://docs.livekit.io/reference/server/server-apis.md).
 
 ### Using endpoints
 
-The SIP API is accessible via `/twirp/livekit.SIP/<MethodName>`. For example, if you're using LiveKit Cloud the following URL is for the [CreateSIPInboundTrunk](#createsipinoundtrunk) API endpoint:
+The SIP API is accessible via `/twirp/livekit.SIP/<MethodName>`. For example, if you're using LiveKit Cloud the following URL is for the [CreateSIPInboundTrunk](#createsipinboundtrunk) API endpoint:
 
 ```shell
 https://%{projectDomain}%/twirp/livekit.SIP/CreateSIPInboundTrunk
@@ -168,7 +170,7 @@ Returns [SIPParticipantInfo](#sipparticipantinfo)
 | krisp_enabled | bool |  | True to enable [Krisp noise cancellation](https://docs.livekit.io/sip.md#noise-cancellation-for-calls) for the callee. |
 | media_encryption | [SIPMediaEncryption](#sipmediaencryption) |  | Whether or not to encrypt media. |
 | wait_until_answered | bool |  | If true, return after the call is answered — including if it goes to voicemail. |
-| display_name | string |  | Optional display name for the caller's number. If empty, results in a CNAM lookup by destination carrier. If ommitted, defaults to caller's number. |
+| display_name | string |  | Optional display name for the caller's number. If empty, results in a CNAM lookup by destination carrier. If ommitted, defaults to caller's number. For more information, see [Custom caller ID](https://docs.livekit.io/sip/outbound-calls.md#custom-caller-id). |
 
 ### DeleteSIPDispatchRule
 

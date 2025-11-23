@@ -1,4 +1,4 @@
-LiveKit docs › Getting started › Cloud
+LiveKit docs › Getting started › Cloud › Region pinning
 
 ---
 

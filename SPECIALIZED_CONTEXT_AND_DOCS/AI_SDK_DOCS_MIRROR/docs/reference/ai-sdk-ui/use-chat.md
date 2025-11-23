@@ -194,7 +194,7 @@ Initial chat messages to populate the conversation with.
 
 ({toolCall: ToolCall}) => void | Promise<void>
 
-Optional callback function that is invoked when a tool call is received. You must call addToolResult to provide the tool result.
+Optional callback function that is invoked when a tool call is received. You must call addToolOutput to provide the tool result.
 
 ### sendAutomaticallyWhen?:
 
@@ -239,6 +239,12 @@ True if the server has been disconnected, e.g. because of a network error.
 boolean
 
 True if errors during streaming caused the response to stop early.
+
+### finishReason?:
+
+'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'other' | 'unknown'
+
+The reason why the model finished generating the response. Undefined if the finish reason was not provided by the model.
 
 ### onError?:
 
@@ -366,7 +372,7 @@ Clears the error state.
 
 Function to resume an interrupted streaming response. Useful when a network error occurs during streaming.
 
-### addToolResult:
+### addToolOutput:
 
 (options: { tool: string; toolCallId: string; output: unknown } | { tool: string; toolCallId: string; state: "output-error", errorText: string }) => void
 

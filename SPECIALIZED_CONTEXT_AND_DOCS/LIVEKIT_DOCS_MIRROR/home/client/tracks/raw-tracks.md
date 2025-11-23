@@ -117,13 +117,13 @@ You can build and dispatch a programmatic participant with the Agents Framework.
 - An AI agent that can be automatically or explicitly dispatched to rooms.
 - A programmatic participant that's automatically dispatched to rooms.
 
-Use the Agents Framework [`entrypoint`](https://docs.livekit.io/agents/worker/job.md#entrypoint) function for your audio processing logic.
+Use the Agents Framework [entrypoint](https://docs.livekit.io/agents/server/job.md#entrypoint) function for your audio processing logic.
 
 To learn more, see the following links.
 
 - **[Agents Framework](https://docs.livekit.io/agents.md)**: Build voice AI agents and programmatic participants to process and publish media from the backend.
 
-- **[Echo Agent](https://github.com/livekit/agents/blob/main/examples/primitives/echo-agent.py)**: An example that uses the `entrypoint` function to echo back audio from a participant track.
+- **[Echo Agent](https://github.com/livekit/agents/blob/main/examples/primitives/echo-agent.py)**: An example that uses the entrypoint function to echo back audio from a participant track.
 
 ---
 

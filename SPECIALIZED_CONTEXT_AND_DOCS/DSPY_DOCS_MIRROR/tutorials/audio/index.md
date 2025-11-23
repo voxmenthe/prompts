@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/audio/index.ipynb on 2025-11-06T02:07:55.140339Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/audio/index.ipynb on 2025-11-23T23:34:13.848050Z -->
 
 # Tutorial: Using Audio in DSPy Programs
 
@@ -73,7 +73,7 @@ spoken_qa = dspy.ChainOfThought(SpokenQASignature)
 Now let's configure our LLM which can process input audio. 
 
 ```python
-dspy.settings.configure(lm=dspy.LM(model='gpt-4o-mini-audio-preview-2024-12-17'))
+dspy.configure(lm=dspy.LM(model='gpt-4o-mini-audio-preview-2024-12-17'))
 ```
 
 Note: Using `dspy.Audio` in signatures allows passing in audio directly to the model. 
@@ -217,7 +217,7 @@ class EmotionStylePrompter(dspy.Module):
         audio = generate_dspy_audio(raw_line, out.openai_instruction)
         return dspy.Prediction(audio=audio)
     
-dspy.settings.configure(lm=dspy.LM(model='gpt-4o-mini'))
+dspy.configure(lm=dspy.LM(model='gpt-4o-mini'))
 ```
 
 ### Define Evaluation Metric

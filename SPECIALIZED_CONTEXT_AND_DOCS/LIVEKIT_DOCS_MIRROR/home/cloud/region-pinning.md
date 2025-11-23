@@ -19,6 +19,10 @@ Signaling and transport protocols include region selection. Use this option with
 
 Clients connect to a region-specific endpoint. Use this option for telephony applications. To learn more, see [SIP cloud and region pinning](https://docs.livekit.io/sip/cloud.md).
 
+> ℹ️ **Agent deployment regions**
+> 
+> Region pinning only applies to LiveKit Cloud network traffic. To manage the regions where your agents themselves are deployed, see [Agent deployment regions](https://docs.livekit.io/agents/ops/deployment.md#regions).
+
 ## Protocol-based region pinning
 
 In protocol-based region pinning, region selection information is embedded in the initial signaling and transport messages. When pinning is enabled, if the initial connection is routed to a server outside the allowed regions, the request is rejected. The client then retries the connection using a server in one of the pinned regions.

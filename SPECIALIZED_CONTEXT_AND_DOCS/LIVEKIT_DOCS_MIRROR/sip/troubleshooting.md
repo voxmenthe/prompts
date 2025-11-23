@@ -84,10 +84,10 @@ This usually happens when the agent name is missing or incorrect in the dispatch
 
 Make sure the agent name matches in both of the following places:
 
-- When creating your agent: set `agent_name` in `WorkerOptions`. To learn more, see [Explicit agent dispatch](https://docs.livekit.io/agents/worker/agent-dispatch.md#explicit).
+- When creating your agent: set `agent_name` for `AgentServer`. To learn more, see [Explicit agent dispatch](https://docs.livekit.io/agents/server/agent-dispatch.md#explicit).
 - When creating your dispatch rule: set `agent_name` in `RoomAgentDispatch`. For an example, see [Caller dispatch rule (individual)](https://docs.livekit.io/sip/dispatch-rule.md#caller-dispatch-rule-individual-).
 
-To learn more, see [Agent dispatch](https://docs.livekit.io/agents/worker/agent-dispatch.md).
+To learn more, see [Agent dispatch](https://docs.livekit.io/agents/server/agent-dispatch.md).
 
 ## Outbound calls
 

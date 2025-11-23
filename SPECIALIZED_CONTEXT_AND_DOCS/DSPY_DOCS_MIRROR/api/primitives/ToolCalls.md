@@ -48,5 +48,5 @@ Example:
 ```python
 def validate_input(cls, data)
 ```
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/adapters/types/tool.py` (lines 258–381)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/adapters/types/tool.py` (lines 259–382)
 

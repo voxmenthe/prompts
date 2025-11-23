@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/image_generation_prompting/index.ipynb on 2025-11-06T02:07:55.154399Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/image_generation_prompting/index.ipynb on 2025-11-23T23:34:13.858719Z -->
 
 # Image Generation Prompt iteration
 
@@ -48,7 +48,7 @@ load_dotenv()
 from IPython.display import display
 
 lm = dspy.LM(model="gpt-4o-mini", temperature=0.5)
-dspy.settings.configure(lm=lm)
+dspy.configure(lm=lm)
 ```
 
 ```text

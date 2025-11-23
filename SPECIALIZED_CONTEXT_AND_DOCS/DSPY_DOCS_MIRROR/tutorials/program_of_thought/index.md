@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/program_of_thought/index.ipynb on 2025-11-06T02:07:55.093343Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/program_of_thought/index.ipynb on 2025-11-23T23:34:13.789832Z -->
 
 # Tutorial: ProgramOfThought
 
@@ -28,7 +28,7 @@ Let's use Meta's `Llama-3-70b-Instruct`. You can easily swap this out for [other
 ```python
 llama31_70b = dspy.LM("openai/meta-llama/Meta-Llama-3-70b-Instruct", api_base="API_BASE", api_key="None")
 
-dspy.settings.configure(lm=llama31_70b)
+dspy.configure(lm=llama31_70b)
 ```
 
 Let's now define our module with a brief signature that specifies the input question and output answer. We can then call `ProgramOfThought` on the signature and pass in our sample problem.

@@ -4,11 +4,15 @@ LIVEKIT_DOCS_MIRROR
 │   │   ├── turns
 │   │   │   ├── turn-detector.md
 │   │   │   └── vad.md
+│   │   ├── agents-handoffs.md
 │   │   ├── audio.md
 │   │   ├── events.md
 │   │   ├── external-data.md
 │   │   ├── metrics.md
 │   │   ├── nodes.md
+│   │   ├── prompting.md
+│   │   ├── sessions.md
+│   │   ├── tasks.md
 │   │   ├── testing.md
 │   │   ├── text.md
 │   │   ├── tools.md
@@ -203,6 +207,8 @@ LIVEKIT_DOCS_MIRROR
 │   │   ├── realtime.md
 │   │   ├── stt.md
 │   │   └── tts.md
+│   ├── observability
+│   │   └── data.md
 │   ├── ops
 │   │   ├── deployment
 │   │   │   ├── builds.md
@@ -212,9 +218,14 @@ LIVEKIT_DOCS_MIRROR
 │   │   │   └── secrets.md
 │   │   ├── deployment.md
 │   │   └── recording.md
+│   ├── server
+│   │   ├── agent-dispatch.md
+│   │   ├── job.md
+│   │   └── options.md
 │   ├── start
 │   │   ├── v0-migration
 │   │   │   └── nodejs.md
+│   │   ├── builder.md
 │   │   ├── frontend.md
 │   │   ├── playground.md
 │   │   ├── telephony.md
@@ -230,6 +241,8 @@ LIVEKIT_DOCS_MIRROR
 │   ├── build.md
 │   ├── integrations.md
 │   ├── models.md
+│   ├── observability.md
+│   ├── server.md
 │   └── worker.md
 ├── home
 │   ├── cli
@@ -255,6 +268,7 @@ LIVEKIT_DOCS_MIRROR
 │   │   │   └── subscribe.md
 │   │   ├── connect.md
 │   │   ├── data.md
+│   │   ├── encryption.md
 │   │   ├── events.md
 │   │   └── tracks.md
 │   ├── cloud
@@ -320,6 +334,8 @@ LIVEKIT_DOCS_MIRROR
 │   ├── ivr-navigator.md
 │   └── moviefone.md
 ├── sip
+│   ├── cloud
+│   │   └── phone-numbers.md
 │   ├── quickstarts
 │   │   ├── configuring-plivo-trunk.md
 │   │   ├── configuring-sip-trunk.md
@@ -335,6 +351,7 @@ LIVEKIT_DOCS_MIRROR
 │   ├── hd-voice.md
 │   ├── making-calls.md
 │   ├── outbound-calls.md
+│   ├── phone-numbers-api.md
 │   ├── secure-trunking.md
 │   ├── sip-participant.md
 │   ├── transfer-cold.md

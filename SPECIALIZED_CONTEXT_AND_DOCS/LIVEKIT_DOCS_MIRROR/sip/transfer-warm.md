@@ -429,7 +429,7 @@ After the supervisor is in the call room, the `SupportAgent` can provide an intr
 
 You can disconnect the `TransferAgent` before you move the supervisor to the call room. The `SupportAgent` can leave when the supervisor is moved into the call room, or after providing an introduction.
 
-To learn more, see [Disconnecting the agent](https://docs.livekit.io/agents/worker/job.md#disconnecting-the-agent).
+To learn more, see [Disconnecting the agent](https://docs.livekit.io/agents/server/job.md#disconnecting-the-agent).
 
 ## Example
 

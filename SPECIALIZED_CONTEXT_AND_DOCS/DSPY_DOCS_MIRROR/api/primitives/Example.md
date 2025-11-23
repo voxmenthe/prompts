@@ -141,5 +141,5 @@ def with_inputs(self, *keys)
 ```python
 def without(self, *keys)
 ```
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/primitives/example.py` (lines 1–207)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/primitives/example.py` (lines 4–213)
 

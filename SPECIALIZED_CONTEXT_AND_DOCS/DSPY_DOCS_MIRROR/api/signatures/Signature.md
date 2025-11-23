@@ -211,5 +211,5 @@ Args:
 Returns:
     A new Signature class (not an instance) with the updated field information.
 
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/signatures/signature.py` (lines 240–485)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/signatures/signature.py` (lines 261–506)
 

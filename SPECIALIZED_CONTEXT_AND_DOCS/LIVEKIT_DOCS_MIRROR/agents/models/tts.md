@@ -94,7 +94,7 @@ The LiveKit Agents framework also includes a variety of open source [plugins](ht
 | [Azure OpenAI](https://docs.livekit.io/agents/models/tts/plugins/azure-openai.md) | ✓ | — |
 | [Baseten](https://docs.livekit.io/agents/models/tts/plugins/baseten.md) | ✓ | — |
 | [Cartesia](https://docs.livekit.io/agents/models/tts/plugins/cartesia.md) | ✓ | ✓ |
-| [Deepgram](https://docs.livekit.io/agents/models/tts/plugins/deepgram.md) | ✓ | — |
+| [Deepgram](https://docs.livekit.io/agents/models/tts/plugins/deepgram.md) | ✓ | ✓ |
 | [ElevenLabs](https://docs.livekit.io/agents/models/tts/plugins/elevenlabs.md) | ✓ | ✓ |
 | [Gemini](https://docs.livekit.io/agents/models/tts/plugins/gemini.md) | ✓ | — |
 | [Google Cloud](https://docs.livekit.io/agents/models/tts/plugins/google.md) | ✓ | — |
@@ -132,11 +132,16 @@ Here is an example of a standalone TTS app:
 
 ```python
 from livekit import agents, rtc
+from livekit.agents import AgentServer
 from livekit.agents.tts import SynthesizedAudio
 from livekit.plugins import cartesia
 from typing import AsyncIterable
 
-async def entrypoint(ctx: agents.JobContext):
+
+server = AgentServer()
+
+@server.rtc_session()
+async def my_agent(ctx: agents.JobContext):
     text_stream: AsyncIterable[str] = ... # you need to provide a stream of text
     audio_source = rtc.AudioSource(44100, 1)
 
@@ -160,7 +165,7 @@ async def entrypoint(ctx: agents.JobContext):
             await audio_source.capture_frame(a.audio.frame)
 
 if __name__ == "__main__":
-    agents.cli.run_app(agents.WorkerOptions(entrypoint_fnc=entrypoint))
+    agents.cli.run_app(server)
 
 ```
 

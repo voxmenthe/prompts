@@ -6,6 +6,17 @@
 class ChatAdapter(callbacks=None, use_native_function_calling=False, native_response_types=None, use_json_adapter_fallback=True)
 ```
 
+Default Adapter for most language models.
+
+The ChatAdapter formats DSPy signatures into a format compatible with most language models.
+It uses delimiter patterns like `[[ ## field_name ## ]]` to clearly separate input and output fields in
+the message content.
+
+Key features:
+    - Structures inputs and outputs using field header markers for clear field delineation.
+    - Provides automatic fallback to JSONAdapter if the chat format fails.
+
+
 ### __call__
 
 ```python
@@ -112,5 +123,5 @@ Note:
     This is a more lightweight version of `format_field_structure` specifically designed
     for inline reminders within chat messages.
 
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/adapters/chat_adapter.py` (lines 28–270)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/adapters/chat_adapter.py` (lines 29–291)
 
