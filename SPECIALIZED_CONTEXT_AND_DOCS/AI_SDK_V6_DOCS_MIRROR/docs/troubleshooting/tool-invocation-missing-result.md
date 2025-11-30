@@ -6,7 +6,7 @@ When using `generateText()` or `streamText()`, you may encounter the error "Tool
 
 ## Cause
 
-The error occurs when you define a tool without an `execute` function and don't provide the result through other means (like `useChat`'s `onToolCall` or `addToolResult` functions).
+The error occurs when you define a tool without an `execute` function and don't provide the result through other means (like `useChat`'s `onToolCall` or `addToolOutput` functions).
 
 Each time a tool is invoked, the model expects to receive a result before continuing the conversation. Without a result, the model cannot determine if the tool call succeeded or failed and the conversation state becomes invalid.
 
@@ -33,7 +33,7 @@ const tools = {
 };
 ```
 
-2. Client-side execution with `useChat` (omitting the `execute` function), you must provide results using `addToolResult`:
+2. Client-side execution with `useChat` (omitting the `execute` function), you must provide results using `addToolOutput`:
 
 ```tsx
 import { useChat } from '@ai-sdk/react';
@@ -42,7 +42,7 @@ import {
   lastAssistantMessageIsCompleteWithToolCalls,
 } from 'ai';
 
-const { messages, sendMessage, addToolResult } = useChat({
+const { messages, sendMessage, addToolOutput } = useChat({
   // Automatically submit when all tool results are available
   sendAutomaticallyWhen: lastAssistantMessageIsCompleteWithToolCalls,
 
@@ -53,14 +53,14 @@ const { messages, sendMessage, addToolResult } = useChat({
         const result = await getLocationData();
 
         // Important: Don't await inside onToolCall to avoid deadlocks
-        addToolResult({
+        addToolOutput({
           tool: 'getLocation',
           toolCallId: toolCall.toolCallId,
           output: result,
         });
       } catch (err) {
         // Important: Don't await inside onToolCall to avoid deadlocks
-        addToolResult({
+        addToolOutput({
           tool: 'getLocation',
           toolCallId: toolCall.toolCallId,
           state: 'output-error',
@@ -73,7 +73,7 @@ const { messages, sendMessage, addToolResult } = useChat({
 ```
 ```tsx
 // For interactive UI elements:
-const { messages, sendMessage, addToolResult } = useChat({
+const { messages, sendMessage, addToolOutput } = useChat({
   transport: new DefaultChatTransport({ api: '/api/chat' }),
   sendAutomaticallyWhen: lastAssistantMessageIsCompleteWithToolCalls,
 });
@@ -81,7 +81,7 @@ const { messages, sendMessage, addToolResult } = useChat({
 // Inside your JSX, when rendering tool calls:
 <button
   onClick={() =>
-    addToolResult({
+    addToolOutput({
       tool: 'myTool',
       toolCallId, // must provide tool call ID
       output: {

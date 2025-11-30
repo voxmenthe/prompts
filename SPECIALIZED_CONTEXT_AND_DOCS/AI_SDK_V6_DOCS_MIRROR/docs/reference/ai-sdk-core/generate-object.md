@@ -12,7 +12,7 @@ import { generateObject } from 'ai';
 import { z } from 'zod';
 
 const { object } = await generateObject({
-  model: openai('gpt-4.1'),
+  model: 'anthropic/claude-sonnet-4.5',
   schema: z.object({
     recipe: z.object({
       name: z.string(),
@@ -36,7 +36,7 @@ import { generateObject } from 'ai';
 import { z } from 'zod';
 
 const { object } = await generateObject({
-  model: openai('gpt-4.1'),
+  model: 'anthropic/claude-sonnet-4.5',
   output: 'array',
   schema: z.object({
     name: z.string(),
@@ -58,7 +58,7 @@ and provide the list of possible values in the `enum` parameter.
 import { generateObject } from 'ai';
 
 const { object } = await generateObject({
-  model: 'openai/gpt-4.1',
+  model: 'anthropic/claude-sonnet-4.5',
   output: 'enum',
   enum: ['action', 'comedy', 'drama', 'horror', 'sci-fi'],
   prompt:
@@ -75,7 +75,7 @@ import { openai } from '@ai-sdk/openai';
 import { generateObject } from 'ai';
 
 const { object } = await generateObject({
-  model: openai('gpt-4.1'),
+  model: 'anthropic/claude-sonnet-4.5',
   output: 'no-schema',
   prompt: 'Generate a lasagna recipe.',
 });

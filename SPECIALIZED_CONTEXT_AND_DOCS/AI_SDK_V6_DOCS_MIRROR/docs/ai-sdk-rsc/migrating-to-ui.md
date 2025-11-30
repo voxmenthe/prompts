@@ -104,7 +104,7 @@ export async function POST(request) {
   const { messages } = await request.json();
 
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: 'anthropic/claude-sonnet-4.5',
     system: 'you are a friendly assistant!',
     messages,
     tools: {
@@ -217,7 +217,7 @@ export async function POST(request) {
   const { messages } = await request.json();
 
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: 'anthropic/claude-sonnet-4.5',
     system: 'you are a friendly assistant!',
     messages,
     tools: {
@@ -486,7 +486,7 @@ export async function POST(request) {
   const coreMessages = convertToModelMessages(messages);
 
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: 'anthropic/claude-sonnet-4.5',
     system: 'you are a friendly assistant!',
     messages: coreMessages,
     onFinish: async ({ response }) => {
@@ -610,7 +610,7 @@ export async function generateSampleNotifications() {
 
   (async () => {
     const { partialObjectStream } = streamObject({
-      model: openai('gpt-4o'),
+      model: 'anthropic/claude-sonnet-4.5',
       system: 'generate sample ios messages for testing',
       prompt: 'messages from a family group chat during diwali, max 4',
       schema: notificationsSchema,
@@ -675,7 +675,7 @@ export async function POST(req: Request) {
   const context = await req.json();
 
   const result = streamObject({
-    model: openai('gpt-4.1'),
+    model: 'anthropic/claude-sonnet-4.5',
     schema: notificationSchema,
     prompt:
       `Generate 3 notifications for a messages app in this context:` + context,

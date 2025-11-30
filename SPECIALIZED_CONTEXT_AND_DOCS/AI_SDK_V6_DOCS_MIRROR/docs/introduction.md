@@ -12,11 +12,9 @@ For example, here’s how you can generate text with various models using the AI
 
 import { generateText } from "ai"
 
-import { xai } from "@ai-sdk/xai"
-
 const { text } = await generateText({
 
-model: xai("grok-4"),
+model: "google/gemini-3-pro-preview",
 
 prompt: "What is love?"
 
@@ -33,15 +31,16 @@ The AI SDK has two main libraries:
 
 The AI SDK supports [multiple model providers](/providers).
 
-- [xAI Grok Image Input Image Generation Object Generation Tool Usage Tool Streaming](/providers/ai-sdk-providers/xai)
+- [Vercel AI Gateway Image Input Image Generation Object Generation Tool Usage Tool Streaming](/providers/ai-sdk-providers/ai-gateway)
 - [OpenAI Image Input Image Generation Object Generation Tool Usage Tool Streaming](/providers/ai-sdk-providers/openai)
-- [Azure Image Input Object Generation Tool Usage Tool Streaming](/providers/ai-sdk-providers/azure)
 - [Anthropic Image Input Object Generation Tool Usage Tool Streaming](/providers/ai-sdk-providers/anthropic)
+- [Google Generative AI Image Input Object Generation Tool Usage Tool Streaming](/providers/ai-sdk-providers/google-generative-ai)
+- [xAI Grok Image Input Image Generation Object Generation Tool Usage Tool Streaming](/providers/ai-sdk-providers/xai)
+- [Azure Image Input Object Generation Tool Usage Tool Streaming](/providers/ai-sdk-providers/azure)
 - [Amazon Bedrock Image Input Image Generation Object Generation Tool Usage Tool Streaming](/providers/ai-sdk-providers/amazon-bedrock)
 - [Groq Image Input Object Generation Tool Usage Tool Streaming](/providers/ai-sdk-providers/groq)
 - [Fal AI Image Generation](/providers/ai-sdk-providers/fal)
 - [DeepInfra Image Input Object Generation Tool Usage Tool Streaming](/providers/ai-sdk-providers/deepinfra)
-- [Google Generative AI Image Input Object Generation Tool Usage Tool Streaming](/providers/ai-sdk-providers/google-generative-ai)
 - [Google Vertex AI Image Input Image Generation Object Generation Tool Usage Tool Streaming](/providers/ai-sdk-providers/google-vertex)
 - [Mistral Image Input Object Generation Tool Usage Tool Streaming](/providers/ai-sdk-providers/mistral)
 - [Together.ai Object Generation Tool Usage Tool Streaming](/providers/ai-sdk-providers/togetherai)
@@ -91,7 +90,7 @@ We've built some [templates](https://vercel.com/templates?type=ai) that include 
 
 ## Join our Community
 
-If you have questions about anything related to the AI SDK, you're always welcome to ask our community on [GitHub Discussions](https://github.com/vercel/ai/discussions).
+If you have questions about anything related to the AI SDK, you're always welcome to ask our community on [the Vercel Community](https://community.vercel.com/c/ai-sdk/62).
 
 ## `llms.txt` (for Cursor, Windsurf, Copilot, Claude etc.)
 

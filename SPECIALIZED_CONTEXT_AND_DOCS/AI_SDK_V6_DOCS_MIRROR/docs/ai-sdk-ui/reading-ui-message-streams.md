@@ -12,7 +12,7 @@ import { readUIMessageStream, streamText } from 'ai';
 
 async function main() {
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: 'anthropic/claude-sonnet-4.5',
     prompt: 'Write a short story about a robot.',
   });
 
@@ -35,7 +35,7 @@ import { z } from 'zod';
 
 async function handleToolCalls() {
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: 'anthropic/claude-sonnet-4.5',
     tools: {
       weather: tool({
         description: 'Get the weather in a location',
@@ -81,7 +81,7 @@ import { readUIMessageStream, streamText } from 'ai';
 
 async function resumeConversation(lastMessage: UIMessage) {
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: 'anthropic/claude-sonnet-4.5',
     messages: [
       { role: 'user', content: 'Continue our previous conversation.' },
     ],

@@ -295,5 +295,10 @@ for (const file of result.files) {
 | [Together.ai](/providers/ai-sdk-providers/togetherai#image-models) | `black-forest-labs/FLUX.1.1-pro` | 512x512, 768x768, 1024x1024 |
 | [Together.ai](/providers/ai-sdk-providers/togetherai#image-models) | `black-forest-labs/FLUX.1-pro` | 512x512, 768x768, 1024x1024 |
 | [Together.ai](/providers/ai-sdk-providers/togetherai#image-models) | `black-forest-labs/FLUX.1-schnell-Free` | 512x512, 768x768, 1024x1024 |
+| [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs#image-models) | `flux-kontext-pro` | From 3:7 (portrait) to 7:3 (landscape) |
+| [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs#image-models) | `flux-kontext-max` | From 3:7 (portrait) to 7:3 (landscape) |
+| [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs#image-models) | `flux-pro-1.1-ultra` | From 3:7 (portrait) to 7:3 (landscape) |
+| [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs#image-models) | `flux-pro-1.1` | From 3:7 (portrait) to 7:3 (landscape) |
+| [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs#image-models) | `flux-pro-1.0-fill` | From 3:7 (portrait) to 7:3 (landscape) |
 
 Above are a small subset of the image models supported by the AI SDK providers. For more, see the respective provider documentation.

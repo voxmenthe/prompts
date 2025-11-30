@@ -1,6 +1,6 @@
 # Type Error with onToolCall
 
-When using the `onToolCall` callback with TypeScript, you may encounter type errors when trying to pass tool properties directly to `addToolResult`.
+When using the `onToolCall` callback with TypeScript, you may encounter type errors when trying to pass tool properties directly to `addToolOutput`.
 
 ## Problem
 
@@ -8,9 +8,9 @@ TypeScript cannot automatically narrow the type of `toolCall.toolName` when you 
 
 ```tsx
 // ❌ This causes a TypeScript error
-const { messages, sendMessage, addToolResult } = useChat({
+const { messages, sendMessage, addToolOutput } = useChat({
   async onToolCall({ toolCall }) {
-    addToolResult({
+    addToolOutput({
       tool: toolCall.toolName, // Type 'string' is not assignable to type '"yourTool" | "yourOtherTool"'
       toolCallId: toolCall.toolCallId,
       output: someOutput,
@@ -31,7 +31,7 @@ Check if the tool is dynamic first to enable proper type narrowing:
 
 ```tsx
 // ✅ Correct approach with type narrowing
-const { messages, sendMessage, addToolResult } = useChat({
+const { messages, sendMessage, addToolOutput } = useChat({
   async onToolCall({ toolCall }) {
     // Check if it's a dynamic tool first
     if (toolCall.dynamic) {
@@ -39,7 +39,7 @@ const { messages, sendMessage, addToolResult } = useChat({
     }
 
     // Now TypeScript knows this is a static tool with the correct type
-    addToolResult({
+    addToolOutput({
       tool: toolCall.toolName, // No type error!
       toolCallId: toolCall.toolCallId,
       output: someOutput,
@@ -47,6 +47,10 @@ const { messages, sendMessage, addToolResult } = useChat({
   },
 });
 ```
+
+If you're still using the deprecated `addToolResult` method, this solution
+applies the same way. Consider migrating to `addToolOutput` for consistency
+with the latest API.
 
 ## Related
 

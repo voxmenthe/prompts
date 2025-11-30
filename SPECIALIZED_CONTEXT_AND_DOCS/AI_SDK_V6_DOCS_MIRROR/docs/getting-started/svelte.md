@@ -2,7 +2,7 @@
 
 The AI SDK is a powerful Typescript library designed to help developers build AI-powered applications.
 
-In this quickstart tutorial, you'll build a simple AI-chatbot with a streaming user interface. Along the way, you'll learn key concepts and techniques that are fundamental to using the SDK in your own projects.
+In this quickstart tutorial, you'll build a simple agent with a streaming chat user interface. Along the way, you'll learn key concepts and techniques that are fundamental to using the SDK in your own projects.
 
 If you are unfamiliar with the concepts of [Prompt Engineering](../advanced/prompt-engineering.md) and [HTTP Streaming](../advanced/why-streaming.md), you can optionally read these documents first.
 
@@ -11,9 +11,9 @@ If you are unfamiliar with the concepts of [Prompt Engineering](../advanced/prom
 To follow this quickstart, you'll need:
 
 - Node.js 18+ and pnpm installed on your local development machine.
-- An OpenAI API key.
+- A  [Vercel AI Gateway](https://vercel.com/ai-gateway)  API key.
 
-If you haven't obtained your OpenAI API key, you can do so by [signing up](https://platform.openai.com/signup/) on the OpenAI website.
+If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai&title=Go+to+AI+Gateway) on the Vercel website.
 
 ## Set Up Your Application
 
@@ -31,21 +31,20 @@ cd my-ai-app
 
 ### Install Dependencies
 
-Install `ai` and `@ai-sdk/openai`, the AI SDK's OpenAI provider.
+Install `ai` and `@ai-sdk/svelte`, the AI package and AI SDK's Svelte bindings. The AI SDK's  [Vercel AI Gateway provider](/providers/ai-sdk-providers/ai-gateway)  ships with the `ai` package. You'll also install `zod`, a schema validation library used for defining tool inputs.
 
-The AI SDK is designed to be a unified interface to interact with any large
-language model. This means that you can change model and providers with just
-one line of code! Learn more about [available providers](/providers) and
-[building custom providers](/providers/community-providers/custom-providers)
-in the [providers](/providers) section.
+This guide uses the Vercel AI Gateway provider so you can access hundreds of
+models from different providers with one API key, but you can switch to any
+provider or model by installing its package. Check out available [AI SDK
+providers](/providers/ai-sdk-providers) for more information.
 
 ```
-pnpm add -D ai @ai-sdk/openai @ai-sdk/svelte zod
+pnpm add -D ai@beta @ai-sdk/svelte@beta zod
 ```
 
-### Configure OpenAI API Key
+### Configure your AI Gateway API key
 
-Create a `.env.local` file in your project root and add your OpenAI API Key. This key is used to authenticate your application with the OpenAI service.
+Create a `.env.local` file in your project root and add your AI Gateway API key. This key authenticates your application with the Vercel AI Gateway.
 
 ```
 touch .env.local
@@ -54,34 +53,39 @@ touch .env.local
 Edit the `.env.local` file:
 
 ```env
-OPENAI_API_KEY=xxxxxxxxx
+AI_GATEWAY_API_KEY=xxxxxxxxx
 ```
 
-Replace `xxxxxxxxx` with your actual OpenAI API key.
+Replace `xxxxxxxxx` with your actual Vercel AI Gateway API key.
 
-Vite does not automatically load environment variables onto `process.env`, so
-you'll need to import `OPENAI_API_KEY` from `$env/static/private` in your code
-(see below).
+The AI SDK's Vercel AI Gateway Provider will default to using the
+`AI_GATEWAY_API_KEY` environment variable. Vite does not automatically load
+environment variables onto `process.env`, so you'll need to import
+`AI_GATEWAY_API_KEY` from `$env/static/private` in your code (see below).
 
 ## Create an API route
 
 Create a SvelteKit Endpoint, `src/routes/api/chat/+server.ts` and add the following code:
 
 ```tsx
-import { createOpenAI } from '@ai-sdk/openai';
-import { streamText, type UIMessage, convertToModelMessages } from 'ai';
+import {
+  streamText,
+  type UIMessage,
+  convertToModelMessages,
+  createGateway,
+} from 'ai';
 
-import { OPENAI_API_KEY } from '$env/static/private';
+import { AI_GATEWAY_API_KEY } from '$env/static/private';
 
-const openai = createOpenAI({
-  apiKey: OPENAI_API_KEY,
+const gateway = createGateway({
+  apiKey: AI_GATEWAY_API_KEY,
 });
 
 export async function POST({ request }) {
   const { messages }: { messages: UIMessage[] } = await request.json();
 
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: gateway('anthropic/claude-sonnet-4.5'),
     messages: convertToModelMessages(messages),
   });
 
@@ -89,16 +93,58 @@ export async function POST({ request }) {
 }
 ```
 
-If you see type errors with `OPENAI_API_KEY` or your `POST` function, run the
-dev server.
+If you see type errors with `AI_GATEWAY_API_KEY` or your `POST` function, run
+the dev server.
 
 Let's take a look at what is happening in this code:
 
-1. Create an OpenAI provider instance with the `createOpenAI` function from the `@ai-sdk/openai` package.
+1. Create a gateway provider instance with the `createGateway` function from the `ai` package.
 2. Define a `POST` request handler and extract `messages` from the body of the request. The `messages` variable contains a history of the conversation between you and the chatbot and provides the chatbot with the necessary context to make the next generation. The `messages` are of UIMessage type, which are designed for use in application UI - they contain the entire message history and associated metadata like timestamps.
 3. Call [`streamText`](../reference/ai-sdk-core/stream-text.md), which is imported from the `ai` package. This function accepts a configuration object that contains a `model` provider (defined in step 1) and `messages` (defined in step 2). You can pass additional [settings](../ai-sdk-core/settings.md) to further customise the model's behaviour. The `messages` key expects a `ModelMessage[]` array. This type is different from `UIMessage` in that it does not include metadata, such as timestamps or sender information. To convert between these types, we use the `convertToModelMessages` function, which strips the UI-specific metadata and transforms the `UIMessage[]` array into the `ModelMessage[]` format that the model expects.
 4. The `streamText` function returns a [`StreamTextResult`](../reference/ai-sdk-core/stream-text.md#result-object). This result object contains the  [`toUIMessageStreamResponse`](../reference/ai-sdk-core/stream-text.md#to-data-stream-response)  function which converts the result to a streamed response object.
 5. Return the result to the client to stream the response.
+
+## Choosing a Provider
+
+The AI SDK supports dozens of model providers through [first-party](/providers/ai-sdk-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and  [community](/providers/community-providers)  packages.
+
+This quickstart uses the [Vercel AI Gateway](https://vercel.com/ai-gateway) provider, which is the default [global provider](../ai-sdk-core/provider-management.md#global-provider-configuration). This means you can access models using a simple string in the model configuration:
+
+```ts
+model: 'anthropic/claude-sonnet-4.5';
+```
+
+You can also explicitly import and use the gateway provider in two other equivalent ways:
+
+```ts
+// Option 1: Import from 'ai' package (included by default)
+import { gateway } from 'ai';
+model: gateway('anthropic/claude-sonnet-4.5');
+
+// Option 2: Install and import from '@ai-sdk/gateway' package
+import { gateway } from '@ai-sdk/gateway';
+model: gateway('anthropic/claude-sonnet-4.5');
+```
+
+### Using other providers
+
+To use a different provider, install its package and create a provider instance. For example, to use OpenAI directly:
+
+```
+pnpm add @ai-sdk/openai@beta
+```
+
+```ts
+import { openai } from '@ai-sdk/openai';
+
+model: openai('gpt-5.1');
+```
+
+#### Updating the global provider
+
+You can change the default global provider so string model references use your preferred provider everywhere in your application. Learn more about [provider management](../ai-sdk-core/provider-management.md#global-provider-configuration).
+
+Pick the approach that best matches how you want to manage providers across your application.
 
 ## Wire up the UI
 
@@ -177,8 +223,8 @@ Let's enhance your chatbot by adding a simple weather tool.
 Modify your `src/routes/api/chat/+server.ts` file to include the new weather tool:
 
 ```tsx
-import { createOpenAI } from '@ai-sdk/openai';
 import {
+  createGateway,
   streamText,
   type UIMessage,
   convertToModelMessages,
@@ -187,17 +233,17 @@ import {
 } from 'ai';
 import { z } from 'zod';
 
-import { OPENAI_API_KEY } from '$env/static/private';
+import { AI_GATEWAY_API_KEY } from '$env/static/private';
 
-const openai = createOpenAI({
-  apiKey: OPENAI_API_KEY,
+const gateway = createGateway({
+  apiKey: AI_GATEWAY_API_KEY,
 });
 
 export async function POST({ request }) {
   const { messages }: { messages: UIMessage[] } = await request.json();
 
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: gateway('anthropic/claude-sonnet-4.5'),
     messages: convertToModelMessages(messages),
     tools: {
       weather: tool({
@@ -296,8 +342,8 @@ To solve this, you can enable multi-step tool calls using `stopWhen`. By default
 Modify your `src/routes/api/chat/+server.ts` file to include the `stopWhen` condition:
 
 ```ts
-import { createOpenAI } from '@ai-sdk/openai';
 import {
+  createGateway,
   streamText,
   type UIMessage,
   convertToModelMessages,
@@ -306,17 +352,17 @@ import {
 } from 'ai';
 import { z } from 'zod';
 
-import { OPENAI_API_KEY } from '$env/static/private';
+import { AI_GATEWAY_API_KEY } from '$env/static/private';
 
-const openai = createOpenAI({
-  apiKey: OPENAI_API_KEY,
+const gateway = createGateway({
+  apiKey: AI_GATEWAY_API_KEY,
 });
 
 export async function POST({ request }) {
   const { messages }: { messages: UIMessage[] } = await request.json();
 
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: gateway('anthropic/claude-sonnet-4.5'),
     messages: convertToModelMessages(messages),
     stopWhen: stepCountIs(5),
     tools: {
@@ -349,8 +395,8 @@ By setting `stopWhen: stepCountIs(5)`, you're allowing the model to use up to 5 
 Update your `src/routes/api/chat/+server.ts` file to add a new tool to convert the temperature from Fahrenheit to Celsius:
 
 ```tsx
-import { createOpenAI } from '@ai-sdk/openai';
 import {
+  createGateway,
   streamText,
   type UIMessage,
   convertToModelMessages,
@@ -359,17 +405,17 @@ import {
 } from 'ai';
 import { z } from 'zod';
 
-import { OPENAI_API_KEY } from '$env/static/private';
+import { AI_GATEWAY_API_KEY } from '$env/static/private';
 
-const openai = createOpenAI({
-  apiKey: OPENAI_API_KEY,
+const gateway = createGateway({
+  apiKey: AI_GATEWAY_API_KEY,
 });
 
 export async function POST({ request }) {
   const { messages }: { messages: UIMessage[] } = await request.json();
 
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: gateway('anthropic/claude-sonnet-4.5'),
     messages: convertToModelMessages(messages),
     stopWhen: stepCountIs(5),
     tools: {

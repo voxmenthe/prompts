@@ -250,7 +250,7 @@ async function implementFeature(featureRequest: string) {
       }[file.changeType];
 
       const { object: change } = await generateObject({
-        model: 'openai/gpt-4o',
+        model: 'anthropic/claude-sonnet-4.5',
         schema: z.object({
           explanation: z.string(),
           code: z.string(),
@@ -304,7 +304,7 @@ async function translateWithFeedback(text: string, targetLanguage: string) {
   while (iterations < MAX_ITERATIONS) {
     // Evaluate current translation
     const { object: evaluation } = await generateObject({
-      model: 'openai/gpt-4o', // use a larger model to evaluate
+      model: 'anthropic/claude-sonnet-4.5', // use a larger model to evaluate
       schema: z.object({
         qualityScore: z.number().min(1).max(10),
         preservesTone: z.boolean(),
@@ -338,7 +338,7 @@ async function translateWithFeedback(text: string, targetLanguage: string) {
 
     // Generate improved translation based on feedback
     const { text: improvedTranslation } = await generateText({
-      model: 'openai/gpt-4o', // use a larger model
+      model: 'anthropic/claude-sonnet-4.5', // use a larger model
       system: 'You are an expert literary translator.',
       prompt: `Improve this translation based on the following feedback:
       ${evaluation.specificIssues.join('\n')}

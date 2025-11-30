@@ -11,7 +11,11 @@ import { createUIMessageStreamResponse } from "ai"
 ## Example
 
 ```tsx
-import { createUIMessageStream, createUIMessageStreamResponse } from 'ai';
+import {
+  createUIMessageStream,
+  createUIMessageStreamResponse,
+  streamText,
+} from 'ai';
 
 const response = createUIMessageStreamResponse({
   status: 200,
@@ -46,7 +50,7 @@ const response = createUIMessageStreamResponse({
 
       // Merge with LLM stream
       const result = streamText({
-        model: openai('gpt-4'),
+        model: 'anthropic/claude-sonnet-4.5',
         prompt: 'Say hello',
       });
 

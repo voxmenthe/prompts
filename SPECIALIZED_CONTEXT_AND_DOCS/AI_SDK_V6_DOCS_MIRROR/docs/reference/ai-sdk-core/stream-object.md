@@ -12,7 +12,7 @@ import { streamObject } from 'ai';
 import { z } from 'zod';
 
 const { partialObjectStream } = streamObject({
-  model: openai('gpt-4.1'),
+  model: 'anthropic/claude-sonnet-4.5',
   schema: z.object({
     recipe: z.object({
       name: z.string(),
@@ -40,7 +40,7 @@ import { streamObject } from 'ai';
 import { z } from 'zod';
 
 const { elementStream } = streamObject({
-  model: openai('gpt-4.1'),
+  model: 'anthropic/claude-sonnet-4.5',
   output: 'array',
   schema: z.object({
     name: z.string(),
@@ -64,7 +64,7 @@ import { openai } from '@ai-sdk/openai';
 import { streamObject } from 'ai';
 
 const { partialObjectStream } = streamObject({
-  model: openai('gpt-4.1'),
+  model: 'anthropic/claude-sonnet-4.5',
   output: 'no-schema',
   prompt: 'Generate a lasagna recipe.',
 });
@@ -84,7 +84,7 @@ and provide the list of possible values in the `enum` parameter.
 import { streamObject } from 'ai';
 
 const { partialObjectStream } = streamObject({
-  model: 'openai/gpt-4.1',
+  model: 'anthropic/claude-sonnet-4.5',
   output: 'enum',
   enum: ['action', 'comedy', 'drama', 'horror', 'sci-fi'],
   prompt:

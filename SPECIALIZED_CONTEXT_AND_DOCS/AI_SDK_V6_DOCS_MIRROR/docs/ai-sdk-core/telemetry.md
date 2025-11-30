@@ -17,7 +17,7 @@ You can then use the `experimental_telemetry` option to enable telemetry on spec
 
 ```ts
 const result = await generateText({
-  model: openai('gpt-4.1'),
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Write a short story about a cat.',
   experimental_telemetry: { isEnabled: true },
 });
@@ -36,7 +36,7 @@ and `metadata` to include additional information in the telemetry data.
 
 ```ts
 const result = await generateText({
-  model: openai('gpt-4.1'),
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Write a short story about a cat.',
   experimental_telemetry: {
     isEnabled: true,
@@ -57,7 +57,7 @@ you want your traces to use a `TracerProvider` other than the one provided by th
 ```ts
 const tracerProvider = new NodeTracerProvider();
 const result = await generateText({
-  model: openai('gpt-4.1'),
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Write a short story about a cat.',
   experimental_telemetry: {
     isEnabled: true,

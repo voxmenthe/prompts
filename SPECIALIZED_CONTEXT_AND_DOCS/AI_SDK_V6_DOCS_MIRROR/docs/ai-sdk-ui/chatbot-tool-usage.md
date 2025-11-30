@@ -15,10 +15,10 @@ The flow is as follows:
 4. All tool calls are forwarded to the client.
 5. Server-side tools are executed using their `execute` method and their results are forwarded to the client.
 6. Client-side tools that should be automatically executed are handled with the `onToolCall` callback.
-   You must call `addToolResult` to provide the tool result.
+   You must call `addToolOutput` to provide the tool result.
 7. Client-side tool that require user interactions can be displayed in the UI.
    The tool calls and results are available as tool invocation parts in the `parts` property of the last assistant message.
-8. When the user interaction is done, `addToolResult` can be used to add the tool result to the chat.
+8. When the user interaction is done, `addToolOutput` can be used to add the tool result to the chat.
 9. The chat can be configured to automatically submit when all tool results are available using `sendAutomaticallyWhen`.
    This triggers another iteration of this flow.
 
@@ -53,7 +53,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: 'anthropic/claude-sonnet-4.5',
     messages: convertToModelMessages(messages),
     tools: {
       // server-side tool with execute function:
@@ -97,16 +97,16 @@ There are three things worth mentioning:
 
 1. The [`onToolCall`](../reference/ai-sdk-ui/use-chat.md#on-tool-call) callback is used to handle client-side tools that should be automatically executed.
    In this example, the `getLocation` tool is a client-side tool that returns a random city.
-   You call `addToolResult` to provide the result (without `await` to avoid potential deadlocks).
+   You call `addToolOutput` to provide the result (without `await` to avoid potential deadlocks).
 
    Always check `if (toolCall.dynamic)` first in your `onToolCall` handler.
    Without this check, TypeScript will throw an error like: `Type 'string' is not assignable to type '"toolName1" | "toolName2"'` when you try to use
-   `toolCall.toolName` in `addToolResult`.
+   `toolCall.toolName` in `addToolOutput`.
 2. The [`sendAutomaticallyWhen`](../reference/ai-sdk-ui/use-chat.md#send-automatically-when) option with `lastAssistantMessageIsCompleteWithToolCalls` helper automatically submits when all tool results are available.
 3. The `parts` array of assistant messages contains tool parts with typed names like `tool-askForConfirmation`.
    The client-side tool `askForConfirmation` is displayed in the UI.
    It asks the user for confirmation and displays the result once the user confirms or denies the execution.
-   The result is added to the chat using `addToolResult` with the `tool` parameter for type safety.
+   The result is added to the chat using `addToolOutput` with the `tool` parameter for type safety.
 
 ```tsx
 'use client';
@@ -119,7 +119,7 @@ import {
 import { useState } from 'react';
 
 export default function Chat() {
-  const { messages, sendMessage, addToolResult } = useChat({
+  const { messages, sendMessage, addToolOutput } = useChat({
     transport: new DefaultChatTransport({
       api: '/api/chat',
     }),
@@ -137,7 +137,7 @@ export default function Chat() {
         const cities = ['New York', 'Los Angeles', 'Chicago', 'San Francisco'];
 
         // No await - avoids potential deadlocks
-        addToolResult({
+        addToolOutput({
           tool: 'getLocation',
           toolCallId: toolCall.toolCallId,
           output: cities[Math.floor(Math.random() * cities.length)],
@@ -174,7 +174,7 @@ export default function Chat() {
                         <div>
                           <button
                             onClick={() =>
-                              addToolResult({
+                              addToolOutput({
                                 tool: 'askForConfirmation',
                                 toolCallId: callId,
                                 output: 'Yes, confirmed.',
@@ -185,7 +185,7 @@ export default function Chat() {
                           </button>
                           <button
                             onClick={() =>
-                              addToolResult({
+                              addToolOutput({
                                 tool: 'askForConfirmation',
                                 toolCallId: callId,
                                 output: 'No, denied',
@@ -286,7 +286,7 @@ export default function Chat() {
 
 ### Error handling
 
-Sometimes an error may occur during client-side tool execution. Use the `addToolResult` method with a `state` of `output-error` and `errorText` value instead of `output` record the error.
+Sometimes an error may occur during client-side tool execution. Use the `addToolOutput` method with a `state` of `output-error` and `errorText` value instead of `output` record the error.
 
 ```tsx
 'use client';
@@ -299,7 +299,7 @@ import {
 import { useState } from 'react';
 
 export default function Chat() {
-  const { messages, sendMessage, addToolResult } = useChat({
+  const { messages, sendMessage, addToolOutput } = useChat({
     transport: new DefaultChatTransport({
       api: '/api/chat',
     }),
@@ -318,13 +318,13 @@ export default function Chat() {
           const weather = await getWeatherInformation(toolCall.input);
 
           // No await - avoids potential deadlocks
-          addToolResult({
+          addToolOutput({
             tool: 'getWeatherInformation',
             toolCallId: toolCall.toolCallId,
             output: weather,
           });
         } catch (err) {
-          addToolResult({
+          addToolOutput({
             tool: 'getWeatherInformation',
             toolCallId: toolCall.toolCallId,
             state: 'output-error',
@@ -385,7 +385,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: 'anthropic/claude-sonnet-4.5',
     messages: convertToModelMessages(messages),
     // toolCallStreaming is enabled by default in v5
     // ...
@@ -473,7 +473,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: 'anthropic/claude-sonnet-4.5',
     messages: convertToModelMessages(messages),
     tools: {
       getWeatherInformation: {

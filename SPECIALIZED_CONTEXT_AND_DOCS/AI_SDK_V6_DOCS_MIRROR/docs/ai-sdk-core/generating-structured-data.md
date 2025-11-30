@@ -27,7 +27,7 @@ import { generateObject } from 'ai';
 import { z } from 'zod';
 
 const { object } = await generateObject({
-  model: 'openai/gpt-4.1',
+  model: 'anthropic/claude-sonnet-4.5',
   schema: z.object({
     recipe: z.object({
       name: z.string(),
@@ -119,7 +119,7 @@ import { streamObject } from 'ai';
 import { z } from 'zod';
 
 const { elementStream } = streamObject({
-  model: 'openai/gpt-4.1',
+  model: 'anthropic/claude-sonnet-4.5',
   output: 'array',
   schema: z.object({
     name: z.string(),
@@ -148,7 +148,7 @@ Enum output is only available with `generateObject`.
 import { generateObject } from 'ai';
 
 const { object } = await generateObject({
-  model: 'openai/gpt-4.1',
+  model: 'anthropic/claude-sonnet-4.5',
   output: 'enum',
   enum: ['action', 'comedy', 'drama', 'horror', 'sci-fi'],
   prompt:
@@ -169,7 +169,7 @@ and omit the schema parameter.
 import { generateObject } from 'ai';
 
 const { object } = await generateObject({
-  model: 'openai/gpt-4.1',
+  model: 'anthropic/claude-sonnet-4.5',
   output: 'no-schema',
   prompt: 'Generate a lasagna recipe.',
 });
@@ -184,7 +184,7 @@ import { generateObject } from 'ai';
 import { z } from 'zod';
 
 const { object } = await generateObject({
-  model: 'openai/gpt-4.1',
+  model: 'anthropic/claude-sonnet-4.5',
   schemaName: 'Recipe',
   schemaDescription: 'A recipe for a dish.',
   schema: z.object({

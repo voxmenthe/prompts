@@ -17,7 +17,7 @@ import { z } from 'zod';
 import { generateText, tool } from 'ai';
 
 const result = await generateText({
-  model: 'openai/gpt-4o',
+  model: 'anthropic/claude-sonnet-4.5',
   tools: {
     weather: tool({
       description: 'Get the weather in a location',
@@ -47,7 +47,7 @@ With the `stopWhen` setting, you can enable multi-step calls in `generateText` a
 The `stopWhen` conditions are only evaluated when the last step contains tool
 results.
 
-By default, when you use `generateText` or `streamText`, it triggers a single generation. This works well for many use cases where you can rely on the model's training data to generate a response. However, when you provide tools, the model now has the choice to either generate a normal text response, or generate a tool call. If the model generates a tool call, it's generation is complete and that step is finished.
+By default, when you use `generateText` or `streamText`, it triggers a single generation. This works well for many use cases where you can rely on the model's training data to generate a response. However, when you provide tools, the model now has the choice to either generate a normal text response, or generate a tool call. If the model generates a tool call, its generation is complete and that step is finished.
 
 You may want the model to generate text after the tool has been executed, either to summarize the tool results in the context of the users query. In many cases, you may also want the model to use multiple tools in a single response. This is where multi-step calls come in.
 
@@ -70,7 +70,7 @@ import { z } from 'zod';
 import { generateText, tool, stepCountIs } from 'ai';
 
 const { text, steps } = await generateText({
-  model: 'openai/gpt-4o',
+  model: 'anthropic/claude-sonnet-4.5',
   tools: {
     weather: tool({
       description: 'Get the weather in a location',
@@ -102,7 +102,7 @@ It contains all the text, tool calls, tool results, and more from each step.
 import { generateText } from 'ai';
 
 const { steps } = await generateText({
-  model: openai('gpt-4o'),
+  model: 'anthropic/claude-sonnet-4.5',
   stopWhen: stepCountIs(10),
   // ...
 });
@@ -245,7 +245,7 @@ When using both static and dynamic tools, use the `dynamic` flag for type narrow
 
 ```ts
 const result = await generateText({
-  model: 'openai/gpt-4o',
+  model: 'anthropic/claude-sonnet-4.5',
   tools: {
     // Static tool with known types
     weather: weatherTool,
@@ -323,7 +323,7 @@ import { z } from 'zod';
 import { generateText, tool } from 'ai';
 
 const result = await generateText({
-  model: 'openai/gpt-4o',
+  model: 'anthropic/claude-sonnet-4.5',
   tools: {
     weather: tool({
       description: 'Get the weather in a location',
@@ -426,7 +426,7 @@ import { z } from 'zod';
 import { generateText, tool } from 'ai';
 
 const result = await generateText({
-  model: 'openai/gpt-4.1',
+  model: 'anthropic/claude-sonnet-4.5',
   abortSignal: myAbortSignal, // signal that will be forwarded to tools
   tools: {
     weather: tool({
@@ -462,6 +462,48 @@ const result = await generateText({
     }),
   },
   experimental_context: { example: '123' },
+});
+```
+
+## Tool Input Lifecycle Hooks
+
+The following tool input lifecycle hooks are available:
+
+- **`onInputStart`**: Called when the model starts generating the input (arguments) for the tool call
+- **`onInputDelta`**: Called for each chunk of text as the input is streamed
+- **`onInputAvailable`**: Called when the complete input is available and validated
+
+`onInputStart` and `onInputDelta` are only called in streaming contexts (when using `streamText`). They are not called when using `generateText`.
+
+### Example
+
+```ts
+import { streamText, tool } from 'ai';
+import { z } from 'zod';
+
+const result = streamText({
+  model: 'anthropic/claude-sonnet-4.5',
+  tools: {
+    getWeather: tool({
+      description: 'Get the weather in a location',
+      inputSchema: z.object({
+        location: z.string().describe('The location to get the weather for'),
+      }),
+      execute: async ({ location }) => ({
+        temperature: 72 + Math.floor(Math.random() * 21) - 10,
+      }),
+      onInputStart: () => {
+        console.log('Tool call starting');
+      },
+      onInputDelta: ({ inputTextDelta }) => {
+        console.log('Received input chunk:', inputTextDelta);
+      },
+      onInputAvailable: ({ input }) => {
+        console.log('Complete input:', input);
+      },
+    }),
+  },
+  prompt: 'What is the weather in San Francisco?',
 });
 ```
 
@@ -509,7 +551,7 @@ async function generateSomething(prompt: string): Promise<{
   toolResults: Array<MyToolResult>; // typed tool results
 }> {
   return generateText({
-    model: openai('gpt-4.1'),
+    model: 'anthropic/claude-sonnet-4.5',
     tools: myToolSet,
     prompt,
   });
@@ -634,7 +676,7 @@ const result = await generateText({
     const tool = tools[toolCall.toolName as keyof typeof tools];
 
     const { object: repairedArgs } = await generateObject({
-      model: openai('gpt-4.1'),
+      model: 'anthropic/claude-sonnet-4.5',
       schema: tool.inputSchema,
       prompt: [
         `The model tried to call the tool "${toolCall.toolName}"` +
@@ -730,7 +772,7 @@ import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: openai('gpt-4.1'),
+  model: 'anthropic/claude-sonnet-4.5',
   tools: myToolSet,
   activeTools: ['firstTool'],
 });
@@ -751,7 +793,7 @@ Here is an example for converting a screenshot into a content part:
 
 ```ts
 const result = await generateText({
-  model: anthropic('claude-3-5-sonnet-20241022'),
+  model: 'anthropic/claude-sonnet-4.5',
   tools: {
     computer: anthropic.tools.computer_20241022({
       // ...

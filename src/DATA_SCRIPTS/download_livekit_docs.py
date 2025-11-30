@@ -57,6 +57,8 @@ REQUEST_TIMEOUT_SEC = 20
 MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 1.5
 POLITE_DELAY_SEC = 0.0
+# When True, delete local copies of pages that now return 404
+PRUNE_MISSING = False
 
 # Preview mode: set N > 0 to only preview first N entries
 DRY_RUN_PREVIEW_COUNT = 0
@@ -225,12 +227,16 @@ class DownloadResult:
     error: Optional[str]
     # One of: "created", "modified", "unchanged" (when content identical after normalization)
     change: Optional[str] = None
+    http_status: Optional[int] = None
+    missing: bool = False
+    pruned: bool = False
 
 
 def download_one(
     final_url: str,
     relative_path: str,
     output_root: Path,
+    prune_missing: bool = PRUNE_MISSING,
     max_retries: int = MAX_RETRIES,
     retry_backoff_sec: float = RETRY_BACKOFF_SEC,
     request_timeout: float = REQUEST_TIMEOUT_SEC,
@@ -271,8 +277,47 @@ def download_one(
                 local_path=str(local_path),
                 error=None,
                 change=change,
+                http_status=status,
             )
-        except (HTTPError, URLError, TimeoutError, socket.timeout) as exc:  # type: ignore[name-defined]
+        except HTTPError as exc:  # type: ignore[reportGeneralTypeIssues]
+            status_code = getattr(exc, "code", None)
+            if status_code == 404:
+                # Docs occasionally move/vanish; treat 404 as a missing page, not a hard failure.
+                pruned = False
+                if prune_missing and local_path.exists():
+                    try:
+                        local_path.unlink()
+                        pruned = True
+                    except Exception as delete_exc:
+                        last_error = f"HTTP 404 Not Found; prune failed: {delete_exc}"
+                        return DownloadResult(
+                            relative_path=relative_path,
+                            url_used=final_url,
+                            success=False,
+                            local_path=str(local_path),
+                            error=last_error,
+                            change=None,
+                            http_status=status_code,
+                            missing=True,
+                            pruned=False,
+                        )
+                return DownloadResult(
+                    relative_path=relative_path,
+                    url_used=final_url,
+                    success=False,
+                    local_path=str(local_path),
+                    error=f"HTTP 404 Not Found",
+                    change=None,
+                    http_status=status_code,
+                    missing=True,
+                    pruned=pruned,
+                )
+            last_error = f"{type(exc).__name__}: {exc}"
+            if attempt < max_retries:
+                time.sleep(retry_backoff_sec * attempt)
+            else:
+                pass
+        except (URLError, TimeoutError, socket.timeout) as exc:  # type: ignore[name-defined]
             last_error = f"{type(exc).__name__}: {exc}"
             if attempt < max_retries:
                 time.sleep(retry_backoff_sec * attempt)
@@ -346,13 +391,15 @@ def main() -> int:
     results: List[DownloadResult] = []
     succeeded = 0
     failed = 0
+    missing_count = 0
+    pruned_missing_count = 0
     created_count = 0
     modified_count = 0
     unchanged_count = 0
 
     def worker(item: Tuple[str, str, str]) -> DownloadResult:
         final_url, rel, _ = item
-        return download_one(final_url, rel, OUTPUT_ROOT)
+        return download_one(final_url, rel, OUTPUT_ROOT, prune_missing=PRUNE_MISSING)
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         future_to_item = {executor.submit(worker, item): item for item in plan}
@@ -375,8 +422,16 @@ def main() -> int:
                         tag = "same"
                     print(f"[ok:{tag}] {rel}")
                 else:
-                    failed += 1
-                    print(f"[err] {rel} :: {res.error}")
+                    if res.missing:
+                        missing_count += 1
+                        if res.pruned:
+                            pruned_missing_count += 1
+                            print(f"[miss] {rel} :: {res.error} (pruned local copy)")
+                        else:
+                            print(f"[miss] {rel} :: {res.error}")
+                    else:
+                        failed += 1
+                        print(f"[err] {rel} :: {res.error}")
             except Exception as exc:
                 failed += 1
                 print(f"[err] {rel} :: {type(exc).__name__}: {exc}")
@@ -391,6 +446,8 @@ def main() -> int:
             "total": len(plan),
             "succeeded": succeeded,
             "failed": failed,
+            "missing": missing_count,
+            "pruned_missing": pruned_missing_count,
             "created": created_count,
             "modified": modified_count,
             "unchanged": unchanged_count,
@@ -408,6 +465,9 @@ def main() -> int:
     print("\nDownload complete.")
     print(f"  succeeded:  {succeeded}")
     print(f"  failed:     {failed}")
+    print(f"  missing:    {missing_count}")
+    if pruned_missing_count:
+        print(f"  pruned:     {pruned_missing_count}")
     print(f"  created:    {created_count}")
     print(f"  modified:   {modified_count}")
     print(f"  unchanged:  {unchanged_count}")
@@ -417,6 +477,9 @@ def main() -> int:
     # Final message: which files had substantive changes (ignoring timestamp footer)
     created = sorted([r.relative_path for r in results if r.success and r.change == "created"])  # type: ignore[attr-defined]
     modified = sorted([r.relative_path for r in results if r.success and r.change == "modified"])  # type: ignore[attr-defined]
+    missing_pruned = sorted([r.relative_path for r in results if r.missing and r.pruned])
+    missing_kept = sorted([r.relative_path for r in results if r.missing and not r.pruned])
+
     if created or modified:
         print("\nContent changes (ignoring timestamp footer):")
         if created:
@@ -429,6 +492,16 @@ def main() -> int:
                 print(f"    - {p}")
     else:
         print("\nNo content changes detected (ignoring timestamp footer).")
+
+    if missing_pruned or missing_kept:
+        if missing_pruned:
+            print("\nMissing (404) pages; local copies were pruned:")
+            for p in missing_pruned:
+                print(f"  - {p}")
+        if missing_kept:
+            print("\nMissing (404) pages; local files left untouched:")
+            for p in missing_kept:
+                print(f"  - {p}")
 
     return 0 if failed == 0 else 1
 
@@ -444,6 +517,7 @@ if __name__ == "__main__":
     parser.add_argument("--allow-external", action="store_true", help="Allow downloading .md from hosts outside allowed-hosts")
     parser.add_argument("--preview", type=int, default=DRY_RUN_PREVIEW_COUNT, help="Preview first N items without downloading all")
     parser.add_argument("--max-workers", type=int, default=MAX_WORKERS)
+    parser.add_argument("--prune-missing", action="store_true", help="Delete local copies of pages that now return 404")
     args = parser.parse_args()
 
     INDEX_URL = args.index_url
@@ -453,11 +527,10 @@ if __name__ == "__main__":
         ALLOWED_HOSTS = list(args.allow_host)
     DRY_RUN_PREVIEW_COUNT = args.preview
     MAX_WORKERS = args.max_workers
+    PRUNE_MISSING = args.prune_missing
 
     try:
         sys.exit(main())
     except KeyboardInterrupt:
         print("Interrupted.")
         sys.exit(130)
-
-
