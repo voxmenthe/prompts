@@ -81,6 +81,7 @@ https://quagmire.bearblog.dev/blog/
 https://research.google/blog/
 https://rupeshks.cc/blog/
 https://sander.ai/posts/
+https://sankalp.bearblog.dev/blog/
 https://www.seangoedecke.com/
 https://sidb.in/posts/
 https://simonwillison.net/

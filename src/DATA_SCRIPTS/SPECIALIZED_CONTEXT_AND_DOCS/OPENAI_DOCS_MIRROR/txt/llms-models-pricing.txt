@@ -1,0 +1,2364 @@
+# babbage-002
+
+**Current Snapshot:** babbage-002
+
+GPT base models can understand and generate natural language or code but are not
+trained with instruction following. These models are made to be replacements for
+our original GPT-3 base models and use the legacy Completions API. Most
+customers should use GPT-3.5 or GPT-4.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+### babbage-002
+
+| Tier   | RPM   | TPM     | Batch Queue Limit |
+| ------ | ----- | ------- | ----------------- |
+| tier_1 | 500   | 10000   | 100000            |
+| tier_2 | 5000  | 40000   | 200000            |
+| tier_3 | 5000  | 80000   | 5000000           |
+| tier_4 | 10000 | 300000  | 30000000          |
+| tier_5 | 10000 | 1000000 | 150000000         |
+
+# ChatGPT-4o
+
+**Current Snapshot:** chatgpt-4o-latest
+
+ChatGPT-4o points to the GPT-4o snapshot currently used in ChatGPT. We recommend
+using an API model like [GPT-5](/docs/models/gpt-5) or
+[GPT-4o](/docs/models/gpt-4o) for most API integrations, but feel free to use
+this ChatGPT-4o model to test our latest improvements for chat use cases.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+### chatgpt-4o-latest
+
+| Tier   | RPM   | TPM      | Batch Queue Limit |
+| ------ | ----- | -------- | ----------------- |
+| tier_1 | 500   | 30000    | 90000             |
+| tier_2 | 5000  | 450000   | 1350000           |
+| tier_3 | 5000  | 800000   | 50000000          |
+| tier_4 | 10000 | 2000000  | 200000000         |
+| tier_5 | 10000 | 30000000 | 5000000000        |
+
+# codex-mini-latest
+
+**Current Snapshot:** codex-mini-latest
+
+codex-mini-latest is a fine-tuned version of o4-mini specifically for use in
+Codex CLI. For direct use in the API, we recommend starting with gpt-4.1.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+### codex-mini-latest
+
+| Tier   | RPM   | TPM       | Batch Queue Limit |
+| ------ | ----- | --------- | ----------------- |
+| tier_1 | 1000  | 100000    | 1000000           |
+| tier_2 | 2000  | 200000    | 2000000           |
+| tier_3 | 5000  | 4000000   | 40000000          |
+| tier_4 | 10000 | 10000000  | 1000000000        |
+| tier_5 | 30000 | 150000000 | 15000000000       |
+
+# computer-use-preview
+
+**Current Snapshot:** computer-use-preview-2025-03-11
+
+The computer-use-preview model is a specialized model for the computer use tool.
+It is trained to understand and execute computer tasks. See the
+[computer use guide](/docs/guides/tools-computer-use) for more information. This
+model is only usable in the [Responses API](/docs/api-reference/responses).
+
+## Snapshots
+
+### computer-use-preview-2025-03-11
+
+- Context window size: 8192
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 1024
+- Supported features: function_calling
+
+## Supported Tools
+
+## Rate Limits
+
+### computer-use-preview
+
+| Tier   | RPM  | TPM      | Batch Queue Limit |
+| ------ | ---- | -------- | ----------------- |
+| tier_3 | 3000 | 20000000 | 450000000         |
+| tier_4 | 3000 | 20000000 | 450000000         |
+| tier_5 | 3000 | 20000000 | 450000000         |
+
+# DALLÂ·E 2
+
+**Current Snapshot:** dall-e-2
+
+DALLÂ·E is an AI system that creates realistic images and art from a natural
+language description. Older than DALLÂ·E 3, DALLÂ·E 2 offers more control in
+prompting and more requests at once.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+### dall-e-2
+
+| Tier      | RPM           | TPM | Batch Queue Limit |
+| --------- | ------------- | --- | ----------------- |
+| tier_free | 5 img/min     |     |                   |
+| tier_1    | 500 img/min   |     |                   |
+| tier_2    | 2500 img/min  |     |                   |
+| tier_3    | 5000 img/min  |     |                   |
+| tier_4    | 7500 img/min  |     |                   |
+| tier_5    | 10000 img/min |     |                   |
+
+# DALLÂ·E 3
+
+**Current Snapshot:** dall-e-3
+
+DALLÂ·E is an AI system that creates realistic images and art from a natural
+language description. DALLÂ·E 3 currently supports the ability, given a prompt,
+to create a new image with a specific size.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+### dall-e-3
+
+| Tier      | RPM           | TPM | Batch Queue Limit |
+| --------- | ------------- | --- | ----------------- |
+| tier_free | 1 img/min     |     |                   |
+| tier_1    | 500 img/min   |     |                   |
+| tier_2    | 2500 img/min  |     |                   |
+| tier_3    | 5000 img/min  |     |                   |
+| tier_4    | 7500 img/min  |     |                   |
+| tier_5    | 10000 img/min |     |                   |
+
+# davinci-002
+
+**Current Snapshot:** davinci-002
+
+GPT base models can understand and generate natural language or code but are not
+trained with instruction following. These models are made to be replacements for
+our original GPT-3 base models and use the legacy Completions API. Most
+customers should use GPT-3.5 or GPT-4.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+### davinci-002
+
+| Tier   | RPM   | TPM     | Batch Queue Limit |
+| ------ | ----- | ------- | ----------------- |
+| tier_1 | 500   | 10000   | 100000            |
+| tier_2 | 5000  | 40000   | 200000            |
+| tier_3 | 5000  | 80000   | 5000000           |
+| tier_4 | 10000 | 300000  | 30000000          |
+| tier_5 | 10000 | 1000000 | 150000000         |
+
+# gpt-3.5-turbo-16k-0613
+
+**Current Snapshot:** gpt-3.5-turbo-16k-0613
+
+GPT-3.5 Turbo models can understand and generate natural language or code and
+have been optimized for chat using the Chat Completions API but work well for
+non-chat tasks as well. As of July 2024, use gpt-4o-mini in place of GPT-3.5
+Turbo, as it is cheaper, more capable, multimodal, and just as fast. GPT-3.5
+Turbo is still available for use in the API.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+### gpt-3.5-turbo-16k-0613
+
+| Tier   | RPM   | TPM      | Batch Queue Limit |
+| ------ | ----- | -------- | ----------------- |
+| tier_1 | 3500  | 200000   | 2000000           |
+| tier_2 | 3500  | 2000000  | 5000000           |
+| tier_3 | 3500  | 800000   | 50000000          |
+| tier_4 | 10000 | 10000000 | 1000000000        |
+| tier_5 | 10000 | 50000000 | 10000000000       |
+
+# gpt-3.5-turbo-instruct
+
+**Current Snapshot:** gpt-3.5-turbo-instruct
+
+Similar capabilities as GPT-3 era models. Compatible with legacy Completions
+endpoint and not Chat Completions.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+### gpt-3.5-turbo-instruct
+
+| Tier   | RPM   | TPM      | Batch Queue Limit |
+| ------ | ----- | -------- | ----------------- |
+| tier_1 | 3500  | 200000   | 2000000           |
+| tier_2 | 3500  | 2000000  | 5000000           |
+| tier_3 | 3500  | 800000   | 50000000          |
+| tier_4 | 10000 | 10000000 | 1000000000        |
+| tier_5 | 10000 | 50000000 | 10000000000       |
+
+# GPT-3.5 Turbo
+
+**Current Snapshot:** gpt-3.5-turbo-0125
+
+GPT-3.5 Turbo models can understand and generate natural language or code and
+have been optimized for chat using the Chat Completions API but work well for
+non-chat tasks as well. As of July 2024, use gpt-4o-mini in place of GPT-3.5
+Turbo, as it is cheaper, more capable, multimodal, and just as fast. GPT-3.5
+Turbo is still available for use in the API.
+
+## Snapshots
+
+### gpt-3.5-turbo-0125
+
+- Context window size: 16385
+- Knowledge cutoff date: 2021-09-01
+- Maximum output tokens: 4096
+- Supported features: fine_tuning
+
+### gpt-3.5-turbo-0613
+
+- Context window size: 16385
+- Knowledge cutoff date: 2021-09-01
+- Maximum output tokens: 4096
+- Supported features: fine_tuning
+
+### gpt-3.5-turbo-1106
+
+- Context window size: 16385
+- Knowledge cutoff date: 2021-09-01
+- Maximum output tokens: 4096
+- Supported features: fine_tuning
+
+### gpt-3.5-turbo-16k-0613
+
+- Context window size: 16385
+- Knowledge cutoff date: 2021-09-01
+- Maximum output tokens: 4096
+- Supported features: fine_tuning
+
+### gpt-3.5-turbo-instruct
+
+- Context window size: 4096
+- Knowledge cutoff date: 2021-09-01
+- Maximum output tokens: 4096
+- Supported features: fine_tuning
+
+## Supported Tools
+
+## Rate Limits
+
+### gpt-3.5-turbo
+
+| Tier   | RPM   | TPM      | Batch Queue Limit |
+| ------ | ----- | -------- | ----------------- |
+| tier_1 | 3500  | 200000   | 2000000           |
+| tier_2 | 3500  | 2000000  | 5000000           |
+| tier_3 | 3500  | 800000   | 50000000          |
+| tier_4 | 10000 | 10000000 | 1000000000        |
+| tier_5 | 10000 | 50000000 | 10000000000       |
+
+# GPT-4.5 Preview (Deprecated)
+
+**Current Snapshot:** gpt-4.5-preview-2025-02-27
+
+Deprecated - a research preview of GPT-4.5. We recommend using gpt-4.1 or o3
+models instead for most use cases.
+
+## Snapshots
+
+### gpt-4.5-preview-2025-02-27
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 16384
+- Supported features: function_calling, structured_outputs, streaming,
+  system_messages, evals, prompt_caching, image_input
+
+## Supported Tools
+
+## Rate Limits
+
+### gpt-4.5-preview
+
+| Tier   | RPM   | TPM     | Batch Queue Limit |
+| ------ | ----- | ------- | ----------------- |
+| tier_1 | 1000  | 125000  | 50000             |
+| tier_2 | 5000  | 250000  | 500000            |
+| tier_3 | 5000  | 500000  | 50000000          |
+| tier_4 | 10000 | 1000000 | 100000000         |
+| tier_5 | 10000 | 2000000 | 5000000000        |
+
+# GPT-4 Turbo Preview
+
+**Current Snapshot:** gpt-4-0125-preview
+
+This is a research preview of the GPT-4 Turbo model, an older high-intelligence
+GPT model.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+### gpt-4-turbo-preview
+
+| Tier   | RPM   | TPM     | Batch Queue Limit |
+| ------ | ----- | ------- | ----------------- |
+| tier_1 | 500   | 30000   | 90000             |
+| tier_2 | 5000  | 450000  | 1350000           |
+| tier_3 | 5000  | 600000  | 40000000          |
+| tier_4 | 10000 | 800000  | 80000000          |
+| tier_5 | 10000 | 2000000 | 300000000         |
+
+# GPT-4 Turbo
+
+**Current Snapshot:** gpt-4-turbo-2024-04-09
+
+GPT-4 Turbo is the next generation of GPT-4, an older high-intelligence GPT
+model. It was designed to be a cheaper, better version of GPT-4. Today, we
+recommend using a newer model like GPT-4o.
+
+## Snapshots
+
+### gpt-4-turbo-2024-04-09
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-12-01
+- Maximum output tokens: 4096
+- Supported features: streaming, function_calling, image_input
+
+## Supported Tools
+
+## Rate Limits
+
+### gpt-4-turbo
+
+| Tier   | RPM   | TPM     | Batch Queue Limit |
+| ------ | ----- | ------- | ----------------- |
+| tier_1 | 500   | 30000   | 90000             |
+| tier_2 | 5000  | 450000  | 1350000           |
+| tier_3 | 5000  | 600000  | 40000000          |
+| tier_4 | 10000 | 800000  | 80000000          |
+| tier_5 | 10000 | 2000000 | 300000000         |
+
+# GPT-4.1 mini
+
+**Current Snapshot:** gpt-4.1-mini-2025-04-14
+
+GPT-4.1 mini excels at instruction following and tool calling. It features a 1M
+token context window, and low latency without a reasoning step.
+
+Note that we recommend starting with [GPT-5 mini](/docs/models/gpt-5-mini) for
+more complex tasks.
+
+## Snapshots
+
+### gpt-4.1-mini-2025-04-14
+
+- Context window size: 1047576
+- Knowledge cutoff date: 2024-06-01
+- Maximum output tokens: 32768
+- Supported features: predicted_outputs, streaming, function_calling,
+  fine_tuning, file_search, file_uploads, web_search, structured_outputs,
+  image_input
+
+## Supported Tools
+
+- function_calling
+- web_search
+- file_search
+- code_interpreter
+- mcp
+
+## Rate Limits
+
+### Standard
+
+| Tier   | RPM   | TPM       | Batch Queue Limit |
+| ------ | ----- | --------- | ----------------- |
+| free   | 3     | 40000     |                   |
+| tier_1 | 500   | 200000    | 2000000           |
+| tier_2 | 5000  | 2000000   | 20000000          |
+| tier_3 | 5000  | 4000000   | 40000000          |
+| tier_4 | 10000 | 10000000  | 1000000000        |
+| tier_5 | 30000 | 150000000 | 15000000000       |
+
+### Long Context (> 128k input tokens)
+
+| Tier   | RPM  | TPM      | Batch Queue Limit |
+| ------ | ---- | -------- | ----------------- |
+| tier_1 | 200  | 400000   | 5000000           |
+| tier_2 | 500  | 1000000  | 40000000          |
+| tier_3 | 1000 | 2000000  | 80000000          |
+| tier_4 | 2000 | 10000000 | 200000000         |
+| tier_5 | 8000 | 20000000 | 2000000000        |
+
+# GPT-4.1 nano
+
+**Current Snapshot:** gpt-4.1-nano-2025-04-14
+
+GPT-4.1 nano excels at instruction following and tool calling. It features a 1M
+token context window, and low latency without a reasoning step.
+
+Note that we recommend starting with [GPT-5 nano](/docs/models/gpt-5-nano) for
+more complex tasks.
+
+## Snapshots
+
+### gpt-4.1-nano-2025-04-14
+
+- Context window size: 1047576
+- Knowledge cutoff date: 2024-06-01
+- Maximum output tokens: 32768
+- Supported features: predicted_outputs, streaming, function_calling,
+  file_search, file_uploads, structured_outputs, image_input, prompt_caching,
+  fine_tuning
+
+## Supported Tools
+
+- function_calling
+- file_search
+- image_generation
+- code_interpreter
+- mcp
+
+## Rate Limits
+
+### Standard
+
+| Tier   | RPM   | TPM       | Batch Queue Limit |
+| ------ | ----- | --------- | ----------------- |
+| free   | 3     | 40000     |                   |
+| tier_1 | 500   | 200000    | 2000000           |
+| tier_2 | 5000  | 2000000   | 20000000          |
+| tier_3 | 5000  | 4000000   | 40000000          |
+| tier_4 | 10000 | 10000000  | 1000000000        |
+| tier_5 | 30000 | 150000000 | 15000000000       |
+
+### Long Context (> 128k input tokens)
+
+| Tier   | RPM  | TPM      | Batch Queue Limit |
+| ------ | ---- | -------- | ----------------- |
+| tier_1 | 200  | 400000   | 5000000           |
+| tier_2 | 500  | 1000000  | 40000000          |
+| tier_3 | 1000 | 2000000  | 80000000          |
+| tier_4 | 2000 | 10000000 | 200000000         |
+| tier_5 | 8000 | 20000000 | 2000000000        |
+
+# GPT-4.1
+
+**Current Snapshot:** gpt-4.1-2025-04-14
+
+GPT-4.1 excels at instruction following and tool calling, with broad knowledge
+across domains. It features a 1M token context window, and low latency without a
+reasoning step.
+
+Note that we recommend starting with [GPT-5](/docs/models/gpt-5) for complex
+tasks.
+
+## Snapshots
+
+### gpt-4.1-2025-04-14
+
+- Context window size: 1047576
+- Knowledge cutoff date: 2024-06-01
+- Maximum output tokens: 32768
+- Supported features: streaming, structured_outputs, predicted_outputs,
+  distillation, function_calling, file_search, file_uploads, image_input,
+  web_search, fine_tuning, prompt_caching
+
+### gpt-4.1-mini-2025-04-14
+
+- Context window size: 1047576
+- Knowledge cutoff date: 2024-06-01
+- Maximum output tokens: 32768
+- Supported features: predicted_outputs, streaming, function_calling,
+  fine_tuning, file_search, file_uploads, web_search, structured_outputs,
+  image_input
+
+### gpt-4.1-nano-2025-04-14
+
+- Context window size: 1047576
+- Knowledge cutoff date: 2024-06-01
+- Maximum output tokens: 32768
+- Supported features: predicted_outputs, streaming, function_calling,
+  file_search, file_uploads, structured_outputs, image_input, prompt_caching,
+  fine_tuning
+
+## Supported Tools
+
+- function_calling
+- web_search
+- file_search
+- image_generation
+- code_interpreter
+- mcp
+
+## Rate Limits
+
+### default
+
+| Tier   | RPM   | TPM      | Batch Queue Limit |
+| ------ | ----- | -------- | ----------------- |
+| tier_1 | 500   | 30000    | 90000             |
+| tier_2 | 5000  | 450000   | 1350000           |
+| tier_3 | 5000  | 800000   | 50000000          |
+| tier_4 | 10000 | 2000000  | 200000000         |
+| tier_5 | 10000 | 30000000 | 5000000000        |
+
+### Long Context (> 128k input tokens)
+
+| Tier   | RPM  | TPM      | Batch Queue Limit |
+| ------ | ---- | -------- | ----------------- |
+| tier_1 | 100  | 200000   | 2000000           |
+| tier_2 | 250  | 500000   | 20000000          |
+| tier_3 | 500  | 1000000  | 40000000          |
+| tier_4 | 1000 | 5000000  | 100000000         |
+| tier_5 | 4000 | 10000000 | 1000000000        |
+
+# GPT-4
+
+**Current Snapshot:** gpt-4-0613
+
+GPT-4 is an older version of a high-intelligence GPT model, usable in Chat
+Completions.
+
+## Snapshots
+
+### gpt-4-0125-preview
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-12-01
+- Maximum output tokens: 4096
+- Supported features: fine_tuning
+
+### gpt-4-0314
+
+- Context window size: 8192
+- Knowledge cutoff date: 2023-12-01
+- Maximum output tokens: 8192
+- Supported features: fine_tuning, streaming
+
+### gpt-4-0613
+
+- Context window size: 8192
+- Knowledge cutoff date: 2023-12-01
+- Maximum output tokens: 8192
+- Supported features: fine_tuning, streaming
+
+### gpt-4-1106-vision-preview
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-12-01
+- Maximum output tokens: 4096
+- Supported features: fine_tuning, streaming
+
+### gpt-4-turbo-2024-04-09
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-12-01
+- Maximum output tokens: 4096
+- Supported features: streaming, function_calling, image_input
+
+## Supported Tools
+
+## Rate Limits
+
+### gpt-4
+
+| Tier   | RPM   | TPM     | Batch Queue Limit |
+| ------ | ----- | ------- | ----------------- |
+| tier_1 | 500   | 10000   | 100000            |
+| tier_2 | 5000  | 40000   | 200000            |
+| tier_3 | 5000  | 80000   | 5000000           |
+| tier_4 | 10000 | 300000  | 30000000          |
+| tier_5 | 10000 | 1000000 | 150000000         |
+
+# GPT-4o Audio
+
+**Current Snapshot:** gpt-4o-audio-preview-2025-06-03
+
+This is a preview release of the GPT-4o Audio models. These models accept audio
+inputs and outputs, and can be used in the Chat Completions REST API.
+
+## Snapshots
+
+### gpt-4o-audio-preview-2024-10-01
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 16384
+- Supported features: streaming, function_calling
+
+### gpt-4o-audio-preview-2024-12-17
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 16384
+- Supported features: streaming, function_calling
+
+### gpt-4o-audio-preview-2025-06-03
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 16384
+- Supported features: streaming, function_calling
+
+## Supported Tools
+
+## Rate Limits
+
+### gpt-4o-audio-preview
+
+| Tier   | RPM   | TPM      | Batch Queue Limit |
+| ------ | ----- | -------- | ----------------- |
+| tier_1 | 500   | 30000    | 90000             |
+| tier_2 | 5000  | 450000   | 1350000           |
+| tier_3 | 5000  | 800000   | 50000000          |
+| tier_4 | 10000 | 2000000  | 2000000           |
+| tier_5 | 10000 | 30000000 | 5000000000        |
+
+# GPT-4o mini Audio
+
+**Current Snapshot:** gpt-4o-mini-audio-preview-2024-12-17
+
+This is a preview release of the smaller GPT-4o Audio mini model. It's designed
+to input audio or create audio outputs via the REST API.
+
+## Snapshots
+
+### gpt-4o-mini-audio-preview-2024-12-17
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 16384
+- Supported features: streaming, function_calling
+
+## Supported Tools
+
+- web_search
+- file_search
+- code_interpreter
+- mcp
+
+## Rate Limits
+
+### gpt-4o-mini-audio-preview
+
+| Tier   | RPM   | TPM       | Batch Queue Limit |
+| ------ | ----- | --------- | ----------------- |
+| free   | 3     | 40000     |                   |
+| tier_1 | 500   | 200000    | 2000000           |
+| tier_2 | 5000  | 2000000   | 20000000          |
+| tier_3 | 5000  | 4000000   | 40000000          |
+| tier_4 | 10000 | 10000000  | 1000000000        |
+| tier_5 | 30000 | 150000000 | 15000000000       |
+
+# GPT-4o mini Realtime
+
+**Current Snapshot:** gpt-4o-mini-realtime-preview-2024-12-17
+
+This is a preview release of the GPT-4o-mini Realtime model, capable of
+responding to audio and text inputs in realtime over WebRTC or a WebSocket
+interface.
+
+## Snapshots
+
+### gpt-4o-mini-realtime-preview-2024-12-17
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 4096
+- Supported features: function_calling, prompt_caching
+
+## Supported Tools
+
+## Rate Limits
+
+### gpt-4o-mini-realtime-preview
+
+| Tier   | RPM   | TPM      | Batch Queue Limit |
+| ------ | ----- | -------- | ----------------- |
+| tier_1 | 200   | 40000    |                   |
+| tier_2 | 400   | 200000   |                   |
+| tier_3 | 5000  | 800000   |                   |
+| tier_4 | 10000 | 4000000  |                   |
+| tier_5 | 20000 | 15000000 |                   |
+
+# GPT-4o mini Search Preview
+
+**Current Snapshot:** gpt-4o-mini-search-preview-2025-03-11
+
+GPT-4o mini Search Preview is a specialized model trained to understand and
+execute [web search](/docs/guides/tools-web-search?api-mode=chat) queries with
+the Chat Completions API. In addition to token fees, web search queries have a
+fee per tool call. Learn more in the [pricing](/docs/pricing) page.
+
+## Snapshots
+
+### gpt-4o-mini-search-preview-2025-03-11
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 16384
+- Supported features: streaming, structured_outputs, image_input
+
+## Supported Tools
+
+## Rate Limits
+
+### gpt-4o-mini-search-preview
+
+| Tier   | RPM   | TPM       | Batch Queue Limit |
+| ------ | ----- | --------- | ----------------- |
+| free   | 3     | 40000     |                   |
+| tier_1 | 500   | 200000    | 2000000           |
+| tier_2 | 5000  | 2000000   | 20000000          |
+| tier_3 | 5000  | 4000000   | 40000000          |
+| tier_4 | 10000 | 10000000  | 1000000000        |
+| tier_5 | 30000 | 150000000 | 15000000000       |
+
+# GPT-4o mini Transcribe
+
+**Current Snapshot:** gpt-4o-mini-transcribe
+
+GPT-4o mini Transcribe is a speech-to-text model that uses GPT-4o mini to
+transcribe audio. It offers improvements to word error rate and better language
+recognition and accuracy compared to original Whisper models. Use it for more
+accurate transcripts.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+### gpt-4o-mini-transcribe
+
+| Tier   | RPM   | TPM     | Batch Queue Limit |
+| ------ | ----- | ------- | ----------------- |
+| tier_1 | 500   | 50000   |                   |
+| tier_2 | 2000  | 150000  |                   |
+| tier_3 | 5000  | 600000  |                   |
+| tier_4 | 10000 | 2000000 |                   |
+| tier_5 | 10000 | 8000000 |                   |
+
+# GPT-4o mini TTS
+
+**Current Snapshot:** gpt-4o-mini-tts
+
+GPT-4o mini TTS is a text-to-speech model built on GPT-4o mini, a fast and
+powerful language model. Use it to convert text to natural sounding spoken text.
+The maximum number of input tokens is 2000.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+### gpt-4o-mini-tts
+
+| Tier   | RPM   | TPM     | Batch Queue Limit |
+| ------ | ----- | ------- | ----------------- |
+| tier_1 | 500   | 50000   |                   |
+| tier_2 | 2000  | 150000  |                   |
+| tier_3 | 5000  | 600000  |                   |
+| tier_4 | 10000 | 2000000 |                   |
+| tier_5 | 10000 | 8000000 |                   |
+
+# GPT-4o mini
+
+**Current Snapshot:** gpt-4o-mini-2024-07-18
+
+GPT-4o mini (âoâ for âomniâ) is a fast, affordable small model for focused
+tasks. It accepts both text and image inputs, and produces text outputs
+(including Structured Outputs). It is ideal for fine-tuning, and model outputs
+from a larger model like GPT-4o can be distilled to GPT-4o-mini to produce
+similar results at lower cost and latency.
+
+## Snapshots
+
+### gpt-4o-mini-2024-07-18
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 16384
+- Supported features: predicted_outputs, streaming, function_calling,
+  fine_tuning, file_search, file_uploads, web_search, structured_outputs,
+  image_input
+
+### gpt-4o-mini-audio-preview-2024-12-17
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 16384
+- Supported features: streaming, function_calling
+
+### gpt-4o-mini-realtime-preview-2024-12-17
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 4096
+- Supported features: function_calling, prompt_caching
+
+### gpt-4o-mini-search-preview-2025-03-11
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 16384
+- Supported features: streaming, structured_outputs, image_input
+
+### gpt-4o-mini-transcribe
+
+- Context window size: 16000
+- Knowledge cutoff date: 2024-06-01
+- Maximum output tokens: 2000
+
+### gpt-4o-mini-tts
+
+## Supported Tools
+
+- function_calling
+- web_search
+- file_search
+- image_generation
+- code_interpreter
+- mcp
+
+## Rate Limits
+
+### gpt-4o-mini
+
+| Tier   | RPM   | TPM       | Batch Queue Limit |
+| ------ | ----- | --------- | ----------------- |
+| free   | 3     | 40000     |                   |
+| tier_1 | 500   | 200000    | 2000000           |
+| tier_2 | 5000  | 2000000   | 20000000          |
+| tier_3 | 5000  | 4000000   | 40000000          |
+| tier_4 | 10000 | 10000000  | 1000000000        |
+| tier_5 | 30000 | 150000000 | 15000000000       |
+
+# GPT-4o Realtime
+
+**Current Snapshot:** gpt-4o-realtime-preview-2025-06-03
+
+This is a preview release of the GPT-4o Realtime model, capable of responding to
+audio and text inputs in realtime over WebRTC or a WebSocket interface.
+
+## Snapshots
+
+### gpt-4o-realtime-preview-2024-10-01
+
+- Context window size: 16000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 4096
+- Supported features: function_calling, prompt_caching
+
+### gpt-4o-realtime-preview-2024-12-17
+
+- Context window size: 16000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 4096
+- Supported features: function_calling, prompt_caching
+
+### gpt-4o-realtime-preview-2025-06-03
+
+- Context window size: 32000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 4096
+- Supported features: function_calling, prompt_caching
+
+## Supported Tools
+
+## Rate Limits
+
+### gpt-4o-realtime-preview
+
+| Tier   | RPM   | TPM      | Batch Queue Limit |
+| ------ | ----- | -------- | ----------------- |
+| tier_1 | 200   | 40000    |                   |
+| tier_2 | 400   | 200000   |                   |
+| tier_3 | 5000  | 800000   |                   |
+| tier_4 | 10000 | 4000000  |                   |
+| tier_5 | 20000 | 15000000 |                   |
+
+# GPT-4o Search Preview
+
+**Current Snapshot:** gpt-4o-search-preview-2025-03-11
+
+GPT-4o Search Preview is a specialized model trained to understand and execute
+[web search](/docs/guides/tools-web-search?api-mode=chat) queries with the Chat
+Completions API. In addition to token fees, web search queries have a fee per
+tool call. Learn more in the [pricing](/docs/pricing) page.
+
+## Snapshots
+
+### gpt-4o-search-preview-2025-03-11
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 16384
+- Supported features: streaming, structured_outputs, image_input
+
+## Supported Tools
+
+## Rate Limits
+
+### gpt-4o-search-preview
+
+| Tier   | RPM  | TPM     | Batch Queue Limit |
+| ------ | ---- | ------- | ----------------- |
+| tier_1 | 100  | 30000   |                   |
+| tier_2 | 500  | 45000   |                   |
+| tier_3 | 500  | 80000   |                   |
+| tier_4 | 1000 | 200000  |                   |
+| tier_5 | 1000 | 3000000 |                   |
+
+# GPT-4o Transcribe
+
+**Current Snapshot:** gpt-4o-transcribe
+
+GPT-4o Transcribe is a speech-to-text model that uses GPT-4o to transcribe
+audio. It offers improvements to word error rate and better language recognition
+and accuracy compared to original Whisper models. Use it for more accurate
+transcripts.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+### gpt-4o-transcribe
+
+| Tier   | RPM   | TPM     | Batch Queue Limit |
+| ------ | ----- | ------- | ----------------- |
+| tier_1 | 500   | 10000   |                   |
+| tier_2 | 2000  | 100000  |                   |
+| tier_3 | 5000  | 400000  |                   |
+| tier_4 | 10000 | 2000000 |                   |
+| tier_5 | 10000 | 6000000 |                   |
+
+# GPT-4o
+
+**Current Snapshot:** gpt-4o-2024-08-06
+
+GPT-4o (âoâ for âomniâ) is our versatile, high-intelligence flagship model. It
+accepts both text and image inputs, and produces text outputs (including
+Structured Outputs). It is the best model for most tasks, and is our most
+capable model outside of our o-series models.
+
+## Snapshots
+
+### gpt-4o-2024-05-13
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 4096
+- Supported features: streaming, function_calling, fine_tuning, file_search,
+  file_uploads, image_input, web_search, predicted_outputs
+
+### gpt-4o-2024-08-06
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 16384
+- Supported features: streaming, structured_outputs, predicted_outputs,
+  distillation, file_search, file_uploads, fine_tuning, function_calling,
+  image_input, web_search
+
+### gpt-4o-2024-11-20
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 16384
+- Supported features: streaming, structured_outputs, predicted_outputs,
+  distillation, function_calling, file_search, file_uploads, image_input,
+  web_search
+
+### gpt-4o-audio-preview-2024-10-01
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 16384
+- Supported features: streaming, function_calling
+
+### gpt-4o-audio-preview-2024-12-17
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 16384
+- Supported features: streaming, function_calling
+
+### gpt-4o-audio-preview-2025-06-03
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 16384
+- Supported features: streaming, function_calling
+
+### gpt-4o-mini-2024-07-18
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 16384
+- Supported features: predicted_outputs, streaming, function_calling,
+  fine_tuning, file_search, file_uploads, web_search, structured_outputs,
+  image_input
+
+### gpt-4o-mini-audio-preview-2024-12-17
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 16384
+- Supported features: streaming, function_calling
+
+### gpt-4o-mini-realtime-preview-2024-12-17
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 4096
+- Supported features: function_calling, prompt_caching
+
+### gpt-4o-mini-search-preview-2025-03-11
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 16384
+- Supported features: streaming, structured_outputs, image_input
+
+### gpt-4o-mini-transcribe
+
+- Context window size: 16000
+- Knowledge cutoff date: 2024-06-01
+- Maximum output tokens: 2000
+
+### gpt-4o-mini-tts
+
+### gpt-4o-realtime-preview-2024-10-01
+
+- Context window size: 16000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 4096
+- Supported features: function_calling, prompt_caching
+
+### gpt-4o-realtime-preview-2024-12-17
+
+- Context window size: 16000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 4096
+- Supported features: function_calling, prompt_caching
+
+### gpt-4o-realtime-preview-2025-06-03
+
+- Context window size: 32000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 4096
+- Supported features: function_calling, prompt_caching
+
+### gpt-4o-search-preview-2025-03-11
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 16384
+- Supported features: streaming, structured_outputs, image_input
+
+### gpt-4o-transcribe
+
+- Context window size: 16000
+- Knowledge cutoff date: 2024-06-01
+- Maximum output tokens: 2000
+
+## Supported Tools
+
+- function_calling
+- web_search
+- file_search
+- image_generation
+- code_interpreter
+- mcp
+
+## Rate Limits
+
+### gpt-4o
+
+| Tier   | RPM   | TPM      | Batch Queue Limit |
+| ------ | ----- | -------- | ----------------- |
+| tier_1 | 500   | 30000    | 90000             |
+| tier_2 | 5000  | 450000   | 1350000           |
+| tier_3 | 5000  | 800000   | 50000000          |
+| tier_4 | 10000 | 2000000  | 200000000         |
+| tier_5 | 10000 | 30000000 | 5000000000        |
+
+# GPT-5 Chat
+
+**Current Snapshot:** gpt-5-chat-latest
+
+GPT-5 Chat points to the GPT-5 snapshot currently used in ChatGPT. We recommend
+[GPT-5](/docs/models/gpt-5) for most API usage, but feel free to use this GPT-5
+Chat model to test our latest improvements for chat use cases.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+### gpt-5-chat-latest
+
+| Tier   | RPM   | TPM      | Batch Queue Limit |
+| ------ | ----- | -------- | ----------------- |
+| tier_1 | 500   | 30000    | 50000             |
+| tier_2 | 5000  | 450000   | 1350000           |
+| tier_3 | 5000  | 800000   | 100000000         |
+| tier_4 | 10000 | 2000000  | 200000000         |
+| tier_5 | 15000 | 40000000 | 15000000000       |
+
+# GPT-5 mini
+
+**Current Snapshot:** gpt-5-mini-2025-08-07
+
+GPT-5 mini is a faster, more cost-efficient version of GPT-5. It's great for
+well-defined tasks and precise prompts. Learn more in our
+[GPT-5 usage guide](/docs/guides/gpt-5).
+
+## Snapshots
+
+### gpt-5-mini-2025-08-07
+
+- Context window size: 400000
+- Knowledge cutoff date: 2024-05-31
+- Maximum output tokens: 128000
+- Supported features: streaming, function_calling, file_search, file_uploads,
+  web_search, structured_outputs, image_input
+
+## Supported Tools
+
+- function_calling
+- web_search
+- file_search
+- code_interpreter
+- mcp
+
+## Rate Limits
+
+### gpt-5-mini
+
+| Tier   | RPM   | TPM       | Batch Queue Limit |
+| ------ | ----- | --------- | ----------------- |
+| tier_1 | 500   | 200000    | 2000000           |
+| tier_2 | 5000  | 2000000   | 20000000          |
+| tier_3 | 5000  | 4000000   | 40000000          |
+| tier_4 | 10000 | 10000000  | 1000000000        |
+| tier_5 | 30000 | 180000000 | 15000000000       |
+
+# GPT-5 nano
+
+**Current Snapshot:** gpt-5-nano-2025-08-07
+
+GPT-5 Nano is our fastest, cheapest version of GPT-5. It's great for
+summarization and classification tasks. Learn more in our
+[GPT-5 usage guide](/docs/guides/gpt-5).
+
+## Snapshots
+
+### gpt-5-nano-2025-08-07
+
+- Context window size: 400000
+- Knowledge cutoff date: 2024-05-31
+- Maximum output tokens: 128000
+- Supported features: streaming, function_calling, file_search, file_uploads,
+  structured_outputs, image_input, prompt_caching, fine_tuning
+
+## Supported Tools
+
+- function_calling
+- file_search
+- image_generation
+- code_interpreter
+- mcp
+
+## Rate Limits
+
+### gpt-5-nano
+
+| Tier   | RPM   | TPM       | Batch Queue Limit |
+| ------ | ----- | --------- | ----------------- |
+| tier_1 | 500   | 200000    | 2000000           |
+| tier_2 | 5000  | 2000000   | 20000000          |
+| tier_3 | 5000  | 4000000   | 40000000          |
+| tier_4 | 10000 | 10000000  | 1000000000        |
+| tier_5 | 30000 | 180000000 | 15000000000       |
+
+# GPT-5
+
+**Current Snapshot:** gpt-5-2025-08-07
+
+GPT-5 is our flagship model for coding, reasoning, and agentic tasks across
+domains. Learn more in our [GPT-5 usage guide](/docs/guides/gpt-5).
+
+## Snapshots
+
+### gpt-5-2025-08-07
+
+- Context window size: 400000
+- Knowledge cutoff date: 2024-09-30
+- Maximum output tokens: 128000
+- Supported features: streaming, structured_outputs, distillation,
+  function_calling, file_search, file_uploads, image_input, web_search,
+  prompt_caching
+
+### gpt-5-chat-latest
+
+- Context window size: 128000
+- Knowledge cutoff date: 2024-09-30
+- Maximum output tokens: 16384
+- Supported features: streaming, image_input
+
+### gpt-5-mini-2025-08-07
+
+- Context window size: 400000
+- Knowledge cutoff date: 2024-05-31
+- Maximum output tokens: 128000
+- Supported features: streaming, function_calling, file_search, file_uploads,
+  web_search, structured_outputs, image_input
+
+### gpt-5-nano-2025-08-07
+
+- Context window size: 400000
+- Knowledge cutoff date: 2024-05-31
+- Maximum output tokens: 128000
+- Supported features: streaming, function_calling, file_search, file_uploads,
+  structured_outputs, image_input, prompt_caching, fine_tuning
+
+## Supported Tools
+
+- function_calling
+- web_search
+- file_search
+- image_generation
+- code_interpreter
+- mcp
+
+## Rate Limits
+
+### gpt-5
+
+| Tier   | RPM   | TPM      | Batch Queue Limit |
+| ------ | ----- | -------- | ----------------- |
+| tier_1 | 500   | 30000    | 90000             |
+| tier_2 | 5000  | 450000   | 1350000           |
+| tier_3 | 5000  | 800000   | 100000000         |
+| tier_4 | 10000 | 2000000  | 200000000         |
+| tier_5 | 15000 | 40000000 | 15000000000       |
+
+# GPT Image 1
+
+**Current Snapshot:** gpt-image-1
+
+GPT Image 1 is our new state-of-the-art image generation model. It is a natively
+multimodal language model that accepts both text and image inputs, and produces
+image outputs.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+### gpt-image-1
+
+| Tier   | RPM | TPM     | Batch Queue Limit |
+| ------ | --- | ------- | ----------------- |
+| tier_1 |     | 100000  |                   |
+| tier_2 |     | 250000  |                   |
+| tier_3 |     | 800000  |                   |
+| tier_4 |     | 3000000 |                   |
+| tier_5 |     | 8000000 |                   |
+
+# gpt-oss-120b
+
+**Current Snapshot:** gpt-oss-120b
+
+`gpt-oss-120b`is our most powerful open-weight model, which fits into a single
+H100 GPU (117B parameters with 5.1B active parameters).
+
+[Download gpt-oss-120b on HuggingFace](https://huggingface.co/openai/gpt-oss-120b).
+
+**Key features**
+
+- **Permissive Apache 2.0 license:** Build freely without copyleft restrictions
+  or patent riskâideal for experimentation, customization, and commercial
+  deployment.
+- **Configurable reasoning effort:** Easily adjust the reasoning effort (low,
+  medium, high) based on your specific use case and latency needs.
+- **Full chain-of-thought:** Gain complete access to the model's reasoning
+  process, facilitating easier debugging and increased trust in outputs.
+- **Fine-tunable:** Fully customize models to your specific use case through
+  parameter fine-tuning.
+- **Agentic capabilities:** Use the models' native capabilities for function
+  calling, web browsing, Python code execution, and structured outputs.
+
+## Snapshots
+
+## Supported Tools
+
+- function_calling
+- code_interpreter
+- mcp
+- web_search
+
+## Rate Limits
+
+### gpt-oss-120b
+
+| Tier   | RPM | TPM | Batch Queue Limit |
+| ------ | --- | --- | ----------------- |
+| tier_1 |     |     |                   |
+| tier_2 |     |     |                   |
+| tier_3 |     |     |                   |
+| tier_4 |     |     |                   |
+| tier_5 |     |     |                   |
+
+# gpt-oss-20b
+
+**Current Snapshot:** gpt-oss-20b
+
+`gpt-oss-20b` is our medium-sized open-weight model for low latency, local, or
+specialized use-cases (21B parameters with 3.6B active parameters).
+
+[Download gpt-oss-20b on HuggingFace](https://huggingface.co/openai/gpt-oss-20b).
+
+**Key features**
+
+- **Permissive Apache 2.0 license:** Build freely without copyleft restrictions
+  or patent riskâideal for experimentation, customization, and commercial
+  deployment.
+- **Configurable reasoning effort:** Easily adjust the reasoning effort (low,
+  medium, high) based on your specific use case and latency needs.
+- **Full chain-of-thought:** Gain complete access to the model's reasoning
+  process, facilitating easier debugging and increased trust in outputs.
+- **Fine-tunable:** Fully customize models to your specific use case through
+  parameter fine-tuning.
+- **Agentic capabilities:** Use the models' native capabilities for function
+  calling, web browsing, Python code execution, and structured outputs.
+
+## Snapshots
+
+## Supported Tools
+
+- function_calling
+- code_interpreter
+- mcp
+- web_search
+
+## Rate Limits
+
+### gpt-oss-20b
+
+| Tier   | RPM | TPM | Batch Queue Limit |
+| ------ | --- | --- | ----------------- |
+| tier_1 |     |     |                   |
+| tier_2 |     |     |                   |
+| tier_3 |     |     |                   |
+| tier_4 |     |     |                   |
+| tier_5 |     |     |                   |
+
+# o1-mini
+
+**Current Snapshot:** o1-mini-2024-09-12
+
+The o1 reasoning model is designed to solve hard problems across domains.
+o1-mini is a faster and more affordable reasoning model, but we recommend using
+the newer o3-mini model that features higher intelligence at the same latency
+and price as o1-mini.
+
+## Snapshots
+
+### o1-mini-2024-09-12
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 65536
+- Supported features: streaming, file_search, file_uploads
+
+## Supported Tools
+
+- file_search
+- code_interpreter
+- mcp
+
+## Rate Limits
+
+### o1-mini
+
+| Tier   | RPM   | TPM       | Batch Queue Limit |
+| ------ | ----- | --------- | ----------------- |
+| tier_1 | 500   | 200000    |                   |
+| tier_2 | 5000  | 2000000   |                   |
+| tier_3 | 5000  | 4000000   | 40000000          |
+| tier_4 | 10000 | 10000000  | 1000000000        |
+| tier_5 | 30000 | 150000000 | 15000000000       |
+
+# o1 Preview
+
+**Current Snapshot:** o1-preview-2024-09-12
+
+Research preview of the o1 series of models, trained with reinforcement learning
+to perform complex reasoning. o1 models think before they answer, producing a
+long internal chain of thought before responding to the user.
+
+## Snapshots
+
+### o1-preview-2024-09-12
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 32768
+- Supported features: streaming, structured_outputs, file_search,
+  function_calling, file_uploads
+
+## Supported Tools
+
+## Rate Limits
+
+### o1-preview
+
+| Tier   | RPM   | TPM      | Batch Queue Limit |
+| ------ | ----- | -------- | ----------------- |
+| tier_1 | 500   | 30000    |                   |
+| tier_2 | 5000  | 450000   |                   |
+| tier_3 | 5000  | 800000   | 50000000          |
+| tier_4 | 10000 | 2000000  | 200000000         |
+| tier_5 | 10000 | 30000000 | 5000000000        |
+
+# o1-pro
+
+**Current Snapshot:** o1-pro-2025-03-19
+
+The o1 series of models are trained with reinforcement learning to think before
+they answer and perform complex reasoning. The o1-pro model uses more compute to
+think harder and provide consistently better answers.
+
+o1-pro is available in the [Responses API only](/docs/api-reference/responses)
+to enable support for multi-turn model interactions before responding to API
+requests, and other advanced API features in the future.
+
+## Snapshots
+
+### o1-pro-2025-03-19
+
+- Context window size: 200000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 100000
+- Supported features: structured_outputs, function_calling, image_input
+
+## Supported Tools
+
+- function_calling
+- file_search
+- mcp
+
+## Rate Limits
+
+### o1-pro
+
+| Tier   | RPM   | TPM      | Batch Queue Limit |
+| ------ | ----- | -------- | ----------------- |
+| tier_1 | 500   | 30000    | 90000             |
+| tier_2 | 5000  | 450000   | 1350000           |
+| tier_3 | 5000  | 800000   | 50000000          |
+| tier_4 | 10000 | 2000000  | 200000000         |
+| tier_5 | 10000 | 30000000 | 5000000000        |
+
+# o1
+
+**Current Snapshot:** o1-2024-12-17
+
+The o1 series of models are trained with reinforcement learning to perform
+complex reasoning. o1 models think before they answer, producing a long internal
+chain of thought before responding to the user.
+
+## Snapshots
+
+### o1-2024-12-17
+
+- Context window size: 200000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 100000
+- Supported features: streaming, structured_outputs, file_search,
+  function_calling, file_uploads, image_input
+
+### o1-mini-2024-09-12
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 65536
+- Supported features: streaming, file_search, file_uploads
+
+### o1-preview-2024-09-12
+
+- Context window size: 128000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 32768
+- Supported features: streaming, structured_outputs, file_search,
+  function_calling, file_uploads
+
+### o1-pro-2025-03-19
+
+- Context window size: 200000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 100000
+- Supported features: structured_outputs, function_calling, image_input
+
+## Supported Tools
+
+- function_calling
+- file_search
+- mcp
+
+## Rate Limits
+
+### o1
+
+| Tier   | RPM   | TPM      | Batch Queue Limit |
+| ------ | ----- | -------- | ----------------- |
+| tier_1 | 500   | 30000    | 90000             |
+| tier_2 | 5000  | 450000   | 1350000           |
+| tier_3 | 5000  | 800000   | 50000000          |
+| tier_4 | 10000 | 2000000  | 200000000         |
+| tier_5 | 10000 | 30000000 | 5000000000        |
+
+# o3-deep-research
+
+**Current Snapshot:** o3-deep-research-2025-06-26
+
+o3-deep-research is our most advanced model for deep research, designed to
+tackle complex, multi-step research tasks. It can search and synthesize
+information from across the internet as well as from your own dataâbrought in
+through MCP connectors.
+
+Learn more about getting started with this model in our
+[deep research](/docs/guides/deep-research) guide.
+
+## Snapshots
+
+### o3-deep-research-2025-06-26
+
+- Context window size: 200000
+- Knowledge cutoff date: 2024-06-01
+- Maximum output tokens: 100000
+- Supported features: streaming, file_uploads, image_input, prompt_caching,
+  evals, stored_completions
+
+## Supported Tools
+
+- web_search
+- code_interpreter
+- mcp
+
+## Rate Limits
+
+### o3-deep-research
+
+| Tier   | RPM   | TPM      | Batch Queue Limit |
+| ------ | ----- | -------- | ----------------- |
+| tier_1 | 500   | 200000   | 200000            |
+| tier_2 | 5000  | 450000   | 300000            |
+| tier_3 | 5000  | 800000   | 500000            |
+| tier_4 | 10000 | 2000000  | 2000000           |
+| tier_5 | 10000 | 30000000 | 10000000          |
+
+# o3-mini
+
+**Current Snapshot:** o3-mini-2025-01-31
+
+o3-mini is our newest small reasoning model, providing high intelligence at the
+same cost and latency targets of o1-mini. o3-mini supports key developer
+features, like Structured Outputs, function calling, and Batch API.
+
+## Snapshots
+
+### o3-mini-2025-01-31
+
+- Context window size: 200000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 100000
+- Supported features: streaming, structured_outputs, function_calling,
+  file_search, file_uploads
+
+## Supported Tools
+
+- function_calling
+- file_search
+- code_interpreter
+- mcp
+- image_generation
+
+## Rate Limits
+
+### o3-mini
+
+| Tier   | RPM   | TPM       | Batch Queue Limit |
+| ------ | ----- | --------- | ----------------- |
+| tier_1 | 1000  | 100000    | 1000000           |
+| tier_2 | 2000  | 200000    | 2000000           |
+| tier_3 | 5000  | 4000000   | 40000000          |
+| tier_4 | 10000 | 10000000  | 1000000000        |
+| tier_5 | 30000 | 150000000 | 15000000000       |
+
+# o3-pro
+
+**Current Snapshot:** o3-pro-2025-06-10
+
+The o-series of models are trained with reinforcement learning to think before
+they answer and perform complex reasoning. The o3-pro model uses more compute to
+think harder and provide consistently better answers.
+
+o3-pro is available in the [Responses API only](/docs/api-reference/responses)
+to enable support for multi-turn model interactions before responding to API
+requests, and other advanced API features in the future. Since o3-pro is
+designed to tackle tough problems, some requests may take several minutes to
+finish. To avoid timeouts, try using [background mode](/docs/guides/background).
+
+## Snapshots
+
+### o3-pro-2025-06-10
+
+- Context window size: 200000
+- Knowledge cutoff date: 2024-06-01
+- Maximum output tokens: 100000
+- Supported features: structured_outputs, function_calling, image_input
+
+## Supported Tools
+
+- function_calling
+- file_search
+- image_generation
+- mcp
+- web_search
+
+## Rate Limits
+
+### o3-pro
+
+| Tier   | RPM   | TPM      | Batch Queue Limit |
+| ------ | ----- | -------- | ----------------- |
+| tier_1 | 500   | 30000    | 90000             |
+| tier_2 | 5000  | 450000   | 1350000           |
+| tier_3 | 5000  | 800000   | 50000000          |
+| tier_4 | 10000 | 2000000  | 200000000         |
+| tier_5 | 10000 | 30000000 | 5000000000        |
+
+# o3
+
+**Current Snapshot:** o3-2025-04-16
+
+o3 is a well-rounded and powerful model across domains. It sets a new standard
+for math, science, coding, and visual reasoning tasks. It also excels at
+technical writing and instruction-following. Use it to think through multi-step
+problems that involve analysis across text, code, and images.
+
+o3 is succeeded by [GPT-5](/docs/models/gpt-5).
+
+Learn more about how to use our reasoning models in our
+[reasoning](/docs/guides/reasoning?api-mode=responses) guide.
+
+## Snapshots
+
+### o3-2025-04-16
+
+- Context window size: 200000
+- Knowledge cutoff date: 2024-06-01
+- Maximum output tokens: 100000
+- Supported features: streaming, structured_outputs, file_search,
+  function_calling, file_uploads, image_input, prompt_caching, evals,
+  stored_completions
+
+### o3-deep-research-2025-06-26
+
+- Context window size: 200000
+- Knowledge cutoff date: 2024-06-01
+- Maximum output tokens: 100000
+- Supported features: streaming, file_uploads, image_input, prompt_caching,
+  evals, stored_completions
+
+### o3-mini-2025-01-31
+
+- Context window size: 200000
+- Knowledge cutoff date: 2023-10-01
+- Maximum output tokens: 100000
+- Supported features: streaming, structured_outputs, function_calling,
+  file_search, file_uploads
+
+### o3-pro-2025-06-10
+
+- Context window size: 200000
+- Knowledge cutoff date: 2024-06-01
+- Maximum output tokens: 100000
+- Supported features: structured_outputs, function_calling, image_input
+
+## Supported Tools
+
+- function_calling
+- file_search
+- image_generation
+- code_interpreter
+- mcp
+- web_search
+
+## Rate Limits
+
+### o3
+
+| Tier   | RPM   | TPM      | Batch Queue Limit |
+| ------ | ----- | -------- | ----------------- |
+| tier_1 | 500   | 30000    | 90000             |
+| tier_2 | 5000  | 450000   | 1350000           |
+| tier_3 | 5000  | 800000   | 50000000          |
+| tier_4 | 10000 | 2000000  | 200000000         |
+| tier_5 | 10000 | 30000000 | 5000000000        |
+
+# o4-mini-deep-research
+
+**Current Snapshot:** o4-mini-deep-research-2025-06-26
+
+o4-mini-deep-research is our faster, more affordable deep research modelâideal
+for tackling complex, multi-step research tasks. It can search and synthesize
+information from across the internet as well as from your own data, brought in
+through MCP connectors.
+
+Learn more about how to use this model in our
+[deep research](/docs/guides/deep-research) guide.
+
+## Snapshots
+
+### o4-mini-deep-research-2025-06-26
+
+- Context window size: 200000
+- Knowledge cutoff date: 2024-06-01
+- Maximum output tokens: 100000
+- Supported features: streaming, file_uploads, image_input, prompt_caching,
+  evals, stored_completions
+
+## Supported Tools
+
+- web_search
+- code_interpreter
+- mcp
+
+## Rate Limits
+
+### o4-mini-deep-research
+
+| Tier   | RPM   | TPM       | Batch Queue Limit |
+| ------ | ----- | --------- | ----------------- |
+| tier_1 | 1000  | 200000    | 200000            |
+| tier_2 | 2000  | 2000000   | 300000            |
+| tier_3 | 5000  | 4000000   | 500000            |
+| tier_4 | 10000 | 10000000  | 2000000           |
+| tier_5 | 30000 | 150000000 | 10000000          |
+
+# o4-mini
+
+**Current Snapshot:** o4-mini-2025-04-16
+
+o4-mini is our latest small o-series model. It's optimized for fast, effective
+reasoning with exceptionally efficient performance in coding and visual tasks.
+It's succeeded by [GPT-5 mini](/docs/models/gpt-5-mini).
+
+Learn more about how to use our reasoning models in our
+[reasoning](/docs/guides/reasoning?api-mode=responses) guide.
+
+## Snapshots
+
+### o4-mini-2025-04-16
+
+- Context window size: 200000
+- Knowledge cutoff date: 2024-06-01
+- Maximum output tokens: 100000
+- Supported features: streaming, structured_outputs, function_calling,
+  file_search, file_uploads, image_input, prompt_caching, evals,
+  stored_completions, fine_tuning
+
+### o4-mini-deep-research-2025-06-26
+
+- Context window size: 200000
+- Knowledge cutoff date: 2024-06-01
+- Maximum output tokens: 100000
+- Supported features: streaming, file_uploads, image_input, prompt_caching,
+  evals, stored_completions
+
+## Supported Tools
+
+- function_calling
+- file_search
+- code_interpreter
+- mcp
+- web_search
+
+## Rate Limits
+
+### o4-mini
+
+| Tier   | RPM   | TPM       | Batch Queue Limit |
+| ------ | ----- | --------- | ----------------- |
+| tier_1 | 1000  | 100000    | 1000000           |
+| tier_2 | 2000  | 2000000   | 2000000           |
+| tier_3 | 5000  | 4000000   | 40000000          |
+| tier_4 | 10000 | 10000000  | 1000000000        |
+| tier_5 | 30000 | 150000000 | 15000000000       |
+
+# omni-moderation
+
+**Current Snapshot:** omni-moderation-2024-09-26
+
+Moderation models are free models designed to detect harmful content. This model
+is our most capable moderation model, accepting images as input as well.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+### omni-moderation-latest
+
+| Tier   | RPM  | TPM    | Batch Queue Limit |
+| ------ | ---- | ------ | ----------------- |
+| free   | 250  | 10000  |                   |
+| tier_1 | 500  | 10000  |                   |
+| tier_2 | 500  | 20000  |                   |
+| tier_3 | 1000 | 50000  |                   |
+| tier_4 | 2000 | 250000 |                   |
+| tier_5 | 5000 | 500000 |                   |
+
+# text-embedding-3-large
+
+**Current Snapshot:** text-embedding-3-large
+
+text-embedding-3-large is our most capable embedding model for both english and
+non-english tasks. Embeddings are a numerical representation of text that can be
+used to measure the relatedness between two pieces of text. Embeddings are
+useful for search, clustering, recommendations, anomaly detection, and
+classification tasks.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+### text-embedding-3-large
+
+| Tier   | RPM   | TPM      | Batch Queue Limit |
+| ------ | ----- | -------- | ----------------- |
+| free   | 100   | 40000    |                   |
+| tier_1 | 3000  | 1000000  | 3000000           |
+| tier_2 | 5000  | 1000000  | 20000000          |
+| tier_3 | 5000  | 5000000  | 100000000         |
+| tier_4 | 10000 | 5000000  | 500000000         |
+| tier_5 | 10000 | 10000000 | 4000000000        |
+
+# text-embedding-3-small
+
+**Current Snapshot:** text-embedding-3-small
+
+text-embedding-3-small is our improved, more performant version of our ada
+embedding model. Embeddings are a numerical representation of text that can be
+used to measure the relatedness between two pieces of text. Embeddings are
+useful for search, clustering, recommendations, anomaly detection, and
+classification tasks.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+### text-embedding-3-small
+
+| Tier   | RPM   | TPM      | Batch Queue Limit |
+| ------ | ----- | -------- | ----------------- |
+| free   | 100   | 40000    |                   |
+| tier_1 | 3000  | 1000000  | 3000000           |
+| tier_2 | 5000  | 1000000  | 20000000          |
+| tier_3 | 5000  | 5000000  | 100000000         |
+| tier_4 | 10000 | 5000000  | 500000000         |
+| tier_5 | 10000 | 10000000 | 4000000000        |
+
+# text-embedding-ada-002
+
+**Current Snapshot:** text-embedding-ada-002
+
+text-embedding-ada-002 is our improved, more performant version of our ada
+embedding model. Embeddings are a numerical representation of text that can be
+used to measure the relatedness between two pieces of text. Embeddings are
+useful for search, clustering, recommendations, anomaly detection, and
+classification tasks.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+### text-embedding-ada-002
+
+| Tier   | RPM   | TPM      | Batch Queue Limit |
+| ------ | ----- | -------- | ----------------- |
+| free   | 100   | 40000    |                   |
+| tier_1 | 3000  | 1000000  | 3000000           |
+| tier_2 | 5000  | 1000000  | 20000000          |
+| tier_3 | 5000  | 5000000  | 100000000         |
+| tier_4 | 10000 | 5000000  | 500000000         |
+| tier_5 | 10000 | 10000000 | 4000000000        |
+
+# text-moderation
+
+**Current Snapshot:** text-moderation-007
+
+Moderation models are free models designed to detect harmful content. This is
+our text only moderation model; we expect omni-moderation-\* models to be the
+best default moving forward.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+# text-moderation-stable
+
+**Current Snapshot:** text-moderation-007
+
+Moderation models are free models designed to detect harmful content. This is
+our text only moderation model; we expect omni-moderation-\* models to be the
+best default moving forward.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+# TTS-1 HD
+
+**Current Snapshot:** tts-1-hd
+
+TTS is a model that converts text to natural sounding spoken text. The tts-1-hd
+model is optimized for high quality text-to-speech use cases. Use it with the
+Speech endpoint in the Audio API.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+### tts-1-hd
+
+| Tier   | RPM   | TPM | Batch Queue Limit |
+| ------ | ----- | --- | ----------------- |
+| tier_1 | 500   |     |                   |
+| tier_2 | 2500  |     |                   |
+| tier_3 | 5000  |     |                   |
+| tier_4 | 7500  |     |                   |
+| tier_5 | 10000 |     |                   |
+
+# TTS-1
+
+**Current Snapshot:** tts-1
+
+TTS is a model that converts text to natural sounding spoken text. The tts-1
+model is optimized for realtime text-to-speech use cases. Use it with the Speech
+endpoint in the Audio API.
+
+## Snapshots
+
+### tts-1-hd
+
+## Supported Tools
+
+## Rate Limits
+
+### tts-1
+
+| Tier   | RPM   | TPM | Batch Queue Limit |
+| ------ | ----- | --- | ----------------- |
+| free   | 3     |     |                   |
+| tier_1 | 500   |     |                   |
+| tier_2 | 2500  |     |                   |
+| tier_3 | 5000  |     |                   |
+| tier_4 | 7500  |     |                   |
+| tier_5 | 10000 |     |                   |
+
+# Whisper
+
+**Current Snapshot:** whisper-1
+
+Whisper is a general-purpose speech recognition model, trained on a large
+dataset of diverse audio. You can also use it as a multitask model to perform
+multilingual speech recognition as well as speech translation and language
+identification.
+
+## Snapshots
+
+## Supported Tools
+
+## Rate Limits
+
+### whisper-1
+
+| Tier   | RPM   | TPM | Batch Queue Limit |
+| ------ | ----- | --- | ----------------- |
+| free   | 3     |     |                   |
+| tier_1 | 500   |     |                   |
+| tier_2 | 2500  |     |                   |
+| tier_3 | 5000  |     |                   |
+| tier_4 | 7500  |     |                   |
+| tier_5 | 10000 |     |                   |
+
+# Latest models
+
+**New:** Save on synchronous requests with
+[flex processing](/docs/guides/flex-processing).
+
+## Text tokens
+
+| Name                                     | Input | Cached input | Output | Unit      |
+| ---------------------------------------- | ----- | ------------ | ------ | --------- |
+| gpt-4.1                                  | 2     | 0.5          | 8      | 1M tokens |
+| gpt-4.1 (batch)                          | 1     |              | 4      | 1M tokens |
+| gpt-4.1-2025-04-14                       | 2     | 0.5          | 8      | 1M tokens |
+| gpt-4.1-2025-04-14 (batch)               | 1     |              | 4      | 1M tokens |
+| gpt-4.1-mini                             | 0.4   | 0.1          | 1.6    | 1M tokens |
+| gpt-4.1-mini (batch)                     | 0.2   |              | 0.8    | 1M tokens |
+| gpt-4.1-mini-2025-04-14                  | 0.4   | 0.1          | 1.6    | 1M tokens |
+| gpt-4.1-mini-2025-04-14 (batch)          | 0.2   |              | 0.8    | 1M tokens |
+| gpt-4.1-nano                             | 0.1   | 0.025        | 0.4    | 1M tokens |
+| gpt-4.1-nano (batch)                     | 0.05  |              | 0.2    | 1M tokens |
+| gpt-4.1-nano-2025-04-14                  | 0.1   | 0.025        | 0.4    | 1M tokens |
+| gpt-4.1-nano-2025-04-14 (batch)          | 0.05  |              | 0.2    | 1M tokens |
+| gpt-4.5-preview                          | 75    | 37.5         | 150    | 1M tokens |
+| gpt-4.5-preview (batch)                  | 37.5  |              | 75     | 1M tokens |
+| gpt-4.5-preview-2025-02-27               | 75    | 37.5         | 150    | 1M tokens |
+| gpt-4.5-preview-2025-02-27 (batch)       | 37.5  |              | 75     | 1M tokens |
+| gpt-4o                                   | 2.5   | 1.25         | 10     | 1M tokens |
+| gpt-4o (batch)                           | 1.25  |              | 5      | 1M tokens |
+| gpt-4o-2024-11-20                        | 2.5   | 1.25         | 10     | 1M tokens |
+| gpt-4o-2024-11-20 (batch)                | 1.25  |              | 5      | 1M tokens |
+| gpt-4o-2024-08-06                        | 2.5   | 1.25         | 10     | 1M tokens |
+| gpt-4o-2024-08-06 (batch)                | 1.25  |              | 5      | 1M tokens |
+| gpt-4o-2024-05-13                        | 5     |              | 15     | 1M tokens |
+| gpt-4o-2024-05-13 (batch)                | 2.5   |              | 7.5    | 1M tokens |
+| gpt-4o-audio-preview                     | 2.5   |              | 10     | 1M tokens |
+| gpt-4o-audio-preview-2025-06-03          | 2.5   |              | 10     | 1M tokens |
+| gpt-4o-audio-preview-2024-12-17          | 2.5   |              | 10     | 1M tokens |
+| gpt-4o-audio-preview-2024-10-01          | 2.5   |              | 10     | 1M tokens |
+| gpt-4o-realtime-preview                  | 5     | 2.5          | 20     | 1M tokens |
+| gpt-4o-realtime-preview-2025-06-03       | 5     | 2.5          | 20     | 1M tokens |
+| gpt-4o-realtime-preview-2024-12-17       | 5     | 2.5          | 20     | 1M tokens |
+| gpt-4o-realtime-preview-2024-10-01       | 5     | 2.5          | 20     | 1M tokens |
+| gpt-4o-mini                              | 0.15  | 0.075        | 0.6    | 1M tokens |
+| gpt-4o-mini (batch)                      | 0.075 |              | 0.3    | 1M tokens |
+| gpt-4o-mini-2024-07-18                   | 0.15  | 0.075        | 0.6    | 1M tokens |
+| gpt-4o-mini-2024-07-18 (batch)           | 0.075 |              | 0.3    | 1M tokens |
+| gpt-4o-mini-audio-preview                | 0.15  |              | 0.6    | 1M tokens |
+| gpt-4o-mini-audio-preview-2024-12-17     | 0.15  |              | 0.6    | 1M tokens |
+| gpt-4o-mini-realtime-preview             | 0.6   | 0.3          | 2.4    | 1M tokens |
+| gpt-4o-mini-realtime-preview-2024-12-17  | 0.6   | 0.3          | 2.4    | 1M tokens |
+| o1                                       | 15    | 7.5          | 60     | 1M tokens |
+| o1 (batch)                               | 7.5   |              | 30     | 1M tokens |
+| o1-2024-12-17                            | 15    | 7.5          | 60     | 1M tokens |
+| o1-2024-12-17 (batch)                    | 7.5   |              | 30     | 1M tokens |
+| o1-preview-2024-09-12                    | 15    | 7.5          | 60     | 1M tokens |
+| o1-preview-2024-09-12 (batch)            | 7.5   |              | 30     | 1M tokens |
+| o1-pro                                   | 150   |              | 600    | 1M tokens |
+| o1-pro (batch)                           | 75    |              | 300    | 1M tokens |
+| o1-pro-2025-03-19                        | 150   |              | 600    | 1M tokens |
+| o1-pro-2025-03-19 (batch)                | 75    |              | 300    | 1M tokens |
+| o3-pro                                   | 20    |              | 80     | 1M tokens |
+| o3-pro (batch)                           | 10    |              | 40     | 1M tokens |
+| o3-pro-2025-06-10                        | 20    |              | 80     | 1M tokens |
+| o3-pro-2025-06-10 (batch)                | 10    |              | 40     | 1M tokens |
+| o3                                       | 2     | 0.5          | 8      | 1M tokens |
+| o3 (batch)                               | 1     |              | 4      | 1M tokens |
+| o3-2025-04-16                            | 2     | 0.5          | 8      | 1M tokens |
+| o3-2025-04-16 (batch)                    | 1     |              | 4      | 1M tokens |
+| o3-deep-research                         | 10    | 2.5          | 40     | 1M tokens |
+| o3-deep-research (batch)                 | 5     |              | 20     | 1M tokens |
+| o3-deep-research-2025-06-26              | 10    | 2.5          | 40     | 1M tokens |
+| o3-deep-research-2025-06-26 (batch)      | 5     |              | 20     | 1M tokens |
+| o4-mini                                  | 1.1   | 0.275        | 4.4    | 1M tokens |
+| o4-mini (batch)                          | 0.55  |              | 2.2    | 1M tokens |
+| o4-mini-2025-04-16                       | 1.1   | 0.275        | 4.4    | 1M tokens |
+| o4-mini-2025-04-16 (batch)               | 0.55  |              | 2.2    | 1M tokens |
+| o4-mini-deep-research                    | 2     | 0.5          | 8      | 1M tokens |
+| o4-mini-deep-research (batch)            | 1     |              | 4      | 1M tokens |
+| o4-mini-deep-research-2025-06-26         | 2     | 0.5          | 8      | 1M tokens |
+| o4-mini-deep-research-2025-06-26 (batch) | 1     |              | 4      | 1M tokens |
+| o3-mini                                  | 1.1   | 0.55         | 4.4    | 1M tokens |
+| o3-mini (batch)                          | 0.55  |              | 2.2    | 1M tokens |
+| o3-mini-2025-01-31                       | 1.1   | 0.55         | 4.4    | 1M tokens |
+| o3-mini-2025-01-31 (batch)               | 0.55  |              | 2.2    | 1M tokens |
+| o1-mini                                  | 1.1   | 0.55         | 4.4    | 1M tokens |
+| o1-mini (batch)                          | 0.55  |              | 2.2    | 1M tokens |
+| o1-mini-2024-09-12                       | 1.1   | 0.55         | 4.4    | 1M tokens |
+| o1-mini-2024-09-12 (batch)               | 0.55  |              | 2.2    | 1M tokens |
+| codex-mini-latest                        | 1.5   | 0.375        | 6      | 1M tokens |
+| codex-mini-latest                        | 1.5   | 0.375        | 6      | 1M tokens |
+| gpt-4o-mini-search-preview               | 0.15  |              | 0.6    | 1M tokens |
+| gpt-4o-mini-search-preview-2025-03-11    | 0.15  |              | 0.6    | 1M tokens |
+| gpt-4o-search-preview                    | 2.5   |              | 10     | 1M tokens |
+| gpt-4o-search-preview-2025-03-11         | 2.5   |              | 10     | 1M tokens |
+| computer-use-preview                     | 3     |              | 12     | 1M tokens |
+| computer-use-preview (batch)             | 1.5   |              | 6      | 1M tokens |
+| computer-use-preview-2025-03-11          | 3     |              | 12     | 1M tokens |
+| computer-use-preview-2025-03-11 (batch)  | 1.5   |              | 6      | 1M tokens |
+| gpt-image-1                              | 5     | 1.25         |        | 1M tokens |
+| gpt-5                                    | 1.25  | 0.125        | 10     | 1M tokens |
+| gpt-5 (batch)                            | 0.625 | 0.0625       | 5      | 1M tokens |
+| gpt-5-2025-08-07                         | 1.25  | 0.125        | 10     | 1M tokens |
+| gpt-5-2025-08-07 (batch)                 | 0.625 | 0.0625       | 5      | 1M tokens |
+| gpt-5-latest                             | 1.25  | 0.125        | 10     | 1M tokens |
+| gpt-5-mini                               | 0.25  | 0.025        | 2      | 1M tokens |
+| gpt-5-mini (batch)                       | 0.125 | 0.0125       | 1      | 1M tokens |
+| gpt-5-mini-2025-08-07                    | 0.25  | 0.025        | 2      | 1M tokens |
+| gpt-5-mini-2025-08-07 (batch)            | 0.125 | 0.0125       | 1      | 1M tokens |
+| gpt-5-nano                               | 0.05  | 0.005        | 0.4    | 1M tokens |
+| gpt-5-nano (batch)                       | 0.025 | 0.0025       | 0.2    | 1M tokens |
+| gpt-5-nano-2025-08-07                    | 0.05  | 0.005        | 0.4    | 1M tokens |
+| gpt-5-nano-2025-08-07 (batch)            | 0.025 | 0.0025       | 0.2    | 1M tokens |
+
+## Text tokens (Flex Processing)
+
+| Name               | Input | Cached input | Output | Unit      |
+| ------------------ | ----- | ------------ | ------ | --------- |
+| o3                 | 1     | 0.25         | 4      | 1M tokens |
+| o3-2025-04-16      | 1     | 0.25         | 4      | 1M tokens |
+| o4-mini            | 0.55  | 0.1375       | 2.2    | 1M tokens |
+| o4-mini-2025-04-16 | 0.55  | 0.1375       | 2.2    | 1M tokens |
+
+## Audio tokens
+
+| Name                                    | Input | Cached input | Output | Unit      |
+| --------------------------------------- | ----- | ------------ | ------ | --------- |
+| gpt-4o-audio-preview                    | 40    |              | 80     | 1M tokens |
+| gpt-4o-audio-preview-2025-06-03         | 40    |              | 80     | 1M tokens |
+| gpt-4o-audio-preview-2024-12-17         | 40    |              | 80     | 1M tokens |
+| gpt-4o-audio-preview-2024-10-01         | 100   |              | 200    | 1M tokens |
+| gpt-4o-mini-audio-preview               | 10    |              | 20     | 1M tokens |
+| gpt-4o-mini-audio-preview-2024-12-17    | 10    |              | 20     | 1M tokens |
+| gpt-4o-realtime-preview                 | 40    | 2.5          | 80     | 1M tokens |
+| gpt-4o-realtime-preview-2025-06-03      | 40    | 2.5          | 80     | 1M tokens |
+| gpt-4o-realtime-preview-2024-12-17      | 40    | 2.5          | 80     | 1M tokens |
+| gpt-4o-realtime-preview-2024-10-01      | 100   | 20           | 200    | 1M tokens |
+| gpt-4o-mini-realtime-preview            | 10    | 0.3          | 20     | 1M tokens |
+| gpt-4o-mini-realtime-preview-2024-12-17 | 10    | 0.3          | 20     | 1M tokens |
+
+## Image tokens
+
+| Name        | Input | Cached input | Output | Unit      |
+| ----------- | ----- | ------------ | ------ | --------- |
+| gpt-image-1 | 10    | 2.5          | 40     | 1M tokens |
+
+# Fine-tuning
+
+Tokens used for model grading in reinforcement fine-tuning are billed at that
+model's per-token rate. Inference discounts are available if you enable data
+sharing when creating the fine-tune job.
+[Learn more](https://help.openai.com/en/articles/10306912-sharing-feedback-evaluation-and-fine-tuning-data-and-api-inputs-and-outputs-with-openai#h_c93188c569).
+
+| Name                                         | Training       | Input | Cached input | Output | Unit      |
+| -------------------------------------------- | -------------- | ----- | ------------ | ------ | --------- |
+| o4-mini-2025-04-16                           | $100.00 / hour | 4     | 1            | 16     | 1M tokens |
+| o4-mini-2025-04-16 (batch)                   |                | 2     |              | 8      | 1M tokens |
+| o4-mini-2025-04-16 with data sharing         | $100.00 / hour | 2     | 0.5          | 8      | 1M tokens |
+| o4-mini-2025-04-16 with data sharing (batch) |                | 1     |              | 4      | 1M tokens |
+| gpt-4.1-2025-04-14                           | 25             | 3     | 0.75         | 12     | 1M tokens |
+| gpt-4.1-2025-04-14 (batch)                   |                | 1.5   |              | 6      | 1M tokens |
+| gpt-4.1-mini-2025-04-14                      | 5              | 0.8   | 0.2          | 3.2    | 1M tokens |
+| gpt-4.1-mini-2025-04-14 (batch)              |                | 0.4   |              | 1.6    | 1M tokens |
+| gpt-4.1-nano-2025-04-14                      | 1.5            | 0.2   | 0.05         | 0.8    | 1M tokens |
+| gpt-4.1-nano-2025-04-14 (batch)              |                | 0.1   |              | 0.4    | 1M tokens |
+| gpt-4o-2024-08-06                            | 25             | 3.75  | 1.875        | 15     | 1M tokens |
+| gpt-4o-2024-08-06 (batch)                    |                | 1.875 |              | 7.5    | 1M tokens |
+| gpt-4o-mini-2024-07-18                       | 3              | 0.3   | 0.15         | 1.2    | 1M tokens |
+| gpt-4o-mini-2024-07-18 (batch)               |                | 0.15  |              | 0.6    | 1M tokens |
+| gpt-3.5-turbo                                | 8              | 3     |              | 6      | 1M tokens |
+| gpt-3.5-turbo (batch)                        |                | 1.5   |              | 3      | 1M tokens |
+| davinci-002                                  | 6              | 12    |              | 12     | 1M tokens |
+| davinci-002 (batch)                          |                | 6     |              | 6      | 1M tokens |
+| babbage-002                                  | 0.4            | 1.6   |              | 1.6    | 1M tokens |
+| babbage-002 (batch)                          |                | 0.8   |              | 0.8    | 1M tokens |
+
+# Built-in tools
+
+The tokens used for built-in tools are billed at the chosen model's per-token
+rates. GB refers to binary gigabytes of storage (also known as gibibyte), where
+1GB is 2^30 bytes.
+
+**Web search content tokens:** Search content tokens are tokens retrieved from
+the search index and fed to the model alongside your prompt to generate an
+answer. For gpt-4o and gpt-4.1 models, these tokens are included in the $25/1K
+calls cost. For o3 and o4-mini models, you are billed for these tokens at input
+token rates on top of the $10/1K calls cost.
+
+| Name                                                                                                    | Cost | Unit                                          |
+| ------------------------------------------------------------------------------------------------------- | ---- | --------------------------------------------- |
+| Code Interpreter                                                                                        | 0.03 | container                                     |
+| File Search Storage                                                                                     | 0.1  | GB/day (1GB free)                             |
+| File Search Tool Call - Responses API only                                                              | 2.5  | 1k calls (\*Does not apply on Assistants API) |
+| Web Search - gpt-4o and gpt-4.1 models (including mini models) - Search content tokens free             | 25   | 1k calls                                      |
+| Web Search - o3, o4-mini, o3-pro, and deep research models - Search content tokens billed at model rate | 10   | 1k calls                                      |
+
+# Transcription and speech generation
+
+## Text tokens
+
+| Name                   | Input | Output | Estimated cost | Unit      |
+| ---------------------- | ----- | ------ | -------------- | --------- |
+| gpt-4o-mini-tts        | 0.6   |        | 0.015          | 1M tokens |
+| gpt-4o-transcribe      | 2.5   | 10     | 0.006          | 1M tokens |
+| gpt-4o-mini-transcribe | 1.25  | 5      | 0.003          | 1M tokens |
+
+## Audio tokens
+
+| Name                   | Input | Output | Estimated cost | Unit      |
+| ---------------------- | ----- | ------ | -------------- | --------- |
+| gpt-4o-mini-tts        |       | 12     | 0.015          | 1M tokens |
+| gpt-4o-transcribe      | 6     |        | 0.006          | 1M tokens |
+| gpt-4o-mini-transcribe | 3     |        | 0.003          | 1M tokens |
+
+## Other models
+
+| Name    | Use case          | Cost  | Unit          |
+| ------- | ----------------- | ----- | ------------- |
+| Whisper | Transcription     | 0.006 | minute        |
+| TTS     | Speech generation | 15    | 1M characters |
+| TTS HD  | Speech generation | 30    | 1M characters |
+
+# Image generation
+
+Please note that this pricing for GPT Image 1 does not include text and image
+tokens used in the image generation process, and only reflects the output image
+tokens cost. For input text and image tokens, refer to the corresponding
+sections above. There are no additional costs for DALLÂ·E 2 or DALLÂ·E 3.
+
+## Image generation
+
+| Name        | Quality | 1024x1024 | 1024x1536 | 1536x1024 | Unit  |
+| ----------- | ------- | --------- | --------- | --------- | ----- |
+| GPT Image 1 | Low     | 0.011     | 0.016     | 0.016     | image |
+| GPT Image 1 | Medium  | 0.042     | 0.063     | 0.063     | image |
+| GPT Image 1 | High    | 0.167     | 0.25      | 0.25      | image |
+
+## Image generation
+
+| Name     | Quality  | 1024x1024 | 1024x1792 | 1792x1024 | Unit  |
+| -------- | -------- | --------- | --------- | --------- | ----- |
+| DALLÂ·E 3 | Standard | 0.04      | 0.08      | 0.08      | image |
+| DALLÂ·E 3 | HD       | 0.08      | 0.12      | 0.12      | image |
+
+## Image generation
+
+| Name     | Quality  | 256x256 | 512x512 | 1024x1024 | Unit      |
+| -------- | -------- | ------- | ------- | --------- | --------- |
+| DALLÂ·E 2 | Standard | 0.016   | 0.018   | 0.02      | 1M tokens |
+
+# Embeddings
+
+## Embeddings
+
+| Name                           | Cost  | Unit      |
+| ------------------------------ | ----- | --------- |
+| text-embedding-3-small         | 0.02  | 1M tokens |
+| text-embedding-3-small (batch) | 0.01  | 1M tokens |
+| text-embedding-3-large         | 0.13  | 1M tokens |
+| text-embedding-3-large (batch) | 0.065 | 1M tokens |
+| text-embedding-ada-002         | 0.1   | 1M tokens |
+| text-embedding-ada-002 (batch) | 0.05  | 1M tokens |
+
+# Moderation
+
+| Name                       | Cost | Unit      |
+| -------------------------- | ---- | --------- |
+| omni-moderation-latest     | Free | 1M tokens |
+| omni-moderation-2024-09-26 | Free | 1M tokens |
+| text-moderation-latest     | Free | 1M tokens |
+| text-moderation-007        | Free | 1M tokens |
+
+# Other models
+
+## Text tokens
+
+| Name                              | Input | Output | Unit      |
+| --------------------------------- | ----- | ------ | --------- |
+| chatgpt-4o-latest                 | 5     | 15     | 1M tokens |
+| gpt-4-turbo                       | 10    | 30     | 1M tokens |
+| gpt-4-turbo (batch)               | 5     | 15     | 1M tokens |
+| gpt-4-turbo-2024-04-09            | 10    | 30     | 1M tokens |
+| gpt-4-turbo-2024-04-09 (batch)    | 5     | 15     | 1M tokens |
+| gpt-4-0125-preview                | 10    | 30     | 1M tokens |
+| gpt-4-0125-preview (batch)        | 5     | 15     | 1M tokens |
+| gpt-4-1106-preview                | 10    | 30     | 1M tokens |
+| gpt-4-1106-preview (batch)        | 5     | 15     | 1M tokens |
+| gpt-4-1106-vision-preview         | 10    | 30     | 1M tokens |
+| gpt-4-1106-vision-preview (batch) | 5     | 15     | 1M tokens |
+| gpt-4                             | 30    | 60     | 1M tokens |
+| gpt-4 (batch)                     | 15    | 30     | 1M tokens |
+| gpt-4-0613                        | 30    | 60     | 1M tokens |
+| gpt-4-0613 (batch)                | 15    | 30     | 1M tokens |
+| gpt-4-0314                        | 30    | 60     | 1M tokens |
+| gpt-4-0314 (batch)                | 15    | 30     | 1M tokens |
+| gpt-4-32k                         | 60    | 120    | 1M tokens |
+| gpt-4-32k (batch)                 | 30    | 60     | 1M tokens |
+| gpt-3.5-turbo                     | 0.5   | 1.5    | 1M tokens |
+| gpt-3.5-turbo (batch)             | 0.25  | 0.75   | 1M tokens |
+| gpt-3.5-turbo-0125                | 0.5   | 1.5    | 1M tokens |
+| gpt-3.5-turbo-0125 (batch)        | 0.25  | 0.75   | 1M tokens |
+| gpt-3.5-turbo-1106                | 1     | 2      | 1M tokens |
+| gpt-3.5-turbo-1106 (batch)        | 0.5   | 1      | 1M tokens |
+| gpt-3.5-turbo-0613                | 1.5   | 2      | 1M tokens |
+| gpt-3.5-turbo-0613 (batch)        | 0.75  | 1      | 1M tokens |
+| gpt-3.5-0301                      | 1.5   | 2      | 1M tokens |
+| gpt-3.5-0301 (batch)              | 0.75  | 1      | 1M tokens |
+| gpt-3.5-turbo-instruct            | 1.5   | 2      | 1M tokens |
+| gpt-3.5-turbo-16k-0613            | 3     | 4      | 1M tokens |
+| gpt-3.5-turbo-16k-0613 (batch)    | 1.5   | 2      | 1M tokens |
+| davinci-002                       | 2     | 2      | 1M tokens |
+| davinci-002 (batch)               | 1     | 1      | 1M tokens |
+| babbage-002                       | 0.4   | 0.4    | 1M tokens |
+| babbage-002 (batch)               | 0.2   | 0.2    | 1M tokens |
