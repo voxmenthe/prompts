@@ -548,5 +548,5 @@ LiveKit and [LiveKit Cloud](https://cloud.livekit.io) contains these primary com
 
 ---
 
-This document was rendered at 2025-11-23T23:33:50.198Z.
+This document was rendered at 2025-11-30T20:44:46.016Z.
 For the latest version of this document, see [https://docs.livekit.io/llms.txt](https://docs.livekit.io/llms.txt).

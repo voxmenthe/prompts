@@ -1,3 +1,7 @@
+LiveKit docs › Advanced LLM › Chain-of-thought agent
+
+---
+
 # Modifying LLM output before TTS
 
 > How to modify LLM output before sending the text to TTS for vocalization.

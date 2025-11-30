@@ -84,7 +84,7 @@ export async function generateResponse(prompt: string) {
 
   (async () => {
     const { textStream } = streamText({
-      model: openai('gpt-4o'),
+      model: 'anthropic/claude-sonnet-4.5',
       prompt,
     });
 
@@ -118,7 +118,7 @@ export async function generateResponse(prompt: string) {
 
   (async () => {
     const { textStream } = streamText({
-      model: openai('gpt-4o'),
+      model: 'anthropic/claude-sonnet-4.5',
       prompt,
     });
 

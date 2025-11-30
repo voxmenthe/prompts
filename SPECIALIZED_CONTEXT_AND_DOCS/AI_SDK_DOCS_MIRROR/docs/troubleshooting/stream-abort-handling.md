@@ -10,7 +10,7 @@ export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: 'anthropic/claude-sonnet-4.5',
     messages: convertToModelMessages(messages),
     abortSignal: req.signal,
   });
@@ -46,7 +46,7 @@ export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: 'anthropic/claude-sonnet-4.5',
     messages: convertToModelMessages(messages),
     abortSignal: req.signal,
   });

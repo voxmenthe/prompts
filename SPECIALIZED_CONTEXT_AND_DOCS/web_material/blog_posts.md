@@ -90,6 +90,7 @@ https://tech.instacart.com/
 https://publish.obsidian.md/the-tensor-throne/
 https://thinkingmachines.ai/blog/
 https://www.tilderesearch.com/blog
+https://www.vtrivedy.com/posts
 https://yidingjiang.github.io/blog/
 https://ysymyth.github.io/blog/
 https://www.zhihu.com/people/haohai-sun-19

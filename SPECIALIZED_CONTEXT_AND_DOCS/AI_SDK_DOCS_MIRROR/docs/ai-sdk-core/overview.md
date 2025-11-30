@@ -9,11 +9,9 @@ For example, here’s how you can generate text with various models using the AI
 
 import { generateText } from "ai"
 
-import { xai } from "@ai-sdk/xai"
-
 const { text } = await generateText({
 
-model: xai("grok-4"),
+model: "google/gemini-3-pro-preview",
 
 prompt: "What is love?"
 

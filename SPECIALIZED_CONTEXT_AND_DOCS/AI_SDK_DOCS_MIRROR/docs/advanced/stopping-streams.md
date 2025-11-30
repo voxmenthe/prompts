@@ -19,7 +19,7 @@ export async function POST(req: Request) {
   const { prompt } = await req.json();
 
   const result = streamText({
-    model: openai('gpt-4.1'),
+    model: 'anthropic/claude-sonnet-4.5',
     prompt,
     // forward the abort signal:
     abortSignal: req.signal,
@@ -84,7 +84,7 @@ single callback.
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: openai('gpt-4.1'),
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Write a long story...',
   abortSignal: controller.signal,
   onAbort: ({ steps }) => {
@@ -144,7 +144,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: 'anthropic/claude-sonnet-4.5',
     messages: convertToModelMessages(messages),
     abortSignal: req.signal,
   });

@@ -8,6 +8,10 @@ LiveKit docs › Reference › Troubleshooting
 
 The following sections cover some of the common issues and solutions for LiveKit SIP integrations.
 
+> 💡 **Provider documentation**
+> 
+> Consult your SIP trunking provider's documentation. Your provider might include additional documentation for specific errors and have their own recommended troubleshooting steps.
+
 ## General issues
 
 The following issues can apply to both incoming and outgoing calls.
@@ -102,6 +106,10 @@ For example, the SIP endpoint for Telnyx is `sip.telnyx.com`. If you include a s
 #### Solution
 
 Check with your SIP trunking provider and verify you're using the correct SIP endpoint in the `address` field for your outbound trunk. To learn more, see [Create an outbound trunk](https://docs.livekit.io/sip/trunk-outbound.md#create).
+
+## Additional resources
+
+For SIP errors not covered in this topic, see [List of SIP response codes](https://en.wikipedia.org/wiki/List_of_SIP_response_codes).
 
 ---
 

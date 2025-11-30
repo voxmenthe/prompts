@@ -110,7 +110,7 @@ The following limitations and considerations apply to LiveKit Phone Numbers:
 - Available only in the US. Support for additional countries is coming in a future release.
 - Only inbound calling is supported. Support for outbound calling is coming in a future release.
 - Forwarding calls using the `TransferSipParticipant` API is not yet supported.
-- If you release a phone number before the end of the month, you are still billed for the entirety of the month. For details on pricing, see the [LiveKit Phone Numbers pricing page](https://livekit.io/pricing/phone-numbers).
+- If you release a phone number before the end of the month, you are still billed for the entirety of the month. For details on pricing, see [LiveKit Telephony pricing](https://livekit.io/pricing#telephony).
 
 ## CLI reference
 

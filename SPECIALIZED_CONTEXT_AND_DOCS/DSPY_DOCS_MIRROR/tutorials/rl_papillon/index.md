@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/rl_papillon/index.ipynb on 2025-11-23T23:34:13.850433Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/rl_papillon/index.ipynb on 2025-11-30T20:45:13.289851Z -->
 
 # Tutorial: Online RL over a Multi-Module DSPy Program
 

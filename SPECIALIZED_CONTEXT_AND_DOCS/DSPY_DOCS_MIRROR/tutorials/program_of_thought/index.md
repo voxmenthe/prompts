@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/program_of_thought/index.ipynb on 2025-11-23T23:34:13.789832Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/program_of_thought/index.ipynb on 2025-11-30T20:45:13.247362Z -->
 
 # Tutorial: ProgramOfThought
 

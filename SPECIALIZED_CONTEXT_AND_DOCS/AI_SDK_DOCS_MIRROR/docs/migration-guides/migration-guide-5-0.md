@@ -115,14 +115,14 @@ The `maxTokens` parameter has been renamed to `maxOutputTokens` for clarity.
 
 ```tsx
 const result = await generateText({
-  model: openai('gpt-4.1'),
+  model: 'anthropic/claude-sonnet-4.5',
   maxTokens: 1024,
   prompt: 'Hello, world!',
 });
 ```
 ```tsx
 const result = await generateText({
-  model: openai('gpt-4.1'),
+  model: 'anthropic/claude-sonnet-4.5',
   maxOutputTokens: 1024,
   prompt: 'Hello, world!',
 });
@@ -154,19 +154,17 @@ import { UIMessage, CreateUIMessage } from 'ai';
 
 ```tsx
 import { convertToCoreMessages, streamText } from 'ai';
-import { openai } from '@ai-sdk/openai';
 
 const result = await streamText({
-  model: openai('gpt-4'),
+  model: 'anthropic/claude-sonnet-4.5',
   messages: convertToCoreMessages(messages),
 });
 ```
 ```tsx
 import { convertToModelMessages, streamText } from 'ai';
-import { openai } from '@ai-sdk/openai';
 
 const result = await streamText({
-  model: openai('gpt-4'),
+  model: 'anthropic/claude-sonnet-4.5',
   messages: convertToModelMessages(messages),
 });
 ```
@@ -352,7 +350,7 @@ const stream = createUIMessageStream({
 
     // Can merge with LLM streams
     const result = streamText({
-      model: openai('gpt-4.1'),
+      model: 'anthropic/claude-sonnet-4.5',
       messages,
     });
 
@@ -368,7 +366,6 @@ return createUIMessageStreamResponse({ stream });
 The `writeMessageAnnotation` and `writeData` methods from `DataStreamWriter` have been removed. Instead, use custom data parts with the new `UIMessage` stream architecture.
 
 ```tsx
-import { openai } from '@ai-sdk/openai';
 import { createDataStreamResponse, streamText } from 'ai';
 
 export async function POST(req: Request) {
@@ -380,7 +377,7 @@ export async function POST(req: Request) {
       dataStream.writeData('call started');
 
       const result = streamText({
-        model: openai('gpt-4o'),
+        model: 'anthropic/claude-sonnet-4.5',
         messages,
         onChunk() {
           // Write message annotations
@@ -406,7 +403,6 @@ export async function POST(req: Request) {
 }
 ```
 ```tsx
-import { openai } from '@ai-sdk/openai';
 import {
   createUIMessageStream,
   createUIMessageStreamResponse,
@@ -429,7 +425,7 @@ export async function POST(req: Request) {
       });
 
       const result = streamText({
-        model: openai('gpt-4o'),
+        model: 'anthropic/claude-sonnet-4.5',
         messages,
         onChunk() {
           // Write data parts that update during streaming
@@ -471,7 +467,7 @@ The `providerMetadata` input parameter has been renamed to `providerOptions`. No
 
 ```tsx
 const result = await generateText({
-  model: openai('gpt-4'),
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Hello',
   providerMetadata: {
     openai: { store: false },
@@ -480,7 +476,7 @@ const result = await generateText({
 ```
 ```tsx
 const result = await generateText({
-  model: openai('gpt-4'),
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Hello',
   providerOptions: {
     // Input parameter renamed
@@ -629,7 +625,7 @@ The `toolCallStreaming` option has been removed in AI SDK 5.0. Tool call streami
 
 ```tsx
 const result = streamText({
-  model: openai('gpt-4o'),
+  model: 'anthropic/claude-sonnet-4.5',
   messages,
   toolCallStreaming: true, // Optional parameter to enable streaming
   tools: {
@@ -640,7 +636,7 @@ const result = streamText({
 ```
 ```tsx
 const result = streamText({
-  model: openai('gpt-4o'),
+  model: 'anthropic/claude-sonnet-4.5',
   messages: convertToModelMessages(messages),
   // toolCallStreaming removed - streaming is always enabled
   tools: {
@@ -723,7 +719,7 @@ When using both static and dynamic tools together, use the `dynamic` flag for ty
 
 ```tsx
 const result = await generateText({
-  model: openai('gpt-4'),
+  model: 'anthropic/claude-sonnet-4.5',
   tools: {
     // Static tool with known types
     weather: weatherTool,
@@ -1116,7 +1112,7 @@ For core functions like `generateText` and `streamText`, the `maxSteps` paramete
 ```tsx
 // V4: Simple numeric limit
 const result = await generateText({
-  model: openai('gpt-4'),
+  model: 'anthropic/claude-sonnet-4.5',
   messages,
   maxSteps: 5, // Stop after a maximum of 5 steps
 });
@@ -1131,7 +1127,7 @@ import { stepCountIs, hasToolCall } from 'ai';
 
 // V5: Server-side - flexible stopping conditions with stopWhen
 const result = await generateText({
-  model: openai('gpt-4'),
+  model: 'anthropic/claude-sonnet-4.5',
   messages,
   // Only triggers when last step has tool results
   stopWhen: stepCountIs(5), // Stop at step 5 if tools were called
@@ -1139,7 +1135,7 @@ const result = await generateText({
 
 // Server-side - stop when specific tool is called
 const result = await generateText({
-  model: openai('gpt-4'),
+  model: 'anthropic/claude-sonnet-4.5',
   messages,
   stopWhen: hasToolCall('finalizeTask'), // Stop when finalizeTask tool is called
 });
@@ -1232,10 +1228,9 @@ const { messages, sendMessage } = useChat({
 ```tsx
 // Server-side: Use stopWhen for multi-step control
 import { streamText, convertToModelMessages, stepCountIs } from 'ai';
-import { openai } from '@ai-sdk/openai';
 
 const result = await streamText({
-  model: openai('gpt-4'),
+  model: 'anthropic/claude-sonnet-4.5',
   messages: convertToModelMessages(messages),
   stopWhen: stepCountIs(5), // Stop after 5 steps with tool calls
 });
@@ -1720,7 +1715,6 @@ const { messages } = useChat({
 });
 ```
 ```tsx
-import { openai } from '@ai-sdk/openai';
 import {
   convertToModelMessages,
   streamText,
@@ -1740,7 +1734,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: MyUIMessage[] } = await req.json();
 
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: 'anthropic/claude-sonnet-4.5',
     messages: convertToModelMessages(messages),
   });
 
@@ -2092,7 +2086,7 @@ const { response } = await embed(/* */);
 ```tsx
 const { embeddings, usage } = await embedMany({
   maxParallelCalls: 2, // Limit parallel requests
-  model: openai.textEmbeddingModel('text-embedding-3-small'),
+  model: 'openai/text-embedding-3-small',
   values: [
     'sunny day at the beach',
     'rainy afternoon in the city',
@@ -2252,7 +2246,7 @@ The `onChunk` callback now receives the new streaming chunk types with IDs and t
 
 ```tsx
 const result = streamText({
-  model: openai('gpt-4.1'),
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Write a story',
   onChunk({ chunk }) {
     switch (chunk.type) {
@@ -2267,7 +2261,7 @@ const result = streamText({
 ```
 ```tsx
 const result = streamText({
-  model: openai('gpt-4.1'),
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Write a story',
   onChunk({ chunk }) {
     switch (chunk.type) {
@@ -2448,7 +2442,7 @@ The streaming API has been completely restructured from data streams to UI messa
 // Express/Node.js servers
 app.post('/stream', async (req, res) => {
   const result = streamText({
-    model: openai('gpt-4.1'),
+    model: 'anthropic/claude-sonnet-4.5',
     prompt: 'Generate content',
   });
 
@@ -2457,7 +2451,7 @@ app.post('/stream', async (req, res) => {
 
 // Next.js API routes
 const result = streamText({
-  model: openai('gpt-4.1'),
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Generate content',
 });
 
@@ -2467,7 +2461,7 @@ return result.toDataStreamResponse();
 // Express/Node.js servers
 app.post('/stream', async (req, res) => {
   const result = streamText({
-    model: openai('gpt-4.1'),
+    model: 'anthropic/claude-sonnet-4.5',
     prompt: 'Generate content',
   });
 
@@ -2476,7 +2470,7 @@ app.post('/stream', async (req, res) => {
 
 // Next.js API routes
 const result = streamText({
-  model: openai('gpt-4.1'),
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Generate content',
 });
 
@@ -2723,7 +2717,7 @@ import { wrapLanguageModel } from 'ai';
 
 ```tsx
 const result = await generateText({
-  model: openai('gpt-4'),
+  model: 'anthropic/claude-sonnet-4.5',
   messages,
   tools: { weatherTool, locationTool },
   experimental_activeTools: ['weatherTool'],
@@ -2731,7 +2725,7 @@ const result = await generateText({
 ```
 ```tsx
 const result = await generateText({
-  model: openai('gpt-4'),
+  model: 'anthropic/claude-sonnet-4.5',
   messages,
   tools: { weatherTool, locationTool },
   activeTools: ['weatherTool'], // No longer experimental
@@ -2744,7 +2738,7 @@ The `experimental_prepareStep` option has been promoted and no longer requires t
 
 ```tsx
 const result = await generateText({
-  model: openai('gpt-4'),
+  model: 'anthropic/claude-sonnet-4.5',
   messages,
   tools: { weatherTool, locationTool },
   experimental_prepareStep: ({ steps, stepNumber, model }) => {
@@ -2758,7 +2752,7 @@ const result = await generateText({
 ```
 ```tsx
 const result = await generateText({
-  model: openai('gpt-4'),
+  model: 'anthropic/claude-sonnet-4.5',
   messages,
   tools: { weatherTool, locationTool },
   prepareStep: ({ steps, stepNumber, model }) => {
@@ -2786,14 +2780,14 @@ Temperature is no longer set to `0` by default.
 
 ```tsx
 await generateText({
-  model: openai('gpt-4'),
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Write a creative story',
   // Implicitly temperature: 0
 });
 ```
 ```tsx
 await generateText({
-  model: openai('gpt-4'),
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Write a creative story',
   temperature: 0, // Must explicitly set
 });
@@ -2814,7 +2808,6 @@ import {
   appendClientMessage,
   appendResponseMessages,
 } from 'ai';
-import { openai } from '@ai-sdk/openai';
 
 const updatedMessages = appendClientMessage({
   messages,
@@ -2822,7 +2815,7 @@ const updatedMessages = appendClientMessage({
 });
 
 const result = streamText({
-  model: openai('gpt-4o'),
+  model: 'anthropic/claude-sonnet-4.5',
   messages: updatedMessages,
   experimental_generateMessageId: () => generateId(), // ID generation on streamText
   onFinish: async ({ responseMessages, usage }) => {
@@ -2842,14 +2835,13 @@ In v5, message persistence is now handled through the `toUIMessageStreamResponse
 
 ```tsx
 import { streamText, convertToModelMessages, UIMessage } from 'ai';
-import { openai } from '@ai-sdk/openai';
 
 const messages: UIMessage[] = [
   // Your existing messages in UIMessage format
 ];
 
 const result = streamText({
-  model: openai('gpt-4o'),
+  model: 'anthropic/claude-sonnet-4.5',
   messages: convertToModelMessages(messages),
   // experimental_generateMessageId removed from here
 });
@@ -2879,14 +2871,14 @@ The `experimental_generateMessageId` option has been moved from `streamText` con
 
 ```tsx
 const result = streamText({
-  model: openai('gpt-4o'),
+  model: 'anthropic/claude-sonnet-4.5',
   messages,
   experimental_generateMessageId: () => generateId(),
 });
 ```
 ```tsx
 const result = streamText({
-  model: openai('gpt-4o'),
+  model: 'anthropic/claude-sonnet-4.5',
   messages: convertToModelMessages(messages),
 });
 
@@ -2910,7 +2902,6 @@ import {
   convertToModelMessages,
   UIMessage,
 } from 'ai';
-import { openai } from '@ai-sdk/openai';
 
 const stream = createUIMessageStream({
   originalMessages: messages,
@@ -2924,7 +2915,7 @@ const stream = createUIMessageStream({
 
     // Stream the AI response
     const result = streamText({
-      model: openai('gpt-4o'),
+      model: 'anthropic/claude-sonnet-4.5',
       messages: convertToModelMessages(messages),
     });
 

@@ -18,7 +18,7 @@ When language models are provided with a set of function definitions and instruc
 ```tsx
 const sendMessage = (prompt: string) =>
   generateText({
-    model: 'gpt-3.5-turbo',
+    model: 'anthropic/claude-sonnet-4.5',
     system: 'you are a friendly weather assistant!',
     prompt,
     tools: {

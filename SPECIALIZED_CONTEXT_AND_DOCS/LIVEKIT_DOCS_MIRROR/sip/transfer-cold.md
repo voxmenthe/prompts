@@ -90,8 +90,17 @@ async function transferParticipant(participant) {
 
   const transferTo = "tel:+15105550100";
 
-  await sipClient.transferSipParticipant('open-room', participant.identity, transferTo, sipTransferOptions);
-  console.log('transfer participant');
+  try {
+    await sipClient.transferSipParticipant('open-room', participant.identity, transferTo, sipTransferOptions);
+    console.log("SIP participant transferred successfully");
+  } catch (error) {
+    if (error instanceof TwirpError && error.metadata != null) {
+      console.error("SIP error code: ", error.metadata?.['sip_status_code']);
+      console.error("SIP error message: ", error.metadata?.['sip_status']);
+    } else {
+      console.error("Error transferring SIP participant: ", error);
+    }
+  }
 }
 
 ```
@@ -114,19 +123,29 @@ logger.setLevel(logging.INFO)
 async def transfer_call(participant_identity: str, room_name: str) -> None:
   async with api.LiveKitAPI() as livekit_api:
     transfer_to = 'tel:+14155550100'
-    
-    # Create transfer request
-    transfer_request = TransferSIPParticipantRequest(
-        participant_identity=participant_identity,
-        room_name=room_name,
-        transfer_to=transfer_to,
-        play_dialtone=False
-    )
-    logger.debug(f"Transfer request: {transfer_request}")
 
-    # Transfer caller
-    await livekit_api.sip.transfer_sip_participant(transfer_request)
-    logger.info(f"Successfully transferred participant {participant_identity} to {transfer_to}")
+    try:
+      # Create transfer request
+      transfer_request = TransferSIPParticipantRequest(
+          participant_identity=participant_identity,
+          room_name=room_name,
+          transfer_to=transfer_to,
+          play_dialtone=False
+      )
+      logger.debug(f"Transfer request: {transfer_request}")
+          
+      # Transfer caller
+      await livekit_api.sip.transfer_sip_participant(transfer_request)
+      print("SIP participant transferred successfully")
+          
+    except Exception as error:
+        # Check if it's a Twirp error with metadata
+        if hasattr(error, 'metadata') and error.metadata:
+            print(f"SIP error code: {error.metadata.get('sip_status_code')}")
+            print(f"SIP error message: {error.metadata.get('sip_status')}")
+        else:
+            print(f"Error transferring SIP participant:")
+            print(f"{error.status} - {error.code} - {error.message}")
 
 ```
 
@@ -152,12 +171,18 @@ def transferParticipant(room_name, participant_identity)
 
   transfer_to = 'tel:+14155550100'
 
-  sip_service.transfer_sip_participant(
-      room_name,
-      participant_identity,
-      transfer_to,
-      play_dialtone: false
-  )
+    response = sip_service.transfer_sip_participant(
+        room_name,
+        participant_identity,
+        transfer_to,
+        play_dialtone: false
+    )
+
+     if response.error then
+        puts "Error: #{response.error}"
+    else
+        puts "SIP participant transferred successfully"
+    end
 
 end
 
@@ -169,36 +194,42 @@ end
 
 ```go
 import (
-  "context"
-  "fmt"
-  "os"
+	"context"
+	"fmt"
+	"os"
 
-  lksdk "github.com/livekit/server-sdk-go/v2"
-  "github.com/livekit/protocol/livekit"
+	"github.com/livekit/protocol/livekit"
+	lksdk "github.com/livekit/server-sdk-go/v2"
 )
 
 func transferParticipant(ctx context.Context, participantIdentity string) {
+	fmt.Println("Starting SIP participant transfer...")
 
-  roomName := "open-room"
-  transferTo := "tel:+14155550100'
+	roomName := "open-room"
+	transferTo := "tel:+14155550100"
 
-  // Create a transfer request
-  transferRequest := &livekit.TransferSIPParticipantRequest{
-    RoomName: roomName,
-    ParticipantIdentity: participantIdentity,
-    TransferTo: transferTo,
-    PlayDialtone: false,
-  }
+	// Create a transfer request
+	transferRequest := &livekit.TransferSIPParticipantRequest{
+		RoomName:            roomName,
+		ParticipantIdentity: participantIdentity,
+		TransferTo:          transferTo,
+		PlayDialtone:        false,
+	}
 
-  sipClient := lksdk.NewSIPClient(os.Getenv("LIVEKIT_URL"),
-                                  os.Getenv("LIVEKIT_API_KEY"),
-                                  os.Getenv("LIVEKIT_API_SECRET"))
+	fmt.Println("Creating SIP client...")
+	sipClient := lksdk.NewSIPClient(os.Getenv("LIVEKIT_URL"),
+		os.Getenv("LIVEKIT_API_KEY"),
+		os.Getenv("LIVEKIT_API_SECRET"))
 
-  // Execute transfer request
-  _, err := sipClient.TransferSIPParticipant(ctx, transferRequest)
-  if err != nil {
-    fmt.Println(err)
-  }
+	// Execute transfer request
+	fmt.Println("Executing transfer request...")
+	_, err := sipClient.TransferSIPParticipant(ctx, transferRequest)
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
+
+	fmt.Println("SIP participant transferred successfully")
 }
 
 ```

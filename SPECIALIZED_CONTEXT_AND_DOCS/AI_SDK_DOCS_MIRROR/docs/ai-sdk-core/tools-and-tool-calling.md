@@ -17,7 +17,7 @@ import { z } from 'zod';
 import { generateText, tool } from 'ai';
 
 const result = await generateText({
-  model: 'openai/gpt-4o',
+  model: 'anthropic/claude-sonnet-4.5',
   tools: {
     weather: tool({
       description: 'Get the weather in a location',
@@ -70,7 +70,7 @@ import { z } from 'zod';
 import { generateText, tool, stepCountIs } from 'ai';
 
 const { text, steps } = await generateText({
-  model: 'openai/gpt-4o',
+  model: 'anthropic/claude-sonnet-4.5',
   tools: {
     weather: tool({
       description: 'Get the weather in a location',
@@ -102,7 +102,7 @@ It contains all the text, tool calls, tool results, and more from each step.
 import { generateText } from 'ai';
 
 const { steps } = await generateText({
-  model: openai('gpt-4o'),
+  model: 'anthropic/claude-sonnet-4.5',
   stopWhen: stepCountIs(10),
   // ...
 });
@@ -245,7 +245,7 @@ When using both static and dynamic tools, use the `dynamic` flag for type narrow
 
 ```ts
 const result = await generateText({
-  model: 'openai/gpt-4o',
+  model: 'anthropic/claude-sonnet-4.5',
   tools: {
     // Static tool with known types
     weather: weatherTool,
@@ -323,7 +323,7 @@ import { z } from 'zod';
 import { generateText, tool } from 'ai';
 
 const result = await generateText({
-  model: 'openai/gpt-4o',
+  model: 'anthropic/claude-sonnet-4.5',
   tools: {
     weather: tool({
       description: 'Get the weather in a location',
@@ -426,7 +426,7 @@ import { z } from 'zod';
 import { generateText, tool } from 'ai';
 
 const result = await generateText({
-  model: 'openai/gpt-4.1',
+  model: 'anthropic/claude-sonnet-4.5',
   abortSignal: myAbortSignal, // signal that will be forwarded to tools
   tools: {
     weather: tool({
@@ -482,7 +482,7 @@ import { streamText, tool } from 'ai';
 import { z } from 'zod';
 
 const result = streamText({
-  model: 'openai/gpt-4o',
+  model: 'anthropic/claude-sonnet-4.5',
   tools: {
     getWeather: tool({
       description: 'Get the weather in a location',
@@ -551,7 +551,7 @@ async function generateSomething(prompt: string): Promise<{
   toolResults: Array<MyToolResult>; // typed tool results
 }> {
   return generateText({
-    model: openai('gpt-4.1'),
+    model: 'anthropic/claude-sonnet-4.5',
     tools: myToolSet,
     prompt,
   });
@@ -676,7 +676,7 @@ const result = await generateText({
     const tool = tools[toolCall.toolName as keyof typeof tools];
 
     const { object: repairedArgs } = await generateObject({
-      model: openai('gpt-4.1'),
+      model: 'anthropic/claude-sonnet-4.5',
       schema: tool.inputSchema,
       prompt: [
         `The model tried to call the tool "${toolCall.toolName}"` +
@@ -772,7 +772,7 @@ import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: openai('gpt-4.1'),
+  model: 'anthropic/claude-sonnet-4.5',
   tools: myToolSet,
   activeTools: ['firstTool'],
 });
@@ -793,7 +793,7 @@ Here is an example for converting a screenshot into a content part:
 
 ```ts
 const result = await generateText({
-  model: anthropic('claude-3-5-sonnet-20241022'),
+  model: 'anthropic/claude-sonnet-4.5',
   tools: {
     computer: anthropic.tools.computer_20241022({
       // ...

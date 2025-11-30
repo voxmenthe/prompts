@@ -15,7 +15,7 @@ import { openai } from '@ai-sdk/openai';
 
 // 'embedding' is a single embedding object (number[])
 const { embedding } = await embed({
-  model: openai.textEmbeddingModel('text-embedding-3-small'),
+  model: 'openai/text-embedding-3-small',
   value: 'sunny day at the beach',
 });
 ```
@@ -36,7 +36,7 @@ import { embedMany } from 'ai';
 // 'embeddings' is an array of embedding objects (number[][]).
 // It is sorted in the same order as the input values.
 const { embeddings } = await embedMany({
-  model: openai.textEmbeddingModel('text-embedding-3-small'),
+  model: 'openai/text-embedding-3-small',
   values: [
     'sunny day at the beach',
     'rainy afternoon in the city',
@@ -56,7 +56,7 @@ import { openai } from '@ai-sdk/openai';
 import { cosineSimilarity, embedMany } from 'ai';
 
 const { embeddings } = await embedMany({
-  model: openai.textEmbeddingModel('text-embedding-3-small'),
+  model: 'openai/text-embedding-3-small',
   values: ['sunny day at the beach', 'rainy afternoon in the city'],
 });
 
@@ -75,7 +75,7 @@ import { openai } from '@ai-sdk/openai';
 import { embed } from 'ai';
 
 const { embedding, usage } = await embed({
-  model: openai.textEmbeddingModel('text-embedding-3-small'),
+  model: 'openai/text-embedding-3-small',
   value: 'sunny day at the beach',
 });
 
@@ -93,7 +93,7 @@ import { openai } from '@ai-sdk/openai';
 import { embed } from 'ai';
 
 const { embedding } = await embed({
-  model: openai.textEmbeddingModel('text-embedding-3-small'),
+  model: 'openai/text-embedding-3-small',
   value: 'sunny day at the beach',
   providerOptions: {
     openai: {
@@ -113,7 +113,7 @@ import { embedMany } from 'ai';
 
 const { embeddings, usage } = await embedMany({
   maxParallelCalls: 2, // Limit parallel requests
-  model: openai.textEmbeddingModel('text-embedding-3-small'),
+  model: 'openai/text-embedding-3-small',
   values: [
     'sunny day at the beach',
     'rainy afternoon in the city',
@@ -133,7 +133,7 @@ import { openai } from '@ai-sdk/openai';
 import { embed } from 'ai';
 
 const { embedding } = await embed({
-  model: openai.textEmbeddingModel('text-embedding-3-small'),
+  model: 'openai/text-embedding-3-small',
   value: 'sunny day at the beach',
   maxRetries: 0, // Disable retries
 });
@@ -150,7 +150,7 @@ import { openai } from '@ai-sdk/openai';
 import { embed } from 'ai';
 
 const { embedding } = await embed({
-  model: openai.textEmbeddingModel('text-embedding-3-small'),
+  model: 'openai/text-embedding-3-small',
   value: 'sunny day at the beach',
   abortSignal: AbortSignal.timeout(1000), // Abort after 1 second
 });
@@ -166,7 +166,7 @@ import { openai } from '@ai-sdk/openai';
 import { embed } from 'ai';
 
 const { embedding } = await embed({
-  model: openai.textEmbeddingModel('text-embedding-3-small'),
+  model: 'openai/text-embedding-3-small',
   value: 'sunny day at the beach',
   headers: { 'X-Custom-Header': 'custom-value' },
 });
@@ -181,7 +181,7 @@ import { openai } from '@ai-sdk/openai';
 import { embed } from 'ai';
 
 const { embedding, response } = await embed({
-  model: openai.textEmbeddingModel('text-embedding-3-small'),
+  model: 'openai/text-embedding-3-small',
   value: 'sunny day at the beach',
 });
 

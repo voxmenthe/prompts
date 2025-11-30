@@ -8,7 +8,7 @@ To solve these challenges, AI SDK Core offers a standardized approach to interac
 
 Here is an overview of the AI SDK Provider Architecture:
 
-![](/_next/image?url=%2Fimages%2Fai-sdk-diagram.png&w=1920&q=75&dpl=dpl_8PwZidyqzuSdPUK14pCbdHxrCwwZ)![](/_next/image?url=%2Fimages%2Fai-sdk-diagram-dark.png&w=1920&q=75&dpl=dpl_8PwZidyqzuSdPUK14pCbdHxrCwwZ)
+![](/_next/image?url=%2Fimages%2Fai-sdk-diagram.png&w=1920&q=75&dpl=dpl_AxRpoqvhmVxxz5xenuDnzTrNoroG)![](/_next/image?url=%2Fimages%2Fai-sdk-diagram-dark.png&w=1920&q=75&dpl=dpl_AxRpoqvhmVxxz5xenuDnzTrNoroG)
 
 ## AI SDK Providers
 
@@ -73,6 +73,7 @@ The open-source community has created the following providers:
 - [A2A Provider](/providers/community-providers/a2a) (`a2a-ai-provider`)
 - [SAP-AI Provider](/providers/community-providers/sap-ai) (`@mymediset/sap-ai-provider`)
 - [AI/ML API Provider](/providers/community-providers/aimlapi) (`@ai-ml.api/aimlapi-vercel-ai`)
+- [MCP Sampling Provider](/providers/community-providers/mcp-sampling) (`@mcpc-tech/mcp-sampling-ai-provider`)
 - [ACP Provider](/providers/community-providers/acp) (`@mcpc-tech/acp-ai-provider`)
 
 ## Self-Hosted Models
@@ -112,6 +113,7 @@ Here are the capabilities of popular models:
 | [OpenAI](/providers/ai-sdk-providers/openai) | `gpt-5.1` |  |  |  |  |
 | [OpenAI](/providers/ai-sdk-providers/openai) | `gpt-5-codex` |  |  |  |  |
 | [OpenAI](/providers/ai-sdk-providers/openai) | `gpt-5-chat-latest` |  |  |  |  |
+| [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-opus-4-5` |  |  |  |  |
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-opus-4-1` |  |  |  |  |
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-opus-4-0` |  |  |  |  |
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-sonnet-4-0` |  |  |  |  |

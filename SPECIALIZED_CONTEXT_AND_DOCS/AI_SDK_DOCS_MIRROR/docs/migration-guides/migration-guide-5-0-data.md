@@ -440,7 +440,6 @@ export async function loadChat(chatId: string): Promise<MyUIMessage[]> {
 In Phase 1, your application runs on v5 but your database stores v4 format. Convert messages inline in your route handlers before passing them to your database functions:
 
 ```tsx
-import { openai } from '@ai-sdk/openai';
 import {
   convertV5MessageToV4,
   convertV4MessageToV5,
@@ -465,7 +464,7 @@ export async function POST(req: Request) {
   const messages = [...previousMessages, message];
 
   const result = streamText({
-    model: openai('gpt-4'),
+    model: 'anthropic/claude-sonnet-4.5',
     messages: convertToModelMessages(messages),
     tools: {
       // Your tools here
@@ -823,7 +822,7 @@ export async function POST(req: Request) {
   const messages = [...previousMessages, message];
 
   const result = streamText({
-    model: openai('gpt-4'),
+    model: 'anthropic/claude-sonnet-4.5',
     messages: convertToModelMessages(messages),
     tools: {
       // Your tools here

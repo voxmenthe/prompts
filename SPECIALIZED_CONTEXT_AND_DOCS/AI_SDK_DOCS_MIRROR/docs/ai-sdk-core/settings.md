@@ -6,7 +6,7 @@ All AI SDK functions support the following common settings in addition to the mo
 
 ```ts
 const result = await generateText({
-  model: 'openai/gpt-4.1',
+  model: 'anthropic/claude-sonnet-4.5',
   maxOutputTokens: 512,
   temperature: 0.3,
   maxRetries: 5,
@@ -92,7 +92,7 @@ or to define a timeout.
 
 ```ts
 const result = await generateText({
-  model: openai('gpt-4o'),
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Invent a new holiday and describe its traditions.',
   abortSignal: AbortSignal.timeout(5000), // 5 seconds
 });
@@ -111,7 +111,7 @@ import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 const result = await generateText({
-  model: openai('gpt-4o'),
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Invent a new holiday and describe its traditions.',
   headers: {
     'Prompt-Id': 'my-prompt-id',

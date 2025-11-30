@@ -18,7 +18,7 @@ You can generate text using the [`generateText`](../reference/ai-sdk-core/genera
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'openai/gpt-4.1',
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 ```
@@ -29,7 +29,7 @@ You can use more [advanced prompts](prompts.md) to generate text with more compl
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'openai/gpt-4.1',
+  model: 'anthropic/claude-sonnet-4.5',
   system:
     'You are a professional writer. ' +
     'You write simple, clear, and concise content.',
@@ -85,7 +85,7 @@ AI SDK Core provides the [`streamText`](../reference/ai-sdk-core/stream-text.md)
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: 'openai/gpt-4.1',
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Invent a new holiday and describe its traditions.',
 });
 
@@ -143,7 +143,7 @@ To log errors, you can provide an `onError` callback that is triggered when an e
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: 'openai/gpt-4.1',
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Invent a new holiday and describe its traditions.',
   onError({ error }) {
     console.error(error); // your error logging logic here
@@ -170,7 +170,7 @@ It receives the following chunk types:
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: 'openai/gpt-4.1',
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Invent a new holiday and describe its traditions.',
   onChunk({ chunk }) {
     // implement your own logic here, e.g.:
@@ -192,7 +192,7 @@ It contains the text, usage information, finish reason, messages, steps, total u
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: 'openai/gpt-4.1',
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Invent a new holiday and describe its traditions.',
   onFinish({ text, finishReason, usage, response, steps, totalUsage }) {
     // your own logic, e.g. for saving the chat history or recording usage
@@ -213,7 +213,7 @@ import { streamText } from 'ai';
 import { z } from 'zod';
 
 const result = streamText({
-  model: 'openai/gpt-4.1',
+  model: 'anthropic/claude-sonnet-4.5',
   tools: {
     cityAttractions: {
       inputSchema: z.object({ city: z.string() }),
@@ -471,7 +471,7 @@ When you use `generateText`, you can access the sources using the `sources` prop
 
 ```ts
 const result = await generateText({
-  model: google('gemini-2.5-flash'),
+  model: 'google/gemini-2.5-flash',
   tools: {
     google_search: google.tools.googleSearch({}),
   },
@@ -493,7 +493,7 @@ When you use `streamText`, you can access the sources using the `fullStream` pro
 
 ```tsx
 const result = streamText({
-  model: google('gemini-2.5-flash'),
+  model: 'google/gemini-2.5-flash',
   tools: {
     google_search: google.tools.googleSearch({}),
   },

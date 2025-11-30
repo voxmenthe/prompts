@@ -118,7 +118,7 @@ export async function POST(req: Request) {
   });
 
   const result = streamText({
-    model: openai('gpt-4o-mini'),
+    model: 'openai/gpt-5-mini',
     messages: convertToModelMessages(validatedMessages),
     tools,
   });
@@ -271,7 +271,7 @@ export async function POST(req: Request) {
     await req.json();
 
   const result = streamText({
-    model: openai('gpt-4o-mini'),
+    model: 'openai/gpt-5-mini',
     messages: convertToModelMessages(messages),
   });
 
@@ -378,7 +378,7 @@ export async function POST(req: Request) {
       });
 
       const result = streamText({
-        model: openai('gpt-4o-mini'),
+        model: 'openai/gpt-5-mini',
         messages: convertToModelMessages(messages),
       });
 

@@ -74,7 +74,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: openai('gpt-4.1'),
+    model: 'anthropic/claude-sonnet-4.5',
     system: 'You are a helpful assistant.',
     messages: convertToModelMessages(messages),
   });
@@ -504,7 +504,7 @@ return result.toUIMessageStreamResponse({
     if (part.type === 'start') {
       return {
         createdAt: Date.now(),
-        model: 'gpt-4o',
+        model: 'gpt-5.1',
       };
     }
 
@@ -577,7 +577,7 @@ export async function POST(req: Request) {
   messages.push(message);
 
   const result = streamText({
-    model: openai('gpt-4.1'),
+    model: 'anthropic/claude-sonnet-4.5',
     messages: convertToModelMessages(messages),
   });
 
@@ -646,7 +646,7 @@ export async function POST(req: Request) {
   }
 
   const result = streamText({
-    model: openai('gpt-4.1'),
+    model: 'anthropic/claude-sonnet-4.5',
     messages: convertToModelMessages(messages),
   });
 
@@ -674,7 +674,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: openai('gpt-4.1'),
+    model: 'anthropic/claude-sonnet-4.5',
     messages: convertToModelMessages(messages),
   });
 
@@ -729,7 +729,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: MyUIMessage[] } = await req.json();
 
   const result = streamText({
-    model: openai('gpt-4o'),
+    model: 'anthropic/claude-sonnet-4.5',
     messages: convertToModelMessages(messages),
   });
 
@@ -835,20 +835,19 @@ reasons are not available.
 
 ## Reasoning
 
-Some models such as as DeepSeek `deepseek-reasoner`
+Some models such as as DeepSeek `deepseek-r1`
 and Anthropic `claude-3-7-sonnet-20250219` support reasoning tokens.
 These tokens are typically sent before the message content.
 You can forward them to the client with the `sendReasoning` option:
 
 ```ts
-import { deepseek } from '@ai-sdk/deepseek';
 import { convertToModelMessages, streamText, UIMessage } from 'ai';
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: deepseek('deepseek-reasoner'),
+    model: 'deepseek/deepseek-r1',
     messages: convertToModelMessages(messages),
   });
 
@@ -890,14 +889,13 @@ Currently sources are limited to web pages that ground the response.
 You can forward them to the client with the `sendSources` option:
 
 ```ts
-import { perplexity } from '@ai-sdk/perplexity';
 import { convertToModelMessages, streamText, UIMessage } from 'ai';
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: perplexity('sonar-pro'),
+    model: 'perplexity/sonar-pro',
     messages: convertToModelMessages(messages),
   });
 

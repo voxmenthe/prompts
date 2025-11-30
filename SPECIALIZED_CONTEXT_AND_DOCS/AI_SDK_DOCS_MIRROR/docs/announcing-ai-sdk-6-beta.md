@@ -68,7 +68,7 @@ import { ToolLoopAgent } from 'ai';
 import { weatherTool } from '@/tool/weather';
 
 export const weatherAgent = new ToolLoopAgent({
-  model: openai('gpt-4o'),
+  model: 'anthropic/claude-sonnet-4.5',
   instructions: 'You are a helpful weather assistant.',
   tools: {
     weather: weatherTool,
@@ -99,7 +99,7 @@ import { ToolLoopAgent } from 'ai';
 import { z } from 'zod';
 
 const supportAgent = new ToolLoopAgent({
-  model: 'openai/gpt-4o',
+  model: 'anthropic/claude-sonnet-4.5',
   callOptionsSchema: z.object({
     userId: z.string(),
     accountType: z.enum(['free', 'pro', 'enterprise']),
@@ -303,7 +303,7 @@ import { openai } from '@ai-sdk/openai';
 import { z } from 'zod';
 
 const agent = new ToolLoopAgent({
-  model: openai('gpt-4o'),
+  model: 'anthropic/claude-sonnet-4.5',
   tools: {
     weather: tool({
       description: 'Get the weather in a location',
@@ -355,7 +355,7 @@ import { openai } from '@ai-sdk/openai';
 import { z } from 'zod';
 
 const profileAgent = new ToolLoopAgent({
-  model: openai('gpt-4o'),
+  model: 'anthropic/claude-sonnet-4.5',
   instructions: 'Generate realistic person profiles.',
   output: Output.object({
     schema: z.object({

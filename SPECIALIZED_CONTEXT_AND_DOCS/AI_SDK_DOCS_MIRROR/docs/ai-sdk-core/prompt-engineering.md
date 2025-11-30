@@ -30,7 +30,7 @@ and then use a Zod transformer to convert the string to a Date object.
 
 ```ts
 const result = await generateObject({
-  model: openai('gpt-4.1'),
+  model: 'anthropic/claude-sonnet-4.5',
   schema: z.object({
     events: z.array(
       z.object({
@@ -83,7 +83,7 @@ For tool calls and object generation, it's recommended to use `temperature: 0` t
 
 ```ts
 const result = await generateText({
-  model: openai('gpt-4o'),
+  model: 'anthropic/claude-sonnet-4.5',
   temperature: 0, // Recommended for tool calls
   tools: {
     myTool: tool({
@@ -113,7 +113,7 @@ To check if your prompt, tools, and settings are handled correctly by the provid
 
 ```ts
 const result = await generateText({
-  model: openai('gpt-4o'),
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Hello, world!',
 });
 
@@ -129,7 +129,7 @@ Request bodies are available via the `request.body` property of the response:
 
 ```ts
 const result = await generateText({
-  model: openai('gpt-4o'),
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Hello, world!',
 });
 

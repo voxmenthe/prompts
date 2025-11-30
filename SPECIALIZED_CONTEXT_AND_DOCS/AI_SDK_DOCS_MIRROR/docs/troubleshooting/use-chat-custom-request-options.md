@@ -68,7 +68,7 @@ const { messages, sendMessage } = useChat({
       'X-App-ID': 'my-app', // Static app identifier
     },
     body: {
-      model: 'gpt-4o', // Default model
+      model: 'gpt-5.1', // Default model
       stream: true, // Static configuration
     },
     credentials: 'include', // Static credentials policy
@@ -118,7 +118,7 @@ const { messages, sendMessage } = useChat({
       'X-API-Version': 'v1',
     },
     body: {
-      model: 'gpt-4o',
+      model: 'gpt-5.1',
     },
   }),
 });
@@ -132,7 +132,7 @@ sendMessage(
       'X-Request-ID': '123', // This is added
     },
     body: {
-      model: 'gpt-4o-mini', // This overrides the hook-level body field
+      model: 'gpt-5-mini', // This overrides the hook-level body field
       temperature: 0.5, // This is added
     },
   },
