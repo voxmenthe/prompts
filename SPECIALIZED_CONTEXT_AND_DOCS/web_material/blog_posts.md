@@ -49,6 +49,7 @@ https://insujang.github.io/posts/
 https://www.interconnects.ai/
 https://jeremybernste.in/writing/
 https://jonathanc.net/blog/
+https://joanvelja.com/blog
 https://jyopari.github.io/
 https://jxnl.co/writing/
 https://koaning.io/posts/
@@ -72,6 +73,7 @@ https://openai.com/news/engineering/
 https://openai.com/news/research/
 https://www.perplexity.ai/hub
 https://www.philschmid.de/
+https://www.seangoedecke.com/
 https://www.sh-reya.com/blog
 https://simonxin.com/blogs/index.html
 https://snimu.github.io/
