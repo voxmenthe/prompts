@@ -12,7 +12,7 @@ uv includes a dedicated interface for interacting with tools. Tools can be invok
 
 Because it is very common to run tools without installing them, a `uvx `alias is provided for `uv tool run `— the two commands are exactly equivalent. For brevity, the documentation will mostly refer to `uvx `instead of `uv tool run `. 
 
-Tools can also be installed with `uv tool install `, in which case their executables are [available on the `PATH `](#the-path)— an isolated virtual environment is still used, but it is not removed when the command completes. 
+Tools can also be installed with `uv tool install `, in which case their executables are [available on the `PATH `](#tool-executables)— an isolated virtual environment is still used, but it is not removed when the command completes. 
 
 ## [Execution vs installation](#execution-vs-installation)
 
@@ -22,7 +22,11 @@ In most cases, executing a tool with `uvx `is more appropriate than installing t
 
 When running a tool with `uvx `, a virtual environment is stored in the uv cache directory and is treated as disposable, i.e., if you run `uv cache clean `the environment will be deleted. The environment is only cached to reduce the overhead of repeated invocations. If the environment is removed, a new one will be created automatically. 
 
-When installing a tool with `uv tool install `, a virtual environment is created in the uv tools directory. The environment will not be removed unless the tool is uninstalled. If the environment is manually deleted, the tool will fail to run. 
+When installing a tool with `uv tool install `, a virtual environment is created in the [uv tools directory](../../reference/storage/#tools). The environment will not be removed unless the tool is uninstalled. If the environment is manually deleted, the tool will fail to run. 
+
+!!! important "Important"
+
+    Tool environments are _not _intended to be mutated directly. It is strongly recommended never to mutate a tool environment manually, e.g., with a `pip `operation. 
 
 ## [Tool versions](#tool-versions)
 
@@ -97,23 +101,6 @@ Or, by using the `--isolated `flag, which will avoid refreshing the cache but ig
 
 ```
 
-## [Tools directory](#tools-directory)
-
-By default, the uv tools directory is named `tools `and is in the uv application state directory, e.g., `~/.local/share/uv/tools `. The location may be customized with the `UV_TOOL_DIR `environment variable. 
-
-To display the path to the tool installation directory: 
-
-```
-[#__codelineno-8-1](#__codelineno-8-1)$ uv tool dir
-
-```
-
-Tool environments are placed in a directory with the same name as the tool package, e.g., `.../tools/ `. 
-
-!!! important "Important"
-
-    Tool environments are _not _intended to be mutated directly. It is strongly recommended never to mutate a tool environment manually, e.g., with a `pip `operation. 
-
 ## [Upgrading tools](#upgrading-tools)
 
 Tool environments may be upgraded via `uv tool upgrade `, or re-created entirely via subsequent `uv tool install `operations. 
@@ -121,14 +108,14 @@ Tool environments may be upgraded via `uv tool upgrade `, or re-created entirely
 To upgrade all packages in a tool environment 
 
 ```
-[#__codelineno-9-1](#__codelineno-9-1)$ uv tool upgrade black
+[#__codelineno-8-1](#__codelineno-8-1)$ uv tool upgrade black
 
 ```
 
 To upgrade a single package in a tool environment: 
 
 ```
-[#__codelineno-10-1](#__codelineno-10-1)$ uv tool upgrade black --upgrade-package click
+[#__codelineno-9-1](#__codelineno-9-1)$ uv tool upgrade black --upgrade-package click
 
 ```
 
@@ -137,7 +124,7 @@ Tool upgrades will respect the version constraints provided when installing the 
 To instead replace the version constraints, reinstall the tool with `uv tool install `: 
 
 ```
-[#__codelineno-11-1](#__codelineno-11-1)$ uv tool install black>=24
+[#__codelineno-10-1](#__codelineno-10-1)$ uv tool install black>=24
 
 ```
 
@@ -152,14 +139,14 @@ To reinstall packages during upgrade, use the `--reinstall `and `--reinstall-pac
 To reinstall all packages in a tool environment 
 
 ```
-[#__codelineno-12-1](#__codelineno-12-1)$ uv tool upgrade black --reinstall
+[#__codelineno-11-1](#__codelineno-11-1)$ uv tool upgrade black --reinstall
 
 ```
 
 To reinstall a single package in a tool environment: 
 
 ```
-[#__codelineno-13-1](#__codelineno-13-1)$ uv tool upgrade black --reinstall-package click
+[#__codelineno-12-1](#__codelineno-12-1)$ uv tool upgrade black --reinstall-package click
 
 ```
 
@@ -168,14 +155,14 @@ To reinstall a single package in a tool environment:
 Additional packages can be included during tool execution: 
 
 ```
-[#__codelineno-14-1](#__codelineno-14-1)$ uvx --with  
+[#__codelineno-13-1](#__codelineno-13-1)$ uvx --with  
 
 ```
 
 And, during tool installation: 
 
 ```
-[#__codelineno-15-1](#__codelineno-15-1)$ uv tool install --with  
+[#__codelineno-14-1](#__codelineno-14-1)$ uv tool install --with  
 
 ```
 
@@ -184,14 +171,14 @@ The `--with `option can be provided multiple times to include additional package
 The `--with `option supports package specifications, so a specific version can be requested: 
 
 ```
-[#__codelineno-16-1](#__codelineno-16-1)$ uvx --with == 
+[#__codelineno-15-1](#__codelineno-15-1)$ uvx --with == 
 
 ```
 
 The `-w `shorthand can be used in place of the `--with `option: 
 
 ```
-[#__codelineno-17-1](#__codelineno-17-1)$ uvx -w  
+[#__codelineno-16-1](#__codelineno-16-1)$ uvx -w  
 
 ```
 
@@ -204,14 +191,14 @@ When installing a tool, you may want to include executables from additional pack
 The `--with-executables-from `option allows you to specify additional packages whose executables should be installed alongside the main tool: 
 
 ```
-[#__codelineno-18-1](#__codelineno-18-1)$ uv tool install --with-executables-from , 
+[#__codelineno-17-1](#__codelineno-17-1)$ uv tool install --with-executables-from , 
 
 ```
 
 For example, to install Ansible along with executables from `ansible-core `and `ansible-lint `: 
 
 ```
-[#__codelineno-19-1](#__codelineno-19-1)$ uv tool install --with-executables-from ansible-core,ansible-lint ansible
+[#__codelineno-18-1](#__codelineno-18-1)$ uv tool install --with-executables-from ansible-core,ansible-lint ansible
 
 ```
 
@@ -220,7 +207,7 @@ This will install all executables from the `ansible `, `ansible-core `, and `ans
 The `--with-executables-from `option can be combined with other installation options: 
 
 ```
-[#__codelineno-20-1](#__codelineno-20-1)$ uv tool install --with-executables-from ansible-core --with mkdocs-material ansible
+[#__codelineno-19-1](#__codelineno-19-1)$ uv tool install --with-executables-from ansible-core --with mkdocs-material ansible
 
 ```
 
@@ -240,36 +227,24 @@ If the Python version used by a tool is _uninstalled _, the tool environment wil
 
 ## [Tool executables](#tool-executables)
 
-Tool executables include all console entry points, script entry points, and binary scripts provided by a Python package. Tool executables are symlinked into the `bin `directory on Unix and copied on Windows. 
+Tool executables include all console entry points, script entry points, and binary scripts provided by a Python package. Tool executables are symlinked into the [executable directory](../../reference/storage/#tool-executables)on Unix and copied on Windows. 
 
-### [The `bin `directory](#the-bin-directory)
+!!! note "Note"
 
-Executables are installed into the user `bin `directory following the XDG standard, e.g., `~/.local/bin `. Unlike other directory schemes in uv, the XDG standard is used on _all platforms _notably including Windows and macOS — there is no clear alternative location to place executables on these platforms. The installation directory is determined from the first available environment variable: 
+    Executables provided by dependencies of tool packages are not installed. 
 
-- `$UV_TOOL_BIN_DIR `
-
-- `$XDG_BIN_HOME `
-
-- `$XDG_DATA_HOME/../bin `
-
-- `$HOME/.local/bin `
-
-Executables provided by dependencies of tool packages are not installed. 
-
-### [The `PATH `](#the-path)
-
-The `bin `directory must be in the `PATH `variable for tool executables to be available from the shell. If it is not in the `PATH `, a warning will be displayed. The `uv tool update-shell `command can be used to add the `bin `directory to the `PATH `in common shell configuration files. 
+The [executable directory](../../reference/storage/#executable-directory)must be in the `PATH `variable for tool executables to be available from the shell. If it is not in the `PATH `, a warning will be displayed. The `uv tool update-shell `command can be used to add the executable directory to the `PATH `in common shell configuration files. 
 
 ### [Overwriting executables](#overwriting-executables)
 
-Installation of tools will not overwrite executables in the `bin `directory that were not previously installed by uv. For example, if `pipx `has been used to install a tool, `uv tool install `will fail. The `--force `flag can be used to override this behavior. 
+Installation of tools will not overwrite executables in the executable directory that were not previously installed by uv. For example, if `pipx `has been used to install a tool, `uv tool install `will fail. The `--force `flag can be used to override this behavior. 
 
 ## [Relationship to `uv run `](#relationship-to-uv-run)
 
 The invocation `uv tool run `(or `uvx `) is nearly equivalent to: 
 
 ```
-[#__codelineno-21-1](#__codelineno-21-1)$ uv run --no-project --with  -- 
+[#__codelineno-20-1](#__codelineno-20-1)$ uv run --no-project --with  -- 
 
 ```
 
@@ -285,4 +260,4 @@ However, there are a couple notable differences when using uv's tool interface:
 
 If the tool should not be isolated from the project, e.g., when running `pytest `or `mypy `, then `uv run `should be used instead of `uv tool run `. 
 
-July 30, 2025
+November 24, 2025

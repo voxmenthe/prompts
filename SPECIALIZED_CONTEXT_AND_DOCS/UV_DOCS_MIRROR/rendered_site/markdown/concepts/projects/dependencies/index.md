@@ -374,6 +374,34 @@ pyproject.toml
 
 ```
 
+Support for [Git LFS](https://git-lfs.com)is also configurable per source. By default, Git LFS objects will not be fetched. 
+
+```
+[#__codelineno-29-1](#__codelineno-29-1)$ uv add --lfs git+https://github.com/astral-sh/lfs-cowsay
+
+```
+
+pyproject.toml 
+
+```
+[#__codelineno-30-1](#__codelineno-30-1)[project]
+[#__codelineno-30-2](#__codelineno-30-2)dependencies = ["lfs-cowsay"]
+[#__codelineno-30-3](#__codelineno-30-3)
+[#__codelineno-30-4](#__codelineno-30-4)[tool.uv.sources]
+[#__codelineno-30-5](#__codelineno-30-5)lfs-cowsay = { git = "https://github.com/astral-sh/lfs-cowsay", lfs = true }
+
+```
+
+- When `lfs = true `, uv will always fetch LFS objects for this Git source. 
+
+- When `lfs = false `, uv will never fetch LFS objects for this Git source. 
+
+- When omitted, the `UV_GIT_LFS `environment variable is used for all Git sources without an explicit `lfs `configuration. 
+
+!!! important "Important"
+
+    Ensure Git LFS is installed and configured on your system before attempting to install sources using Git LFS, otherwise a build failure can occur. 
+
 ### [URL](#url)
 
 To add a URL source, provide a `https:// `URL to either a wheel (ending in `.whl `) or a source distribution (typically ending in `.tar.gz `or `.zip `; see [here](../../resolution/#source-distribution)for all supported formats). 
@@ -381,7 +409,7 @@ To add a URL source, provide a `https:// `URL to either a wheel (ending in `.whl
 For example: 
 
 ```
-[#__codelineno-29-1](#__codelineno-29-1)$ uv add "https://files.pythonhosted.org/packages/5c/2d/3da5bdf4408b8b2800061c339f240c1802f2e82d55e50bd39c5a881f47f0/httpx-0.27.0.tar.gz"
+[#__codelineno-31-1](#__codelineno-31-1)$ uv add "https://files.pythonhosted.org/packages/5c/2d/3da5bdf4408b8b2800061c339f240c1802f2e82d55e50bd39c5a881f47f0/httpx-0.27.0.tar.gz"
 
 ```
 
@@ -390,11 +418,11 @@ Will result in a `pyproject.toml `with:
 pyproject.toml 
 
 ```
-[#__codelineno-30-1](#__codelineno-30-1)[project]
-[#__codelineno-30-2](#__codelineno-30-2)dependencies = ["httpx"]
-[#__codelineno-30-3](#__codelineno-30-3)
-[#__codelineno-30-4](#__codelineno-30-4)[tool.uv.sources]
-[#__codelineno-30-5](#__codelineno-30-5)httpx = { url = "https://files.pythonhosted.org/packages/5c/2d/3da5bdf4408b8b2800061c339f240c1802f2e82d55e50bd39c5a881f47f0/httpx-0.27.0.tar.gz" }
+[#__codelineno-32-1](#__codelineno-32-1)[project]
+[#__codelineno-32-2](#__codelineno-32-2)dependencies = ["httpx"]
+[#__codelineno-32-3](#__codelineno-32-3)
+[#__codelineno-32-4](#__codelineno-32-4)[tool.uv.sources]
+[#__codelineno-32-5](#__codelineno-32-5)httpx = { url = "https://files.pythonhosted.org/packages/5c/2d/3da5bdf4408b8b2800061c339f240c1802f2e82d55e50bd39c5a881f47f0/httpx-0.27.0.tar.gz" }
 
 ```
 
@@ -407,7 +435,7 @@ To add a path source, provide the path of a wheel (ending in `.whl `), a source 
 For example: 
 
 ```
-[#__codelineno-31-1](#__codelineno-31-1)$ uv add /example/foo-0.1.0-py3-none-any.whl
+[#__codelineno-33-1](#__codelineno-33-1)$ uv add /example/foo-0.1.0-py3-none-any.whl
 
 ```
 
@@ -416,25 +444,25 @@ Will result in a `pyproject.toml `with:
 pyproject.toml 
 
 ```
-[#__codelineno-32-1](#__codelineno-32-1)[project]
-[#__codelineno-32-2](#__codelineno-32-2)dependencies = ["foo"]
-[#__codelineno-32-3](#__codelineno-32-3)
-[#__codelineno-32-4](#__codelineno-32-4)[tool.uv.sources]
-[#__codelineno-32-5](#__codelineno-32-5)foo = { path = "/example/foo-0.1.0-py3-none-any.whl" }
+[#__codelineno-34-1](#__codelineno-34-1)[project]
+[#__codelineno-34-2](#__codelineno-34-2)dependencies = ["foo"]
+[#__codelineno-34-3](#__codelineno-34-3)
+[#__codelineno-34-4](#__codelineno-34-4)[tool.uv.sources]
+[#__codelineno-34-5](#__codelineno-34-5)foo = { path = "/example/foo-0.1.0-py3-none-any.whl" }
 
 ```
 
 The path may also be a relative path: 
 
 ```
-[#__codelineno-33-1](#__codelineno-33-1)$ uv add ./foo-0.1.0-py3-none-any.whl
+[#__codelineno-35-1](#__codelineno-35-1)$ uv add ./foo-0.1.0-py3-none-any.whl
 
 ```
 
 Or, a path to a project directory: 
 
 ```
-[#__codelineno-34-1](#__codelineno-34-1)$ uv add ~/projects/bar/
+[#__codelineno-36-1](#__codelineno-36-1)$ uv add ~/projects/bar/
 
 ```
 
@@ -445,7 +473,7 @@ Or, a path to a project directory:
 An [editable installation](#editable-dependencies)is not used for path dependencies by default. An editable installation may be requested for project directories: 
 
 ```
-[#__codelineno-35-1](#__codelineno-35-1)$ uv add --editable ../projects/bar/
+[#__codelineno-37-1](#__codelineno-37-1)$ uv add --editable ../projects/bar/
 
 ```
 
@@ -454,11 +482,11 @@ Which will result in a `pyproject.toml `with:
 pyproject.toml 
 
 ```
-[#__codelineno-36-1](#__codelineno-36-1)[project]
-[#__codelineno-36-2](#__codelineno-36-2)dependencies = ["bar"]
-[#__codelineno-36-3](#__codelineno-36-3)
-[#__codelineno-36-4](#__codelineno-36-4)[tool.uv.sources]
-[#__codelineno-36-5](#__codelineno-36-5)bar = { path = "../projects/bar", editable = true }
+[#__codelineno-38-1](#__codelineno-38-1)[project]
+[#__codelineno-38-2](#__codelineno-38-2)dependencies = ["bar"]
+[#__codelineno-38-3](#__codelineno-38-3)
+[#__codelineno-38-4](#__codelineno-38-4)[tool.uv.sources]
+[#__codelineno-38-5](#__codelineno-38-5)bar = { path = "../projects/bar", editable = true }
 
 ```
 
@@ -473,16 +501,16 @@ To declare a dependency on a workspace member, add the member name with `{ works
 pyproject.toml 
 
 ```
-[#__codelineno-37-1](#__codelineno-37-1)[project]
-[#__codelineno-37-2](#__codelineno-37-2)dependencies = ["foo==0.1.0"]
-[#__codelineno-37-3](#__codelineno-37-3)
-[#__codelineno-37-4](#__codelineno-37-4)[tool.uv.sources]
-[#__codelineno-37-5](#__codelineno-37-5)foo = { workspace = true }
-[#__codelineno-37-6](#__codelineno-37-6)
-[#__codelineno-37-7](#__codelineno-37-7)[tool.uv.workspace]
-[#__codelineno-37-8](#__codelineno-37-8)members = [
-[#__codelineno-37-9](#__codelineno-37-9)  "packages/foo"
-[#__codelineno-37-10](#__codelineno-37-10)]
+[#__codelineno-39-1](#__codelineno-39-1)[project]
+[#__codelineno-39-2](#__codelineno-39-2)dependencies = ["foo==0.1.0"]
+[#__codelineno-39-3](#__codelineno-39-3)
+[#__codelineno-39-4](#__codelineno-39-4)[tool.uv.sources]
+[#__codelineno-39-5](#__codelineno-39-5)foo = { workspace = true }
+[#__codelineno-39-6](#__codelineno-39-6)
+[#__codelineno-39-7](#__codelineno-39-7)[tool.uv.workspace]
+[#__codelineno-39-8](#__codelineno-39-8)members = [
+[#__codelineno-39-9](#__codelineno-39-9)  "packages/foo"
+[#__codelineno-39-10](#__codelineno-39-10)]
 
 ```
 
@@ -495,11 +523,11 @@ For example, to pull `httpx `from GitHub, but only on macOS, use the following:
 pyproject.toml 
 
 ```
-[#__codelineno-38-1](#__codelineno-38-1)[project]
-[#__codelineno-38-2](#__codelineno-38-2)dependencies = ["httpx"]
-[#__codelineno-38-3](#__codelineno-38-3)
-[#__codelineno-38-4](#__codelineno-38-4)[tool.uv.sources]
-[#__codelineno-38-5](#__codelineno-38-5)httpx = { git = "https://github.com/encode/httpx", tag = "0.27.2", marker = "sys_platform == 'darwin'" }
+[#__codelineno-40-1](#__codelineno-40-1)[project]
+[#__codelineno-40-2](#__codelineno-40-2)dependencies = ["httpx"]
+[#__codelineno-40-3](#__codelineno-40-3)
+[#__codelineno-40-4](#__codelineno-40-4)[tool.uv.sources]
+[#__codelineno-40-5](#__codelineno-40-5)httpx = { git = "https://github.com/encode/httpx", tag = "0.27.2", marker = "sys_platform == 'darwin'" }
 
 ```
 
@@ -514,14 +542,14 @@ For example, to pull in different `httpx `tags on macOS vs. Linux:
 pyproject.toml 
 
 ```
-[#__codelineno-39-1](#__codelineno-39-1)[project]
-[#__codelineno-39-2](#__codelineno-39-2)dependencies = ["httpx"]
-[#__codelineno-39-3](#__codelineno-39-3)
-[#__codelineno-39-4](#__codelineno-39-4)[tool.uv.sources]
-[#__codelineno-39-5](#__codelineno-39-5)httpx = [
-[#__codelineno-39-6](#__codelineno-39-6)  { git = "https://github.com/encode/httpx", tag = "0.27.2", marker = "sys_platform == 'darwin'" },
-[#__codelineno-39-7](#__codelineno-39-7)  { git = "https://github.com/encode/httpx", tag = "0.24.1", marker = "sys_platform == 'linux'" },
-[#__codelineno-39-8](#__codelineno-39-8)]
+[#__codelineno-41-1](#__codelineno-41-1)[project]
+[#__codelineno-41-2](#__codelineno-41-2)dependencies = ["httpx"]
+[#__codelineno-41-3](#__codelineno-41-3)
+[#__codelineno-41-4](#__codelineno-41-4)[tool.uv.sources]
+[#__codelineno-41-5](#__codelineno-41-5)httpx = [
+[#__codelineno-41-6](#__codelineno-41-6)  { git = "https://github.com/encode/httpx", tag = "0.27.2", marker = "sys_platform == 'darwin'" },
+[#__codelineno-41-7](#__codelineno-41-7)  { git = "https://github.com/encode/httpx", tag = "0.24.1", marker = "sys_platform == 'linux'" },
+[#__codelineno-41-8](#__codelineno-41-8)]
 
 ```
 
@@ -530,24 +558,24 @@ This strategy extends to using different indexes based on environment markers. F
 pyproject.toml 
 
 ```
-[#__codelineno-40-1](#__codelineno-40-1)[project]
-[#__codelineno-40-2](#__codelineno-40-2)dependencies = ["torch"]
-[#__codelineno-40-3](#__codelineno-40-3)
-[#__codelineno-40-4](#__codelineno-40-4)[tool.uv.sources]
-[#__codelineno-40-5](#__codelineno-40-5)torch = [
-[#__codelineno-40-6](#__codelineno-40-6)  { index = "torch-cpu", marker = "platform_system == 'Darwin'"},
-[#__codelineno-40-7](#__codelineno-40-7)  { index = "torch-gpu", marker = "platform_system == 'Linux'"},
-[#__codelineno-40-8](#__codelineno-40-8)]
-[#__codelineno-40-9](#__codelineno-40-9)
-[#__codelineno-40-10](#__codelineno-40-10)[[tool.uv.index]]
-[#__codelineno-40-11](#__codelineno-40-11)name = "torch-cpu"
-[#__codelineno-40-12](#__codelineno-40-12)url = "https://download.pytorch.org/whl/cpu"
-[#__codelineno-40-13](#__codelineno-40-13)explicit = true
-[#__codelineno-40-14](#__codelineno-40-14)
-[#__codelineno-40-15](#__codelineno-40-15)[[tool.uv.index]]
-[#__codelineno-40-16](#__codelineno-40-16)name = "torch-gpu"
-[#__codelineno-40-17](#__codelineno-40-17)url = "https://download.pytorch.org/whl/cu124"
-[#__codelineno-40-18](#__codelineno-40-18)explicit = true
+[#__codelineno-42-1](#__codelineno-42-1)[project]
+[#__codelineno-42-2](#__codelineno-42-2)dependencies = ["torch"]
+[#__codelineno-42-3](#__codelineno-42-3)
+[#__codelineno-42-4](#__codelineno-42-4)[tool.uv.sources]
+[#__codelineno-42-5](#__codelineno-42-5)torch = [
+[#__codelineno-42-6](#__codelineno-42-6)  { index = "torch-cpu", marker = "platform_system == 'Darwin'"},
+[#__codelineno-42-7](#__codelineno-42-7)  { index = "torch-gpu", marker = "platform_system == 'Linux'"},
+[#__codelineno-42-8](#__codelineno-42-8)]
+[#__codelineno-42-9](#__codelineno-42-9)
+[#__codelineno-42-10](#__codelineno-42-10)[[tool.uv.index]]
+[#__codelineno-42-11](#__codelineno-42-11)name = "torch-cpu"
+[#__codelineno-42-12](#__codelineno-42-12)url = "https://download.pytorch.org/whl/cpu"
+[#__codelineno-42-13](#__codelineno-42-13)explicit = true
+[#__codelineno-42-14](#__codelineno-42-14)
+[#__codelineno-42-15](#__codelineno-42-15)[[tool.uv.index]]
+[#__codelineno-42-16](#__codelineno-42-16)name = "torch-gpu"
+[#__codelineno-42-17](#__codelineno-42-17)url = "https://download.pytorch.org/whl/cu124"
+[#__codelineno-42-18](#__codelineno-42-18)explicit = true
 
 ```
 
@@ -556,7 +584,7 @@ pyproject.toml
 To instruct uv to ignore the `tool.uv.sources `table (e.g., to simulate resolving with the package's published metadata), use the `--no-sources `flag: 
 
 ```
-[#__codelineno-41-1](#__codelineno-41-1)$ uv lock --no-sources
+[#__codelineno-43-1](#__codelineno-43-1)$ uv lock --no-sources
 
 ```
 
@@ -573,29 +601,29 @@ Optional dependencies can have entries in `tool.uv.sources `the same as normal d
 pyproject.toml 
 
 ```
-[#__codelineno-42-1](#__codelineno-42-1)[project]
-[#__codelineno-42-2](#__codelineno-42-2)name = "pandas"
-[#__codelineno-42-3](#__codelineno-42-3)version = "1.0.0"
-[#__codelineno-42-4](#__codelineno-42-4)
-[#__codelineno-42-5](#__codelineno-42-5)[project.optional-dependencies]
-[#__codelineno-42-6](#__codelineno-42-6)plot = [
-[#__codelineno-42-7](#__codelineno-42-7)  "matplotlib>=3.6.3"
-[#__codelineno-42-8](#__codelineno-42-8)]
-[#__codelineno-42-9](#__codelineno-42-9)excel = [
-[#__codelineno-42-10](#__codelineno-42-10)  "odfpy>=1.4.1",
-[#__codelineno-42-11](#__codelineno-42-11)  "openpyxl>=3.1.0",
-[#__codelineno-42-12](#__codelineno-42-12)  "python-calamine>=0.1.7",
-[#__codelineno-42-13](#__codelineno-42-13)  "pyxlsb>=1.0.10",
-[#__codelineno-42-14](#__codelineno-42-14)  "xlrd>=2.0.1",
-[#__codelineno-42-15](#__codelineno-42-15)  "xlsxwriter>=3.0.5"
-[#__codelineno-42-16](#__codelineno-42-16)]
+[#__codelineno-44-1](#__codelineno-44-1)[project]
+[#__codelineno-44-2](#__codelineno-44-2)name = "pandas"
+[#__codelineno-44-3](#__codelineno-44-3)version = "1.0.0"
+[#__codelineno-44-4](#__codelineno-44-4)
+[#__codelineno-44-5](#__codelineno-44-5)[project.optional-dependencies]
+[#__codelineno-44-6](#__codelineno-44-6)plot = [
+[#__codelineno-44-7](#__codelineno-44-7)  "matplotlib>=3.6.3"
+[#__codelineno-44-8](#__codelineno-44-8)]
+[#__codelineno-44-9](#__codelineno-44-9)excel = [
+[#__codelineno-44-10](#__codelineno-44-10)  "odfpy>=1.4.1",
+[#__codelineno-44-11](#__codelineno-44-11)  "openpyxl>=3.1.0",
+[#__codelineno-44-12](#__codelineno-44-12)  "python-calamine>=0.1.7",
+[#__codelineno-44-13](#__codelineno-44-13)  "pyxlsb>=1.0.10",
+[#__codelineno-44-14](#__codelineno-44-14)  "xlrd>=2.0.1",
+[#__codelineno-44-15](#__codelineno-44-15)  "xlsxwriter>=3.0.5"
+[#__codelineno-44-16](#__codelineno-44-16)]
 
 ```
 
 To add an optional dependency, use the `--optional `option: 
 
 ```
-[#__codelineno-43-1](#__codelineno-43-1)$ uv add httpx --optional network
+[#__codelineno-45-1](#__codelineno-45-1)$ uv add httpx --optional network
 
 ```
 
@@ -608,30 +636,30 @@ Sources can also be declared as applying only to a specific optional dependency.
 pyproject.toml 
 
 ```
-[#__codelineno-44-1](#__codelineno-44-1)[project]
-[#__codelineno-44-2](#__codelineno-44-2)dependencies = []
-[#__codelineno-44-3](#__codelineno-44-3)
-[#__codelineno-44-4](#__codelineno-44-4)[project.optional-dependencies]
-[#__codelineno-44-5](#__codelineno-44-5)cpu = [
-[#__codelineno-44-6](#__codelineno-44-6)  "torch",
-[#__codelineno-44-7](#__codelineno-44-7)]
-[#__codelineno-44-8](#__codelineno-44-8)gpu = [
-[#__codelineno-44-9](#__codelineno-44-9)  "torch",
-[#__codelineno-44-10](#__codelineno-44-10)]
-[#__codelineno-44-11](#__codelineno-44-11)
-[#__codelineno-44-12](#__codelineno-44-12)[tool.uv.sources]
-[#__codelineno-44-13](#__codelineno-44-13)torch = [
-[#__codelineno-44-14](#__codelineno-44-14)  { index = "torch-cpu", extra = "cpu" },
-[#__codelineno-44-15](#__codelineno-44-15)  { index = "torch-gpu", extra = "gpu" },
-[#__codelineno-44-16](#__codelineno-44-16)]
-[#__codelineno-44-17](#__codelineno-44-17)
-[#__codelineno-44-18](#__codelineno-44-18)[[tool.uv.index]]
-[#__codelineno-44-19](#__codelineno-44-19)name = "torch-cpu"
-[#__codelineno-44-20](#__codelineno-44-20)url = "https://download.pytorch.org/whl/cpu"
-[#__codelineno-44-21](#__codelineno-44-21)
-[#__codelineno-44-22](#__codelineno-44-22)[[tool.uv.index]]
-[#__codelineno-44-23](#__codelineno-44-23)name = "torch-gpu"
-[#__codelineno-44-24](#__codelineno-44-24)url = "https://download.pytorch.org/whl/cu124"
+[#__codelineno-46-1](#__codelineno-46-1)[project]
+[#__codelineno-46-2](#__codelineno-46-2)dependencies = []
+[#__codelineno-46-3](#__codelineno-46-3)
+[#__codelineno-46-4](#__codelineno-46-4)[project.optional-dependencies]
+[#__codelineno-46-5](#__codelineno-46-5)cpu = [
+[#__codelineno-46-6](#__codelineno-46-6)  "torch",
+[#__codelineno-46-7](#__codelineno-46-7)]
+[#__codelineno-46-8](#__codelineno-46-8)gpu = [
+[#__codelineno-46-9](#__codelineno-46-9)  "torch",
+[#__codelineno-46-10](#__codelineno-46-10)]
+[#__codelineno-46-11](#__codelineno-46-11)
+[#__codelineno-46-12](#__codelineno-46-12)[tool.uv.sources]
+[#__codelineno-46-13](#__codelineno-46-13)torch = [
+[#__codelineno-46-14](#__codelineno-46-14)  { index = "torch-cpu", extra = "cpu" },
+[#__codelineno-46-15](#__codelineno-46-15)  { index = "torch-gpu", extra = "gpu" },
+[#__codelineno-46-16](#__codelineno-46-16)]
+[#__codelineno-46-17](#__codelineno-46-17)
+[#__codelineno-46-18](#__codelineno-46-18)[[tool.uv.index]]
+[#__codelineno-46-19](#__codelineno-46-19)name = "torch-cpu"
+[#__codelineno-46-20](#__codelineno-46-20)url = "https://download.pytorch.org/whl/cpu"
+[#__codelineno-46-21](#__codelineno-46-21)
+[#__codelineno-46-22](#__codelineno-46-22)[[tool.uv.index]]
+[#__codelineno-46-23](#__codelineno-46-23)name = "torch-gpu"
+[#__codelineno-46-24](#__codelineno-46-24)url = "https://download.pytorch.org/whl/cu124"
 
 ```
 
@@ -644,7 +672,7 @@ Development dependencies can have entries in `tool.uv.sources `the same as norma
 To add a development dependency, use the `--dev `flag: 
 
 ```
-[#__codelineno-45-1](#__codelineno-45-1)$ uv add --dev pytest
+[#__codelineno-47-1](#__codelineno-47-1)$ uv add --dev pytest
 
 ```
 
@@ -653,10 +681,10 @@ uv uses the `[dependency-groups] `table (as defined in [PEP 735](https://peps.py
 pyproject.toml 
 
 ```
-[#__codelineno-46-1](#__codelineno-46-1)[dependency-groups]
-[#__codelineno-46-2](#__codelineno-46-2)dev = [
-[#__codelineno-46-3](#__codelineno-46-3)  "pytest >=8.1.1,<9"
-[#__codelineno-46-4](#__codelineno-46-4)]
+[#__codelineno-48-1](#__codelineno-48-1)[dependency-groups]
+[#__codelineno-48-2](#__codelineno-48-2)dev = [
+[#__codelineno-48-3](#__codelineno-48-3)  "pytest >=8.1.1,<9"
+[#__codelineno-48-4](#__codelineno-48-4)]
 
 ```
 
@@ -669,7 +697,7 @@ Development dependencies can be divided into multiple groups, using the `--group
 For example, to add a development dependency in the `lint `group: 
 
 ```
-[#__codelineno-47-1](#__codelineno-47-1)$ uv add --group lint ruff
+[#__codelineno-49-1](#__codelineno-49-1)$ uv add --group lint ruff
 
 ```
 
@@ -678,13 +706,13 @@ Which results in the following `[dependency-groups] `definition:
 pyproject.toml 
 
 ```
-[#__codelineno-48-1](#__codelineno-48-1)[dependency-groups]
-[#__codelineno-48-2](#__codelineno-48-2)dev = [
-[#__codelineno-48-3](#__codelineno-48-3)  "pytest"
-[#__codelineno-48-4](#__codelineno-48-4)]
-[#__codelineno-48-5](#__codelineno-48-5)lint = [
-[#__codelineno-48-6](#__codelineno-48-6)  "ruff"
-[#__codelineno-48-7](#__codelineno-48-7)]
+[#__codelineno-50-1](#__codelineno-50-1)[dependency-groups]
+[#__codelineno-50-2](#__codelineno-50-2)dev = [
+[#__codelineno-50-3](#__codelineno-50-3)  "pytest"
+[#__codelineno-50-4](#__codelineno-50-4)]
+[#__codelineno-50-5](#__codelineno-50-5)lint = [
+[#__codelineno-50-6](#__codelineno-50-6)  "ruff"
+[#__codelineno-50-7](#__codelineno-50-7)]
 
 ```
 
@@ -709,17 +737,17 @@ A dependency group can include other dependency groups, e.g.:
 pyproject.toml 
 
 ```
-[#__codelineno-49-1](#__codelineno-49-1)[dependency-groups]
-[#__codelineno-49-2](#__codelineno-49-2)dev = [
-[#__codelineno-49-3](#__codelineno-49-3)  {include-group = "lint"},
-[#__codelineno-49-4](#__codelineno-49-4)  {include-group = "test"}
-[#__codelineno-49-5](#__codelineno-49-5)]
-[#__codelineno-49-6](#__codelineno-49-6)lint = [
-[#__codelineno-49-7](#__codelineno-49-7)  "ruff"
-[#__codelineno-49-8](#__codelineno-49-8)]
-[#__codelineno-49-9](#__codelineno-49-9)test = [
-[#__codelineno-49-10](#__codelineno-49-10)  "pytest"
-[#__codelineno-49-11](#__codelineno-49-11)]
+[#__codelineno-51-1](#__codelineno-51-1)[dependency-groups]
+[#__codelineno-51-2](#__codelineno-51-2)dev = [
+[#__codelineno-51-3](#__codelineno-51-3)  {include-group = "lint"},
+[#__codelineno-51-4](#__codelineno-51-4)  {include-group = "test"}
+[#__codelineno-51-5](#__codelineno-51-5)]
+[#__codelineno-51-6](#__codelineno-51-6)lint = [
+[#__codelineno-51-7](#__codelineno-51-7)  "ruff"
+[#__codelineno-51-8](#__codelineno-51-8)]
+[#__codelineno-51-9](#__codelineno-51-9)test = [
+[#__codelineno-51-10](#__codelineno-51-10)  "pytest"
+[#__codelineno-51-11](#__codelineno-51-11)]
 
 ```
 
@@ -732,8 +760,8 @@ By default, uv includes the `dev `dependency group in the environment (e.g., dur
 pyproject.toml 
 
 ```
-[#__codelineno-50-1](#__codelineno-50-1)[tool.uv]
-[#__codelineno-50-2](#__codelineno-50-2)default-groups = ["dev", "foo"]
+[#__codelineno-52-1](#__codelineno-52-1)[tool.uv]
+[#__codelineno-52-2](#__codelineno-52-2)default-groups = ["dev", "foo"]
 
 ```
 
@@ -742,8 +770,8 @@ To enable all dependencies groups by default, use `"all" `instead of listing gro
 pyproject.toml 
 
 ```
-[#__codelineno-51-1](#__codelineno-51-1)[tool.uv]
-[#__codelineno-51-2](#__codelineno-51-2)default-groups = "all"
+[#__codelineno-53-1](#__codelineno-53-1)[tool.uv]
+[#__codelineno-53-2](#__codelineno-53-2)default-groups = "all"
 
 ```
 
@@ -760,16 +788,16 @@ If a dependency group requires a different range of Python versions than your pr
 pyproject.toml 
 
 ```
-[#__codelineno-52-1](#__codelineno-52-1)[project]
-[#__codelineno-52-2](#__codelineno-52-2)name = "example"
-[#__codelineno-52-3](#__codelineno-52-3)version = "0.0.0"
-[#__codelineno-52-4](#__codelineno-52-4)requires-python = ">=3.10"
-[#__codelineno-52-5](#__codelineno-52-5)
-[#__codelineno-52-6](#__codelineno-52-6)[dependency-groups]
-[#__codelineno-52-7](#__codelineno-52-7)dev = ["pytest"]
-[#__codelineno-52-8](#__codelineno-52-8)
-[#__codelineno-52-9](#__codelineno-52-9)[tool.uv.dependency-groups]
-[#__codelineno-52-10](#__codelineno-52-10)dev = {requires-python = ">=3.12"}
+[#__codelineno-54-1](#__codelineno-54-1)[project]
+[#__codelineno-54-2](#__codelineno-54-2)name = "example"
+[#__codelineno-54-3](#__codelineno-54-3)version = "0.0.0"
+[#__codelineno-54-4](#__codelineno-54-4)requires-python = ">=3.10"
+[#__codelineno-54-5](#__codelineno-54-5)
+[#__codelineno-54-6](#__codelineno-54-6)[dependency-groups]
+[#__codelineno-54-7](#__codelineno-54-7)dev = ["pytest"]
+[#__codelineno-54-8](#__codelineno-54-8)
+[#__codelineno-54-9](#__codelineno-54-9)[tool.uv.dependency-groups]
+[#__codelineno-54-10](#__codelineno-54-10)dev = {requires-python = ">=3.12"}
 
 ```
 
@@ -780,10 +808,10 @@ Before `[dependency-groups] `was standardized, uv used the `tool.uv.dev-dependen
 pyproject.toml 
 
 ```
-[#__codelineno-53-1](#__codelineno-53-1)[tool.uv]
-[#__codelineno-53-2](#__codelineno-53-2)dev-dependencies = [
-[#__codelineno-53-3](#__codelineno-53-3)  "pytest"
-[#__codelineno-53-4](#__codelineno-53-4)]
+[#__codelineno-55-1](#__codelineno-55-1)[tool.uv]
+[#__codelineno-55-2](#__codelineno-55-2)dev-dependencies = [
+[#__codelineno-55-3](#__codelineno-55-3)  "pytest"
+[#__codelineno-55-4](#__codelineno-55-4)]
 
 ```
 
@@ -802,13 +830,13 @@ For example, if a project uses `setuptools `as its build backend, it should decl
 pyproject.toml 
 
 ```
-[#__codelineno-54-1](#__codelineno-54-1)[project]
-[#__codelineno-54-2](#__codelineno-54-2)name = "pandas"
-[#__codelineno-54-3](#__codelineno-54-3)version = "0.1.0"
-[#__codelineno-54-4](#__codelineno-54-4)
-[#__codelineno-54-5](#__codelineno-54-5)[build-system]
-[#__codelineno-54-6](#__codelineno-54-6)requires = ["setuptools>=42"]
-[#__codelineno-54-7](#__codelineno-54-7)build-backend = "setuptools.build_meta"
+[#__codelineno-56-1](#__codelineno-56-1)[project]
+[#__codelineno-56-2](#__codelineno-56-2)name = "pandas"
+[#__codelineno-56-3](#__codelineno-56-3)version = "0.1.0"
+[#__codelineno-56-4](#__codelineno-56-4)
+[#__codelineno-56-5](#__codelineno-56-5)[build-system]
+[#__codelineno-56-6](#__codelineno-56-6)requires = ["setuptools>=42"]
+[#__codelineno-56-7](#__codelineno-56-7)build-backend = "setuptools.build_meta"
 
 ```
 
@@ -817,16 +845,16 @@ By default, uv will respect `tool.uv.sources `when resolving build dependencies.
 pyproject.toml 
 
 ```
-[#__codelineno-55-1](#__codelineno-55-1)[project]
-[#__codelineno-55-2](#__codelineno-55-2)name = "pandas"
-[#__codelineno-55-3](#__codelineno-55-3)version = "0.1.0"
-[#__codelineno-55-4](#__codelineno-55-4)
-[#__codelineno-55-5](#__codelineno-55-5)[build-system]
-[#__codelineno-55-6](#__codelineno-55-6)requires = ["setuptools>=42"]
-[#__codelineno-55-7](#__codelineno-55-7)build-backend = "setuptools.build_meta"
-[#__codelineno-55-8](#__codelineno-55-8)
-[#__codelineno-55-9](#__codelineno-55-9)[tool.uv.sources]
-[#__codelineno-55-10](#__codelineno-55-10)setuptools = { path = "./packages/setuptools" }
+[#__codelineno-57-1](#__codelineno-57-1)[project]
+[#__codelineno-57-2](#__codelineno-57-2)name = "pandas"
+[#__codelineno-57-3](#__codelineno-57-3)version = "0.1.0"
+[#__codelineno-57-4](#__codelineno-57-4)
+[#__codelineno-57-5](#__codelineno-57-5)[build-system]
+[#__codelineno-57-6](#__codelineno-57-6)requires = ["setuptools>=42"]
+[#__codelineno-57-7](#__codelineno-57-7)build-backend = "setuptools.build_meta"
+[#__codelineno-57-8](#__codelineno-57-8)
+[#__codelineno-57-9](#__codelineno-57-9)[tool.uv.sources]
+[#__codelineno-57-10](#__codelineno-57-10)setuptools = { path = "./packages/setuptools" }
 
 ```
 
@@ -845,14 +873,14 @@ uv uses editable installation for workspace packages by default.
 To add an editable dependency, use the `--editable `flag: 
 
 ```
-[#__codelineno-56-1](#__codelineno-56-1)$ uv add --editable ./path/foo
+[#__codelineno-58-1](#__codelineno-58-1)$ uv add --editable ./path/foo
 
 ```
 
 Or, to opt-out of using an editable dependency in a workspace: 
 
 ```
-[#__codelineno-57-1](#__codelineno-57-1)$ uv add --no-editable ./path/foo
+[#__codelineno-59-1](#__codelineno-59-1)$ uv add --no-editable ./path/foo
 
 ```
 
@@ -869,11 +897,11 @@ To treat a dependency as virtual, set `package = false `on the source:
 pyproject.toml 
 
 ```
-[#__codelineno-58-1](#__codelineno-58-1)[project]
-[#__codelineno-58-2](#__codelineno-58-2)dependencies = ["bar"]
-[#__codelineno-58-3](#__codelineno-58-3)
-[#__codelineno-58-4](#__codelineno-58-4)[tool.uv.sources]
-[#__codelineno-58-5](#__codelineno-58-5)bar = { path = "../projects/bar", package = false }
+[#__codelineno-60-1](#__codelineno-60-1)[project]
+[#__codelineno-60-2](#__codelineno-60-2)dependencies = ["bar"]
+[#__codelineno-60-3](#__codelineno-60-3)
+[#__codelineno-60-4](#__codelineno-60-4)[tool.uv.sources]
+[#__codelineno-60-5](#__codelineno-60-5)bar = { path = "../projects/bar", package = false }
 
 ```
 
@@ -882,11 +910,11 @@ If a dependency sets `tool.uv.package = false `, it can be overridden by declari
 pyproject.toml 
 
 ```
-[#__codelineno-59-1](#__codelineno-59-1)[project]
-[#__codelineno-59-2](#__codelineno-59-2)dependencies = ["bar"]
-[#__codelineno-59-3](#__codelineno-59-3)
-[#__codelineno-59-4](#__codelineno-59-4)[tool.uv.sources]
-[#__codelineno-59-5](#__codelineno-59-5)bar = { path = "../projects/bar", package = true }
+[#__codelineno-61-1](#__codelineno-61-1)[project]
+[#__codelineno-61-2](#__codelineno-61-2)dependencies = ["bar"]
+[#__codelineno-61-3](#__codelineno-61-3)
+[#__codelineno-61-4](#__codelineno-61-4)[tool.uv.sources]
+[#__codelineno-61-5](#__codelineno-61-5)bar = { path = "../projects/bar", package = true }
 
 ```
 
@@ -897,13 +925,13 @@ Workspace members that are _not _dependencies can be virtual by default, e.g., i
 pyproject.toml 
 
 ```
-[#__codelineno-60-1](#__codelineno-60-1)[project]
-[#__codelineno-60-2](#__codelineno-60-2)name = "parent"
-[#__codelineno-60-3](#__codelineno-60-3)version = "1.0.0"
-[#__codelineno-60-4](#__codelineno-60-4)dependencies = []
-[#__codelineno-60-5](#__codelineno-60-5)
-[#__codelineno-60-6](#__codelineno-60-6)[tool.uv.workspace]
-[#__codelineno-60-7](#__codelineno-60-7)members = ["child"]
+[#__codelineno-62-1](#__codelineno-62-1)[project]
+[#__codelineno-62-2](#__codelineno-62-2)name = "parent"
+[#__codelineno-62-3](#__codelineno-62-3)version = "1.0.0"
+[#__codelineno-62-4](#__codelineno-62-4)dependencies = []
+[#__codelineno-62-5](#__codelineno-62-5)
+[#__codelineno-62-6](#__codelineno-62-6)[tool.uv.workspace]
+[#__codelineno-62-7](#__codelineno-62-7)members = ["child"]
 
 ```
 
@@ -912,10 +940,10 @@ And the child `pyproject.toml `excluded a build system:
 pyproject.toml 
 
 ```
-[#__codelineno-61-1](#__codelineno-61-1)[project]
-[#__codelineno-61-2](#__codelineno-61-2)name = "child"
-[#__codelineno-61-3](#__codelineno-61-3)version = "1.0.0"
-[#__codelineno-61-4](#__codelineno-61-4)dependencies = ["anyio"]
+[#__codelineno-63-1](#__codelineno-63-1)[project]
+[#__codelineno-63-2](#__codelineno-63-2)name = "child"
+[#__codelineno-63-3](#__codelineno-63-3)version = "1.0.0"
+[#__codelineno-63-4](#__codelineno-63-4)dependencies = ["anyio"]
 
 ```
 
@@ -926,16 +954,16 @@ In contrast, if the parent declared a dependency on `child `:
 pyproject.toml 
 
 ```
-[#__codelineno-62-1](#__codelineno-62-1)[project]
-[#__codelineno-62-2](#__codelineno-62-2)name = "parent"
-[#__codelineno-62-3](#__codelineno-62-3)version = "1.0.0"
-[#__codelineno-62-4](#__codelineno-62-4)dependencies = ["child"]
-[#__codelineno-62-5](#__codelineno-62-5)
-[#__codelineno-62-6](#__codelineno-62-6)[tool.uv.sources]
-[#__codelineno-62-7](#__codelineno-62-7)child = { workspace = true }
-[#__codelineno-62-8](#__codelineno-62-8)
-[#__codelineno-62-9](#__codelineno-62-9)[tool.uv.workspace]
-[#__codelineno-62-10](#__codelineno-62-10)members = ["child"]
+[#__codelineno-64-1](#__codelineno-64-1)[project]
+[#__codelineno-64-2](#__codelineno-64-2)name = "parent"
+[#__codelineno-64-3](#__codelineno-64-3)version = "1.0.0"
+[#__codelineno-64-4](#__codelineno-64-4)dependencies = ["child"]
+[#__codelineno-64-5](#__codelineno-64-5)
+[#__codelineno-64-6](#__codelineno-64-6)[tool.uv.sources]
+[#__codelineno-64-7](#__codelineno-64-7)child = { workspace = true }
+[#__codelineno-64-8](#__codelineno-64-8)
+[#__codelineno-64-9](#__codelineno-64-9)[tool.uv.workspace]
+[#__codelineno-64-10](#__codelineno-64-10)members = ["child"]
 
 ```
 
@@ -965,4 +993,4 @@ Some dependencies are only required in specific environments, e.g., a specific P
 
 Markers are combined with `and `, `or `, and parentheses, e.g., `aiohttp >=3.7.4, < 4; (sys_platform != 'win32' or implementation_name != 'pypy') and python_version >= '3.10' `. Note that versions within markers must be quoted, while versions _outside _of markers must _not _be quoted. 
 
-September 12, 2025
+December 2, 2025

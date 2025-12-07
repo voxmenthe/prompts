@@ -20,7 +20,7 @@ example.yml
 [#__codelineno-0-9](#__codelineno-0-9)      - uses: actions/checkout@v5
 [#__codelineno-0-10](#__codelineno-0-10)
 [#__codelineno-0-11](#__codelineno-0-11)      - name: Install uv
-[#__codelineno-0-12](#__codelineno-0-12)        uses: astral-sh/setup-uv@v6
+[#__codelineno-0-12](#__codelineno-0-12)        uses: astral-sh/setup-uv@v7
 
 ```
 
@@ -40,10 +40,10 @@ example.yml
 [#__codelineno-1-9](#__codelineno-1-9)      - uses: actions/checkout@v5
 [#__codelineno-1-10](#__codelineno-1-10)
 [#__codelineno-1-11](#__codelineno-1-11)      - name: Install uv
-[#__codelineno-1-12](#__codelineno-1-12)        uses: astral-sh/setup-uv@v6
+[#__codelineno-1-12](#__codelineno-1-12)        uses: astral-sh/setup-uv@v7
 [#__codelineno-1-13](#__codelineno-1-13)        with:
 [#__codelineno-1-14](#__codelineno-1-14)          # Install a specific version of uv.
-[#__codelineno-1-15](#__codelineno-1-15)          version: "0.9.9"
+[#__codelineno-1-15](#__codelineno-1-15)          version: "0.9.16"
 
 ```
 
@@ -65,7 +65,7 @@ example.yml
 [#__codelineno-2-9](#__codelineno-2-9)      - uses: actions/checkout@v5
 [#__codelineno-2-10](#__codelineno-2-10)
 [#__codelineno-2-11](#__codelineno-2-11)      - name: Install uv
-[#__codelineno-2-12](#__codelineno-2-12)        uses: astral-sh/setup-uv@v6
+[#__codelineno-2-12](#__codelineno-2-12)        uses: astral-sh/setup-uv@v7
 [#__codelineno-2-13](#__codelineno-2-13)
 [#__codelineno-2-14](#__codelineno-2-14)      - name: Set up Python
 [#__codelineno-2-15](#__codelineno-2-15)        run: uv python install
@@ -97,7 +97,7 @@ example.yml
 [#__codelineno-3-14](#__codelineno-3-14)          python-version-file: ".python-version"
 [#__codelineno-3-15](#__codelineno-3-15)
 [#__codelineno-3-16](#__codelineno-3-16)      - name: Install uv
-[#__codelineno-3-17](#__codelineno-3-17)        uses: astral-sh/setup-uv@v6
+[#__codelineno-3-17](#__codelineno-3-17)        uses: astral-sh/setup-uv@v7
 
 ```
 
@@ -122,7 +122,7 @@ example.yml
 [#__codelineno-4-14](#__codelineno-4-14)          python-version-file: "pyproject.toml"
 [#__codelineno-4-15](#__codelineno-4-15)
 [#__codelineno-4-16](#__codelineno-4-16)      - name: Install uv
-[#__codelineno-4-17](#__codelineno-4-17)        uses: astral-sh/setup-uv@v6
+[#__codelineno-4-17](#__codelineno-4-17)        uses: astral-sh/setup-uv@v7
 
 ```
 
@@ -148,7 +148,7 @@ example.yml
 [#__codelineno-5-13](#__codelineno-5-13)      - uses: actions/checkout@v5
 [#__codelineno-5-14](#__codelineno-5-14)
 [#__codelineno-5-15](#__codelineno-5-15)      - name: Install uv and set the Python version
-[#__codelineno-5-16](#__codelineno-5-16)        uses: astral-sh/setup-uv@v6
+[#__codelineno-5-16](#__codelineno-5-16)        uses: astral-sh/setup-uv@v7
 [#__codelineno-5-17](#__codelineno-5-17)        with:
 [#__codelineno-5-18](#__codelineno-5-18)          python-version: ${{ matrix.python-version }}
 
@@ -194,7 +194,7 @@ example.yml
 [#__codelineno-7-9](#__codelineno-7-9)      - uses: actions/checkout@v5
 [#__codelineno-7-10](#__codelineno-7-10)
 [#__codelineno-7-11](#__codelineno-7-11)      - name: Install uv
-[#__codelineno-7-12](#__codelineno-7-12)        uses: astral-sh/setup-uv@v6
+[#__codelineno-7-12](#__codelineno-7-12)        uses: astral-sh/setup-uv@v7
 [#__codelineno-7-13](#__codelineno-7-13)
 [#__codelineno-7-14](#__codelineno-7-14)      - name: Install the project
 [#__codelineno-7-15](#__codelineno-7-15)        run: uv sync --locked --all-extras --dev
@@ -219,7 +219,7 @@ example.yml
 
 ```
 [#__codelineno-8-1](#__codelineno-8-1)- name: Enable caching
-[#__codelineno-8-2](#__codelineno-8-2)  uses: astral-sh/setup-uv@v6
+[#__codelineno-8-2](#__codelineno-8-2)  uses: astral-sh/setup-uv@v7
 [#__codelineno-8-3](#__codelineno-8-3)  with:
 [#__codelineno-8-4](#__codelineno-8-4)    enable-cache: true
 
@@ -381,7 +381,7 @@ First, add a release workflow to your project:
 [#__codelineno-16-18](#__codelineno-16-18)      - name: Checkout
 [#__codelineno-16-19](#__codelineno-16-19)        uses: actions/checkout@v5
 [#__codelineno-16-20](#__codelineno-16-20)      - name: Install uv
-[#__codelineno-16-21](#__codelineno-16-21)        uses: astral-sh/setup-uv@v6
+[#__codelineno-16-21](#__codelineno-16-21)        uses: astral-sh/setup-uv@v7
 [#__codelineno-16-22](#__codelineno-16-22)      - name: Install Python 3.13
 [#__codelineno-16-23](#__codelineno-16-23)        run: uv python install 3.13
 [#__codelineno-16-24](#__codelineno-16-24)      - name: Build
@@ -416,4 +416,4 @@ Finally, tag a release and push it. Make sure it starts with `v `to match the pa
 
 ```
 
-November 12, 2025
+December 6, 2025

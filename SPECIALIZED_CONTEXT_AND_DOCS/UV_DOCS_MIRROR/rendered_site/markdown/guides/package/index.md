@@ -2,32 +2,20 @@
 
 uv supports building Python packages into source and binary distributions via `uv build `and uploading them to a registry with `uv publish `. 
 
-## [Preparing your project for packaging](#preparing-your-project-for-packaging)
+## [Preparing your project](#preparing-your-project)
 
 Before attempting to publish your project, you'll want to make sure it's ready to be packaged for distribution. 
 
-If your project does not include a `[build-system] `definition in the `pyproject.toml `, uv will not build it by default. This means that your project may not be ready for distribution. Read more about the effect of declaring a build system in the [project concept](../../concepts/projects/config/#build-systems)documentation. 
+If your project does not include a `[build-system] `definition in the `pyproject.toml `, uv will not build it during `uv sync `operations in the project, but will fall back to the legacy setuptools build system during `uv build `. 
 
-!!! note "Note"
-
-    If you have internal packages that you do not want to be published, you can mark them as private: 
-
-    ```
-[#__codelineno-0-1](#__codelineno-0-1)[project]
-[#__codelineno-0-2](#__codelineno-0-2)classifiers = ["Private :: Do Not Upload"]
-
-```
-
-    This setting makes PyPI reject your uploaded package from publishing. It does not affect security or privacy settings on alternative registries. 
-
-    We also recommend only generating [per-project PyPI API tokens](https://pypi.org/help/#apitoken): Without a PyPI token matching the project, it can't be accidentally published. 
+We strongly recommend configuring a build system. Read more about build systems in the [project configuration](../../concepts/projects/config/#build-systems)documentation. 
 
 ## [Building your package](#building-your-package)
 
 Build your package with `uv build `: 
 
 ```
-[#__codelineno-1-1](#__codelineno-1-1)$ uv build
+[#__codelineno-0-1](#__codelineno-0-1)$ uv build
 
 ```
 
@@ -41,31 +29,31 @@ Alternatively, `uv build `will build the package in the specified directory, whi
 
 ## [Updating your version](#updating-your-version)
 
-The `uv version `command provides conveniences for updating the version of your package before you publish it. [See the project docs for reading your package's version](../projects/#managing-version). 
+The `uv version `command provides conveniences for updating the version of your package before you publish it. [See the project docs for reading your package's version](../projects/#viewing-your-version). 
 
 To update to an exact version, provide it as a positional argument: 
 
 ```
-[#__codelineno-2-1](#__codelineno-2-1)$ uv version 1.0.0
-[#__codelineno-2-2](#__codelineno-2-2)hello-world 0.7.0 => 1.0.0
+[#__codelineno-1-1](#__codelineno-1-1)$ uv version 1.0.0
+[#__codelineno-1-2](#__codelineno-1-2)hello-world 0.7.0 => 1.0.0
 
 ```
 
 To preview the change without updating the `pyproject.toml `, use the `--dry-run `flag: 
 
 ```
-[#__codelineno-3-1](#__codelineno-3-1)$ uv version 2.0.0 --dry-run
-[#__codelineno-3-2](#__codelineno-3-2)hello-world 1.0.0 => 2.0.0
-[#__codelineno-3-3](#__codelineno-3-3)$ uv version
-[#__codelineno-3-4](#__codelineno-3-4)hello-world 1.0.0
+[#__codelineno-2-1](#__codelineno-2-1)$ uv version 2.0.0 --dry-run
+[#__codelineno-2-2](#__codelineno-2-2)hello-world 1.0.0 => 2.0.0
+[#__codelineno-2-3](#__codelineno-2-3)$ uv version
+[#__codelineno-2-4](#__codelineno-2-4)hello-world 1.0.0
 
 ```
 
 To increase the version of your package semantics, use the `--bump `option: 
 
 ```
-[#__codelineno-4-1](#__codelineno-4-1)$ uv version --bump minor
-[#__codelineno-4-2](#__codelineno-4-2)hello-world 1.2.3 => 1.3.0
+[#__codelineno-3-1](#__codelineno-3-1)$ uv version --bump minor
+[#__codelineno-3-2](#__codelineno-3-2)hello-world 1.2.3 => 1.3.0
 
 ```
 
@@ -74,34 +62,34 @@ The `--bump `option supports the following common version components: `major `, 
 You can optionally provide a numeric value with `--bump = `to set the resulting component explicitly: 
 
 ```
-[#__codelineno-5-1](#__codelineno-5-1)$ uv version --bump patch --bump dev=66463664
-[#__codelineno-5-2](#__codelineno-5-2)hello-world 0.0.1 => 0.0.2.dev66463664
+[#__codelineno-4-1](#__codelineno-4-1)$ uv version --bump patch --bump dev=66463664
+[#__codelineno-4-2](#__codelineno-4-2)hello-world 0.0.1 => 0.0.2.dev66463664
 
 ```
 
 To move from a stable to pre-release version, bump one of the major, minor, or patch components in addition to the pre-release component: 
 
 ```
-[#__codelineno-6-1](#__codelineno-6-1)$ uv version --bump patch --bump beta
-[#__codelineno-6-2](#__codelineno-6-2)hello-world 1.3.0 => 1.3.1b1
-[#__codelineno-6-3](#__codelineno-6-3)$ uv version --bump major --bump alpha
-[#__codelineno-6-4](#__codelineno-6-4)hello-world 1.3.0 => 2.0.0a1
+[#__codelineno-5-1](#__codelineno-5-1)$ uv version --bump patch --bump beta
+[#__codelineno-5-2](#__codelineno-5-2)hello-world 1.3.0 => 1.3.1b1
+[#__codelineno-5-3](#__codelineno-5-3)$ uv version --bump major --bump alpha
+[#__codelineno-5-4](#__codelineno-5-4)hello-world 1.3.0 => 2.0.0a1
 
 ```
 
 When moving from a pre-release to a new pre-release version, just bump the relevant pre-release component: 
 
 ```
-[#__codelineno-7-1](#__codelineno-7-1)$ uv version --bump beta
-[#__codelineno-7-2](#__codelineno-7-2)hello-world 1.3.0b1 => 1.3.0b2
+[#__codelineno-6-1](#__codelineno-6-1)$ uv version --bump beta
+[#__codelineno-6-2](#__codelineno-6-2)hello-world 1.3.0b1 => 1.3.0b2
 
 ```
 
 When moving from a pre-release to a stable version, the `stable `option can be used to clear the pre-release component: 
 
 ```
-[#__codelineno-8-1](#__codelineno-8-1)$ uv version --bump stable
-[#__codelineno-8-2](#__codelineno-8-2)hello-world 1.3.1b2 => 1.3.1
+[#__codelineno-7-1](#__codelineno-7-1)$ uv version --bump stable
+[#__codelineno-7-2](#__codelineno-7-2)hello-world 1.3.1b2 => 1.3.1
 
 ```
 
@@ -118,7 +106,7 @@ When moving from a pre-release to a stable version, the `stable `option can be u
 Publish your package with `uv publish `: 
 
 ```
-[#__codelineno-9-1](#__codelineno-9-1)$ uv publish
+[#__codelineno-8-1](#__codelineno-8-1)$ uv publish
 
 ```
 
@@ -131,11 +119,11 @@ Set a PyPI token with `--token `or `UV_PUBLISH_TOKEN `, or set a username with `
 If you're using a custom index through `[[tool.uv.index]] `, add `publish-url `and use `uv publish --index `. For example: 
 
 ```
-[#__codelineno-10-1](#__codelineno-10-1)[[tool.uv.index]]
-[#__codelineno-10-2](#__codelineno-10-2)name = "testpypi"
-[#__codelineno-10-3](#__codelineno-10-3)url = "https://test.pypi.org/simple/"
-[#__codelineno-10-4](#__codelineno-10-4)publish-url = "https://test.pypi.org/legacy/"
-[#__codelineno-10-5](#__codelineno-10-5)explicit = true
+[#__codelineno-9-1](#__codelineno-9-1)[[tool.uv.index]]
+[#__codelineno-9-2](#__codelineno-9-2)name = "testpypi"
+[#__codelineno-9-3](#__codelineno-9-3)url = "https://test.pypi.org/simple/"
+[#__codelineno-9-4](#__codelineno-9-4)publish-url = "https://test.pypi.org/legacy/"
+[#__codelineno-9-5](#__codelineno-9-5)explicit = true
 
 ```
 
@@ -144,6 +132,29 @@ If you're using a custom index through `[[tool.uv.index]] `, add `publish-url `a
     When using `uv publish --index `, the `pyproject.toml `must be present, i.e., you need to have a checkout step in a publish CI job. 
 
 Even though `uv publish `retries failed uploads, it can happen that publishing fails in the middle, with some files uploaded and some files still missing. With PyPI, you can retry the exact same command, existing identical files will be ignored. With other registries, use `--check-url `with the index URL (not the publishing URL) the packages belong to. When using `--index `, the index URL is used as check URL. uv will skip uploading files that are identical to files in the registry, and it will also handle raced parallel uploads. Note that existing files need to match exactly with those previously uploaded to the registry, this avoids accidentally publishing source distribution and wheels with different contents for the same version. 
+
+### [Uploading attestations with your package](#uploading-attestations-with-your-package)
+
+!!! note "Note"
+
+    Some third-party package indexes may not support attestations, and may reject uploads that include them (rather than silently ignoring them). If you encounter issues when uploading, you can use `--no-attestations `or `UV_PUBLISH_NO_ATTESTATIONS `to disable uv's default behavior. 
+
+!!! tip "Tip"
+
+    `uv publish `does not currently generate attestations; attestations must be created separately before publishing. 
+
+`uv publish `supports uploading [attestations](https://peps.python.org/pep-0740/)to registries that support them, like PyPI. 
+
+uv will automatically discover and match attestations. For example, given the following `dist/ `directory, `uv publish `will upload the attestations along with their corresponding distributions: 
+
+```
+[#__codelineno-10-1](#__codelineno-10-1)$ ls dist/
+[#__codelineno-10-2](#__codelineno-10-2)hello_world-1.0.0-py3-none-any.whl
+[#__codelineno-10-3](#__codelineno-10-3)hello_world-1.0.0-py3-none-any.whl.publish.attestation
+[#__codelineno-10-4](#__codelineno-10-4)hello_world-1.0.0.tar.gz
+[#__codelineno-10-5](#__codelineno-10-5)hello_world-1.0.0.tar.gz.publish.attestation
+
+```
 
 ## [Installing your package](#installing-your-package)
 
@@ -166,4 +177,4 @@ To learn more about publishing packages, check out the [PyPA guides](https://pac
 
 Or, read on for [guides](../integration/)on integrating uv with other software. 
 
-November 11, 2025
+November 24, 2025

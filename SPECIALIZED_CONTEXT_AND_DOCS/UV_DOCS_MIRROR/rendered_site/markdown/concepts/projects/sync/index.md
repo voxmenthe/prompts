@@ -160,9 +160,16 @@ These flags can also be provided to `uv sync `or `uv run `to update the lockfile
 
 ## [Exporting the lockfile](#exporting-the-lockfile)
 
-If you need to integrate uv with other tools or workflows, you can export `uv.lock `to the `requirements.txt `format with `uv export --format requirements-txt `. The generated `requirements.txt `file can then be installed via `uv pip install `, or with other tools like `pip `. 
+If you need to integrate uv with other tools or workflows, you can export `uv.lock `to different formats including `requirements.txt `, `pylock.toml `(PEP 751), and CycloneDX SBOM. 
 
-In general, we recommend against using both a `uv.lock `and a `requirements.txt `file. If you find yourself exporting a `uv.lock `file, consider opening an issue to discuss your use case. 
+```
+[#__codelineno-12-1](#__codelineno-12-1)$ uv export --format requirements.txt
+[#__codelineno-12-2](#__codelineno-12-2)$ uv export --format pylock.toml
+[#__codelineno-12-3](#__codelineno-12-3)$ uv export --format cyclonedx1.5
+
+```
+
+See the [export guide](../export/)for comprehensive documentation on all export formats and their use cases. 
 
 ## [Partial installations](#partial-installations)
 
@@ -178,4 +185,4 @@ When these options are used, all the dependencies of the target are still instal
 
 If used improperly, these flags can result in a broken environment since a package can be missing its dependencies. 
 
-August 27, 2025
+November 24, 2025

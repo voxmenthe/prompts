@@ -88,7 +88,7 @@ In the first stage, we'll populate a single directory with all application code 
 Dockerfile 
 
 ```
-[#__codelineno-4-1](#__codelineno-4-1)FROM ghcr.io/astral-sh/uv:0.9.9 AS uv
+[#__codelineno-4-1](#__codelineno-4-1)FROM ghcr.io/astral-sh/uv:0.9.16 AS uv
 [#__codelineno-4-2](#__codelineno-4-2)
 [#__codelineno-4-3](#__codelineno-4-3)# First, bundle the dependencies into the task root.
 [#__codelineno-4-4](#__codelineno-4-4)FROM public.ecr.aws/lambda/python:3.13 AS builder
@@ -340,7 +340,7 @@ Finally, we'll update the Dockerfile to include the local library in the deploym
 Dockerfile 
 
 ```
-[#__codelineno-18-1](#__codelineno-18-1)FROM ghcr.io/astral-sh/uv:0.9.9 AS uv
+[#__codelineno-18-1](#__codelineno-18-1)FROM ghcr.io/astral-sh/uv:0.9.16 AS uv
 [#__codelineno-18-2](#__codelineno-18-2)
 [#__codelineno-18-3](#__codelineno-18-3)# First, bundle the dependencies into the task root.
 [#__codelineno-18-4](#__codelineno-18-4)FROM public.ecr.aws/lambda/python:3.13 AS builder
@@ -603,4 +603,4 @@ When the application dependencies change, the layer can be updated independently
 
 ```
 
-November 12, 2025
+December 6, 2025

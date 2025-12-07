@@ -8,8 +8,10 @@ The reference section provides information about specific parts of uv:
 
 - [Resolver](internals/resolver/): Details about the internals of uv's resolver. 
 
+- [Storage](storage/): Information about where uv stores data on your system. 
+
 - [Policies](policies/): uv's versioning policy, platform support policy, and license. 
 
 Looking for a broader overview? Check out the [concepts](../concepts/)documentation. 
 
-August 23, 2025
+November 17, 2025

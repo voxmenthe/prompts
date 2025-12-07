@@ -7,3 +7,4 @@ python src/DATA_SCRIPTS/mirror_ai_sdk_docs.py
 python src/DATA_SCRIPTS/mirror_ai_sdk_v6_docs.py
 python src/DATA_SCRIPTS/create_fastapi_mirror.py
 python src/DATA_SCRIPTS/create_dspy_docs_mirror.py
+python src/DATA_SCRIPTS/create_uv_docs_mirror.py

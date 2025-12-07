@@ -29,7 +29,7 @@ The following Python version request formats are supported:
 
 - ``(e.g., `3.13t `, `3.12.0d `) 
 
-- `+ `(e.g., `3.13+freethreaded `, `3.12.0+debug `) 
+- `+ `(e.g., `3.13+freethreaded `, `3.12.0+debug `, `3.14+gil `) 
 
 - ``(e.g., `cpython `or `cp `) 
 
@@ -114,9 +114,11 @@ By default `uv python install `will verify that a managed Python version is inst
 
     The available Python versions are frozen for each uv release. To install new Python versions, you may need upgrade uv. 
 
+See the [storage documentation](../../reference/storage/#python-versions)for details about where installed Python versions are stored. 
+
 ### [Installing Python executables](#installing-python-executables)
 
-uv installs Python executables into your `PATH `by default, e.g., `uv python install 3.12 `will install a Python executable into `~/.local/bin `, e.g., as `python3.12 `. 
+uv installs Python executables into your `PATH `by default, e.g., on Unix `uv python install 3.12 `will install a Python executable into `~/.local/bin `, e.g., as `python3.12 `. See the [storage documentation](../../reference/storage/#python-executables)for more details about the target directory. 
 
 !!! tip "Tip"
 
@@ -304,7 +306,11 @@ If a pre-release Python version is available and matches the request, uv will no
 
 uv supports discovering and installing [free-threaded](https://docs.python.org/3.14/glossary.html#term-free-threading)Python variants in CPython 3.13+. 
 
-Free-threaded Python versions will not be selected by default. Free-threaded Python versions will only be selected when explicitly requested, e.g., with `3.13t `or `3.13+freethreaded `. 
+For Python 3.13, free-threaded Python versions will not be selected by default. Free-threaded Python versions will only be selected when explicitly requested, e.g., with `3.13t `or `3.13+freethreaded `. 
+
+For Python 3.14+, uv will allow use of free-threaded Python 3.14+ interpreters without explicit selection. The GIL-enabled build of Python will still be preferred, e.g., when performing an installation with `uv python install 3.14 `. However, e.g., if a free-threaded interpreter comes before a GIL-enabled build on the `PATH `, it will be used. 
+
+If both free-threaded and GIL-enabled Python versions are available on the system, and want to require the use of the GIL-enabled variant in a project, you can use the `+gil `variant specifier. 
 
 ## [Debug Python variants](#debug-python-variants)
 
@@ -426,4 +432,4 @@ After installation, the Python versions can be selected with the `py `launcher, 
 
 On uninstall, uv will remove the registry entry for the target version as well as any broken registry entries. 
 
-October 21, 2025
+November 20, 2025

@@ -22,7 +22,7 @@ pyproject.toml
 
 ```
 [#__codelineno-0-1](#__codelineno-0-1)[build-system]
-[#__codelineno-0-2](#__codelineno-0-2)requires = ["uv_build>=0.9.9,<0.10.0"]
+[#__codelineno-0-2](#__codelineno-0-2)requires = ["uv_build>=0.9.16,<0.10.0"]
 [#__codelineno-0-3](#__codelineno-0-3)build-backend = "uv_build"
 
 ```
@@ -237,4 +237,4 @@ Excludes are not anchored, which means that `__pycache__ `excludes all directori
 
 All fields accepting patterns use the reduced portable glob syntax from [PEP 639](https://peps.python.org/pep-0639/#add-license-FILES-key), with the addition that characters can be escaped with a backslash. 
 
-November 12, 2025
+December 6, 2025

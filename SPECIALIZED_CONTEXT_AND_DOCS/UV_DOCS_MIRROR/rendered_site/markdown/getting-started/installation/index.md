@@ -27,7 +27,7 @@ If your system doesn't have `curl `, you can use `wget `:
 Request a specific version by including it in the URL: 
 
 ```
-[#__codelineno-2-1](#__codelineno-2-1)$ curl -LsSf https://astral.sh/uv/0.9.9/install.sh | sh
+[#__codelineno-2-1](#__codelineno-2-1)$ curl -LsSf https://astral.sh/uv/0.9.16/install.sh | sh
 
 ```
 
@@ -45,7 +45,7 @@ Changing the [execution policy](https://learn.microsoft.com/en-us/powershell/mod
 Request a specific version by including it in the URL: 
 
 ```
-[#__codelineno-4-1](#__codelineno-4-1)PS> powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/0.9.9/install.ps1 | iex"
+[#__codelineno-4-1](#__codelineno-4-1)PS> powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/0.9.16/install.ps1 | iex"
 
 ```
 
@@ -143,10 +143,10 @@ Each release page includes binaries for all supported platforms as well as instr
 
 ### [Cargo](#cargo)
 
-uv is available via Cargo, but must be built from Git rather than [crates.io](https://crates.io)due to its dependency on unpublished crates. 
+uv is available via [crates.io](https://crates.io). 
 
 ```
-[#__codelineno-13-1](#__codelineno-13-1)$ cargo install --git https://github.com/astral-sh/uv uv
+[#__codelineno-13-1](#__codelineno-13-1)$ cargo install --locked uv
 
 ```
 
@@ -279,7 +279,7 @@ Clean up stored data (optional):
 
 !!! tip "Tip"
 
-    Before removing the binaries, you may want to remove any data that uv has stored. 
+    Before removing the binaries, you may want to remove any data that uv has stored. See the [storage reference](../../reference/storage/)for details on where uv stores data. 
 
 
 2. 
@@ -312,4 +312,4 @@ Remove the uv, uvx, and uvw binaries:
 
 See the [first steps](../first-steps/)or jump straight to the [guides](../../guides/)to start using uv. 
 
-November 12, 2025
+December 6, 2025

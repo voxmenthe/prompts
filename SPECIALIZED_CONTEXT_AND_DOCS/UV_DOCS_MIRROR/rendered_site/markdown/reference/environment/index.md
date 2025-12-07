@@ -150,6 +150,12 @@ added in `0.5.19 `
 
 Enables fetching files stored in Git LFS when installing a package from a Git repository. 
 
+### [`UV_HIDE_BUILD_OUTPUT `](#uv_hide_build_output)
+
+added in `0.9.15 `
+
+Suppress output from the build backend when building source distributions, even in the event of build failures. 
+
 ### [`UV_HTTP_RETRIES `](#uv_http_retries)
 
 added in `0.7.21 `
@@ -265,6 +271,14 @@ Equivalent to the `--link-mode `command-line argument. If set, uv will use this 
 added in `0.4.25 `
 
 Equivalent to the `--locked `command-line argument. If set, uv will assert that the `uv.lock `remains unchanged. 
+
+### [`UV_LOCK_TIMEOUT `](#uv_lock_timeout)
+
+added in `0.9.4 `
+
+The time in seconds uv waits for a file lock to become available. 
+
+Defaults to 300s (5 min). 
 
 ### [`UV_LOG_CONTEXT `](#uv_log_context)
 
@@ -474,6 +488,12 @@ added in `0.5.8 `
 
 Equivalent to the `--index `command-line argument in `uv publish `. If set, uv the index with this name in the configuration for publishing. 
 
+### [`UV_PUBLISH_NO_ATTESTATIONS `](#uv_publish_no_attestations)
+
+added in `0.9.12 `
+
+Equivalent to the `--no-attestations `command-line argument in `uv publish `. If set, uv will skip uploading any collected attestations for the published distributions. 
+
 ### [`UV_PUBLISH_PASSWORD `](#uv_publish_password)
 
 added in `0.4.16 `
@@ -544,9 +564,9 @@ added in `0.6.13 `
 
 Managed Python installations information is hardcoded in the `uv `binary. 
 
-This variable can be set to a URL pointing to JSON to use as a list for Python installations. This will allow for setting each property of the Python installation, mostly the url part for offline mirror. 
+This variable can be set to a local path or URL pointing to a JSON list of Python installations to override the hardcoded list. 
 
-Note that currently, only local paths are supported. 
+This allows customizing the URLs for downloads or using slightly older or newer versions of Python than the ones hardcoded into this build of `uv `. 
 
 ### [`UV_PYTHON_GRAALPY_BUILD `](#uv_python_graalpy_build)
 
@@ -702,11 +722,11 @@ Install seed packages (one or more of: `pip `, `setuptools `, and `wheel `) into
 
 Note that `setuptools `and `wheel `are not included in Python 3.12+ environments. 
 
-### [`UV_WORKING_DIRECTORY `](#uv_working_directory)
+### [`UV_WORKING_DIR `](#uv_working_dir)
 
-added in `0.9.1 `
+added in `next version `
 
-Equivalent to the `--directory `command-line argument. 
+Equivalent to the `--directory `command-line argument. `UV_WORKING_DIRECTORY `(added in v0.9.1) is also supported for backwards compatibility. 
 
 ## [Externally defined variables](#externally-defined-variables)
 
@@ -811,6 +831,12 @@ Used to determine the name of the active Conda environment.
 added in `0.0.5 `
 
 Used to detect the path of an active Conda environment. 
+
+### [`DEPENDABOT `](#dependabot)
+
+added in `0.9.11 `
+
+Used to determine if we're running in Dependabot. 
 
 ### [`FISH_VERSION `](#fish_version)
 
@@ -1046,11 +1072,21 @@ added in `0.1.16 `
 
 The standard `SHELL `posix env var. 
 
+### [`SSL_CERT_DIR `](#ssl_cert_dir)
+
+added in `0.9.10 `
+
+Custom path for certificate bundles for SSL connections. Multiple entries are supported separated using a platform-specific delimiter ( `: `on Unix, `; `on Windows). 
+
+Takes precedence over `UV_NATIVE_TLS `when set. 
+
 ### [`SSL_CERT_FILE `](#ssl_cert_file)
 
 added in `0.1.14 `
 
 Custom certificate bundle file path for SSL connections. 
+
+Takes precedence over `UV_NATIVE_TLS `when set. 
 
 ### [`SSL_CLIENT_CERT `](#ssl_client_cert)
 
@@ -1148,4 +1184,4 @@ added in `0.8.18 `
 
 Used to determine the root install path of Conda. 
 
-November 12, 2025
+December 4, 2025

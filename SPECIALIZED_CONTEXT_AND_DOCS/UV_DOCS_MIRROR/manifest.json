@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-16T03:40:26.898341+00:00",
+  "generated_at": "2025-12-07T06:07:26.426589+00:00",
   "repo_root": "/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/uv",
   "repo_skip_dirs": [
     ".overrides",
@@ -9,7 +9,7 @@
   ],
   "site_base": "https://docs.astral.sh/uv",
   "counts": {
-    "site_pages": 73,
+    "site_pages": 75,
     "repo_docs_files": 85
   },
   "site_pages": [
@@ -108,6 +108,12 @@
       "relative_slug": "concepts/projects/dependencies",
       "html_path": null,
       "markdown_path": "rendered_site/markdown/concepts/projects/dependencies/index.md"
+    },
+    {
+      "url": "https://docs.astral.sh/uv/concepts/projects/export/",
+      "relative_slug": "concepts/projects/export",
+      "html_path": null,
+      "markdown_path": "rendered_site/markdown/concepts/projects/export/index.md"
     },
     {
       "url": "https://docs.astral.sh/uv/concepts/projects/init/",
@@ -434,6 +440,12 @@
       "markdown_path": "rendered_site/markdown/reference/settings/index.md"
     },
     {
+      "url": "https://docs.astral.sh/uv/reference/storage/",
+      "relative_slug": "reference/storage",
+      "html_path": null,
+      "markdown_path": "rendered_site/markdown/reference/storage/index.md"
+    },
+    {
       "url": "https://docs.astral.sh/uv/reference/troubleshooting/",
       "relative_slug": "reference/troubleshooting",
       "html_path": null,
@@ -454,21 +466,9 @@
   ],
   "site_results": [
     {
-      "url": "https://docs.astral.sh/uv/concepts/authentication/git/",
-      "cached": false,
-      "markdown_bytes": 3250,
-      "html_saved": false
-    },
-    {
       "url": "https://docs.astral.sh/uv/concepts/authentication/third-party/",
       "cached": false,
       "markdown_bytes": 1010,
-      "html_saved": false
-    },
-    {
-      "url": "https://docs.astral.sh/uv/concepts/authentication/certificates/",
-      "cached": false,
-      "markdown_bytes": 2132,
       "html_saved": false
     },
     {
@@ -478,15 +478,27 @@
       "html_saved": false
     },
     {
+      "url": "https://docs.astral.sh/uv/concepts/authentication/",
+      "cached": false,
+      "markdown_bytes": 356,
+      "html_saved": false
+    },
+    {
       "url": "https://docs.astral.sh/uv/concepts/authentication/http/",
       "cached": false,
       "markdown_bytes": 3788,
       "html_saved": false
     },
     {
-      "url": "https://docs.astral.sh/uv/concepts/authentication/",
+      "url": "https://docs.astral.sh/uv/concepts/authentication/certificates/",
       "cached": false,
-      "markdown_bytes": 356,
+      "markdown_bytes": 2132,
+      "html_saved": false
+    },
+    {
+      "url": "https://docs.astral.sh/uv/concepts/authentication/git/",
+      "cached": false,
+      "markdown_bytes": 3250,
       "html_saved": false
     },
     {
@@ -502,27 +514,15 @@
       "html_saved": false
     },
     {
-      "url": "https://docs.astral.sh/uv/concepts/preview/",
-      "cached": false,
-      "markdown_bytes": 3294,
-      "html_saved": false
-    },
-    {
       "url": "https://docs.astral.sh/uv/concepts/cache/",
       "cached": false,
-      "markdown_bytes": 10736,
-      "html_saved": false
-    },
-    {
-      "url": "https://docs.astral.sh/uv/concepts/indexes/",
-      "cached": false,
-      "markdown_bytes": 15926,
+      "markdown_bytes": 11073,
       "html_saved": false
     },
     {
       "url": "https://docs.astral.sh/uv/concepts/configuration-files/",
       "cached": false,
-      "markdown_bytes": 6291,
+      "markdown_bytes": 6197,
       "html_saved": false
     },
     {
@@ -532,27 +532,33 @@
       "html_saved": false
     },
     {
-      "url": "https://docs.astral.sh/uv/concepts/projects/build/",
-      "cached": false,
-      "markdown_bytes": 2838,
-      "html_saved": false
-    },
-    {
       "url": "https://docs.astral.sh/uv/concepts/projects/config/",
       "cached": false,
       "markdown_bytes": 30357,
       "html_saved": false
     },
     {
-      "url": "https://docs.astral.sh/uv/concepts/projects/init/",
+      "url": "https://docs.astral.sh/uv/concepts/projects/build/",
       "cached": false,
-      "markdown_bytes": 14181,
+      "markdown_bytes": 3466,
       "html_saved": false
     },
     {
-      "url": "https://docs.astral.sh/uv/concepts/projects/run/",
+      "url": "https://docs.astral.sh/uv/concepts/preview/",
       "cached": false,
-      "markdown_bytes": 4484,
+      "markdown_bytes": 3352,
+      "html_saved": false
+    },
+    {
+      "url": "https://docs.astral.sh/uv/concepts/indexes/",
+      "cached": false,
+      "markdown_bytes": 15926,
+      "html_saved": false
+    },
+    {
+      "url": "https://docs.astral.sh/uv/concepts/projects/dependencies/",
+      "cached": false,
+      "markdown_bytes": 41155,
       "html_saved": false
     },
     {
@@ -562,27 +568,27 @@
       "html_saved": false
     },
     {
-      "url": "https://docs.astral.sh/uv/concepts/projects/workspaces/",
+      "url": "https://docs.astral.sh/uv/concepts/projects/export/",
       "cached": false,
-      "markdown_bytes": 11053,
+      "markdown_bytes": 4418,
       "html_saved": false
     },
     {
-      "url": "https://docs.astral.sh/uv/concepts/python-versions/",
+      "url": "https://docs.astral.sh/uv/concepts/projects/init/",
       "cached": false,
-      "markdown_bytes": 20249,
-      "html_saved": false
-    },
-    {
-      "url": "https://docs.astral.sh/uv/concepts/projects/dependencies/",
-      "cached": false,
-      "markdown_bytes": 40098,
+      "markdown_bytes": 14183,
       "html_saved": false
     },
     {
       "url": "https://docs.astral.sh/uv/concepts/projects/sync/",
       "cached": false,
-      "markdown_bytes": 8155,
+      "markdown_bytes": 8216,
+      "html_saved": false
+    },
+    {
+      "url": "https://docs.astral.sh/uv/concepts/projects/run/",
+      "cached": false,
+      "markdown_bytes": 4484,
       "html_saved": false
     },
     {
@@ -592,15 +598,39 @@
       "html_saved": false
     },
     {
+      "url": "https://docs.astral.sh/uv/concepts/projects/workspaces/",
+      "cached": false,
+      "markdown_bytes": 11055,
+      "html_saved": false
+    },
+    {
+      "url": "https://docs.astral.sh/uv/concepts/python-versions/",
+      "cached": false,
+      "markdown_bytes": 21090,
+      "html_saved": false
+    },
+    {
       "url": "https://docs.astral.sh/uv/concepts/tools/",
       "cached": false,
-      "markdown_bytes": 11948,
+      "markdown_bytes": 11078,
+      "html_saved": false
+    },
+    {
+      "url": "https://docs.astral.sh/uv/getting-started/first-steps/",
+      "cached": false,
+      "markdown_bytes": 791,
       "html_saved": false
     },
     {
       "url": "https://docs.astral.sh/uv/getting-started/",
       "cached": false,
       "markdown_bytes": 552,
+      "html_saved": false
+    },
+    {
+      "url": "https://docs.astral.sh/uv/getting-started/installation/",
+      "cached": false,
+      "markdown_bytes": 8258,
       "html_saved": false
     },
     {
@@ -622,27 +652,9 @@
       "html_saved": false
     },
     {
-      "url": "https://docs.astral.sh/uv/getting-started/installation/",
-      "cached": false,
-      "markdown_bytes": 8285,
-      "html_saved": false
-    },
-    {
       "url": "https://docs.astral.sh/uv/guides/install-python/",
       "cached": false,
       "markdown_bytes": 5183,
-      "html_saved": false
-    },
-    {
-      "url": "https://docs.astral.sh/uv/getting-started/first-steps/",
-      "cached": false,
-      "markdown_bytes": 791,
-      "html_saved": false
-    },
-    {
-      "url": "https://docs.astral.sh/uv/guides/integration/alternative-indexes/",
-      "cached": false,
-      "markdown_bytes": 18647,
       "html_saved": false
     },
     {
@@ -652,27 +664,9 @@
       "html_saved": false
     },
     {
-      "url": "https://docs.astral.sh/uv/guides/integration/docker/",
+      "url": "https://docs.astral.sh/uv/guides/integration/alternative-indexes/",
       "cached": false,
-      "markdown_bytes": 27114,
-      "html_saved": false
-    },
-    {
-      "url": "https://docs.astral.sh/uv/guides/integration/fastapi/",
-      "cached": false,
-      "markdown_bytes": 5332,
-      "html_saved": false
-    },
-    {
-      "url": "https://docs.astral.sh/uv/guides/integration/dependency-bots/",
-      "cached": false,
-      "markdown_bytes": 3343,
-      "html_saved": false
-    },
-    {
-      "url": "https://docs.astral.sh/uv/guides/integration/aws-lambda/",
-      "cached": false,
-      "markdown_bytes": 32040,
+      "markdown_bytes": 18647,
       "html_saved": false
     },
     {
@@ -682,15 +676,33 @@
       "html_saved": false
     },
     {
+      "url": "https://docs.astral.sh/uv/guides/integration/dependency-bots/",
+      "cached": false,
+      "markdown_bytes": 3343,
+      "html_saved": false
+    },
+    {
+      "url": "https://docs.astral.sh/uv/guides/integration/fastapi/",
+      "cached": false,
+      "markdown_bytes": 5336,
+      "html_saved": false
+    },
+    {
+      "url": "https://docs.astral.sh/uv/guides/integration/aws-lambda/",
+      "cached": false,
+      "markdown_bytes": 32041,
+      "html_saved": false
+    },
+    {
       "url": "https://docs.astral.sh/uv/guides/integration/github/",
       "cached": false,
       "markdown_bytes": 19520,
       "html_saved": false
     },
     {
-      "url": "https://docs.astral.sh/uv/guides/integration/jupyter/",
+      "url": "https://docs.astral.sh/uv/guides/integration/docker/",
       "cached": false,
-      "markdown_bytes": 7624,
+      "markdown_bytes": 28712,
       "html_saved": false
     },
     {
@@ -700,27 +712,27 @@
       "html_saved": false
     },
     {
-      "url": "https://docs.astral.sh/uv/guides/migration/",
+      "url": "https://docs.astral.sh/uv/guides/integration/jupyter/",
       "cached": false,
-      "markdown_bytes": 469,
-      "html_saved": false
-    },
-    {
-      "url": "https://docs.astral.sh/uv/guides/integration/marimo/",
-      "cached": false,
-      "markdown_bytes": 3985,
-      "html_saved": false
-    },
-    {
-      "url": "https://docs.astral.sh/uv/guides/integration/pytorch/",
-      "cached": false,
-      "markdown_bytes": 23059,
+      "markdown_bytes": 7624,
       "html_saved": false
     },
     {
       "url": "https://docs.astral.sh/uv/guides/integration/pre-commit/",
       "cached": false,
-      "markdown_bytes": 3598,
+      "markdown_bytes": 3602,
+      "html_saved": false
+    },
+    {
+      "url": "https://docs.astral.sh/uv/guides/package/",
+      "cached": false,
+      "markdown_bytes": 8741,
+      "html_saved": false
+    },
+    {
+      "url": "https://docs.astral.sh/uv/guides/integration/pytorch/",
+      "cached": false,
+      "markdown_bytes": 23793,
       "html_saved": false
     },
     {
@@ -730,21 +742,15 @@
       "html_saved": false
     },
     {
-      "url": "https://docs.astral.sh/uv/guides/package/",
+      "url": "https://docs.astral.sh/uv/guides/migration/",
       "cached": false,
-      "markdown_bytes": 8061,
+      "markdown_bytes": 469,
       "html_saved": false
     },
     {
       "url": "https://docs.astral.sh/uv/guides/projects/",
       "cached": false,
-      "markdown_bytes": 9917,
-      "html_saved": false
-    },
-    {
-      "url": "https://docs.astral.sh/uv/guides/tools/",
-      "cached": false,
-      "markdown_bytes": 9332,
+      "markdown_bytes": 9928,
       "html_saved": false
     },
     {
@@ -754,15 +760,21 @@
       "html_saved": false
     },
     {
+      "url": "https://docs.astral.sh/uv/guides/tools/",
+      "cached": false,
+      "markdown_bytes": 9684,
+      "html_saved": false
+    },
+    {
       "url": "https://docs.astral.sh/uv/",
       "cached": false,
       "markdown_bytes": 10675,
       "html_saved": false
     },
     {
-      "url": "https://docs.astral.sh/uv/pip/compile/",
+      "url": "https://docs.astral.sh/uv/guides/integration/marimo/",
       "cached": false,
-      "markdown_bytes": 8616,
+      "markdown_bytes": 3985,
       "html_saved": false
     },
     {
@@ -772,9 +784,15 @@
       "html_saved": false
     },
     {
-      "url": "https://docs.astral.sh/uv/pip/packages/",
+      "url": "https://docs.astral.sh/uv/pip/compatibility/",
       "cached": false,
-      "markdown_bytes": 4407,
+      "markdown_bytes": 29109,
+      "html_saved": false
+    },
+    {
+      "url": "https://docs.astral.sh/uv/pip/compile/",
+      "cached": false,
+      "markdown_bytes": 8616,
       "html_saved": false
     },
     {
@@ -784,27 +802,21 @@
       "html_saved": false
     },
     {
-      "url": "https://docs.astral.sh/uv/pip/inspection/",
-      "cached": false,
-      "markdown_bytes": 1038,
-      "html_saved": false
-    },
-    {
-      "url": "https://docs.astral.sh/uv/pip/compatibility/",
-      "cached": false,
-      "markdown_bytes": 29109,
-      "html_saved": false
-    },
-    {
-      "url": "https://docs.astral.sh/uv/reference/",
-      "cached": false,
-      "markdown_bytes": 512,
-      "html_saved": false
-    },
-    {
       "url": "https://docs.astral.sh/uv/pip/environments/",
       "cached": false,
       "markdown_bytes": 6774,
+      "html_saved": false
+    },
+    {
+      "url": "https://docs.astral.sh/uv/pip/packages/",
+      "cached": false,
+      "markdown_bytes": 4407,
+      "html_saved": false
+    },
+    {
+      "url": "https://docs.astral.sh/uv/pip/inspection/",
+      "cached": false,
+      "markdown_bytes": 1038,
       "html_saved": false
     },
     {
@@ -814,27 +826,15 @@
       "html_saved": false
     },
     {
-      "url": "https://docs.astral.sh/uv/reference/cli/",
+      "url": "https://docs.astral.sh/uv/reference/",
       "cached": false,
-      "markdown_bytes": 2099,
+      "markdown_bytes": 594,
       "html_saved": false
     },
     {
-      "url": "https://docs.astral.sh/uv/reference/installer/",
+      "url": "https://docs.astral.sh/uv/reference/environment/",
       "cached": false,
-      "markdown_bytes": 2086,
-      "html_saved": false
-    },
-    {
-      "url": "https://docs.astral.sh/uv/reference/policies/",
-      "cached": false,
-      "markdown_bytes": 128,
-      "html_saved": false
-    },
-    {
-      "url": "https://docs.astral.sh/uv/reference/internals/resolver/",
-      "cached": false,
-      "markdown_bytes": 23147,
+      "markdown_bytes": 35408,
       "html_saved": false
     },
     {
@@ -844,9 +844,15 @@
       "html_saved": false
     },
     {
-      "url": "https://docs.astral.sh/uv/reference/policies/license/",
+      "url": "https://docs.astral.sh/uv/reference/installer/",
       "cached": false,
-      "markdown_bytes": 682,
+      "markdown_bytes": 2282,
+      "html_saved": false
+    },
+    {
+      "url": "https://docs.astral.sh/uv/reference/policies/",
+      "cached": false,
+      "markdown_bytes": 128,
       "html_saved": false
     },
     {
@@ -856,15 +862,27 @@
       "html_saved": false
     },
     {
-      "url": "https://docs.astral.sh/uv/reference/policies/versioning/",
+      "url": "https://docs.astral.sh/uv/reference/internals/resolver/",
       "cached": false,
-      "markdown_bytes": 1853,
+      "markdown_bytes": 23147,
       "html_saved": false
     },
     {
-      "url": "https://docs.astral.sh/uv/reference/environment/",
+      "url": "https://docs.astral.sh/uv/reference/cli/",
       "cached": false,
-      "markdown_bytes": 34270,
+      "markdown_bytes": 2099,
+      "html_saved": false
+    },
+    {
+      "url": "https://docs.astral.sh/uv/reference/policies/license/",
+      "cached": false,
+      "markdown_bytes": 682,
+      "html_saved": false
+    },
+    {
+      "url": "https://docs.astral.sh/uv/reference/policies/versioning/",
+      "cached": false,
+      "markdown_bytes": 2459,
       "html_saved": false
     },
     {
@@ -880,15 +898,21 @@
       "html_saved": false
     },
     {
-      "url": "https://docs.astral.sh/uv/reference/settings/",
+      "url": "https://docs.astral.sh/uv/reference/storage/",
       "cached": false,
-      "markdown_bytes": 110127,
+      "markdown_bytes": 6443,
       "html_saved": false
     },
     {
       "url": "https://docs.astral.sh/uv/reference/troubleshooting/reproducible-examples/",
       "cached": false,
       "markdown_bytes": 6852,
+      "html_saved": false
+    },
+    {
+      "url": "https://docs.astral.sh/uv/reference/settings/",
+      "cached": false,
+      "markdown_bytes": 110073,
       "html_saved": false
     }
   ],
@@ -900,10 +924,40 @@
       "unchanged_count": 85
     },
     "site_markdown": {
-      "added": [],
-      "updated": [],
+      "added": [
+        "rendered_site/markdown/reference/storage/index.md",
+        "rendered_site/markdown/concepts/projects/export/index.md"
+      ],
+      "updated": [
+        "rendered_site/markdown/reference/index.md",
+        "rendered_site/markdown/reference/settings/index.md",
+        "rendered_site/markdown/reference/environment/index.md",
+        "rendered_site/markdown/reference/installer/index.md",
+        "rendered_site/markdown/reference/policies/versioning/index.md",
+        "rendered_site/markdown/concepts/configuration-files/index.md",
+        "rendered_site/markdown/concepts/tools/index.md",
+        "rendered_site/markdown/concepts/build-backend/index.md",
+        "rendered_site/markdown/concepts/cache/index.md",
+        "rendered_site/markdown/concepts/python-versions/index.md",
+        "rendered_site/markdown/concepts/preview/index.md",
+        "rendered_site/markdown/concepts/projects/init/index.md",
+        "rendered_site/markdown/concepts/projects/dependencies/index.md",
+        "rendered_site/markdown/concepts/projects/workspaces/index.md",
+        "rendered_site/markdown/concepts/projects/build/index.md",
+        "rendered_site/markdown/concepts/projects/sync/index.md",
+        "rendered_site/markdown/guides/tools/index.md",
+        "rendered_site/markdown/guides/projects/index.md",
+        "rendered_site/markdown/guides/package/index.md",
+        "rendered_site/markdown/guides/integration/docker/index.md",
+        "rendered_site/markdown/guides/integration/aws-lambda/index.md",
+        "rendered_site/markdown/guides/integration/github/index.md",
+        "rendered_site/markdown/guides/integration/fastapi/index.md",
+        "rendered_site/markdown/guides/integration/pytorch/index.md",
+        "rendered_site/markdown/guides/integration/pre-commit/index.md",
+        "rendered_site/markdown/getting-started/installation/index.md"
+      ],
       "removed": [],
-      "unchanged_count": 73
+      "unchanged_count": 47
     }
   }
 }

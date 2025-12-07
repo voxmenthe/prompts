@@ -78,8 +78,10 @@ The following preview features are available:
 
 - `workspace-dir `: Allows using `uv workspace dir `. 
 
+- `workspace-list `: Allows using `uv workspace list `. 
+
 ## [Disabling preview features](#disabling-preview-features)
 
 The `--no-preview `option can be used to disable preview features. 
 
-November 11, 2025
+November 17, 2025

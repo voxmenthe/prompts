@@ -139,12 +139,19 @@ Or even a specific commit:
 
 ```
 
+Or with [Git LFS](https://git-lfs.com)support: 
+
+```
+[#__codelineno-14-1](#__codelineno-14-1)$ uvx --lfs --from git+https://github.com/astral-sh/lfs-cowsay lfs-cowsay
+
+```
+
 ## [Commands with plugins](#commands-with-plugins)
 
 Additional dependencies can be included, e.g., to include `mkdocs-material `when running `mkdocs `: 
 
 ```
-[#__codelineno-14-1](#__codelineno-14-1)$ uvx --with mkdocs-material mkdocs --help
+[#__codelineno-15-1](#__codelineno-15-1)$ uvx --with mkdocs-material mkdocs --help
 
 ```
 
@@ -159,7 +166,7 @@ If a tool is used often, it is useful to install it to a persistent environment 
 To install `ruff `: 
 
 ```
-[#__codelineno-15-1](#__codelineno-15-1)$ uv tool install ruff
+[#__codelineno-16-1](#__codelineno-16-1)$ uv tool install ruff
 
 ```
 
@@ -168,14 +175,14 @@ When a tool is installed, its executables are placed in a `bin `directory in the
 After installing `ruff `, it should be available: 
 
 ```
-[#__codelineno-16-1](#__codelineno-16-1)$ ruff --version
+[#__codelineno-17-1](#__codelineno-17-1)$ ruff --version
 
 ```
 
 Unlike `uv pip install `, installing a tool does not make its modules available in the current environment. For example, the following command will fail: 
 
 ```
-[#__codelineno-17-1](#__codelineno-17-1)$ python -c "import ruff"
+[#__codelineno-18-1](#__codelineno-18-1)$ python -c "import ruff"
 
 ```
 
@@ -186,35 +193,42 @@ Unlike `uvx `, `uv tool install `operates on a _package _and will install all ex
 For example, the following will install the `http `, `https `, and `httpie `executables: 
 
 ```
-[#__codelineno-18-1](#__codelineno-18-1)$ uv tool install httpie
+[#__codelineno-19-1](#__codelineno-19-1)$ uv tool install httpie
 
 ```
 
 Additionally, package versions can be included without `--from `: 
 
 ```
-[#__codelineno-19-1](#__codelineno-19-1)$ uv tool install 'httpie>0.1.0'
+[#__codelineno-20-1](#__codelineno-20-1)$ uv tool install 'httpie>0.1.0'
 
 ```
 
 And, similarly, for package sources: 
 
 ```
-[#__codelineno-20-1](#__codelineno-20-1)$ uv tool install git+https://github.com/httpie/cli
+[#__codelineno-21-1](#__codelineno-21-1)$ uv tool install git+https://github.com/httpie/cli
+
+```
+
+Or package sources with [Git LFS](https://git-lfs.com): 
+
+```
+[#__codelineno-22-1](#__codelineno-22-1)$ uv tool install --lfs git+https://github.com/astral-sh/lfs-cowsay
 
 ```
 
 As with `uvx `, installations can include additional packages: 
 
 ```
-[#__codelineno-21-1](#__codelineno-21-1)$ uv tool install mkdocs --with mkdocs-material
+[#__codelineno-23-1](#__codelineno-23-1)$ uv tool install mkdocs --with mkdocs-material
 
 ```
 
 Multiple related executables can be installed together in the same tool environment, using the `--with-executables-from `flag. For example, the following will install the executables from `ansible `, plus those ones provided by `ansible-core `and `ansible-lint `: 
 
 ```
-[#__codelineno-22-1](#__codelineno-22-1)$ uv tool install --with-executables-from ansible-core,ansible-lint ansible
+[#__codelineno-24-1](#__codelineno-24-1)$ uv tool install --with-executables-from ansible-core,ansible-lint ansible
 
 ```
 
@@ -223,7 +237,7 @@ Multiple related executables can be installed together in the same tool environm
 To upgrade a tool, use `uv tool upgrade `: 
 
 ```
-[#__codelineno-23-1](#__codelineno-23-1)$ uv tool upgrade ruff
+[#__codelineno-25-1](#__codelineno-25-1)$ uv tool upgrade ruff
 
 ```
 
@@ -232,14 +246,14 @@ Tool upgrades will respect the version constraints provided when installing the 
 To instead replace the version constraints, re-install the tool with `uv tool install `: 
 
 ```
-[#__codelineno-24-1](#__codelineno-24-1)$ uv tool install ruff>=0.4
+[#__codelineno-26-1](#__codelineno-26-1)$ uv tool install ruff>=0.4
 
 ```
 
 To instead upgrade all tools: 
 
 ```
-[#__codelineno-25-1](#__codelineno-25-1)$ uv tool upgrade --all
+[#__codelineno-27-1](#__codelineno-27-1)$ uv tool upgrade --all
 
 ```
 
@@ -250,21 +264,21 @@ By default, uv will use your default Python interpreter (the first it finds) whe
 For example, to request a specific Python version when running a tool: 
 
 ```
-[#__codelineno-26-1](#__codelineno-26-1)$ uvx --python 3.10 ruff
+[#__codelineno-28-1](#__codelineno-28-1)$ uvx --python 3.10 ruff
 
 ```
 
 Or, when installing a tool: 
 
 ```
-[#__codelineno-27-1](#__codelineno-27-1)$ uv tool install --python 3.10 ruff
+[#__codelineno-29-1](#__codelineno-29-1)$ uv tool install --python 3.10 ruff
 
 ```
 
 Or, when upgrading a tool: 
 
 ```
-[#__codelineno-28-1](#__codelineno-28-1)$ uv tool upgrade --python 3.10 ruff
+[#__codelineno-30-1](#__codelineno-30-1)$ uv tool upgrade --python 3.10 ruff
 
 ```
 
@@ -279,14 +293,14 @@ Currently only legacy scripts with the `.ps1 `, `.cmd `, and `.bat `extensions a
 For example, below is an example running a Command Prompt script. 
 
 ```
-[#__codelineno-29-1](#__codelineno-29-1)$ uv tool run --from nuitka==2.6.7 nuitka.cmd --version
+[#__codelineno-31-1](#__codelineno-31-1)$ uv tool run --from nuitka==2.6.7 nuitka.cmd --version
 
 ```
 
 In addition, you don't need to specify the extension. `uvx `will automatically look for files ending in `.ps1 `, `.cmd `, and `.bat `in that order of execution on your behalf. 
 
 ```
-[#__codelineno-30-1](#__codelineno-30-1)$ uv tool run --from nuitka==2.6.7 nuitka --version
+[#__codelineno-32-1](#__codelineno-32-1)$ uv tool run --from nuitka==2.6.7 nuitka --version
 
 ```
 
@@ -296,4 +310,4 @@ To learn more about managing tools with uv, see the [Tools concept](../../concep
 
 Or, read on to learn how to [work on projects](../projects/). 
 
-July 30, 2025
+December 2, 2025

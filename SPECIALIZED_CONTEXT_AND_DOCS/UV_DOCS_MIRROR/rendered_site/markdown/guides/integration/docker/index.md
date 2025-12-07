@@ -21,7 +21,7 @@ The following distroless images are available:
 
 - `ghcr.io/astral-sh/uv:latest `
 
-- `ghcr.io/astral-sh/uv:{major}.{minor}.{patch} `, e.g., `ghcr.io/astral-sh/uv:0.9.9 `
+- `ghcr.io/astral-sh/uv:{major}.{minor}.{patch} `, e.g., `ghcr.io/astral-sh/uv:0.9.16 `
 
 - `ghcr.io/astral-sh/uv:{major}.{minor} `, e.g., `ghcr.io/astral-sh/uv:0.8 `(the latest patch version) 
 
@@ -145,7 +145,7 @@ And the following derived images are available:
 
 
 
-As with the distroless image, each derived image is published with uv version tags as `ghcr.io/astral-sh/uv:{major}.{minor}.{patch}-{base} `and `ghcr.io/astral-sh/uv:{major}.{minor}-{base} `, e.g., `ghcr.io/astral-sh/uv:0.9.9-alpine `. 
+As with the distroless image, each derived image is published with uv version tags as `ghcr.io/astral-sh/uv:{major}.{minor}.{patch}-{base} `and `ghcr.io/astral-sh/uv:{major}.{minor}-{base} `, e.g., `ghcr.io/astral-sh/uv:0.9.16-alpine `. 
 
 In addition, starting with `0.8 `each derived image also sets `UV_TOOL_BIN_DIR `to `/usr/local/bin `to allow `uv tool install `to work as expected with the default user. 
 
@@ -189,7 +189,7 @@ Note this requires `curl `to be available.
 In either case, it is best practice to pin to a specific uv version, e.g., with: 
 
 ```
-[#__codelineno-3-1](#__codelineno-3-1)COPY --from=ghcr.io/astral-sh/uv:0.9.9 /uv /uvx /bin/
+[#__codelineno-3-1](#__codelineno-3-1)COPY --from=ghcr.io/astral-sh/uv:0.9.16 /uv /uvx /bin/
 
 ```
 
@@ -206,7 +206,7 @@ In either case, it is best practice to pin to a specific uv version, e.g., with:
 Or, with the installer: 
 
 ```
-[#__codelineno-5-1](#__codelineno-5-1)ADD https://astral.sh/uv/0.9.9/install.sh /uv-installer.sh
+[#__codelineno-5-1](#__codelineno-5-1)ADD https://astral.sh/uv/0.9.16/install.sh /uv-installer.sh
 
 ```
 
@@ -218,7 +218,7 @@ Dockerfile
 
 ```
 [#__codelineno-6-1](#__codelineno-6-1)# Copy the project into the image
-[#__codelineno-6-2](#__codelineno-6-2)ADD . /app
+[#__codelineno-6-2](#__codelineno-6-2)COPY . /app
 [#__codelineno-6-3](#__codelineno-6-3)
 [#__codelineno-6-4](#__codelineno-6-4)# Sync the project into a new environment, asserting the lockfile is up to date
 [#__codelineno-6-5](#__codelineno-6-5)WORKDIR /app
@@ -272,7 +272,7 @@ Dockerfile
 
 ### [Using installed tools](#using-installed-tools)
 
-To use installed tools, ensure the [tool bin directory](../../../concepts/tools/#the-bin-directory)is on the path: 
+To use installed tools, ensure the [tool bin directory](../../../concepts/tools/#tool-executables)is on the path: 
 
 Dockerfile 
 
@@ -469,7 +469,7 @@ Dockerfile
 [#__codelineno-21-12](#__codelineno-21-12)    uv sync --locked --no-install-project
 [#__codelineno-21-13](#__codelineno-21-13)
 [#__codelineno-21-14](#__codelineno-21-14)# Copy the project into the image
-[#__codelineno-21-15](#__codelineno-21-15)ADD . /app
+[#__codelineno-21-15](#__codelineno-21-15)COPY . /app
 [#__codelineno-21-16](#__codelineno-21-16)
 [#__codelineno-21-17](#__codelineno-21-17)# Sync the project
 [#__codelineno-21-18](#__codelineno-21-18)RUN --mount=type=cache,target=/root/.cache/uv \
@@ -481,9 +481,38 @@ Note that the `pyproject.toml `is required to identify the project root and name
 
 !!! tip "Tip"
 
-    If you're using a [workspace](../../../concepts/projects/workspaces/), then use the `--no-install-workspace `flag which excludes the project _and _any workspace members. 
+    If you want to remove additional, specific packages from the sync, use `--no-install-package `. 
 
-    If you want to remove specific packages from the sync, use `--no-install-package `. 
+#### [Intermediate layers in workspaces](#intermediate-layers-in-workspaces)
+
+If you're using a [workspace](../../../concepts/projects/workspaces/), then a couple changes are needed: 
+
+- Use `--frozen `instead of `--locked `during the initially sync. 
+
+- Use the `--no-install-workspace `flag which excludes the project _and _any workspace members. 
+
+Dockerfile 
+
+```
+[#__codelineno-22-1](#__codelineno-22-1)# Install uv
+[#__codelineno-22-2](#__codelineno-22-2)FROM python:3.12-slim
+[#__codelineno-22-3](#__codelineno-22-3)COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+[#__codelineno-22-4](#__codelineno-22-4)
+[#__codelineno-22-5](#__codelineno-22-5)WORKDIR /app
+[#__codelineno-22-6](#__codelineno-22-6)
+[#__codelineno-22-7](#__codelineno-22-7)RUN --mount=type=cache,target=/root/.cache/uv \
+[#__codelineno-22-8](#__codelineno-22-8)    --mount=type=bind,source=uv.lock,target=uv.lock \
+[#__codelineno-22-9](#__codelineno-22-9)    --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
+[#__codelineno-22-10](#__codelineno-22-10)    uv sync --frozen --no-install-workspace
+[#__codelineno-22-11](#__codelineno-22-11)
+[#__codelineno-22-12](#__codelineno-22-12)COPY . /app
+[#__codelineno-22-13](#__codelineno-22-13)
+[#__codelineno-22-14](#__codelineno-22-14)RUN --mount=type=cache,target=/root/.cache/uv \
+[#__codelineno-22-15](#__codelineno-22-15)    uv sync --locked
+
+```
+
+uv cannot assert that the `uv.lock `file is up-to-date without each of the workspace member `pyproject.toml `files, so we use `--frozen `instead of `--locked `to skip the check during the initial sync. The next sync, after all the workspace members have been copied, can still use `--locked `and will validate that the lockfile is correct for all workspace members. 
 
 ### [Non-editable installs](#non-editable-installs)
 
@@ -498,33 +527,33 @@ For example:
 Dockerfile 
 
 ```
-[#__codelineno-22-1](#__codelineno-22-1)# Install uv
-[#__codelineno-22-2](#__codelineno-22-2)FROM python:3.12-slim AS builder
-[#__codelineno-22-3](#__codelineno-22-3)COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
-[#__codelineno-22-4](#__codelineno-22-4)
-[#__codelineno-22-5](#__codelineno-22-5)# Change the working directory to the `app` directory
-[#__codelineno-22-6](#__codelineno-22-6)WORKDIR /app
-[#__codelineno-22-7](#__codelineno-22-7)
-[#__codelineno-22-8](#__codelineno-22-8)# Install dependencies
-[#__codelineno-22-9](#__codelineno-22-9)RUN --mount=type=cache,target=/root/.cache/uv \
-[#__codelineno-22-10](#__codelineno-22-10)    --mount=type=bind,source=uv.lock,target=uv.lock \
-[#__codelineno-22-11](#__codelineno-22-11)    --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
-[#__codelineno-22-12](#__codelineno-22-12)    uv sync --locked --no-install-project --no-editable
-[#__codelineno-22-13](#__codelineno-22-13)
-[#__codelineno-22-14](#__codelineno-22-14)# Copy the project into the intermediate image
-[#__codelineno-22-15](#__codelineno-22-15)ADD . /app
-[#__codelineno-22-16](#__codelineno-22-16)
-[#__codelineno-22-17](#__codelineno-22-17)# Sync the project
-[#__codelineno-22-18](#__codelineno-22-18)RUN --mount=type=cache,target=/root/.cache/uv \
-[#__codelineno-22-19](#__codelineno-22-19)    uv sync --locked --no-editable
-[#__codelineno-22-20](#__codelineno-22-20)
-[#__codelineno-22-21](#__codelineno-22-21)FROM python:3.12-slim
-[#__codelineno-22-22](#__codelineno-22-22)
-[#__codelineno-22-23](#__codelineno-22-23)# Copy the environment, but not the source code
-[#__codelineno-22-24](#__codelineno-22-24)COPY --from=builder --chown=app:app /app/.venv /app/.venv
-[#__codelineno-22-25](#__codelineno-22-25)
-[#__codelineno-22-26](#__codelineno-22-26)# Run the application
-[#__codelineno-22-27](#__codelineno-22-27)CMD ["/app/.venv/bin/hello"]
+[#__codelineno-23-1](#__codelineno-23-1)# Install uv
+[#__codelineno-23-2](#__codelineno-23-2)FROM python:3.12-slim AS builder
+[#__codelineno-23-3](#__codelineno-23-3)COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+[#__codelineno-23-4](#__codelineno-23-4)
+[#__codelineno-23-5](#__codelineno-23-5)# Change the working directory to the `app` directory
+[#__codelineno-23-6](#__codelineno-23-6)WORKDIR /app
+[#__codelineno-23-7](#__codelineno-23-7)
+[#__codelineno-23-8](#__codelineno-23-8)# Install dependencies
+[#__codelineno-23-9](#__codelineno-23-9)RUN --mount=type=cache,target=/root/.cache/uv \
+[#__codelineno-23-10](#__codelineno-23-10)    --mount=type=bind,source=uv.lock,target=uv.lock \
+[#__codelineno-23-11](#__codelineno-23-11)    --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
+[#__codelineno-23-12](#__codelineno-23-12)    uv sync --locked --no-install-project --no-editable
+[#__codelineno-23-13](#__codelineno-23-13)
+[#__codelineno-23-14](#__codelineno-23-14)# Copy the project into the intermediate image
+[#__codelineno-23-15](#__codelineno-23-15)COPY . /app
+[#__codelineno-23-16](#__codelineno-23-16)
+[#__codelineno-23-17](#__codelineno-23-17)# Sync the project
+[#__codelineno-23-18](#__codelineno-23-18)RUN --mount=type=cache,target=/root/.cache/uv \
+[#__codelineno-23-19](#__codelineno-23-19)    uv sync --locked --no-editable
+[#__codelineno-23-20](#__codelineno-23-20)
+[#__codelineno-23-21](#__codelineno-23-21)FROM python:3.12-slim
+[#__codelineno-23-22](#__codelineno-23-22)
+[#__codelineno-23-23](#__codelineno-23-23)# Copy the environment, but not the source code
+[#__codelineno-23-24](#__codelineno-23-24)COPY --from=builder --chown=app:app /app/.venv /app/.venv
+[#__codelineno-23-25](#__codelineno-23-25)
+[#__codelineno-23-26](#__codelineno-23-26)# Run the application
+[#__codelineno-23-27](#__codelineno-23-27)CMD ["/app/.venv/bin/hello"]
 
 ```
 
@@ -535,8 +564,8 @@ If uv isn't needed in the final image, the binary can be mounted in each invocat
 Dockerfile 
 
 ```
-[#__codelineno-23-1](#__codelineno-23-1)RUN --mount=from=ghcr.io/astral-sh/uv,source=/uv,target=/bin/uv \
-[#__codelineno-23-2](#__codelineno-23-2)    uv sync
+[#__codelineno-24-1](#__codelineno-24-1)RUN --mount=from=ghcr.io/astral-sh/uv,source=/uv,target=/bin/uv \
+[#__codelineno-24-2](#__codelineno-24-2)    uv sync
 
 ```
 
@@ -549,7 +578,7 @@ The system Python environment is safe to use this context, since a container is 
 Dockerfile 
 
 ```
-[#__codelineno-24-1](#__codelineno-24-1)RUN uv pip install --system ruff
+[#__codelineno-25-1](#__codelineno-25-1)RUN uv pip install --system ruff
 
 ```
 
@@ -558,7 +587,7 @@ To use the system Python environment by default, set the `UV_SYSTEM_PYTHON `vari
 Dockerfile 
 
 ```
-[#__codelineno-25-1](#__codelineno-25-1)ENV UV_SYSTEM_PYTHON=1
+[#__codelineno-26-1](#__codelineno-26-1)ENV UV_SYSTEM_PYTHON=1
 
 ```
 
@@ -567,11 +596,11 @@ Alternatively, a virtual environment can be created and activated:
 Dockerfile 
 
 ```
-[#__codelineno-26-1](#__codelineno-26-1)RUN uv venv /opt/venv
-[#__codelineno-26-2](#__codelineno-26-2)# Use the virtual environment automatically
-[#__codelineno-26-3](#__codelineno-26-3)ENV VIRTUAL_ENV=/opt/venv
-[#__codelineno-26-4](#__codelineno-26-4)# Place entry points in the environment at the front of the path
-[#__codelineno-26-5](#__codelineno-26-5)ENV PATH="/opt/venv/bin:$PATH"
+[#__codelineno-27-1](#__codelineno-27-1)RUN uv venv /opt/venv
+[#__codelineno-27-2](#__codelineno-27-2)# Use the virtual environment automatically
+[#__codelineno-27-3](#__codelineno-27-3)ENV VIRTUAL_ENV=/opt/venv
+[#__codelineno-27-4](#__codelineno-27-4)# Place entry points in the environment at the front of the path
+[#__codelineno-27-5](#__codelineno-27-5)ENV PATH="/opt/venv/bin:$PATH"
 
 ```
 
@@ -580,7 +609,7 @@ When using a virtual environment, the `--system `flag should be omitted from uv 
 Dockerfile 
 
 ```
-[#__codelineno-27-1](#__codelineno-27-1)RUN uv pip install ruff
+[#__codelineno-28-1](#__codelineno-28-1)RUN uv pip install ruff
 
 ```
 
@@ -591,8 +620,8 @@ To install requirements files, copy them into the container:
 Dockerfile 
 
 ```
-[#__codelineno-28-1](#__codelineno-28-1)COPY requirements.txt .
-[#__codelineno-28-2](#__codelineno-28-2)RUN uv pip install -r requirements.txt
+[#__codelineno-29-1](#__codelineno-29-1)COPY requirements.txt .
+[#__codelineno-29-2](#__codelineno-29-2)RUN uv pip install -r requirements.txt
 
 ```
 
@@ -603,10 +632,10 @@ When installing a project alongside requirements, it is best practice to separat
 Dockerfile 
 
 ```
-[#__codelineno-29-1](#__codelineno-29-1)COPY pyproject.toml .
-[#__codelineno-29-2](#__codelineno-29-2)RUN uv pip install -r pyproject.toml
-[#__codelineno-29-3](#__codelineno-29-3)COPY . .
-[#__codelineno-29-4](#__codelineno-29-4)RUN uv pip install -e .
+[#__codelineno-30-1](#__codelineno-30-1)COPY pyproject.toml .
+[#__codelineno-30-2](#__codelineno-30-2)RUN uv pip install -r pyproject.toml
+[#__codelineno-30-3](#__codelineno-30-3)COPY . .
+[#__codelineno-30-4](#__codelineno-30-4)RUN uv pip install -e .
 
 ```
 
@@ -617,21 +646,21 @@ The Docker images are signed during the build process to provide proof of their 
 For example, you can verify the attestations with the [GitHub CLI tool `gh `](https://cli.github.com/): 
 
 ```
-[#__codelineno-30-1](#__codelineno-30-1)$ gh attestation verify --owner astral-sh oci://ghcr.io/astral-sh/uv:latest
-[#__codelineno-30-2](#__codelineno-30-2)Loaded digest sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx for oci://ghcr.io/astral-sh/uv:latest
-[#__codelineno-30-3](#__codelineno-30-3)Loaded 1 attestation from GitHub API
-[#__codelineno-30-4](#__codelineno-30-4)
-[#__codelineno-30-5](#__codelineno-30-5)The following policy criteria will be enforced:
-[#__codelineno-30-6](#__codelineno-30-6)- OIDC Issuer must match:................... https://token.actions.githubusercontent.com
-[#__codelineno-30-7](#__codelineno-30-7)- Source Repository Owner URI must match:... https://github.com/astral-sh
-[#__codelineno-30-8](#__codelineno-30-8)- Predicate type must match:................ https://slsa.dev/provenance/v1
-[#__codelineno-30-9](#__codelineno-30-9)- Subject Alternative Name must match regex: (?i)^https://github.com/astral-sh/
-[#__codelineno-30-10](#__codelineno-30-10)
-[#__codelineno-30-11](#__codelineno-30-11)✓ Verification succeeded!
-[#__codelineno-30-12](#__codelineno-30-12)
-[#__codelineno-30-13](#__codelineno-30-13)sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx was attested by:
-[#__codelineno-30-14](#__codelineno-30-14)REPO          PREDICATE_TYPE                  WORKFLOW
-[#__codelineno-30-15](#__codelineno-30-15)astral-sh/uv  https://slsa.dev/provenance/v1  .github/workflows/build-docker.yml@refs/heads/main
+[#__codelineno-31-1](#__codelineno-31-1)$ gh attestation verify --owner astral-sh oci://ghcr.io/astral-sh/uv:latest
+[#__codelineno-31-2](#__codelineno-31-2)Loaded digest sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx for oci://ghcr.io/astral-sh/uv:latest
+[#__codelineno-31-3](#__codelineno-31-3)Loaded 1 attestation from GitHub API
+[#__codelineno-31-4](#__codelineno-31-4)
+[#__codelineno-31-5](#__codelineno-31-5)The following policy criteria will be enforced:
+[#__codelineno-31-6](#__codelineno-31-6)- OIDC Issuer must match:................... https://token.actions.githubusercontent.com
+[#__codelineno-31-7](#__codelineno-31-7)- Source Repository Owner URI must match:... https://github.com/astral-sh
+[#__codelineno-31-8](#__codelineno-31-8)- Predicate type must match:................ https://slsa.dev/provenance/v1
+[#__codelineno-31-9](#__codelineno-31-9)- Subject Alternative Name must match regex: (?i)^https://github.com/astral-sh/
+[#__codelineno-31-10](#__codelineno-31-10)
+[#__codelineno-31-11](#__codelineno-31-11)✓ Verification succeeded!
+[#__codelineno-31-12](#__codelineno-31-12)
+[#__codelineno-31-13](#__codelineno-31-13)sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx was attested by:
+[#__codelineno-31-14](#__codelineno-31-14)REPO          PREDICATE_TYPE                  WORKFLOW
+[#__codelineno-31-15](#__codelineno-31-15)astral-sh/uv  https://slsa.dev/provenance/v1  .github/workflows/build-docker.yml@refs/heads/main
 
 ```
 
@@ -640,25 +669,25 @@ This tells you that the specific Docker image was built by the official uv GitHu
 GitHub attestations build on the [sigstore.dev infrastructure](https://www.sigstore.dev/). As such you can also use the [`cosign `command](https://github.com/sigstore/cosign)to verify the attestation blob against the (multi-platform) manifest for `uv `: 
 
 ```
-[#__codelineno-31-1](#__codelineno-31-1)$ REPO=astral-sh/uv
-[#__codelineno-31-2](#__codelineno-31-2)$ gh attestation download --repo $REPO oci://ghcr.io/${REPO}:latest
-[#__codelineno-31-3](#__codelineno-31-3)Wrote attestations to file sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.jsonl.
-[#__codelineno-31-4](#__codelineno-31-4)Any previous content has been overwritten
-[#__codelineno-31-5](#__codelineno-31-5)
-[#__codelineno-31-6](#__codelineno-31-6)The trusted metadata is now available at sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.jsonl
-[#__codelineno-31-7](#__codelineno-31-7)$ docker buildx imagetools inspect ghcr.io/${REPO}:latest --format "{{json .Manifest}}" > manifest.json
-[#__codelineno-31-8](#__codelineno-31-8)$ cosign verify-blob-attestation \
-[#__codelineno-31-9](#__codelineno-31-9)    --new-bundle-format \
-[#__codelineno-31-10](#__codelineno-31-10)    --bundle "$(jq -r .digest manifest.json).jsonl"  \
-[#__codelineno-31-11](#__codelineno-31-11)    --certificate-oidc-issuer="https://token.actions.githubusercontent.com" \
-[#__codelineno-31-12](#__codelineno-31-12)    --certificate-identity-regexp="^https://github\.com/${REPO}/.*" \
-[#__codelineno-31-13](#__codelineno-31-13)    <(jq -j '.|del(.digest,.size)' manifest.json)
-[#__codelineno-31-14](#__codelineno-31-14)Verified OK
+[#__codelineno-32-1](#__codelineno-32-1)$ REPO=astral-sh/uv
+[#__codelineno-32-2](#__codelineno-32-2)$ gh attestation download --repo $REPO oci://ghcr.io/${REPO}:latest
+[#__codelineno-32-3](#__codelineno-32-3)Wrote attestations to file sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.jsonl.
+[#__codelineno-32-4](#__codelineno-32-4)Any previous content has been overwritten
+[#__codelineno-32-5](#__codelineno-32-5)
+[#__codelineno-32-6](#__codelineno-32-6)The trusted metadata is now available at sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.jsonl
+[#__codelineno-32-7](#__codelineno-32-7)$ docker buildx imagetools inspect ghcr.io/${REPO}:latest --format "{{json .Manifest}}" > manifest.json
+[#__codelineno-32-8](#__codelineno-32-8)$ cosign verify-blob-attestation \
+[#__codelineno-32-9](#__codelineno-32-9)    --new-bundle-format \
+[#__codelineno-32-10](#__codelineno-32-10)    --bundle "$(jq -r .digest manifest.json).jsonl"  \
+[#__codelineno-32-11](#__codelineno-32-11)    --certificate-oidc-issuer="https://token.actions.githubusercontent.com" \
+[#__codelineno-32-12](#__codelineno-32-12)    --certificate-identity-regexp="^https://github\.com/${REPO}/.*" \
+[#__codelineno-32-13](#__codelineno-32-13)    <(jq -j '.|del(.digest,.size)' manifest.json)
+[#__codelineno-32-14](#__codelineno-32-14)Verified OK
 
 ```
 
 !!! tip "Tip"
 
-    These examples use `latest `, but best practice is to verify the attestation for a specific version tag, e.g., `ghcr.io/astral-sh/uv:0.9.9 `, or (even better) the specific image digest, such as `ghcr.io/astral-sh/uv:0.5.27@sha256:5adf09a5a526f380237408032a9308000d14d5947eafa687ad6c6a2476787b4f `. 
+    These examples use `latest `, but best practice is to verify the attestation for a specific version tag, e.g., `ghcr.io/astral-sh/uv:0.9.16 `, or (even better) the specific image digest, such as `ghcr.io/astral-sh/uv:0.5.27@sha256:5adf09a5a526f380237408032a9308000d14d5947eafa687ad6c6a2476787b4f `. 
 
-November 12, 2025
+December 6, 2025

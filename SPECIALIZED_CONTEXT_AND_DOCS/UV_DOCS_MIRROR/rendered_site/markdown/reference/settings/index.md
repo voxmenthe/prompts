@@ -1854,8 +1854,6 @@ Whether to allow Python downloads.
 
 URL pointing to JSON of custom Python installations. 
 
-Note that currently, only local paths are supported. 
-
 **Default value **: `None `
 
 **Type **: `str `
@@ -3986,4 +3984,4 @@ Unlike `--require-hashes `, `--verify-hashes `does not require that all requirem
 
 ```
 
-October 31, 2025
+November 14, 2025

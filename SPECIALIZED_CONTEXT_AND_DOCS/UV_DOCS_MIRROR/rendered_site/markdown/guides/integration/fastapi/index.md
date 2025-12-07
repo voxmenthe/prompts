@@ -109,7 +109,7 @@ Dockerfile
 [#__codelineno-6-11](#__codelineno-6-11)RUN uv sync --frozen --no-cache
 [#__codelineno-6-12](#__codelineno-6-12)
 [#__codelineno-6-13](#__codelineno-6-13)# Run the application.
-[#__codelineno-6-14](#__codelineno-6-14)CMD ["/app/.venv/bin/fastapi", "run", "main.py", "--port", "80", "--host", "0.0.0.0"]
+[#__codelineno-6-14](#__codelineno-6-14)CMD ["/app/.venv/bin/fastapi", "run", "app/main.py", "--port", "80", "--host", "0.0.0.0"]
 
 ```
 
@@ -133,4 +133,4 @@ Navigate to [http://127.0.0.1:8000/?token=jessica](http://127.0.0.1:8000/?token=
 
     For more on using uv with Docker, see the [Docker guide](../docker/). 
 
-November 12, 2025
+November 17, 2025
