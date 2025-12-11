@@ -157,7 +157,7 @@ Format of the audio (e.g. "mp3").
 
 ### warnings:
 
-SpeechWarning[]
+Warning[]
 
 Warnings from the model provider (e.g. unsupported settings).
 

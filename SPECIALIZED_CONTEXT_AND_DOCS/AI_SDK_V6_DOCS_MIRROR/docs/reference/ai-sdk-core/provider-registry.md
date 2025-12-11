@@ -60,7 +60,7 @@ const { text } = await generateText({
 
 ### Text embedding models
 
-You can access text embedding models by using the `textEmbeddingModel` method on the registry.
+You can access text embedding models by using the `.embeddingModel` method on the registry.
 The provider id will become the prefix of the model id: `providerId:modelId`.
 
 ```ts
@@ -68,7 +68,7 @@ import { embed } from 'ai';
 import { registry } from './registry';
 
 const { embedding } = await embed({
-  model: registry.textEmbeddingModel('openai:text-embedding-3-small'),
+  model: registry.embeddingModel('openai:text-embedding-3-small'),
   value: 'sunny day at the beach',
 });
 ```
@@ -112,7 +112,7 @@ Provider
 
 A function that returns a language model by its id.
 
-### textEmbeddingModel:
+### embeddingModel:
 
 (id: string) => EmbeddingModel<string>
 
@@ -148,7 +148,7 @@ The `createProviderRegistry` function returns a `Provider` instance. It has the 
 
 A function that returns a language model by its id (format: providerId:modelId)
 
-### textEmbeddingModel:
+### embeddingModel:
 
 (id: string) => EmbeddingModel<string>
 

@@ -111,7 +111,7 @@ The AI SDK supports dozens of model providers through [first-party](/providers/a
 This quickstart uses the [Vercel AI Gateway](https://vercel.com/ai-gateway) provider, which is the default [global provider](../ai-sdk-core/provider-management.md#global-provider-configuration). This means you can access models using a simple string in the model configuration:
 
 ```ts
-model: 'anthropic/claude-sonnet-4.5';
+model: "anthropic/claude-sonnet-4.5";
 ```
 
 You can also explicitly import and use the gateway provider in two other equivalent ways:
@@ -153,7 +153,7 @@ Its properties and API are largely the same as React's [`useChat`](../reference/
 
 Update your root page (`src/routes/+page.svelte`) with the following code to show a list of chat messages and provide a user message input:
 
-```html
+```jsx
 <script lang="ts">
   import { Chat } from '@ai-sdk/svelte';
 
@@ -289,7 +289,7 @@ you used when defining the tool. In this case, since we defined the tool as
 
 To display the tool invocation in your UI, update your `src/routes/+page.svelte` file:
 
-```html
+```jsx
 <script lang="ts">
   import { Chat } from '@ai-sdk/svelte';
 
@@ -457,7 +457,7 @@ export async function POST({ request }) {
 
 Update your UI to handle the new temperature conversion tool by modifying the tool part handling:
 
-```html
+```jsx
 <script lang="ts">
   import { Chat } from '@ai-sdk/svelte';
 
@@ -517,7 +517,7 @@ The surface-level difference is that Svelte uses classes to manage state, wherea
 Unlike in React, where hooks are rerun any time their containing component is invalidated, code in the `script` block of a Svelte component is only run once when the component is created.
 This means that, if you want arguments to your class to be reactive, you need to make sure you pass a *reference* into the class, rather than a value:
 
-```html
+```jsx
 <script>
   import { Chat } from '@ai-sdk/svelte';
 
@@ -552,7 +552,7 @@ console.log(foo); // 'bar'
 
 The same is true of classes in Svelte:
 
-```html
+```jsx
 <script>
   import { Chat } from '@ai-sdk/svelte';
 
@@ -571,7 +571,7 @@ The same is true of classes in Svelte:
 In React, hook instances with the same `id` are synchronized -- so two instances of `useChat` will have the same `messages`, `status`, etc. if they have the same `id`.
 For most use cases, you probably don't need this behavior -- but if you do, you can create a context in your root layout file using `createAIContext`:
 
-```html
+```jsx
 <script>
   import { createAIContext } from '@ai-sdk/svelte';
 

@@ -18,6 +18,8 @@ The following models are available in [LiveKit Inference](https://docs.livekit.i
 
 - **[Cartesia](https://docs.livekit.io/agents/models/tts/inference/cartesia.md)**: Reference for Cartesia TTS in LiveKit Inference.
 
+- **[Deepgram](https://docs.livekit.io/agents/models/tts/inference/deepgram.md)**: Reference for Deepgram TTS in LiveKit Inference.
+
 - **[ElevenLabs](https://docs.livekit.io/agents/models/tts/inference/elevenlabs.md)**: Reference for ElevenLabs TTS with LiveKit Inference.
 
 - **[Inworld](https://docs.livekit.io/agents/models/tts/inference/inworld.md)**: Reference for Inworld TTS in LiveKit Inference.
@@ -36,6 +38,10 @@ Click the copy icon to copy the voice ID to use in your agent session.
 | Cartesia | Daniela | Calm and trusting Mexican female | `es-MX` | `cartesia/sonic-3:5c5ad5e7-1020-476b-8b91-fdcbe9cc313c` |
 | Cartesia | Jacqueline | Confident, young American adult female | `en-US` | `cartesia/sonic-3:9626c31c-bec5-4cca-baa8-f8ba9e84c8bc` |
 | Cartesia | Robyn | Neutral, mature Australian female | `en-AU` | `cartesia/sonic-3:f31cc6a7-c1e8-4764-980c-60a361443dd1` |
+| Deepgram | Apollo | Comfortable, casual male | `en-US` | `deepgram/aura-2:apollo` |
+| Deepgram | Athena | Smooth, professional female | `en-US` | `deepgram/aura-2:athena` |
+| Deepgram | Odysseus | Calm, professional male | `en-US` | `deepgram/aura-2:odysseus` |
+| Deepgram | Theia | Expressive, polite female | `en-AU` | `deepgram/aura-2:theia` |
 | ElevenLabs | Alice | Clear and engaging, friendly British woman | `en-GB` | `elevenlabs/eleven_turbo_v2_5:Xb7hH8MSUJpSbSDYk0k2` |
 | ElevenLabs | Chris | Natural and real American male | `en-US` | `elevenlabs/eleven_turbo_v2_5:iP95p4xoKVk53GoZ742B` |
 | ElevenLabs | Eric | A smooth tenor Mexican male | `es-MX` | `elevenlabs/eleven_turbo_v2_5:cjVigY5qzO86Huf0OWal` |
@@ -104,6 +110,7 @@ The LiveKit Agents framework also includes a variety of open source [plugins](ht
 | [LMNT](https://docs.livekit.io/agents/models/tts/plugins/lmnt.md) | ✓ | — |
 | [MiniMax](https://docs.livekit.io/agents/models/tts/plugins/minimax.md) | ✓ | — |
 | [Neuphonic](https://docs.livekit.io/agents/models/tts/plugins/neuphonic.md) | ✓ | ✓ |
+| [Nvidia](https://docs.livekit.io/agents/models/tts/plugins/nvidia.md) | ✓ | — |
 | [OpenAI](https://docs.livekit.io/agents/models/tts/plugins/openai.md) | ✓ | ✓ |
 | [Resemble AI](https://docs.livekit.io/agents/models/tts/plugins/resemble.md) | ✓ | ✓ |
 | [Rime](https://docs.livekit.io/agents/models/tts/plugins/rime.md) | ✓ | ✓ |

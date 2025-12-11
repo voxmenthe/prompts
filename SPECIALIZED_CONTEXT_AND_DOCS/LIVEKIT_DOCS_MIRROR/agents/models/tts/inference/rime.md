@@ -14,7 +14,6 @@ LiveKit Inference offers voice models powered by Rime. Pricing information is av
 | -------- | --------- |
 | `rime/arcana` | `en`, `es`, `fr`, `de` |
 | `rime/mistv2` | `en`, `es`, `fr`, `de` |
-| `rime/mist` | `en`, `es`, `fr`, `de` |
 
 ## Usage
 

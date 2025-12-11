@@ -5,11 +5,10 @@ Streams text generations from a language model.
 You can use the streamText function for interactive use cases such as chat bots and other real-time applications. You can also generate UI components with tools.
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { streamText } from 'ai';
 
 const { textStream } = streamText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   prompt: 'Invent a new holiday and describe its traditions.',
 });
 

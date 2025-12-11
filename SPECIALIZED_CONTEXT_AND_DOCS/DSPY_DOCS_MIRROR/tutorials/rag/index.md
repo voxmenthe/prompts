@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/rag/index.ipynb on 2025-11-30T20:45:13.280726Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/rag/index.ipynb on 2025-12-11T00:06:39.052765Z -->
 
 # Tutorial: Retrieval-Augmented Generation (RAG)
 

@@ -76,7 +76,6 @@ Now let's implement the `generateResponse` function. Use the `streamText` functi
 'use server';
 
 import { streamText } from 'ai';
-import { openai } from '@ai-sdk/openai';
 import { createStreamableValue } from '@ai-sdk/rsc';
 
 export async function generateResponse(prompt: string) {
@@ -84,7 +83,7 @@ export async function generateResponse(prompt: string) {
 
   (async () => {
     const { textStream } = streamText({
-      model: 'anthropic/claude-sonnet-4.5',
+      model: "anthropic/claude-sonnet-4.5",
       prompt,
     });
 
@@ -109,7 +108,6 @@ If you are looking to track loading state on a more granular level, you can crea
 'use server';
 
 import { streamText } from 'ai';
-import { openai } from '@ai-sdk/openai';
 import { createStreamableValue } from '@ai-sdk/rsc';
 
 export async function generateResponse(prompt: string) {
@@ -118,7 +116,7 @@ export async function generateResponse(prompt: string) {
 
   (async () => {
     const { textStream } = streamText({
-      model: 'anthropic/claude-sonnet-4.5',
+      model: "anthropic/claude-sonnet-4.5",
       prompt,
     });
 

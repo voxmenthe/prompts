@@ -81,7 +81,7 @@ const session = new voice.AgentSession({
 
 ### Parameters
 
-This section describes some of the available parameters. For a complete reference of all available parameters, see the [plugin reference](https://docs.livekit.io/python/v1/livekit/plugins/google/index.html.md#livekit.plugins.google.LLM).
+This section describes some of the available parameters. For a complete reference of all available parameters, see the [plugin reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/google/index.html.md#livekit.plugins.google.LLM).
 
 - **`model`** _(ChatModels | str)_ (optional) - Default: `gemini-2.0-flash-001`: ID of the model to use. For a full list, see [Gemini models](https://ai.google.dev/gemini-api/docs/models/gemini).
 

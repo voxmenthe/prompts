@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/custom_module/index.ipynb on 2025-11-30T20:45:13.285884Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/custom_module/index.ipynb on 2025-12-11T00:06:39.056187Z -->
 
 # Building AI Applications by Customizing DSPy Modules
 

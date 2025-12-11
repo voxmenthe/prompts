@@ -559,6 +559,8 @@ pyproject.toml
 
 Glob expressions which files and directories to exclude from the source distribution. 
 
+These exclusions are also applied to wheels to ensure that a wheel built from a source tree is consistent with a wheel built from a source distribution. 
+
 **Default value **: `[] `
 
 **Type **: `list[str] `
@@ -3984,4 +3986,4 @@ Unlike `--require-hashes `, `--verify-hashes `does not require that all requirem
 
 ```
 
-November 14, 2025
+December 8, 2025

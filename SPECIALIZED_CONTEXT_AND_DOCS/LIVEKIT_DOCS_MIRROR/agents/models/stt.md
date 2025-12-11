@@ -19,13 +19,16 @@ The following models are available in [LiveKit Inference](https://docs.livekit.i
 | Provider | Model name |  | Languages |
 | -------- | -------- | --------- |
 | [AssemblyAI](https://docs.livekit.io/agents/models/stt/inference/assemblyai.md) | Universal-Streaming | English only |
+|   | Universal-Streaming-Multilingual | 6 languages |
 | [Cartesia](https://docs.livekit.io/agents/models/stt/inference/cartesia.md) | Ink Whisper | 98 languages |
-| [Deepgram](https://docs.livekit.io/agents/models/stt/inference/deepgram.md) | Nova-3 | Multilingual, 8 languages |
+| [Deepgram](https://docs.livekit.io/agents/models/stt/inference/deepgram.md) | Flux | English only |
+|   | Nova-3 | Multilingual, 8 languages |
 |   | Nova-3 Medical | English only |
 |   | Nova-2 | Multilingual, 33 languages |
 |   | Nova-2 Medical | English only |
 |   | Nova-2 Conversational AI | English only |
 |   | Nova-2 Phonecall | English only |
+| [ElevenLabs](https://docs.livekit.io/agents/models/stt/inference/elevenlabs.md) | Scribe V2 Realtime | 41 languages |
 
 ## Usage
 
@@ -107,11 +110,13 @@ The LiveKit Agents framework also includes a variety of open source [plugins](ht
 | [Cartesia](https://docs.livekit.io/agents/models/stt/plugins/cartesia.md) | ✓ | — |
 | [Clova](https://docs.livekit.io/agents/models/stt/plugins/clova.md) | ✓ | — |
 | [Deepgram](https://docs.livekit.io/agents/models/stt/plugins/deepgram.md) | ✓ | ✓ |
+| [ElevenLabs](https://docs.livekit.io/agents/models/stt/plugins/elevenlabs.md) | ✓ | — |
 | [fal](https://docs.livekit.io/agents/models/stt/plugins/fal.md) | ✓ | — |
 | [Gladia](https://docs.livekit.io/agents/models/stt/plugins/gladia.md) | ✓ | — |
 | [Google Cloud](https://docs.livekit.io/agents/models/stt/plugins/google.md) | ✓ | — |
 | [Groq](https://docs.livekit.io/agents/models/stt/plugins/groq.md) | ✓ | — |
 | [Mistral AI](https://docs.livekit.io/agents/models/stt/plugins/mistralai.md) | ✓ | — |
+| [Nvidia](https://docs.livekit.io/agents/models/stt/plugins/nvidia.md) | ✓ | — |
 | [OpenAI](https://docs.livekit.io/agents/models/stt/plugins/openai.md) | ✓ | ✓ |
 | [Sarvam](https://docs.livekit.io/agents/models/stt/plugins/sarvam.md) | ✓ | — |
 | [Soniox](https://docs.livekit.io/agents/models/stt/plugins/soniox.md) | ✓ | — |

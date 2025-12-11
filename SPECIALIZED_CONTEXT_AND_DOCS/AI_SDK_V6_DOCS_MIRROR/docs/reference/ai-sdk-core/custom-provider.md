@@ -63,7 +63,7 @@ Record<string, LanguageModel>
 
 A record of language models, where keys are model IDs and values are LanguageModel instances.
 
-### textEmbeddingModels?:
+### .embeddingModels?:
 
 Record<string, EmbeddingModel<string>>
 
@@ -91,7 +91,7 @@ The `customProvider` function returns a `Provider` instance. It has the followin
 
 A function that returns a language model by its id (format: providerId:modelId)
 
-### textEmbeddingModel:
+### embeddingModel:
 
 (id: string) => EmbeddingModel<string>
 

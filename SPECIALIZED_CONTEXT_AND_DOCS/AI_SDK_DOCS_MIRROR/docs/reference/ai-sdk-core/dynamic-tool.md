@@ -106,7 +106,7 @@ When using dynamic tools alongside static tools, you need to check the `dynamic`
 
 ```ts
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     // Static tool with known types
     weather: weatherTool,

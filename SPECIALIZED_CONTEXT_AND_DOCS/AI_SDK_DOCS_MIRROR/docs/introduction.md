@@ -10,17 +10,16 @@ The AI SDK standardizes integrating artificial intelligence (AI) models across [
 
 For example, here’s how you can generate text with various models using the AI SDK:
 
-import { generateText } from "ai"
+```typescript
+import { generateText } from "ai";
 
 const { text } = await generateText({
+  model: "anthropic/claude-sonnet-4.5",
+  prompt: "What is love?",
+});
+```
 
-model: "google/gemini-3-pro-preview",
-
-prompt: "What is love?"
-
-})
-
-Love is a universal emotion that is characterized by feelings of affection, attachment, and warmth towards someone or something. It is a complex and multifaceted experience that can take many different forms, including romantic love, familial love, platonic love, and self-love.
+Love is a complex and multifaceted emotion that can be felt and expressed in many different ways. It involves deep affection, care, compassion, and connection towards another person or thing.
 
 The AI SDK has two main libraries:
 

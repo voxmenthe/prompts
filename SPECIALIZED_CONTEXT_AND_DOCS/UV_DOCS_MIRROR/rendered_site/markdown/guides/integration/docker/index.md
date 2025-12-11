@@ -21,7 +21,7 @@ The following distroless images are available:
 
 - `ghcr.io/astral-sh/uv:latest `
 
-- `ghcr.io/astral-sh/uv:{major}.{minor}.{patch} `, e.g., `ghcr.io/astral-sh/uv:0.9.16 `
+- `ghcr.io/astral-sh/uv:{major}.{minor}.{patch} `, e.g., `ghcr.io/astral-sh/uv:0.9.17 `
 
 - `ghcr.io/astral-sh/uv:{major}.{minor} `, e.g., `ghcr.io/astral-sh/uv:0.8 `(the latest patch version) 
 
@@ -145,7 +145,7 @@ And the following derived images are available:
 
 
 
-As with the distroless image, each derived image is published with uv version tags as `ghcr.io/astral-sh/uv:{major}.{minor}.{patch}-{base} `and `ghcr.io/astral-sh/uv:{major}.{minor}-{base} `, e.g., `ghcr.io/astral-sh/uv:0.9.16-alpine `. 
+As with the distroless image, each derived image is published with uv version tags as `ghcr.io/astral-sh/uv:{major}.{minor}.{patch}-{base} `and `ghcr.io/astral-sh/uv:{major}.{minor}-{base} `, e.g., `ghcr.io/astral-sh/uv:0.9.17-alpine `. 
 
 In addition, starting with `0.8 `each derived image also sets `UV_TOOL_BIN_DIR `to `/usr/local/bin `to allow `uv tool install `to work as expected with the default user. 
 
@@ -189,7 +189,7 @@ Note this requires `curl `to be available.
 In either case, it is best practice to pin to a specific uv version, e.g., with: 
 
 ```
-[#__codelineno-3-1](#__codelineno-3-1)COPY --from=ghcr.io/astral-sh/uv:0.9.16 /uv /uvx /bin/
+[#__codelineno-3-1](#__codelineno-3-1)COPY --from=ghcr.io/astral-sh/uv:0.9.17 /uv /uvx /bin/
 
 ```
 
@@ -206,7 +206,7 @@ In either case, it is best practice to pin to a specific uv version, e.g., with:
 Or, with the installer: 
 
 ```
-[#__codelineno-5-1](#__codelineno-5-1)ADD https://astral.sh/uv/0.9.16/install.sh /uv-installer.sh
+[#__codelineno-5-1](#__codelineno-5-1)ADD https://astral.sh/uv/0.9.17/install.sh /uv-installer.sh
 
 ```
 
@@ -220,9 +220,12 @@ Dockerfile
 [#__codelineno-6-1](#__codelineno-6-1)# Copy the project into the image
 [#__codelineno-6-2](#__codelineno-6-2)COPY . /app
 [#__codelineno-6-3](#__codelineno-6-3)
-[#__codelineno-6-4](#__codelineno-6-4)# Sync the project into a new environment, asserting the lockfile is up to date
-[#__codelineno-6-5](#__codelineno-6-5)WORKDIR /app
-[#__codelineno-6-6](#__codelineno-6-6)RUN uv sync --locked
+[#__codelineno-6-4](#__codelineno-6-4)# Disable development dependencies
+[#__codelineno-6-5](#__codelineno-6-5)ENV UV_NO_DEV=1
+[#__codelineno-6-6](#__codelineno-6-6)
+[#__codelineno-6-7](#__codelineno-6-7)# Sync the project into a new environment, asserting the lockfile is up to date
+[#__codelineno-6-8](#__codelineno-6-8)WORKDIR /app
+[#__codelineno-6-9](#__codelineno-6-9)RUN uv sync --locked
 
 ```
 
@@ -688,6 +691,6 @@ GitHub attestations build on the [sigstore.dev infrastructure](https://www.sigst
 
 !!! tip "Tip"
 
-    These examples use `latest `, but best practice is to verify the attestation for a specific version tag, e.g., `ghcr.io/astral-sh/uv:0.9.16 `, or (even better) the specific image digest, such as `ghcr.io/astral-sh/uv:0.5.27@sha256:5adf09a5a526f380237408032a9308000d14d5947eafa687ad6c6a2476787b4f `. 
+    These examples use `latest `, but best practice is to verify the attestation for a specific version tag, e.g., `ghcr.io/astral-sh/uv:0.9.17 `, or (even better) the specific image digest, such as `ghcr.io/astral-sh/uv:0.5.27@sha256:5adf09a5a526f380237408032a9308000d14d5947eafa687ad6c6a2476787b4f `. 
 
-December 6, 2025
+December 9, 2025

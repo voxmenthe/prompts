@@ -1,25 +1,23 @@
-Node reference
-Beta
--------------------
+# Node reference Beta
 
 Explore all available nodes for composing workflows in Agent Builder.
 
-[Agent Builder](https://platform.openai.com/agent-builder) is a visual canvas for composing agentic worfklows. Workflows are made up of nodes and connections that control the sequence and flow. Insert nodes, then configure and connect them to define the process you want your agents to follow.
+[Agent Builder](/agent-builder) is a visual canvas for composing agentic worfklows. Workflows are made up of nodes and connections that control the sequence and flow. Insert nodes, then configure and connect them to define the process you want your agents to follow.
 
-Explore all available nodes below. To learn more, read the [Agent Builder guide](https://platform.openai.com/docs/guides/agent-builder).
+Explore all available nodes below. To learn more, read the [Agent Builder guide](/docs/guides/agent-builder).
 
 ### Core nodes
 
 Get started with basic building blocks. All workflows have start and agent nodes.
 
-![Image 1: core nodes](https://cdn.openai.com/API/docs/images/core-nodes2.png)
+![core nodes](https://cdn.openai.com/API/docs/images/core-nodes2.png)
 
 #### Start
 
 Define inputs to your workflow. For user input in a chat workflow, start nodes do two things:
 
-*   Append the user input to the conversation history
-*   Expose `input_as_text` to represent the text contents of this input
+* Append the user input to the conversation history
+* Expose `input_as_text` to represent the text contents of this input
 
 All chat start nodes have `input_as_text` as an input variable. You can add state variables too.
 
@@ -35,21 +33,21 @@ You can have as many agent nodes as you'd like.
 
 #### Note
 
-Leave comments and explanations about your workflow. Unlike other nodes, notes don't _do_ anything in the flow. They're just helpful commentary for you and your team.
+Leave comments and explanations about your workflow. Unlike other nodes, notes don't *do* anything in the flow. They're just helpful commentary for you and your team.
 
 ### Tool nodes
 
 Tool nodes let you equip your agents with tools and external services. You can retrieve data, monitor for misuse, and connect to external services.
 
-![Image 2: tool nodes](https://cdn.openai.com/API/docs/images/tool-nodes2.png)
+![tool nodes](https://cdn.openai.com/API/docs/images/tool-nodes2.png)
 
 #### File search
 
 Retrieve data from vector stores you've created in the OpenAI platform. Search by vector store ID, and add a query for what the model should search for. You can use variables to include output from previous nodes in the workflow.
 
-See the [file search documentation](https://platform.openai.com/docs/guides/tools-file-search) to set up vector stores and see supported file types.
+See the [file search documentation](/docs/guides/tools-file-search) to set up vector stores and see supported file types.
 
-To search outside of your hosted storage with OpenAI, use [MCP](https://platform.openai.com/docs/guides/node-reference#mcp) instead.
+To search outside of your hosted storage with OpenAI, use [MCP](/docs/guides/node-reference#mcp) instead.
 
 #### Guardrails
 
@@ -61,11 +59,11 @@ Guardrails are pass/fail by default, meaning they test the output from a previou
 
 Call third-party tools and services. Connect with OpenAI connectors or third-party servers, or add your own server. MCP connections are helpful in a workflow that needs to read or search data in another application, like Gmail or Zapier.
 
-Browse options in the Agent Builder. To learn more about MCP, see the [connectors and MCP documentation](https://platform.openai.com/docs/guides/tools-connectors-mcp).
+Browse options in the Agent Builder. To learn more about MCP, see the [connectors and MCP documentation](/docs/guides/tools-connectors-mcp).
 
 ### Logic nodes
 
-![Image 3: logic nodes](https://cdn.openai.com/API/docs/images/logic-nodes.png)
+![logic nodes](https://cdn.openai.com/API/docs/images/logic-nodes.png)
 
 Logic nodes let you write custom logic and define the control flow—for example, looping on custom conditions, or asking the user for approval before continuing an operation.
 
@@ -89,7 +87,7 @@ For example, picture an agent workflow that sends emails on your behalf. You'd i
 
 Data nodes let you define and manipulate data in your workflow. Reshape outputs or define global variables for use across your workflow.
 
-![Image 4: data nodes](https://cdn.openai.com/API/docs/images/data-nodes.png)
+![data nodes](https://cdn.openai.com/API/docs/images/data-nodes.png)
 
 #### Transform
 

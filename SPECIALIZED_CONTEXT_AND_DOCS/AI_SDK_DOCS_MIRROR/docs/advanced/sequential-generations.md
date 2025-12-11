@@ -9,13 +9,12 @@ In a sequential chain, the output of one generation is directly used as input fo
 Here's an example of how you can implement sequential actions:
 
 ```typescript
-import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 async function sequentialActions() {
   // Generate blog post ideas
   const ideasGeneration = await generateText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     prompt: 'Generate 10 ideas for a blog post about making spaghetti.',
   });
 
@@ -23,7 +22,7 @@ async function sequentialActions() {
 
   // Pick the best idea
   const bestIdeaGeneration = await generateText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     prompt: `Here are some blog post ideas about making spaghetti:
 ${ideasGeneration}
 
@@ -34,7 +33,7 @@ Pick the best idea from the list above and explain why it's the best.`,
 
   // Generate an outline
   const outlineGeneration = await generateText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     prompt: `We've chosen the following blog post idea about making spaghetti:
 ${bestIdeaGeneration}
 

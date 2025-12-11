@@ -19,7 +19,7 @@ import { ToolLoopAgent, stepCountIs, tool } from 'ai';
 import { z } from 'zod';
 
 const weatherAgent = new ToolLoopAgent({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     weather: tool({
       description: 'Get the weather in a location (in Fahrenheit)',

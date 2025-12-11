@@ -1,114 +1,159 @@
-## List
+<!-- Source: https://docs.anthropic.com/en/api/models-list -->
 
-**get** `/v1/models`
+# List Models
+
+get/v1/models
 
 List available models.
 
 The Models API response can be used to determine which models are available for use in the API. More recently released models are listed first.
 
-### Query Parameters
+##### Query ParametersExpand Collapse 
 
-- `after_id: optional string`
+after_id: optional string
 
-  ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately after this object.
+ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately after this object.
 
-- `before_id: optional string`
+before_id: optional string
 
-  ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately before this object.
+ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately before this object.
 
-- `limit: optional number`
+limit: optional number
 
-  Number of items to return per page.
+Number of items to return per page.
 
-  Defaults to `20`. Ranges from `1` to `1000`.
+Defaults to `20`. Ranges from `1` to `1000`.
 
-### Header Parameters
+maximum1000
 
-- `"anthropic-beta": optional array of AnthropicBeta`
+minimum1
 
-  Optional header to specify the beta version(s) you want to use.
+##### Header ParametersExpand Collapse 
 
-  - `UnionMember0 = string`
+"anthropic-beta": optional array of [AnthropicBeta](</docs/en/api/beta#anthropic_beta>)
 
-  - `UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 16 more`
+Optional header to specify the beta version(s) you want to use.
 
-    - `"message-batches-2024-09-24"`
+Accepts one of the following:
 
-    - `"prompt-caching-2024-07-31"`
+UnionMember0 = string
 
-    - `"computer-use-2024-10-22"`
+UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 16 more
 
-    - `"computer-use-2025-01-24"`
+Accepts one of the following:
 
-    - `"pdfs-2024-09-25"`
+"message-batches-2024-09-24"
 
-    - `"token-counting-2024-11-01"`
+"prompt-caching-2024-07-31"
 
-    - `"token-efficient-tools-2025-02-19"`
+"computer-use-2024-10-22"
 
-    - `"output-128k-2025-02-19"`
+"computer-use-2025-01-24"
 
-    - `"files-api-2025-04-14"`
+"pdfs-2024-09-25"
 
-    - `"mcp-client-2025-04-04"`
+"token-counting-2024-11-01"
 
-    - `"mcp-client-2025-11-20"`
+"token-efficient-tools-2025-02-19"
 
-    - `"dev-full-thinking-2025-05-14"`
+"output-128k-2025-02-19"
 
-    - `"interleaved-thinking-2025-05-14"`
+"files-api-2025-04-14"
 
-    - `"code-execution-2025-05-22"`
+"mcp-client-2025-04-04"
 
-    - `"extended-cache-ttl-2025-04-11"`
+"mcp-client-2025-11-20"
 
-    - `"context-1m-2025-08-07"`
+"dev-full-thinking-2025-05-14"
 
-    - `"context-management-2025-06-27"`
+"interleaved-thinking-2025-05-14"
 
-    - `"model-context-window-exceeded-2025-08-26"`
+"code-execution-2025-05-22"
 
-    - `"skills-2025-10-02"`
+"extended-cache-ttl-2025-04-11"
 
-### Returns
+"context-1m-2025-08-07"
 
-- `data: array of ModelInfo`
+"context-management-2025-06-27"
 
-  - `id: string`
+"model-context-window-exceeded-2025-08-26"
 
-    Unique model identifier.
+"skills-2025-10-02"
 
-  - `created_at: string`
+##### ReturnsExpand Collapse 
 
-    RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
+data: array of [ModelInfo](</docs/en/api/models#model_info>) { id, created_at, display_name, type } 
 
-  - `display_name: string`
+id: string
 
-    A human-readable name for the model.
+Unique model identifier.
 
-  - `type: "model"`
+created_at: string
 
-    Object type.
+RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
 
-    For Models, this is always `"model"`.
+formatdate-time
 
-    - `"model"`
+display_name: string
 
-- `first_id: string`
+A human-readable name for the model.
 
-  First ID in the `data` list. Can be used as the `before_id` for the previous page.
+type: "model"
 
-- `has_more: boolean`
+Object type.
 
-  Indicates if there are more results in the requested page direction.
+For Models, this is always `"model"`.
 
-- `last_id: string`
+Accepts one of the following:
 
-  Last ID in the `data` list. Can be used as the `after_id` for the next page.
+"model"
 
-### Example
+first_id: string
 
-```http
-curl https://api.anthropic.com/v1/models \
-    -H "X-Api-Key: $ANTHROPIC_API_KEY"
-```
+First ID in the `data` list. Can be used as the `before_id` for the previous page.
+
+has_more: boolean
+
+Indicates if there are more results in the requested page direction.
+
+last_id: string
+
+Last ID in the `data` list. Can be used as the `after_id` for the next page.
+
+List Models
+[code]
+    curl https://api.anthropic.com/v1/models \
+        -H "X-Api-Key: $ANTHROPIC_API_KEY"
+[/code]
+[code]
+    {
+      "data": [
+        {
+          "id": "claude-sonnet-4-20250514",
+          "created_at": "2025-02-19T00:00:00Z",
+          "display_name": "Claude Sonnet 4",
+          "type": "model"
+        }
+      ],
+      "first_id": "first_id",
+      "has_more": true,
+      "last_id": "last_id"
+    }
+[/code]
+
+##### Returns Examples
+[code]
+    {
+      "data": [
+        {
+          "id": "claude-sonnet-4-20250514",
+          "created_at": "2025-02-19T00:00:00Z",
+          "display_name": "Claude Sonnet 4",
+          "type": "model"
+        }
+      ],
+      "first_id": "first_id",
+      "has_more": true,
+      "last_id": "last_id"
+    }
+[/code]

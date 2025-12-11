@@ -7,12 +7,11 @@ It can be used to force the language model to return structured data, e.g. for i
 #### Example: generate an object using a schema
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { generateObject } from 'ai';
 import { z } from 'zod';
 
 const { object } = await generateObject({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   schema: z.object({
     recipe: z.object({
       name: z.string(),
@@ -31,12 +30,11 @@ console.log(JSON.stringify(object, null, 2));
 For arrays, you specify the schema of the array items.
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { generateObject } from 'ai';
 import { z } from 'zod';
 
 const { object } = await generateObject({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   output: 'array',
   schema: z.object({
     name: z.string(),
@@ -58,7 +56,7 @@ and provide the list of possible values in the `enum` parameter.
 import { generateObject } from 'ai';
 
 const { object } = await generateObject({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   output: 'enum',
   enum: ['action', 'comedy', 'drama', 'horror', 'sci-fi'],
   prompt:
@@ -71,11 +69,10 @@ const { object } = await generateObject({
 #### Example: generate JSON without a schema
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { generateObject } from 'ai';
 
 const { object } = await generateObject({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   output: 'no-schema',
   prompt: 'Generate a lasagna recipe.',
 });
@@ -104,12 +101,6 @@ The language model to use. Example: openai('gpt-4.1')
 'object' | 'array' | 'enum' | 'no-schema' | undefined
 
 The type of output to generate. Defaults to 'object'.
-
-### mode:
-
-'auto' | 'json' | 'tool'
-
-The mode to use for object generation. Not every model supports all modes. Defaults to 'auto' for 'object' output and to 'json' for 'no-schema' output. Must be 'json' for 'no-schema' output.
 
 ### schema:
 

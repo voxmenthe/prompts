@@ -4,7 +4,7 @@
 
 When migrating to AI SDK 5, you might encounter an error stating that your model uses an unsupported version:
 
-```undefined
+```typescript
 AI_UnsupportedModelVersionError: Unsupported model version v1 for provider "ollama.chat" and model "gamma3:4b".
 AI SDK 5 only supports models that implement specification version "v2".
 ```

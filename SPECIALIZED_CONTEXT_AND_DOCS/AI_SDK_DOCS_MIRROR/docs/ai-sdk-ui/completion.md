@@ -32,9 +32,9 @@ export default function Page() {
   );
 }
 ```
+
 ```ts
 import { streamText } from 'ai';
-import { openai } from '@ai-sdk/openai';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -43,7 +43,7 @@ export async function POST(req: Request) {
   const { prompt }: { prompt: string } = await req.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     prompt,
   });
 

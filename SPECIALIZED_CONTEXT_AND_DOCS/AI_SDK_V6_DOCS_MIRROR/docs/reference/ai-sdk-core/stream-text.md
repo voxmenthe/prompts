@@ -5,11 +5,10 @@ Streams text generations from a language model.
 You can use the streamText function for interactive use cases such as chat bots and other real-time applications. You can also generate UI components with tools.
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { streamText } from 'ai';
 
 const { textStream } = streamText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   prompt: 'Invent a new holiday and describe its traditions.',
 });
 
@@ -38,7 +37,7 @@ The language model to use. Example: openai('gpt-4.1')
 
 ### system:
 
-string
+string | SystemModelMessage | SystemModelMessage[]
 
 The system prompt to use that specifies the behavior of the model.
 
@@ -530,37 +529,49 @@ Array<ModelMessage>
 
 The messages that will be sent to the model for the current step.
 
+### experimental_context?:
+
+unknown
+
+The context passed via the experimental_context setting (experimental).
+
 PrepareStepResult<TOOLS>
 
 ### model?:
 
 LanguageModel
 
-Change the model for this step.
+Optionally override which LanguageModel instance is used for this step.
 
 ### toolChoice?:
 
 ToolChoice<TOOLS>
 
-Change the tool choice strategy for this step.
+Optionally set which tool the model must call, or provide tool call configuration for this step.
 
 ### activeTools?:
 
 Array<keyof TOOLS>
 
-Change which tools are active for this step.
+If provided, only these tools are enabled/available for this step.
 
 ### system?:
 
-string
+string | SystemModelMessage | SystemModelMessage[]
 
-Change the system prompt for this step.
+Optionally override the system message(s) sent to the model for this step.
 
 ### messages?:
 
 Array<ModelMessage>
 
-Modify the input messages for this step.
+Optionally override the full set of messages sent to the model for this step.
+
+### experimental_context?:
+
+unknown
+
+Context that is passed into tool execution. Experimental. Changing the context will affect the context in this step and all subsequent steps.
 
 ### experimental_context?:
 
@@ -584,7 +595,7 @@ ToolCallRepairOptions
 
 ### system:
 
-string | undefined
+string | SystemModelMessage | SystemModelMessage[] | undefined
 
 The system prompt.
 
@@ -886,31 +897,71 @@ LanguageModelUsage
 
 number | undefined
 
-The number of input (prompt) tokens used.
+The total number of input (prompt) tokens used.
+
+### inputTokenDetails:
+
+LanguageModelInputTokenDetails
+
+Detailed information about the input (prompt) tokens. See also: cached tokens and non-cached tokens.
+
+LanguageModelInputTokenDetails
+
+### noCacheTokens:
+
+number | undefined
+
+The number of non-cached input (prompt) tokens used.
+
+### cacheReadTokens:
+
+number | undefined
+
+The number of cached input (prompt) tokens read.
+
+### cacheWriteTokens:
+
+number | undefined
+
+The number of cached input (prompt) tokens written.
 
 ### outputTokens:
 
 number | undefined
 
-The number of output (completion) tokens used.
+The number of total output (completion) tokens used.
 
-### totalTokens:
+### outputTokenDetails:
+
+LanguageModelOutputTokenDetails
+
+Detailed information about the output (completion) tokens.
+
+LanguageModelOutputTokenDetails
+
+### textTokens:
 
 number | undefined
 
-The total number of tokens as reported by the provider. This number might be different from the sum of inputTokens and outputTokens and e.g. include reasoning tokens or other overhead.
+The number of text tokens used.
 
-### reasoningTokens?:
+### reasoningTokens:
 
 number | undefined
 
 The number of reasoning tokens used.
 
-### cachedInputTokens?:
+### totalTokens:
 
 number | undefined
 
-The number of cached input tokens.
+The total number of tokens used.
+
+### raw?:
+
+object | undefined
+
+Raw usage information from the provider. This is the provider's original usage information and may include additional fields.
 
 ### text:
 
@@ -918,7 +969,7 @@ string
 
 The full text that has been generated.
 
-### reasoning:
+### reasoningText:
 
 string | undefined
 
@@ -1076,31 +1127,71 @@ LanguageModelUsage
 
 number | undefined
 
-The number of input (prompt) tokens used.
+The total number of input (prompt) tokens used.
+
+### inputTokenDetails:
+
+LanguageModelInputTokenDetails
+
+Detailed information about the input (prompt) tokens. See also: cached tokens and non-cached tokens.
+
+LanguageModelInputTokenDetails
+
+### noCacheTokens:
+
+number | undefined
+
+The number of non-cached input (prompt) tokens used.
+
+### cacheReadTokens:
+
+number | undefined
+
+The number of cached input (prompt) tokens read.
+
+### cacheWriteTokens:
+
+number | undefined
+
+The number of cached input (prompt) tokens written.
 
 ### outputTokens:
 
 number | undefined
 
-The number of output (completion) tokens used.
+The number of total output (completion) tokens used.
 
-### totalTokens:
+### outputTokenDetails:
+
+LanguageModelOutputTokenDetails
+
+Detailed information about the output (completion) tokens.
+
+LanguageModelOutputTokenDetails
+
+### textTokens:
 
 number | undefined
 
-The total number of tokens as reported by the provider. This number might be different from the sum of inputTokens and outputTokens and e.g. include reasoning tokens or other overhead.
+The number of text tokens used.
 
-### reasoningTokens?:
+### reasoningTokens:
 
 number | undefined
 
 The number of reasoning tokens used.
 
-### cachedInputTokens?:
+### totalTokens:
 
 number | undefined
 
-The number of cached input tokens.
+The total number of tokens used.
+
+### raw?:
+
+object | undefined
+
+Raw usage information from the provider. This is the provider's original usage information and may include additional fields.
 
 ### totalUsage:
 
@@ -1158,7 +1249,7 @@ string | undefined
 
 The reasoning text of the model (only available for some models).
 
-### reasoningDetails:
+### reasoning:
 
 Array<ReasoningDetail>
 
@@ -1324,6 +1415,12 @@ Array<StepResult>
 
 Response information for every step. You can use this to get information about intermediate steps, such as the tool calls or the response headers.
 
+### experimental_context:
+
+unknown
+
+The experimental context.
+
 ### onAbort?:
 
 (event: OnAbortResult) => Promise<void> | void
@@ -1402,31 +1499,71 @@ LanguageModelUsage
 
 number | undefined
 
-The number of input (prompt) tokens used.
+The total number of input (prompt) tokens used.
+
+### inputTokenDetails:
+
+LanguageModelInputTokenDetails
+
+Detailed information about the input (prompt) tokens. See also: cached tokens and non-cached tokens.
+
+LanguageModelInputTokenDetails
+
+### noCacheTokens:
+
+number | undefined
+
+The number of non-cached input (prompt) tokens used.
+
+### cacheReadTokens:
+
+number | undefined
+
+The number of cached input (prompt) tokens read.
+
+### cacheWriteTokens:
+
+number | undefined
+
+The number of cached input (prompt) tokens written.
 
 ### outputTokens:
 
 number | undefined
 
-The number of output (completion) tokens used.
+The number of total output (completion) tokens used.
 
-### totalTokens:
+### outputTokenDetails:
+
+LanguageModelOutputTokenDetails
+
+Detailed information about the output (completion) tokens.
+
+LanguageModelOutputTokenDetails
+
+### textTokens:
 
 number | undefined
 
-The total number of tokens as reported by the provider. This number might be different from the sum of inputTokens and outputTokens and e.g. include reasoning tokens or other overhead.
+The number of text tokens used.
 
-### reasoningTokens?:
+### reasoningTokens:
 
 number | undefined
 
 The number of reasoning tokens used.
 
-### cachedInputTokens?:
+### totalTokens:
 
 number | undefined
 
-The number of cached input tokens.
+The total number of tokens used.
+
+### raw?:
+
+object | undefined
+
+Raw usage information from the provider. This is the provider's original usage information and may include additional fields.
 
 ### providerMetadata:
 
@@ -1602,7 +1739,7 @@ The response messages that were generated during the call. It consists of an ass
 
 ### warnings:
 
-Promise<CallWarning[] | undefined>
+Promise<Warning[] | undefined>
 
 Warnings from the model provider (e.g. unsupported settings) for the first step.
 
@@ -1726,31 +1863,71 @@ LanguageModelUsage
 
 number | undefined
 
-The number of input (prompt) tokens used.
+The total number of input (prompt) tokens used.
+
+### inputTokenDetails:
+
+LanguageModelInputTokenDetails
+
+Detailed information about the input (prompt) tokens. See also: cached tokens and non-cached tokens.
+
+LanguageModelInputTokenDetails
+
+### noCacheTokens:
+
+number | undefined
+
+The number of non-cached input (prompt) tokens used.
+
+### cacheReadTokens:
+
+number | undefined
+
+The number of cached input (prompt) tokens read.
+
+### cacheWriteTokens:
+
+number | undefined
+
+The number of cached input (prompt) tokens written.
 
 ### outputTokens:
 
 number | undefined
 
-The number of output (completion) tokens used.
+The number of total output (completion) tokens used.
 
-### totalTokens:
+### outputTokenDetails:
+
+LanguageModelOutputTokenDetails
+
+Detailed information about the output (completion) tokens.
+
+LanguageModelOutputTokenDetails
+
+### textTokens:
 
 number | undefined
 
-The total number of tokens as reported by the provider. This number might be different from the sum of inputTokens and outputTokens and e.g. include reasoning tokens or other overhead.
+The number of text tokens used.
 
-### reasoningTokens?:
+### reasoningTokens:
 
 number | undefined
 
 The number of reasoning tokens used.
 
-### cachedInputTokens?:
+### totalTokens:
 
 number | undefined
 
-The number of cached input tokens.
+The total number of tokens used.
+
+### raw?:
+
+object | undefined
+
+Raw usage information from the provider. This is the provider's original usage information and may include additional fields.
 
 ### request?:
 
@@ -2068,7 +2245,7 @@ Raw request HTTP body that was sent to the provider API as a string.
 
 ### warnings:
 
-CallWarning[]
+Warning[]
 
 Warnings from the model provider (e.g. unsupported settings).
 
@@ -2124,31 +2301,71 @@ LanguageModelUsage
 
 number | undefined
 
-The number of input (prompt) tokens used.
+The total number of input (prompt) tokens used.
+
+### inputTokenDetails:
+
+LanguageModelInputTokenDetails
+
+Detailed information about the input (prompt) tokens. See also: cached tokens and non-cached tokens.
+
+LanguageModelInputTokenDetails
+
+### noCacheTokens:
+
+number | undefined
+
+The number of non-cached input (prompt) tokens used.
+
+### cacheReadTokens:
+
+number | undefined
+
+The number of cached input (prompt) tokens read.
+
+### cacheWriteTokens:
+
+number | undefined
+
+The number of cached input (prompt) tokens written.
 
 ### outputTokens:
 
 number | undefined
 
-The number of output (completion) tokens used.
+The number of total output (completion) tokens used.
 
-### totalTokens:
+### outputTokenDetails:
+
+LanguageModelOutputTokenDetails
+
+Detailed information about the output (completion) tokens.
+
+LanguageModelOutputTokenDetails
+
+### textTokens:
 
 number | undefined
 
-The total number of tokens as reported by the provider. This number might be different from the sum of inputTokens and outputTokens and e.g. include reasoning tokens or other overhead.
+The number of text tokens used.
 
-### reasoningTokens?:
+### reasoningTokens:
 
 number | undefined
 
 The number of reasoning tokens used.
 
-### cachedInputTokens?:
+### totalTokens:
 
 number | undefined
 
-The number of cached input tokens.
+The total number of tokens used.
+
+### raw?:
+
+object | undefined
+
+Raw usage information from the provider. This is the provider's original usage information and may include additional fields.
 
 ### finishReason:
 
@@ -2196,31 +2413,71 @@ LanguageModelUsage
 
 number | undefined
 
-The number of input (prompt) tokens used.
+The total number of input (prompt) tokens used.
+
+### inputTokenDetails:
+
+LanguageModelInputTokenDetails
+
+Detailed information about the input (prompt) tokens. See also: cached tokens and non-cached tokens.
+
+LanguageModelInputTokenDetails
+
+### noCacheTokens:
+
+number | undefined
+
+The number of non-cached input (prompt) tokens used.
+
+### cacheReadTokens:
+
+number | undefined
+
+The number of cached input (prompt) tokens read.
+
+### cacheWriteTokens:
+
+number | undefined
+
+The number of cached input (prompt) tokens written.
 
 ### outputTokens:
 
 number | undefined
 
-The number of output (completion) tokens used.
+The number of total output (completion) tokens used.
 
-### totalTokens:
+### outputTokenDetails:
+
+LanguageModelOutputTokenDetails
+
+Detailed information about the output (completion) tokens.
+
+LanguageModelOutputTokenDetails
+
+### textTokens:
 
 number | undefined
 
-The total number of tokens as reported by the provider. This number might be different from the sum of inputTokens and outputTokens and e.g. include reasoning tokens or other overhead.
+The number of text tokens used.
 
-### reasoningTokens?:
+### reasoningTokens:
 
 number | undefined
 
 The number of reasoning tokens used.
 
-### cachedInputTokens?:
+### totalTokens:
 
 number | undefined
 
-The number of cached input tokens.
+The total number of tokens used.
+
+### raw?:
+
+object | undefined
+
+Raw usage information from the provider. This is the provider's original usage information and may include additional fields.
 
 TextStreamPart
 

@@ -459,6 +459,7 @@
 - [SplitText](/docs/v3/Plugins/SplitText.md)
 - [chars](/docs/v3/Plugins/SplitText/chars.md)
 - [isSplit](/docs/v3/Plugins/SplitText/isSplit.md)
+- [kill](/docs/v3/Plugins/SplitText/kill().md)
 - [lines](/docs/v3/Plugins/SplitText/lines.md)
 - [masks](/docs/v3/Plugins/SplitText/masks.md)
 - [revert](/docs/v3/Plugins/SplitText/revert().md)

@@ -16,7 +16,7 @@ Warnings are shown in the browser console when:
 
 All warnings start with "AI SDK Warning:" so you can easily find them. For example:
 
-```undefined
+```typescript
 AI SDK Warning: The "temperature" setting is not supported by this model
 AI SDK Warning: The tool "calculator" is not supported by this model
 ```

@@ -64,7 +64,7 @@ ToolExecuteFunction<unknown, unknown>
 
 An async function that is called with the arguments from the tool call. The input is typed as unknown and must be validated/cast at runtime.
 
-ToolCallOptions
+ToolExecutionOptions
 
 ### toolCallId:
 
@@ -106,7 +106,7 @@ When using dynamic tools alongside static tools, you need to check the `dynamic`
 
 ```ts
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     // Static tool with known types
     weather: weatherTool,

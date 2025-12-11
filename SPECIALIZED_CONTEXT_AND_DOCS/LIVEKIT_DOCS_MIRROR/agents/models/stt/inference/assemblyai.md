@@ -13,6 +13,7 @@ LiveKit Inference offers transcription powered by AssemblyAI. Pricing informatio
 | Model name | Model ID | Languages |
 | -------- | -------- | --------- |
 | Universal-Streaming | `assemblyai/universal-streaming` | `en`, `en-US` |
+| Universal-Streaming-Multilingual | `assemblyai/universal-streaming-multilingual` | `en`, `en-US`, `en-GB`, `en-AU`, `en-CA`, `en-IN`, `en-NZ`, `es`, `es-ES`, `es-MX`, `es-AR`, `es-CO`, `es-CL`, `es-PE`, `es-VE`, `es-EC`, `es-GT`, `es-CU`, `es-BO`, `es-DO`, `es-HN`, `es-PY`, `es-SV`, `es-NI`, `es-CR`, `es-PA`, `es-UY`, `es-PR`, `fr`, `fr-FR`, `fr-CA`, `fr-BE`, `fr-CH`, `de`, `de-DE`, `de-AT`, `de-CH`, `it`, `it-IT`, `it-CH`, `pt`, `pt-BR`, `pt-PT` |
 
 ## Usage
 

@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/image_generation_prompting/index.ipynb on 2025-11-30T20:45:13.300372Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/image_generation_prompting/index.ipynb on 2025-12-11T00:06:39.073530Z -->
 
 # Image Generation Prompt iteration
 

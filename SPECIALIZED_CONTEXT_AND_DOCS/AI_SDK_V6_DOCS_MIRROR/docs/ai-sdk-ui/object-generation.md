@@ -67,11 +67,10 @@ export default function Page() {
 
 ### Server
 
-On the server, we use [`streamObject`](../reference/ai-sdk-core/stream-object.md) to stream the object generation process.
+On the server, we use [`streamText`](../reference/ai-sdk-core/stream-text.md) with [`Output.object()`](../reference/ai-sdk-core/output.md#output-object) to stream the object generation process.
 
 ```typescript
-import { openai } from '@ai-sdk/openai';
-import { streamObject } from 'ai';
+import { streamText, Output } from 'ai';
 import { notificationSchema } from './schema';
 
 // Allow streaming responses up to 30 seconds
@@ -80,9 +79,9 @@ export const maxDuration = 30;
 export async function POST(req: Request) {
   const context = await req.json();
 
-  const result = streamObject({
-    model: 'anthropic/claude-sonnet-4.5',
-    schema: notificationSchema,
+  const result = streamText({
+    model: "anthropic/claude-sonnet-4.5",
+    output: Output.object({ schema: notificationSchema }),
     prompt:
       `Generate 3 notifications for a messages app in this context:` + context,
   });
@@ -129,19 +128,17 @@ export default function ClassifyPage() {
 
 #### Server
 
-On the server, use `streamObject` with `output: 'enum'` to stream the classification result:
+On the server, use `streamText` with `Output.choice()` to stream the classification result:
 
 ```typescript
-import { openai } from '@ai-sdk/openai';
-import { streamObject } from 'ai';
+import { streamText, Output } from 'ai';
 
 export async function POST(req: Request) {
   const context = await req.json();
 
-  const result = streamObject({
-    model: 'anthropic/claude-sonnet-4.5',
-    output: 'enum',
-    enum: ['true', 'false'],
+  const result = streamText({
+    model: "anthropic/claude-sonnet-4.5",
+    output: Output.choice({ options: ['true', 'false'] }),
     prompt: `Classify this statement as true or false: ${context}`,
   });
 

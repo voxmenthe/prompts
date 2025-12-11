@@ -146,7 +146,7 @@ The IANA media type of the image.
 
 ### warnings:
 
-ImageGenerationWarning[]
+Warning[]
 
 Warnings from the model provider (e.g. unsupported settings).
 

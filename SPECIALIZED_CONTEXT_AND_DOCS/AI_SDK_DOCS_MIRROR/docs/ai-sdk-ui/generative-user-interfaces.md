@@ -109,14 +109,13 @@ export default function Page() {
 To handle the chat requests and model responses, set up an API route:
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { streamText, convertToModelMessages, UIMessage, stepCountIs } from 'ai';
 
 export async function POST(request: Request) {
   const { messages }: { messages: UIMessage[] } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     system: 'You are a friendly assistant!',
     messages: convertToModelMessages(messages),
     stopWhen: stepCountIs(5),
@@ -161,7 +160,6 @@ In this file, you've created a tool called `weatherTool`. This tool simulates fe
 Update the API route to include the tool you've defined:
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { streamText, convertToModelMessages, UIMessage, stepCountIs } from 'ai';
 import { tools } from '@/ai/tools';
 
@@ -169,7 +167,7 @@ export async function POST(request: Request) {
   const { messages }: { messages: UIMessage[] } = await request.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     system: 'You are a friendly assistant!',
     messages: convertToModelMessages(messages),
     stopWhen: stepCountIs(5),

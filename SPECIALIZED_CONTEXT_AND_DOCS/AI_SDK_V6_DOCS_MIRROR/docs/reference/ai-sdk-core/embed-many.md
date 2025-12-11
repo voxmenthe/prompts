@@ -7,7 +7,6 @@ by the embedding model.
 has a limit on how many embeddings can be generated in a single call.
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { embedMany } from 'ai';
 
 const { embeddings } = await embedMany({
@@ -34,7 +33,7 @@ import { embedMany } from "ai"
 
 EmbeddingModel
 
-The embedding model to use. Example: openai.textEmbeddingModel('text-embedding-3-small')
+The embedding model to use. Example: openai.embeddingModel('text-embedding-3-small')
 
 ### values:
 

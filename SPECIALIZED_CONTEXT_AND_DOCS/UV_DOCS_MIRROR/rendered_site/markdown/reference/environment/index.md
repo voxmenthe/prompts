@@ -1184,4 +1184,4 @@ added in `0.8.18 `
 
 Used to determine the root install path of Conda. 
 
-December 4, 2025
+December 8, 2025

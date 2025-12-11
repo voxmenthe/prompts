@@ -237,7 +237,7 @@ lk agent restart --id CA_MyAgentId
 
 ### Rollback
 
-[Rollback](https://docs.livekit.io/agents/ops/deployment.md#rollback) the specified agent to a prior version:
+[Rollback](https://docs.livekit.io/agents/ops/deployment.md#rolling-back) the specified agent to a prior version:
 
 ```shell
 lk agent rollback [options] [working-dir]

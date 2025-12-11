@@ -84,7 +84,7 @@ async function main() {
     messages.push({ role: 'user', content: userInput });
 
     const result = streamText({
-      model: 'anthropic/claude-sonnet-4.5',
+      model: "anthropic/claude-sonnet-4.5",
       messages,
     });
 
@@ -132,7 +132,7 @@ The AI SDK supports dozens of model providers through [first-party](/providers/a
 This quickstart uses the [Vercel AI Gateway](https://vercel.com/ai-gateway) provider, which is the default [global provider](../ai-sdk-core/provider-management.md#global-provider-configuration). This means you can access models using a simple string in the model configuration:
 
 ```ts
-model: 'anthropic/claude-sonnet-4.5';
+model: "anthropic/claude-sonnet-4.5";
 ```
 
 You can also explicitly import and use the gateway provider in two other equivalent ways:
@@ -195,7 +195,7 @@ async function main() {
     messages.push({ role: 'user', content: userInput });
 
     const result = streamText({
-      model: 'anthropic/claude-sonnet-4.5',
+      model: "anthropic/claude-sonnet-4.5",
       messages,
       tools: {
         weather: tool({
@@ -266,7 +266,7 @@ async function main() {
     messages.push({ role: 'user', content: userInput });
 
     const result = streamText({
-      model: 'anthropic/claude-sonnet-4.5',
+      model: "anthropic/claude-sonnet-4.5",
       messages,
       tools: {
         weather: tool({
@@ -336,7 +336,7 @@ async function main() {
     messages.push({ role: 'user', content: userInput });
 
     const result = streamText({
-      model: 'anthropic/claude-sonnet-4.5',
+      model: "anthropic/claude-sonnet-4.5",
       messages,
       tools: {
         weather: tool({
@@ -411,7 +411,7 @@ async function main() {
     messages.push({ role: 'user', content: userInput });
 
     const result = streamText({
-      model: 'anthropic/claude-sonnet-4.5',
+      model: "anthropic/claude-sonnet-4.5",
       messages,
       tools: {
         weather: tool({

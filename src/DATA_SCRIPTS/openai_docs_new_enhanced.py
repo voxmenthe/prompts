@@ -48,7 +48,7 @@ import concurrent.futures
 REPO_ROOT = Path(__file__).resolve().parent
 DEFAULT_OUTPUT_DIR = REPO_ROOT / "SPECIALIZED_CONTEXT_AND_DOCS" / "OPENAI_DOCS_MIRROR"
 
-SITEMAP_URL = "https://platform.openai.com/sitemap.xml"
+SITEMAP_URL = "https://platform.openai.com/docs/sitemap.xml"
 
 LLMS_BASE_URL = "https://cdn.openai.com/API/docs/txt/"
 LLMS_INDEX_URL = urljoin(LLMS_BASE_URL, "llms.txt")

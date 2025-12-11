@@ -1,100 +1,706 @@
-Connectors and MCP servers
-Beta
--------------------------------
+# Connectors and MCP servers Beta
 
 Use connectors and remote MCP servers to give models new capabilities.
 
-In addition to tools you make available to the model with [function calling](https://platform.openai.com/docs/guides/function-calling), you can give models new capabilities using **connectors** and **remote MCP servers**. These tools give the model the ability to connect to and control external services when needed to respond to a user's prompt. These tool calls can either be allowed automatically, or restricted with explicit approval required by you as the developer.
+In addition to tools you make available to the model with [function calling](/docs/guides/function-calling), you can give models new capabilities using **connectors** and **remote MCP servers**. These tools give the model the ability to connect to and control external services when needed to respond to a user's prompt. These tool calls can either be allowed automatically, or restricted with explicit approval required by you as the developer.
 
-*   **Connectors** are OpenAI-maintained MCP wrappers for popular services like Google Workspace or Dropbox, like the connectors available in [ChatGPT](https://chatgpt.com/).
-*   **Remote MCP servers** can be any server on the public Internet that implements a remote [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) server.
+* **Connectors** are OpenAI-maintained MCP wrappers for popular services like Google Workspace or Dropbox, like the connectors available in [ChatGPT](https://chatgpt.com).
+* **Remote MCP servers** can be any server on the public Internet that implements a remote [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) server.
 
 This guide will show how to use both remote MCP servers and connectors to give the model access to new capabilities.
 
-Quickstart
-----------
+## Quickstart
 
-Check out the examples below to see how remote MCP servers and connectors work through the [Responses API](https://platform.openai.com/docs/api-reference/responses/create). Both connectors and remote MCP servers can be used with the `mcp` built-in tool type.
+Check out the examples below to see how remote MCP servers and connectors work through the [Responses API](/docs/api-reference/responses/create). Both connectors and remote MCP servers can be used with the `mcp` built-in tool type.
+
+
 
 Using remote MCP servers
 
 Remote MCP servers require a `server_url`. Depending on the server, you may also need an OAuth `authorization` parameter containing an access token.
 
+Using a remote MCP server in the Responses API
+
+python
+
 ```python
-from openai import OpenAI
+curl https://api.openai.com/v1/responses \
+
+-H
+"Content-Type: application/json"
+ \
+
+-H
+"Authorization: Bearer
+$OPENAI_API_KEY
+"
+ \
+
+-d
+'{
+
+  "model": "gpt-5",
+
+    "tools": [
+
+      {
+
+        "type": "mcp",
+
+        "server_label": "dmcp",
+
+        "server_description": "A Dungeons and Dragons MCP server to assist with dice rolling.",
+
+        "server_url": "https://dmcp-server.deno.dev/sse",
+
+        "require_approval": "never"
+
+      }
+
+    ],
+
+    "input": "Roll 2d4+1"
+
+  }'
+```
+
+```python
+import
+ OpenAI
+from
+
+"openai"
+;
+
+const
+ client =
+new
+ OpenAI();
+
+
+
+const
+ resp =
+await
+ client.responses.create({
+
+
+model
+:
+"gpt-5"
+,
+
+
+tools
+: [
+
+    {
+
+
+type
+:
+"mcp"
+,
+
+
+server_label
+:
+"dmcp"
+,
+
+
+server_description
+:
+"A Dungeons and Dragons MCP server to assist with dice rolling."
+,
+
+
+server_url
+:
+"https://dmcp-server.deno.dev/sse"
+,
+
+
+require_approval
+:
+"never"
+,
+
+    },
+
+  ],
+
+
+input
+:
+"Roll 2d4+1"
+,
+
+});
+
+
+
+console
+.log(resp.output_text);
+```
+
+```python
+from
+ openai
+import
+ OpenAI
+
+
 
 client = OpenAI()
 
+
+
 resp = client.responses.create(
-    model="gpt-5",
+
+    model=
+"gpt-5"
+,
+
     tools=[
+
         {
-            "type": "mcp",
-            "server_label": "dmcp",
-            "server_description": "A Dungeons and Dragons MCP server to assist with dice rolling.",
-            "server_url": "https://dmcp-server.deno.dev/sse",
-            "require_approval": "never",
+
+
+"type"
+:
+"mcp"
+,
+
+
+"server_label"
+:
+"dmcp"
+,
+
+
+"server_description"
+:
+"A Dungeons and Dragons MCP server to assist with dice rolling."
+,
+
+
+"server_url"
+:
+"https://dmcp-server.deno.dev/sse"
+,
+
+
+"require_approval"
+:
+"never"
+,
+
         },
+
     ],
-    input="Roll 2d4+1",
+
+
+input
+=
+"Roll 2d4+1"
+,
+
 )
 
-print(resp.output_text)
+
+
+print
+(resp.output_text)
+```
+
+```python
+using
+ OpenAI.Responses;
+
+
+
+string
+ key = Environment.GetEnvironmentVariable(
+"OPENAI_API_KEY"
+)!;
+
+OpenAIResponseClient client =
+new
+(model:
+"gpt-5"
+, apiKey: key);
+
+
+
+ResponseCreationOptions options =
+new
+();
+
+options.Tools.Add(ResponseTool.CreateMcpTool(
+
+    serverLabel:
+"dmcp"
+,
+
+    serverUri:
+new
+ Uri(
+"https://dmcp-server.deno.dev/sse"
+),
+
+    toolCallApprovalPolicy:
+new
+ McpToolCallApprovalPolicy(GlobalMcpToolCallApprovalPolicy.NeverRequireApproval)
+
+));
+
+
+
+OpenAIResponse response = (OpenAIResponse)client.CreateResponse([
+
+    ResponseItem.CreateUserMessageItem([
+
+        ResponseContentPart.CreateInputTextPart(
+"Roll 2d4+1"
+)
+
+    ])
+
+], options);
+
+
+
+Console.WriteLine(response.GetOutputText());
 ```
 
 It is very important that developers trust any remote MCP server they use with the Responses API. A malicious server can exfiltrate sensitive data from anything that enters the model's context. Carefully review the **Risks and Safety** section below before using this tool.
 
 Using connectors
 
+Connectors require a `connector_id` parameter, and an OAuth access token provided by your application in the `authorization` parameter.
+
+Using connectors in the Responses API
+
+python
+
+```python
+curl https://api.openai.com/v1/responses \
+
+-H
+"Content-Type: application/json"
+ \
+
+-H
+"Authorization: Bearer
+$OPENAI_API_KEY
+"
+ \
+
+-d
+'{
+
+    "model": "gpt-5",
+
+    "tools": [
+
+      {
+
+        "type": "mcp",
+
+        "server_label": "Dropbox",
+
+        "connector_id": "connector_dropbox",
+
+        "authorization": "<oauth access token>",
+
+        "require_approval": "never"
+
+      }
+
+    ],
+
+    "input": "Summarize the Q2 earnings report."
+
+  }'
+```
+
+```python
+import
+ OpenAI
+from
+
+"openai"
+;
+
+const
+ client =
+new
+ OpenAI();
+
+
+
+const
+ resp =
+await
+ client.responses.create({
+
+
+model
+:
+"gpt-5"
+,
+
+
+tools
+: [
+
+    {
+
+
+type
+:
+"mcp"
+,
+
+
+server_label
+:
+"Dropbox"
+,
+
+
+connector_id
+:
+"connector_dropbox"
+,
+
+
+authorization
+:
+"<oauth access token>"
+,
+
+
+require_approval
+:
+"never"
+,
+
+    },
+
+  ],
+
+
+input
+:
+"Summarize the Q2 earnings report."
+,
+
+});
+
+
+
+console
+.log(resp.output_text);
+```
+
+```python
+from
+ openai
+import
+ OpenAI
+
+
+
+client = OpenAI()
+
+
+
+resp = client.responses.create(
+
+    model=
+"gpt-5"
+,
+
+    tools=[
+
+        {
+
+
+"type"
+:
+"mcp"
+,
+
+
+"server_label"
+:
+"Dropbox"
+,
+
+
+"connector_id"
+:
+"connector_dropbox"
+,
+
+
+"authorization"
+:
+"<oauth access token>"
+,
+
+
+"require_approval"
+:
+"never"
+,
+
+        },
+
+    ],
+
+
+input
+=
+"Summarize the Q2 earnings report."
+,
+
+)
+
+
+
+print
+(resp.output_text)
+```
+
+```python
+using
+ OpenAI.Responses;
+
+
+
+string
+ dropboxToken = Environment.GetEnvironmentVariable(
+"DROPBOX_OAUTH_ACCESS_TOKEN"
+)!;
+
+string
+ key = Environment.GetEnvironmentVariable(
+"OPENAI_API_KEY"
+)!;
+
+OpenAIResponseClient client =
+new
+(model:
+"gpt-5"
+, apiKey: key);
+
+
+
+ResponseCreationOptions options =
+new
+();
+
+options.Tools.Add(ResponseTool.CreateMcpTool(
+
+    serverLabel:
+"Dropbox"
+,
+
+    connectorId: McpToolConnectorId.Dropbox,
+
+    authorizationToken: dropboxToken,
+
+    toolCallApprovalPolicy:
+new
+ McpToolCallApprovalPolicy(GlobalMcpToolCallApprovalPolicy.NeverRequireApproval)
+
+));
+
+
+
+OpenAIResponse response = (OpenAIResponse)client.CreateResponse([
+
+    ResponseItem.CreateUserMessageItem([
+
+        ResponseContentPart.CreateInputTextPart(
+"Summarize the Q2 earnings report."
+)
+
+    ])
+
+], options);
+
+
+
+Console.WriteLine(response.GetOutputText());
+```
+
 The API will return new items in the `output` array of the model response. If the model decides to use a Connector or MCP server, it will first make a request to list available tools from the server, which will create a `mcp_list_tools` output item. From the simple remote MCP server example above, it contains only one tool definition:
 
 ```
 {
-    "id": "mcpl_68a6102a4968819c8177b05584dd627b0679e572a900e618",
-    "type": "mcp_list_tools",
-    "server_label": "dmcp",
-    "tools": [
+
+
+"id"
+:
+"mcpl_68a6102a4968819c8177b05584dd627b0679e572a900e618"
+,
+
+
+"type"
+:
+"mcp_list_tools"
+,
+
+
+"server_label"
+:
+"dmcp"
+,
+
+
+"tools"
+: [
+
         {
-            "annotations": null,
-            "description": "Given a string of text describing a dice roll...",
-            "input_schema": {
-                "$schema": "https://json-schema.org/draft/2020-12/schema",
-                "type": "object",
-                "properties": {
-                    "diceRollExpression": {
-                        "type": "string"
+
+
+"annotations"
+:
+null
+,
+
+
+"description"
+:
+"Given a string of text describing a dice roll..."
+,
+
+
+"input_schema"
+: {
+
+
+"$schema"
+:
+"https://json-schema.org/draft/2020-12/schema"
+,
+
+
+"type"
+:
+"object"
+,
+
+
+"properties"
+: {
+
+
+"diceRollExpression"
+: {
+
+
+"type"
+:
+"string"
+
+
                     }
+
                 },
-                "required": ["diceRollExpression"],
-                "additionalProperties": false
+
+
+"required"
+: [
+"diceRollExpression"
+],
+
+
+"additionalProperties"
+:
+false
+
+
             },
-            "name": "roll"
+
+
+"name"
+:
+"roll"
+
+
         }
+
     ]
+
 }
 ```
 
 If the model decides to call one of the available tools from the MCP server, you will also find a `mcp_call` output which will show what the model sent to the MCP tool, and what the MCP tool sent back as output.
 
-```json
+```
 {
-    "id": "mcp_68a6102d8948819c9b1490d36d5ffa4a0679e572a900e618",
-    "type": "mcp_call",
-    "approval_request_id": null,
-    "arguments": "{\"diceRollExpression\":\"2d4 + 1\"}",
-    "error": null,
-    "name": "roll",
-    "output": "4",
-    "server_label": "dmcp"
+
+
+"id"
+:
+"mcp_68a6102d8948819c9b1490d36d5ffa4a0679e572a900e618"
+,
+
+
+"type"
+:
+"mcp_call"
+,
+
+
+"approval_request_id"
+:
+null
+,
+
+
+"arguments"
+:
+"{\"diceRollExpression\":\"2d4 + 1\"}"
+,
+
+
+"error"
+:
+null
+,
+
+
+"name"
+:
+"roll"
+,
+
+
+"output"
+:
+"4"
+,
+
+
+"server_label"
+:
+"dmcp"
+
+
 }
 ```
 
 Read on in the guide below to learn more about how the MCP tool works, how to filter available tools, and how to handle tool call approval requests.
 
-How it works
-------------
+## How it works
 
-The MCP tool (for both remote MCP servers and connectors) is available in the [Responses API](https://platform.openai.com/docs/api-reference/responses/create) in most recent models. Check MCP tool compatibility for your model [here](https://platform.openai.com/docs/models). When you're using the MCP tool, you only pay for [tokens](https://platform.openai.com/docs/pricing) used when importing tool definitions or making tool calls. There are no additional fees involved per tool call.
+The MCP tool (for both remote MCP servers and connectors) is available in the [Responses API](/docs/api-reference/responses/create) in most recent models. Check MCP tool compatibility for your model [here](/docs/models). When you're using the MCP tool, you only pay for [tokens](/docs/pricing) used when importing tool definitions or making tool calls. There are no additional fees involved per tool call.
 
 Below, we'll step through the process the API takes when calling an MCP tool.
 
@@ -106,71 +712,436 @@ If successful in retrieving the list of tools, a new `mcp_list_tools` output ite
 
 ```
 {
-    "id": "mcpl_68a6102a4968819c8177b05584dd627b0679e572a900e618",
-    "type": "mcp_list_tools",
-    "server_label": "dmcp",
-    "tools": [
+
+
+"id"
+:
+"mcpl_68a6102a4968819c8177b05584dd627b0679e572a900e618"
+,
+
+
+"type"
+:
+"mcp_list_tools"
+,
+
+
+"server_label"
+:
+"dmcp"
+,
+
+
+"tools"
+: [
+
         {
-            "annotations": null,
-            "description": "Given a string of text describing a dice roll...",
-            "input_schema": {
-                "$schema": "https://json-schema.org/draft/2020-12/schema",
-                "type": "object",
-                "properties": {
-                    "diceRollExpression": {
-                        "type": "string"
+
+
+"annotations"
+:
+null
+,
+
+
+"description"
+:
+"Given a string of text describing a dice roll..."
+,
+
+
+"input_schema"
+: {
+
+
+"$schema"
+:
+"https://json-schema.org/draft/2020-12/schema"
+,
+
+
+"type"
+:
+"object"
+,
+
+
+"properties"
+: {
+
+
+"diceRollExpression"
+: {
+
+
+"type"
+:
+"string"
+
+
                     }
+
                 },
-                "required": ["diceRollExpression"],
-                "additionalProperties": false
+
+
+"required"
+: [
+"diceRollExpression"
+],
+
+
+"additionalProperties"
+:
+false
+
+
             },
-            "name": "roll"
+
+
+"name"
+:
+"roll"
+
+
         }
+
     ]
+
 }
 ```
 
-As long as the `mcp_list_tools` item is present in the context of an API request, the API will not fetch a list of tools from the MCP server again at each turn in a [conversation](https://platform.openai.com/docs/guides/conversation-state). We recommend you keep this item in the model's context as part of every conversation or workflow execution to optimize for latency.
+As long as the `mcp_list_tools` item is present in the context of an API request, the
+API will not fetch a list of tools from the MCP server again at each turn in a
+[conversation](/docs/guides/conversation-state). We recommend you keep this item in
+the model's context as part of every conversation or workflow execution to optimize
+for latency.
 
 #### Filtering tools
 
 Some MCP servers can have dozens of tools, and exposing many tools to the model can result in high cost and latency. If you're only interested in a subset of tools an MCP server exposes, you can use the `allowed_tools` parameter to only import those tools.
 
+Constrain allowed tools
+
+python
+
 ```python
-from openai import OpenAI
+curl https://api.openai.com/v1/responses \
+
+-H
+"Content-Type: application/json"
+ \
+
+-H
+"Authorization: Bearer
+$OPENAI_API_KEY
+"
+ \
+
+-d
+'{
+
+    "model": "gpt-5",
+
+    "tools": [
+
+      {
+
+        "type": "mcp",
+
+        "server_label": "dmcp",
+
+        "server_description": "A Dungeons and Dragons MCP server to assist with dice rolling.",
+
+        "server_url": "https://dmcp-server.deno.dev/sse",
+
+        "require_approval": "never",
+
+        "allowed_tools": ["roll"]
+
+      }
+
+    ],
+
+    "input": "Roll 2d4+1"
+
+  }'
+```
+
+```python
+import
+ OpenAI
+from
+
+"openai"
+;
+
+const
+ client =
+new
+ OpenAI();
+
+
+
+const
+ resp =
+await
+ client.responses.create({
+
+
+model
+:
+"gpt-5"
+,
+
+
+tools
+: [{
+
+
+type
+:
+"mcp"
+,
+
+
+server_label
+:
+"dmcp"
+,
+
+
+server_description
+:
+"A Dungeons and Dragons MCP server to assist with dice rolling."
+,
+
+
+server_url
+:
+"https://dmcp-server.deno.dev/sse"
+,
+
+
+require_approval
+:
+"never"
+,
+
+
+allowed_tools
+: [
+"roll"
+],
+
+  }],
+
+
+input
+:
+"Roll 2d4+1"
+,
+
+});
+
+
+
+console
+.log(resp.output_text);
+```
+
+```python
+from
+ openai
+import
+ OpenAI
+
+
 
 client = OpenAI()
 
+
+
 resp = client.responses.create(
-    model="gpt-5",
+
+    model=
+"gpt-5"
+,
+
     tools=[{
-        "type": "mcp",
-        "server_label": "dmcp",
-        "server_description": "A Dungeons and Dragons MCP server to assist with dice rolling.",
-        "server_url": "https://dmcp-server.deno.dev/sse",
-        "require_approval": "never",
-        "allowed_tools": ["roll"],
+
+
+"type"
+:
+"mcp"
+,
+
+
+"server_label"
+:
+"dmcp"
+,
+
+
+"server_description"
+:
+"A Dungeons and Dragons MCP server to assist with dice rolling."
+,
+
+
+"server_url"
+:
+"https://dmcp-server.deno.dev/sse"
+,
+
+
+"require_approval"
+:
+"never"
+,
+
+
+"allowed_tools"
+: [
+"roll"
+],
+
     }],
-    input="Roll 2d4+1",
+
+
+input
+=
+"Roll 2d4+1"
+,
+
 )
 
-print(resp.output_text)
+
+
+print
+(resp.output_text)
+```
+
+```python
+using
+ OpenAI.Responses;
+
+
+
+string
+ key = Environment.GetEnvironmentVariable(
+"OPENAI_API_KEY"
+)!;
+
+OpenAIResponseClient client =
+new
+(model:
+"gpt-5"
+, apiKey: key);
+
+
+
+ResponseCreationOptions options =
+new
+();
+
+options.Tools.Add(ResponseTool.CreateMcpTool(
+
+    serverLabel:
+"dmcp"
+,
+
+    serverUri:
+new
+ Uri(
+"https://dmcp-server.deno.dev/sse"
+),
+
+    allowedTools:
+new
+ McpToolFilter() { ToolNames = {
+"roll"
+ } },
+
+    toolCallApprovalPolicy:
+new
+ McpToolCallApprovalPolicy(GlobalMcpToolCallApprovalPolicy.NeverRequireApproval)
+
+));
+
+
+
+OpenAIResponse response = (OpenAIResponse)client.CreateResponse([
+
+    ResponseItem.CreateUserMessageItem([
+
+        ResponseContentPart.CreateInputTextPart(
+"Roll 2d4+1"
+)
+
+    ])
+
+], options);
+
+
+
+Console.WriteLine(response.GetOutputText());
 ```
 
 ### Step 2: Calling tools
 
 Once the model has access to these tool definitions, it may choose to call them depending on what's in the model's context. When the model decides to call an MCP tool, the API will make an request to the remote MCP server to call the tool and put its output into the model's context. This creates an `mcp_call` item which looks like this:
 
-```json
+```
 {
-    "id": "mcp_68a6102d8948819c9b1490d36d5ffa4a0679e572a900e618",
-    "type": "mcp_call",
-    "approval_request_id": null,
-    "arguments": "{\"diceRollExpression\":\"2d4 + 1\"}",
-    "error": null,
-    "name": "roll",
-    "output": "4",
-    "server_label": "dmcp"
+
+
+"id"
+:
+"mcp_68a6102d8948819c9b1490d36d5ffa4a0679e572a900e618"
+,
+
+
+"type"
+:
+"mcp_call"
+,
+
+
+"approval_request_id"
+:
+null
+,
+
+
+"arguments"
+:
+"{\"diceRollExpression\":\"2d4 + 1\"}"
+,
+
+
+"error"
+:
+null
+,
+
+
+"name"
+:
+"roll"
+,
+
+
+"output"
+:
+"4"
+,
+
+
+"server_label"
+:
+"dmcp"
+
+
 }
 ```
 
@@ -182,99 +1153,911 @@ Failed tool calls will populate the error field of this item with MCP protocol e
 
 By default, OpenAI will request your approval before any data is shared with a connector or remote MCP server. Approvals help you maintain control and visibility over what data is being sent to an MCP server. We highly recommend that you carefully review (and optionally log) all data being shared with a remote MCP server. A request for an approval to make an MCP tool call creates a `mcp_approval_request` item in the Response's output that looks like this:
 
-```json
+```
 {
-    "id": "mcpr_68a619e1d82c8190b50c1ccba7ad18ef0d2d23a86136d339",
-    "type": "mcp_approval_request",
-    "arguments": "{\"diceRollExpression\":\"2d4 + 1\"}",
-    "name": "roll",
-    "server_label": "dmcp"
+
+
+"id"
+:
+"mcpr_68a619e1d82c8190b50c1ccba7ad18ef0d2d23a86136d339"
+,
+
+
+"type"
+:
+"mcp_approval_request"
+,
+
+
+"arguments"
+:
+"{\"diceRollExpression\":\"2d4 + 1\"}"
+,
+
+
+"name"
+:
+"roll"
+,
+
+
+"server_label"
+:
+"dmcp"
+
+
 }
 ```
 
 You can then respond to this by creating a new Response object and appending an `mcp_approval_response` item to it.
 
+Approving the use of tools in an API request
+
+python
+
 ```python
-from openai import OpenAI
+curl https://api.openai.com/v1/responses \
+
+-H
+"Content-Type: application/json"
+ \
+
+-H
+"Authorization: Bearer
+$OPENAI_API_KEY
+"
+ \
+
+-d
+'{
+
+    "model": "gpt-5",
+
+    "tools": [
+
+      {
+
+        "type": "mcp",
+
+        "server_label": "dmcp",
+
+        "server_description": "A Dungeons and Dragons MCP server to assist with dice rolling.",
+
+        "server_url": "https://dmcp-server.deno.dev/sse",
+
+        "require_approval": "always",
+
+      }
+
+    ],
+
+    "previous_response_id": "resp_682d498bdefc81918b4a6aa477bfafd904ad1e533afccbfa",
+
+    "input": [{
+
+      "type": "mcp_approval_response",
+
+      "approve": true,
+
+      "approval_request_id": "mcpr_682d498e3bd4819196a0ce1664f8e77b04ad1e533afccbfa"
+
+    }]
+
+  }'
+```
+
+```python
+import
+ OpenAI
+from
+
+"openai"
+;
+
+const
+ client =
+new
+ OpenAI();
+
+
+
+const
+ resp =
+await
+ client.responses.create({
+
+
+model
+:
+"gpt-5"
+,
+
+
+tools
+: [{
+
+
+type
+:
+"mcp"
+,
+
+
+server_label
+:
+"dmcp"
+,
+
+
+server_description
+:
+"A Dungeons and Dragons MCP server to assist with dice rolling."
+,
+
+
+server_url
+:
+"https://dmcp-server.deno.dev/sse"
+,
+
+
+require_approval
+:
+"always"
+,
+
+  }],
+
+
+previous_response_id
+:
+"resp_682d498bdefc81918b4a6aa477bfafd904ad1e533afccbfa"
+,
+
+
+input
+: [{
+
+
+type
+:
+"mcp_approval_response"
+,
+
+
+approve
+:
+true
+,
+
+
+approval_request_id
+:
+"mcpr_682d498e3bd4819196a0ce1664f8e77b04ad1e533afccbfa"
+
+
+  }],
+
+});
+
+
+
+console
+.log(resp.output_text);
+```
+
+```python
+from
+ openai
+import
+ OpenAI
+
+
 
 client = OpenAI()
 
+
+
 resp = client.responses.create(
-    model="gpt-5",
+
+    model=
+"gpt-5"
+,
+
     tools=[{
-        "type": "mcp",
-        "server_label": "dmcp",
-        "server_description": "A Dungeons and Dragons MCP server to assist with dice rolling.",
-        "server_url": "https://dmcp-server.deno.dev/sse",
-        "require_approval": "always",
+
+
+"type"
+:
+"mcp"
+,
+
+
+"server_label"
+:
+"dmcp"
+,
+
+
+"server_description"
+:
+"A Dungeons and Dragons MCP server to assist with dice rolling."
+,
+
+
+"server_url"
+:
+"https://dmcp-server.deno.dev/sse"
+,
+
+
+"require_approval"
+:
+"always"
+,
+
     }],
-    previous_response_id="resp_682d498bdefc81918b4a6aa477bfafd904ad1e533afccbfa",
-    input=[{
-        "type": "mcp_approval_response",
-        "approve": True,
-        "approval_request_id": "mcpr_682d498e3bd4819196a0ce1664f8e77b04ad1e533afccbfa"
+
+    previous_response_id=
+"resp_682d498bdefc81918b4a6aa477bfafd904ad1e533afccbfa"
+,
+
+
+input
+=[{
+
+
+"type"
+:
+"mcp_approval_response"
+,
+
+
+"approve"
+:
+True
+,
+
+
+"approval_request_id"
+:
+"mcpr_682d498e3bd4819196a0ce1664f8e77b04ad1e533afccbfa"
+
+
     }],
+
 )
 
-print(resp.output_text)
+
+
+print
+(resp.output_text)
 ```
 
-Here we're using the `previous_response_id` parameter to chain this new Response, with the previous Response that generated the approval request. But you can also pass back the [outputs from one response, as inputs into another](https://platform.openai.com/docs/guides/conversation-state#manually-manage-conversation-state) for maximum control over what enter's the model's context.
+```python
+using
+ OpenAI.Responses;
+
+
+
+string
+ key = Environment.GetEnvironmentVariable(
+"OPENAI_API_KEY"
+)!;
+
+OpenAIResponseClient client =
+new
+(model:
+"gpt-5"
+, apiKey: key);
+
+
+
+ResponseCreationOptions options =
+new
+();
+
+options.Tools.Add(ResponseTool.CreateMcpTool(
+
+    serverLabel:
+"dmcp"
+,
+
+    serverUri:
+new
+ Uri(
+"https://dmcp-server.deno.dev/sse"
+),
+
+    toolCallApprovalPolicy:
+new
+ McpToolCallApprovalPolicy(GlobalMcpToolCallApprovalPolicy.AlwaysRequireApproval)
+
+));
+
+
+
+// STEP 1: Create response that requests tool call approval
+
+
+OpenAIResponse response1 = (OpenAIResponse)client.CreateResponse([
+
+    ResponseItem.CreateUserMessageItem([
+
+        ResponseContentPart.CreateInputTextPart(
+"Roll 2d4+1"
+)
+
+    ])
+
+], options);
+
+
+
+McpToolCallApprovalRequestItem? approvalRequestItem = response1.OutputItems.Last()
+as
+ McpToolCallApprovalRequestItem;
+
+
+
+// STEP 2: Approve the tool call request and get final response
+
+
+options.PreviousResponseId = response1.Id;
+
+OpenAIResponse response2 = (OpenAIResponse)client.CreateResponse([
+
+    ResponseItem.CreateMcpApprovalResponseItem(approvalRequestItem!.Id, approved:
+true
+),
+
+], options);
+
+
+
+Console.WriteLine(response2.GetOutputText());
+```
+
+Here we're using the `previous_response_id` parameter to chain this new Response, with the previous Response that generated the approval request. But you can also pass back the [outputs from one response, as inputs into another](/docs/guides/conversation-state#manually-manage-conversation-state) for maximum control over what enter's the model's context.
 
 If and when you feel comfortable trusting a remote MCP server, you can choose to skip the approvals for reduced latency. To do this, you can set the `require_approval` parameter of the MCP tool to an object listing just the tools you'd like to skip approvals for like shown below, or set it to the value `'never'` to skip approvals for all tools in that remote MCP server.
 
+Never require approval for some tools
+
+python
+
 ```python
-from openai import OpenAI
+curl https://api.openai.com/v1/responses \
+
+-H
+"Content-Type: application/json"
+ \
+
+-H
+"Authorization: Bearer
+$OPENAI_API_KEY
+"
+ \
+
+-d
+'{
+
+    "model": "gpt-5",
+
+    "tools": [
+
+      {
+
+        "type": "mcp",
+
+        "server_label": "deepwiki",
+
+        "server_url": "https://mcp.deepwiki.com/mcp",
+
+        "require_approval": {
+
+          "never": {
+
+            "tool_names": ["ask_question", "read_wiki_structure"]
+
+          }
+
+        }
+
+      }
+
+    ],
+
+    "input": "What transport protocols does the 2025-03-26 version of the MCP spec (modelcontextprotocol/modelcontextprotocol) support?"
+
+  }'
+```
+
+```python
+import
+ OpenAI
+from
+
+"openai"
+;
+
+const
+ client =
+new
+ OpenAI();
+
+
+
+const
+ resp =
+await
+ client.responses.create({
+
+
+model
+:
+"gpt-5"
+,
+
+
+tools
+: [
+
+    {
+
+
+type
+:
+"mcp"
+,
+
+
+server_label
+:
+"deepwiki"
+,
+
+
+server_url
+:
+"https://mcp.deepwiki.com/mcp"
+,
+
+
+require_approval
+: {
+
+
+never
+: {
+
+
+tool_names
+: [
+"ask_question"
+,
+"read_wiki_structure"
+]
+
+        }
+
+      }
+
+    },
+
+  ],
+
+
+input
+:
+"What transport protocols does the 2025-03-26 version of the MCP spec (modelcontextprotocol/modelcontextprotocol) support?"
+,
+
+});
+
+
+
+console
+.log(resp.output_text);
+```
+
+```python
+from
+ openai
+import
+ OpenAI
+
+
 
 client = OpenAI()
 
+
+
 resp = client.responses.create(
-    model="gpt-5",
+
+    model=
+"gpt-5"
+,
+
     tools=[
+
         {
-            "type": "mcp",
-            "server_label": "deepwiki",
-            "server_url": "https://mcp.deepwiki.com/mcp",
-            "require_approval": {
-                "never": {
-                    "tool_names": ["ask_question", "read_wiki_structure"]
+
+
+"type"
+:
+"mcp"
+,
+
+
+"server_label"
+:
+"deepwiki"
+,
+
+
+"server_url"
+:
+"https://mcp.deepwiki.com/mcp"
+,
+
+
+"require_approval"
+: {
+
+
+"never"
+: {
+
+
+"tool_names"
+: [
+"ask_question"
+,
+"read_wiki_structure"
+]
+
                 }
+
             }
+
         },
+
     ],
-    input="What transport protocols does the 2025-03-26 version of the MCP spec (modelcontextprotocol/modelcontextprotocol) support?",
+
+
+input
+=
+"What transport protocols does the 2025-03-26 version of the MCP spec (modelcontextprotocol/modelcontextprotocol) support?"
+,
+
 )
 
-print(resp.output_text)
+
+
+print
+(resp.output_text)
 ```
 
-Authentication
---------------
+```python
+using
+ OpenAI.Responses;
+
+
+
+string
+ key = Environment.GetEnvironmentVariable(
+"OPENAI_API_KEY"
+)!;
+
+OpenAIResponseClient client =
+new
+(model:
+"gpt-5"
+, apiKey: key);
+
+
+
+ResponseCreationOptions options =
+new
+();
+
+options.Tools.Add(ResponseTool.CreateMcpTool(
+
+    serverLabel:
+"deepwiki"
+,
+
+    serverUri:
+new
+ Uri(
+"https://mcp.deepwiki.com/mcp"
+),
+
+    allowedTools:
+new
+ McpToolFilter() { ToolNames = {
+"ask_question"
+,
+"read_wiki_structure"
+ } },
+
+    toolCallApprovalPolicy:
+new
+ McpToolCallApprovalPolicy(GlobalMcpToolCallApprovalPolicy.NeverRequireApproval)
+
+));
+
+
+
+OpenAIResponse response = (OpenAIResponse)client.CreateResponse([
+
+    ResponseItem.CreateUserMessageItem([
+
+        ResponseContentPart.CreateInputTextPart(
+"What transport protocols does the 2025-03-26 version of the MCP spec (modelcontextprotocol/modelcontextprotocol) support?"
+)
+
+    ])
+
+], options);
+
+
+
+Console.WriteLine(response.GetOutputText());
+```
+
+## Authentication
 
 Unlike the [example MCP server we used above](https://dash.deno.com/playground/dmcp-server), most other MCP servers require authentication. The most common scheme is an OAuth access token. Provide this token using the `authorization` field of the MCP tool:
 
+Use Stripe MCP tool
+
+python
+
 ```python
-from openai import OpenAI
+curl https://api.openai.com/v1/responses \
+
+-H
+"Content-Type: application/json"
+ \
+
+-H
+"Authorization: Bearer
+$OPENAI_API_KEY
+"
+ \
+
+-d
+'{
+
+    "model": "gpt-5",
+
+    "input": "Create a payment link for $20",
+
+    "tools": [
+
+      {
+
+        "type": "mcp",
+
+        "server_label": "stripe",
+
+        "server_url": "https://mcp.stripe.com",
+
+        "authorization": "$STRIPE_OAUTH_ACCESS_TOKEN"
+
+      }
+
+    ]
+
+  }'
+```
+
+```python
+import
+ OpenAI
+from
+
+"openai"
+;
+
+const
+ client =
+new
+ OpenAI();
+
+
+
+const
+ resp =
+await
+ client.responses.create({
+
+
+model
+:
+"gpt-5"
+,
+
+
+input
+:
+"Create a payment link for $20"
+,
+
+
+tools
+: [
+
+    {
+
+
+type
+:
+"mcp"
+,
+
+
+server_label
+:
+"stripe"
+,
+
+
+server_url
+:
+"https://mcp.stripe.com"
+,
+
+
+authorization
+:
+"$STRIPE_OAUTH_ACCESS_TOKEN"
+
+
+    }
+
+  ]
+
+});
+
+
+
+console
+.log(resp.output_text);
+```
+
+```python
+from
+ openai
+import
+ OpenAI
+
+
 
 client = OpenAI()
 
+
+
 resp = client.responses.create(
-    model="gpt-5",
-    input="Create a payment link for $20",
+
+    model=
+"gpt-5"
+,
+
+
+input
+=
+"Create a payment link for $20"
+,
+
     tools=[
+
         {
-            "type": "mcp",
-            "server_label": "stripe",
-            "server_url": "https://mcp.stripe.com",
-            "authorization": "$STRIPE_OAUTH_ACCESS_TOKEN"
+
+
+"type"
+:
+"mcp"
+,
+
+
+"server_label"
+:
+"stripe"
+,
+
+
+"server_url"
+:
+"https://mcp.stripe.com"
+,
+
+
+"authorization"
+:
+"$STRIPE_OAUTH_ACCESS_TOKEN"
+
+
         }
+
     ]
+
 )
 
-print(resp.output_text)
+
+
+print
+(resp.output_text)
+```
+
+```python
+using
+ OpenAI.Responses;
+
+
+
+string
+ authToken = Environment.GetEnvironmentVariable(
+"STRIPE_OAUTH_ACCESS_TOKEN"
+)!;
+
+string
+ key = Environment.GetEnvironmentVariable(
+"OPENAI_API_KEY"
+)!;
+
+OpenAIResponseClient client =
+new
+(model:
+"gpt-5"
+, apiKey: key);
+
+
+
+ResponseCreationOptions options =
+new
+();
+
+options.Tools.Add(ResponseTool.CreateMcpTool(
+
+    serverLabel:
+"stripe"
+,
+
+    serverUri:
+new
+ Uri(
+"https://mcp.stripe.com"
+),
+
+    authorizationToken: authToken
+
+));
+
+
+
+OpenAIResponse response = (OpenAIResponse)client.CreateResponse([
+
+    ResponseItem.CreateUserMessageItem([
+
+        ResponseContentPart.CreateInputTextPart(
+"Create a payment link for $20"
+)
+
+    ])
+
+], options);
+
+
+
+Console.WriteLine(response.GetOutputText());
 ```
 
 To prevent the leakage of sensitive tokens, the Responses API does not store the value you provide in the `authorization` field. This value will also not be visible in the Response object created. Because of this, you must send the `authorization` value in every Responses API creation request you make.
+
+## Connectors
 
 The Responses API has built-in support for a limited set of connectors to third-party services. These connectors let you pull in context from popular applications, like Dropbox and Gmail, to allow the model to interact with popular services.
 
@@ -282,16 +2065,18 @@ Connectors can be used in the same way as remote MCP servers. Both let an OpenAI
 
 ### Available connectors
 
-*   Dropbox: `connector_dropbox`
-*   Gmail: `connector_gmail`
-*   Google Calendar: `connector_googlecalendar`
-*   Google Drive: `connector_googledrive`
-*   Microsoft Teams: `connector_microsoftteams`
-*   Outlook Calendar: `connector_outlookcalendar`
-*   Outlook Email: `connector_outlookemail`
-*   SharePoint: `connector_sharepoint`
+* Dropbox: `connector_dropbox`
+* Gmail: `connector_gmail`
+* Google Calendar: `connector_googlecalendar`
+* Google Drive: `connector_googledrive`
+* Microsoft Teams: `connector_microsoftteams`
+* Outlook Calendar: `connector_outlookcalendar`
+* Outlook Email: `connector_outlookemail`
+* SharePoint: `connector_sharepoint`
 
 We prioritized services that don't have official remote MCP servers. GitHub, for instance, has an official MCP server you can connect to by passing `https://api.githubcopilot.com/mcp/` to the `server_url` field in the MCP tool.
+
+### Authorizing a connector
 
 In the `authorization` field, pass in an OAuth access token. OAuth client registration and authorization must be handled separately by your application.
 
@@ -299,46 +2084,325 @@ For testing purposes, you can use Google's [OAuth 2.0 Playground](https://develo
 
 To use the playground to test the connectors API functionality, start by entering:
 
-`https://www.googleapis.com/auth/calendar.events`
+```go
+https://www.googleapis.com/auth/calendar.events
+```
 
 This authorization scope will enable the API to read Google Calendar events. In the UI under "Step 1: Select and authorize APIs".
 
 After authorizing the application with your Google account, you will come to "Step 2: Exchange authorization code for tokens". This will generate an access token you can use in an API request using the Google Calendar connector:
 
-```go
-from openai import OpenAI
+Use the Google Calendar connector
+
+python
+
+```python
+curl https://api.openai.com/v1/responses \
+
+  -H
+"Content-Type: application/json"
+ \
+
+  -H
+"Authorization: Bearer
+$OPENAI_API_KEY
+"
+ \
+
+  -d
+'{
+
+    "model": "gpt-5",
+
+    "tools": [
+
+      {
+
+        "type": "mcp",
+
+        "server_label": "google_calendar",
+
+        "connector_id": "connector_googlecalendar",
+
+        "authorization": "ya29.A0AS3H6...",
+
+        "require_approval": "never"
+
+      }
+
+    ],
+
+    "input": "What is on my Google Calendar for today?"
+
+  }'
+```
+
+```python
+import
+ OpenAI
+from
+
+"openai"
+;
+
+const
+ client =
+new
+ OpenAI();
+
+
+
+const
+ resp =
+await
+ client.responses.create({
+
+
+model
+:
+"gpt-5"
+,
+
+
+tools
+: [
+
+    {
+
+
+type
+:
+"mcp"
+,
+
+
+server_label
+:
+"google_calendar"
+,
+
+
+connector_id
+:
+"connector_googlecalendar"
+,
+
+
+authorization
+:
+"ya29.A0AS3H6..."
+,
+
+
+require_approval
+:
+"never"
+,
+
+    },
+
+  ],
+
+
+input
+:
+"What's on my Google Calendar for today?"
+,
+
+});
+
+
+
+console
+.log(resp.output_text);
+```
+
+```python
+from
+ openai
+import
+ OpenAI
+
+
 
 client = OpenAI()
 
+
+
 resp = client.responses.create(
-    model="gpt-5",
+
+    model=
+"gpt-5"
+,
+
     tools=[
+
         {
-            "type": "mcp",
-            "server_label": "google_calendar",
-            "connector_id": "connector_googlecalendar",
-            "authorization": "ya29.A0AS3H6...",
-            "require_approval": "never",
+
+
+"type"
+:
+"mcp"
+,
+
+
+"server_label"
+:
+"google_calendar"
+,
+
+
+"connector_id"
+:
+"connector_googlecalendar"
+,
+
+
+"authorization"
+:
+"ya29.A0AS3H6..."
+,
+
+
+"require_approval"
+:
+"never"
+,
+
         },
+
     ],
-    input="What's on my Google Calendar for today?",
+
+
+input
+=
+"What's on my Google Calendar for today?"
+,
+
 )
 
-print(resp.output_text)
+
+
+print
+(resp.output_text)
+```
+
+```python
+using
+ OpenAI.Responses;
+
+
+
+string
+ authToken = Environment.GetEnvironmentVariable(
+"GOOGLE_CALENDAR_OAUTH_ACCESS_TOKEN"
+)!;
+
+string
+ key = Environment.GetEnvironmentVariable(
+"OPENAI_API_KEY"
+)!;
+
+OpenAIResponseClient client =
+new
+(model:
+"gpt-5"
+, apiKey: key);
+
+
+
+ResponseCreationOptions options =
+new
+();
+
+options.Tools.Add(ResponseTool.CreateMcpTool(
+
+    serverLabel:
+"google_calendar"
+,
+
+    connectorId: McpToolConnectorId.GoogleCalendar,
+
+    authorizationToken: authToken,
+
+    toolCallApprovalPolicy:
+new
+ McpToolCallApprovalPolicy(GlobalMcpToolCallApprovalPolicy.NeverRequireApproval)
+
+));
+
+
+
+OpenAIResponse response = (OpenAIResponse)client.CreateResponse([
+
+    ResponseItem.CreateUserMessageItem([
+
+        ResponseContentPart.CreateInputTextPart(
+"What's on my Google Calendar for today?"
+)
+
+    ])
+
+], options);
+
+
+
+Console.WriteLine(response.GetOutputText());
 ```
 
 An MCP tool call from a Connector will look the same as an MCP tool call from a remote MCP server, using the `mcp_call` output item type. In this case, both the arguments to and the response from the Connector are JSON strings:
 
-```go
+```json
 {
-    "id": "mcp_68a62ae1c93c81a2b98c29340aa3ed8800e9b63986850588",
-    "type": "mcp_call",
-    "approval_request_id": null,
-    "arguments": "{\"time_min\":\"2025-08-20T00:00:00\",\"time_max\":\"2025-08-21T00:00:00\",\"timezone_str\":null,\"max_results\":50,\"query\":null,\"calendar_id\":null,\"next_page_token\":null}",
-    "error": null,
-    "name": "search_events",
-    "output": "{\"events\": [{\"id\": \"2n8ni54ani58pc3ii6soelupcs_20250820\", \"summary\": \"Home\", \"location\": null, \"start\": \"2025-08-20T00:00:00\", \"end\": \"2025-08-21T00:00:00\", \"url\": \"https://www.google.com/calendar/event?eid=Mm44bmk1NGFuaTU4cGMzaWk2c29lbHVwY3NfMjAyNTA4MjAga3doaW5uZXJ5QG9wZW5haS5jb20&ctz=America/Los_Angeles\", \"description\": \"\\n\\n\", \"transparency\": \"transparent\", \"display_url\": \"https://www.google.com/calendar/event?eid=Mm44bmk1NGFuaTU4cGMzaWk2c29lbHVwY3NfMjAyNTA4MjAga3doaW5uZXJ5QG9wZW5haS5jb20&ctz=America/Los_Angeles\", \"display_title\": \"Home\"}], \"next_page_token\": null}",
-    "server_label": "Google_Calendar"
+
+
+"id"
+:
+"mcp_68a62ae1c93c81a2b98c29340aa3ed8800e9b63986850588"
+,
+
+
+"type"
+:
+"mcp_call"
+,
+
+
+"approval_request_id"
+:
+null
+,
+
+
+"arguments"
+:
+"{\"time_min\":\"2025-08-20T00:00:00\",\"time_max\":\"2025-08-21T00:00:00\",\"timezone_str\":null,\"max_results\":50,\"query\":null,\"calendar_id\":null,\"next_page_token\":null}"
+,
+
+
+"error"
+:
+null
+,
+
+
+"name"
+:
+"search_events"
+,
+
+
+"output"
+:
+"{\"events\": [{\"id\": \"2n8ni54ani58pc3ii6soelupcs_20250820\", \"summary\": \"Home\", \"location\": null, \"start\": \"2025-08-20T00:00:00\", \"end\": \"2025-08-21T00:00:00\", \"url\": \"https://www.google.com/calendar/event?eid=Mm44bmk1NGFuaTU4cGMzaWk2c29lbHVwY3NfMjAyNTA4MjAga3doaW5uZXJ5QG9wZW5haS5jb20&ctz=America/Los_Angeles\", \"description\": \"\\n\\n\", \"transparency\": \"transparent\", \"display_url\": \"https://www.google.com/calendar/event?eid=Mm44bmk1NGFuaTU4cGMzaWk2c29lbHVwY3NfMjAyNTA4MjAga3doaW5uZXJ5QG9wZW5haS5jb20&ctz=America/Los_Angeles\", \"display_title\": \"Home\"}], \"next_page_token\": null}"
+,
+
+
+"server_label"
+:
+"Google_Calendar"
+
+
 }
 ```
 
@@ -350,12 +2414,12 @@ Dropbox
 
 | Tool | Description | Scopes |
 | --- | --- | --- |
-| `search` | Search Dropbox for files that match a query | files.metadata.read, account_info.read |
+| `search` | Search Dropbox for files that match a query | files.metadata.read, account\_info.read |
 | `fetch` | Fetch a file by path with optional raw download | files.content.read |
-| `search_files` | Search Dropbox files and return results | files.metadata.read, account_info.read |
-| `fetch_file` | Retrieve a file's text or raw content | files.content.read, account_info.read |
-| `list_recent_files` | Return the most recently modified files accessible to the user | files.metadata.read, account_info.read |
-| `get_profile` | Retrieve the Dropbox profile of the current user | account_info.read |
+| `search_files` | Search Dropbox files and return results | files.metadata.read, account\_info.read |
+| `fetch_file` | Retrieve a file's text or raw content | files.content.read, account\_info.read |
+| `list_recent_files` | Return the most recently modified files accessible to the user | files.metadata.read, account\_info.read |
+| `get_profile` | Retrieve the Dropbox profile of the current user | account\_info.read |
 
 Gmail
 
@@ -428,8 +2492,7 @@ Sharepoint
 | `fetch` | Fetch content from a Graph file download URL | Files.Read.All |
 | `get_profile` | Retrieve the current user's profile | User.Read |
 
-Risks and safety
-----------------
+## Risks and safety
 
 The MCP tool permits you to connect OpenAI models to external services. This is a powerful feature that comes with some risks.
 
@@ -471,18 +2534,10 @@ MCP servers may update tool behavior unexpectedly, potentially leading to uninte
 
 The MCP tool is compatible with Zero Data Retention and Data Residency, but it's important to note that MCP servers are third-party services, and data sent to an MCP server is subject to their data retention and data residency policies.
 
-In other words, if you're an organization with Data Residency in Europe, OpenAI will limit inference and storage of Customer Content to take place in Europe up until the point communication or data is sent to the MCP server. It is your responsibility to ensure that the MCP server also adheres to any Zero Data Retention or Data Residency requirements you may have. Learn more about Zero Data Retention and Data Residency [here](https://platform.openai.com/docs/guides/your-data).
+In other words, if you're an organization with Data Residency in Europe, OpenAI will limit inference and storage of Customer Content to take place in Europe up until the point communication or data is sent to the MCP server. It is your responsibility to ensure that the MCP server also adheres to any Zero Data Retention or Data Residency requirements you may have. Learn more about Zero Data Retention and Data Residency [here](/docs/guides/your-data).
 
-Usage notes
------------
+## Usage notes
 
 | API Availability | Rate limits | Notes |
 | --- | --- | --- |
-| [Responses](https://platform.openai.com/docs/api-reference/responses) [Chat Completions](https://platform.openai.com/docs/api-reference/chat) [Assistants](https://platform.openai.com/docs/api-reference/assistants) | **Tier 1** 200 RPM **Tier 2 and 3** 1000 RPM **Tier 4 and 5** 2000 RPM | [Pricing](https://platform.openai.com/docs/pricing#built-in-tools) [ZDR and data residency](https://platform.openai.com/docs/guides/your-data) |
-
-*   [Overview](http://platform.openai.com/docs/guides/tools-connectors-mcp?timeout=30#page-top)
-*   [How it works](http://platform.openai.com/docs/guides/tools-connectors-mcp?timeout=30#how-it-works)
-*   [Authentication](http://platform.openai.com/docs/guides/tools-connectors-mcp?timeout=30#authentication)
-*   [Connectors](http://platform.openai.com/docs/guides/tools-connectors-mcp?timeout=30#connectors)
-*   [Risks and safety](http://platform.openai.com/docs/guides/tools-connectors-mcp?timeout=30#risks-and-safety)
-*   [Usage notes](http://platform.openai.com/docs/guides/tools-connectors-mcp?timeout=30#usage-notes)
+| [Responses](/docs/api-reference/responses)  [Chat Completions](/docs/api-reference/chat)  [Assistants](/docs/api-reference/assistants) | **Tier 1**  200 RPM  **Tier 2 and 3**  1000 RPM  **Tier 4 and 5**  2000 RPM | [Pricing](/docs/pricing#built-in-tools)   [ZDR and data residency](/docs/guides/your-data) |

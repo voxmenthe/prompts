@@ -23,7 +23,7 @@ The AI SDK provides several built-in stopping conditions:
 import { ToolLoopAgent, stepCountIs } from 'ai';
 
 const agent = new ToolLoopAgent({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     // your tools
   },
@@ -43,7 +43,7 @@ Combine multiple stopping conditions. The loop stops when it meets any condition
 import { ToolLoopAgent, stepCountIs, hasToolCall } from 'ai';
 
 const agent = new ToolLoopAgent({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     // your tools
   },
@@ -75,7 +75,7 @@ const hasAnswer: StopCondition<typeof tools> = ({ steps }) => {
 };
 
 const agent = new ToolLoopAgent({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools,
   stopWhen: hasAnswer,
 });
@@ -123,7 +123,7 @@ const agent = new ToolLoopAgent({
     // Use a stronger model for complex reasoning after initial steps
     if (stepNumber > 2 && messages.length > 10) {
       return {
-        model: 'anthropic/claude-sonnet-4.5',
+        model: "anthropic/claude-sonnet-4.5",
       };
     }
     // Continue with default settings
@@ -144,7 +144,7 @@ Manage growing conversation history in long-running loops:
 import { ToolLoopAgent } from 'ai';
 
 const agent = new ToolLoopAgent({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     // your tools
   },
@@ -175,7 +175,7 @@ Control which tools are available at each step:
 import { ToolLoopAgent } from 'ai';
 
 const agent = new ToolLoopAgent({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     search: searchTool,
     analyze: analyzeTool,
@@ -240,7 +240,7 @@ Transform messages before sending them to the model:
 import { ToolLoopAgent } from 'ai';
 
 const agent = new ToolLoopAgent({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     // your tools
   },
@@ -309,7 +309,7 @@ const maxSteps = 10;
 
 while (step < maxSteps) {
   const result = await generateText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     messages,
     tools: {
       // your tools here

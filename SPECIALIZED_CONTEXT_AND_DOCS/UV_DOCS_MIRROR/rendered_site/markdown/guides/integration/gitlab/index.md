@@ -8,7 +8,7 @@ gitlab-ci.yml
 
 ```
 [#__codelineno-0-1](#__codelineno-0-1)variables:
-[#__codelineno-0-2](#__codelineno-0-2)  UV_VERSION: "0.5"
+[#__codelineno-0-2](#__codelineno-0-2)  UV_VERSION: "0.9.17"
 [#__codelineno-0-3](#__codelineno-0-3)  PYTHON_VERSION: "3.12"
 [#__codelineno-0-4](#__codelineno-0-4)  BASE_LAYER: bookworm-slim
 [#__codelineno-0-5](#__codelineno-0-5)  # GitLab CI creates a separate mountpoint for the build directory,
@@ -83,4 +83,4 @@ To opt-out again, the `--no-system `flag can be used in any uv invocation.
 
 When persisting the cache, you may want to use `requirements.txt `or `pyproject.toml `as your cache key files instead of `uv.lock `. 
 
-May 27, 2025
+December 9, 2025

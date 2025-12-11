@@ -13,7 +13,9 @@ dependencies = [
     "openai",
     "anthropic",
     "langchain",
+    "huggingface_hub",
     "ell-ai",
+    "pyyaml",
     "pdfplumber",
     "pdf2image",
     "pymupdf",
@@ -28,6 +30,7 @@ dependencies = [
     "lxml",
     "quickjs",
     "bs4>=0.0.2",
+    "config>=0.5.1",
 ]
 
 [dependency-groups]

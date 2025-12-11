@@ -20,11 +20,9 @@ You can also record a participant’s screen share along with the screen share's
 
 ## TrackComposite Egress
 
-TrackComposite combines an audio and video track for output, as the name suggests.
+TrackComposite combines an audio and video track together for output. It allows for more precise control than participant egress because it allows you to specify which tracks to record using track IDs.
 
-It’s a more advanced version of Participant Egress, allowing you to specify which tracks to record — useful when precise control over track IDs is needed.
-
-One key difference with TrackComposite is that tracks must be published before starting the Egress. As a result, there may be a slight delay between when the track is published and when recording begins.
+A key difference between TrackComposite and Participant Egress is that tracks must be published _before_ starting the Egress. As a result, there may be a slight delay between when the track is published and when recording begins.
 
 ## Examples
 

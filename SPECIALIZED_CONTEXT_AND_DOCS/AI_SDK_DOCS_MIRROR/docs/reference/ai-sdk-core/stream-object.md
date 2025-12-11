@@ -7,12 +7,11 @@ It can be used to force the language model to return structured data, e.g. for i
 #### Example: stream an object using a schema
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { streamObject } from 'ai';
 import { z } from 'zod';
 
 const { partialObjectStream } = streamObject({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   schema: z.object({
     recipe: z.object({
       name: z.string(),
@@ -35,12 +34,11 @@ For arrays, you specify the schema of the array items.
 You can use `elementStream` to get the stream of complete array elements.
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { streamObject } from 'ai';
 import { z } from 'zod';
 
 const { elementStream } = streamObject({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   output: 'array',
   schema: z.object({
     name: z.string(),
@@ -60,11 +58,10 @@ for await (const hero of elementStream) {
 #### Example: generate JSON without a schema
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { streamObject } from 'ai';
 
 const { partialObjectStream } = streamObject({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   output: 'no-schema',
   prompt: 'Generate a lasagna recipe.',
 });
@@ -84,7 +81,7 @@ and provide the list of possible values in the `enum` parameter.
 import { streamObject } from 'ai';
 
 const { partialObjectStream } = streamObject({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   output: 'enum',
   enum: ['action', 'comedy', 'drama', 'horror', 'sci-fi'],
   prompt:
@@ -117,12 +114,6 @@ The language model to use. Example: openai('gpt-4.1')
 'object' | 'array' | 'enum' | 'no-schema' | undefined
 
 The type of output to generate. Defaults to 'object'.
-
-### mode:
-
-'auto' | 'json' | 'tool'
-
-The mode to use for object generation. Not every model supports all modes. Defaults to 'auto' for 'object' output and to 'json' for 'no-schema' output. Must be 'json' for 'no-schema' output.
 
 ### schema:
 

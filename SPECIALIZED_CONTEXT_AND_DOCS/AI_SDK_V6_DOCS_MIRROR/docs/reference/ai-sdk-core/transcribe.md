@@ -91,7 +91,7 @@ The duration of the transcript in seconds.
 
 ### warnings:
 
-TranscriptionWarning[]
+Warning[]
 
 Warnings from the model provider (e.g. unsupported settings).
 

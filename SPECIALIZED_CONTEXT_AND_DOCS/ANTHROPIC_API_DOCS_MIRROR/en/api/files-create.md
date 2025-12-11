@@ -1,100 +1,143 @@
-## Upload
+<!-- Source: https://docs.anthropic.com/en/api/files-create -->
 
-**post** `/v1/files`
+# Upload File
+
+post/v1/files
 
 Upload File
 
-### Header Parameters
+##### Header ParametersExpand Collapse 
 
-- `"anthropic-beta": optional array of AnthropicBeta`
+"anthropic-beta": optional array of [AnthropicBeta](</docs/en/api/beta#anthropic_beta>)
 
-  Optional header to specify the beta version(s) you want to use.
+Optional header to specify the beta version(s) you want to use.
 
-  - `UnionMember0 = string`
+Accepts one of the following:
 
-  - `UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 16 more`
+UnionMember0 = string
 
-    - `"message-batches-2024-09-24"`
+UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 16 more
 
-    - `"prompt-caching-2024-07-31"`
+Accepts one of the following:
 
-    - `"computer-use-2024-10-22"`
+"message-batches-2024-09-24"
 
-    - `"computer-use-2025-01-24"`
+"prompt-caching-2024-07-31"
 
-    - `"pdfs-2024-09-25"`
+"computer-use-2024-10-22"
 
-    - `"token-counting-2024-11-01"`
+"computer-use-2025-01-24"
 
-    - `"token-efficient-tools-2025-02-19"`
+"pdfs-2024-09-25"
 
-    - `"output-128k-2025-02-19"`
+"token-counting-2024-11-01"
 
-    - `"files-api-2025-04-14"`
+"token-efficient-tools-2025-02-19"
 
-    - `"mcp-client-2025-04-04"`
+"output-128k-2025-02-19"
 
-    - `"mcp-client-2025-11-20"`
+"files-api-2025-04-14"
 
-    - `"dev-full-thinking-2025-05-14"`
+"mcp-client-2025-04-04"
 
-    - `"interleaved-thinking-2025-05-14"`
+"mcp-client-2025-11-20"
 
-    - `"code-execution-2025-05-22"`
+"dev-full-thinking-2025-05-14"
 
-    - `"extended-cache-ttl-2025-04-11"`
+"interleaved-thinking-2025-05-14"
 
-    - `"context-1m-2025-08-07"`
+"code-execution-2025-05-22"
 
-    - `"context-management-2025-06-27"`
+"extended-cache-ttl-2025-04-11"
 
-    - `"model-context-window-exceeded-2025-08-26"`
+"context-1m-2025-08-07"
 
-    - `"skills-2025-10-02"`
+"context-management-2025-06-27"
 
-### Returns
+"model-context-window-exceeded-2025-08-26"
 
-- `FileMetadata = object { id, created_at, filename, 4 more }`
+"skills-2025-10-02"
 
-  - `id: string`
+##### ReturnsExpand Collapse 
 
-    Unique object identifier.
+FileMetadata = object { id, created_at, filename, 4 more } 
 
-    The format and length of IDs may change over time.
+id: string
 
-  - `created_at: string`
+Unique object identifier.
 
-    RFC 3339 datetime string representing when the file was created.
+The format and length of IDs may change over time.
 
-  - `filename: string`
+created_at: string
 
-    Original filename of the uploaded file.
+RFC 3339 datetime string representing when the file was created.
 
-  - `mime_type: string`
+formatdate-time
 
-    MIME type of the file.
+filename: string
 
-  - `size_bytes: number`
+Original filename of the uploaded file.
 
-    Size of the file in bytes.
+maxLength500
 
-  - `type: "file"`
+minLength1
 
-    Object type.
+mime_type: string
 
-    For files, this is always `"file"`.
+MIME type of the file.
 
-    - `"file"`
+maxLength255
 
-  - `downloadable: optional boolean`
+minLength1
 
-    Whether the file can be downloaded.
+size_bytes: number
 
-### Example
+Size of the file in bytes.
 
-```http
-curl https://api.anthropic.com/v1/files \
-    -H 'Content-Type: multipart/form-data' \
-    -H "X-Api-Key: $ANTHROPIC_API_KEY" \
-    -F file=undefined
-```
+minimum0
+
+type: "file"
+
+Object type.
+
+For files, this is always `"file"`.
+
+Accepts one of the following:
+
+"file"
+
+downloadable: optional boolean
+
+Whether the file can be downloaded.
+
+Upload File
+[code]
+    curl https://api.anthropic.com/v1/files \
+        -H 'Content-Type: multipart/form-data' \
+        -H "X-Api-Key: $ANTHROPIC_API_KEY" \
+        -F file=undefined
+[/code]
+[code]
+    {
+      "id": "id",
+      "created_at": "2019-12-27T18:11:19.117Z",
+      "filename": "x",
+      "mime_type": "x",
+      "size_bytes": 0,
+      "type": "file",
+      "downloadable": true
+    }
+[/code]
+
+##### Returns Examples
+[code]
+    {
+      "id": "id",
+      "created_at": "2019-12-27T18:11:19.117Z",
+      "filename": "x",
+      "mime_type": "x",
+      "size_bytes": 0,
+      "type": "file",
+      "downloadable": true
+    }
+[/code]

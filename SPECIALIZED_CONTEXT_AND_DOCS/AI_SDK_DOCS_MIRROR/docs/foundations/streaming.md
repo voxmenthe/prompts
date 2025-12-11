@@ -34,7 +34,7 @@ However, regardless of the speed of your model, the AI SDK is designed to make i
 import { streamText } from 'ai';
 
 const { textStream } = streamText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   prompt: 'Write a poem about embedding models.',
 });
 

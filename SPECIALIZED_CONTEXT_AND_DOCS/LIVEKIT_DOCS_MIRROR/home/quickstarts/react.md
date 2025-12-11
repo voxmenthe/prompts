@@ -4,28 +4,70 @@ LiveKit docs › LiveKit SDKs › Platform-specific quickstarts › React
 
 # React quickstart
 
-> Get started with LiveKit and React.
+> Build a voice AI frontend with React in less than 10 minutes.
 
-## Voice AI quickstart
+## Overview
 
-To build your first voice AI app for Next.js, use the following quickstart and the starter app. Otherwise follow the getting started guide below.
+This guide walks you through building a voice AI frontend using React and the LiveKit React components library. In less than 10 minutes, you'll have a working frontend that connects to your agent and allows users to have voice conversations through their browser.
 
-- **[Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md)**: Create a voice AI agent in less than 10 minutes.
+## Starter project
+
+The fastest way to get started with a full fledged agent experience is the React starter project. Click "Use this template" in the top right to create a new repo on GitHub, then follow the instructions in the project's README.
 
 - **[Next.js Voice Agent](https://github.com/livekit-examples/agent-starter-react)**: A web voice AI assistant built with React and Next.js.
 
-## Getting started guide
+## Requirements
 
-This guide walks you through the steps to build a video-conferencing application using React. It uses the [LiveKit React components library](https://docs.livekit.io/reference/components/react.md) to render the UI and communicate with LiveKit servers via WebRTC. By the end, you will have a basic video-conferencing application you can run with multiple participants.
+The following sections describe the minimum requirements to build a React frontend for your voice AI agent.
 
-### Install LiveKit SDK
+### LiveKit Cloud account
 
-Install the LiveKit SDK:
+This guide assumes you have signed up for a free [LiveKit Cloud](https://cloud.livekit.io/) account. Create a free project to get started with your voice AI application.
 
-**yarn**:
+### Agent backend
+
+You need a LiveKit agent running on the backend that is configured for your LiveKit Cloud project. Follow the [Voice AI quickstart](https://docs.livekit.io/agents/start/voice-ai.md) to create and deploy your agent.
+
+### Token server
+
+You need a token server to generate authentication tokens for your users. For development and testing purposes, this guide uses a sandbox token server for ease of use. You can create one for your cloud project [here](https://cloud.livekit.io/projects/p_/sandbox/templates/token-server)
+
+For production usage, you should set up a dedicated token server implementation. See the [generating tokens guide](https://docs.livekit.io/home/server/generating-tokens.md) for more details.
+
+## Setup
+
+Use the instructions in the following sections to set up your new React frontend project.
+
+### Create React project
+
+Create a new React project using your preferred method:
+
+**pnpm**:
 
 ```shell
-yarn add @livekit/components-react @livekit/components-styles livekit-client
+pnpm create vite@latest my-agent-app --template react-ts
+cd my-agent-app
+
+```
+
+---
+
+**npm**:
+
+```shell
+npm create vite@latest my-agent-app -- --template react-ts
+cd my-agent-app
+
+```
+
+### Install packages
+
+Install the LiveKit SDK and React components:
+
+**pnpm**:
+
+```shell
+pnpm add @livekit/components-react @livekit/components-styles livekit-client
 
 ```
 
@@ -38,89 +80,96 @@ npm install @livekit/components-react @livekit/components-styles livekit-client 
 
 ```
 
-### Join a room
+### Add agent frontend code
 
-Update the `serverUrl` and `token` values and copy and paste the following into your `src/App.tsx` file. To generate a token for this example, see [Creating a token](https://docs.livekit.io/home/get-started/authentication.md#creating-a-token).
+Replace the contents of your `src/App.tsx` file with the following code:
 
 > ℹ️ **Note**
 > 
-> This example hardcodes a token. In a real app, your server generates a token for you.
+> Update the `sandboxId` with your own sandbox token server ID, and set the `agentName` to match your deployed agent's name.
+
+** Filename: `src/App.tsx`**
 
 ```tsx
+'use client';
+import { useEffect, useRef } from 'react';
 import {
   ControlBar,
-  GridLayout,
-  ParticipantTile,
   RoomAudioRenderer,
-  useTracks,
-  RoomContext,
+  useSession,
+  SessionProvider,
+  useAgent,
+  BarVisualizer,
 } from '@livekit/components-react';
-import { Room, Track } from 'livekit-client';
+import { TokenSource, TokenSourceConfigurable, TokenSourceFetchOptions } from 'livekit-client';
 import '@livekit/components-styles';
-import { useState } from 'react';
-
-const serverUrl = '%{wsURL}%';
-const token = '%{token}%';
 
 export default function App() {
-  const [room] = useState(() => new Room({
-    // Optimize video quality for each participant's screen
-    adaptiveStream: true,
-    // Enable automatic audio/video quality optimization
-    dynacast: true,
-  }));
+  const tokenSource: TokenSourceConfigurable = useRef(
+    TokenSource.sandboxTokenServer('my-token-server-id'),
+  ).current;
+  const tokenOptions: TokenSourceFetchOptions = { agentName: 'my-agent-name' };
 
-  // Connect to room
+  const session = useSession(tokenSource, tokenOptions);
+
+  // Connect to session
   useEffect(() => {
-    let mounted = true;
-    
-    const connect = async () => {
-      if (mounted) {
-        await room.connect(serverUrl, token);
-      }
-    };
-    connect();
-
+    session.start();
     return () => {
-      mounted = false;
-      room.disconnect();
+      session.end();
     };
-  }, [room]);
+  }, []);
 
   return (
-    <RoomContext.Provider value={room}>
+    <SessionProvider session={session}>
       <div data-lk-theme="default" style={{ height: '100vh' }}>
-        {/* Your custom component with basic video conferencing functionality. */}
-        <MyVideoConference />
+        {/* Your custom component with basic video agent functionality. */}
+        <MyAgentView />
+        {/* Controls for the user to start/stop audio and disconnect from the session */}
+        <ControlBar controls={{ microphone: true, camera: false, screenShare: false }} />
         {/* The RoomAudioRenderer takes care of room-wide audio for you. */}
         <RoomAudioRenderer />
-        {/* Controls for the user to start/stop audio, video, and screen share tracks */}
-        <ControlBar />
       </div>
-    </RoomContext.Provider>
+    </SessionProvider>
   );
 }
 
-function MyVideoConference() {
-  // `useTracks` returns all camera and screen share tracks. If a user
-  // joins without a published camera track, a placeholder track is returned.
-  const tracks = useTracks(
-    [
-      { source: Track.Source.Camera, withPlaceholder: true },
-      { source: Track.Source.ScreenShare, withPlaceholder: false },
-    ],
-    { onlySubscribed: false },
-  );
+function MyAgentView() {
+  const agent = useAgent();
   return (
-    <GridLayout tracks={tracks} style={{ height: 'calc(100vh - var(--lk-control-bar-height))' }}>
-      {/* The GridLayout accepts zero or one child. The child is used
-      as a template to render all passed in tracks. */}
-      <ParticipantTile />
-    </GridLayout>
+    <div style={{ height: '350px' }}>
+      <p>Agent state: {agent.state}</p>
+      {/* Renders a visualizer for the agent's audio track */}
+      {agent.canListen && (
+        <BarVisualizer track={agent.microphoneTrack} state={agent.state} barCount={5} />
+      )}
+    </div>
   );
 }
 
 ```
+
+## Run your application
+
+Start the development server:
+
+**pnpm**:
+
+```shell
+pnpm dev
+
+```
+
+---
+
+**npm**:
+
+```shell
+npm run dev
+
+```
+
+Open your browser to the URL shown in the terminal (typically `http://localhost:5173`). You should see your agent frontend with controls to enable your microphone and speak with your agent.
 
 ## Next steps
 

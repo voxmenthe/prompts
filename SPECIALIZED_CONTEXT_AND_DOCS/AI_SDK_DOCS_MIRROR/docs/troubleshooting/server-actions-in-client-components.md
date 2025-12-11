@@ -25,7 +25,7 @@ export async function getAnswer(question: string) {
   'use server';
 
   const { text } = await generateText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     prompt: question,
   });
 

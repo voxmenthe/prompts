@@ -1,14 +1,26 @@
 {
-  "generated_at": "2025-11-30T20:48:19.500392+00:00",
-  "sitemap_url": "https://platform.openai.com/sitemap.xml",
+  "generated_at": "2025-12-11T00:08:59.128209+00:00",
+  "sitemap_url": "https://platform.openai.com/docs/sitemap.xml",
   "sections": [
     "guides"
   ],
   "pages": [
     {
+      "url": "https://platform.openai.com/docs/guides/latest-model",
+      "relative_path": "guides/latest-model",
+      "relative_file": "openai_platform_docs/guides/latest-model/index.md",
+      "status": "skipped"
+    },
+    {
       "url": "https://platform.openai.com/docs/guides/text",
       "relative_path": "guides/text",
       "relative_file": "openai_platform_docs/guides/text/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/code-generation",
+      "relative_path": "guides/code-generation",
+      "relative_file": "openai_platform_docs/guides/code-generation/index.md",
       "status": "skipped"
     },
     {
@@ -33,12 +45,6 @@
       "url": "https://platform.openai.com/docs/guides/function-calling",
       "relative_path": "guides/function-calling",
       "relative_file": "openai_platform_docs/guides/function-calling/index.md",
-      "status": "skipped"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/latest-model",
-      "relative_path": "guides/latest-model",
-      "relative_file": "openai_platform_docs/guides/latest-model/index.md",
       "status": "skipped"
     },
     {
@@ -132,466 +138,382 @@
       "status": "skipped"
     },
     {
-      "url": "https://platform.openai.com/docs/guides/tools-code-interpreter",
-      "relative_path": "guides/tools-code-interpreter",
-      "relative_file": "openai_platform_docs/guides/tools-code-interpreter/index.md",
-      "status": "written",
-      "bytes": 9894,
-      "sha256": "f7becd67eb308f1c447d6bc2ffaf0b968b5be93d64e13306183c9b7cab489e4c"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/tools-image-generation",
-      "relative_path": "guides/tools-image-generation",
-      "relative_file": "openai_platform_docs/guides/tools-image-generation/index.md",
-      "status": "written",
-      "bytes": 11158,
-      "sha256": "e66a39df03df60910d04bb658ef9588d148e6bd54fc205359376bd95d85dd292"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/tools-apply-patch",
-      "relative_path": "guides/tools-apply-patch",
-      "relative_file": "openai_platform_docs/guides/tools-apply-patch/index.md",
-      "status": "written",
-      "bytes": 12691,
-      "sha256": "6cd1288abfe780d3878b813c30ac5b1f33d924d57e3af8661c49587023cc0b35"
+      "url": "https://platform.openai.com/docs/guides/tools-connectors-mcp",
+      "relative_path": "guides/tools-connectors-mcp",
+      "relative_file": "openai_platform_docs/guides/tools-connectors-mcp/index.md",
+      "status": "skipped"
     },
     {
       "url": "https://platform.openai.com/docs/guides/tools-web-search",
       "relative_path": "guides/tools-web-search",
       "relative_file": "openai_platform_docs/guides/tools-web-search/index.md",
-      "status": "written",
-      "bytes": 9994,
-      "sha256": "90369b07a9ca36ebc11876c17380e7a8fbdc4e2cc5cae1e4e6169cd624c50a3e"
+      "status": "skipped"
     },
     {
-      "url": "https://platform.openai.com/docs/guides/tools-shell",
-      "relative_path": "guides/tools-shell",
-      "relative_file": "openai_platform_docs/guides/tools-shell/index.md",
-      "status": "written",
-      "bytes": 10816,
-      "sha256": "597a7217befd0e28ed728ded8fcafe8861dd9691cc00b719b4c2eaf35b48f4b6"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/retrieval",
-      "relative_path": "guides/retrieval",
-      "relative_file": "openai_platform_docs/guides/retrieval/index.md",
-      "status": "written",
-      "bytes": 14150,
-      "sha256": "80366fa4732d54d70f27004bb35869e0191f7ac109822eeadc3f64f3ebf44bda"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/tools-connectors-mcp",
-      "relative_path": "guides/tools-connectors-mcp",
-      "relative_file": "openai_platform_docs/guides/tools-connectors-mcp/index.md",
-      "status": "written",
-      "bytes": 25614,
-      "sha256": "53d9c0c34f9cf2fbdb1cd15144b3152df5b0a6c0e5c55c1a7c7b9cfb6e6072a5"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/streaming-responses",
-      "relative_path": "guides/streaming-responses",
-      "relative_file": "openai_platform_docs/guides/streaming-responses/index.md",
-      "status": "written",
-      "bytes": 3155,
-      "sha256": "63a3edbea6029a17fefa995e8881fa26d6a96d3bb9a9d256f9b7f1e598d5c7db"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/conversation-state",
-      "relative_path": "guides/conversation-state",
-      "relative_file": "openai_platform_docs/guides/conversation-state/index.md",
-      "status": "written",
-      "bytes": 8737,
-      "sha256": "5597ccc4e35129397553af7c4941cecb81f45ea246e2cf1228393e18c1837e31"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/background",
-      "relative_path": "guides/background",
-      "relative_file": "openai_platform_docs/guides/background/index.md",
-      "status": "written",
-      "bytes": 6485,
-      "sha256": "b91ecc573ef2f8fce48542d443e1b8d838f4644e581ec0a53f8375d09a5e9a34"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/webhooks",
-      "relative_path": "guides/webhooks",
-      "relative_file": "openai_platform_docs/guides/webhooks/index.md",
-      "status": "written",
-      "bytes": 7468,
-      "sha256": "184401b09cacf2482fb47b8d17e7dc3f2ad69a14392c87027aec6e3c54289e0f"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/tools-computer-use",
-      "relative_path": "guides/tools-computer-use",
-      "relative_file": "openai_platform_docs/guides/tools-computer-use/index.md",
-      "status": "written",
-      "bytes": 40202,
-      "sha256": "326d2775b1e26b4941c01314aee7ecb54ca0f7da2b77f26ebaf85e3247d1661d"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/tools-local-shell",
-      "relative_path": "guides/tools-local-shell",
-      "relative_file": "openai_platform_docs/guides/tools-local-shell/index.md",
-      "status": "written",
-      "bytes": 6129,
-      "sha256": "d1c45d56f7a3abcaa60c5bcbf4d3d876bbf60bcb77a7e44dc65507bd8b2195f6"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/pdf-files",
-      "relative_path": "guides/pdf-files",
-      "relative_file": "openai_platform_docs/guides/pdf-files/index.md",
-      "status": "written",
-      "bytes": 11023,
-      "sha256": "2638ec49193d302d3553f5a57029321012ff6ce0d1168545026a2509640a46c4"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/prompting",
-      "relative_path": "guides/prompting",
-      "relative_file": "openai_platform_docs/guides/prompting/index.md",
-      "status": "written",
-      "bytes": 3951,
-      "sha256": "2f47bae5a10336fe1068e5afa42d21dfa042f795a165cc9dfb9924ce92cc550b"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/prompt-caching",
-      "relative_path": "guides/prompt-caching",
-      "relative_file": "openai_platform_docs/guides/prompt-caching/index.md",
-      "status": "written",
-      "bytes": 9099,
-      "sha256": "bb253659c2d4395acee5e980265cd025627e46a800922109a9db20b794cc44a3"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/evals",
-      "relative_path": "guides/evals",
-      "relative_file": "openai_platform_docs/guides/evals/index.md",
-      "status": "written",
-      "bytes": 21673,
-      "sha256": "a173cb5ab530b8f809b281eb01b7dc983a29ecd9cdbdd0379418e1fb3a0209d4"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/reasoning-best-practices",
-      "relative_path": "guides/reasoning-best-practices",
-      "relative_file": "openai_platform_docs/guides/reasoning-best-practices/index.md",
-      "status": "written",
-      "bytes": 17253,
-      "sha256": "0279d7fa44f3bc5911903e9b17e52cbaaae6619ee6eeb3cecc08a872cac48d40"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/evaluation-getting-started",
-      "relative_path": "guides/evaluation-getting-started",
-      "relative_file": "openai_platform_docs/guides/evaluation-getting-started/index.md",
-      "status": "written",
-      "bytes": 10141,
-      "sha256": "cefa749787d57be1b98694758d771846d07ece4027f15c8fe2f4bf99d94fae21"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/external-models",
-      "relative_path": "guides/external-models",
-      "relative_file": "openai_platform_docs/guides/external-models/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/prompt-optimizer",
-      "relative_path": "guides/prompt-optimizer",
-      "relative_file": "openai_platform_docs/guides/prompt-optimizer/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/realtime",
-      "relative_path": "guides/realtime",
-      "relative_file": "openai_platform_docs/guides/realtime/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/reasoning",
-      "relative_path": "guides/reasoning",
-      "relative_file": "openai_platform_docs/guides/reasoning/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/evaluation-best-practices",
-      "relative_path": "guides/evaluation-best-practices",
-      "relative_file": "openai_platform_docs/guides/evaluation-best-practices/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/realtime-sip",
-      "relative_path": "guides/realtime-sip",
-      "relative_file": "openai_platform_docs/guides/realtime-sip/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/realtime-websocket",
-      "relative_path": "guides/realtime-websocket",
-      "relative_file": "openai_platform_docs/guides/realtime-websocket/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/realtime-conversations",
-      "relative_path": "guides/realtime-conversations",
-      "relative_file": "openai_platform_docs/guides/realtime-conversations/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/realtime-models-prompting",
-      "relative_path": "guides/realtime-models-prompting",
-      "relative_file": "openai_platform_docs/guides/realtime-models-prompting/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/realtime-server-controls",
-      "relative_path": "guides/realtime-server-controls",
-      "relative_file": "openai_platform_docs/guides/realtime-server-controls/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
+      "url": "https://platform.openai.com/docs/guides/tools-code-interpreter",
+      "relative_path": "guides/tools-code-interpreter",
+      "relative_file": "openai_platform_docs/guides/tools-code-interpreter/index.md",
+      "status": "skipped"
     },
     {
       "url": "https://platform.openai.com/docs/guides/tools-file-search",
       "relative_path": "guides/tools-file-search",
       "relative_file": "openai_platform_docs/guides/tools-file-search/index.md",
-      "status": "written",
-      "bytes": 9164,
-      "sha256": "88bf6d78b9fc2b9250dd538a937cb9af4e3a8d5ff735199916ea7bbb87fe6420"
+      "status": "skipped"
     },
     {
-      "url": "https://platform.openai.com/docs/guides/realtime-costs",
-      "relative_path": "guides/realtime-costs",
-      "relative_file": "openai_platform_docs/guides/realtime-costs/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
+      "url": "https://platform.openai.com/docs/guides/retrieval",
+      "relative_path": "guides/retrieval",
+      "relative_file": "openai_platform_docs/guides/retrieval/index.md",
+      "status": "skipped"
     },
     {
-      "url": "https://platform.openai.com/docs/guides/realtime-transcription",
-      "relative_path": "guides/realtime-transcription",
-      "relative_file": "openai_platform_docs/guides/realtime-transcription/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
+      "url": "https://platform.openai.com/docs/guides/tools-image-generation",
+      "relative_path": "guides/tools-image-generation",
+      "relative_file": "openai_platform_docs/guides/tools-image-generation/index.md",
+      "status": "skipped"
     },
     {
-      "url": "https://platform.openai.com/docs/guides/vision-fine-tuning",
-      "relative_path": "guides/vision-fine-tuning",
-      "relative_file": "openai_platform_docs/guides/vision-fine-tuning/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
+      "url": "https://platform.openai.com/docs/guides/tools-computer-use",
+      "relative_path": "guides/tools-computer-use",
+      "relative_file": "openai_platform_docs/guides/tools-computer-use/index.md",
+      "status": "skipped"
     },
     {
-      "url": "https://platform.openai.com/docs/guides/supervised-fine-tuning",
-      "relative_path": "guides/supervised-fine-tuning",
-      "relative_file": "openai_platform_docs/guides/supervised-fine-tuning/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
+      "url": "https://platform.openai.com/docs/guides/tools-local-shell",
+      "relative_path": "guides/tools-local-shell",
+      "relative_file": "openai_platform_docs/guides/tools-local-shell/index.md",
+      "status": "skipped"
     },
     {
-      "url": "https://platform.openai.com/docs/guides/model-optimization",
-      "relative_path": "guides/model-optimization",
-      "relative_file": "openai_platform_docs/guides/model-optimization/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
+      "url": "https://platform.openai.com/docs/guides/tools-apply-patch",
+      "relative_path": "guides/tools-apply-patch",
+      "relative_file": "openai_platform_docs/guides/tools-apply-patch/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/tools-shell",
+      "relative_path": "guides/tools-shell",
+      "relative_file": "openai_platform_docs/guides/tools-shell/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/conversation-state",
+      "relative_path": "guides/conversation-state",
+      "relative_file": "openai_platform_docs/guides/conversation-state/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/background",
+      "relative_path": "guides/background",
+      "relative_file": "openai_platform_docs/guides/background/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/streaming-responses",
+      "relative_path": "guides/streaming-responses",
+      "relative_file": "openai_platform_docs/guides/streaming-responses/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/webhooks",
+      "relative_path": "guides/webhooks",
+      "relative_file": "openai_platform_docs/guides/webhooks/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/pdf-files",
+      "relative_path": "guides/pdf-files",
+      "relative_file": "openai_platform_docs/guides/pdf-files/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/prompting",
+      "relative_path": "guides/prompting",
+      "relative_file": "openai_platform_docs/guides/prompting/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/prompt-caching",
+      "relative_path": "guides/prompt-caching",
+      "relative_file": "openai_platform_docs/guides/prompt-caching/index.md",
+      "status": "skipped"
     },
     {
       "url": "https://platform.openai.com/docs/guides/prompt-engineering",
       "relative_path": "guides/prompt-engineering",
       "relative_file": "openai_platform_docs/guides/prompt-engineering/index.md",
-      "status": "written",
-      "bytes": 24838,
-      "sha256": "4f5b896b2acffa2c3f2fcf51e2f38f90f877065f2162cc5c7532c1cd1f26a56f"
+      "status": "skipped"
     },
     {
-      "url": "https://platform.openai.com/docs/guides/direct-preference-optimization",
-      "relative_path": "guides/direct-preference-optimization",
-      "relative_file": "openai_platform_docs/guides/direct-preference-optimization/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
+      "url": "https://platform.openai.com/docs/guides/reasoning",
+      "relative_path": "guides/reasoning",
+      "relative_file": "openai_platform_docs/guides/reasoning/index.md",
+      "status": "skipped"
     },
     {
-      "url": "https://platform.openai.com/docs/guides/reinforcement-fine-tuning",
-      "relative_path": "guides/reinforcement-fine-tuning",
-      "relative_file": "openai_platform_docs/guides/reinforcement-fine-tuning/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
+      "url": "https://platform.openai.com/docs/guides/reasoning-best-practices",
+      "relative_path": "guides/reasoning-best-practices",
+      "relative_file": "openai_platform_docs/guides/reasoning-best-practices/index.md",
+      "status": "skipped"
     },
     {
-      "url": "https://platform.openai.com/docs/guides/rft-use-cases",
-      "relative_path": "guides/rft-use-cases",
-      "relative_file": "openai_platform_docs/guides/rft-use-cases/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
+      "url": "https://platform.openai.com/docs/guides/evaluation-getting-started",
+      "relative_path": "guides/evaluation-getting-started",
+      "relative_file": "openai_platform_docs/guides/evaluation-getting-started/index.md",
+      "status": "skipped"
     },
     {
-      "url": "https://platform.openai.com/docs/guides/fine-tuning-best-practices",
-      "relative_path": "guides/fine-tuning-best-practices",
-      "relative_file": "openai_platform_docs/guides/fine-tuning-best-practices/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
+      "url": "https://platform.openai.com/docs/guides/evals",
+      "relative_path": "guides/evals",
+      "relative_file": "openai_platform_docs/guides/evals/index.md",
+      "status": "skipped"
     },
     {
-      "url": "https://platform.openai.com/docs/guides/graders",
-      "relative_path": "guides/graders",
-      "relative_file": "openai_platform_docs/guides/graders/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
+      "url": "https://platform.openai.com/docs/guides/prompt-optimizer",
+      "relative_path": "guides/prompt-optimizer",
+      "relative_file": "openai_platform_docs/guides/prompt-optimizer/index.md",
+      "status": "skipped"
     },
     {
-      "url": "https://platform.openai.com/docs/guides/image-generation",
-      "relative_path": "guides/image-generation",
-      "relative_file": "openai_platform_docs/guides/image-generation/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
+      "url": "https://platform.openai.com/docs/guides/external-models",
+      "relative_path": "guides/external-models",
+      "relative_file": "openai_platform_docs/guides/external-models/index.md",
+      "status": "skipped"
     },
     {
-      "url": "https://platform.openai.com/docs/guides/video-generation",
-      "relative_path": "guides/video-generation",
-      "relative_file": "openai_platform_docs/guides/video-generation/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
+      "url": "https://platform.openai.com/docs/guides/evaluation-best-practices",
+      "relative_path": "guides/evaluation-best-practices",
+      "relative_file": "openai_platform_docs/guides/evaluation-best-practices/index.md",
+      "status": "skipped"
     },
     {
-      "url": "https://platform.openai.com/docs/guides/text-to-speech",
-      "relative_path": "guides/text-to-speech",
-      "relative_file": "openai_platform_docs/guides/text-to-speech/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/speech-to-text",
-      "relative_path": "guides/speech-to-text",
-      "relative_file": "openai_platform_docs/guides/speech-to-text/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/deep-research",
-      "relative_path": "guides/deep-research",
-      "relative_file": "openai_platform_docs/guides/deep-research/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/moderation",
-      "relative_path": "guides/moderation",
-      "relative_file": "openai_platform_docs/guides/moderation/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/embeddings",
-      "relative_path": "guides/embeddings",
-      "relative_file": "openai_platform_docs/guides/embeddings/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/production-best-practices",
-      "relative_path": "guides/production-best-practices",
-      "relative_file": "openai_platform_docs/guides/production-best-practices/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/latency-optimization",
-      "relative_path": "guides/latency-optimization",
-      "relative_file": "openai_platform_docs/guides/latency-optimization/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/predicted-outputs",
-      "relative_path": "guides/predicted-outputs",
-      "relative_file": "openai_platform_docs/guides/predicted-outputs/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/priority-processing",
-      "relative_path": "guides/priority-processing",
-      "relative_file": "openai_platform_docs/guides/priority-processing/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/cost-optimization",
-      "relative_path": "guides/cost-optimization",
-      "relative_file": "openai_platform_docs/guides/cost-optimization/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/batch",
-      "relative_path": "guides/batch",
-      "relative_file": "openai_platform_docs/guides/batch/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/optimizing-llm-accuracy",
-      "relative_path": "guides/optimizing-llm-accuracy",
-      "relative_file": "openai_platform_docs/guides/optimizing-llm-accuracy/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
-    },
-    {
-      "url": "https://platform.openai.com/docs/guides/flex-processing",
-      "relative_path": "guides/flex-processing",
-      "relative_file": "openai_platform_docs/guides/flex-processing/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
+      "url": "https://platform.openai.com/docs/guides/realtime",
+      "relative_path": "guides/realtime",
+      "relative_file": "openai_platform_docs/guides/realtime/index.md",
+      "status": "skipped"
     },
     {
       "url": "https://platform.openai.com/docs/guides/realtime-webrtc",
       "relative_path": "guides/realtime-webrtc",
       "relative_file": "openai_platform_docs/guides/realtime-webrtc/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/realtime-websocket",
+      "relative_path": "guides/realtime-websocket",
+      "relative_file": "openai_platform_docs/guides/realtime-websocket/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/realtime-sip",
+      "relative_path": "guides/realtime-sip",
+      "relative_file": "openai_platform_docs/guides/realtime-sip/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/realtime-models-prompting",
+      "relative_path": "guides/realtime-models-prompting",
+      "relative_file": "openai_platform_docs/guides/realtime-models-prompting/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/realtime-conversations",
+      "relative_path": "guides/realtime-conversations",
+      "relative_file": "openai_platform_docs/guides/realtime-conversations/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/realtime-server-controls",
+      "relative_path": "guides/realtime-server-controls",
+      "relative_file": "openai_platform_docs/guides/realtime-server-controls/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/realtime-costs",
+      "relative_path": "guides/realtime-costs",
+      "relative_file": "openai_platform_docs/guides/realtime-costs/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/realtime-transcription",
+      "relative_path": "guides/realtime-transcription",
+      "relative_file": "openai_platform_docs/guides/realtime-transcription/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/model-optimization",
+      "relative_path": "guides/model-optimization",
+      "relative_file": "openai_platform_docs/guides/model-optimization/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/supervised-fine-tuning",
+      "relative_path": "guides/supervised-fine-tuning",
+      "relative_file": "openai_platform_docs/guides/supervised-fine-tuning/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/vision-fine-tuning",
+      "relative_path": "guides/vision-fine-tuning",
+      "relative_file": "openai_platform_docs/guides/vision-fine-tuning/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/direct-preference-optimization",
+      "relative_path": "guides/direct-preference-optimization",
+      "relative_file": "openai_platform_docs/guides/direct-preference-optimization/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/reinforcement-fine-tuning",
+      "relative_path": "guides/reinforcement-fine-tuning",
+      "relative_file": "openai_platform_docs/guides/reinforcement-fine-tuning/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/rft-use-cases",
+      "relative_path": "guides/rft-use-cases",
+      "relative_file": "openai_platform_docs/guides/rft-use-cases/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/fine-tuning-best-practices",
+      "relative_path": "guides/fine-tuning-best-practices",
+      "relative_file": "openai_platform_docs/guides/fine-tuning-best-practices/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/graders",
+      "relative_path": "guides/graders",
+      "relative_file": "openai_platform_docs/guides/graders/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/image-generation",
+      "relative_path": "guides/image-generation",
+      "relative_file": "openai_platform_docs/guides/image-generation/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/video-generation",
+      "relative_path": "guides/video-generation",
+      "relative_file": "openai_platform_docs/guides/video-generation/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/text-to-speech",
+      "relative_path": "guides/text-to-speech",
+      "relative_file": "openai_platform_docs/guides/text-to-speech/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/speech-to-text",
+      "relative_path": "guides/speech-to-text",
+      "relative_file": "openai_platform_docs/guides/speech-to-text/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/deep-research",
+      "relative_path": "guides/deep-research",
+      "relative_file": "openai_platform_docs/guides/deep-research/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/embeddings",
+      "relative_path": "guides/embeddings",
+      "relative_file": "openai_platform_docs/guides/embeddings/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/moderation",
+      "relative_path": "guides/moderation",
+      "relative_file": "openai_platform_docs/guides/moderation/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/production-best-practices",
+      "relative_path": "guides/production-best-practices",
+      "relative_file": "openai_platform_docs/guides/production-best-practices/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/latency-optimization",
+      "relative_path": "guides/latency-optimization",
+      "relative_file": "openai_platform_docs/guides/latency-optimization/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/predicted-outputs",
+      "relative_path": "guides/predicted-outputs",
+      "relative_file": "openai_platform_docs/guides/predicted-outputs/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/priority-processing",
+      "relative_path": "guides/priority-processing",
+      "relative_file": "openai_platform_docs/guides/priority-processing/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/cost-optimization",
+      "relative_path": "guides/cost-optimization",
+      "relative_file": "openai_platform_docs/guides/cost-optimization/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/batch",
+      "relative_path": "guides/batch",
+      "relative_file": "openai_platform_docs/guides/batch/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/flex-processing",
+      "relative_path": "guides/flex-processing",
+      "relative_file": "openai_platform_docs/guides/flex-processing/index.md",
+      "status": "skipped"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/optimizing-llm-accuracy",
+      "relative_path": "guides/optimizing-llm-accuracy",
+      "relative_file": "openai_platform_docs/guides/optimizing-llm-accuracy/index.md",
+      "status": "skipped"
     },
     {
       "url": "https://platform.openai.com/docs/guides/safety-best-practices",
       "relative_path": "guides/safety-best-practices",
       "relative_file": "openai_platform_docs/guides/safety-best-practices/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
+      "status": "skipped"
     },
     {
       "url": "https://platform.openai.com/docs/guides/safety-checks",
       "relative_path": "guides/safety-checks",
       "relative_file": "openai_platform_docs/guides/safety-checks/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
+      "status": "skipped"
     },
     {
       "url": "https://platform.openai.com/docs/guides/your-data",
       "relative_path": "guides/your-data",
       "relative_file": "openai_platform_docs/guides/your-data/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
+      "status": "skipped"
     },
     {
       "url": "https://platform.openai.com/docs/guides/rbac",
       "relative_path": "guides/rbac",
       "relative_file": "openai_platform_docs/guides/rbac/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
+      "status": "skipped"
     },
     {
       "url": "https://platform.openai.com/docs/guides/rate-limits",
       "relative_path": "guides/rate-limits",
       "relative_file": "openai_platform_docs/guides/rate-limits/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
+      "status": "skipped"
     },
     {
       "url": "https://platform.openai.com/docs/guides/developer-mode",
       "relative_path": "guides/developer-mode",
       "relative_file": "openai_platform_docs/guides/developer-mode/index.md",
-      "status": "failed",
-      "error": "Failed to fetch content via both cloudscraper and r.jina.ai"
+      "status": "skipped"
     }
   ],
   "bundles": [
@@ -599,7 +521,7 @@
       "key": "llms-api-reference.txt",
       "url": "https://cdn.openai.com/API/docs/txt/llms-api-reference.txt",
       "relative_file": "txt/llms-api-reference.txt",
-      "status": "written",
+      "status": "skipped",
       "bytes": 1561170,
       "sha256": "f34e340ee6ffd0f713bb1196a4a86b78e4098e2c3dede041ca072ca76bf4e6bc"
     },
@@ -607,7 +529,7 @@
       "key": "llms-guides.txt",
       "url": "https://cdn.openai.com/API/docs/txt/llms-guides.txt",
       "relative_file": "txt/llms-guides.txt",
-      "status": "written",
+      "status": "skipped",
       "bytes": 1200417,
       "sha256": "76a67c63db6178fe9fc4ba3e910046dc234c633609f8355101921926c009c35b"
     },
@@ -615,7 +537,7 @@
       "key": "llms-models-pricing.txt",
       "url": "https://cdn.openai.com/API/docs/txt/llms-models-pricing.txt",
       "relative_file": "txt/llms-models-pricing.txt",
-      "status": "written",
+      "status": "skipped",
       "bytes": 79531,
       "sha256": "ac752c99e8e2c8ddeffc8ce9d4afd0818c36e2681fea59fa7f9f01b169102a72"
     },
@@ -623,7 +545,7 @@
       "key": "llms-full.txt",
       "url": "https://cdn.openai.com/API/docs/txt/llms-full.txt",
       "relative_file": "txt/llms-full.txt",
-      "status": "written",
+      "status": "skipped",
       "bytes": 2761588,
       "sha256": "ee6bf9f701666a2ed8d51a51c2e10eb01a4939f7c5e03807007c6ca90a126743"
     },
@@ -631,9 +553,9 @@
       "key": "openapi.documented.yml",
       "url": "https://app.stainless.com/api/spec/documented/openai/openapi.documented.yml",
       "relative_file": "openapi/openapi.documented.yml",
-      "status": "written",
-      "bytes": 2444062,
-      "sha256": "653e8491bf92341837101f64cfb2d7729144412147f059f576fc5bd824ac5cce"
+      "status": "skipped",
+      "bytes": 2483592,
+      "sha256": "92258cc3a2544759fc64fe191c11913565c4f5197574fb1e77141844dd3732c9"
     }
   ]
 }

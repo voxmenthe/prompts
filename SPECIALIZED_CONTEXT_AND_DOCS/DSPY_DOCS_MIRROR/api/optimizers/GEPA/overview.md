@@ -5,7 +5,7 @@
 ## dspy.GEPA
 
 ```python
-class GEPA(metric, *, auto=None, max_full_evals=None, max_metric_calls=None, reflection_minibatch_size=3, candidate_selection_strategy='pareto', reflection_lm=None, skip_perfect_score=True, add_format_failure_as_feedback=False, instruction_proposer=None, component_selector='round_robin', use_merge=True, max_merge_invocations=5, num_threads=None, failure_score=0.0, perfect_score=1.0, log_dir=None, track_stats=False, use_wandb=False, wandb_api_key=None, wandb_init_kwargs=None, track_best_outputs=False, warn_on_score_mismatch=True, use_mlflow=False, seed=0, gepa_kwargs=None)
+class GEPA(metric, *, auto=None, max_full_evals=None, max_metric_calls=None, reflection_minibatch_size=3, candidate_selection_strategy='pareto', reflection_lm=None, skip_perfect_score=True, add_format_failure_as_feedback=False, instruction_proposer=None, component_selector='round_robin', use_merge=True, max_merge_invocations=5, num_threads=None, failure_score=0.0, perfect_score=1.0, log_dir=None, track_stats=False, use_wandb=False, wandb_api_key=None, wandb_init_kwargs=None, track_best_outputs=False, warn_on_score_mismatch=True, enable_tool_optimization=False, use_mlflow=False, seed=0, gepa_kwargs=None)
 ```
 
 GEPA is an evolutionary optimizer, which uses reflection to evolve text components
@@ -33,18 +33,18 @@ def metric(
     - gold: The gold example.
     - pred: The predicted output.
     - trace: Optional. The trace of the program's execution.
-    - pred_name: Optional. The name of the target predictor currently being optimized by GEPA, for which 
+    - pred_name: Optional. The name of the target predictor currently being optimized by GEPA, for which
         the feedback is being requested.
     - pred_trace: Optional. The trace of the target predictor's execution GEPA is seeking feedback for.
 
     Note the `pred_name` and `pred_trace` arguments. During optimization, GEPA will call the metric to obtain
     feedback for individual predictors being optimized. GEPA provides the name of the predictor in `pred_name`
     and the sub-trace (of the trace) corresponding to the predictor in `pred_trace`.
-    If available at the predictor level, the metric should return {'score': float, 'feedback': str} corresponding 
+    If available at the predictor level, the metric should return {'score': float, 'feedback': str} corresponding
     to the predictor.
     If not available at the predictor level, the metric can also return a text feedback at the program level
     (using just the gold, pred and trace).
-    If no feedback is returned, GEPA will use a simple text feedback consisting of just the score: 
+    If no feedback is returned, GEPA will use a simple text feedback consisting of just the score:
     f"This trajectory got a score of {score}."
     """
     ...
@@ -68,121 +68,126 @@ Args:
     max_full_evals: The maximum number of full evaluations to perform.
     max_metric_calls: The maximum number of metric calls to perform.
     reflection_minibatch_size: The number of examples to use for reflection in a single GEPA step. Default is 3.
-    candidate_selection_strategy: The strategy to use for candidate selection. Default is "pareto", 
-        which stochastically selects candidates from the Pareto frontier of all validation scores. 
+    candidate_selection_strategy: The strategy to use for candidate selection. Default is "pareto",
+        which stochastically selects candidates from the Pareto frontier of all validation scores.
         Options: "pareto", "current_best".
-    reflection_lm: The language model to use for reflection. Required parameter. GEPA benefits from 
-        a strong reflection model. Consider using `dspy.LM(model='gpt-5', temperature=1.0, max_tokens=32000)` 
+    reflection_lm: The language model to use for reflection. Required parameter. GEPA benefits from
+        a strong reflection model. Consider using `dspy.LM(model='gpt-5', temperature=1.0, max_tokens=32000)`
         for optimal performance.
     skip_perfect_score: Whether to skip examples with perfect scores during reflection. Default is True.
     instruction_proposer: Optional custom instruction proposer implementing GEPA's ProposalFn protocol.
-        **Default: None (recommended for most users)** - Uses GEPA's proven instruction proposer from 
-        the [GEPA library](https://github.com/gepa-ai/gepa), which implements the 
-        [`ProposalFn`](https://github.com/gepa-ai/gepa/blob/main/src/gepa/core/adapter.py). This default 
-        proposer is highly capable and was validated across diverse experiments reported in the GEPA 
+        **Default: None (recommended for most users)** - Uses GEPA's proven instruction proposer from
+        the [GEPA library](https://github.com/gepa-ai/gepa), which implements the
+        [`ProposalFn`](https://github.com/gepa-ai/gepa/blob/main/src/gepa/core/adapter.py). This default
+        proposer is highly capable and was validated across diverse experiments reported in the GEPA
         paper and tutorials.
 
-        See documentation on custom instruction proposers 
+        See documentation on custom instruction proposers
         [here](https://dspy.ai/api/optimizers/GEPA/GEPA_Advanced/#custom-instruction-proposers).
-        
+
         **Advanced Feature**: Only needed for specialized scenarios:
         - **Multi-modal handling**: Processing dspy.Image inputs alongside textual information
-        - **Nuanced control over constraints**: Fine-grained control over instruction length, format, 
+        - **Nuanced control over constraints**: Fine-grained control over instruction length, format,
           and structural requirements beyond standard feedback mechanisms
-        - **Domain-specific knowledge injection**: Specialized terminology or context that cannot be 
+        - **Domain-specific knowledge injection**: Specialized terminology or context that cannot be
           provided through feedback_func alone
-        - **Provider-specific prompting**: Optimizations for specific LLM providers (OpenAI, Anthropic) 
+        - **Provider-specific prompting**: Optimizations for specific LLM providers (OpenAI, Anthropic)
           with unique formatting preferences
-        - **Coupled component updates**: Coordinated updates of multiple components together rather 
+        - **Coupled component updates**: Coordinated updates of multiple components together rather
           than independent optimization
         - **External knowledge integration**: Runtime access to databases, APIs, or knowledge bases
-        
-        The default proposer handles the vast majority of use cases effectively. Use 
-        MultiModalInstructionProposer() from dspy.teleprompt.gepa.instruction_proposal for visual 
+
+        The default proposer handles the vast majority of use cases effectively. Use
+        MultiModalInstructionProposer() from dspy.teleprompt.gepa.instruction_proposal for visual
         content or implement custom ProposalFn for highly specialized requirements.
-        
-        Note: When both instruction_proposer and reflection_lm are set, the instruction_proposer is called 
-        in the reflection_lm context. However, reflection_lm is optional when using a custom instruction_proposer. 
+
+        Note: When both instruction_proposer and reflection_lm are set, the instruction_proposer is called
+        in the reflection_lm context. However, reflection_lm is optional when using a custom instruction_proposer.
         Custom instruction proposers can invoke their own LLMs if needed.
     component_selector: Custom component selector implementing the [ReflectionComponentSelector](https://github.com/gepa-ai/gepa/blob/main/src/gepa/proposer/reflective_mutation/base.py) protocol,
-        or a string specifying a built-in selector strategy. Controls which components (predictors) are selected 
-        for optimization at each iteration. Defaults to 'round_robin' strategy which cycles through components 
-        one at a time. Available string options: 'round_robin' (cycles through components sequentially), 
-        'all' (selects all components for simultaneous optimization). Custom selectors can implement strategies 
-        using LLM-driven selection logic based on optimization state and trajectories. 
-        See [gepa component selectors](https://github.com/gepa-ai/gepa/blob/main/src/gepa/strategies/component_selector.py) 
+        or a string specifying a built-in selector strategy. Controls which components (predictors) are selected
+        for optimization at each iteration. Defaults to 'round_robin' strategy which cycles through components
+        one at a time. Available string options: 'round_robin' (cycles through components sequentially),
+        'all' (selects all components for simultaneous optimization). Custom selectors can implement strategies
+        using LLM-driven selection logic based on optimization state and trajectories.
+        See [gepa component selectors](https://github.com/gepa-ai/gepa/blob/main/src/gepa/strategies/component_selector.py)
         for available built-in selectors and the ReflectionComponentSelector protocol for implementing custom selectors.
     add_format_failure_as_feedback: Whether to add format failures as feedback. Default is False.
     use_merge: Whether to use merge-based optimization. Default is True.
     max_merge_invocations: The maximum number of merge invocations to perform. Default is 5.
     num_threads: The number of threads to use for evaluation with `Evaluate`. Optional.
     failure_score: The score to assign to failed examples. Default is 0.0.
-    perfect_score: The maximum score achievable by the metric. Default is 1.0. Used by GEPA 
+    perfect_score: The maximum score achievable by the metric. Default is 1.0. Used by GEPA
         to determine if all examples in a minibatch are perfect.
-    log_dir: The directory to save the logs. GEPA saves elaborate logs, along with all candidate 
-        programs, in this directory. Running GEPA with the same `log_dir` will resume the run 
+    log_dir: The directory to save the logs. GEPA saves elaborate logs, along with all candidate
+        programs, in this directory. Running GEPA with the same `log_dir` will resume the run
         from the last checkpoint.
-    track_stats: Whether to return detailed results and all proposed programs in the `detailed_results` 
+    track_stats: Whether to return detailed results and all proposed programs in the `detailed_results`
         attribute of the optimized program. Default is False.
     use_wandb: Whether to use wandb for logging. Default is False.
-    wandb_api_key: The API key to use for wandb. If not provided, wandb will use the API key 
+    wandb_api_key: The API key to use for wandb. If not provided, wandb will use the API key
         from the environment variable `WANDB_API_KEY`.
     wandb_init_kwargs: Additional keyword arguments to pass to `wandb.init`.
-    track_best_outputs: Whether to track the best outputs on the validation set. track_stats must 
-        be True if track_best_outputs is True. The optimized program's `detailed_results.best_outputs_valset` 
+    track_best_outputs: Whether to track the best outputs on the validation set. track_stats must
+        be True if track_best_outputs is True. The optimized program's `detailed_results.best_outputs_valset`
         will contain the best outputs for each task in the validation set.
-    warn_on_score_mismatch: GEPA (currently) expects the metric to return the same module-level score when 
-        called with and without the pred_name. This flag (defaults to True) determines whether a warning is 
+    warn_on_score_mismatch: GEPA (currently) expects the metric to return the same module-level score when
+        called with and without the pred_name. This flag (defaults to True) determines whether a warning is
         raised if a mismatch in module-level and predictor-level score is detected.
+    enable_tool_optimization: Whether to enable joint optimization of dspy.ReAct modules.
+        When enabled, GEPA jointly optimizes predictor instructions and tool descriptions together
+        for dspy.ReAct modules. See the
+        [Tool Optimization guide](https://dspy.ai/api/optimizers/GEPA/GEPA_Advanced/#tool-optimization)
+        for details on when to use this feature and how it works. Default is False.
     seed: The random seed to use for reproducibility. Default is 0.
     gepa_kwargs: (Optional) Additional keyword arguments to pass directly to [gepa.optimize](https://github.com/gepa-ai/gepa/blob/main/src/gepa/api.py).
         Useful for accessing advanced GEPA features not directly exposed through DSPy's GEPA interface.
-        
+
         Available parameters:
-        - batch_sampler: Strategy for selecting training examples. Can be a [BatchSampler](https://github.com/gepa-ai/gepa/blob/main/src/gepa/strategies/batch_sampler.py) instance or a string 
+        - batch_sampler: Strategy for selecting training examples. Can be a [BatchSampler](https://github.com/gepa-ai/gepa/blob/main/src/gepa/strategies/batch_sampler.py) instance or a string
           ('epoch_shuffled'). Defaults to 'epoch_shuffled'. Only valid when reflection_minibatch_size is None.
-        - merge_val_overlap_floor: Minimum number of shared validation ids required between parents before 
-          attempting a merge subsample. Only relevant when using `val_evaluation_policy` other than 'full_eval'. 
+        - merge_val_overlap_floor: Minimum number of shared validation ids required between parents before
+          attempting a merge subsample. Only relevant when using `val_evaluation_policy` other than 'full_eval'.
           Default is 5.
-        - stop_callbacks: Optional stopper(s) that return True when optimization should stop. Can be a single 
-          [StopperProtocol](https://github.com/gepa-ai/gepa/blob/main/src/gepa/utils/stop_condition.py) or a list of StopperProtocol instances. 
-          Examples: [FileStopper](https://github.com/gepa-ai/gepa/blob/main/src/gepa/utils/stop_condition.py), 
-          [TimeoutStopCondition](https://github.com/gepa-ai/gepa/blob/main/src/gepa/utils/stop_condition.py), 
-          [SignalStopper](https://github.com/gepa-ai/gepa/blob/main/src/gepa/utils/stop_condition.py), 
-          [NoImprovementStopper](https://github.com/gepa-ai/gepa/blob/main/src/gepa/utils/stop_condition.py), 
-          or custom stopping logic. Note: This overrides the default 
+        - stop_callbacks: Optional stopper(s) that return True when optimization should stop. Can be a single
+          [StopperProtocol](https://github.com/gepa-ai/gepa/blob/main/src/gepa/utils/stop_condition.py) or a list of StopperProtocol instances.
+          Examples: [FileStopper](https://github.com/gepa-ai/gepa/blob/main/src/gepa/utils/stop_condition.py),
+          [TimeoutStopCondition](https://github.com/gepa-ai/gepa/blob/main/src/gepa/utils/stop_condition.py),
+          [SignalStopper](https://github.com/gepa-ai/gepa/blob/main/src/gepa/utils/stop_condition.py),
+          [NoImprovementStopper](https://github.com/gepa-ai/gepa/blob/main/src/gepa/utils/stop_condition.py),
+          or custom stopping logic. Note: This overrides the default
           max_metric_calls stopping condition.
-        - use_cloudpickle: Use cloudpickle instead of pickle for serialization. Can be helpful when the 
+        - use_cloudpickle: Use cloudpickle instead of pickle for serialization. Can be helpful when the
           serialized state contains dynamically generated DSPy signatures. Default is False.
-        - val_evaluation_policy: Strategy controlling which validation ids to score each iteration. Can be 
+        - val_evaluation_policy: Strategy controlling which validation ids to score each iteration. Can be
           'full_eval' (evaluate every id each time) or an [EvaluationPolicy](https://github.com/gepa-ai/gepa/blob/main/src/gepa/strategies/eval_policy.py) instance. Default is 'full_eval'.
-        - use_mlflow: If True, enables MLflow integration to log optimization progress. 
+        - use_mlflow: If True, enables MLflow integration to log optimization progress.
           MLflow can be used alongside Weights & Biases (WandB).
         - mlflow_tracking_uri: The tracking URI to use for MLflow (when use_mlflow=True).
         - mlflow_experiment_name: The experiment name to use for MLflow (when use_mlflow=True).
-        
-        Note: Parameters already handled by DSPy's GEPA class will be overridden by the direct parameters 
+
+        Note: Parameters already handled by DSPy's GEPA class will be overridden by the direct parameters
         and should not be passed through gepa_kwargs.
-    
+
 Note:
     Budget Configuration: Exactly one of `auto`, `max_full_evals`, or `max_metric_calls` must be provided.
     The `auto` parameter provides preset configurations: "light" for quick experimentation, "medium" for
     balanced optimization, and "heavy" for thorough optimization.
-    
+
     Reflection Configuration: The `reflection_lm` parameter is required and should be a strong language model.
     GEPA performs best with models like `dspy.LM(model='gpt-5', temperature=1.0, max_tokens=32000)`.
     The reflection process analyzes failed examples to generate feedback for program improvement.
-    
+
     Merge Configuration: GEPA can merge successful program variants using `use_merge=True`.
     The `max_merge_invocations` parameter controls how many merge attempts are made during optimization.
-    
-    Evaluation Configuration: Use `num_threads` to parallelize evaluation. The `failure_score` and 
+
+    Evaluation Configuration: Use `num_threads` to parallelize evaluation. The `failure_score` and
     `perfect_score` parameters help GEPA understand your metric's range and optimize accordingly.
-    
+
     Logging Configuration: Set `log_dir` to save detailed logs and enable checkpoint resuming.
     Use `track_stats=True` to access detailed optimization results via the `detailed_results` attribute.
     Enable `use_wandb=True` for experiment tracking and visualization.
-    
+
     Reproducibility: Set `seed` to ensure consistent results across runs with the same configuration.
 
 
@@ -206,7 +211,7 @@ Parameters:
 - trainset: The training set to use for reflective updates.
 - valset: The validation set to use for tracking Pareto scores. If not provided, GEPA will use the trainset for both.
 
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/teleprompt/gepa/gepa.py` (lines 148–598)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/teleprompt/gepa/gepa.py` (lines 158–688)
 
 
 One of the key insights behind GEPA is its ability to leverage domain-specific textual feedback. Users should provide a feedback function as the GEPA metric, which has the following call signature:
@@ -219,28 +224,28 @@ class GEPAFeedbackMetric
 ### __call__
 
 ```python
-def __call__(gold, pred, trace, pred_name, pred_trace)
+def __call__(self, gold, pred, trace, pred_name, pred_trace)
 ```
 
 This function is called with the following arguments:
 - gold: The gold example.
 - pred: The predicted output.
 - trace: Optional. The trace of the program's execution.
-- pred_name: Optional. The name of the target predictor currently being optimized by GEPA, for which 
+- pred_name: Optional. The name of the target predictor currently being optimized by GEPA, for which
     the feedback is being requested.
 - pred_trace: Optional. The trace of the target predictor's execution GEPA is seeking feedback for.
 
 Note the `pred_name` and `pred_trace` arguments. During optimization, GEPA will call the metric to obtain
 feedback for individual predictors being optimized. GEPA provides the name of the predictor in `pred_name`
 and the sub-trace (of the trace) corresponding to the predictor in `pred_trace`.
-If available at the predictor level, the metric should return dspy.Prediction(score: float, feedback: str) corresponding 
-to the predictor.
+If available at the predictor level, the metric should return dspy.Prediction(score: float, feedback: str)
+corresponding to the predictor.
 If not available at the predictor level, the metric can also return a text feedback at the program level
 (using just the gold, pred and trace).
-If no feedback is returned, GEPA will use a simple text feedback consisting of just the score: 
+If no feedback is returned, GEPA will use a simple text feedback consisting of just the score:
 f"This trajectory got a score of {score}."
 
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/teleprompt/gepa/gepa.py` (lines 26–53)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/teleprompt/gepa/gepa.py` (lines 35–63)
 
 
 When `track_stats=True`, GEPA returns detailed results about all of the proposed candidates, and metadata about the optimization run. The results are available in the `detailed_results` attribute of the optimized program returned by GEPA, and has the following type:
@@ -268,7 +273,7 @@ Fields:
 - best_idx: candidate index with the highest val_aggregate_scores
 - best_candidate: the program text mapping for best_idx
 
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/teleprompt/gepa/gepa.py` (lines 57–145)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/teleprompt/gepa/gepa.py` (lines 68–154)
 
 
 ## Usage Examples
@@ -332,6 +337,12 @@ Practical Recipe for GEPA-Friendly Feedback:
 - **Document Retrieval** (e.g., HotpotQA): List correctly retrieved, incorrect, or missed documents, beyond mere Recall/F1 scores.
 - **Multi-Objective Tasks** (e.g., PUPA): Decompose aggregate scores to reveal contributions from each objective, highlighting tradeoffs (e.g., quality vs. privacy).
 - **Stacked Pipelines** (e.g., code generation: parse → compile → run → profile → evaluate): Expose stage-specific failures; natural-language traces often suffice for LLM self-correction.
+
+## Tool Optimization with GEPA
+
+When `enable_tool_optimization=True`, GEPA jointly optimizes `dspy.ReAct` modules with the tools - GEPA updates predictor instructions and tool descriptions/argument descriptions together, based on execution traces and feedback, instead of keeping tool behavior fixed.
+
+For details, examples, and the underlying design (tool discovery, naming requirements, and interaction with custom instruction proposers), see [Tool Optimization](GEPA_Advanced.md#tool-optimization).
 
 ## Custom Instruction Proposal
 

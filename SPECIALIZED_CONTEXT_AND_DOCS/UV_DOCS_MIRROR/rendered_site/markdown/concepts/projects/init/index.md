@@ -115,7 +115,7 @@ pyproject.toml
 [#__codelineno-7-10](#__codelineno-7-10)example-pkg = "example_pkg:main"
 [#__codelineno-7-11](#__codelineno-7-11)
 [#__codelineno-7-12](#__codelineno-7-12)[build-system]
-[#__codelineno-7-13](#__codelineno-7-13)requires = ["uv_build>=0.9.16,<0.10.0"]
+[#__codelineno-7-13](#__codelineno-7-13)requires = ["uv_build>=0.9.17,<0.10.0"]
 [#__codelineno-7-14](#__codelineno-7-14)build-backend = "uv_build"
 
 ```
@@ -141,7 +141,7 @@ pyproject.toml
 [#__codelineno-8-10](#__codelineno-8-10)example-pkg = "example_pkg:main"
 [#__codelineno-8-11](#__codelineno-8-11)
 [#__codelineno-8-12](#__codelineno-8-12)[build-system]
-[#__codelineno-8-13](#__codelineno-8-13)requires = ["uv_build>=0.9.16,<0.10.0"]
+[#__codelineno-8-13](#__codelineno-8-13)requires = ["uv_build>=0.9.17,<0.10.0"]
 [#__codelineno-8-14](#__codelineno-8-14)build-backend = "uv_build"
 
 ```
@@ -203,7 +203,7 @@ pyproject.toml
 [#__codelineno-12-7](#__codelineno-12-7)dependencies = []
 [#__codelineno-12-8](#__codelineno-12-8)
 [#__codelineno-12-9](#__codelineno-12-9)[build-system]
-[#__codelineno-12-10](#__codelineno-12-10)requires = ["uv_build>=0.9.16,<0.10.0"]
+[#__codelineno-12-10](#__codelineno-12-10)requires = ["uv_build>=0.9.17,<0.10.0"]
 [#__codelineno-12-11](#__codelineno-12-11)build-backend = "uv_build"
 
 ```
@@ -356,4 +356,4 @@ When `--bare `is used, additional features can still be used opt-in:
 
 ```
 
-December 6, 2025
+December 9, 2025

@@ -29,7 +29,7 @@ npm install livekit-client @livekit/components-react @livekit/components-styles 
 
 The SDK is also available using `yarn` or `pnpm`.
 
-Check out the dedicated quickstarts for [React](https://docs.livekit.io/home/quickstarts/react.md) or [Next.js](https://docs.livekit.io/home/quickstarts/nextjs.md) if you're using one of those platforms.
+Also check out the dedicated quickstart for [React](https://docs.livekit.io/home/quickstarts/react.md).
 
 ---
 

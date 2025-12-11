@@ -134,7 +134,7 @@ Returns [SIPDispatchRuleInfo](#sipdispatchruleinfo).
 | dispatch_rule | [SIPDispatchRuleInfo](#sipdispatchruleinfo) | yes | Dispatch rule to create. |
 | trunk_ids | array<string> |  | List of associated trunk IDs. If empty, all trunks match this dispatch rule. |
 | hide_phone_number | bool |  | If true, use a random value for participant identity and phone number ommitted from attributes. By default, the participant identity is created using the phone number (if the participant identity isn't explicitly set). |
-| inbound_numbers | array<string> |  | If set, the dispatch rule only accepts calls made from numbers in the list. |
+| inbound_numbers | array<string> |  | If this list is populated, the dispatch rule only accepts calls made _from_ numbers in the list. If a caller's phone number is not in the list, the call is rejected. |
 | name | string | yes | Human-readable name for the dispatch rule. |
 | metadata | string |  | Optional metadata for the dispatch rule. If defined, participants created by the rule inherit this metadata. |
 | attributes | map<string, string> |  | Key-value mapping of user-defined attributes. Participants created by this rule inherit these attributes. |
@@ -319,7 +319,7 @@ Enum. Valid values are as follows:
 | rule | [SIPDispatchRule](#sipdispatchrule) | Type of dispatch rule. |
 | trunk_ids | array<string> | List of associated trunk IDs. |
 | hide_phone_number | bool | If true, hides phone number. |
-| inbound_numbers | array<string> | If this list is included, the dispatch rule only accepts calls made from the numbers in the list. |
+| inbound_numbers | array<string> | If this list is populated, the dispatch rule only accepts calls made _from_ numbers in the list. If a caller's phone number is not in the list, the call is rejected. |
 | name | string | Human-readable name for the dispatch rule. |
 | metadata | string | User-defined metadata for the dispatch rule. Participants created by this rule inherit this metadata. |
 | headers | map<string, string> | Custom SIP X-* headers to included in the 200 OK response. |
@@ -433,7 +433,7 @@ Enum. Valid values are as follows:
 | outbound_address | string | IP address that the SIP INVITE is sent to. |
 | outbound_number | string | Phone number used to make outbound calls. |
 | transport | [SIPTransport](#siptransport) | Protocol to use for SIP transport: auto, TCP, or UDP. |
-| inbound_numbers | array<string> | If this list is populated, the trunk only accepts calls to the numbers in this list. |
+| inbound_numbers | array<string> | List of provider phone numbers this trunk is associated with. Only applies to inbound trunks. If this list is populated, the trunk only accepts calls to numbers in this list. |
 | inbound_username | string | Username used to authenticate inbound SIP invites. |
 | inbound_password | string | Password used to authenticate inbound SIP invites. |
 | outbound_username | string | Username used to authenticate outbound SIP invites. |

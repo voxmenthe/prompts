@@ -9,7 +9,7 @@ import { generateText } from 'ai';
 
 try {
   const { text } = await generateText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     prompt: 'Write a vegetarian lasagna recipe for 4 people.',
   });
 } catch (error) {
@@ -30,7 +30,7 @@ import { streamText } from 'ai';
 
 try {
   const { textStream } = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     prompt: 'Write a vegetarian lasagna recipe for 4 people.',
   });
 
@@ -54,7 +54,7 @@ import { streamText } from 'ai';
 
 try {
   const { fullStream } = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     prompt: 'Write a vegetarian lasagna recipe for 4 people.',
   });
 
@@ -95,7 +95,7 @@ The `onAbort` callback is called when a stream is aborted via `AbortSignal`, but
 import { streamText } from 'ai';
 
 const { textStream } = streamText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
   onAbort: ({ steps }) => {
     // Update stored messages or perform cleanup
@@ -122,7 +122,7 @@ You can also handle abort events directly in the stream:
 import { streamText } from 'ai';
 
 const { fullStream } = streamText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 

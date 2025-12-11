@@ -40,7 +40,7 @@ const stream = createUIMessageStream({
 
     // Merge another stream from streamText
     const result = streamText({
-      model: 'anthropic/claude-sonnet-4.5',
+      model: "anthropic/claude-sonnet-4.5",
       prompt: 'Write a haiku about AI',
     });
 

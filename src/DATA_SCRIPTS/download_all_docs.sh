@@ -1,7 +1,7 @@
 source /Volumes/cdrive/repos/prompts/.venv/bin/activate
 python src/DATA_SCRIPTS/download_gsap_docs.py
 python src/DATA_SCRIPTS/download_livekit_docs.py
-python src/DATA_SCRIPTS/mirror_claude_api_docs.py
+python src/DATA_SCRIPTS/mirror_claude_api_docs_v2.py
 python src/DATA_SCRIPTS/openai_docs_new_enhanced.py
 python src/DATA_SCRIPTS/mirror_ai_sdk_docs.py
 python src/DATA_SCRIPTS/mirror_ai_sdk_v6_docs.py

@@ -16,7 +16,7 @@ When using `experimental_output` with tool calling, adjust your `stopWhen` condi
 
 ```tsx
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   experimental_output: Output.object({
     schema: z.object({
       summary: z.string(),

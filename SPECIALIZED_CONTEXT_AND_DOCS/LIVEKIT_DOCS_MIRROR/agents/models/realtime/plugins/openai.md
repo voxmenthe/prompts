@@ -186,7 +186,7 @@ const session = new voice.AgentSession({
    llm: new openai.realtime.RealtimeModel({
       turnDetection: null,
    })
-   turnDetection: new livekit.turnDetector.EnglishModel(),
+   turnDetection: new livekit.turnDetector.MultilingualModel(),
 });
 
 ```

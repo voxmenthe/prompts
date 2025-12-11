@@ -1,25 +1,19 @@
 {
-  "generated_at": "2025-11-30T22:41:16.528265+00:00",
+  "generated_at": "2025-12-11T00:06:37.709799+00:00",
   "source": {
     "sitemap": "https://v6.ai-sdk.dev/sitemap.xml",
     "docs_prefix": "https://v6.ai-sdk.dev/docs/",
     "sitemap_docs_prefix": "https://ai-sdk.dev/docs/"
   },
   "counts": {
-    "total": 228,
+    "total": 227,
     "succeeded": 226,
-    "failed": 2
+    "failed": 1
   },
   "pages": [
     {
       "url": "https://v6.ai-sdk.dev/docs/advanced/rate-limiting",
       "output": "docs/advanced/rate-limiting.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/advanced/multistep-interfaces",
-      "output": "docs/advanced/multistep-interfaces.md",
       "status": "ok",
       "error": null
     },
@@ -30,26 +24,14 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/advanced",
-      "output": "docs/advanced-folder-description.md",
-      "status": "ok",
-      "error": null
-    },
-    {
       "url": "https://v6.ai-sdk.dev/docs/advanced/prompt-engineering",
       "output": "docs/advanced/prompt-engineering.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/advanced/backpressure",
-      "output": "docs/advanced/backpressure.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/advanced/caching",
-      "output": "docs/advanced/caching.md",
+      "url": "https://v6.ai-sdk.dev/docs/advanced",
+      "output": "docs/advanced-folder-description.md",
       "status": "ok",
       "error": null
     },
@@ -60,26 +42,38 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/agents",
-      "output": "docs/agents-folder-description.md",
+      "url": "https://v6.ai-sdk.dev/docs/advanced/multistep-interfaces",
+      "output": "docs/advanced/multistep-interfaces.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/agents/building-agents",
-      "output": "docs/agents/building-agents.md",
+      "url": "https://v6.ai-sdk.dev/docs/advanced/caching",
+      "output": "docs/advanced/caching.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/advanced/rendering-ui-with-language-models",
-      "output": "docs/advanced/rendering-ui-with-language-models.md",
+      "url": "https://v6.ai-sdk.dev/docs/advanced/backpressure",
+      "output": "docs/advanced/backpressure.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/advanced/vercel-deployment-guide",
+      "output": "docs/advanced/vercel-deployment-guide.md",
       "status": "ok",
       "error": null
     },
     {
       "url": "https://v6.ai-sdk.dev/docs/advanced/sequential-generations",
       "output": "docs/advanced/sequential-generations.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/agents",
+      "output": "docs/agents-folder-description.md",
       "status": "ok",
       "error": null
     },
@@ -102,20 +96,14 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/advanced/vercel-deployment-guide",
-      "output": "docs/advanced/vercel-deployment-guide.md",
+      "url": "https://v6.ai-sdk.dev/docs/advanced/rendering-ui-with-language-models",
+      "output": "docs/advanced/rendering-ui-with-language-models.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/agents/workflows",
-      "output": "docs/agents/workflows.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-core/mcp-tools",
-      "output": "docs/ai-sdk-core/mcp-tools.md",
+      "url": "https://v6.ai-sdk.dev/docs/agents/building-agents",
+      "output": "docs/agents/building-agents.md",
       "status": "ok",
       "error": null
     },
@@ -126,8 +114,26 @@
       "error": null
     },
     {
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-core/generating-text",
+      "output": "docs/ai-sdk-core/generating-text.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/agents/workflows",
+      "output": "docs/agents/workflows.md",
+      "status": "ok",
+      "error": null
+    },
+    {
       "url": "https://v6.ai-sdk.dev/docs/ai-sdk-core/embeddings",
       "output": "docs/ai-sdk-core/embeddings.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-core/error-handling",
+      "output": "docs/ai-sdk-core/error-handling.md",
       "status": "ok",
       "error": null
     },
@@ -144,14 +150,8 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-core/error-handling",
-      "output": "docs/ai-sdk-core/error-handling.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-core/overview",
-      "output": "docs/ai-sdk-core/overview.md",
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-core/mcp-tools",
+      "output": "docs/ai-sdk-core/mcp-tools.md",
       "status": "ok",
       "error": null
     },
@@ -162,8 +162,14 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-core/generating-text",
-      "output": "docs/ai-sdk-core/generating-text.md",
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-core/overview",
+      "output": "docs/ai-sdk-core/overview.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-core/settings",
+      "output": "docs/ai-sdk-core/settings.md",
       "status": "ok",
       "error": null
     },
@@ -186,44 +192,14 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-core/telemetry",
-      "output": "docs/ai-sdk-core/telemetry.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-core/transcription",
-      "output": "docs/ai-sdk-core/transcription.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling",
-      "output": "docs/ai-sdk-core/tools-and-tool-calling.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-core/settings",
-      "output": "docs/ai-sdk-core/settings.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-rsc/error-handling",
-      "output": "docs/ai-sdk-rsc/error-handling.md",
-      "status": "ok",
-      "error": null
-    },
-    {
       "url": "https://v6.ai-sdk.dev/docs/ai-sdk-core/testing",
       "output": "docs/ai-sdk-core/testing.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-rsc/authentication",
-      "output": "docs/ai-sdk-rsc/authentication.md",
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-core/telemetry",
+      "output": "docs/ai-sdk-core/telemetry.md",
       "status": "ok",
       "error": null
     },
@@ -234,14 +210,32 @@
       "error": null
     },
     {
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-rsc/authentication",
+      "output": "docs/ai-sdk-rsc/authentication.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-core/transcription",
+      "output": "docs/ai-sdk-core/transcription.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-rsc/error-handling",
+      "output": "docs/ai-sdk-rsc/error-handling.md",
+      "status": "ok",
+      "error": null
+    },
+    {
       "url": "https://v6.ai-sdk.dev/docs/ai-sdk-rsc/generative-ui-state",
       "output": "docs/ai-sdk-rsc/generative-ui-state.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-rsc/multistep-interfaces",
-      "output": "docs/ai-sdk-rsc/multistep-interfaces.md",
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling",
+      "output": "docs/ai-sdk-core/tools-and-tool-calling.md",
       "status": "ok",
       "error": null
     },
@@ -252,8 +246,8 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-rsc/saving-and-restoring-states",
-      "output": "docs/ai-sdk-rsc/saving-and-restoring-states.md",
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-rsc/migrating-to-ui",
+      "output": "docs/ai-sdk-rsc/migrating-to-ui.md",
       "status": "ok",
       "error": null
     },
@@ -264,8 +258,8 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-rsc/migrating-to-ui",
-      "output": "docs/ai-sdk-rsc/migrating-to-ui.md",
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-rsc/saving-and-restoring-states",
+      "output": "docs/ai-sdk-rsc/saving-and-restoring-states.md",
       "status": "ok",
       "error": null
     },
@@ -276,20 +270,32 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-ui",
-      "output": "docs/ai-sdk-ui-folder-description.md",
-      "status": "ok",
-      "error": null
-    },
-    {
       "url": "https://v6.ai-sdk.dev/docs/ai-sdk-rsc/streaming-values",
       "output": "docs/ai-sdk-rsc/streaming-values.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-ui/chatbot-tool-usage",
-      "output": "docs/ai-sdk-ui/chatbot-tool-usage.md",
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-rsc/multistep-interfaces",
+      "output": "docs/ai-sdk-rsc/multistep-interfaces.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-ui",
+      "output": "docs/ai-sdk-ui-folder-description.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-ui/completion",
+      "output": "docs/ai-sdk-ui/completion.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-ui/chatbot-resume-streams",
+      "output": "docs/ai-sdk-ui/chatbot-resume-streams.md",
       "status": "ok",
       "error": null
     },
@@ -306,26 +312,14 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-ui/chatbot-resume-streams",
-      "output": "docs/ai-sdk-ui/chatbot-resume-streams.md",
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-ui/chatbot",
+      "output": "docs/ai-sdk-ui/chatbot.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-ui/message-metadata",
-      "output": "docs/ai-sdk-ui/message-metadata.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-ui/completion",
-      "output": "docs/ai-sdk-ui/completion.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-ui/overview",
-      "output": "docs/ai-sdk-ui/overview.md",
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-ui/chatbot-tool-usage",
+      "output": "docs/ai-sdk-ui/chatbot-tool-usage.md",
       "status": "ok",
       "error": null
     },
@@ -336,14 +330,14 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-ui/chatbot",
-      "output": "docs/ai-sdk-ui/chatbot.md",
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-ui/overview",
+      "output": "docs/ai-sdk-ui/overview.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-ui/transport",
-      "output": "docs/ai-sdk-ui/transport.md",
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-ui/message-metadata",
+      "output": "docs/ai-sdk-ui/message-metadata.md",
       "status": "ok",
       "error": null
     },
@@ -354,20 +348,32 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-ui/stream-protocol",
-      "output": "docs/ai-sdk-ui/stream-protocol.md",
-      "status": "ok",
-      "error": null
-    },
-    {
       "url": "https://v6.ai-sdk.dev/docs/ai-sdk-ui/object-generation",
       "output": "docs/ai-sdk-ui/object-generation.md",
       "status": "ok",
       "error": null
     },
     {
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-ui/stream-protocol",
+      "output": "docs/ai-sdk-ui/stream-protocol.md",
+      "status": "ok",
+      "error": null
+    },
+    {
       "url": "https://v6.ai-sdk.dev/docs/announcing-ai-sdk-6-beta",
       "output": "docs/announcing-ai-sdk-6-beta.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/ai-sdk-ui/transport",
+      "output": "docs/ai-sdk-ui/transport.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/foundations",
+      "output": "docs/foundations-folder-description.md",
       "status": "ok",
       "error": null
     },
@@ -390,8 +396,8 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/foundations",
-      "output": "docs/foundations-folder-description.md",
+      "url": "https://v6.ai-sdk.dev/docs/foundations/streaming",
+      "output": "docs/foundations/streaming.md",
       "status": "ok",
       "error": null
     },
@@ -402,8 +408,8 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/foundations/streaming",
-      "output": "docs/foundations/streaming.md",
+      "url": "https://v6.ai-sdk.dev/docs/getting-started",
+      "output": "docs/getting-started-folder-description.md",
       "status": "ok",
       "error": null
     },
@@ -414,8 +420,14 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/getting-started",
-      "output": "docs/getting-started-folder-description.md",
+      "url": "https://v6.ai-sdk.dev/docs/getting-started/navigating-the-library",
+      "output": "docs/getting-started/navigating-the-library.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/getting-started/nextjs-app-router",
+      "output": "docs/getting-started/nextjs-app-router.md",
       "status": "ok",
       "error": null
     },
@@ -438,26 +450,8 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/getting-started/navigating-the-library",
-      "output": "docs/getting-started/navigating-the-library.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/getting-started/nextjs-app-router",
-      "output": "docs/getting-started/nextjs-app-router.md",
-      "status": "ok",
-      "error": null
-    },
-    {
       "url": "https://v6.ai-sdk.dev/docs/migration-guides",
       "output": "docs/migration-guides-folder-description.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/getting-started/svelte",
-      "output": "docs/getting-started/svelte.md",
       "status": "ok",
       "error": null
     },
@@ -474,32 +468,8 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/migration-guides/migration-guide-3-2",
-      "output": "docs/migration-guides/migration-guide-3-2.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/migration-guides/migration-guide-4-1",
-      "output": "docs/migration-guides/migration-guide-4-1.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/migration-guides/migration-guide-3-4",
-      "output": "docs/migration-guides/migration-guide-3-4.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/migration-guides/migration-guide-3-1",
-      "output": "docs/migration-guides/migration-guide-3-1.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/migration-guides/migration-guide-4-2",
-      "output": "docs/migration-guides/migration-guide-4-2.md",
+      "url": "https://v6.ai-sdk.dev/docs/getting-started/svelte",
+      "output": "docs/getting-started/svelte.md",
       "status": "ok",
       "error": null
     },
@@ -510,14 +480,44 @@
       "error": null
     },
     {
+      "url": "https://v6.ai-sdk.dev/docs/migration-guides/migration-guide-3-1",
+      "output": "docs/migration-guides/migration-guide-3-1.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/migration-guides/migration-guide-3-2",
+      "output": "docs/migration-guides/migration-guide-3-2.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/migration-guides/migration-guide-3-4",
+      "output": "docs/migration-guides/migration-guide-3-4.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/migration-guides/migration-guide-4-1",
+      "output": "docs/migration-guides/migration-guide-4-1.md",
+      "status": "ok",
+      "error": null
+    },
+    {
       "url": "https://v6.ai-sdk.dev/docs/migration-guides/migration-guide-4-0",
       "output": "docs/migration-guides/migration-guide-4-0.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference",
-      "output": "docs/reference-folder-description.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core",
+      "output": "docs/reference/ai-sdk-core-folder-description.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/migration-guides/migration-guide-4-2",
+      "output": "docs/migration-guides/migration-guide-4-2.md",
       "status": "ok",
       "error": null
     },
@@ -528,8 +528,8 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core",
-      "output": "docs/reference/ai-sdk-core-folder-description.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference",
+      "output": "docs/reference-folder-description.md",
       "status": "ok",
       "error": null
     },
@@ -542,12 +542,6 @@
     {
       "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/cosine-similarity",
       "output": "docs/reference/ai-sdk-core/cosine-similarity.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/create-mcp-client",
-      "output": "docs/reference/ai-sdk-core/create-mcp-client.md",
       "status": "ok",
       "error": null
     },
@@ -570,6 +564,12 @@
       "error": null
     },
     {
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/create-mcp-client",
+      "output": "docs/reference/ai-sdk-core/create-mcp-client.md",
+      "status": "ok",
+      "error": null
+    },
+    {
       "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/dynamic-tool",
       "output": "docs/reference/ai-sdk-core/dynamic-tool.md",
       "status": "ok",
@@ -582,14 +582,14 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/generate-id",
-      "output": "docs/reference/ai-sdk-core/generate-id.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/extract-reasoning-middleware",
+      "output": "docs/reference/ai-sdk-core/extract-reasoning-middleware.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/extract-reasoning-middleware",
-      "output": "docs/reference/ai-sdk-core/extract-reasoning-middleware.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/generate-id",
+      "output": "docs/reference/ai-sdk-core/generate-id.md",
       "status": "ok",
       "error": null
     },
@@ -612,44 +612,14 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/generate-object",
-      "output": "docs/reference/ai-sdk-core/generate-object.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/model-message",
-      "output": "docs/reference/ai-sdk-core/model-message.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/has-tool-call",
-      "output": "docs/reference/ai-sdk-core/has-tool-call.md",
-      "status": "ok",
-      "error": null
-    },
-    {
       "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/generate-speech",
       "output": "docs/reference/ai-sdk-core/generate-speech.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/mcp-stdio-transport",
-      "output": "docs/reference/ai-sdk-core/mcp-stdio-transport.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/json-schema",
-      "output": "docs/reference/ai-sdk-core/json-schema.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/language-model-v2-middleware",
-      "output": "docs/reference/ai-sdk-core/language-model-v2-middleware.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/generate-object",
+      "output": "docs/reference/ai-sdk-core/generate-object.md",
       "status": "ok",
       "error": null
     },
@@ -660,20 +630,26 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/smooth-stream",
-      "output": "docs/reference/ai-sdk-core/smooth-stream.md",
-      "status": "ok",
-      "error": null
-    },
-    {
       "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/provider-registry",
       "output": "docs/reference/ai-sdk-core/provider-registry.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/simulate-readable-stream",
-      "output": "docs/reference/ai-sdk-core/simulate-readable-stream.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/json-schema",
+      "output": "docs/reference/ai-sdk-core/json-schema.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/has-tool-call",
+      "output": "docs/reference/ai-sdk-core/has-tool-call.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/language-model-v2-middleware",
+      "output": "docs/reference/ai-sdk-core/language-model-v2-middleware.md",
       "status": "ok",
       "error": null
     },
@@ -684,32 +660,20 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/simulate-streaming-middleware",
-      "output": "docs/reference/ai-sdk-core/simulate-streaming-middleware.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/mcp-stdio-transport",
+      "output": "docs/reference/ai-sdk-core/mcp-stdio-transport.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/step-count-is",
-      "output": "docs/reference/ai-sdk-core/step-count-is.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/simulate-readable-stream",
+      "output": "docs/reference/ai-sdk-core/simulate-readable-stream.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/stream-text",
-      "output": "docs/reference/ai-sdk-core/stream-text.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/ui-message",
-      "output": "docs/reference/ai-sdk-core/ui-message.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/stream-object",
-      "output": "docs/reference/ai-sdk-core/stream-object.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/model-message",
+      "output": "docs/reference/ai-sdk-core/model-message.md",
       "status": "ok",
       "error": null
     },
@@ -720,8 +684,44 @@
       "error": null
     },
     {
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/stream-text",
+      "output": "docs/reference/ai-sdk-core/stream-text.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/simulate-streaming-middleware",
+      "output": "docs/reference/ai-sdk-core/simulate-streaming-middleware.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/smooth-stream",
+      "output": "docs/reference/ai-sdk-core/smooth-stream.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/step-count-is",
+      "output": "docs/reference/ai-sdk-core/step-count-is.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/stream-object",
+      "output": "docs/reference/ai-sdk-core/stream-object.md",
+      "status": "ok",
+      "error": null
+    },
+    {
       "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/transcribe",
       "output": "docs/reference/ai-sdk-core/transcribe.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/ui-message",
+      "output": "docs/reference/ai-sdk-core/ui-message.md",
       "status": "ok",
       "error": null
     },
@@ -738,20 +738,20 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/wrap-language-model",
-      "output": "docs/reference/ai-sdk-core/wrap-language-model.md",
-      "status": "ok",
-      "error": null
-    },
-    {
       "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/zod-schema",
       "output": "docs/reference/ai-sdk-core/zod-schema.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-api-call-error",
-      "output": "docs/reference/ai-sdk-errors/ai-api-call-error.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors",
+      "output": "docs/reference/ai-sdk-errors-folder-description.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-core/wrap-language-model",
+      "output": "docs/reference/ai-sdk-core/wrap-language-model.md",
       "status": "ok",
       "error": null
     },
@@ -768,14 +768,20 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors",
-      "output": "docs/reference/ai-sdk-errors-folder-description.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-argument-error",
+      "output": "docs/reference/ai-sdk-errors/ai-invalid-argument-error.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-argument-error",
-      "output": "docs/reference/ai-sdk-errors/ai-invalid-argument-error.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-api-call-error",
+      "output": "docs/reference/ai-sdk-errors/ai-api-call-error.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-data-content",
+      "output": "docs/reference/ai-sdk-errors/ai-invalid-data-content.md",
       "status": "ok",
       "error": null
     },
@@ -792,26 +798,8 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-data-content",
-      "output": "docs/reference/ai-sdk-errors/ai-invalid-data-content.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-json-parse-error",
-      "output": "docs/reference/ai-sdk-errors/ai-json-parse-error.md",
-      "status": "ok",
-      "error": null
-    },
-    {
       "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-prompt-error",
       "output": "docs/reference/ai-sdk-errors/ai-invalid-prompt-error.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-response-data-error",
-      "output": "docs/reference/ai-sdk-errors/ai-invalid-response-data-error.md",
       "status": "ok",
       "error": null
     },
@@ -822,8 +810,20 @@
       "error": null
     },
     {
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-json-parse-error",
+      "output": "docs/reference/ai-sdk-errors/ai-json-parse-error.md",
+      "status": "ok",
+      "error": null
+    },
+    {
       "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-load-api-key-error",
       "output": "docs/reference/ai-sdk-errors/ai-load-api-key-error.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-response-data-error",
+      "output": "docs/reference/ai-sdk-errors/ai-invalid-response-data-error.md",
       "status": "ok",
       "error": null
     },
@@ -852,20 +852,20 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-object-generated-error",
-      "output": "docs/reference/ai-sdk-errors/ai-no-object-generated-error.md",
-      "status": "ok",
-      "error": null
-    },
-    {
       "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-speech-generated-error",
       "output": "docs/reference/ai-sdk-errors/ai-no-speech-generated-error.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-such-tool-error",
-      "output": "docs/reference/ai-sdk-errors/ai-no-such-tool-error.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-object-generated-error",
+      "output": "docs/reference/ai-sdk-errors/ai-no-object-generated-error.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-such-model-error",
+      "output": "docs/reference/ai-sdk-errors/ai-no-such-model-error.md",
       "status": "ok",
       "error": null
     },
@@ -876,8 +876,8 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-such-model-error",
-      "output": "docs/reference/ai-sdk-errors/ai-no-such-model-error.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-such-tool-error",
+      "output": "docs/reference/ai-sdk-errors/ai-no-such-tool-error.md",
       "status": "ok",
       "error": null
     },
@@ -900,6 +900,12 @@
       "error": null
     },
     {
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error",
+      "output": "docs/reference/ai-sdk-errors/ai-unsupported-functionality-error.md",
+      "status": "ok",
+      "error": null
+    },
+    {
       "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error",
       "output": "docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error.md",
       "status": "ok",
@@ -908,12 +914,6 @@
     {
       "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-type-validation-error",
       "output": "docs/reference/ai-sdk-errors/ai-type-validation-error.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error",
-      "output": "docs/reference/ai-sdk-errors/ai-unsupported-functionality-error.md",
       "status": "ok",
       "error": null
     },
@@ -936,14 +936,20 @@
       "error": null
     },
     {
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-rsc/get-ai-state",
+      "output": "docs/reference/ai-sdk-rsc/get-ai-state.md",
+      "status": "ok",
+      "error": null
+    },
+    {
       "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-rsc/create-streamable-value",
       "output": "docs/reference/ai-sdk-rsc/create-streamable-value.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-rsc/get-ai-state",
-      "output": "docs/reference/ai-sdk-rsc/get-ai-state.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-rsc/read-streamable-value",
+      "output": "docs/reference/ai-sdk-rsc/read-streamable-value.md",
       "status": "ok",
       "error": null
     },
@@ -960,8 +966,8 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-rsc/read-streamable-value",
-      "output": "docs/reference/ai-sdk-rsc/read-streamable-value.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-rsc/stream-ui",
+      "output": "docs/reference/ai-sdk-rsc/stream-ui.md",
       "status": "ok",
       "error": null
     },
@@ -978,14 +984,8 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-rsc/stream-ui",
-      "output": "docs/reference/ai-sdk-rsc/stream-ui.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-rsc/use-streamable-value",
-      "output": "docs/reference/ai-sdk-rsc/use-streamable-value.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-rsc/use-ui-state",
+      "output": "docs/reference/ai-sdk-rsc/use-ui-state.md",
       "status": "ok",
       "error": null
     },
@@ -996,14 +996,8 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-ui/create-ui-message-stream",
-      "output": "docs/reference/ai-sdk-ui/create-ui-message-stream.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-rsc/use-ui-state",
-      "output": "docs/reference/ai-sdk-rsc/use-ui-state.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-rsc/use-streamable-value",
+      "output": "docs/reference/ai-sdk-rsc/use-streamable-value.md",
       "status": "ok",
       "error": null
     },
@@ -1014,26 +1008,26 @@
       "error": null
     },
     {
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-ui/create-ui-message-stream",
+      "output": "docs/reference/ai-sdk-ui/create-ui-message-stream.md",
+      "status": "ok",
+      "error": null
+    },
+    {
       "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-ui/create-ui-message-stream-response",
       "output": "docs/reference/ai-sdk-ui/create-ui-message-stream-response.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-ui/infer-ui-tools",
-      "output": "docs/reference/ai-sdk-ui/infer-ui-tools.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-ui/prune-messages",
-      "output": "docs/reference/ai-sdk-ui/prune-messages.md",
-      "status": "ok",
-      "error": null
-    },
-    {
       "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-ui/infer-ui-tool",
       "output": "docs/reference/ai-sdk-ui/infer-ui-tool.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-ui/infer-ui-tools",
+      "output": "docs/reference/ai-sdk-ui/infer-ui-tools.md",
       "status": "ok",
       "error": null
     },
@@ -1050,14 +1044,26 @@
       "error": null
     },
     {
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-ui/use-completion",
+      "output": "docs/reference/ai-sdk-ui/use-completion.md",
+      "status": "ok",
+      "error": null
+    },
+    {
       "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat",
       "output": "docs/reference/ai-sdk-ui/use-chat.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-ui/use-completion",
-      "output": "docs/reference/ai-sdk-ui/use-completion.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/ai-sdk-ui/prune-messages",
+      "output": "docs/reference/ai-sdk-ui/prune-messages.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/ai-stream",
+      "output": "docs/reference/stream-helpers/ai-stream.md",
       "status": "ok",
       "error": null
     },
@@ -1074,14 +1080,8 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/aws-bedrock-anthropic-stream",
-      "output": "docs/reference/stream-helpers/aws-bedrock-anthropic-stream.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/ai-stream",
-      "output": "docs/reference/stream-helpers/ai-stream.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/anthropic-stream",
+      "output": "docs/reference/stream-helpers/anthropic-stream.md",
       "status": "ok",
       "error": null
     },
@@ -1092,8 +1092,14 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/anthropic-stream",
-      "output": "docs/reference/stream-helpers/anthropic-stream.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/aws-bedrock-cohere-stream",
+      "output": "docs/reference/stream-helpers/aws-bedrock-cohere-stream.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/aws-bedrock-anthropic-stream",
+      "output": "docs/reference/stream-helpers/aws-bedrock-anthropic-stream.md",
       "status": "ok",
       "error": null
     },
@@ -1104,20 +1110,8 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/aws-bedrock-cohere-stream",
-      "output": "docs/reference/stream-helpers/aws-bedrock-cohere-stream.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/hugging-face-stream",
-      "output": "docs/reference/stream-helpers/hugging-face-stream.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/google-generative-ai-stream",
-      "output": "docs/reference/stream-helpers/google-generative-ai-stream.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/aws-bedrock-stream",
+      "output": "docs/reference/stream-helpers/aws-bedrock-stream.md",
       "status": "ok",
       "error": null
     },
@@ -1128,8 +1122,8 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/langchain-adapter",
-      "output": "docs/reference/stream-helpers/langchain-adapter.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/google-generative-ai-stream",
+      "output": "docs/reference/stream-helpers/google-generative-ai-stream.md",
       "status": "ok",
       "error": null
     },
@@ -1140,20 +1134,14 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/aws-bedrock-stream",
-      "output": "docs/reference/stream-helpers/aws-bedrock-stream.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/langchain-adapter",
+      "output": "docs/reference/stream-helpers/langchain-adapter.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/openai-stream",
-      "output": "docs/reference/stream-helpers/openai-stream.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/llamaindex-adapter",
-      "output": "docs/reference/stream-helpers/llamaindex-adapter.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/hugging-face-stream",
+      "output": "docs/reference/stream-helpers/hugging-face-stream.md",
       "status": "ok",
       "error": null
     },
@@ -1164,8 +1152,20 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/streaming-text-response",
-      "output": "docs/reference/stream-helpers/streaming-text-response.md",
+      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/llamaindex-adapter",
+      "output": "docs/reference/stream-helpers/llamaindex-adapter.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/openai-stream",
+      "output": "docs/reference/stream-helpers/openai-stream.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/replicate-stream",
+      "output": "docs/reference/stream-helpers/replicate-stream.md",
       "status": "ok",
       "error": null
     },
@@ -1182,6 +1182,12 @@
       "error": null
     },
     {
+      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/streaming-text-response",
+      "output": "docs/reference/stream-helpers/streaming-text-response.md",
+      "status": "ok",
+      "error": null
+    },
+    {
       "url": "https://v6.ai-sdk.dev/docs/troubleshooting/abort-breaks-resumable-streams",
       "output": "docs/troubleshooting/abort-breaks-resumable-streams.md",
       "status": "ok",
@@ -1194,26 +1200,14 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/reference/stream-helpers/replicate-stream",
-      "output": "docs/reference/stream-helpers/replicate-stream.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/client-side-function-calls-not-invoked",
-      "output": "docs/troubleshooting/client-side-function-calls-not-invoked.md",
-      "status": "ok",
-      "error": null
-    },
-    {
       "url": "https://v6.ai-sdk.dev/docs/troubleshooting/client-stream-error",
       "output": "docs/troubleshooting/client-stream-error.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/no-object-generated-content-filter",
-      "output": "docs/troubleshooting/no-object-generated-content-filter.md",
+      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/client-side-function-calls-not-invoked",
+      "output": "docs/troubleshooting/client-side-function-calls-not-invoked.md",
       "status": "ok",
       "error": null
     },
@@ -1230,38 +1224,8 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/ontoolcall-type-narrowing",
-      "output": "docs/troubleshooting/ontoolcall-type-narrowing.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/server-actions-in-client-components",
-      "output": "docs/troubleshooting/server-actions-in-client-components.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/strange-stream-output",
-      "output": "docs/troubleshooting/strange-stream-output.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/migration-guides/migration-guide-6-0",
-      "output": null,
-      "status": "error",
-      "error": "HTTP Error 404: Not Found"
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/repeated-assistant-messages",
-      "output": "docs/troubleshooting/repeated-assistant-messages.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/stream-abort-handling",
-      "output": "docs/troubleshooting/stream-abort-handling.md",
+      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/no-object-generated-content-filter",
+      "output": "docs/troubleshooting/no-object-generated-content-filter.md",
       "status": "ok",
       "error": null
     },
@@ -1272,20 +1236,44 @@
       "error": null
     },
     {
+      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/server-actions-in-client-components",
+      "output": "docs/troubleshooting/server-actions-in-client-components.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/ontoolcall-type-narrowing",
+      "output": "docs/troubleshooting/ontoolcall-type-narrowing.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/repeated-assistant-messages",
+      "output": "docs/troubleshooting/repeated-assistant-messages.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/strange-stream-output",
+      "output": "docs/troubleshooting/strange-stream-output.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/stream-abort-handling",
+      "output": "docs/troubleshooting/stream-abort-handling.md",
+      "status": "ok",
+      "error": null
+    },
+    {
       "url": "https://v6.ai-sdk.dev/docs/troubleshooting/stream-text-not-working",
       "output": "docs/troubleshooting/stream-text-not-working.md",
       "status": "ok",
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/streaming-not-working-when-deployed",
-      "output": "docs/troubleshooting/streaming-not-working-when-deployed.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/tool-calling-with-structured-outputs",
-      "output": "docs/troubleshooting/tool-calling-with-structured-outputs.md",
+      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/streaming-not-working-when-proxied",
+      "output": "docs/troubleshooting/streaming-not-working-when-proxied.md",
       "status": "ok",
       "error": null
     },
@@ -1296,8 +1284,14 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/streaming-not-working-when-proxied",
-      "output": "docs/troubleshooting/streaming-not-working-when-proxied.md",
+      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/timeout-on-vercel",
+      "output": "docs/troubleshooting/timeout-on-vercel.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/streaming-not-working-when-deployed",
+      "output": "docs/troubleshooting/streaming-not-working-when-deployed.md",
       "status": "ok",
       "error": null
     },
@@ -1314,20 +1308,14 @@
       "error": null
     },
     {
-      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/timeout-on-vercel",
-      "output": "docs/troubleshooting/timeout-on-vercel.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/unsupported-model-version",
-      "output": "docs/troubleshooting/unsupported-model-version.md",
-      "status": "ok",
-      "error": null
-    },
-    {
       "url": "https://v6.ai-sdk.dev/docs/troubleshooting/typescript-cannot-find-namespace-jsx",
       "output": "docs/troubleshooting/typescript-cannot-find-namespace-jsx.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/tool-calling-with-structured-outputs",
+      "output": "docs/troubleshooting/tool-calling-with-structured-outputs.md",
       "status": "ok",
       "error": null
     },
@@ -1338,20 +1326,14 @@
       "error": null
     },
     {
+      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/unsupported-model-version",
+      "output": "docs/troubleshooting/unsupported-model-version.md",
+      "status": "ok",
+      "error": null
+    },
+    {
       "url": "https://v6.ai-sdk.dev/docs/troubleshooting/typescript-performance-zod",
       "output": "docs/troubleshooting/typescript-performance-zod.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/use-chat-failed-to-parse-stream",
-      "output": "docs/troubleshooting/use-chat-failed-to-parse-stream.md",
-      "status": "ok",
-      "error": null
-    },
-    {
-      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/use-chat-custom-request-options",
-      "output": "docs/troubleshooting/use-chat-custom-request-options.md",
       "status": "ok",
       "error": null
     },
@@ -1362,8 +1344,20 @@
       "error": null
     },
     {
+      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/use-chat-failed-to-parse-stream",
+      "output": "docs/troubleshooting/use-chat-failed-to-parse-stream.md",
+      "status": "ok",
+      "error": null
+    },
+    {
       "url": "https://v6.ai-sdk.dev/docs/troubleshooting/use-chat-stale-body-data",
       "output": "docs/troubleshooting/use-chat-stale-body-data.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "url": "https://v6.ai-sdk.dev/docs/troubleshooting/use-chat-custom-request-options",
+      "output": "docs/troubleshooting/use-chat-custom-request-options.md",
       "status": "ok",
       "error": null
     },

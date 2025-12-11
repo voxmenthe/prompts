@@ -371,7 +371,6 @@ Create a frontend app that fetches a token from the server we just made, then us
 - [React Native](https://docs.livekit.io/home/quickstarts/react-native.md)
 - [React](https://docs.livekit.io/home/quickstarts/react.md)
 - [Unity (web)](https://docs.livekit.io/home/quickstarts/unity-web.md)
-- [JavaScript](https://docs.livekit.io/home/quickstarts/javascript.md)
 
 ---
 

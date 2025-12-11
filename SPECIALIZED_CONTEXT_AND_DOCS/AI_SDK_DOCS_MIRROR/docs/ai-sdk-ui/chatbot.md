@@ -63,8 +63,8 @@ export default function Page() {
   );
 }
 ```
+
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { convertToModelMessages, streamText, UIMessage } from 'ai';
 
 // Allow streaming responses up to 30 seconds
@@ -74,7 +74,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     system: 'You are a helpful assistant.',
     messages: convertToModelMessages(messages),
   });
@@ -577,7 +577,7 @@ export async function POST(req: Request) {
   messages.push(message);
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     messages: convertToModelMessages(messages),
   });
 
@@ -646,7 +646,7 @@ export async function POST(req: Request) {
   }
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     messages: convertToModelMessages(messages),
   });
 
@@ -667,14 +667,13 @@ The default error message is "An error occurred."
 You can forward error messages or send your own error message by providing a `getErrorMessage` function:
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { convertToModelMessages, streamText, UIMessage } from 'ai';
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     messages: convertToModelMessages(messages),
   });
 
@@ -729,7 +728,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: MyUIMessage[] } = await req.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     messages: convertToModelMessages(messages),
   });
 

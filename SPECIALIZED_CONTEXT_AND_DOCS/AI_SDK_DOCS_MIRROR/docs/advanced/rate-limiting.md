@@ -13,7 +13,6 @@ and [Upstash Ratelimit](https://github.com/upstash/ratelimit).
 
 ```tsx
 import kv from '@vercel/kv';
-import { openai } from '@ai-sdk/openai';
 import { streamText } from 'ai';
 import { Ratelimit } from '@upstash/ratelimit';
 import { NextRequest } from 'next/server';
@@ -40,7 +39,7 @@ export async function POST(req: NextRequest) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     messages,
   });
 

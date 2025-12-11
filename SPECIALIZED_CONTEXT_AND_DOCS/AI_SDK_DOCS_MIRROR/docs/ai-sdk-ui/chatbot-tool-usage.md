@@ -42,7 +42,6 @@ In this example, we'll use three tools:
 ### API route
 
 ```tsx
-import { openai } from '@ai-sdk/openai';
 import { convertToModelMessages, streamText, UIMessage } from 'ai';
 import { z } from 'zod';
 
@@ -53,7 +52,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     messages: convertToModelMessages(messages),
     tools: {
       // server-side tool with execute function:
@@ -385,7 +384,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     messages: convertToModelMessages(messages),
     // toolCallStreaming is enabled by default in v5
     // ...
@@ -465,7 +464,6 @@ You can also use multi-step calls on the server-side with `streamText`.
 This works when all invoked tools have an `execute` function on the server side.
 
 ```tsx
-import { openai } from '@ai-sdk/openai';
 import { convertToModelMessages, streamText, UIMessage, stepCountIs } from 'ai';
 import { z } from 'zod';
 
@@ -473,7 +471,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     messages: convertToModelMessages(messages),
     tools: {
       getWeatherInformation: {

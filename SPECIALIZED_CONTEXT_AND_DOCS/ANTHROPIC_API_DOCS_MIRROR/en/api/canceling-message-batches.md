@@ -1,113 +1,170 @@
-## Cancel
+<!-- Source: https://docs.anthropic.com/en/api/canceling-message-batches -->
 
-**post** `/v1/messages/batches/{message_batch_id}/cancel`
+# Cancel a Message Batch
+
+post/v1/messages/batches/{message_batch_id}/cancel
 
 Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.
 
 The number of canceled requests is specified in `request_counts`. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible.
 
-Learn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
+Learn more about the Message Batches API in our [user guide](<https://docs.claude.com/en/docs/build-with-claude/batch-processing>)
 
-### Path Parameters
+##### Path ParametersExpand Collapse 
 
-- `message_batch_id: string`
+message_batch_id: string
 
-  ID of the Message Batch.
+ID of the Message Batch.
 
-### Returns
+##### ReturnsExpand Collapse 
 
-- `MessageBatch = object { id, archived_at, cancel_initiated_at, 7 more }`
+MessageBatch = object { id, archived_at, cancel_initiated_at, 7 more } 
 
-  - `id: string`
+id: string
 
-    Unique object identifier.
+Unique object identifier.
 
-    The format and length of IDs may change over time.
+The format and length of IDs may change over time.
 
-  - `archived_at: string`
+archived_at: string
 
-    RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
+RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
 
-  - `cancel_initiated_at: string`
+formatdate-time
 
-    RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
+cancel_initiated_at: string
 
-  - `created_at: string`
+RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
 
-    RFC 3339 datetime string representing the time at which the Message Batch was created.
+formatdate-time
 
-  - `ended_at: string`
+created_at: string
 
-    RFC 3339 datetime string representing the time at which processing for the Message Batch ended. Specified only once processing ends.
+RFC 3339 datetime string representing the time at which the Message Batch was created.
 
-    Processing ends when every request in a Message Batch has either succeeded, errored, canceled, or expired.
+formatdate-time
 
-  - `expires_at: string`
+ended_at: string
 
-    RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
+RFC 3339 datetime string representing the time at which processing for the Message Batch ended. Specified only once processing ends.
 
-  - `processing_status: "in_progress" or "canceling" or "ended"`
+Processing ends when every request in a Message Batch has either succeeded, errored, canceled, or expired.
 
-    Processing status of the Message Batch.
+formatdate-time
 
-    - `"in_progress"`
+expires_at: string
 
-    - `"canceling"`
+RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
 
-    - `"ended"`
+formatdate-time
 
-  - `request_counts: MessageBatchRequestCounts`
+processing_status: "in_progress" or "canceling" or "ended"
 
-    Tallies requests within the Message Batch, categorized by their status.
+Processing status of the Message Batch.
 
-    Requests start as `processing` and move to one of the other statuses only once processing of the entire batch ends. The sum of all values always matches the total number of requests in the batch.
+Accepts one of the following:
 
-    - `canceled: number`
+"in_progress"
 
-      Number of requests in the Message Batch that have been canceled.
+"canceling"
 
-      This is zero until processing of the entire Message Batch has ended.
+"ended"
 
-    - `errored: number`
+request_counts: [MessageBatchRequestCounts](</docs/en/api/messages#message_batch_request_counts>) { canceled, errored, expired, 2 more } 
 
-      Number of requests in the Message Batch that encountered an error.
+Tallies requests within the Message Batch, categorized by their status.
 
-      This is zero until processing of the entire Message Batch has ended.
+Requests start as `processing` and move to one of the other statuses only once processing of the entire batch ends. The sum of all values always matches the total number of requests in the batch.
 
-    - `expired: number`
+canceled: number
 
-      Number of requests in the Message Batch that have expired.
+Number of requests in the Message Batch that have been canceled.
 
-      This is zero until processing of the entire Message Batch has ended.
+This is zero until processing of the entire Message Batch has ended.
 
-    - `processing: number`
+errored: number
 
-      Number of requests in the Message Batch that are processing.
+Number of requests in the Message Batch that encountered an error.
 
-    - `succeeded: number`
+This is zero until processing of the entire Message Batch has ended.
 
-      Number of requests in the Message Batch that have completed successfully.
+expired: number
 
-      This is zero until processing of the entire Message Batch has ended.
+Number of requests in the Message Batch that have expired.
 
-  - `results_url: string`
+This is zero until processing of the entire Message Batch has ended.
 
-    URL to a `.jsonl` file containing the results of the Message Batch requests. Specified only once processing ends.
+processing: number
 
-    Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.
+Number of requests in the Message Batch that are processing.
 
-  - `type: "message_batch"`
+succeeded: number
 
-    Object type.
+Number of requests in the Message Batch that have completed successfully.
 
-    For Message Batches, this is always `"message_batch"`.
+This is zero until processing of the entire Message Batch has ended.
 
-    - `"message_batch"`
+results_url: string
 
-### Example
+URL to a `.jsonl` file containing the results of the Message Batch requests. Specified only once processing ends.
 
-```http
-curl https://api.anthropic.com/v1/messages/batches/$MESSAGE_BATCH_ID/cancel \
-    -X POST \
-    -H "X-Api-Key: $ANTHROPIC_API_KEY"
-```
+Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.
+
+type: "message_batch"
+
+Object type.
+
+For Message Batches, this is always `"message_batch"`.
+
+Accepts one of the following:
+
+"message_batch"
+
+Cancel a Message Batch
+[code]
+    curl https://api.anthropic.com/v1/messages/batches/$MESSAGE_BATCH_ID/cancel \
+        -X POST \
+        -H "X-Api-Key: $ANTHROPIC_API_KEY"
+[/code]
+[code]
+    {
+      "id": "msgbatch_013Zva2CMHLNnXjNJJKqJ2EF",
+      "archived_at": "2024-08-20T18:37:24.100435Z",
+      "cancel_initiated_at": "2024-08-20T18:37:24.100435Z",
+      "created_at": "2024-08-20T18:37:24.100435Z",
+      "ended_at": "2024-08-20T18:37:24.100435Z",
+      "expires_at": "2024-08-20T18:37:24.100435Z",
+      "processing_status": "in_progress",
+      "request_counts": {
+        "canceled": 10,
+        "errored": 30,
+        "expired": 10,
+        "processing": 100,
+        "succeeded": 50
+      },
+      "results_url": "https://api.anthropic.com/v1/messages/batches/msgbatch_013Zva2CMHLNnXjNJJKqJ2EF/results",
+      "type": "message_batch"
+    }
+[/code]
+
+##### Returns Examples
+[code]
+    {
+      "id": "msgbatch_013Zva2CMHLNnXjNJJKqJ2EF",
+      "archived_at": "2024-08-20T18:37:24.100435Z",
+      "cancel_initiated_at": "2024-08-20T18:37:24.100435Z",
+      "created_at": "2024-08-20T18:37:24.100435Z",
+      "ended_at": "2024-08-20T18:37:24.100435Z",
+      "expires_at": "2024-08-20T18:37:24.100435Z",
+      "processing_status": "in_progress",
+      "request_counts": {
+        "canceled": 10,
+        "errored": 30,
+        "expired": 10,
+        "processing": 100,
+        "succeeded": 50
+      },
+      "results_url": "https://api.anthropic.com/v1/messages/batches/msgbatch_013Zva2CMHLNnXjNJJKqJ2EF/results",
+      "type": "message_batch"
+    }
+[/code]

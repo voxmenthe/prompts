@@ -42,6 +42,8 @@ Composite recordings can output to a wide variety of formats and destinations. T
 
 If your application is audio-only, you can export a mixed audio file containing audio from all participants in the room. To start an audio-only composite, pass `audio_only=true` when starting an Egress.
 
+When `audio_only` is true, you can also specify the [audio mixing mode](https://docs.livekit.io/home/egress/api.md#audiomixing) to use. Use dual channel recording to separate the agent's audio from the other participants' audio, or alternate dual channel recording to alternate between left and right channels for each new audio track. By default, all users are mixed together.
+
 ## Web Egress
 
 Web egress allows you to record or stream any website. Similar to room composite egress, it uses headless Chromium to render output. Unlike room composite egress, you can supply any url, and the lifecycle of web egress is not attached to a LiveKit room.

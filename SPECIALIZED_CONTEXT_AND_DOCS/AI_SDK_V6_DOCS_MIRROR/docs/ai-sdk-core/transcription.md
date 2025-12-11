@@ -147,7 +147,6 @@ try {
 | [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#transcription-models) | `scribe_v1` |
 | [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#transcription-models) | `scribe_v1_experimental` |
 | [Groq](/providers/ai-sdk-providers/groq#transcription-models) | `whisper-large-v3-turbo` |
-| [Groq](/providers/ai-sdk-providers/groq#transcription-models) | `distil-whisper-large-v3-en` |
 | [Groq](/providers/ai-sdk-providers/groq#transcription-models) | `whisper-large-v3` |
 | [Azure OpenAI](/providers/ai-sdk-providers/azure#transcription-models) | `whisper-1` |
 | [Azure OpenAI](/providers/ai-sdk-providers/azure#transcription-models) | `gpt-4o-transcribe` |

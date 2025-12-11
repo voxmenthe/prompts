@@ -22,13 +22,12 @@ import { streamToResponse } from "ai"
 You can e.g. use `streamToResponse` to pipe a data stream to a Node.js HTTP server response:
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { StreamData, streamText, streamToResponse } from 'ai';
 import { createServer } from 'http';
 
 createServer(async (req, res) => {
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     prompt: 'What is the weather in San Francisco?',
   });
 

@@ -3,14 +3,13 @@
 The `convertToModelMessages` function is used to transform an array of UI messages from the `useChat` hook into an array of `ModelMessage` objects. These `ModelMessage` objects are compatible with AI core functions like `streamText`.
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { convertToModelMessages, streamText } from 'ai';
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     messages: convertToModelMessages(messages),
   });
 
@@ -59,13 +58,13 @@ import { tool } from 'ai';
 import { z } from 'zod';
 
 const screenshotTool = tool({
-  parameters: z.object({}),
+  inputSchema: z.object({}),
   execute: async () => 'imgbase64',
   toModelOutput: result => [{ type: 'image', data: result }],
 });
 
 const result = streamText({
-  model: openai('gpt-4'),
+  model: "anthropic/claude-sonnet-4.5",
   messages: convertToModelMessages(messages, {
     tools: {
       screenshot: screenshotTool,
@@ -85,7 +84,6 @@ The `convertToModelMessages` function supports converting custom data parts atta
 By default, data parts in user messages are filtered out during conversion. To include them, provide a `convertDataPart` callback that transforms data parts into text or file parts that the model can understand:
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { convertToModelMessages, streamText, UIMessage } from 'ai';
 
 type CustomUIMessage = UIMessage<
@@ -100,7 +98,7 @@ export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     messages: convertToModelMessages<CustomUIMessage>(messages, {
       convertDataPart: part => {
         // Convert URL attachments to text

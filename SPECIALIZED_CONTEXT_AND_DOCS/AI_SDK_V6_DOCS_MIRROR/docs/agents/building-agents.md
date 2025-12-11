@@ -21,7 +21,7 @@ Define an agent by instantiating the ToolLoopAgent class with your desired confi
 import { ToolLoopAgent } from 'ai';
 
 const myAgent = new ToolLoopAgent({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   instructions: 'You are a helpful assistant.',
   tools: {
     // Your tools here
@@ -39,7 +39,7 @@ The Agent class accepts all the same settings as `generateText` and `streamText`
 import { ToolLoopAgent } from 'ai';
 
 const agent = new ToolLoopAgent({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   instructions: 'You are an expert software engineer.',
 });
 ```
@@ -53,7 +53,7 @@ import { ToolLoopAgent, tool } from 'ai';
 import { z } from 'zod';
 
 const codeAgent = new ToolLoopAgent({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     runCode: tool({
       description: 'Execute Python code',
@@ -79,7 +79,7 @@ To let agents call multiple tools in sequence, configure `stopWhen` to allow mor
 import { ToolLoopAgent, stepCountIs } from 'ai';
 
 const agent = new ToolLoopAgent({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   stopWhen: stepCountIs(20), // Allow up to 20 steps
 });
 ```
@@ -97,7 +97,7 @@ You can combine multiple conditions:
 import { ToolLoopAgent, stepCountIs } from 'ai';
 
 const agent = new ToolLoopAgent({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   stopWhen: [
     stepCountIs(20), // Maximum 20 steps
     yourCustomCondition(), // Custom logic for when to stop
@@ -115,7 +115,7 @@ Control how the agent uses tools:
 import { ToolLoopAgent } from 'ai';
 
 const agent = new ToolLoopAgent({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     // your tools here
   },
@@ -131,7 +131,7 @@ You can also force the use of a specific tool:
 import { ToolLoopAgent } from 'ai';
 
 const agent = new ToolLoopAgent({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     weather: weatherTool,
     cityAttractions: attractionsTool,
@@ -152,7 +152,7 @@ import { ToolLoopAgent, Output, stepCountIs } from 'ai';
 import { z } from 'zod';
 
 const analysisAgent = new ToolLoopAgent({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   output: Output.object({
     schema: z.object({
       sentiment: z.enum(['positive', 'neutral', 'negative']),
@@ -178,7 +178,7 @@ Set the agent's role and expertise:
 
 ```ts
 const agent = new ToolLoopAgent({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   instructions:
     'You are an expert data analyst. You provide clear insights from complex data.',
 });
@@ -190,7 +190,7 @@ Provide specific guidelines for agent behavior:
 
 ```ts
 const codeReviewAgent = new ToolLoopAgent({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   instructions: `You are a senior software engineer conducting code reviews.
 
   Your approach:
@@ -208,7 +208,7 @@ Set boundaries and ensure consistent behavior:
 
 ```ts
 const customerSupportAgent = new ToolLoopAgent({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   instructions: `You are a customer support specialist for an e-commerce platform.
 
   Rules:
@@ -231,7 +231,7 @@ Guide how the agent should use available tools:
 
 ```ts
 const researchAgent = new ToolLoopAgent({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   instructions: `You are a research assistant with access to search and document tools.
 
   When researching:
@@ -254,7 +254,7 @@ Control the output format and communication style:
 
 ```ts
 const technicalWriterAgent = new ToolLoopAgent({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   instructions: `You are a technical documentation writer.
 
   Writing style:

@@ -464,7 +464,7 @@ export async function POST(req: Request) {
   const messages = [...previousMessages, message];
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     messages: convertToModelMessages(messages),
     tools: {
       // Your tools here
@@ -822,7 +822,7 @@ export async function POST(req: Request) {
   const messages = [...previousMessages, message];
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     messages: convertToModelMessages(messages),
     tools: {
       // Your tools here

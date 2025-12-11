@@ -5,11 +5,10 @@ Generates text and calls tools for a given prompt using a language model.
 It is ideal for non-interactive use cases such as automation tasks where you need to write text (e.g. drafting email or summarizing web pages) and for agents that use tools.
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   prompt: 'Invent a new holiday and describe its traditions.',
 });
 

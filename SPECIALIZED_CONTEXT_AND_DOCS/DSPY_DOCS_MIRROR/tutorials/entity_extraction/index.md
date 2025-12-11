@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/entity_extraction/index.ipynb on 2025-11-30T20:45:13.288326Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/entity_extraction/index.ipynb on 2025-12-11T00:06:39.058731Z -->
 
 # Tutorial: Entity Extraction
 

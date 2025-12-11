@@ -12,6 +12,7 @@ LiveKit Inference offers transcription powered by Deepgram. Pricing information 
 
 | Model name | Model ID | Languages |
 | -------- | -------- | --------- |
+| Flux | `deepgram/flux-general` | `en` |
 | Nova-3 | `deepgram/nova-3` | `en`, `en-US`, `en-AU`, `en-GB`, `en-IN`, `en-NZ`, `de`, `nl`, `sv`, `sv-SE`, `da`, `da-DK`, `es`, `es-419`, `fr`, `fr-CA`, `pt`, `pt-BR`, `pt-PT`, `multi` |
 | Nova-3 Medical | `deepgram/nova-3-medical` | `en`, `en-US`, `en-AU`, `en-CA`, `en-GB`, `en-IE`, `en-IN`, `en-NZ` |
 | Nova-2 | `deepgram/nova-2` | `multi`, `bg`, `ca`, `zh`, `zh-CN`, `zh-Hans`, `zh-TW`, `zh-Hant`, `zh-HK`, `cs`, `da`, `da-DK`, `nl`, `en`, `en-US`, `en-AU`, `en-GB`, `en-NZ`, `en-IN`, `et`, `fi`, `nl-BE`, `fr`, `fr-CA`, `de`, `de-CH`, `el`, `hi`, `hu`, `id`, `it`, `ja`, `ko`, `ko-KR`, `lv`, `lt`, `ms`, `no`, `pl`, `pt`, `pt-BR`, `pt-PT`, `ro`, `ru`, `sk`, `es`, `es-419`, `sv`, `sv-SE`, `th`, `th-TH`, `tr`, `uk`, `vi` |
@@ -29,8 +30,8 @@ To use Deepgram, pass a descriptor with the model and language to the `stt` argu
 from livekit.agents import AgentSession
 
 session = AgentSession(
-    stt="deepgram/nova-3:en",
-    # ... tts, stt, vad, turn_detection, etc.
+    stt="deepgram/flux-general:en",
+    # ... llm, tts, vad, turn_detection, etc.
 )
 
 ```
@@ -43,8 +44,8 @@ session = AgentSession(
 import { AgentSession } from '@livekit/agents';
 
 session = new AgentSession({
-    stt: "deepgram/nova-3:en",
-    // ... tts, stt, vad, turn_detection, etc.
+    stt="deepgram/flux-general:en",
+    // ... llm, tts, vad, turn_detection, etc.
 });
 
 ```
@@ -68,10 +69,10 @@ from livekit.agents import AgentSession, inference
 
 session = AgentSession(
     stt=inference.STT(
-        model="deepgram/nova-3", 
+        model="deepgram/flux-general", 
         language="en"
     ),
-    # ... tts, stt, vad, turn_detection, etc.
+    # ... llm, tts, vad, turn_detection, etc.
 )
 
 ```
@@ -85,19 +86,19 @@ import { AgentSession, inference } from '@livekit/agents';
 
 session = new AgentSession({
     stt: new inference.STT({ 
-        model: "deepgram/nova-3", 
+        model: "deepgram/flux-general", 
         language: "en" 
     }),
-    // ... tts, stt, vad, turn_detection, etc.
+    // ... llm, tts, vad, turn_detection, etc.
 });
 
 ```
 
-- **`model`** _(string)_: The model to use for the STT.
+- **`model`** _(string)_: The model to use for the STT. See the [Model Options](https://developers.deepgram.com/docs/model) page for available models.
 
 - **`language`** _(string)_ (optional): Language code for the transcription. If not set, the provider default applies. Set it to `multi` with supported models for multilingual transcription.
 
-- **`extra_kwargs`** _(dict)_ (optional): Additional parameters to pass to the Deepgram STT API, including `filler_words`, `interim_results`, `endpointing`, `punctuate`, `smart_format`, `keywords`, `keyterms`, `profanity_filter`, `numerals`, and `mip_opt_out`.
+- **`extra_kwargs`** _(dict)_ (optional): Additional parameters to pass to the Deepgram STT API. Supported fields depend on the selected model. See the provider's [documentation](https://developers.deepgram.com/docs/stt/getting-started) for more information.
 
 In Node.js this parameter is called `modelOptions`.
 

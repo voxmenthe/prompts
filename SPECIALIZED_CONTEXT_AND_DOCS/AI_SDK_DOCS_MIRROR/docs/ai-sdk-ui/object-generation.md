@@ -70,7 +70,6 @@ export default function Page() {
 On the server, we use [`streamObject`](../reference/ai-sdk-core/stream-object.md) to stream the object generation process.
 
 ```typescript
-import { openai } from '@ai-sdk/openai';
 import { streamObject } from 'ai';
 import { notificationSchema } from './schema';
 
@@ -81,7 +80,7 @@ export async function POST(req: Request) {
   const context = await req.json();
 
   const result = streamObject({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     schema: notificationSchema,
     prompt:
       `Generate 3 notifications for a messages app in this context:` + context,
@@ -132,14 +131,13 @@ export default function ClassifyPage() {
 On the server, use `streamObject` with `output: 'enum'` to stream the classification result:
 
 ```typescript
-import { openai } from '@ai-sdk/openai';
 import { streamObject } from 'ai';
 
 export async function POST(req: Request) {
   const context = await req.json();
 
   const result = streamObject({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     output: 'enum',
     enum: ['true', 'false'],
     prompt: `Classify this statement as true or false: ${context}`,

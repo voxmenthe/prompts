@@ -8,11 +8,13 @@ LiveKit docs › Recording & export › Output and streaming options
 
 ## Supported Outputs
 
+The following table shows the supported output types for each egress type.
+
 | Egress Type | Transcoded | Pass-through (mp4, webm, ogg) | HLS Segments | RTMP stream | SRT stream | WebSocket stream |
-| Room Composite | ✅ |  | ✅ | ✅ | ✅ |  |
+| Room composite | ✅ |  | ✅ | ✅ | ✅ |  |
 | Web | ✅ |  | ✅ | ✅ | ✅ |  |
 | Participant | ✅ |  | ✅ | ✅ | ✅ |  |
-| Track Composite | ✅ |  | ✅ | ✅ | ✅ |  |
+| Track composite | ✅ |  | ✅ | ✅ | ✅ |  |
 | Track |  | ✅ |  |  |  | ✅ (audio-only) |
 
 > ℹ️ **Note**
@@ -23,7 +25,7 @@ LiveKit docs › Recording & export › Output and streaming options
 
 Since Composite and Participant Egress are transcoded, they can be output to a wide range of formats and destinations.
 
-Egress is optimized to transcode once while sending output to multiple destinations. For example, from the same Egress you may simultaneously:
+Egress is optimized to transcode once while sending output to multiple destinations. For example, from the same Egress you can simultaneously:
 
 - Stream to one or more RTMP endpoints.
 - Record as HLS.
@@ -338,11 +340,11 @@ Mux is LiveKit's preferred partner for HLS streaming. To start a [Mux](https://w
 When outputing to files, the `filepath` and `filename_prefix` fields support templated variables. The below templates can be used in request filename/filepath parameters:
 
 | Egress Type | {room_id} | {room_name} | {time} | {publisher_identity} | {track_id} | {track_type} | {track_source} |
-| Room Composite | ✔️ | ✔️ | ✔️ |  |  |  |  |
-| Web |  |  | ✔️ |  |  |  |  |
-| Participant | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| Track Composite | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| Track | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| Room Composite | ✅ | ✅ | ✅ |  |  |  |  |
+| Web |  |  | ✅ |  |  |  |  |
+| Participant | ✅ | ✅ | ✅ | ✅ |  |  |  |
+| Track Composite | ✅ | ✅ | ✅ | ✅ |  |  |  |
+| Track | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 - If no filename is provided with a request, one will be generated in the form of `"{room_name}-{time}"`.
 - If your filename ends with a `/`, a file will be generated in that directory.

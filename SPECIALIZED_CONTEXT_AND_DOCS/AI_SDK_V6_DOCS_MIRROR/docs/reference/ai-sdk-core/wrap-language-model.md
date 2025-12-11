@@ -5,10 +5,10 @@ by wrapping them with middleware.
 See [Language Model Middleware](../../ai-sdk-core/middleware.md) for more information on middleware.
 
 ```ts
-import { wrapLanguageModel } from 'ai';
+import { wrapLanguageModel, gateway } from 'ai';
 
 const wrappedLanguageModel = wrapLanguageModel({
-  model: 'openai/gpt-4.1',
+  model: gateway('openai/gpt-4.1'),
   middleware: yourLanguageModelMiddleware,
 });
 ```

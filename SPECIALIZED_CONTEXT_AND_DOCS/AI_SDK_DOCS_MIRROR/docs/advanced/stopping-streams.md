@@ -12,14 +12,13 @@ You would use this if you want to cancel a stream from the server side to the LL
 forwarding the `abortSignal` from the request.
 
 ```tsx
-import { openai } from '@ai-sdk/openai';
 import { streamText } from 'ai';
 
 export async function POST(req: Request) {
   const { prompt } = await req.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     prompt,
     // forward the abort signal:
     abortSignal: req.signal,
@@ -84,7 +83,7 @@ single callback.
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   prompt: 'Write a long story...',
   abortSignal: controller.signal,
   onAbort: ({ steps }) => {
@@ -144,7 +143,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     messages: convertToModelMessages(messages),
     abortSignal: req.signal,
   });

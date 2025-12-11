@@ -8,7 +8,7 @@ To solve these challenges, AI SDK Core offers a standardized approach to interac
 
 Here is an overview of the AI SDK Provider Architecture:
 
-![](/_next/image?url=%2Fimages%2Fai-sdk-diagram.png&w=1920&q=75&dpl=dpl_9Wqf3uCMHoZaZPg8Gi2DQaZrGFxi)![](/_next/image?url=%2Fimages%2Fai-sdk-diagram-dark.png&w=1920&q=75&dpl=dpl_9Wqf3uCMHoZaZPg8Gi2DQaZrGFxi)
+![](/_next/image?url=%2Fimages%2Fai-sdk-diagram.png&w=1920&q=75&dpl=dpl_F2D1uijFxST4p4aEkBa4jGsAoS7Y)![](/_next/image?url=%2Fimages%2Fai-sdk-diagram-dark.png&w=1920&q=75&dpl=dpl_F2D1uijFxST4p4aEkBa4jGsAoS7Y)
 
 ## AI SDK Providers
 

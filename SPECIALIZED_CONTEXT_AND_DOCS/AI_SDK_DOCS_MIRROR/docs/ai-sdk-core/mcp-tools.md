@@ -120,7 +120,7 @@ const mcpClient = await experimental_createMCPClient({
 const tools = await mcpClient.tools();
 
 const result = await streamText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools,
   prompt: 'What is the weather in Brooklyn, New York?',
   onFinish: async () => {

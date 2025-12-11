@@ -17,14 +17,18 @@ AI SDK UI contains the following hooks:
 
 ## UI Framework Support
 
-AI SDK UI supports the following frameworks: [React](https://react.dev/), [Svelte](https://svelte.dev/), and [Vue.js](https://vuejs.org/).
+AI SDK UI supports the following frameworks: [React](https://react.dev/), [Svelte](https://svelte.dev/), [Vue.js](https://vuejs.org/),
+[Angular](https://angular.dev/), and [SolidJS](https://www.solidjs.com/).
+
 Here is a comparison of the supported functions across these frameworks:
 
-| Function | React | Svelte | Vue.js |
+|  | [useChat](ai-sdk-ui/use-chat.md) | [useCompletion](ai-sdk-ui/use-completion.md) | [useObject](ai-sdk-ui/use-object.md) |
 | --- | --- | --- | --- |
-| [useChat](ai-sdk-ui/use-chat.md) |  | Chat |  |
-| [useCompletion](ai-sdk-ui/use-completion.md) |  | Completion |  |
-| [useObject](ai-sdk-ui/use-object.md) |  | StructuredObject |  |
+| React `@ai-sdk/react` |  |  |  |
+| Vue.js `@ai-sdk/vue` |  |  |  |
+| Svelte `@ai-sdk/svelte` | Chat | Completion | StructuredObject |
+| Angular `@ai-sdk/angular` | Chat | Completion | StructuredObject |
+| [SolidJS](https://github.com/kodehort/ai-sdk-solid) (community) |  |  |  |
 
 [Contributions](https://github.com/vercel/ai/blob/main/CONTRIBUTING.md) are
 welcome to implement missing features for non-React frameworks.

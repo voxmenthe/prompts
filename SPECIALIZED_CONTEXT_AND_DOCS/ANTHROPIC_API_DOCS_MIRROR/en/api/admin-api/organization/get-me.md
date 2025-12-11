@@ -1,32 +1,53 @@
-## Me
+<!-- Source: https://docs.anthropic.com/en/api/admin-api/organization/get-me -->
 
-**get** `/v1/organizations/me`
+# Get Current Organization
+
+get/v1/organizations/me
 
 Retrieve information about the organization associated with the authenticated API key.
 
-### Returns
+##### ReturnsExpand Collapse 
 
-- `Organization = object { id, name, type }`
+Organization = object { id, name, type } 
 
-  - `id: string`
+id: string
 
-    ID of the Organization.
+ID of the Organization.
 
-  - `name: string`
+formatuuid
 
-    Name of the Organization.
+name: string
 
-  - `type: "organization"`
+Name of the Organization.
 
-    Object type.
+type: "organization"
 
-    For Organizations, this is always `"organization"`.
+Object type.
 
-    - `"organization"`
+For Organizations, this is always `"organization"`.
 
-### Example
+Accepts one of the following:
 
-```http
-curl https://api.anthropic.com/v1/organizations/me \
-    -H "X-Api-Key: $ANTHROPIC_ADMIN_API_KEY"
-```
+"organization"
+
+Get Current Organization
+[code]
+    curl https://api.anthropic.com/v1/organizations/me \
+        -H "X-Api-Key: $ANTHROPIC_ADMIN_API_KEY"
+[/code]
+[code]
+    {
+      "id": "12345678-1234-5678-1234-567812345678",
+      "name": "Organization Name",
+      "type": "organization"
+    }
+[/code]
+
+##### Returns Examples
+[code]
+    {
+      "id": "12345678-1234-5678-1234-567812345678",
+      "name": "Organization Name",
+      "type": "organization"
+    }
+[/code]

@@ -53,18 +53,19 @@ For these languages we recommend using a custom regex, like the following:
 import { smoothStream, streamText } from 'ai';
 
 const result = streamText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   prompt: 'Your prompt here',
   experimental_transform: smoothStream({
     chunking: /[\u3040-\u309F\u30A0-\u30FF]|\S+\s+/,
   }),
 });
 ```
+
 ```tsx
 import { smoothStream, streamText } from 'ai';
 
 const result = streamText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   prompt: 'Your prompt here',
   experimental_transform: smoothStream({
     chunking: /[\u4E00-\u9FFF]|\S+\s+/,

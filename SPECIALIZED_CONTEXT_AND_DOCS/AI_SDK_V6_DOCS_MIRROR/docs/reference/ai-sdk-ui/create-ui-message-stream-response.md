@@ -50,7 +50,7 @@ const response = createUIMessageStreamResponse({
 
       // Merge with LLM stream
       const result = streamText({
-        model: 'anthropic/claude-sonnet-4.5',
+        model: "anthropic/claude-sonnet-4.5",
         prompt: 'Say hello',
       });
 

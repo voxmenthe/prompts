@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/agents/index.ipynb on 2025-11-30T20:45:13.256257Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/agents/index.ipynb on 2025-12-11T00:06:39.023948Z -->
 
 # Tutorial: Agents
 

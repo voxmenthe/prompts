@@ -305,7 +305,7 @@ After you shutdown the session, you can delete the room if it's no longer needed
 
 If the session should end for everyone, use the server API [deleteRoom](https://docs.livekit.io/home/server/managing-rooms.md#delete-a-room) to end the session. This disconnects all participants from the room.
 
-When the room is removed from the server, a `disconnected` [room event](https://docs.livekit.io/home/client/events.md#room-disconnected) is emitted.
+When the room is removed from the server, a `disconnected` [room event](https://docs.livekit.io/home/client/events.md#events) is emitted.
 
 **Python**:
 

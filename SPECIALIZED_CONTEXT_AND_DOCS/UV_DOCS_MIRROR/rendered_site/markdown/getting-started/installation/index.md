@@ -27,7 +27,7 @@ If your system doesn't have `curl `, you can use `wget `:
 Request a specific version by including it in the URL: 
 
 ```
-[#__codelineno-2-1](#__codelineno-2-1)$ curl -LsSf https://astral.sh/uv/0.9.16/install.sh | sh
+[#__codelineno-2-1](#__codelineno-2-1)$ curl -LsSf https://astral.sh/uv/0.9.17/install.sh | sh
 
 ```
 
@@ -45,7 +45,7 @@ Changing the [execution policy](https://learn.microsoft.com/en-us/powershell/mod
 Request a specific version by including it in the URL: 
 
 ```
-[#__codelineno-4-1](#__codelineno-4-1)PS> powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/0.9.16/install.ps1 | iex"
+[#__codelineno-4-1](#__codelineno-4-1)PS> powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/0.9.17/install.ps1 | iex"
 
 ```
 
@@ -312,4 +312,4 @@ Remove the uv, uvx, and uvw binaries:
 
 See the [first steps](../first-steps/)or jump straight to the [guides](../../guides/)to start using uv. 
 
-December 6, 2025
+December 9, 2025

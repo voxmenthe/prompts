@@ -61,7 +61,7 @@ Your agent is now deployed to LiveKit Cloud and is ready to handle requests. To 
 
 ### Monitor status and logs
 
-Use the CLI to monitor the [status](https://docs.livekit.io/agents/ops/deployment/cli.md#status) and [logs](https://docs.livekit.io/agents/ops/deployment/logs.md#logs) of your agent.
+Use the CLI to monitor the [status](https://docs.livekit.io/agents/ops/deployment/cli.md#status) and [logs](https://docs.livekit.io/agents/ops/deployment/cli.md#logs) of your agent.
 
 1. Monitor agent status:
 
@@ -152,7 +152,7 @@ lk agent deploy --config livekit.eu-central.toml
 
 ```
 
-By default, users connect to the agent in the region closest to them. In some cases, if agents are at capacity, users may connect to an agent in a different region. For fine-grained control over which regions users connect to, set a separate agent name for each region and use [explicit dispatch](https://docs.livekit.io/agents/ops/dispatch/explicit.md) to directly assign users to the appropriate agent.
+By default, users connect to the agent in the region closest to them. In some cases, if agents are at capacity, users may connect to an agent in a different region. For fine-grained control over which regions users connect to, set a separate agent name for each region and use [explicit dispatch](https://docs.livekit.io/agents/server/agent-dispatch.md#explicit) to directly assign users to the appropriate agent.
 
 ### Moving an agent to a new region
 

@@ -123,7 +123,7 @@ export const myProvider = customProvider({
     }),
   },
   embeddingModels: {
-    embedding: gateway.textEmbeddingModel('openai/text-embedding-3-small'),
+    embedding: gateway.embeddingModel('openai/text-embedding-3-small'),
   },
   // no fallback provider
 });
@@ -188,7 +188,7 @@ const { text } = await generateText({
 
 ### Example: Use text embedding models
 
-You can access text embedding models by using the `textEmbeddingModel` method on the registry.
+You can access text embedding models by using the `.embeddingModel` method on the registry.
 The provider id will become the prefix of the model id: `providerId:modelId`.
 
 ```ts
@@ -196,7 +196,7 @@ import { embed } from 'ai';
 import { registry } from './registry';
 
 const { embedding } = await embed({
-  model: registry.textEmbeddingModel('openai:text-embedding-3-small'),
+  model: registry.embeddingModel('openai:text-embedding-3-small'),
   value: 'sunny day at the beach',
 });
 ```
@@ -313,7 +313,7 @@ The AI SDK 5 includes a global provider feature that allows you to specify a mod
 import { streamText } from 'ai';
 
 const result = await streamText({
-  model: 'anthropic/claude-sonnet-4.5', // Uses the global provider (defaults to gateway)
+  model: "anthropic/claude-sonnet-4.5", // Uses the global provider (defaults to gateway)
   prompt: 'Invent a new holiday and describe its traditions.',
 });
 ```

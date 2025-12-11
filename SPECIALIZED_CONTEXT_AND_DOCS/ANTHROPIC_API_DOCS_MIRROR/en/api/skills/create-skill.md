@@ -1,104 +1,133 @@
-## Create
+<!-- Source: https://docs.anthropic.com/en/api/skills/create-skill -->
 
-**post** `/v1/skills`
+# Create Skill
+
+post/v1/skills
 
 Create Skill
 
-### Header Parameters
+##### Header ParametersExpand Collapse 
 
-- `"anthropic-beta": optional array of AnthropicBeta`
+"anthropic-beta": optional array of [AnthropicBeta](</docs/en/api/beta#anthropic_beta>)
 
-  Optional header to specify the beta version(s) you want to use.
+Optional header to specify the beta version(s) you want to use.
 
-  - `UnionMember0 = string`
+Accepts one of the following:
 
-  - `UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 16 more`
+UnionMember0 = string
 
-    - `"message-batches-2024-09-24"`
+UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 16 more
 
-    - `"prompt-caching-2024-07-31"`
+Accepts one of the following:
 
-    - `"computer-use-2024-10-22"`
+"message-batches-2024-09-24"
 
-    - `"computer-use-2025-01-24"`
+"prompt-caching-2024-07-31"
 
-    - `"pdfs-2024-09-25"`
+"computer-use-2024-10-22"
 
-    - `"token-counting-2024-11-01"`
+"computer-use-2025-01-24"
 
-    - `"token-efficient-tools-2025-02-19"`
+"pdfs-2024-09-25"
 
-    - `"output-128k-2025-02-19"`
+"token-counting-2024-11-01"
 
-    - `"files-api-2025-04-14"`
+"token-efficient-tools-2025-02-19"
 
-    - `"mcp-client-2025-04-04"`
+"output-128k-2025-02-19"
 
-    - `"mcp-client-2025-11-20"`
+"files-api-2025-04-14"
 
-    - `"dev-full-thinking-2025-05-14"`
+"mcp-client-2025-04-04"
 
-    - `"interleaved-thinking-2025-05-14"`
+"mcp-client-2025-11-20"
 
-    - `"code-execution-2025-05-22"`
+"dev-full-thinking-2025-05-14"
 
-    - `"extended-cache-ttl-2025-04-11"`
+"interleaved-thinking-2025-05-14"
 
-    - `"context-1m-2025-08-07"`
+"code-execution-2025-05-22"
 
-    - `"context-management-2025-06-27"`
+"extended-cache-ttl-2025-04-11"
 
-    - `"model-context-window-exceeded-2025-08-26"`
+"context-1m-2025-08-07"
 
-    - `"skills-2025-10-02"`
+"context-management-2025-06-27"
 
-### Returns
+"model-context-window-exceeded-2025-08-26"
 
-- `id: string`
+"skills-2025-10-02"
 
-  Unique identifier for the skill.
+##### ReturnsExpand Collapse 
 
-  The format and length of IDs may change over time.
+id: string
 
-- `created_at: string`
+Unique identifier for the skill.
 
-  ISO 8601 timestamp of when the skill was created.
+The format and length of IDs may change over time.
 
-- `display_title: string`
+created_at: string
 
-  Display title for the skill.
+ISO 8601 timestamp of when the skill was created.
 
-  This is a human-readable label that is not included in the prompt sent to the model.
+display_title: string
 
-- `latest_version: string`
+Display title for the skill.
 
-  The latest version identifier for the skill.
+This is a human-readable label that is not included in the prompt sent to the model.
 
-  This represents the most recent version of the skill that has been created.
+latest_version: string
 
-- `source: string`
+The latest version identifier for the skill.
 
-  Source of the skill.
+This represents the most recent version of the skill that has been created.
 
-  This may be one of the following values:
+source: string
+
+Source of the skill.
+
+This may be one of the following values:
 
   * `"custom"`: the skill was created by a user
   * `"anthropic"`: the skill was created by Anthropic
 
-- `type: string`
+type: string
 
-  Object type.
+Object type.
 
-  For Skills, this is always `"skill"`.
+For Skills, this is always `"skill"`.
 
-- `updated_at: string`
+updated_at: string
 
-  ISO 8601 timestamp of when the skill was last updated.
+ISO 8601 timestamp of when the skill was last updated.
 
-### Example
+Create Skill
+[code]
+    curl https://api.anthropic.com/v1/skills \
+        -X POST \
+        -H "X-Api-Key: $ANTHROPIC_API_KEY"
+[/code]
+[code]
+    {
+      "id": "skill_01JAbcdefghijklmnopqrstuvw",
+      "created_at": "2024-10-30T23:58:27.427722Z",
+      "display_title": "My Custom Skill",
+      "latest_version": "1759178010641129",
+      "source": "custom",
+      "type": "type",
+      "updated_at": "2024-10-30T23:58:27.427722Z"
+    }
+[/code]
 
-```http
-curl https://api.anthropic.com/v1/skills \
-    -X POST \
-    -H "X-Api-Key: $ANTHROPIC_API_KEY"
-```
+##### Returns Examples
+[code]
+    {
+      "id": "skill_01JAbcdefghijklmnopqrstuvw",
+      "created_at": "2024-10-30T23:58:27.427722Z",
+      "display_title": "My Custom Skill",
+      "latest_version": "1759178010641129",
+      "source": "custom",
+      "type": "type",
+      "updated_at": "2024-10-30T23:58:27.427722Z"
+    }
+[/code]

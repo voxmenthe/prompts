@@ -7,7 +7,7 @@ In this space, similar words are close to each other, and the distance between w
 
 The AI SDK provides the [`embed`](../reference/ai-sdk-core/embed.md) function to embed single values, which is useful for tasks such as finding similar words
 or phrases or clustering text.
-You can use it with embeddings models, e.g. `openai.textEmbeddingModel('text-embedding-3-large')` or `mistral.textEmbeddingModel('mistral-embed')`.
+You can use it with embeddings models, e.g. `openai.embeddingModel('text-embedding-3-large')` or `mistral.embeddingModel('mistral-embed')`.
 
 ```tsx
 import { embed } from 'ai';
@@ -27,7 +27,7 @@ it is often useful to embed many values at once (batch embedding).
 
 The AI SDK provides the [`embedMany`](../reference/ai-sdk-core/embed-many.md) function for this purpose.
 Similar to `embed`, you can use it with embeddings models,
-e.g. `openai.textEmbeddingModel('text-embedding-3-large')` or `mistral.textEmbeddingModel('mistral-embed')`.
+e.g. `openai.embeddingModel('text-embedding-3-large')` or `mistral.embeddingModel('mistral-embed')`.
 
 ```tsx
 import { openai } from '@ai-sdk/openai';
@@ -205,7 +205,7 @@ import {
 } from 'ai';
 
 const embeddingModelWithDefaults = wrapEmbeddingModel({
-  model: gateway.textEmbeddingModel('google/gemini-embedding-001'),
+  model: gateway.embeddingModel('google/gemini-embedding-001'),
   middleware: defaultEmbeddingSettingsMiddleware({
     settings: {
       providerOptions: {

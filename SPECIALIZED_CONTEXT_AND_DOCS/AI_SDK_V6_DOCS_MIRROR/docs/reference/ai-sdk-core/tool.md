@@ -54,13 +54,25 @@ Zod Schema | JSON Schema
 
 The schema of the input that the tool expects. The language model will use this to generate the input. It is also used to validate the output of the language model. Use descriptions to make the input understandable for the language model. You can either pass in a Zod schema or a JSON schema (using the `jsonSchema` function).
 
+### inputExamples?:
+
+Array<{ input: INPUT }>
+
+An optional list of input examples that show the language model what the input should look like.
+
+### strict?:
+
+boolean
+
+Strict mode setting for the tool. Providers that support strict mode will use this setting to determine how the input should be generated. Strict mode will always produce valid inputs, but it might limit what input schemas are supported.
+
 ### execute?:
 
-async (input: INPUT, options: ToolCallOptions) => RESULT | Promise<RESULT> | AsyncIterable<RESULT>
+async (input: INPUT, options: ToolExecutionOptions) => RESULT | Promise<RESULT> | AsyncIterable<RESULT>
 
 An async function that is called with the arguments from the tool call and produces a result or a results iterable. If an iterable is provided, all results but the last one are considered preliminary. If not provided, the tool will not be executed automatically.
 
-ToolCallOptions
+ToolExecutionOptions
 
 ### toolCallId:
 
@@ -100,19 +112,19 @@ Optional conversion function that maps the tool result to an output that can be 
 
 ### onInputStart?:
 
-(options: ToolCallOptions) => void | PromiseLike<void>
+(options: ToolExecutionOptions) => void | PromiseLike<void>
 
 Optional function that is called when the argument streaming starts. Only called when the tool is used in a streaming context.
 
 ### onInputDelta?:
 
-(options: { inputTextDelta: string } & ToolCallOptions) => void | PromiseLike<void>
+(options: { inputTextDelta: string } & ToolExecutionOptions) => void | PromiseLike<void>
 
 Optional function that is called when an argument streaming delta is available. Only called when the tool is used in a streaming context.
 
 ### onInputAvailable?:
 
-(options: { input: INPUT } & ToolCallOptions) => void | PromiseLike<void>
+(options: { input: INPUT } & ToolExecutionOptions) => void | PromiseLike<void>
 
 Optional function that is called when a tool call can be started, even if the execute function is not provided.
 

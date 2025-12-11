@@ -28,5 +28,5 @@ Truncates the trajectory so that it fits in the context window.
 
 Users can override this method to implement their own truncation logic.
 
-Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/predict/react.py` (lines 17–184)
+Source: `/Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/dspy/predict/react.py` (lines 17–190)
 

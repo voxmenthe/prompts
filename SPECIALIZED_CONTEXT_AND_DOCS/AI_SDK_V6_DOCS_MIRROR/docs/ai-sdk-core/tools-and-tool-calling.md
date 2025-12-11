@@ -1,11 +1,12 @@
 # Tool Calling
 
 As covered under Foundations, [tools](../foundations/tools.md) are objects that can be called by the model to perform a specific task.
-AI SDK Core tools contain three elements:
+AI SDK Core tools contain several core elements:
 
 - **`description`**: An optional description of the tool that can influence when the tool is picked.
 - **`inputSchema`**: A [Zod schema](../foundations/tools.md#schemas) or a [JSON schema](../reference/ai-sdk-core/json-schema.md) that defines the input parameters. The schema is consumed by the LLM, and also used to validate the LLM tool calls.
 - **`execute`**: An optional async function that is called with the inputs from the tool call. It produces a value of type `RESULT` (generic type). It is optional because you might want to forward tool calls to the client or to a queue instead of executing them in the same process.
+- **`strict`**: *(optional, boolean)* Enables strict tool calling when supported by the provider
 
 You can use the [`tool`](../reference/ai-sdk-core/tool.md) helper function to
 infer the types of the `execute` parameters.
@@ -14,10 +15,10 @@ The `tools` parameter of `generateText` and `streamText` is an object that has t
 
 ```ts
 import { z } from 'zod';
-import { generateText, tool } from 'ai';
+import { generateText, tool, stopWhen } from 'ai';
 
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     weather: tool({
       description: 'Get the weather in a location',
@@ -30,6 +31,7 @@ const result = await generateText({
       }),
     }),
   },
+  stopWhen: stepCountIs(5),
   prompt: 'What is the weather in San Francisco?',
 });
 ```
@@ -39,6 +41,55 @@ tool is called a "tool result".
 
 Tool calling is not restricted to only text generation.
 You can also use it to render user interfaces (Generative UI).
+
+## Strict Mode
+
+When enabled, language model providers that support strict tool calling will only generate tool calls that are valid according to your defined `inputSchema`.
+This increases the reliability of tool calling.
+However, not all schemas may be supported in strict mode, and what is supported depends on the specific provider.
+
+By default, strict mode is disabled. You can enable it per-tool by setting `strict: true`:
+
+```ts
+tool({
+  description: 'Get the weather in a location',
+  inputSchema: z.object({
+    location: z.string(),
+  }),
+  strict: true, // Enable strict validation for this tool
+  execute: async ({ location }) => ({
+    // ...
+  }),
+});
+```
+
+Not all providers or models support strict mode. For those that do not, this
+option is ignored.
+
+## Input Examples
+
+You can specify example inputs for your tools to help guide the model on how input data should be structured.
+When supported by providers, input examples can help when JSON schema itself does not fully specify the intended
+usage or when there are optional values.
+
+```ts
+tool({
+  description: 'Get the weather in a location',
+  inputSchema: z.object({
+    location: z.string().describe('The location to get the weather for'),
+  }),
+  inputExamples: [
+    { input: { location: 'San Francisco' } },
+    { input: { location: 'London' } },
+  ],
+  execute: async ({ location }) => {
+    // ...
+  },
+});
+```
+
+Only the Anthropic providers supports tool input examples natively. Other
+providers ignore the setting.
 
 ## Multi-Step Calls (using stopWhen)
 
@@ -70,7 +121,7 @@ import { z } from 'zod';
 import { generateText, tool, stepCountIs } from 'ai';
 
 const { text, steps } = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     weather: tool({
       description: 'Get the weather in a location',
@@ -102,7 +153,7 @@ It contains all the text, tool calls, tool results, and more from each step.
 import { generateText } from 'ai';
 
 const { steps } = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   stopWhen: stepCountIs(10),
   // ...
 });
@@ -140,6 +191,7 @@ It is called with the following parameters:
 - `stepNumber`: The number of the step that is being executed.
 - `steps`: The steps that have been executed so far.
 - `messages`: The messages that will be sent to the model for the current step.
+- `experimental_context`: The context passed via the `experimental_context` setting (experimental).
 
 You can use it to provide different settings for a step, including modifying the input messages.
 
@@ -245,7 +297,7 @@ When using both static and dynamic tools, use the `dynamic` flag for type narrow
 
 ```ts
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     // Static tool with known types
     weather: weatherTool,
@@ -323,7 +375,7 @@ import { z } from 'zod';
 import { generateText, tool } from 'ai';
 
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     weather: tool({
       description: 'Get the weather in a location',
@@ -426,7 +478,7 @@ import { z } from 'zod';
 import { generateText, tool } from 'ai';
 
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   abortSignal: myAbortSignal, // signal that will be forwarded to tools
   tools: {
     weather: tool({
@@ -482,7 +534,7 @@ import { streamText, tool } from 'ai';
 import { z } from 'zod';
 
 const result = streamText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     getWeather: tool({
       description: 'Get the weather in a location',
@@ -525,7 +577,6 @@ and `TypedToolResult<TOOLS extends ToolSet>` can be used to
 extract the tool call and tool result types from the tools.
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { TypedToolCall, TypedToolResult, generateText, tool } from 'ai';
 import { z } from 'zod';
 
@@ -551,7 +602,7 @@ async function generateSomething(prompt: string): Promise<{
   toolResults: Array<MyToolResult>; // typed tool results
 }> {
   return generateText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     tools: myToolSet,
     prompt,
   });
@@ -676,7 +727,7 @@ const result = await generateText({
     const tool = tools[toolCall.toolName as keyof typeof tools];
 
     const { object: repairedArgs } = await generateObject({
-      model: 'anthropic/claude-sonnet-4.5',
+      model: "anthropic/claude-sonnet-4.5",
       schema: tool.inputSchema,
       prompt: [
         `The model tried to call the tool "${toolCall.toolName}"` +
@@ -772,7 +823,7 @@ import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: myToolSet,
   activeTools: ['firstTool'],
 });
@@ -793,7 +844,7 @@ Here is an example for converting a screenshot into a content part:
 
 ```ts
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     computer: anthropic.tools.computer_20241022({
       // ...

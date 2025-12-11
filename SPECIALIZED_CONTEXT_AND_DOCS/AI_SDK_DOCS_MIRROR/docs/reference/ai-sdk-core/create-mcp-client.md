@@ -289,7 +289,6 @@ import {
   generateText,
 } from '@ai-sdk/mcp';
 import { Experimental_StdioMCPTransport } from '@ai-sdk/mcp/mcp-stdio';
-import { openai } from '@ai-sdk/openai';
 
 let client;
 
@@ -303,7 +302,7 @@ try {
   const tools = await client.tools();
 
   const response = await generateText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     tools,
     messages: [{ role: 'user', content: 'Query the data' }],
   });

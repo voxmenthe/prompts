@@ -65,9 +65,7 @@ LiveKit and [LiveKit Cloud](https://cloud.livekit.io) contains these primary com
 #### Platform-specific quickstarts
 
 - [Overview](https://docs.livekit.io/home/quickstarts.md)
-- [Next.js](https://docs.livekit.io/home/quickstarts/nextjs.md): Get started with LiveKit and Next.js
-- [React](https://docs.livekit.io/home/quickstarts/react.md): Get started with LiveKit and React.
-- [JavaScript](https://docs.livekit.io/home/quickstarts/javascript.md): Get started with LiveKit and JavaScript
+- [React](https://docs.livekit.io/home/quickstarts/react.md): Build a voice AI frontend with React in less than 10 minutes.
 - [Unity (WebGL)](https://docs.livekit.io/home/quickstarts/unity-web.md): Get started with LiveKit and Unity (WebGL)
 - [Swift](https://docs.livekit.io/home/quickstarts/swift.md): Get started with LiveKit on iOS using SwiftUI
 - [Android (Compose)](https://docs.livekit.io/home/quickstarts/android-compose.md): Get started with LiveKit and Android using Jetpack Compose
@@ -179,6 +177,7 @@ LiveKit and [LiveKit Cloud](https://cloud.livekit.io) contains these primary com
 - [AssemblyAI](https://docs.livekit.io/agents/models/stt/inference/assemblyai.md): Reference for AssemblyAI STT in LiveKit Inference.
 - [Cartesia](https://docs.livekit.io/agents/models/stt/inference/cartesia.md): Reference for Cartesia STT in LiveKit Inference.
 - [Deepgram](https://docs.livekit.io/agents/models/stt/inference/deepgram.md): Reference for Deepgram STT in LiveKit Inference.
+- [ElevenLabs](https://docs.livekit.io/agents/models/stt/inference/elevenlabs.md): Reference for ElevenLabs STT in LiveKit Inference.
 - [Plugins](https://docs.livekit.io/agents/models/stt/plugins.md)- [AssemblyAI](https://docs.livekit.io/agents/models/stt/plugins/assemblyai.md): How to use the AssemblyAI STT plugin for LiveKit Agents.
 - [Amazon Transcribe](https://docs.livekit.io/agents/models/stt/plugins/aws.md): How to use the Amazon Transcribe STT plugin for LiveKit Agents.
 - [Azure AI Speech](https://docs.livekit.io/agents/models/stt/plugins/azure.md): How to use the Azure Speech STT plugin for LiveKit Agents.
@@ -187,11 +186,13 @@ LiveKit and [LiveKit Cloud](https://cloud.livekit.io) contains these primary com
 - [Cartesia](https://docs.livekit.io/agents/models/stt/plugins/cartesia.md): How to use the Cartesia STT plugin for LiveKit Agents.
 - [Clova](https://docs.livekit.io/agents/models/stt/plugins/clova.md): How to use the Clova STT plugin for LiveKit Agents.
 - [Deepgram](https://docs.livekit.io/agents/models/stt/plugins/deepgram.md): How to use the Deepgram STT plugin for LiveKit Agents.
+- [ElevenLabs](https://docs.livekit.io/agents/models/stt/plugins/elevenlabs.md): How to use the ElevenLabs STT plugin for LiveKit Agents.
 - [fal](https://docs.livekit.io/agents/models/stt/plugins/fal.md): How to use the fal STT plugin for LiveKit Agents.
 - [Gladia](https://docs.livekit.io/agents/models/stt/plugins/gladia.md): How to use the Gladia STT plugin for LiveKit Agents.
 - [Google Cloud](https://docs.livekit.io/agents/models/stt/plugins/google.md): How to use the Google Cloud STT plugin for LiveKit Agents.
 - [Groq](https://docs.livekit.io/agents/models/stt/plugins/groq.md): How to use the Groq STT plugin for LiveKit Agents.
 - [Mistral AI](https://docs.livekit.io/agents/models/stt/plugins/mistralai.md): How to use the Mistral STT plugin for LiveKit Agents.
+- [Nvidia](https://docs.livekit.io/agents/models/stt/plugins/nvidia.md): How to use the NVIDIA Riva STT plugin for LiveKit Agents.
 - [OpenAI](https://docs.livekit.io/agents/models/stt/plugins/openai.md): How to use the OpenAI STT plugin for LiveKit Agents.
 - [Sarvam](https://docs.livekit.io/agents/models/stt/plugins/sarvam.md): How to use the Sarvam STT plugin for LiveKit Agents.
 - [Soniox](https://docs.livekit.io/agents/models/stt/plugins/soniox.md): How to use the Soniox STT plugin for LiveKit Agents.
@@ -239,6 +240,7 @@ LiveKit and [LiveKit Cloud](https://cloud.livekit.io) contains these primary com
 ##### LiveKit Inference
 
 - [Cartesia](https://docs.livekit.io/agents/models/tts/inference/cartesia.md): Reference for Cartesia TTS in LiveKit Inference.
+- [Deepgram](https://docs.livekit.io/agents/models/tts/inference/deepgram.md): Reference for Deepgram TTS in LiveKit Inference.
 - [ElevenLabs](https://docs.livekit.io/agents/models/tts/inference/elevenlabs.md): Reference for ElevenLabs TTS in LiveKit Inference.
 - [Inworld](https://docs.livekit.io/agents/models/tts/inference/inworld.md): Reference for Inworld TTS in LiveKit Inference.
 - [Rime](https://docs.livekit.io/agents/models/tts/inference/rime.md): Reference for Rime TTS in LiveKit Inference.
@@ -260,6 +262,7 @@ LiveKit and [LiveKit Cloud](https://cloud.livekit.io) contains these primary com
 - [LMNT](https://docs.livekit.io/agents/models/tts/plugins/lmnt.md): How to use the LMNT TTS plugin for LiveKit Agents.
 - [MiniMax](https://docs.livekit.io/agents/models/tts/plugins/minimax.md): How to use the MiniMax TTS plugin for LiveKit Agents.
 - [Neuphonic](https://docs.livekit.io/agents/models/tts/plugins/neuphonic.md): How to use the Neuphonic TTS plugin for LiveKit Agents.
+- [Nvidia](https://docs.livekit.io/agents/models/tts/plugins/nvidia.md): How to use the NVIDIA Riva TTS plugin for LiveKit Agents.
 - [OpenAI](https://docs.livekit.io/agents/models/tts/plugins/openai.md): How to use the OpenAI TTS plugin for LiveKit Agents.
 - [Resemble AI](https://docs.livekit.io/agents/models/tts/plugins/resemble.md): How to use the Resemble AI TTS plugin for LiveKit Agents.
 - [Rime](https://docs.livekit.io/agents/models/tts/plugins/rime.md): How to use the Rime TTS plugin for LiveKit Agents.
@@ -284,6 +287,7 @@ LiveKit and [LiveKit Cloud](https://cloud.livekit.io) contains these primary com
 - [Beyond Presence](https://docs.livekit.io/agents/models/avatar/plugins/bey.md): How to use the Beyond Presence virtual avatar plugin for LiveKit Agents.
 - [bitHuman](https://docs.livekit.io/agents/models/avatar/plugins/bithuman.md): How to use the bitHuman virtual avatar plugin for LiveKit Agents.
 - [Hedra](https://docs.livekit.io/agents/models/avatar/plugins/hedra.md): How to use the Hedra virtual avatar plugin for LiveKit Agents.
+- [LiveAvatar](https://docs.livekit.io/agents/models/avatar/plugins/liveavatar.md): How to use the LiveAvatar virtual avatar plugin for LiveKit Agents.
 - [Simli](https://docs.livekit.io/agents/models/avatar/plugins/simli.md): How to use the Simli virtual avatar plugin for LiveKit Agents.
 - [Tavus](https://docs.livekit.io/agents/models/avatar/plugins/tavus.md): How to use the Tavus virtual avatar plugin for LiveKit Agents.
 
@@ -548,5 +552,5 @@ LiveKit and [LiveKit Cloud](https://cloud.livekit.io) contains these primary com
 
 ---
 
-This document was rendered at 2025-11-30T22:48:44.644Z.
+This document was rendered at 2025-12-11T00:05:36.632Z.
 For the latest version of this document, see [https://docs.livekit.io/llms.txt](https://docs.livekit.io/llms.txt).

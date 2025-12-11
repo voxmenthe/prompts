@@ -4,7 +4,7 @@ Language models generate text, so at first it may seem like you would only need 
 
 ```tsx
 const text = generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   system: 'You are a friendly assistant',
   prompt: 'What is the weather in SF?',
   tools: {
@@ -29,7 +29,7 @@ Above, the language model is passed a [tool](../ai-sdk-core/tools-and-tool-calli
 
 ```tsx
 const text = generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   system: 'You are a friendly assistant',
   prompt: 'What is the weather in SF?',
   tools: {
@@ -182,7 +182,7 @@ import { createStreamableUI } from '@ai-sdk/rsc'
 const uiStream = createStreamableUI();
 
 const text = generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   system: 'you are a friendly assistant'
   prompt: 'what is the weather in SF?'
   tools: {

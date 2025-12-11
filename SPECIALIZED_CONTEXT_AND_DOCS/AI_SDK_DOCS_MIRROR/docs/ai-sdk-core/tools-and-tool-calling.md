@@ -17,7 +17,7 @@ import { z } from 'zod';
 import { generateText, tool } from 'ai';
 
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     weather: tool({
       description: 'Get the weather in a location',
@@ -70,7 +70,7 @@ import { z } from 'zod';
 import { generateText, tool, stepCountIs } from 'ai';
 
 const { text, steps } = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     weather: tool({
       description: 'Get the weather in a location',
@@ -102,7 +102,7 @@ It contains all the text, tool calls, tool results, and more from each step.
 import { generateText } from 'ai';
 
 const { steps } = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   stopWhen: stepCountIs(10),
   // ...
 });
@@ -245,7 +245,7 @@ When using both static and dynamic tools, use the `dynamic` flag for type narrow
 
 ```ts
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     // Static tool with known types
     weather: weatherTool,
@@ -323,7 +323,7 @@ import { z } from 'zod';
 import { generateText, tool } from 'ai';
 
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     weather: tool({
       description: 'Get the weather in a location',
@@ -426,7 +426,7 @@ import { z } from 'zod';
 import { generateText, tool } from 'ai';
 
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   abortSignal: myAbortSignal, // signal that will be forwarded to tools
   tools: {
     weather: tool({
@@ -482,7 +482,7 @@ import { streamText, tool } from 'ai';
 import { z } from 'zod';
 
 const result = streamText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     getWeather: tool({
       description: 'Get the weather in a location',
@@ -525,7 +525,6 @@ and `TypedToolResult<TOOLS extends ToolSet>` can be used to
 extract the tool call and tool result types from the tools.
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { TypedToolCall, TypedToolResult, generateText, tool } from 'ai';
 import { z } from 'zod';
 
@@ -551,7 +550,7 @@ async function generateSomething(prompt: string): Promise<{
   toolResults: Array<MyToolResult>; // typed tool results
 }> {
   return generateText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     tools: myToolSet,
     prompt,
   });
@@ -655,11 +654,10 @@ You can use different strategies to repair the tool call:
 ### Example: Use a model with structured outputs for repair
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { generateObject, generateText, NoSuchToolError, tool } from 'ai';
 
 const result = await generateText({
-  model,
+  model: "anthropic/claude-sonnet-4.5",
   tools,
   prompt,
 
@@ -676,7 +674,7 @@ const result = await generateText({
     const tool = tools[toolCall.toolName as keyof typeof tools];
 
     const { object: repairedArgs } = await generateObject({
-      model: 'anthropic/claude-sonnet-4.5',
+      model: "anthropic/claude-sonnet-4.5",
       schema: tool.inputSchema,
       prompt: [
         `The model tried to call the tool "${toolCall.toolName}"` +
@@ -696,11 +694,10 @@ const result = await generateText({
 ### Example: Use the re-ask strategy for repair
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { generateObject, generateText, NoSuchToolError, tool } from 'ai';
 
 const result = await generateText({
-  model,
+  model: "anthropic/claude-sonnet-4.5",
   tools,
   prompt,
 
@@ -768,11 +765,10 @@ It is an array of tool names that are currently active.
 By default, the value is `undefined` and all tools are active.
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: myToolSet,
   activeTools: ['firstTool'],
 });
@@ -793,7 +789,7 @@ Here is an example for converting a screenshot into a content part:
 
 ```ts
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   tools: {
     computer: anthropic.tools.computer_20241022({
       // ...

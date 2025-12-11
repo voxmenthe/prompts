@@ -1,4 +1,4 @@
-<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/gepa_aime/index.ipynb on 2025-11-30T20:45:13.254006Z -->
+<!-- Auto-generated from /Volumes/cdrive/repos/OTHER_PEOPLES_REPOS/dspy/docs/docs/tutorials/gepa_aime/index.ipynb on 2025-12-11T00:06:39.017514Z -->
 
 # Tutorial: GEPA for AIME (Math)
 In this tutorial, we optimize GPT-4.1 Mini's Chain of Thought (`dspy.ChainOfThought`) for solving math problems (AIME) using the `dspy.GEPA` optimizer!

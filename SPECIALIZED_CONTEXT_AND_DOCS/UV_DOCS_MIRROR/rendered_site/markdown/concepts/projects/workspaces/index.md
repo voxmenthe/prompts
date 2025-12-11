@@ -62,7 +62,7 @@ pyproject.toml
 [#__codelineno-1-11](#__codelineno-1-11)members = ["packages/*"]
 [#__codelineno-1-12](#__codelineno-1-12)
 [#__codelineno-1-13](#__codelineno-1-13)[build-system]
-[#__codelineno-1-14](#__codelineno-1-14)requires = ["uv_build>=0.9.16,<0.10.0"]
+[#__codelineno-1-14](#__codelineno-1-14)requires = ["uv_build>=0.9.17,<0.10.0"]
 [#__codelineno-1-15](#__codelineno-1-15)build-backend = "uv_build"
 
 ```
@@ -92,7 +92,7 @@ pyproject.toml
 [#__codelineno-2-12](#__codelineno-2-12)members = ["packages/*"]
 [#__codelineno-2-13](#__codelineno-2-13)
 [#__codelineno-2-14](#__codelineno-2-14)[build-system]
-[#__codelineno-2-15](#__codelineno-2-15)requires = ["uv_build>=0.9.16,<0.10.0"]
+[#__codelineno-2-15](#__codelineno-2-15)requires = ["uv_build>=0.9.17,<0.10.0"]
 [#__codelineno-2-16](#__codelineno-2-16)build-backend = "uv_build"
 
 ```
@@ -162,7 +162,7 @@ pyproject.toml
 [#__codelineno-4-8](#__codelineno-4-8)bird-feeder = { path = "packages/bird-feeder" }
 [#__codelineno-4-9](#__codelineno-4-9)
 [#__codelineno-4-10](#__codelineno-4-10)[build-system]
-[#__codelineno-4-11](#__codelineno-4-11)requires = ["uv_build>=0.9.16,<0.10.0"]
+[#__codelineno-4-11](#__codelineno-4-11)requires = ["uv_build>=0.9.17,<0.10.0"]
 [#__codelineno-4-12](#__codelineno-4-12)build-backend = "uv_build"
 
 ```
@@ -175,4 +175,4 @@ Finally, uv's workspaces enforce a single `requires-python `for the entire works
 
     As Python does not provide dependency isolation, uv can't ensure that a package uses its declared dependencies and nothing else. For workspaces specifically, uv can't ensure that packages don't import dependencies declared by another workspace member. 
 
-December 6, 2025
+December 9, 2025

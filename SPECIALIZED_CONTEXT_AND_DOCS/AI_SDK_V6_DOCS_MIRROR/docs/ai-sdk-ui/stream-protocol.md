@@ -75,9 +75,9 @@ export default function Chat() {
   );
 }
 ```
+
 ```ts
 import { streamText, UIMessage, convertToModelMessages } from 'ai';
-import { openai } from '@ai-sdk/openai';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -86,7 +86,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     messages: convertToModelMessages(messages),
   });
 
@@ -113,7 +113,7 @@ Format: Server-Sent Event with JSON object
 
 Example:
 
-```undefined
+```typescript
 data: {"type":"start","messageId":"..."}
 ```
 
@@ -129,7 +129,7 @@ Format: Server-Sent Event with JSON object
 
 Example:
 
-```undefined
+```typescript
 data: {"type":"text-start","id":"msg_68679a454370819ca74c8eb3d04379630dd1afb72306ca5d"}
 ```
 
@@ -141,7 +141,7 @@ Format: Server-Sent Event with JSON object
 
 Example:
 
-```undefined
+```typescript
 data: {"type":"text-delta","id":"msg_68679a454370819ca74c8eb3d04379630dd1afb72306ca5d","delta":"Hello"}
 ```
 
@@ -153,7 +153,7 @@ Format: Server-Sent Event with JSON object
 
 Example:
 
-```undefined
+```typescript
 data: {"type":"text-end","id":"msg_68679a454370819ca74c8eb3d04379630dd1afb72306ca5d"}
 ```
 
@@ -169,7 +169,7 @@ Format: Server-Sent Event with JSON object
 
 Example:
 
-```undefined
+```typescript
 data: {"type":"reasoning-start","id":"reasoning_123"}
 ```
 
@@ -181,7 +181,7 @@ Format: Server-Sent Event with JSON object
 
 Example:
 
-```undefined
+```typescript
 data: {"type":"reasoning-delta","id":"reasoning_123","delta":"This is some reasoning"}
 ```
 
@@ -193,7 +193,7 @@ Format: Server-Sent Event with JSON object
 
 Example:
 
-```undefined
+```typescript
 data: {"type":"reasoning-end","id":"reasoning_123"}
 ```
 
@@ -209,7 +209,7 @@ Format: Server-Sent Event with JSON object
 
 Example:
 
-```undefined
+```typescript
 data: {"type":"source-url","sourceId":"https://example.com","url":"https://example.com"}
 ```
 
@@ -221,7 +221,7 @@ Format: Server-Sent Event with JSON object
 
 Example:
 
-```undefined
+```typescript
 data: {"type":"source-document","sourceId":"https://example.com","mediaType":"file","title":"Title"}
 ```
 
@@ -233,7 +233,7 @@ Format: Server-Sent Event with JSON object
 
 Example:
 
-```undefined
+```typescript
 data: {"type":"file","url":"https://example.com/file.png","mediaType":"image/png"}
 ```
 
@@ -245,7 +245,7 @@ Format: Server-Sent Event with JSON object where the type includes a custom suff
 
 Example:
 
-```undefined
+```typescript
 data: {"type":"data-weather","data":{"location":"SF","temperature":100}}
 ```
 
@@ -259,7 +259,7 @@ Format: Server-Sent Event with JSON object
 
 Example:
 
-```undefined
+```typescript
 data: {"type":"error","errorText":"error message"}
 ```
 
@@ -271,7 +271,7 @@ Format: Server-Sent Event with JSON object
 
 Example:
 
-```undefined
+```typescript
 data: {"type":"tool-input-start","toolCallId":"call_fJdQDqnXeGxTmr4E3YPSR7Ar","toolName":"getWeatherInformation"}
 ```
 
@@ -283,7 +283,7 @@ Format: Server-Sent Event with JSON object
 
 Example:
 
-```undefined
+```typescript
 data: {"type":"tool-input-delta","toolCallId":"call_fJdQDqnXeGxTmr4E3YPSR7Ar","inputTextDelta":"San Francisco"}
 ```
 
@@ -295,7 +295,7 @@ Format: Server-Sent Event with JSON object
 
 Example:
 
-```undefined
+```typescript
 data: {"type":"tool-input-available","toolCallId":"call_fJdQDqnXeGxTmr4E3YPSR7Ar","toolName":"getWeatherInformation","input":{"city":"San Francisco"}}
 ```
 
@@ -307,7 +307,7 @@ Format: Server-Sent Event with JSON object
 
 Example:
 
-```undefined
+```typescript
 data: {"type":"tool-output-available","toolCallId":"call_fJdQDqnXeGxTmr4E3YPSR7Ar","output":{"city":"San Francisco","weather":"sunny"}}
 ```
 
@@ -319,7 +319,7 @@ Format: Server-Sent Event with JSON object
 
 Example:
 
-```undefined
+```typescript
 data: {"type":"start-step"}
 ```
 
@@ -333,7 +333,7 @@ Format: Server-Sent Event with JSON object
 
 Example:
 
-```undefined
+```typescript
 data: {"type":"finish-step"}
 ```
 
@@ -345,7 +345,7 @@ Format: Server-Sent Event with JSON object
 
 Example:
 
-```undefined
+```typescript
 data: {"type":"finish"}
 ```
 
@@ -357,7 +357,7 @@ Format: Server-Sent Event with literal `[DONE]`
 
 Example:
 
-```undefined
+```typescript
 data: [DONE]
 ```
 
@@ -413,8 +413,8 @@ export default function Chat() {
   );
 }
 ```
+
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { streamText, UIMessage, convertToModelMessages } from 'ai';
 
 // Allow streaming responses up to 30 seconds
@@ -424,7 +424,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-4.5',
+    model: "anthropic/claude-sonnet-4.5",
     messages: convertToModelMessages(messages),
   });
 

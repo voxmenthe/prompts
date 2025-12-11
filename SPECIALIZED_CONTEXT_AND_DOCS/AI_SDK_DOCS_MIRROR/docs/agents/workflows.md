@@ -39,7 +39,7 @@ import { generateText, generateObject } from 'ai';
 import { z } from 'zod';
 
 async function generateMarketingCopy(input: string) {
-  const model = 'openai/gpt-4o';
+  const model = "anthropic/claude-sonnet-4.5";
 
   // First step: Generate marketing copy
   const { text: copy } = await generateText({
@@ -94,7 +94,7 @@ import { generateObject, generateText } from 'ai';
 import { z } from 'zod';
 
 async function handleCustomerQuery(query: string) {
-  const model = 'openai/gpt-4o';
+  const model = "anthropic/claude-sonnet-4.5";
 
   // First step: Classify the query type
   const { object: classification } = await generateObject({
@@ -145,7 +145,7 @@ import { z } from 'zod';
 
 // Example: Parallel code review with multiple specialized reviewers
 async function parallelCodeReview(code: string) {
-  const model = 'openai/gpt-4o';
+  const model = "anthropic/claude-sonnet-4.5";
 
   // Run parallel reviews
   const [securityReview, performanceReview, maintainabilityReview] =
@@ -219,7 +219,7 @@ import { z } from 'zod';
 async function implementFeature(featureRequest: string) {
   // Orchestrator: Plan the implementation
   const { object: implementationPlan } = await generateObject({
-    model: 'openai/o4-mini',
+    model: "anthropic/claude-sonnet-4.5",
     schema: z.object({
       files: z.array(
         z.object({
@@ -250,7 +250,7 @@ async function implementFeature(featureRequest: string) {
       }[file.changeType];
 
       const { object: change } = await generateObject({
-        model: 'anthropic/claude-sonnet-4.5',
+        model: "anthropic/claude-sonnet-4.5",
         schema: z.object({
           explanation: z.string(),
           code: z.string(),
@@ -292,7 +292,7 @@ async function translateWithFeedback(text: string, targetLanguage: string) {
 
   // Initial translation
   const { text: translation } = await generateText({
-    model: 'openai/gpt-4o-mini', // use small model for first attempt
+    model: "anthropic/claude-sonnet-4.5",
     system: 'You are an expert literary translator.',
     prompt: `Translate this text to ${targetLanguage}, preserving tone and cultural nuances:
     ${text}`,
@@ -304,7 +304,7 @@ async function translateWithFeedback(text: string, targetLanguage: string) {
   while (iterations < MAX_ITERATIONS) {
     // Evaluate current translation
     const { object: evaluation } = await generateObject({
-      model: 'anthropic/claude-sonnet-4.5', // use a larger model to evaluate
+      model: "anthropic/claude-sonnet-4.5",
       schema: z.object({
         qualityScore: z.number().min(1).max(10),
         preservesTone: z.boolean(),
@@ -338,7 +338,7 @@ async function translateWithFeedback(text: string, targetLanguage: string) {
 
     // Generate improved translation based on feedback
     const { text: improvedTranslation } = await generateText({
-      model: 'anthropic/claude-sonnet-4.5', // use a larger model
+      model: "anthropic/claude-sonnet-4.5",
       system: 'You are an expert literary translator.',
       prompt: `Improve this translation based on the following feedback:
       ${evaluation.specificIssues.join('\n')}

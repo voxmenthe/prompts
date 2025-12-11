@@ -20,6 +20,7 @@ The following plugins are available. Choose a plugin from this list for a step-b
 | [Beyond Presence](https://docs.livekit.io/agents/models/avatar/plugins/bey.md) | ✓ | — |
 | [bitHuman](https://docs.livekit.io/agents/models/avatar/plugins/bithuman.md) | ✓ | — |
 | [Hedra](https://docs.livekit.io/agents/models/avatar/plugins/hedra.md) | ✓ | — |
+| [LiveAvatar](https://docs.livekit.io/agents/models/avatar/plugins/liveavatar.md) | ✓ | — |
 | [Simli](https://docs.livekit.io/agents/models/avatar/plugins/simli.md) | ✓ | — |
 | [Tavus](https://docs.livekit.io/agents/models/avatar/plugins/tavus.md) | ✓ | — |
 

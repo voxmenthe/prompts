@@ -112,6 +112,7 @@ LIVEKIT_DOCS_MIRROR
 │   │   │       ├── bey.md
 │   │   │       ├── bithuman.md
 │   │   │       ├── hedra.md
+│   │   │       ├── liveavatar.md
 │   │   │       ├── simli.md
 │   │   │       └── tavus.md
 │   │   ├── llm
@@ -152,7 +153,8 @@ LIVEKIT_DOCS_MIRROR
 │   │   │   ├── inference
 │   │   │   │   ├── assemblyai.md
 │   │   │   │   ├── cartesia.md
-│   │   │   │   └── deepgram.md
+│   │   │   │   ├── deepgram.md
+│   │   │   │   └── elevenlabs.md
 │   │   │   └── plugins
 │   │   │       ├── assemblyai.md
 │   │   │       ├── aws.md
@@ -162,11 +164,13 @@ LIVEKIT_DOCS_MIRROR
 │   │   │       ├── cartesia.md
 │   │   │       ├── clova.md
 │   │   │       ├── deepgram.md
+│   │   │       ├── elevenlabs.md
 │   │   │       ├── fal.md
 │   │   │       ├── gladia.md
 │   │   │       ├── google.md
 │   │   │       ├── groq.md
 │   │   │       ├── mistralai.md
+│   │   │       ├── nvidia.md
 │   │   │       ├── openai.md
 │   │   │       ├── sarvam.md
 │   │   │       ├── soniox.md
@@ -175,6 +179,7 @@ LIVEKIT_DOCS_MIRROR
 │   │   ├── tts
 │   │   │   ├── inference
 │   │   │   │   ├── cartesia.md
+│   │   │   │   ├── deepgram.md
 │   │   │   │   ├── elevenlabs.md
 │   │   │   │   ├── inworld.md
 │   │   │   │   └── rime.md
@@ -194,6 +199,7 @@ LIVEKIT_DOCS_MIRROR
 │   │   │       ├── lmnt.md
 │   │   │       ├── minimax.md
 │   │   │       ├── neuphonic.md
+│   │   │       ├── nvidia.md
 │   │   │       ├── openai.md
 │   │   │       ├── playai.md
 │   │   │       ├── resemble.md

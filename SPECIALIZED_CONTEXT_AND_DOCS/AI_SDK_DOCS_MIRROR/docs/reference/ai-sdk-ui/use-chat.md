@@ -342,7 +342,7 @@ object
 
 Additional body JSON properties that should be sent to the API endpoint.
 
-### data:
+### metadata:
 
 JSONValue
 

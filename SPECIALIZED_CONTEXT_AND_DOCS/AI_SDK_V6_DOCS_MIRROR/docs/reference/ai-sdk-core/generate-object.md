@@ -1,5 +1,11 @@
 # `generateObject()`
 
+`generateObject` is deprecated. Use
+[`generateText`](generate-text.md) with the
+[`output`](output.md) property instead. See
+[Generating Structured Data](../../ai-sdk-core/generating-structured-data.md) for
+more information.
+
 Generates a typed, structured object for a given prompt and schema using a language model.
 
 It can be used to force the language model to return structured data, e.g. for information extraction, synthetic data generation, or classification tasks.
@@ -7,12 +13,11 @@ It can be used to force the language model to return structured data, e.g. for i
 #### Example: generate an object using a schema
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { generateObject } from 'ai';
 import { z } from 'zod';
 
 const { object } = await generateObject({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   schema: z.object({
     recipe: z.object({
       name: z.string(),
@@ -31,12 +36,11 @@ console.log(JSON.stringify(object, null, 2));
 For arrays, you specify the schema of the array items.
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { generateObject } from 'ai';
 import { z } from 'zod';
 
 const { object } = await generateObject({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   output: 'array',
   schema: z.object({
     name: z.string(),
@@ -58,7 +62,7 @@ and provide the list of possible values in the `enum` parameter.
 import { generateObject } from 'ai';
 
 const { object } = await generateObject({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   output: 'enum',
   enum: ['action', 'comedy', 'drama', 'horror', 'sci-fi'],
   prompt:
@@ -71,11 +75,10 @@ const { object } = await generateObject({
 #### Example: generate JSON without a schema
 
 ```ts
-import { openai } from '@ai-sdk/openai';
 import { generateObject } from 'ai';
 
 const { object } = await generateObject({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   output: 'no-schema',
   prompt: 'Generate a lasagna recipe.',
 });
@@ -105,12 +108,6 @@ The language model to use. Example: openai('gpt-4.1')
 
 The type of output to generate. Defaults to 'object'.
 
-### mode:
-
-'auto' | 'json' | 'tool'
-
-The mode to use for object generation. Not every model supports all modes. Defaults to 'auto' for 'object' output and to 'json' for 'no-schema' output. Must be 'json' for 'no-schema' output.
-
 ### schema:
 
 Zod Schema | JSON Schema
@@ -137,7 +134,7 @@ List of possible values to generate. Only available with 'enum' output.
 
 ### system:
 
-string
+string | SystemModelMessage | SystemModelMessage[]
 
 The system prompt to use that specifies the behavior of the model.
 
@@ -531,31 +528,71 @@ LanguageModelUsage
 
 number | undefined
 
-The number of input (prompt) tokens used.
+The total number of input (prompt) tokens used.
+
+### inputTokenDetails:
+
+LanguageModelInputTokenDetails
+
+Detailed information about the input (prompt) tokens. See also: cached tokens and non-cached tokens.
+
+LanguageModelInputTokenDetails
+
+### noCacheTokens:
+
+number | undefined
+
+The number of non-cached input (prompt) tokens used.
+
+### cacheReadTokens:
+
+number | undefined
+
+The number of cached input (prompt) tokens read.
+
+### cacheWriteTokens:
+
+number | undefined
+
+The number of cached input (prompt) tokens written.
 
 ### outputTokens:
 
 number | undefined
 
-The number of output (completion) tokens used.
+The number of total output (completion) tokens used.
 
-### totalTokens:
+### outputTokenDetails:
+
+LanguageModelOutputTokenDetails
+
+Detailed information about the output (completion) tokens.
+
+LanguageModelOutputTokenDetails
+
+### textTokens:
 
 number | undefined
 
-The total number of tokens as reported by the provider. This number might be different from the sum of inputTokens and outputTokens and e.g. include reasoning tokens or other overhead.
+The number of text tokens used.
 
-### reasoningTokens?:
+### reasoningTokens:
 
 number | undefined
 
 The number of reasoning tokens used.
 
-### cachedInputTokens?:
+### totalTokens:
 
 number | undefined
 
-The number of cached input tokens.
+The total number of tokens used.
+
+### raw?:
+
+object | undefined
+
+Raw usage information from the provider. This is the provider's original usage information and may include additional fields.
 
 ### request?:
 
@@ -617,7 +654,7 @@ The reasoning that was used to generate the object. Concatenated from all reason
 
 ### warnings:
 
-CallWarning[] | undefined
+Warning[] | undefined
 
 Warnings from the model provider (e.g. unsupported settings).
 

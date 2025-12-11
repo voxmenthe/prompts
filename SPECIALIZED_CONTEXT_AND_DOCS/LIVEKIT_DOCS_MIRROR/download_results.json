@@ -6,76 +6,32 @@
   ],
   "output_root": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR",
   "counts": {
-    "total": 233,
-    "succeeded": 228,
+    "total": 237,
+    "succeeded": 232,
     "failed": 0,
     "missing": 5,
     "pruned_missing": 0,
-    "created": 0,
-    "modified": 0,
-    "unchanged": 228
+    "created": 6,
+    "modified": 27,
+    "unchanged": 199
   },
   "results": [
     {
-      "relative_path": "home/get-started/mcp-server.md",
-      "url_used": "https://docs.livekit.io/home/get-started/mcp-server.md",
+      "relative_path": "agents/ops/deployment.md",
+      "url_used": "https://docs.livekit.io/agents/ops/deployment.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/get-started/mcp-server.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/ops/deployment.md",
       "error": null,
-      "change": "unchanged",
+      "change": "modified",
       "http_status": 200,
       "missing": false,
       "pruned": false
     },
     {
-      "relative_path": "home/get-started/api-primitives.md",
-      "url_used": "https://docs.livekit.io/home/get-started/api-primitives.md",
+      "relative_path": "home/get-started/intro-to-livekit.md",
+      "url_used": "https://docs.livekit.io/home/get-started/intro-to-livekit.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/get-started/api-primitives.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "home/client.md",
-      "url_used": "https://docs.livekit.io/home/client.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "home/client/tracks.md",
-      "url_used": "https://docs.livekit.io/home/client/tracks.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/tracks.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "home/client/tracks/subscribe.md",
-      "url_used": "https://docs.livekit.io/home/client/tracks/subscribe.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/tracks/subscribe.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "home/client/tracks/screenshare.md",
-      "url_used": "https://docs.livekit.io/home/client/tracks/screenshare.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/tracks/screenshare.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/get-started/intro-to-livekit.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -94,10 +50,10 @@
       "pruned": false
     },
     {
-      "relative_path": "sip.md",
-      "url_used": "https://docs.livekit.io/sip.md",
+      "relative_path": "home/client/tracks.md",
+      "url_used": "https://docs.livekit.io/home/client/tracks.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/tracks.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -105,10 +61,10 @@
       "pruned": false
     },
     {
-      "relative_path": "home/get-started/intro-to-livekit.md",
-      "url_used": "https://docs.livekit.io/home/get-started/intro-to-livekit.md",
+      "relative_path": "home/client/tracks/screenshare.md",
+      "url_used": "https://docs.livekit.io/home/client/tracks/screenshare.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/get-started/intro-to-livekit.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/tracks/screenshare.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -116,10 +72,10 @@
       "pruned": false
     },
     {
-      "relative_path": "home/get-started/authentication.md",
-      "url_used": "https://docs.livekit.io/home/get-started/authentication.md",
+      "relative_path": "home/client.md",
+      "url_used": "https://docs.livekit.io/home/client.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/get-started/authentication.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -127,10 +83,21 @@
       "pruned": false
     },
     {
-      "relative_path": "home/client/connect.md",
-      "url_used": "https://docs.livekit.io/home/client/connect.md",
+      "relative_path": "home/get-started/mcp-server.md",
+      "url_used": "https://docs.livekit.io/home/get-started/mcp-server.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/connect.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/get-started/mcp-server.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "home/client/tracks/subscribe.md",
+      "url_used": "https://docs.livekit.io/home/client/tracks/subscribe.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/tracks/subscribe.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -160,10 +127,21 @@
       "pruned": false
     },
     {
-      "relative_path": "home/client/tracks/raw-tracks.md",
-      "url_used": "https://docs.livekit.io/home/client/tracks/raw-tracks.md",
+      "relative_path": "sip.md",
+      "url_used": "https://docs.livekit.io/sip.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/tracks/raw-tracks.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "home/get-started/api-primitives.md",
+      "url_used": "https://docs.livekit.io/home/get-started/api-primitives.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/get-started/api-primitives.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -182,6 +160,17 @@
       "pruned": false
     },
     {
+      "relative_path": "home/client/data.md",
+      "url_used": "https://docs.livekit.io/home/client/data.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/data.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
       "relative_path": "home/client/data/byte-streams.md",
       "url_used": "https://docs.livekit.io/home/client/data/byte-streams.md",
       "success": true,
@@ -193,10 +182,10 @@
       "pruned": false
     },
     {
-      "relative_path": "home/client/data.md",
-      "url_used": "https://docs.livekit.io/home/client/data.md",
+      "relative_path": "home/client/data/rpc.md",
+      "url_used": "https://docs.livekit.io/home/client/data/rpc.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/data.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/data/rpc.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -215,10 +204,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/ops/deployment.md",
-      "url_used": "https://docs.livekit.io/agents/ops/deployment.md",
+      "relative_path": "home/client/encryption.md",
+      "url_used": "https://docs.livekit.io/home/client/encryption.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/ops/deployment.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/encryption.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -237,14 +226,14 @@
       "pruned": false
     },
     {
-      "relative_path": "home/client/encryption.md",
-      "url_used": "https://docs.livekit.io/home/client/encryption.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/encryption.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
+      "relative_path": "home/quickstarts.md",
+      "url_used": "https://docs.livekit.io/home/quickstarts.md",
+      "success": false,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/quickstarts.md",
+      "error": "HTTP 404 Not Found",
+      "change": null,
+      "http_status": 404,
+      "missing": true,
       "pruned": false
     },
     {
@@ -281,32 +270,21 @@
       "pruned": false
     },
     {
-      "relative_path": "home/quickstarts.md",
-      "url_used": "https://docs.livekit.io/home/quickstarts.md",
-      "success": false,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/quickstarts.md",
-      "error": "HTTP 404 Not Found",
-      "change": null,
-      "http_status": 404,
-      "missing": true,
-      "pruned": false
-    },
-    {
-      "relative_path": "home/quickstarts/nextjs.md",
-      "url_used": "https://docs.livekit.io/home/quickstarts/nextjs.md",
+      "relative_path": "home/quickstarts/react.md",
+      "url_used": "https://docs.livekit.io/home/quickstarts/react.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/quickstarts/nextjs.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/quickstarts/react.md",
       "error": null,
-      "change": "unchanged",
+      "change": "modified",
       "http_status": 200,
       "missing": false,
       "pruned": false
     },
     {
-      "relative_path": "home/quickstarts/javascript.md",
-      "url_used": "https://docs.livekit.io/home/quickstarts/javascript.md",
+      "relative_path": "home/quickstarts/unity-web.md",
+      "url_used": "https://docs.livekit.io/home/quickstarts/unity-web.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/quickstarts/javascript.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/quickstarts/unity-web.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -325,32 +303,10 @@
       "pruned": false
     },
     {
-      "relative_path": "home/quickstarts/react.md",
-      "url_used": "https://docs.livekit.io/home/quickstarts/react.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/quickstarts/react.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
       "relative_path": "home/quickstarts/android-compose.md",
       "url_used": "https://docs.livekit.io/home/quickstarts/android-compose.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/quickstarts/android-compose.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "home/quickstarts/unity-web.md",
-      "url_used": "https://docs.livekit.io/home/quickstarts/unity-web.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/quickstarts/unity-web.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -369,17 +325,6 @@
       "pruned": false
     },
     {
-      "relative_path": "home/quickstarts/flutter.md",
-      "url_used": "https://docs.livekit.io/home/quickstarts/flutter.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/quickstarts/flutter.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
       "relative_path": "home/quickstarts/react-native.md",
       "url_used": "https://docs.livekit.io/home/quickstarts/react-native.md",
       "success": true,
@@ -391,10 +336,10 @@
       "pruned": false
     },
     {
-      "relative_path": "home/cli/projects.md",
-      "url_used": "https://docs.livekit.io/home/cli/projects.md",
+      "relative_path": "home/quickstarts/flutter.md",
+      "url_used": "https://docs.livekit.io/home/quickstarts/flutter.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cli/projects.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/quickstarts/flutter.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -424,6 +369,28 @@
       "pruned": false
     },
     {
+      "relative_path": "home/cli/projects.md",
+      "url_used": "https://docs.livekit.io/home/cli/projects.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cli/projects.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "home/server/generating-tokens.md",
+      "url_used": "https://docs.livekit.io/home/server/generating-tokens.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/server/generating-tokens.md",
+      "error": null,
+      "change": "modified",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
       "relative_path": "home/server/managing-rooms.md",
       "url_used": "https://docs.livekit.io/home/server/managing-rooms.md",
       "success": true,
@@ -439,17 +406,6 @@
       "url_used": "https://docs.livekit.io/home/cli/templates.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cli/templates.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "home/server/generating-tokens.md",
-      "url_used": "https://docs.livekit.io/home/server/generating-tokens.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/server/generating-tokens.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -479,10 +435,10 @@
       "pruned": false
     },
     {
-      "relative_path": "home/ingress/overview.md",
-      "url_used": "https://docs.livekit.io/home/ingress/overview.md",
+      "relative_path": "home/ingress/configure-streaming-software.md",
+      "url_used": "https://docs.livekit.io/home/ingress/configure-streaming-software.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/ingress/overview.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/ingress/configure-streaming-software.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -490,10 +446,10 @@
       "pruned": false
     },
     {
-      "relative_path": "home/ingress/configure-streaming-software.md",
-      "url_used": "https://docs.livekit.io/home/ingress/configure-streaming-software.md",
+      "relative_path": "home/ingress/overview.md",
+      "url_used": "https://docs.livekit.io/home/ingress/overview.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/ingress/configure-streaming-software.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/ingress/overview.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -506,7 +462,7 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/egress/overview.md",
       "error": null,
-      "change": "unchanged",
+      "change": "modified",
       "http_status": 200,
       "missing": false,
       "pruned": false
@@ -517,7 +473,18 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/egress/participant.md",
       "error": null,
-      "change": "unchanged",
+      "change": "modified",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "home/egress/composite-recording.md",
+      "url_used": "https://docs.livekit.io/home/egress/composite-recording.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/egress/composite-recording.md",
+      "error": null,
+      "change": "modified",
       "http_status": 200,
       "missing": false,
       "pruned": false
@@ -539,7 +506,7 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/egress/outputs.md",
       "error": null,
-      "change": "unchanged",
+      "change": "modified",
       "http_status": 200,
       "missing": false,
       "pruned": false
@@ -567,10 +534,21 @@
       "pruned": false
     },
     {
-      "relative_path": "home/egress/composite-recording.md",
-      "url_used": "https://docs.livekit.io/home/egress/composite-recording.md",
+      "relative_path": "home/client/connect.md",
+      "url_used": "https://docs.livekit.io/home/client/connect.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/egress/composite-recording.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/connect.md",
+      "error": null,
+      "change": "modified",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "home/cloud.md",
+      "url_used": "https://docs.livekit.io/home/cloud.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cloud.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -589,10 +567,10 @@
       "pruned": false
     },
     {
-      "relative_path": "home/egress/api.md",
-      "url_used": "https://docs.livekit.io/home/egress/api.md",
+      "relative_path": "home/cloud/architecture.md",
+      "url_used": "https://docs.livekit.io/home/cloud/architecture.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/egress/api.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cloud/architecture.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -600,12 +578,34 @@
       "pruned": false
     },
     {
-      "relative_path": "home/cloud.md",
-      "url_used": "https://docs.livekit.io/home/cloud.md",
+      "relative_path": "home/client/tracks/raw-tracks.md",
+      "url_used": "https://docs.livekit.io/home/client/tracks/raw-tracks.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cloud.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/tracks/raw-tracks.md",
       "error": null,
       "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "home/get-started/authentication.md",
+      "url_used": "https://docs.livekit.io/home/get-started/authentication.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/get-started/authentication.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "home/egress/api.md",
+      "url_used": "https://docs.livekit.io/home/egress/api.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/egress/api.md",
+      "error": null,
+      "change": "modified",
       "http_status": 200,
       "missing": false,
       "pruned": false
@@ -615,17 +615,6 @@
       "url_used": "https://docs.livekit.io/home/cloud/sandbox.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cloud/sandbox.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "home/cloud/architecture.md",
-      "url_used": "https://docs.livekit.io/home/cloud/architecture.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cloud/architecture.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -655,32 +644,10 @@
       "pruned": false
     },
     {
-      "relative_path": "home/client/data/rpc.md",
-      "url_used": "https://docs.livekit.io/home/client/data/rpc.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/client/data/rpc.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
       "relative_path": "home/cloud/analytics-api.md",
       "url_used": "https://docs.livekit.io/home/cloud/analytics-api.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cloud/analytics-api.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "home/cloud/billing.md",
-      "url_used": "https://docs.livekit.io/home/cloud/billing.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cloud/billing.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -699,10 +666,21 @@
       "pruned": false
     },
     {
-      "relative_path": "home/self-hosting/vm.md",
-      "url_used": "https://docs.livekit.io/home/self-hosting/vm.md",
+      "relative_path": "home/self-hosting/local.md",
+      "url_used": "https://docs.livekit.io/home/self-hosting/local.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/vm.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/local.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "home/cloud/billing.md",
+      "url_used": "https://docs.livekit.io/home/cloud/billing.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cloud/billing.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -721,32 +699,21 @@
       "pruned": false
     },
     {
+      "relative_path": "home/self-hosting/vm.md",
+      "url_used": "https://docs.livekit.io/home/self-hosting/vm.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/vm.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
       "relative_path": "home/self-hosting/distributed.md",
       "url_used": "https://docs.livekit.io/home/self-hosting/distributed.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/distributed.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "home/self-hosting/deployment.md",
-      "url_used": "https://docs.livekit.io/home/self-hosting/deployment.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/deployment.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "home/self-hosting/benchmark.md",
-      "url_used": "https://docs.livekit.io/home/self-hosting/benchmark.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/benchmark.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -765,10 +732,10 @@
       "pruned": false
     },
     {
-      "relative_path": "home/self-hosting/sip-server.md",
-      "url_used": "https://docs.livekit.io/home/self-hosting/sip-server.md",
+      "relative_path": "home/self-hosting/benchmark.md",
+      "url_used": "https://docs.livekit.io/home/self-hosting/benchmark.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/sip-server.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/benchmark.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -787,21 +754,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents.md",
-      "url_used": "https://docs.livekit.io/agents.md",
+      "relative_path": "home/cloud/quotas-and-limits.md",
+      "url_used": "https://docs.livekit.io/home/cloud/quotas-and-limits.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "home/self-hosting/local.md",
-      "url_used": "https://docs.livekit.io/home/self-hosting/local.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/local.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cloud/quotas-and-limits.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -820,43 +776,32 @@
       "pruned": false
     },
     {
+      "relative_path": "home/self-hosting/sip-server.md",
+      "url_used": "https://docs.livekit.io/home/self-hosting/sip-server.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/sip-server.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents.md",
+      "url_used": "https://docs.livekit.io/agents.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
       "relative_path": "agents/start/builder.md",
       "url_used": "https://docs.livekit.io/agents/start/builder.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/start/builder.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "home/cloud/quotas-and-limits.md",
-      "url_used": "https://docs.livekit.io/home/cloud/quotas-and-limits.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/cloud/quotas-and-limits.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/start/telephony.md",
-      "url_used": "https://docs.livekit.io/agents/start/telephony.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/start/telephony.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/start/playground.md",
-      "url_used": "https://docs.livekit.io/agents/start/playground.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/start/playground.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -875,43 +820,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/start/voice-ai.md",
-      "url_used": "https://docs.livekit.io/agents/start/voice-ai.md",
+      "relative_path": "agents/start/playground.md",
+      "url_used": "https://docs.livekit.io/agents/start/playground.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/start/voice-ai.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/build/sessions.md",
-      "url_used": "https://docs.livekit.io/agents/build/sessions.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/sessions.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/build/agents-handoffs.md",
-      "url_used": "https://docs.livekit.io/agents/build/agents-handoffs.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/agents-handoffs.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/build/workflows.md",
-      "url_used": "https://docs.livekit.io/agents/build/workflows.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/workflows.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/start/playground.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -930,32 +842,65 @@
       "pruned": false
     },
     {
+      "relative_path": "agents/start/telephony.md",
+      "url_used": "https://docs.livekit.io/agents/start/telephony.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/start/telephony.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/start/voice-ai.md",
+      "url_used": "https://docs.livekit.io/agents/start/voice-ai.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/start/voice-ai.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/build/workflows.md",
+      "url_used": "https://docs.livekit.io/agents/build/workflows.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/workflows.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/build/agents-handoffs.md",
+      "url_used": "https://docs.livekit.io/agents/build/agents-handoffs.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/agents-handoffs.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/build/sessions.md",
+      "url_used": "https://docs.livekit.io/agents/build/sessions.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/sessions.md",
+      "error": null,
+      "change": "modified",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
       "relative_path": "agents/build/tasks.md",
       "url_used": "https://docs.livekit.io/agents/build/tasks.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/tasks.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/build/vision.md",
-      "url_used": "https://docs.livekit.io/agents/build/vision.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/vision.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/build/audio.md",
-      "url_used": "https://docs.livekit.io/agents/build/audio.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/audio.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -974,10 +919,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/build/nodes.md",
-      "url_used": "https://docs.livekit.io/agents/build/nodes.md",
+      "relative_path": "agents/build/tools.md",
+      "url_used": "https://docs.livekit.io/agents/build/tools.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/nodes.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/tools.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -985,10 +930,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/build/turns/turn-detector.md",
-      "url_used": "https://docs.livekit.io/agents/build/turns/turn-detector.md",
+      "relative_path": "agents/build/vision.md",
+      "url_used": "https://docs.livekit.io/agents/build/vision.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/turns/turn-detector.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/vision.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1007,10 +952,21 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/build/turns/vad.md",
-      "url_used": "https://docs.livekit.io/agents/build/turns/vad.md",
+      "relative_path": "home/self-hosting/deployment.md",
+      "url_used": "https://docs.livekit.io/home/self-hosting/deployment.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/turns/vad.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/home/self-hosting/deployment.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/build/nodes.md",
+      "url_used": "https://docs.livekit.io/agents/build/nodes.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/nodes.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1023,49 +979,27 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/turns.md",
       "error": null,
-      "change": "unchanged",
+      "change": "modified",
       "http_status": 200,
       "missing": false,
       "pruned": false
     },
     {
-      "relative_path": "agents/build/events.md",
-      "url_used": "https://docs.livekit.io/agents/build/events.md",
+      "relative_path": "agents/build/turns/turn-detector.md",
+      "url_used": "https://docs.livekit.io/agents/build/turns/turn-detector.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/events.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/turns/turn-detector.md",
       "error": null,
-      "change": "unchanged",
+      "change": "modified",
       "http_status": 200,
       "missing": false,
       "pruned": false
     },
     {
-      "relative_path": "agents/build/tools.md",
-      "url_used": "https://docs.livekit.io/agents/build/tools.md",
+      "relative_path": "agents/build/audio.md",
+      "url_used": "https://docs.livekit.io/agents/build/audio.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/tools.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/build/testing.md",
-      "url_used": "https://docs.livekit.io/agents/build/testing.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/testing.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/models.md",
-      "url_used": "https://docs.livekit.io/agents/models.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/audio.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1084,12 +1018,34 @@
       "pruned": false
     },
     {
+      "relative_path": "agents/build/turns/vad.md",
+      "url_used": "https://docs.livekit.io/agents/build/turns/vad.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/turns/vad.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/build/events.md",
+      "url_used": "https://docs.livekit.io/agents/build/events.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/events.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
       "relative_path": "agents/models/stt.md",
       "url_used": "https://docs.livekit.io/agents/models/stt.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt.md",
       "error": null,
-      "change": "unchanged",
+      "change": "modified",
       "http_status": 200,
       "missing": false,
       "pruned": false
@@ -1099,6 +1055,17 @@
       "url_used": "https://docs.livekit.io/agents/models/stt/inference/assemblyai.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/inference/assemblyai.md",
+      "error": null,
+      "change": "modified",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/models.md",
+      "url_used": "https://docs.livekit.io/agents/models.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1114,6 +1081,39 @@
       "change": null,
       "http_status": 404,
       "missing": true,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/models/stt/inference/elevenlabs.md",
+      "url_used": "https://docs.livekit.io/agents/models/stt/inference/elevenlabs.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/inference/elevenlabs.md",
+      "error": null,
+      "change": "created",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/build/testing.md",
+      "url_used": "https://docs.livekit.io/agents/build/testing.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/build/testing.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/models/stt/inference/deepgram.md",
+      "url_used": "https://docs.livekit.io/agents/models/stt/inference/deepgram.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/inference/deepgram.md",
+      "error": null,
+      "change": "modified",
+      "http_status": 200,
+      "missing": false,
       "pruned": false
     },
     {
@@ -1133,18 +1133,7 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/plugins/assemblyai.md",
       "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/models/stt/inference/deepgram.md",
-      "url_used": "https://docs.livekit.io/agents/models/stt/inference/deepgram.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/inference/deepgram.md",
-      "error": null,
-      "change": "unchanged",
+      "change": "modified",
       "http_status": 200,
       "missing": false,
       "pruned": false
@@ -1205,10 +1194,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/stt/plugins/clova.md",
-      "url_used": "https://docs.livekit.io/agents/models/stt/plugins/clova.md",
+      "relative_path": "agents/models/stt/plugins/fal.md",
+      "url_used": "https://docs.livekit.io/agents/models/stt/plugins/fal.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/plugins/clova.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/plugins/fal.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1227,32 +1216,21 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/stt/plugins/fal.md",
-      "url_used": "https://docs.livekit.io/agents/models/stt/plugins/fal.md",
+      "relative_path": "agents/models/stt/plugins/elevenlabs.md",
+      "url_used": "https://docs.livekit.io/agents/models/stt/plugins/elevenlabs.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/plugins/fal.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/plugins/elevenlabs.md",
       "error": null,
-      "change": "unchanged",
+      "change": "created",
       "http_status": 200,
       "missing": false,
       "pruned": false
     },
     {
-      "relative_path": "agents/models/stt/plugins/groq.md",
-      "url_used": "https://docs.livekit.io/agents/models/stt/plugins/groq.md",
+      "relative_path": "agents/models/stt/plugins/clova.md",
+      "url_used": "https://docs.livekit.io/agents/models/stt/plugins/clova.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/plugins/groq.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/models/stt/plugins/gladia.md",
-      "url_used": "https://docs.livekit.io/agents/models/stt/plugins/gladia.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/plugins/gladia.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/plugins/clova.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1271,10 +1249,32 @@
       "pruned": false
     },
     {
+      "relative_path": "agents/models/stt/plugins/gladia.md",
+      "url_used": "https://docs.livekit.io/agents/models/stt/plugins/gladia.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/plugins/gladia.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
       "relative_path": "agents/models/stt/plugins/mistralai.md",
       "url_used": "https://docs.livekit.io/agents/models/stt/plugins/mistralai.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/plugins/mistralai.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/models/stt/plugins/groq.md",
+      "url_used": "https://docs.livekit.io/agents/models/stt/plugins/groq.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/plugins/groq.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1293,12 +1293,12 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/stt/plugins/soniox.md",
-      "url_used": "https://docs.livekit.io/agents/models/stt/plugins/soniox.md",
+      "relative_path": "agents/models/stt/plugins/nvidia.md",
+      "url_used": "https://docs.livekit.io/agents/models/stt/plugins/nvidia.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/plugins/soniox.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/plugins/nvidia.md",
       "error": null,
-      "change": "unchanged",
+      "change": "created",
       "http_status": 200,
       "missing": false,
       "pruned": false
@@ -1315,10 +1315,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/stt/plugins/speechmatics.md",
-      "url_used": "https://docs.livekit.io/agents/models/stt/plugins/speechmatics.md",
+      "relative_path": "agents/models/stt/plugins/soniox.md",
+      "url_used": "https://docs.livekit.io/agents/models/stt/plugins/soniox.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/plugins/speechmatics.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/plugins/soniox.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1326,10 +1326,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/stt/plugins/spitch.md",
-      "url_used": "https://docs.livekit.io/agents/models/stt/plugins/spitch.md",
+      "relative_path": "agents/models/stt/plugins/speechmatics.md",
+      "url_used": "https://docs.livekit.io/agents/models/stt/plugins/speechmatics.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/plugins/spitch.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/plugins/speechmatics.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1359,28 +1359,6 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/llm/inference/gemini.md",
-      "url_used": "https://docs.livekit.io/agents/models/llm/inference/gemini.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/inference/gemini.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/models/llm/inference/qwen.md",
-      "url_used": "https://docs.livekit.io/agents/models/llm/inference/qwen.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/inference/qwen.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
       "relative_path": "agents/models/llm/inference/kimi.md",
       "url_used": "https://docs.livekit.io/agents/models/llm/inference/kimi.md",
       "success": true,
@@ -1403,10 +1381,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/llm/plugins/baseten.md",
-      "url_used": "https://docs.livekit.io/agents/models/llm/plugins/baseten.md",
+      "relative_path": "agents/models/llm/inference/qwen.md",
+      "url_used": "https://docs.livekit.io/agents/models/llm/inference/qwen.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/plugins/baseten.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/inference/qwen.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1414,10 +1392,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/llm/plugins/cerebras.md",
-      "url_used": "https://docs.livekit.io/agents/models/llm/plugins/cerebras.md",
+      "relative_path": "agents/models/llm/inference/gemini.md",
+      "url_used": "https://docs.livekit.io/agents/models/llm/inference/gemini.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/plugins/cerebras.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/inference/gemini.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1425,10 +1403,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/llm/plugins/aws.md",
-      "url_used": "https://docs.livekit.io/agents/models/llm/plugins/aws.md",
+      "relative_path": "agents/models/stt/plugins/spitch.md",
+      "url_used": "https://docs.livekit.io/agents/models/stt/plugins/spitch.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/plugins/aws.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/stt/plugins/spitch.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1447,10 +1425,32 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/llm/plugins/fireworks.md",
-      "url_used": "https://docs.livekit.io/agents/models/llm/plugins/fireworks.md",
+      "relative_path": "agents/models/llm/plugins/aws.md",
+      "url_used": "https://docs.livekit.io/agents/models/llm/plugins/aws.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/plugins/fireworks.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/plugins/aws.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/models/llm/plugins/baseten.md",
+      "url_used": "https://docs.livekit.io/agents/models/llm/plugins/baseten.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/plugins/baseten.md",
+      "error": null,
+      "change": "modified",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/models/llm/plugins/cerebras.md",
+      "url_used": "https://docs.livekit.io/agents/models/llm/plugins/cerebras.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/plugins/cerebras.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1469,32 +1469,32 @@
       "pruned": false
     },
     {
+      "relative_path": "agents/models/llm/plugins/fireworks.md",
+      "url_used": "https://docs.livekit.io/agents/models/llm/plugins/fireworks.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/plugins/fireworks.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
       "relative_path": "agents/models/llm/plugins/groq.md",
       "url_used": "https://docs.livekit.io/agents/models/llm/plugins/groq.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/plugins/groq.md",
       "error": null,
-      "change": "unchanged",
+      "change": "modified",
       "http_status": 200,
       "missing": false,
       "pruned": false
     },
     {
-      "relative_path": "agents/models/llm/plugins/gemini.md",
-      "url_used": "https://docs.livekit.io/agents/models/llm/plugins/gemini.md",
+      "relative_path": "agents/models/llm/plugins/letta.md",
+      "url_used": "https://docs.livekit.io/agents/models/llm/plugins/letta.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/plugins/gemini.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/models/llm/plugins/langchain.md",
-      "url_used": "https://docs.livekit.io/agents/models/llm/plugins/langchain.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/plugins/langchain.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/plugins/letta.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1513,10 +1513,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/llm/plugins/letta.md",
-      "url_used": "https://docs.livekit.io/agents/models/llm/plugins/letta.md",
+      "relative_path": "agents/models/llm/plugins/langchain.md",
+      "url_used": "https://docs.livekit.io/agents/models/llm/plugins/langchain.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/plugins/letta.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/plugins/langchain.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1535,6 +1535,17 @@
       "pruned": false
     },
     {
+      "relative_path": "agents/models/llm/plugins/gemini.md",
+      "url_used": "https://docs.livekit.io/agents/models/llm/plugins/gemini.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/plugins/gemini.md",
+      "error": null,
+      "change": "modified",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
       "relative_path": "agents/models/llm/plugins/openai.md",
       "url_used": "https://docs.livekit.io/agents/models/llm/plugins/openai.md",
       "success": true,
@@ -1546,10 +1557,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/llm/plugins/perplexity.md",
-      "url_used": "https://docs.livekit.io/agents/models/llm/plugins/perplexity.md",
+      "relative_path": "agents/models/llm/plugins/azure-openai.md",
+      "url_used": "https://docs.livekit.io/agents/models/llm/plugins/azure-openai.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/plugins/perplexity.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/plugins/azure-openai.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1561,17 +1572,6 @@
       "url_used": "https://docs.livekit.io/agents/models/llm/plugins/openrouter.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/plugins/openrouter.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/models/llm/plugins/azure-openai.md",
-      "url_used": "https://docs.livekit.io/agents/models/llm/plugins/azure-openai.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/plugins/azure-openai.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1601,10 +1601,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/tts.md",
-      "url_used": "https://docs.livekit.io/agents/models/tts.md",
+      "relative_path": "agents/models/llm/plugins/perplexity.md",
+      "url_used": "https://docs.livekit.io/agents/models/llm/plugins/perplexity.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/llm/plugins/perplexity.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1623,12 +1623,34 @@
       "pruned": false
     },
     {
+      "relative_path": "agents/models/tts/inference/deepgram.md",
+      "url_used": "https://docs.livekit.io/agents/models/tts/inference/deepgram.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/inference/deepgram.md",
+      "error": null,
+      "change": "created",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
       "relative_path": "agents/models/tts/inference/cartesia.md",
       "url_used": "https://docs.livekit.io/agents/models/tts/inference/cartesia.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/inference/cartesia.md",
       "error": null,
       "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/models/tts.md",
+      "url_used": "https://docs.livekit.io/agents/models/tts.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts.md",
+      "error": null,
+      "change": "modified",
       "http_status": 200,
       "missing": false,
       "pruned": false
@@ -1661,7 +1683,7 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/inference/rime.md",
       "error": null,
-      "change": "unchanged",
+      "change": "modified",
       "http_status": 200,
       "missing": false,
       "pruned": false
@@ -1671,17 +1693,6 @@
       "url_used": "https://docs.livekit.io/agents/models/tts/plugins/azure.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/azure.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/models/tts/plugins/azure-openai.md",
-      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/azure-openai.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/azure-openai.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1711,10 +1722,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/tts/plugins/cartesia.md",
-      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/cartesia.md",
+      "relative_path": "agents/models/tts/plugins/azure-openai.md",
+      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/azure-openai.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/cartesia.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/azure-openai.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1722,10 +1733,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/tts/plugins/elevenlabs.md",
-      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/elevenlabs.md",
+      "relative_path": "agents/models/tts/plugins/cartesia.md",
+      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/cartesia.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/elevenlabs.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/cartesia.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1744,32 +1755,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/tts/plugins/gemini.md",
-      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/gemini.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/gemini.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
       "relative_path": "agents/models/tts/plugins/google.md",
       "url_used": "https://docs.livekit.io/agents/models/tts/plugins/google.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/google.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/models/tts/plugins/hume.md",
-      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/hume.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/hume.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1788,43 +1777,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/tts/plugins/lmnt.md",
-      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/lmnt.md",
+      "relative_path": "agents/models/tts/plugins/gemini.md",
+      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/gemini.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/lmnt.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/models/tts/plugins/neuphonic.md",
-      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/neuphonic.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/neuphonic.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/models/tts/plugins/minimax.md",
-      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/minimax.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/minimax.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/models/tts/plugins/openai.md",
-      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/openai.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/openai.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/gemini.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1843,10 +1799,54 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/tts/plugins/sarvam.md",
-      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/sarvam.md",
+      "relative_path": "agents/models/tts/plugins/hume.md",
+      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/hume.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/sarvam.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/hume.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/models/tts/plugins/elevenlabs.md",
+      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/elevenlabs.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/elevenlabs.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/models/tts/plugins/lmnt.md",
+      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/lmnt.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/lmnt.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/models/tts/plugins/minimax.md",
+      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/minimax.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/minimax.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/models/tts/plugins/neuphonic.md",
+      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/neuphonic.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/neuphonic.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1865,10 +1865,32 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/tts/plugins/speechify.md",
-      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/speechify.md",
+      "relative_path": "agents/models/tts/plugins/openai.md",
+      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/openai.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/speechify.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/openai.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/models/tts/plugins/nvidia.md",
+      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/nvidia.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/nvidia.md",
+      "error": null,
+      "change": "created",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/models/tts/plugins/rime.md",
+      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/rime.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/rime.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1887,10 +1909,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/tts/plugins/rime.md",
-      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/rime.md",
+      "relative_path": "agents/models/tts/plugins/speechify.md",
+      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/speechify.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/rime.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/speechify.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1920,14 +1942,14 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/realtime/plugins.md",
-      "url_used": "https://docs.livekit.io/agents/models/realtime/plugins.md",
-      "success": false,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/realtime/plugins.md",
-      "error": "HTTP 404 Not Found",
-      "change": null,
-      "http_status": 404,
-      "missing": true,
+      "relative_path": "agents/models/tts/plugins/sarvam.md",
+      "url_used": "https://docs.livekit.io/agents/models/tts/plugins/sarvam.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/tts/plugins/sarvam.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
       "pruned": false
     },
     {
@@ -1942,32 +1964,21 @@
       "pruned": false
     },
     {
+      "relative_path": "agents/models/realtime/plugins.md",
+      "url_used": "https://docs.livekit.io/agents/models/realtime/plugins.md",
+      "success": false,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/realtime/plugins.md",
+      "error": "HTTP 404 Not Found",
+      "change": null,
+      "http_status": 404,
+      "missing": true,
+      "pruned": false
+    },
+    {
       "relative_path": "agents/models/realtime/plugins/nova-sonic.md",
       "url_used": "https://docs.livekit.io/agents/models/realtime/plugins/nova-sonic.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/realtime/plugins/nova-sonic.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/models/realtime/plugins/openai.md",
-      "url_used": "https://docs.livekit.io/agents/models/realtime/plugins/openai.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/realtime/plugins/openai.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/models/realtime/plugins/azure-openai.md",
-      "url_used": "https://docs.livekit.io/agents/models/realtime/plugins/azure-openai.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/realtime/plugins/azure-openai.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -1991,7 +2002,29 @@
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/avatar.md",
       "error": null,
-      "change": "unchanged",
+      "change": "modified",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/models/realtime/plugins/azure-openai.md",
+      "url_used": "https://docs.livekit.io/agents/models/realtime/plugins/azure-openai.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/realtime/plugins/azure-openai.md",
+      "error": null,
+      "change": "modified",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/models/realtime/plugins/openai.md",
+      "url_used": "https://docs.livekit.io/agents/models/realtime/plugins/openai.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/realtime/plugins/openai.md",
+      "error": null,
+      "change": "modified",
       "http_status": 200,
       "missing": false,
       "pruned": false
@@ -2019,10 +2052,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/avatar/plugins/hedra.md",
-      "url_used": "https://docs.livekit.io/agents/models/avatar/plugins/hedra.md",
+      "relative_path": "agents/models/avatar/plugins/bithuman.md",
+      "url_used": "https://docs.livekit.io/agents/models/avatar/plugins/bithuman.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/avatar/plugins/hedra.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/avatar/plugins/bithuman.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -2030,12 +2063,12 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/models/avatar/plugins/bithuman.md",
-      "url_used": "https://docs.livekit.io/agents/models/avatar/plugins/bithuman.md",
+      "relative_path": "agents/models/avatar/plugins/liveavatar.md",
+      "url_used": "https://docs.livekit.io/agents/models/avatar/plugins/liveavatar.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/avatar/plugins/bithuman.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/avatar/plugins/liveavatar.md",
       "error": null,
-      "change": "unchanged",
+      "change": "created",
       "http_status": 200,
       "missing": false,
       "pruned": false
@@ -2056,6 +2089,17 @@
       "url_used": "https://docs.livekit.io/agents/models/avatar/plugins/simli.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/avatar/plugins/simli.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/models/avatar/plugins/hedra.md",
+      "url_used": "https://docs.livekit.io/agents/models/avatar/plugins/hedra.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/models/avatar/plugins/hedra.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -2085,17 +2129,6 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/server/job.md",
-      "url_used": "https://docs.livekit.io/agents/server/job.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/server/job.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
       "relative_path": "agents/server/agent-dispatch.md",
       "url_used": "https://docs.livekit.io/agents/server/agent-dispatch.md",
       "success": true,
@@ -2107,10 +2140,21 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/ops/deployment/secrets.md",
-      "url_used": "https://docs.livekit.io/agents/ops/deployment/secrets.md",
+      "relative_path": "agents/server/job.md",
+      "url_used": "https://docs.livekit.io/agents/server/job.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/ops/deployment/secrets.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/server/job.md",
+      "error": null,
+      "change": "modified",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/server/options.md",
+      "url_used": "https://docs.livekit.io/agents/server/options.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/server/options.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -2129,21 +2173,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/server/options.md",
-      "url_used": "https://docs.livekit.io/agents/server/options.md",
+      "relative_path": "agents/ops/deployment/secrets.md",
+      "url_used": "https://docs.livekit.io/agents/ops/deployment/secrets.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/server/options.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "agents/observability.md",
-      "url_used": "https://docs.livekit.io/agents/observability.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/observability.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/ops/deployment/secrets.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -2162,10 +2195,10 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/ops/deployment/cli.md",
-      "url_used": "https://docs.livekit.io/agents/ops/deployment/cli.md",
+      "relative_path": "agents/ops/deployment/custom.md",
+      "url_used": "https://docs.livekit.io/agents/ops/deployment/custom.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/ops/deployment/cli.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/ops/deployment/custom.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -2173,10 +2206,21 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/ops/deployment/custom.md",
-      "url_used": "https://docs.livekit.io/agents/ops/deployment/custom.md",
+      "relative_path": "agents/observability/data.md",
+      "url_used": "https://docs.livekit.io/agents/observability/data.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/ops/deployment/custom.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/observability/data.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/observability.md",
+      "url_used": "https://docs.livekit.io/agents/observability.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/observability.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -2195,12 +2239,12 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/observability/data.md",
-      "url_used": "https://docs.livekit.io/agents/observability/data.md",
+      "relative_path": "agents/ops/deployment/cli.md",
+      "url_used": "https://docs.livekit.io/agents/ops/deployment/cli.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/observability/data.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/ops/deployment/cli.md",
       "error": null,
-      "change": "unchanged",
+      "change": "modified",
       "http_status": 200,
       "missing": false,
       "pruned": false
@@ -2239,17 +2283,6 @@
       "pruned": false
     },
     {
-      "relative_path": "agents/integrations/cerebras.md",
-      "url_used": "https://docs.livekit.io/agents/integrations/cerebras.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/cerebras.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
       "relative_path": "agents/integrations/groq.md",
       "url_used": "https://docs.livekit.io/agents/integrations/groq.md",
       "success": true,
@@ -2265,6 +2298,17 @@
       "url_used": "https://docs.livekit.io/agents/v0-migration/python.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/v0-migration/python.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "agents/integrations/cerebras.md",
+      "url_used": "https://docs.livekit.io/agents/integrations/cerebras.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/agents/integrations/cerebras.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -2294,10 +2338,10 @@
       "pruned": false
     },
     {
-      "relative_path": "sip/quickstarts/configuring-sip-trunk.md",
-      "url_used": "https://docs.livekit.io/sip/quickstarts/configuring-sip-trunk.md",
+      "relative_path": "sip/cloud/phone-numbers.md",
+      "url_used": "https://docs.livekit.io/sip/cloud/phone-numbers.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/quickstarts/configuring-sip-trunk.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/cloud/phone-numbers.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -2305,10 +2349,10 @@
       "pruned": false
     },
     {
-      "relative_path": "sip/quickstarts/configuring-telnyx-trunk.md",
-      "url_used": "https://docs.livekit.io/sip/quickstarts/configuring-telnyx-trunk.md",
+      "relative_path": "sip/quickstarts/configuring-sip-trunk.md",
+      "url_used": "https://docs.livekit.io/sip/quickstarts/configuring-sip-trunk.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/quickstarts/configuring-telnyx-trunk.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/quickstarts/configuring-sip-trunk.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -2327,54 +2371,10 @@
       "pruned": false
     },
     {
-      "relative_path": "sip/accepting-calls.md",
-      "url_used": "https://docs.livekit.io/sip/accepting-calls.md",
+      "relative_path": "sip/quickstarts/configuring-telnyx-trunk.md",
+      "url_used": "https://docs.livekit.io/sip/quickstarts/configuring-telnyx-trunk.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/accepting-calls.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "sip/cloud/phone-numbers.md",
-      "url_used": "https://docs.livekit.io/sip/cloud/phone-numbers.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/cloud/phone-numbers.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "sip/dispatch-rule.md",
-      "url_used": "https://docs.livekit.io/sip/dispatch-rule.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/dispatch-rule.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "sip/trunk-inbound.md",
-      "url_used": "https://docs.livekit.io/sip/trunk-inbound.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/trunk-inbound.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "sip/accepting-calls-twilio-voice.md",
-      "url_used": "https://docs.livekit.io/sip/accepting-calls-twilio-voice.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/accepting-calls-twilio-voice.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/quickstarts/configuring-telnyx-trunk.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -2393,6 +2393,39 @@
       "pruned": false
     },
     {
+      "relative_path": "sip/quickstarts/configuring-wavix-trunk.md",
+      "url_used": "https://docs.livekit.io/sip/quickstarts/configuring-wavix-trunk.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/quickstarts/configuring-wavix-trunk.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "sip/accepting-calls.md",
+      "url_used": "https://docs.livekit.io/sip/accepting-calls.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/accepting-calls.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "sip/accepting-calls-twilio-voice.md",
+      "url_used": "https://docs.livekit.io/sip/accepting-calls-twilio-voice.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/accepting-calls-twilio-voice.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
       "relative_path": "sip/making-calls.md",
       "url_used": "https://docs.livekit.io/sip/making-calls.md",
       "success": true,
@@ -2404,21 +2437,10 @@
       "pruned": false
     },
     {
-      "relative_path": "sip/trunk-outbound.md",
-      "url_used": "https://docs.livekit.io/sip/trunk-outbound.md",
+      "relative_path": "sip/trunk-inbound.md",
+      "url_used": "https://docs.livekit.io/sip/trunk-inbound.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/trunk-outbound.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "sip/quickstarts/configuring-wavix-trunk.md",
-      "url_used": "https://docs.livekit.io/sip/quickstarts/configuring-wavix-trunk.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/quickstarts/configuring-wavix-trunk.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/trunk-inbound.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -2437,21 +2459,10 @@
       "pruned": false
     },
     {
-      "relative_path": "sip/dtmf.md",
-      "url_used": "https://docs.livekit.io/sip/dtmf.md",
+      "relative_path": "sip/dispatch-rule.md",
+      "url_used": "https://docs.livekit.io/sip/dispatch-rule.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/dtmf.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "sip/transfer-warm.md",
-      "url_used": "https://docs.livekit.io/sip/transfer-warm.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/transfer-warm.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/dispatch-rule.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -2470,10 +2481,54 @@
       "pruned": false
     },
     {
+      "relative_path": "sip/dtmf.md",
+      "url_used": "https://docs.livekit.io/sip/dtmf.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/dtmf.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "sip/trunk-outbound.md",
+      "url_used": "https://docs.livekit.io/sip/trunk-outbound.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/trunk-outbound.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "sip/transfer-warm.md",
+      "url_used": "https://docs.livekit.io/sip/transfer-warm.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/transfer-warm.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
       "relative_path": "sip/hd-voice.md",
       "url_used": "https://docs.livekit.io/sip/hd-voice.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/hd-voice.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "sip/secure-trunking.md",
+      "url_used": "https://docs.livekit.io/sip/secure-trunking.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/secure-trunking.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -2492,10 +2547,10 @@
       "pruned": false
     },
     {
-      "relative_path": "sip/secure-trunking.md",
-      "url_used": "https://docs.livekit.io/sip/secure-trunking.md",
+      "relative_path": "recipes/ivr-navigator.md",
+      "url_used": "https://docs.livekit.io/recipes/ivr-navigator.md",
       "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/secure-trunking.md",
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/recipes/ivr-navigator.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -2525,43 +2580,21 @@
       "pruned": false
     },
     {
-      "relative_path": "sip/phone-numbers-api.md",
-      "url_used": "https://docs.livekit.io/sip/phone-numbers-api.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/phone-numbers-api.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "recipes/ivr-navigator.md",
-      "url_used": "https://docs.livekit.io/recipes/ivr-navigator.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/recipes/ivr-navigator.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
-      "relative_path": "sip/api.md",
-      "url_used": "https://docs.livekit.io/sip/api.md",
-      "success": true,
-      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/api.md",
-      "error": null,
-      "change": "unchanged",
-      "http_status": 200,
-      "missing": false,
-      "pruned": false
-    },
-    {
       "relative_path": "recipes/chain-of-thought.md",
       "url_used": "https://docs.livekit.io/recipes/chain-of-thought.md",
       "success": true,
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/recipes/chain-of-thought.md",
+      "error": null,
+      "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "sip/phone-numbers-api.md",
+      "url_used": "https://docs.livekit.io/sip/phone-numbers-api.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/phone-numbers-api.md",
       "error": null,
       "change": "unchanged",
       "http_status": 200,
@@ -2575,6 +2608,17 @@
       "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/recipes/moviefone.md",
       "error": null,
       "change": "unchanged",
+      "http_status": 200,
+      "missing": false,
+      "pruned": false
+    },
+    {
+      "relative_path": "sip/api.md",
+      "url_used": "https://docs.livekit.io/sip/api.md",
+      "success": true,
+      "local_path": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/LIVEKIT_DOCS_MIRROR/sip/api.md",
+      "error": null,
+      "change": "modified",
       "http_status": 200,
       "missing": false,
       "pruned": false

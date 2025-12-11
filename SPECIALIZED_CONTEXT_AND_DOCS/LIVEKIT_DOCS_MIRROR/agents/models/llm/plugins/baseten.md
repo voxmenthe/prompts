@@ -68,7 +68,7 @@ session = AgentSession(
 
 ### Parameters
 
-This section describes some of the available parameters. For a complete reference of all available parameters, see the [plugin reference](https://docs.livekit.io/python/v1/livekit/plugins/groq/services.html.md#livekit.plugins.groq.services.LLM).
+This section describes some of the available parameters. For a complete reference of all available parameters, see the [plugin reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/groq/services.html.md#livekit.plugins.groq.services.LLM).
 
 - **`model`** _(string)_ (optional) - Default: `meta-llama/Llama-4-Maverick-17B-128E-Instruct`: Name of the LLM model to use from the [Model API](https://www.baseten.co/model-apis). See [Model selection](#model-selection) for more information.
 

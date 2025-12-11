@@ -19,7 +19,7 @@ You can structure the text in any way and inject variables, e.g. using a templat
 
 ```ts
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   prompt: 'Invent a new holiday and describe its traditions.',
 });
 ```
@@ -28,7 +28,7 @@ You can also use template literals to provide dynamic data to your prompt.
 
 ```ts
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   prompt:
     `I am planning a trip to ${destination} for ${lengthOfStay} days. ` +
     `Please suggest the best tourist activities for me to do.`,
@@ -43,7 +43,7 @@ System prompts work with both the `prompt` and the `messages` properties.
 
 ```ts
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   system:
     `You help planning travel itineraries. ` +
     `Respond to the users' request with a list ` +
@@ -67,7 +67,7 @@ Each message has a `role` and a `content` property. The content can either be te
 
 ```ts
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   messages: [
     { role: 'user', content: 'Hi!' },
     { role: 'assistant', content: 'Hello, how can I help?' },
@@ -174,7 +174,7 @@ but you can also use it to send multiple content parts.
 
 ```ts
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   messages: [
     {
       role: 'user',
@@ -228,7 +228,7 @@ const result = await generateText({
 
 ```ts
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   messages: [
     {
       role: 'user',
@@ -248,7 +248,7 @@ const result = await generateText({
 
 ```ts
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   messages: [
     {
       role: 'user',
@@ -348,7 +348,7 @@ Custom download function can be passed via the `experimental_download` property:
 
 ```ts
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   experimental_download: async (
     requestedDownloads: Array<{
       url: URL;
@@ -390,7 +390,7 @@ and can contain text, reasoning, and tool call parts.
 
 ```ts
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   messages: [
     { role: 'user', content: 'Hi!' },
     { role: 'assistant', content: 'Hello, how can I help?' },
@@ -402,7 +402,7 @@ const result = await generateText({
 
 ```ts
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   messages: [
     { role: 'user', content: 'Hi!' },
     {
@@ -417,7 +417,7 @@ const result = await generateText({
 
 ```ts
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   messages: [
     { role: 'user', content: 'How many calories are in this block of cheese?' },
     {
@@ -442,7 +442,7 @@ this, and only for file types that they can generate.
 
 ```ts
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   messages: [
     { role: 'user', content: 'What is in this image?' },
     {
@@ -471,7 +471,7 @@ A single assistant message can call multiple tools, and a single tool message ca
 
 ```ts
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   messages: [
     {
       role: 'user',
@@ -528,7 +528,7 @@ You can use the `experimental_content` property on tool parts to specify multi-p
 
 ```ts
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   messages: [
     // ...
     {
@@ -586,7 +586,7 @@ You can alternatively use the `system` property.
 
 ```ts
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: "anthropic/claude-sonnet-4.5",
   messages: [
     { role: 'system', content: 'You help planning travel itineraries.' },
     {

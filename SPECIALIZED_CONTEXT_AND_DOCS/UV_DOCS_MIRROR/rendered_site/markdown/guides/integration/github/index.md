@@ -43,7 +43,7 @@ example.yml
 [#__codelineno-1-12](#__codelineno-1-12)        uses: astral-sh/setup-uv@v7
 [#__codelineno-1-13](#__codelineno-1-13)        with:
 [#__codelineno-1-14](#__codelineno-1-14)          # Install a specific version of uv.
-[#__codelineno-1-15](#__codelineno-1-15)          version: "0.9.16"
+[#__codelineno-1-15](#__codelineno-1-15)          version: "0.9.17"
 
 ```
 
@@ -416,4 +416,4 @@ Finally, tag a release and push it. Make sure it starts with `v `to match the pa
 
 ```
 
-December 6, 2025
+December 9, 2025

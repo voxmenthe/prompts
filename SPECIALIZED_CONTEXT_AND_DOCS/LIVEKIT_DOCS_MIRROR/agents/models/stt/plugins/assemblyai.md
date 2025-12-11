@@ -55,6 +55,10 @@ session = AgentSession(
 
 This section describes some of the available parameters. See the [plugin reference](https://docs.livekit.io/reference/python/v1/livekit/plugins/assemblyai/stt.html.md) for a complete list of all available parameters.
 
+- **`model`** _(string)_ (optional) - Default: `universal-streaming`: STT model to use. Accepted options are `universal-streaming` and `universal-streaming-multilingual`. Use `universal-streaming-multilingual` for non-English languages.
+
+- **`language`** _(string)_ (optional) - Default: `en`: The language of the audio. For a full list of supported languages, see the [Supported languages](https://www.assemblyai.com/docs/universal-streaming/multilingual-transcription#supported-languages) page.
+
 - **`format_turns`** _(bool)_ (optional) - Default: `True`: Whether to return formatted final transcripts. If enabled, formatted final transcripts are emitted shortly following an end-of-turn detection.
 
 - **`end_of_turn_confidence_threshold`** _(float)_ (optional) - Default: `0.7`: The confidence threshold to use when determining if the end of a turn has been reached.

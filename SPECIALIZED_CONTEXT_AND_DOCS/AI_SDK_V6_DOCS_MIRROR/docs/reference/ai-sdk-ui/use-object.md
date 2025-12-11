@@ -4,7 +4,7 @@
 and Vue.
 
 Allows you to consume text streams that represent a JSON object and parse them into a complete object based on a schema.
-You can use it together with [`streamObject`](../ai-sdk-core/stream-object.md) in the backend.
+You can use it together with [`streamText`](../ai-sdk-core/stream-text.md) and [`Output.object()`](../ai-sdk-core/output.md#output-object) in the backend.
 
 ```tsx
 'use client';

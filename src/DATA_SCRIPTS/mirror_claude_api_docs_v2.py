@@ -32,11 +32,11 @@ from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 import xml.etree.ElementTree as ET
 
-BASE_DOMAIN = "https://docs.claude.com"
+BASE_DOMAIN = "https://platform.claude.com"
 SITEMAP_URL = f"{BASE_DOMAIN}/sitemap.xml"
 LLMS_URL = f"{BASE_DOMAIN}/llms.txt"
 DEFAULT_HEADERS = {
-    "User-Agent": "ClaudeDocsMirror/2025.12 (+https://docs.claude.com/en/api/overview)",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
 }
 SITEMAP_NS = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
 DEFAULT_OUTPUT_DIRECTORY = Path("SPECIALIZED_CONTEXT_AND_DOCS/ANTHROPIC_API_DOCS_MIRROR")
@@ -116,9 +116,14 @@ def collect_from_llms(
     text = fetch_text(LLMS_URL, headers=headers, timeout=timeout)
     for url in parse_llms_urls(text):
         parsed = urlparse(url)
-        if parsed.netloc != "docs.claude.com":
+        if parsed.netloc not in ("docs.anthropic.com", "platform.claude.com", "docs.claude.com"):
             continue
+        
         parts = parsed.path.strip("/").split("/")
+        # Handle /docs/ prefix if present (platform.claude.com uses /docs/en/...)
+        if parts and parts[0] == "docs":
+            parts = parts[1:]
+
         if len(parts) < 2:
             continue
         language = parts[0]
@@ -159,9 +164,14 @@ def collect_from_sitemap(
             continue
         loc = loc_el.text.strip()
         parsed = urlparse(loc)
-        if parsed.netloc != "docs.claude.com":
+        if parsed.netloc not in ("docs.anthropic.com", "platform.claude.com", "docs.claude.com"):
             continue
+        
         parts = parsed.path.strip("/").split("/")
+        # Handle /docs/ prefix if present
+        if parts and parts[0] == "docs":
+            parts = parts[1:]
+
         if len(parts) < 2:
             continue
         language = parts[0]
@@ -196,9 +206,26 @@ def ensure_directory(path: Path) -> None:
 def read_manifest(path: Path) -> dict[str, PreviousMeta]:
     if not path.exists():
         return {}
-    data = json.loads(path.read_text(encoding="utf-8"))
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        logging.warning("Manifest file is corrupted. Starting fresh.")
+        return {}
+
+    documents = data.get("documents", [])
+    if isinstance(documents, dict):
+        logging.warning("Manifest format incompatibility (map vs list). Ignoring previous state (likely from v3 script).")
+        return {}
+    
+    if not isinstance(documents, list):
+        logging.warning("Manifest 'documents' is not a list. Ignoring previous state.")
+        return {}
+
     entries = {}
-    for doc in data.get("documents", []):
+    for doc in documents:
+        if not isinstance(doc, dict):
+            continue
+
         entries[str(doc.get("relative_path"))] = PreviousMeta(
             etag=doc.get("etag"),
             last_modified=doc.get("last_modified"),
