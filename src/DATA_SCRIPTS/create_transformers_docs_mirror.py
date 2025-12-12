@@ -240,6 +240,10 @@ def mirror_language(
         ensure_within(out_root, asset_out)
         asset_out.parent.mkdir(parents=True, exist_ok=True)
         asset_out.write_bytes(blob)
+    
+    if counts["html"] == 0 and counts["markdown"] == 0 and counts["raw_md"] == 0:
+        print(f"WARNING: No files found for language '{language}' in version '{version}'.")
+        
     return counts
 
 
