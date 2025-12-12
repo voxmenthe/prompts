@@ -1,0 +1,24 @@
+{
+  "generated_at_utc": "2025-12-11T00:13:13.190307+00:00",
+  "source": {
+    "dataset": "hf-doc-build/doc-build",
+    "version": "v4.56.2",
+    "requested_version": "main",
+    "dataset_revision": "2d8d5a86db6806e37928d6864ff25f4b076394f3",
+    "zip_path": "/Volumes/cdrive/huggingface_cache/datasets--hf-doc-build--doc-build/snapshots/2d8d5a86db6806e37928d6864ff25f4b076394f3/transformers/v4.56.2.zip"
+  },
+  "languages": [
+    "en"
+  ],
+  "skip_assets": false,
+  "limit": null,
+  "counts": {
+    "en": {
+      "html": 570,
+      "markdown": 570,
+      "assets": 597,
+      "raw_md": 2
+    }
+  },
+  "output_root": "/Volumes/cdrive/repos/prompts/SPECIALIZED_CONTEXT_AND_DOCS/TRANSFORMERS_DOCS_MIRROR"
+}

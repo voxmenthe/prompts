@@ -1,0 +1,42 @@
+<meta charset="utf-8" /><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Falcon3&quot;,&quot;local&quot;:&quot;falcon3&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Overview&quot;,&quot;local&quot;:&quot;overview&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Resources&quot;,&quot;local&quot;:&quot;resources&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}">
+		<link href="/docs/transformers/v4.56.2/en/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/entry/start.87c4052a.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/scheduler.18a86fab.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/singletons.8e90d679.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/index.40ab8126.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/paths.6f94ae61.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/entry/app.443835b6.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/index.98837b22.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/nodes/0.b8b33d47.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/each.e59479a4.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/nodes/182.8c93a229.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/getInferenceSnippets.06c2775f.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;Falcon3&quot;,&quot;local&quot;:&quot;falcon3&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Overview&quot;,&quot;local&quot;:&quot;overview&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Resources&quot;,&quot;local&quot;:&quot;resources&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>  <p data-svelte-h="svelte-h61wk8"><em>This model was released on 2024-12-17 and added to Hugging Face Transformers on 2024-12-17.</em></p>  <h1 class="relative group"><a id="falcon3" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#falcon3"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Falcon3</span></h1> <div class="flex flex-wrap space-x-1" data-svelte-h="svelte-13t8s2t"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-DE3412?style=flat&logo=pytorch&logoColor=white"></div>  <h2 class="relative group"><a id="overview" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#overview"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Overview</span></h2> <p data-svelte-h="svelte-qbm7td"><a href="https://falconllm.tii.ae/falcon3/index.html" rel="nofollow">Falcon3</a> represents a natural evolution from previous releases, emphasizing expanding the models’ science, math, and code capabilities. This iteration includes five base models: Falcon3-1B-Base, Falcon3-3B-Base, Falcon3-Mamba-7B-Base, Falcon3-7B-Base, and Falcon3-10B-Base. In developing these models, we incorporated several key innovations aimed at improving the models’ performances while reducing training costs:</p> <p data-svelte-h="svelte-1p3hmsh">One pre-training: We conducted a single large-scale pretraining run on the 7B model, using 2048 H100 GPU chips, leveraging 14 trillion tokens featuring web, code, STEM, and curated high-quality and multilingual data.
+Depth up-scaling for improved reasoning: Building on recent studies on the effects of model depth, we upscaled the 7B model to a 10B parameters model by duplicating the redundant layers and continuing pre-training with 2TT of high-quality data. This yielded Falcon3-10B-Base which achieves state-of-the-art zero-shot and few-shot performance for models under 13B parameters.
+Knowledge distillation for better tiny models: To provide compact and efficient alternatives, we developed Falcon3-1B-Base and Falcon3-3B-Base by leveraging pruning and knowledge distillation techniques, using less than 100GT of curated high-quality data, thereby redefining pre-training efficiency.</p>  <h2 class="relative group"><a id="resources" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#resources"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Resources</span></h2> <ul data-svelte-h="svelte-1kksbbi"><li><a href="https://huggingface.co/blog/falcon3" rel="nofollow">Blog post</a></li> <li><a href="https://huggingface.co/collections/tiiuae/falcon3-67605ae03578be86e4e87026" rel="nofollow">Models on Huggingface</a></li></ul> <a class="!text-gray-400 !no-underline text-sm flex items-center not-prose mt-4" href="https://github.com/huggingface/transformers/blob/main/docs/source/en/model_doc/falcon3.md" target="_blank"><span data-svelte-h="svelte-1kd6by1">&lt;</span> <span data-svelte-h="svelte-x0xyl0">&gt;</span> <span data-svelte-h="svelte-1dajgef"><span class="underline ml-1.5">Update</span> on GitHub</span></a>  <p></p> 
+			
+			<script>
+				{
+					__sveltekit_1abpxjy = {
+						assets: "/docs/transformers/v4.56.2/en",
+						base: "/docs/transformers/v4.56.2/en",
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("/docs/transformers/v4.56.2/en/_app/immutable/entry/start.87c4052a.js"),
+						import("/docs/transformers/v4.56.2/en/_app/immutable/entry/app.443835b6.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 182],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		

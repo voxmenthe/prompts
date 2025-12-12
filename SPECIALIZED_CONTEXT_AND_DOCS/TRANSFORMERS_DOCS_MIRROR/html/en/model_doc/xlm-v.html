@@ -1,0 +1,54 @@
+<meta charset="utf-8" /><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;XLM-V&quot;,&quot;local&quot;:&quot;xlm-v&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Overview&quot;,&quot;local&quot;:&quot;overview&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Usage tips&quot;,&quot;local&quot;:&quot;usage-tips&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}">
+		<link href="/docs/transformers/v4.56.2/en/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/entry/start.87c4052a.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/scheduler.18a86fab.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/singletons.8e90d679.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/index.40ab8126.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/paths.6f94ae61.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/entry/app.443835b6.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/index.98837b22.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/nodes/0.b8b33d47.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/each.e59479a4.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/nodes/464.c0e01860.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/Tip.77304350.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/getInferenceSnippets.06c2775f.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;XLM-V&quot;,&quot;local&quot;:&quot;xlm-v&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Overview&quot;,&quot;local&quot;:&quot;overview&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Usage tips&quot;,&quot;local&quot;:&quot;usage-tips&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>  <p data-svelte-h="svelte-p23a5g"><em>This model was released on 2023-01-25 and added to Hugging Face Transformers on 2023-06-20.</em></p>  <h1 class="relative group"><a id="xlm-v" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#xlm-v"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>XLM-V</span></h1> <div class="flex flex-wrap space-x-1" data-svelte-h="svelte-13t8s2t"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-DE3412?style=flat&logo=pytorch&logoColor=white"></div>  <h2 class="relative group"><a id="overview" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#overview"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Overview</span></h2> <p data-svelte-h="svelte-1nycez0">XLM-V is multilingual language model with a one million token vocabulary trained on 2.5TB of data from Common Crawl (same as XLM-R).
+It was introduced in the <a href="https://huggingface.co/papers/2301.10472" rel="nofollow">XLM-V: Overcoming the Vocabulary Bottleneck in Multilingual Masked Language Models</a>
+paper by Davis Liang, Hila Gonen, Yuning Mao, Rui Hou, Naman Goyal, Marjan Ghazvininejad, Luke Zettlemoyer and Madian Khabsa.</p> <p data-svelte-h="svelte-rlu8sx">From the abstract of the XLM-V paper:</p> <p data-svelte-h="svelte-pvh528"><em>Large multilingual language models typically rely on a single vocabulary shared across 100+ languages.
+As these models have increased in parameter count and depth, vocabulary size has remained largely unchanged.
+This vocabulary bottleneck limits the representational capabilities of multilingual models like XLM-R.
+In this paper, we introduce a new approach for scaling to very large multilingual vocabularies by
+de-emphasizing token sharing between languages with little lexical overlap and assigning vocabulary capacity
+to achieve sufficient coverage for each individual language. Tokenizations using our vocabulary are typically
+more semantically meaningful and shorter compared to XLM-R. Leveraging this improved vocabulary, we train XLM-V,
+a multilingual language model with a one million token vocabulary. XLM-V outperforms XLM-R on every task we
+tested on ranging from natural language inference (XNLI), question answering (MLQA, XQuAD, TyDiQA), and
+named entity recognition (WikiAnn) to low-resource tasks (Americas NLI, MasakhaNER).</em></p> <p data-svelte-h="svelte-1g4cthl">This model was contributed by <a href="https://huggingface.co/stefan-it" rel="nofollow">stefan-it</a>, including detailed experiments with XLM-V on downstream tasks.
+The experiments repository can be found <a href="https://github.com/stefan-it/xlm-v-experiments" rel="nofollow">here</a>.</p>  <h2 class="relative group"><a id="usage-tips" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#usage-tips"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Usage tips</span></h2> <ul data-svelte-h="svelte-h4j5w0"><li>XLM-V is compatible with the XLM-RoBERTa model architecture, only model weights from <a href="https://github.com/facebookresearch/fairseq" rel="nofollow"><code>fairseq</code></a>
+library had to be converted.</li> <li>The <code>XLMTokenizer</code> implementation is used to load the vocab and performs tokenization.</li></ul> <p data-svelte-h="svelte-1tzrs8">A XLM-V (base size) model is available under the <a href="https://huggingface.co/facebook/xlm-v-base" rel="nofollow"><code>facebook/xlm-v-base</code></a> identifier.</p>  <div class="course-tip  bg-gradient-to-br dark:bg-gradient-to-r before:border-green-500 dark:before:border-green-800 from-green-50 dark:from-gray-900 to-white dark:to-gray-950 border border-green-50 text-green-700 dark:text-gray-400"><p data-svelte-h="svelte-sub3hh">XLM-V architecture is the same as XLM-RoBERTa, refer to <a href="xlm-roberta">XLM-RoBERTa documentation</a> for API reference, and examples.</p></div> <a class="!text-gray-400 !no-underline text-sm flex items-center not-prose mt-4" href="https://github.com/huggingface/transformers/blob/main/docs/source/en/model_doc/xlm-v.md" target="_blank"><span data-svelte-h="svelte-1kd6by1">&lt;</span> <span data-svelte-h="svelte-x0xyl0">&gt;</span> <span data-svelte-h="svelte-1dajgef"><span class="underline ml-1.5">Update</span> on GitHub</span></a>  <p></p> 
+			
+			<script>
+				{
+					__sveltekit_1abpxjy = {
+						assets: "/docs/transformers/v4.56.2/en",
+						base: "/docs/transformers/v4.56.2/en",
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("/docs/transformers/v4.56.2/en/_app/immutable/entry/start.87c4052a.js"),
+						import("/docs/transformers/v4.56.2/en/_app/immutable/entry/app.443835b6.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 464],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		

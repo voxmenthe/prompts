@@ -1,0 +1,52 @@
+<meta charset="utf-8" /><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;XLS-R&quot;,&quot;local&quot;:&quot;xls-r&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Overview&quot;,&quot;local&quot;:&quot;overview&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Usage tips&quot;,&quot;local&quot;:&quot;usage-tips&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}">
+		<link href="/docs/transformers/v4.56.2/en/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/entry/start.87c4052a.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/scheduler.18a86fab.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/singletons.8e90d679.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/index.40ab8126.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/paths.6f94ae61.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/entry/app.443835b6.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/index.98837b22.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/nodes/0.b8b33d47.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/each.e59479a4.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/nodes/466.5da4b804.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/Tip.77304350.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/getInferenceSnippets.06c2775f.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;XLS-R&quot;,&quot;local&quot;:&quot;xls-r&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Overview&quot;,&quot;local&quot;:&quot;overview&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Usage tips&quot;,&quot;local&quot;:&quot;usage-tips&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>  <p data-svelte-h="svelte-jzetvc"><em>This model was released on 2021-11-17 and added to Hugging Face Transformers on 2023-06-20.</em></p>  <h1 class="relative group"><a id="xls-r" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#xls-r"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>XLS-R</span></h1> <div class="flex flex-wrap space-x-1" data-svelte-h="svelte-13t8s2t"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-DE3412?style=flat&logo=pytorch&logoColor=white"></div>  <h2 class="relative group"><a id="overview" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#overview"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Overview</span></h2> <p data-svelte-h="svelte-gajb60">The XLS-R model was proposed in <a href="https://huggingface.co/papers/2111.09296" rel="nofollow">XLS-R: Self-supervised Cross-lingual Speech Representation Learning at Scale</a> by Arun Babu, Changhan Wang, Andros Tjandra, Kushal Lakhotia, Qiantong Xu, Naman
+Goyal, Kritika Singh, Patrick von Platen, Yatharth Saraf, Juan Pino, Alexei Baevski, Alexis Conneau, Michael Auli.</p> <p data-svelte-h="svelte-vfdo9a">The abstract from the paper is the following:</p> <p data-svelte-h="svelte-ul075o"><em>This paper presents XLS-R, a large-scale model for cross-lingual speech representation learning based on wav2vec 2.0.
+We train models with up to 2B parameters on nearly half a million hours of publicly available speech audio in 128
+languages, an order of magnitude more public data than the largest known prior work. Our evaluation covers a wide range
+of tasks, domains, data regimes and languages, both high and low-resource. On the CoVoST-2 speech translation
+benchmark, we improve the previous state of the art by an average of 7.4 BLEU over 21 translation directions into
+English. For speech recognition, XLS-R improves over the best known prior work on BABEL, MLS, CommonVoice as well as
+VoxPopuli, lowering error rates by 14-34% relative on average. XLS-R also sets a new state of the art on VoxLingua107
+language identification. Moreover, we show that with sufficient model size, cross-lingual pretraining can outperform
+English-only pretraining when translating English speech into other languages, a setting which favors monolingual
+pretraining. We hope XLS-R can help to improve speech processing tasks for many more languages of the world.</em></p> <p data-svelte-h="svelte-p0mu8e">Relevant checkpoints can be found under <a href="https://huggingface.co/models?other=xls_r" rel="nofollow">https://huggingface.co/models?other=xls_r</a>.</p> <p data-svelte-h="svelte-12gzw10">The original code can be found <a href="https://github.com/pytorch/fairseq/tree/master/fairseq/models/wav2vec" rel="nofollow">here</a>.</p>  <h2 class="relative group"><a id="usage-tips" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#usage-tips"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Usage tips</span></h2> <ul data-svelte-h="svelte-153ioim"><li>XLS-R is a speech model that accepts a float array corresponding to the raw waveform of the speech signal.</li> <li>XLS-R model was trained using connectionist temporal classification (CTC) so the model output has to be decoded using
+<a href="/docs/transformers/v4.56.2/en/model_doc/wav2vec2#transformers.Wav2Vec2CTCTokenizer">Wav2Vec2CTCTokenizer</a>.</li></ul>  <div class="course-tip  bg-gradient-to-br dark:bg-gradient-to-r before:border-green-500 dark:before:border-green-800 from-green-50 dark:from-gray-900 to-white dark:to-gray-950 border border-green-50 text-green-700 dark:text-gray-400"><p data-svelte-h="svelte-bku3o">XLS-R’s architecture is based on the Wav2Vec2 model, refer to <a href="wav2vec2">Wav2Vec2’s documentation page</a> for API reference.</p></div> <a class="!text-gray-400 !no-underline text-sm flex items-center not-prose mt-4" href="https://github.com/huggingface/transformers/blob/main/docs/source/en/model_doc/xls_r.md" target="_blank"><span data-svelte-h="svelte-1kd6by1">&lt;</span> <span data-svelte-h="svelte-x0xyl0">&gt;</span> <span data-svelte-h="svelte-1dajgef"><span class="underline ml-1.5">Update</span> on GitHub</span></a>  <p></p> 
+			
+			<script>
+				{
+					__sveltekit_1abpxjy = {
+						assets: "/docs/transformers/v4.56.2/en",
+						base: "/docs/transformers/v4.56.2/en",
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("/docs/transformers/v4.56.2/en/_app/immutable/entry/start.87c4052a.js"),
+						import("/docs/transformers/v4.56.2/en/_app/immutable/entry/app.443835b6.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 466],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		

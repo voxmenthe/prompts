@@ -1,0 +1,41 @@
+*This model was released on 2020-10-20 and added to Hugging Face Transformers on 2023-06-20.*
+
+# BORT
+
+![PyTorch](https://img.shields.io/badge/PyTorch-DE3412?style=flat&logo=pytorch&logoColor=white)
+
+This model is in maintenance mode only, we do not accept any new PRs changing its code.
+
+If you run into any issues running this model, please reinstall the last version that supported this model: v4.30.0.
+You can do so by running the following command: `pip install -U transformers==4.30.0`.
+
+## Overview
+
+The BORT model was proposed in [Optimal Subarchitecture Extraction for BERT](https://huggingface.co/papers/2010.10499) by
+Adrian de Wynter and Daniel J. Perry. It is an optimal subset of architectural parameters for the BERT, which the
+authors refer to as “Bort”.
+
+The abstract from the paper is the following:
+
+*We extract an optimal subset of architectural parameters for the BERT architecture from Devlin et al. (2018) by
+applying recent breakthroughs in algorithms for neural architecture search. This optimal subset, which we refer to as
+“Bort”, is demonstrably smaller, having an effective (that is, not counting the embedding layer) size of 5.5% the
+original BERT-large architecture, and 16% of the net size. Bort is also able to be pretrained in 288 GPU hours, which
+is 1.2% of the time required to pretrain the highest-performing BERT parametric architectural variant, RoBERTa-large
+(Liu et al., 2019), and about 33% of that of the world-record, in GPU hours, required to train BERT-large on the same
+hardware. It is also 7.9x faster on a CPU, as well as being better performing than other compressed variants of the
+architecture, and some of the non-compressed variants: it obtains performance improvements of between 0.3% and 31%,
+absolute, with respect to BERT-large, on multiple public natural language understanding (NLU) benchmarks.*
+
+This model was contributed by [stefan-it](https://huggingface.co/stefan-it). The original code can be found [here](https://github.com/alexa/bort/).
+
+## Usage tips
+
+* BORT’s model architecture is based on BERT, refer to [BERT’s documentation page](bert) for the
+  model’s API reference as well as usage examples.
+* BORT uses the RoBERTa tokenizer instead of the BERT tokenizer, refer to [RoBERTa’s documentation page](roberta) for the tokenizer’s API reference as well as usage examples.
+* BORT requires a specific fine-tuning algorithm, called [Agora](https://adewynter.github.io/notes/bort_algorithms_and_applications.html#fine-tuning-with-algebraic-topology) ,
+  that is sadly not open-sourced yet. It would be very useful for the community, if someone tries to implement the
+  algorithm to make BORT fine-tuning work.
+
+[< > Update on GitHub](https://github.com/huggingface/transformers/blob/main/docs/source/en/model_doc/bort.md)

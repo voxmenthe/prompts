@@ -1,0 +1,62 @@
+<meta charset="utf-8" /><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;tiny-agents CLI and MCP Tools&quot;,&quot;local&quot;:&quot;tiny-agents-cli-and-mcp-tools&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}">
+		<link href="/docs/transformers/v4.56.2/en/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/entry/start.87c4052a.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/scheduler.18a86fab.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/singletons.8e90d679.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/index.40ab8126.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/paths.6f94ae61.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/entry/app.443835b6.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/index.98837b22.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/nodes/0.b8b33d47.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/each.e59479a4.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/nodes/563.93909af9.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/Tip.77304350.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/CodeBlock.8d0c2e8a.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/getInferenceSnippets.06c2775f.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;tiny-agents CLI and MCP Tools&quot;,&quot;local&quot;:&quot;tiny-agents-cli-and-mcp-tools&quot;,&quot;sections&quot;:[],&quot;depth&quot;:3}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>  <h3 class="relative group"><a id="tiny-agents-cli-and-mcp-tools" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#tiny-agents-cli-and-mcp-tools"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>tiny-agents CLI and MCP Tools</span></h3> <p data-svelte-h="svelte-lgru2r">To showcase the use of MCP tools, let’s see how to integrate the <code>transformers serve</code> server with the <a href="https://huggingface.co/blog/python-tiny-agents" rel="nofollow"><code>tiny-agents</code></a> CLI.</p>  <div class="course-tip  bg-gradient-to-br dark:bg-gradient-to-r before:border-green-500 dark:before:border-green-800 from-green-50 dark:from-gray-900 to-white dark:to-gray-950 border border-green-50 text-green-700 dark:text-gray-400"><p data-svelte-h="svelte-7g8frd">Many Hugging Face Spaces can be used as MCP servers, as in this example. You can find all compatible Spaces <a href="https://huggingface.co/spaces?filter=mcp-server" rel="nofollow">here</a>.</p></div> <p data-svelte-h="svelte-1ci3i2x">The first step to use MCP tools is to let the model know which tools are available. As an example, let’s consider a <code>tiny-agents</code> configuration file with a reference to an <a href="https://evalstate-flux1-schnell.hf.space/" rel="nofollow">image generation MCP server</a>.</p> <div class="code-block relative "><div class="absolute top-2.5 right-4"><button class="inline-flex items-center relative text-sm focus:text-green-500 cursor-pointer focus:outline-none transition duration-200 ease-in-out opacity-0 mx-0.5   text-gray-600 " title="code excerpt" type="button"><svg class="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M28,10V28H10V10H28m0-2H10a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2Z" transform="translate(0)"></path><path d="M4,18H2V4A2,2,0,0,1,4,2H18V4H4Z" transform="translate(0)"></path><rect fill="none" width="32" height="32"></rect></svg> <div class="absolute pointer-events-none transition-opacity bg-black text-white py-1 px-2 leading-tight rounded font-normal shadow left-1/2 top-full transform -translate-x-1/2 translate-y-2 opacity-0"><div class="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-black border-4 border-t-0" style="border-left-color: transparent; border-right-color: transparent; "></div> Copied</div></button></div> <pre class=""><!-- HTML_TAG_START --><span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;model&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Menlo/Jan-nano&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;endpointUrl&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;http://localhost:8000&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;servers&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;sse&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://evalstate-flux1-schnell.hf.space/gradio_api/mcp/sse&quot;</span>
+        <span class="hljs-punctuation">}</span>
+    <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span><!-- HTML_TAG_END --></pre></div> <p data-svelte-h="svelte-d82xj4">You can then launch your <code>tiny-agents</code> chat interface with the following command.</p> <div class="code-block relative "><div class="absolute top-2.5 right-4"><button class="inline-flex items-center relative text-sm focus:text-green-500 cursor-pointer focus:outline-none transition duration-200 ease-in-out opacity-0 mx-0.5   text-gray-600 " title="code excerpt" type="button"><svg class="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M28,10V28H10V10H28m0-2H10a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2Z" transform="translate(0)"></path><path d="M4,18H2V4A2,2,0,0,1,4,2H18V4H4Z" transform="translate(0)"></path><rect fill="none" width="32" height="32"></rect></svg> <div class="absolute pointer-events-none transition-opacity bg-black text-white py-1 px-2 leading-tight rounded font-normal shadow left-1/2 top-full transform -translate-x-1/2 translate-y-2 opacity-0"><div class="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-black border-4 border-t-0" style="border-left-color: transparent; border-right-color: transparent; "></div> Copied</div></button></div> <pre class=""><!-- HTML_TAG_START -->tiny-agents run path/to/your/config.json<!-- HTML_TAG_END --></pre></div> <p data-svelte-h="svelte-1r2wp0f">If you have <code>transformers serve</code> running in the background, you’re ready to use MCP tools from a local model! For instance, here’s the example of a chat session with <code>tiny-agents</code>:</p> <div class="code-block relative "><div class="absolute top-2.5 right-4"><button class="inline-flex items-center relative text-sm focus:text-green-500 cursor-pointer focus:outline-none transition duration-200 ease-in-out opacity-0 mx-0.5   text-gray-600 " title="code excerpt" type="button"><svg class="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M28,10V28H10V10H28m0-2H10a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2Z" transform="translate(0)"></path><path d="M4,18H2V4A2,2,0,0,1,4,2H18V4H4Z" transform="translate(0)"></path><rect fill="none" width="32" height="32"></rect></svg> <div class="absolute pointer-events-none transition-opacity bg-black text-white py-1 px-2 leading-tight rounded font-normal shadow left-1/2 top-full transform -translate-x-1/2 translate-y-2 opacity-0"><div class="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-black border-4 border-t-0" style="border-left-color: transparent; border-right-color: transparent; "></div> Copied</div></button></div> <pre class=""><!-- HTML_TAG_START -->Agent loaded with 1 tools:
+ • flux1_schnell_infer
+»  Generate an image of a <span class="hljs-built_in">cat</span> on the moon
+&lt;Tool req_0_tool_call&gt;flux1_schnell_infer {<span class="hljs-string">&quot;prompt&quot;</span>: <span class="hljs-string">&quot;a cat on the moon&quot;</span>, <span class="hljs-string">&quot;seed&quot;</span>: 42, <span class="hljs-string">&quot;randomize_seed&quot;</span>: <span class="hljs-literal">true</span>, <span class="hljs-string">&quot;width&quot;</span>: 1024, <span class="hljs-string">&quot;height&quot;</span>: 1024, <span class="hljs-string">&quot;num_inference_steps&quot;</span>: 4}
+
+Tool req_0_tool_call
+[Binary Content: Image image/webp, 57732 bytes]
+The task is complete and the content accessible to the User
+Image URL: https://evalstate-flux1-schnell.hf.space/gradio_api/file=/tmp/gradio/3dbddc0e53b5a865ed56a4e3dbdd30f3f61cf3b8aabf1b456f43e5241bd968b8/image.webp
+380576952
+
+I have generated an image of a <span class="hljs-built_in">cat</span> on the moon using the Flux 1 Schnell Image Generator. The image is 1024x1024 pixels and was created with 4 inference steps. Let me know <span class="hljs-keyword">if</span> you would like to make any changes or need further assistance!<!-- HTML_TAG_END --></pre></div> <a class="!text-gray-400 !no-underline text-sm flex items-center not-prose mt-4" href="https://github.com/huggingface/transformers/blob/main/docs/source/en/tiny_agents.md" target="_blank"><span data-svelte-h="svelte-1kd6by1">&lt;</span> <span data-svelte-h="svelte-x0xyl0">&gt;</span> <span data-svelte-h="svelte-1dajgef"><span class="underline ml-1.5">Update</span> on GitHub</span></a>  <p></p> 
+			
+			<script>
+				{
+					__sveltekit_1abpxjy = {
+						assets: "/docs/transformers/v4.56.2/en",
+						base: "/docs/transformers/v4.56.2/en",
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("/docs/transformers/v4.56.2/en/_app/immutable/entry/start.87c4052a.js"),
+						import("/docs/transformers/v4.56.2/en/_app/immutable/entry/app.443835b6.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 563],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		

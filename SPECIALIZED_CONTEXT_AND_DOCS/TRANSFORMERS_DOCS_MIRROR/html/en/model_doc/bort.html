@@ -1,0 +1,55 @@
+<meta charset="utf-8" /><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;BORT&quot;,&quot;local&quot;:&quot;bort&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Overview&quot;,&quot;local&quot;:&quot;overview&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Usage tips&quot;,&quot;local&quot;:&quot;usage-tips&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}">
+		<link href="/docs/transformers/v4.56.2/en/_app/immutable/assets/0.e3b0c442.css" rel="modulepreload">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/entry/start.87c4052a.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/scheduler.18a86fab.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/singletons.8e90d679.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/index.40ab8126.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/paths.6f94ae61.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/entry/app.443835b6.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/index.98837b22.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/nodes/0.b8b33d47.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/each.e59479a4.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/nodes/104.54bab982.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/Tip.77304350.js">
+		<link rel="modulepreload" href="/docs/transformers/v4.56.2/en/_app/immutable/chunks/getInferenceSnippets.06c2775f.js"><!-- HEAD_svelte-u9bgzb_START --><meta name="hf:doc:metadata" content="{&quot;title&quot;:&quot;BORT&quot;,&quot;local&quot;:&quot;bort&quot;,&quot;sections&quot;:[{&quot;title&quot;:&quot;Overview&quot;,&quot;local&quot;:&quot;overview&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2},{&quot;title&quot;:&quot;Usage tips&quot;,&quot;local&quot;:&quot;usage-tips&quot;,&quot;sections&quot;:[],&quot;depth&quot;:2}],&quot;depth&quot;:1}"><!-- HEAD_svelte-u9bgzb_END -->      <p></p>  <p data-svelte-h="svelte-1vlihwk"><em>This model was released on 2020-10-20 and added to Hugging Face Transformers on 2023-06-20.</em></p>  <h1 class="relative group"><a id="bort" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#bort"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>BORT</span></h1> <div class="flex flex-wrap space-x-1" data-svelte-h="svelte-13t8s2t"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-DE3412?style=flat&logo=pytorch&logoColor=white"></div>  <div class="course-tip course-tip-orange bg-gradient-to-br dark:bg-gradient-to-r before:border-orange-500 dark:before:border-orange-800 from-orange-50 dark:from-gray-900 to-white dark:to-gray-950 border border-orange-50 text-orange-700 dark:text-gray-400"><p data-svelte-h="svelte-11xtczr">This model is in maintenance mode only, we do not accept any new PRs changing its code.</p> <p data-svelte-h="svelte-4042uy">If you run into any issues running this model, please reinstall the last version that supported this model: v4.30.0.
+You can do so by running the following command: <code>pip install -U transformers==4.30.0</code>.</p></div>  <h2 class="relative group"><a id="overview" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#overview"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Overview</span></h2> <p data-svelte-h="svelte-zjd2z4">The BORT model was proposed in <a href="https://huggingface.co/papers/2010.10499" rel="nofollow">Optimal Subarchitecture Extraction for BERT</a> by
+Adrian de Wynter and Daniel J. Perry. It is an optimal subset of architectural parameters for the BERT, which the
+authors refer to as “Bort”.</p> <p data-svelte-h="svelte-vfdo9a">The abstract from the paper is the following:</p> <p data-svelte-h="svelte-1vfe3y"><em>We extract an optimal subset of architectural parameters for the BERT architecture from Devlin et al. (2018) by
+applying recent breakthroughs in algorithms for neural architecture search. This optimal subset, which we refer to as
+“Bort”, is demonstrably smaller, having an effective (that is, not counting the embedding layer) size of 5.5% the
+original BERT-large architecture, and 16% of the net size. Bort is also able to be pretrained in 288 GPU hours, which
+is 1.2% of the time required to pretrain the highest-performing BERT parametric architectural variant, RoBERTa-large
+(Liu et al., 2019), and about 33% of that of the world-record, in GPU hours, required to train BERT-large on the same
+hardware. It is also 7.9x faster on a CPU, as well as being better performing than other compressed variants of the
+architecture, and some of the non-compressed variants: it obtains performance improvements of between 0.3% and 31%,
+absolute, with respect to BERT-large, on multiple public natural language understanding (NLU) benchmarks.</em></p> <p data-svelte-h="svelte-n8ivge">This model was contributed by <a href="https://huggingface.co/stefan-it" rel="nofollow">stefan-it</a>. The original code can be found <a href="https://github.com/alexa/bort/" rel="nofollow">here</a>.</p>  <h2 class="relative group"><a id="usage-tips" class="header-link block pr-1.5 text-lg no-hover:hidden with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" href="#usage-tips"><span><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M167.594 88.393a8.001 8.001 0 0 1 0 11.314l-67.882 67.882a8 8 0 1 1-11.314-11.315l67.882-67.881a8.003 8.003 0 0 1 11.314 0zm-28.287 84.86l-28.284 28.284a40 40 0 0 1-56.567-56.567l28.284-28.284a8 8 0 0 0-11.315-11.315l-28.284 28.284a56 56 0 0 0 79.196 79.197l28.285-28.285a8 8 0 1 0-11.315-11.314zM212.852 43.14a56.002 56.002 0 0 0-79.196 0l-28.284 28.284a8 8 0 1 0 11.314 11.314l28.284-28.284a40 40 0 0 1 56.568 56.567l-28.285 28.285a8 8 0 0 0 11.315 11.314l28.284-28.284a56.065 56.065 0 0 0 0-79.196z" fill="currentColor"></path></svg></span></a> <span>Usage tips</span></h2> <ul data-svelte-h="svelte-1tf6va0"><li>BORT’s model architecture is based on BERT, refer to <a href="bert">BERT’s documentation page</a> for the
+model’s API reference as well as usage examples.</li> <li>BORT uses the RoBERTa tokenizer instead of the BERT tokenizer, refer to <a href="roberta">RoBERTa’s documentation page</a> for the tokenizer’s API reference as well as usage examples.</li> <li>BORT requires a specific fine-tuning algorithm, called <a href="https://adewynter.github.io/notes/bort_algorithms_and_applications.html#fine-tuning-with-algebraic-topology" rel="nofollow">Agora</a> ,
+that is sadly not open-sourced yet. It would be very useful for the community, if someone tries to implement the
+algorithm to make BORT fine-tuning work.</li></ul> <a class="!text-gray-400 !no-underline text-sm flex items-center not-prose mt-4" href="https://github.com/huggingface/transformers/blob/main/docs/source/en/model_doc/bort.md" target="_blank"><span data-svelte-h="svelte-1kd6by1">&lt;</span> <span data-svelte-h="svelte-x0xyl0">&gt;</span> <span data-svelte-h="svelte-1dajgef"><span class="underline ml-1.5">Update</span> on GitHub</span></a>  <p></p> 
+			
+			<script>
+				{
+					__sveltekit_1abpxjy = {
+						assets: "/docs/transformers/v4.56.2/en",
+						base: "/docs/transformers/v4.56.2/en",
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("/docs/transformers/v4.56.2/en/_app/immutable/entry/start.87c4052a.js"),
+						import("/docs/transformers/v4.56.2/en/_app/immutable/entry/app.443835b6.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 104],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		

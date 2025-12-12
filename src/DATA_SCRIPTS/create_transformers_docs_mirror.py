@@ -120,8 +120,10 @@ def available_languages(zip_file: ZipFile, version: str) -> set[str]:
         if not name.startswith(prefix):
             continue
         parts = Path(name).parts
-        if len(parts) >= 3:
+        if len(parts) >= 4:
             langs.add(parts[2])
+    # Always assume English is available (default docs), even if not explicitly tagged
+    langs.add("en")
     return langs
 
 
@@ -147,13 +149,33 @@ def iter_language_entries(
     zip_file: ZipFile, version: str, language: str
 ) -> Iterable[tuple[Path, bytes]]:
     prefix = f"transformers/{version}/{language}/"
-    for name in zip_file.namelist():
-        if not name.startswith(prefix):
-            continue
-        if name.endswith("/"):
-            continue  # directory entry
-        rel = Path(name).relative_to(prefix)
-        yield rel, zip_file.read(name)
+    root_prefix = f"transformers/{version}/"
+
+    # Check if explicit language folder exists
+    has_lang_folder = any(n.startswith(prefix) for n in zip_file.namelist())
+
+    if has_lang_folder:
+        for name in zip_file.namelist():
+            if not name.startswith(prefix):
+                continue
+            if name.endswith("/"):
+                continue  # directory entry
+            rel = Path(name).relative_to(prefix)
+            yield rel, zip_file.read(name)
+    elif language == "en":
+        # Fallback to root, excluding other likely language dirs (2-letter codes)
+        for name in zip_file.namelist():
+            if not name.startswith(root_prefix):
+                continue
+            if name.endswith("/"):
+                continue
+
+            rel = Path(name).relative_to(root_prefix)
+            # Heuristic: exclude top-level 2-letter directories (e.g. fr/, es/)
+            if len(rel.parts) > 1 and len(rel.parts[0]) == 2:
+                continue
+
+            yield rel, zip_file.read(name)
 
 
 def mirror_language(

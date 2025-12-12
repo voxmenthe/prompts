@@ -12,6 +12,7 @@
 # - We fetch the PR head/base to ensure the needed commits exist locally.
 # - Context comes from the "side" of the diff (RIGHT=head commit, LEFT=base/original commit).
 # - If the historical commit/file is unreachable (force-push, rename), we fall back to base/head or to diff_hunk.
+# - If the PR number isn't found in this repo (common for forks), we auto-try the upstream parent repo.
 
 set -euo pipefail
 
@@ -69,6 +70,30 @@ resolve_repo_and_pr() {
   fi
 }
 
+# If this repo is a fork, PR numbers may exist only in the upstream (parent) repo.
+# Detect that case and switch REPO automatically.
+resolve_pr_repo_context() {
+  local pr="$1"
+
+  # Try current repo first.
+  if gh pr view "$pr" -R "$REPO" --json number >/dev/null 2>&1; then
+    return 0
+  fi
+
+  # Fallback to parent/upstream repo if available.
+  local parent
+  parent="$(gh repo view "$REPO" --json parent -q '.parent | .owner.login + "/" + .name' 2>/dev/null || true)"
+  if [[ -n "$parent" && "$parent" != "null" && "$parent" != "/" ]]; then
+    if gh pr view "$pr" -R "$parent" --json number >/dev/null 2>&1; then
+      echo "PR #$pr not found in $REPO; found in upstream $parent. Switching context." >&2
+      REPO="$parent"
+      return 0
+    fi
+  fi
+
+  die "Could not find PR #$pr in $REPO or its upstream parent"
+}
+
 json_escape_md() {
   # Escapes triple-backticks within markdown bodies so our fences don't break.
   # Replaces ``` with ``\`\`\`
@@ -124,6 +149,7 @@ require_cmd sed
 
 parse_args "$@"
 resolve_repo_and_pr "$PR_INPUT"
+resolve_pr_repo_context "$PR_NUMBER"
 
 # Pull PR metadata (base/head OIDs) and URL/title
 PR_META_JSON="$(gh pr view "$PR_NUMBER" -R "$REPO" --json number,title,url,headRefName,baseRefName,headRefOid,baseRefOid)"
@@ -133,9 +159,11 @@ HEAD_OID=$(jq -r '.headRefOid' <<<"$PR_META_JSON")
 BASE_OID=$(jq -r '.baseRefOid' <<<"$PR_META_JSON")
 BASE_REF=$(jq -r '.baseRefName' <<<"$PR_META_JSON")
 
-# Ensure we have the commits locally: fetch PR head and base ref
-git fetch -q origin "pull/${PR_NUMBER}/head:refs/remotes/origin/pr/${PR_NUMBER}" || true
-git fetch -q origin "${BASE_REF}:${BASE_REF}" || true
+# Ensure we have the commits locally (best-effort; tolerate fetch failure).
+# Use the resolved REPO URL so forks correctly fetch from upstream.
+repo_url="https://github.com/${REPO}.git"
+git fetch -q "$repo_url" "refs/pull/${PR_NUMBER}/head:refs/remotes/origin/pr/${PR_NUMBER}" || true
+git fetch -q "$repo_url" "refs/heads/${BASE_REF}:refs/remotes/origin/${BASE_REF}" || true
 
 # Fetch review comments (inline + replies)
 RC_JSON="$(

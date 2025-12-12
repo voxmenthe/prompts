@@ -1,0 +1,193 @@
+# Prompt engineering
+
+![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)
+
+![Open In Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)
+
+Prompt engineering or prompting, uses natural language to improve large language model (LLM) performance on a variety of tasks. A prompt can steer the model towards generating a desired output. In many cases, you don’t even need a [fine-tuned](#finetuning) model for a task. You just need a good prompt.
+
+Try prompting a LLM to classify some text. When you create a prompt, it’s important to provide very specific instructions about the task and what the result should look like.
+
+
+```
+from transformers import pipeline
+import torch
+
+pipeline = pipeline(task="text-generation", model="mistralai/Mistal-7B-Instruct-v0.1", dtype=torch.bfloat16, device_map="auto")
+prompt = """Classify the text into neutral, negative or positive.
+Text: This movie is definitely one of my favorite movies of its kind. The interaction between respectable and morally strong characters is an ode to chivalry and the honor code amongst thieves and policemen.
+Sentiment:
+"""
+
+outputs = pipeline(prompt, max_new_tokens=10)
+for output in outputs:
+    print(f"Result: {output['generated_text']}")
+Result: Classify the text into neutral, negative or positive. 
+Text: This movie is definitely one of my favorite movies of its kind. The interaction between respectable and morally strong characters is an ode to chivalry and the honor code amongst thieves and policemen.
+Sentiment:
+Positive
+```
+
+The challenge lies in designing prompts that produces the results you’re expecting because language is so incredibly nuanced and expressive.
+
+This guide covers prompt engineering best practices, techniques, and examples for how to solve language and reasoning tasks.
+
+## Best practices
+
+1. Try to pick the latest models for the best performance. Keep in mind that LLMs can come in two variants, [base](https://hf.co/mistralai/Mistral-7B-v0.1) and [instruction-tuned](https://hf.co/mistralai/Mistral-7B-Instruct-v0.1) (or chat).
+
+   Base models are excellent at completing text given an initial prompt, but they’re not as good at following instructions. Instruction-tuned models are specifically trained versions of the base models on instructional or conversational data. This makes instruction-tuned models a better fit for prompting.
+
+   Modern LLMs are typically decoder-only models, but there are some encoder-decoder LLMs like [Flan-T5](../model_doc/flan-t5) or [BART](../model_doc/bart) that may be used for prompting. For encoder-decoder models, make sure you set the pipeline task identifier to `text2text-generation` instead of `text-generation`.
+2. Start with a short and simple prompt, and iterate on it to get better results.
+3. Put instructions at the beginning or end of a prompt. For longer prompts, models may apply optimizations to prevent attention from scaling quadratically, which places more emphasis at the beginning and end of a prompt.
+4. Clearly separate instructions from the text of interest.
+5. Be specific and descriptive about the task and the desired output, including for example, its format, length, style, and language. Avoid ambiguous descriptions and instructions.
+6. Instructions should focus on “what to do” rather than “what not to do”.
+7. Lead the model to generate the correct output by writing the first word or even the first sentence.
+8. Try other techniques like [few-shot](#few-shot) and [chain-of-thought](#chain-of-thought) to improve results.
+9. Test your prompts with different models to assess their robustness.
+10. Version and track your prompt performance.
+
+## Techniques
+
+Crafting a good prompt alone, also known as zero-shot prompting, may not be enough to get the results you want. You may need to try a few prompting techniques to get the best performance.
+
+This section covers a few prompting techniques.
+
+### Few-shot prompting
+
+Few-shot prompting improves accuracy and performance by including specific examples of what a model should generate given an input. The explicit examples give the model a better understanding of the task and the output format you’re looking for. Try experimenting with different numbers of examples (2, 4, 8, etc.) to see how it affects performance. The example below provides the model with 1 example (1-shot) of the output format (a date in MM/DD/YYYY format) it should return.
+
+
+```
+from transformers import pipeline
+import torch
+
+pipeline = pipeline(model="mistralai/Mistral-7B-Instruct-v0.1", dtype=torch.bfloat16, device_map="auto")
+prompt = """Text: The first human went into space and orbited the Earth on April 12, 1961.
+Date: 04/12/1961
+Text: The first-ever televised presidential debate in the United States took place on September 28, 1960, between presidential candidates John F. Kennedy and Richard Nixon.
+Date:"""
+
+outputs = pipeline(prompt, max_new_tokens=12, do_sample=True, top_k=10)
+for output in outputs:
+    print(f"Result: {output['generated_text']}")
+# Result: Text: The first human went into space and orbited the Earth on April 12, 1961.
+# Date: 04/12/1961
+# Text: The first-ever televised presidential debate in the United States took place on September 28, 1960, between presidential candidates John F. Kennedy and Richard Nixon.
+# Date: 09/28/1960
+```
+
+The downside of few-shot prompting is that you need to create lengthier prompts which increases computation and latency. There is also a limit to prompt lengths. Finally, a model can learn unintended patterns from your examples, and it may not work well on complex reasoning tasks.
+
+To improve few-shot prompting for modern instruction-tuned LLMs, use a model’s specific [chat template](../conversations). These models are trained on datasets with turn-based conversations between a “user” and “assistant”. Structuring your prompt to align with this can improve performance.
+
+Structure your prompt as a turn-based conversation and use the `apply_chat_template` method to tokenize and format it.
+
+
+```
+from transformers import pipeline
+import torch
+
+pipeline = pipeline(model="mistralai/Mistral-7B-Instruct-v0.1", dtype=torch.bfloat16, device_map="auto")
+
+messages = [
+    {"role": "user", "content": "Text: The first human went into space and orbited the Earth on April 12, 1961."},
+    {"role": "assistant", "content": "Date: 04/12/1961"},
+    {"role": "user", "content": "Text: The first-ever televised presidential debate in the United States took place on September 28, 1960, between presidential candidates John F. Kennedy and Richard Nixon."}
+]
+
+prompt = pipeline.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+
+outputs = pipeline(prompt, max_new_tokens=12, do_sample=True, top_k=10)
+
+for output in outputs:
+    print(f"Result: {output['generated_text']}")
+```
+
+While the basic few-shot prompting approach embedded examples within a single text string, the chat template format offers the following benefits.
+
+* The model may have a potentially improved understanding because it can better recognize the pattern and the expected roles of user input and assistant output.
+* The model may more consistently output the desired output format because it is structured like its input during training.
+
+Always consult a specific instruction-tuned model’s documentation to learn more about the format of their chat template so that you can structure your few-shot prompts accordingly.
+
+### Chain-of-thought
+
+Chain-of-thought (CoT) is effective at generating more coherent and well-reasoned outputs by providing a series of prompts that help a model “think” more thoroughly about a topic.
+
+The example below provides the model with several prompts to work through intermediate reasoning steps.
+
+
+```
+from transformers import pipeline
+import torch
+
+pipeline = pipeline(model="mistralai/Mistral-7B-Instruct-v0.1", dtype=torch.bfloat16, device_map="auto")
+prompt = """Let's go through this step-by-step:
+1. You start with 15 muffins.
+2. You eat 2 muffins, leaving you with 13 muffins.
+3. You give 5 muffins to your neighbor, leaving you with 8 muffins.
+4. Your partner buys 6 more muffins, bringing the total number of muffins to 14.
+5. Your partner eats 2 muffins, leaving you with 12 muffins.
+If you eat 6 muffins, how many are left?"""
+
+outputs = pipeline(prompt, max_new_tokens=20, do_sample=True, top_k=10)
+for output in outputs:
+    print(f"Result: {output['generated_text']}")
+Result: Let's go through this step-by-step:
+1. You start with 15 muffins.
+2. You eat 2 muffins, leaving you with 13 muffins.
+3. You give 5 muffins to your neighbor, leaving you with 8 muffins.
+4. Your partner buys 6 more muffins, bringing the total number of muffins to 14.
+5. Your partner eats 2 muffins, leaving you with 12 muffins.
+If you eat 6 muffins, how many are left?
+Answer: 6
+```
+
+Like [few-shot](#few-shot) prompting, the downside of CoT is that it requires more effort to design a series of prompts that help the model reason through a complex task and prompt length increases latency.
+
+## Fine-tuning
+
+While prompting is a powerful way to work with LLMs, there are scenarios where a fine-tuned model or even fine-tuning a model works better.
+
+Here are some examples scenarios where a fine-tuned model makes sense.
+
+* Your domain is extremely different from what a LLM was pretrained on, and extensive prompting didn’t produce the results you want.
+* Your model needs to work well in a low-resource language.
+* Your model needs to be trained on sensitive data that have strict regulatory requirements.
+* You’re using a small model due to cost, privacy, infrastructure, or other constraints.
+
+In all of these scenarios, ensure that you have a large enough domain-specific dataset to train your model with, have enough time and resources, and the cost of fine-tuning is worth it. Otherwise, you may be better off trying to optimize your prompt.
+
+## Examples
+
+The examples below demonstrate prompting a LLM for different tasks.
+
+named entity recognition
+
+translation
+
+summarization
+
+question answering
+
+
+```
+from transformers import pipeline
+import torch
+
+pipeline = pipeline(model="mistralai/Mistral-7B-Instruct-v0.1", dtype=torch.bfloat16, device_map="auto")
+prompt = """Return a list of named entities in the text.
+Text: The company was founded in 2016 by French entrepreneurs Clément Delangue, Julien Chaumond, and Thomas Wolf in New York City, originally as a company that developed a chatbot app targeted at teenagers.
+Named entities:
+"""
+
+outputs = pipeline(prompt, max_new_tokens=50, return_full_text=False)
+for output in outputs:
+    print(f"Result: {output['generated_text']}")
+Result:  [Clément Delangue, Julien Chaumond, Thomas Wolf, company, New York City, chatbot app, teenagers]
+```
+
+[< > Update on GitHub](https://github.com/huggingface/transformers/blob/main/docs/source/en/tasks/prompting.md)

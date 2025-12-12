@@ -48,6 +48,7 @@ OUT_MD=""
 OUT_JSON=""
 OUT_PATCH=""
 IGNORE_WS=0
+UPSTREAM_MODE=0
 TOTAL_FILES=0
 TOTAL_ADDS=0
 TOTAL_DELS=0
@@ -70,6 +71,7 @@ declare -a DEFAULT_IGNORED_FILE_GLOBS=(
   '**/test/**'
   '**/*test*/**'
   '**/*test*'
+  '**/uv.lock'
 )
 
 declare -a GLOBS=("${DEFAULT_IGNORED_FILE_GLOBS[@]/#/!}")   # start with default excludes
@@ -117,6 +119,7 @@ parse_args() {
       --json) OUT_JSON="${2:-}"; shift 2;;
       --patch) OUT_PATCH="${2:-}"; shift 2;;
       --ignore-space) IGNORE_WS=1; shift;;
+      --upstream) UPSTREAM_MODE=1; shift;;
       --glob) GLOBS+=("${2:-}"); shift 2;;
       -h|--help) usage;;
       *) die "Unknown arg: $1";;
@@ -149,10 +152,24 @@ normalize_pr_identifier() {
 
 resolve_repo() {
   if [[ -n "$REPO" ]]; then
-    return
+    : # Repo argument takes precedence, unless we construct upstream logic logic below,
+      # but typically -r override means "use this repo".
+      # However, if --upstream is passed, we might want to check the parent of the explicitly passed repo too?
+      # Let's assume --upstream applies to whatever $REPO we resolved.
+  else
+    REPO="$(gh repo view --json nameWithOwner -q .nameWithOwner 2>/dev/null || true)"
+    [[ -n "$REPO" ]] || die "Could not infer repo; pass -r owner/repo"
   fi
-  REPO="$(gh repo view --json nameWithOwner -q .nameWithOwner 2>/dev/null || true)"
-  [[ -n "$REPO" ]] || die "Could not infer repo; pass -r owner/repo"
+
+  if (( UPSTREAM_MODE )); then
+     local parent
+     parent="$(gh repo view "$REPO" --json parent -q '.parent | .owner.login + "/" + .name' 2>/dev/null || true)"
+     if [[ -n "$parent" && "$parent" != "null" && "$parent" != "/" ]]; then
+       REPO="$parent"
+     else
+       die "Could not determine upstream (parent) for repository $REPO"
+     fi
+  fi
 }
 
 resolve_pr_number() {
@@ -166,7 +183,29 @@ resolve_pr_number() {
   fi
 }
 
+resolve_pr_repo_context() {
+  local pr="$1"
+  # Try current repo
+  if gh pr view "$pr" -R "$REPO" --json headRefOid >/dev/null 2>&1; then
+     return 0
+  fi
+
+  # Fallback to parent
+  local parent
+  parent="$(gh repo view "$REPO" --json parent -q '.parent | .owner.login + "/" + .name' 2>/dev/null || true)"
+  if [[ -n "$parent" && "$parent" != "null" && "$parent" != "/" ]]; then
+     if gh pr view "$pr" -R "$parent" --json headRefOid >/dev/null 2>&1; then
+       echo "PR #$pr not found in $REPO; found in $parent. Switching context." >&2
+       REPO="$parent"
+       return 0
+     fi
+  fi
+  
+  die "Could not find PR #$pr in $REPO or its parent"
+}
+
 load_pr_metadata() {
+  resolve_pr_repo_context "$PR_NUMBER"
   local pr_meta_json
   pr_meta_json="$(gh pr view "$PR_NUMBER" -R "$REPO" --json number,title,url,author,headRefName,baseRefName,headRefOid,baseRefOid,additions,deletions,changedFiles,body)"
 
@@ -183,8 +222,9 @@ load_pr_metadata() {
   BASE_REF=$(jq -r '.baseRefName' <<<"$pr_meta_json")
 
   # Ensure we have the commits locally (best-effort, tolerate fetch failure)
-  git fetch -q origin "pull/${PR_NUMBER}/head:refs/remotes/origin/pr/${PR_NUMBER}" || true
-  git fetch -q origin "refs/heads/${BASE_REF}:refs/remotes/origin/${BASE_REF}" || true
+  local repo_url="https://github.com/${REPO}.git"
+  git fetch -q "$repo_url" "refs/pull/${PR_NUMBER}/head:refs/remotes/origin/pr/${PR_NUMBER}" || true
+  git fetch -q "$repo_url" "refs/heads/${BASE_REF}:refs/remotes/origin/${BASE_REF}" || true
 
   DEFAULT_BASENAME="pr-${PR_NUMBER}-diffs"
 }
@@ -233,6 +273,7 @@ load_pr_set_metadata() {
   local idx=0
 
   for pr_number in "${PR_SET_NUMBERS[@]}"; do
+    resolve_pr_repo_context "$pr_number"
     local pr_meta_json
     pr_meta_json="$(gh pr view "$pr_number" -R "$REPO" --json number,title,url,author,headRefName,baseRefName,headRefOid,baseRefOid,body)"
 
@@ -241,8 +282,9 @@ load_pr_set_metadata() {
     head_ref_oid=$(jq -r '.headRefOid' <<<"$pr_meta_json")
     base_ref_name=$(jq -r '.baseRefName' <<<"$pr_meta_json")
 
-    git fetch -q origin "pull/${pr_number}/head:refs/remotes/origin/pr/${pr_number}" || true
-    git fetch -q origin "refs/heads/${base_ref_name}:refs/remotes/origin/${base_ref_name}" || true
+    local repo_url="https://github.com/${REPO}.git"
+    git fetch -q "$repo_url" "refs/pull/${pr_number}/head:refs/remotes/origin/pr/${pr_number}" || true
+    git fetch -q "$repo_url" "refs/heads/${base_ref_name}:refs/remotes/origin/${base_ref_name}" || true
 
     if (( idx == 0 )); then
       BASE_OID="$base_ref_oid"

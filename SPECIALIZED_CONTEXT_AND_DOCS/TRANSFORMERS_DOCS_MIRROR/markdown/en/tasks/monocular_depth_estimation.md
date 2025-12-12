@@ -1,0 +1,143 @@
+# Monocular depth estimation
+
+Monocular depth estimation is a computer vision task that involves predicting the depth information of a scene from a
+single image. In other words, it is the process of estimating the distance of objects in a scene from
+a single camera viewpoint.
+
+Monocular depth estimation has various applications, including 3D reconstruction, augmented reality, autonomous driving,
+and robotics. It is a challenging task as it requires the model to understand the complex relationships between objects
+in the scene and the corresponding depth information, which can be affected by factors such as lighting conditions,
+occlusion, and texture.
+
+There are two main depth estimation categories:
+
+* **Absolute depth estimation**: This task variant aims to provide exact depth measurements from the camera. The term is used interchangeably with metric depth estimation, where depth is provided in precise measurements in meters or feet. Absolute depth estimation models output depth maps with numerical values that represent real-world distances.
+* **Relative depth estimation**: Relative depth estimation aims to predict the depth order of objects or points in a scene without providing the precise measurements. These models output a depth map that indicates which parts of the scene are closer or farther relative to each other without the actual distances to A and B.
+
+In this guide, we will see how to infer with [Depth Anything V2](https://huggingface.co/depth-anything/Depth-Anything-V2-Large), a state-of-the-art zero-shot relative depth estimation model, and [ZoeDepth](https://huggingface.co/docs/transformers/main/en/model_doc/zoedepth), an absolute depth estimation model.
+
+Check the [Depth Estimation](https://huggingface.co/tasks/depth-estimation) task page to view all compatible architectures and checkpoints.
+
+Before we begin, we need to install the latest version of Transformers:
+
+
+```
+pip install -q -U transformers
+```
+
+## Depth estimation pipeline
+
+The simplest way to try out inference with a model supporting depth estimation is to use the corresponding [pipeline()](/docs/transformers/v4.56.2/en/main_classes/pipelines#transformers.pipeline).
+Instantiate a pipeline from a [checkpoint on the Hugging Face Hub](https://huggingface.co/models?pipeline_tag=depth-estimation&sort=downloads):
+
+
+```
+>>> from transformers import pipeline, infer_device
+>>> import torch
+>>> device = infer_device()
+>>> checkpoint = "depth-anything/Depth-Anything-V2-base-hf"
+>>> pipe = pipeline("depth-estimation", model=checkpoint, device=device)
+```
+
+Next, choose an image to analyze:
+
+
+```
+>>> from PIL import Image
+>>> import requests
+
+>>> url = "https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/bee.jpg"
+>>> image = Image.open(requests.get(url, stream=True).raw)
+>>> image
+```
+
+![Photo of a bee](https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/bee.jpg)
+
+Pass the image to the pipeline.
+
+
+```
+>>> predictions = pipe(image)
+```
+
+The pipeline returns a dictionary with two entries. The first one, called `predicted_depth`, is a tensor with the values
+being the depth expressed in meters for each pixel.
+The second one, `depth`, is a PIL image that visualizes the depth estimation result.
+
+Let’s take a look at the visualized result:
+
+
+```
+>>> predictions["depth"]
+```
+
+![Depth estimation visualization](https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers/tasks/depth-visualization.png)
+
+## Depth estimation inference by hand
+
+Now that you’ve seen how to use the depth estimation pipeline, let’s see how we can replicate the same result by hand.
+
+Start by loading the model and associated processor from a [checkpoint on the Hugging Face Hub](https://huggingface.co/models?pipeline_tag=depth-estimation&sort=downloads).
+Here we’ll use the same checkpoint as before:
+
+
+```
+>>> from transformers import AutoImageProcessor, AutoModelForDepthEstimation
+
+>>> checkpoint = "Intel/zoedepth-nyu-kitti"
+
+>>> image_processor = AutoImageProcessor.from_pretrained(checkpoint)
+>>> model = AutoModelForDepthEstimation.from_pretrained(checkpoint).to(device)
+```
+
+Prepare the image input for the model using the `image_processor` that will take care of the necessary image transformations
+such as resizing and normalization:
+
+
+```
+>>> pixel_values = image_processor(image, return_tensors="pt").pixel_values.to(device)
+```
+
+Pass the prepared inputs through the model:
+
+
+```
+>>> import torch
+
+>>> with torch.no_grad():
+...     outputs = model(pixel_values)
+```
+
+Let’s post-process the results to remove any padding and resize the depth map to match the original image size. The `post_process_depth_estimation` outputs a list of dicts containing the `"predicted_depth"`.
+
+
+```
+>>> # ZoeDepth dynamically pads the input image. Thus we pass the original image size as argument
+>>> # to `post_process_depth_estimation` to remove the padding and resize to original dimensions.
+>>> post_processed_output = image_processor.post_process_depth_estimation(
+...     outputs,
+...     source_sizes=[(image.height, image.width)],
+... )
+
+>>> predicted_depth = post_processed_output[0]["predicted_depth"]
+>>> depth = (predicted_depth - predicted_depth.min()) / (predicted_depth.max() - predicted_depth.min())
+>>> depth = depth.detach().cpu().numpy() * 255
+>>> depth = Image.fromarray(depth.astype("uint8"))
+```
+
+In the [original implementation](https://github.com/isl-org/ZoeDepth/blob/edb6daf45458569e24f50250ef1ed08c015f17a7/zoedepth/models/depth_model.py#L131) ZoeDepth model performs inference on both the original and flipped images and averages out the results. The `post_process_depth_estimation` function can handle this for us by passing the flipped outputs to the optional `outputs_flipped` argument:
+
+```
+>>> with torch.no_grad():   
+...     outputs = model(pixel_values)
+...     outputs_flipped = model(pixel_values=torch.flip(inputs.pixel_values, dims=[3]))
+>>> post_processed_output = image_processor.post_process_depth_estimation(
+...     outputs,
+...     source_sizes=[(image.height, image.width)],
+...     outputs_flipped=outputs_flipped,
+... )
+```
+
+![Depth estimation visualization](https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers/tasks/depth-visualization-zoe.png)
+
+[< > Update on GitHub](https://github.com/huggingface/transformers/blob/main/docs/source/en/tasks/monocular_depth_estimation.md)

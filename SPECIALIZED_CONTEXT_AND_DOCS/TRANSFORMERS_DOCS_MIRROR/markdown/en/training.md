@@ -1,0 +1,123 @@
+# Fine-tuning
+
+![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)
+
+![Open In Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)
+
+Fine-tuning adapts a pretrained model to a specific task with a smaller specialized dataset. This approach requires far less data and compute compared to training a model from scratch, which makes it a more accessible option for many users.
+
+Transformers provides the [Trainer](/docs/transformers/v4.56.2/en/main_classes/trainer#transformers.Trainer) API, which offers a comprehensive set of training features, for fine-tuning any of the models on the [Hub](https://hf.co/models).
+
+Learn how to fine-tune models for other tasks in our Task Recipes section in Resources!
+
+This guide will show you how to fine-tune a model with [Trainer](/docs/transformers/v4.56.2/en/main_classes/trainer#transformers.Trainer) to classify Yelp reviews.
+
+Log in to your Hugging Face account with your user token to ensure you can access gated models and share your models on the Hub.
+
+
+```
+from huggingface_hub import login
+
+login()
+```
+
+Start by loading the [Yelp Reviews](https://hf.co/datasets/yelp_review_full) dataset and [preprocess](./fast_tokenizers#preprocess) (tokenize, pad, and truncate) it for training. Use [map](https://huggingface.co/docs/datasets/v4.1.0/en/package_reference/main_classes#datasets.Dataset.map) to preprocess the entire dataset in one step.
+
+
+```
+from datasets import load_dataset
+from transformers import AutoTokenizer
+
+dataset = load_dataset("yelp_review_full")
+tokenizer = AutoTokenizer.from_pretrained("google-bert/bert-base-cased")
+
+def tokenize(examples):
+    return tokenizer(examples["text"], padding="max_length", truncation=True)
+
+dataset = dataset.map(tokenize, batched=True)
+```
+
+Fine-tune on a smaller subset of the full dataset to reduce the time it takes. The results won’t be as good compared to fine-tuning on the full dataset, but it is useful to make sure everything works as expected first before committing to training on the full dataset.
+
+
+```
+small_train = dataset["train"].shuffle(seed=42).select(range(1000))
+small_eval = dataset["test"].shuffle(seed=42).select(range(1000))
+```
+
+## Trainer
+
+[Trainer](./trainer) is an optimized training loop for Transformers models, making it easy to start training right away without manually writing your own training code. Pick and choose from a wide range of training features in [TrainingArguments](/docs/transformers/v4.56.2/en/main_classes/trainer#transformers.TrainingArguments) such as gradient accumulation, mixed precision, and options for reporting and logging training metrics.
+
+Load a model and provide the number of expected labels (you can find this information on the Yelp Review [dataset card](https://huggingface.co/datasets/yelp_review_full#data-fields)).
+
+
+```
+from transformers import AutoModelForSequenceClassification
+
+model = AutoModelForSequenceClassification.from_pretrained("google-bert/bert-base-cased", num_labels=5)
+"Some weights of BertForSequenceClassification were not initialized from the model checkpoint at google-bert/bert-base-cased and are newly initialized: ['classifier.bias', 'classifier.weight']"
+"You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference."
+```
+
+The message above is a reminder that the models pretrained head is discarded and replaced with a randomly initialized classification head. The randomly initialized head needs to be fine-tuned on your specific task to output meaningful predictions.
+
+With the model loaded, set up your training hyperparameters in [TrainingArguments](/docs/transformers/v4.56.2/en/main_classes/trainer#transformers.TrainingArguments). Hyperparameters are variables that control the training process - such as the learning rate, batch size, number of epochs - which in turn impacts model performance. Selecting the correct hyperparameters is important and you should experiment with them to find the best configuration for your task.
+
+For this guide, you can use the default hyperparameters which provide a good baseline to begin with. The only settings to configure in this guide are where to save the checkpoint, how to evaluate model performance during training, and pushing the model to the Hub.
+
+[Trainer](/docs/transformers/v4.56.2/en/main_classes/trainer#transformers.Trainer) requires a function to compute and report your metric. For a classification task, you’ll use [evaluate.load](https://huggingface.co/docs/evaluate/v0.4.5/en/package_reference/loading_methods#evaluate.load) to load the [accuracy](https://hf.co/spaces/evaluate-metric/accuracy) function from the [Evaluate](https://hf.co/docs/evaluate/index) library. Gather the predictions and labels in [compute](https://huggingface.co/docs/evaluate/v0.4.5/en/package_reference/main_classes#evaluate.EvaluationModule.compute) to calculate the accuracy.
+
+
+```
+import numpy as np
+import evaluate
+
+metric = evaluate.load("accuracy")
+
+def compute_metrics(eval_pred):
+    logits, labels = eval_pred
+    # convert the logits to their predicted class
+    predictions = np.argmax(logits, axis=-1)
+    return metric.compute(predictions=predictions, references=labels)
+```
+
+Set up [TrainingArguments](/docs/transformers/v4.56.2/en/main_classes/trainer#transformers.TrainingArguments) with where to save the model and when to compute accuracy during training. The example below sets it to `"epoch"`, which reports the accuracy at the end of each epoch. Add `push_to_hub=True` to upload the model to the Hub after training.
+
+
+```
+from transformers import TrainingArguments
+
+training_args = TrainingArguments(
+    output_dir="yelp_review_classifier",
+    eval_strategy="epoch",
+    push_to_hub=True,
+)
+```
+
+Create a [Trainer](/docs/transformers/v4.56.2/en/main_classes/trainer#transformers.Trainer) instance and pass it the model, training arguments, training and test datasets, and evaluation function. Call [train()](/docs/transformers/v4.56.2/en/main_classes/trainer#transformers.Trainer.train) to start training.
+
+
+```
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=dataset["train"],
+    eval_dataset=dataset["test"],
+    compute_metrics=compute_metrics,
+)
+trainer.train()
+```
+
+Finally, use [push\_to\_hub()](/docs/transformers/v4.56.2/en/main_classes/trainer#transformers.Trainer.push_to_hub) to upload your model and tokenizer to the Hub.
+
+
+```
+trainer.push_to_hub()
+```
+
+## Resources
+
+Refer to the Transformers [examples](https://github.com/huggingface/transformers/tree/main/examples) for more detailed training scripts on various tasks. You can also check out the [notebooks](./notebooks) for interactive examples.
+
+[< > Update on GitHub](https://github.com/huggingface/transformers/blob/main/docs/source/en/training.md)

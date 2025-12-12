@@ -1,0 +1,201 @@
+*This model was released on 2022-03-30 and added to Hugging Face Transformers on 2023-08-29.*
+
+# ViTDet
+
+![PyTorch](https://img.shields.io/badge/PyTorch-DE3412?style=flat&logo=pytorch&logoColor=white)
+
+## Overview
+
+The ViTDet model was proposed in [Exploring Plain Vision Transformer Backbones for Object Detection](https://huggingface.co/papers/2203.16527) by Yanghao Li, Hanzi Mao, Ross Girshick, Kaiming He.
+VitDet leverages the plain [Vision Transformer](vit) for the task of object detection.
+
+The abstract from the paper is the following:
+
+*We explore the plain, non-hierarchical Vision Transformer (ViT) as a backbone network for object detection. This design enables the original ViT architecture to be fine-tuned for object detection without needing to redesign a hierarchical backbone for pre-training. With minimal adaptations for fine-tuning, our plain-backbone detector can achieve competitive results. Surprisingly, we observe: (i) it is sufficient to build a simple feature pyramid from a single-scale feature map (without the common FPN design) and (ii) it is sufficient to use window attention (without shifting) aided with very few cross-window propagation blocks. With plain ViT backbones pre-trained as Masked Autoencoders (MAE), our detector, named ViTDet, can compete with the previous leading methods that were all based on hierarchical backbones, reaching up to 61.3 AP\_box on the COCO dataset using only ImageNet-1K pre-training. We hope our study will draw attention to research on plain-backbone detectors.*
+
+This model was contributed by [nielsr](https://huggingface.co/nielsr).
+The original code can be found [here](https://github.com/facebookresearch/detectron2/tree/main/projects/ViTDet).
+
+Tips:
+
+* At the moment, only the backbone is available.
+
+## VitDetConfig
+
+### class transformers.VitDetConfig
+
+ [< source >](https://github.com/huggingface/transformers/blob/v4.56.2/src/transformers/models/vitdet/configuration_vitdet.py#L25)
+
+( hidden\_size = 768 num\_hidden\_layers = 12 num\_attention\_heads = 12 mlp\_ratio = 4 hidden\_act = 'gelu' dropout\_prob = 0.0 initializer\_range = 0.02 layer\_norm\_eps = 1e-06 image\_size = 224 pretrain\_image\_size = 224 patch\_size = 16 num\_channels = 3 qkv\_bias = True drop\_path\_rate = 0.0 window\_block\_indices = [] residual\_block\_indices = [] use\_absolute\_position\_embeddings = True use\_relative\_position\_embeddings = False window\_size = 0 out\_features = None out\_indices = None \*\*kwargs  )
+
+Parameters
+
+* **hidden\_size** (`int`, *optional*, defaults to 768) —
+  Dimensionality of the encoder layers and the pooler layer.
+* **num\_hidden\_layers** (`int`, *optional*, defaults to 12) —
+  Number of hidden layers in the Transformer encoder.
+* **num\_attention\_heads** (`int`, *optional*, defaults to 12) —
+  Number of attention heads for each attention layer in the Transformer encoder.
+* **mlp\_ratio** (`int`, *optional*, defaults to 4) —
+  Ratio of mlp hidden dim to embedding dim.
+* **hidden\_act** (`str` or `function`, *optional*, defaults to `"gelu"`) —
+  The non-linear activation function (function or string) in the encoder and pooler. If string, `"gelu"`,
+  `"relu"`, `"selu"` and `"gelu_new"` are supported.
+* **dropout\_prob** (`float`, *optional*, defaults to 0.0) —
+  The dropout probability for all fully connected layers in the embeddings, encoder, and pooler.
+* **initializer\_range** (`float`, *optional*, defaults to 0.02) —
+  The standard deviation of the truncated\_normal\_initializer for initializing all weight matrices.
+* **layer\_norm\_eps** (`float`, *optional*, defaults to 1e-06) —
+  The epsilon used by the layer normalization layers.
+* **image\_size** (`int`, *optional*, defaults to 224) —
+  The size (resolution) of each image.
+* **pretrain\_image\_size** (`int`, *optional*, defaults to 224) —
+  The size (resolution) of each image during pretraining.
+* **patch\_size** (`int`, *optional*, defaults to 16) —
+  The size (resolution) of each patch.
+* **num\_channels** (`int`, *optional*, defaults to 3) —
+  The number of input channels.
+* **qkv\_bias** (`bool`, *optional*, defaults to `True`) —
+  Whether to add a bias to the queries, keys and values.
+* **drop\_path\_rate** (`float`, *optional*, defaults to 0.0) —
+  Stochastic depth rate.
+* **window\_block\_indices** (`list[int]`, *optional*, defaults to `[]`) —
+  List of indices of blocks that should have window attention instead of regular global self-attention.
+* **residual\_block\_indices** (`list[int]`, *optional*, defaults to `[]`) —
+  List of indices of blocks that should have an extra residual block after the MLP.
+* **use\_absolute\_position\_embeddings** (`bool`, *optional*, defaults to `True`) —
+  Whether to add absolute position embeddings to the patch embeddings.
+* **use\_relative\_position\_embeddings** (`bool`, *optional*, defaults to `False`) —
+  Whether to add relative position embeddings to the attention maps.
+* **window\_size** (`int`, *optional*, defaults to 0) —
+  The size of the attention window.
+* **out\_features** (`list[str]`, *optional*) —
+  If used as backbone, list of features to output. Can be any of `"stem"`, `"stage1"`, `"stage2"`, etc.
+  (depending on how many stages the model has). If unset and `out_indices` is set, will default to the
+  corresponding stages. If unset and `out_indices` is unset, will default to the last stage. Must be in the
+  same order as defined in the `stage_names` attribute.
+* **out\_indices** (`list[int]`, *optional*) —
+  If used as backbone, list of indices of features to output. Can be any of 0, 1, 2, etc. (depending on how
+  many stages the model has). If unset and `out_features` is set, will default to the corresponding stages.
+  If unset and `out_features` is unset, will default to the last stage. Must be in the
+  same order as defined in the `stage_names` attribute.
+
+This is the configuration class to store the configuration of a [VitDetModel](/docs/transformers/v4.56.2/en/model_doc/vitdet#transformers.VitDetModel). It is used to instantiate an
+VitDet model according to the specified arguments, defining the model architecture. Instantiating a configuration
+with the defaults will yield a similar configuration to that of the VitDet
+[google/vitdet-base-patch16-224](https://huggingface.co/google/vitdet-base-patch16-224) architecture.
+
+Configuration objects inherit from [PretrainedConfig](/docs/transformers/v4.56.2/en/main_classes/configuration#transformers.PretrainedConfig) and can be used to control the model outputs. Read the
+documentation from [PretrainedConfig](/docs/transformers/v4.56.2/en/main_classes/configuration#transformers.PretrainedConfig) for more information.
+
+Example:
+
+
+```
+>>> from transformers import VitDetConfig, VitDetModel
+
+>>> # Initializing a VitDet configuration
+>>> configuration = VitDetConfig()
+
+>>> # Initializing a model (with random weights) from the configuration
+>>> model = VitDetModel(configuration)
+
+>>> # Accessing the model configuration
+>>> configuration = model.config
+```
+
+## VitDetModel
+
+### class transformers.VitDetModel
+
+ [< source >](https://github.com/huggingface/transformers/blob/v4.56.2/src/transformers/models/vitdet/modeling_vitdet.py#L650)
+
+( config: VitDetConfig  )
+
+Parameters
+
+* **config** ([VitDetConfig](/docs/transformers/v4.56.2/en/model_doc/vitdet#transformers.VitDetConfig)) —
+  Model configuration class with all the parameters of the model. Initializing with a config file does not
+  load the weights associated with the model, only the configuration. Check out the
+  [from\_pretrained()](/docs/transformers/v4.56.2/en/main_classes/model#transformers.PreTrainedModel.from_pretrained) method to load the model weights.
+
+The bare Vitdet Model outputting raw hidden-states without any specific head on top.
+
+This model inherits from [PreTrainedModel](/docs/transformers/v4.56.2/en/main_classes/model#transformers.PreTrainedModel). Check the superclass documentation for the generic methods the
+library implements for all its model (such as downloading or saving, resizing the input embeddings, pruning heads
+etc.)
+
+This model is also a PyTorch [torch.nn.Module](https://pytorch.org/docs/stable/nn.html#torch.nn.Module) subclass.
+Use it as a regular PyTorch Module and refer to the PyTorch documentation for all matter related to general usage
+and behavior.
+
+#### forward
+
+ [< source >](https://github.com/huggingface/transformers/blob/v4.56.2/src/transformers/models/vitdet/modeling_vitdet.py#L672)
+
+( pixel\_values: typing.Optional[torch.Tensor] = None head\_mask: typing.Optional[torch.Tensor] = None output\_attentions: typing.Optional[bool] = None output\_hidden\_states: typing.Optional[bool] = None return\_dict: typing.Optional[bool] = None  ) → [transformers.modeling\_outputs.BaseModelOutput](/docs/transformers/v4.56.2/en/main_classes/output#transformers.modeling_outputs.BaseModelOutput) or `tuple(torch.FloatTensor)`
+
+Parameters
+
+* **pixel\_values** (`torch.Tensor` of shape `(batch_size, num_channels, image_size, image_size)`, *optional*) —
+  The tensors corresponding to the input images. Pixel values can be obtained using
+  `image_processor_class`. See `image_processor_class.__call__` for details (`processor_class` uses
+  `image_processor_class` for processing images).
+* **head\_mask** (`torch.Tensor` of shape `(num_heads,)` or `(num_layers, num_heads)`, *optional*) —
+  Mask to nullify selected heads of the self-attention modules. Mask values selected in `[0, 1]`:
+  + 1 indicates the head is **not masked**,
+  + 0 indicates the head is **masked**.
+* **output\_attentions** (`bool`, *optional*) —
+  Whether or not to return the attentions tensors of all attention layers. See `attentions` under returned
+  tensors for more detail.
+* **output\_hidden\_states** (`bool`, *optional*) —
+  Whether or not to return the hidden states of all layers. See `hidden_states` under returned tensors for
+  more detail.
+* **return\_dict** (`bool`, *optional*) —
+  Whether or not to return a [ModelOutput](/docs/transformers/v4.56.2/en/main_classes/output#transformers.utils.ModelOutput) instead of a plain tuple.
+
+Returns
+
+[transformers.modeling\_outputs.BaseModelOutput](/docs/transformers/v4.56.2/en/main_classes/output#transformers.modeling_outputs.BaseModelOutput) or `tuple(torch.FloatTensor)`
+
+A [transformers.modeling\_outputs.BaseModelOutput](/docs/transformers/v4.56.2/en/main_classes/output#transformers.modeling_outputs.BaseModelOutput) or a tuple of
+`torch.FloatTensor` (if `return_dict=False` is passed or when `config.return_dict=False`) comprising various
+elements depending on the configuration ([VitDetConfig](/docs/transformers/v4.56.2/en/model_doc/vitdet#transformers.VitDetConfig)) and inputs.
+
+* **last\_hidden\_state** (`torch.FloatTensor` of shape `(batch_size, sequence_length, hidden_size)`) — Sequence of hidden-states at the output of the last layer of the model.
+* **hidden\_states** (`tuple(torch.FloatTensor)`, *optional*, returned when `output_hidden_states=True` is passed or when `config.output_hidden_states=True`) — Tuple of `torch.FloatTensor` (one for the output of the embeddings, if the model has an embedding layer, +
+  one for the output of each layer) of shape `(batch_size, sequence_length, hidden_size)`.
+
+  Hidden-states of the model at the output of each layer plus the optional initial embedding outputs.
+* **attentions** (`tuple(torch.FloatTensor)`, *optional*, returned when `output_attentions=True` is passed or when `config.output_attentions=True`) — Tuple of `torch.FloatTensor` (one for each layer) of shape `(batch_size, num_heads, sequence_length, sequence_length)`.
+
+  Attentions weights after the attention softmax, used to compute the weighted average in the self-attention
+  heads.
+
+The [VitDetModel](/docs/transformers/v4.56.2/en/model_doc/vitdet#transformers.VitDetModel) forward method, overrides the `__call__` special method.
+
+Although the recipe for forward pass needs to be defined within this function, one should call the `Module`
+instance afterwards instead of this since the former takes care of running the pre and post processing steps while
+the latter silently ignores them.
+
+Examples:
+
+
+```
+>>> from transformers import VitDetConfig, VitDetModel
+>>> import torch
+
+>>> config = VitDetConfig()
+>>> model = VitDetModel(config)
+
+>>> pixel_values = torch.randn(1, 3, 224, 224)
+
+>>> with torch.no_grad():
+...     outputs = model(pixel_values)
+
+>>> last_hidden_states = outputs.last_hidden_state
+>>> list(last_hidden_states.shape)
+[1, 768, 14, 14]
+```
+
+[< > Update on GitHub](https://github.com/huggingface/transformers/blob/main/docs/source/en/model_doc/vitdet.md)
