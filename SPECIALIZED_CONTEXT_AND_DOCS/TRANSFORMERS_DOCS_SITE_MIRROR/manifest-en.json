@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2025-12-12T03:58:04.902725+00:00",
+  "generated_at_utc": "2025-12-12T06:13:33.816798+00:00",
   "source": {
     "base_url": "https://huggingface.co/docs/transformers/main/en/",
     "manifest_url": "https://huggingface.co/docs/transformers/main/en/_app/manifest.json",
@@ -9,9 +9,9 @@
   "language": "en",
   "counts": {
     "pages_requested": 347,
-    "pages_ok": 345,
-    "pages_skipped": 0,
-    "pages_error": 2
+    "pages_ok": 0,
+    "pages_skipped": 347,
+    "pages_error": 0
   },
   "pages": [
     {
@@ -19,8 +19,8 @@
       "route": "accelerate",
       "html_path": "html/en/accelerate.html",
       "markdown_path": "markdown/en/accelerate.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -28,8 +28,8 @@
       "route": "add_new_model",
       "html_path": "html/en/add_new_model.html",
       "markdown_path": "markdown/en/add_new_model.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -37,8 +37,8 @@
       "route": "add_new_pipeline",
       "html_path": "html/en/add_new_pipeline.html",
       "markdown_path": "markdown/en/add_new_pipeline.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -46,8 +46,8 @@
       "route": "add_tensorflow_model",
       "html_path": "html/en/add_tensorflow_model.html",
       "markdown_path": "markdown/en/add_tensorflow_model.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -55,8 +55,8 @@
       "route": "attention",
       "html_path": "html/en/attention.html",
       "markdown_path": "markdown/en/attention.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -64,8 +64,8 @@
       "route": "autoclass_tutorial",
       "html_path": "html/en/autoclass_tutorial.html",
       "markdown_path": "markdown/en/autoclass_tutorial.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -73,8 +73,8 @@
       "route": "benchmarks",
       "html_path": "html/en/benchmarks.html",
       "markdown_path": "markdown/en/benchmarks.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -82,8 +82,8 @@
       "route": "bertology",
       "html_path": "html/en/bertology.html",
       "markdown_path": "markdown/en/bertology.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -91,8 +91,8 @@
       "route": "big_models",
       "html_path": "html/en/big_models.html",
       "markdown_path": "markdown/en/big_models.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -100,8 +100,8 @@
       "route": "chat_templating",
       "html_path": "html/en/chat_templating.html",
       "markdown_path": "markdown/en/chat_templating.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -109,8 +109,8 @@
       "route": "community",
       "html_path": "html/en/community.html",
       "markdown_path": "markdown/en/community.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -118,8 +118,8 @@
       "route": "contributing",
       "html_path": "html/en/contributing.html",
       "markdown_path": "markdown/en/contributing.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -127,8 +127,8 @@
       "route": "create_a_model",
       "html_path": "html/en/create_a_model.html",
       "markdown_path": "markdown/en/create_a_model.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -136,8 +136,8 @@
       "route": "custom_models",
       "html_path": "html/en/custom_models.html",
       "markdown_path": "markdown/en/custom_models.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -145,8 +145,8 @@
       "route": "custom_tools",
       "html_path": "html/en/custom_tools.html",
       "markdown_path": "markdown/en/custom_tools.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -154,8 +154,8 @@
       "route": "debugging",
       "html_path": "html/en/debugging.html",
       "markdown_path": "markdown/en/debugging.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -163,8 +163,8 @@
       "route": "fast_tokenizers",
       "html_path": "html/en/fast_tokenizers.html",
       "markdown_path": "markdown/en/fast_tokenizers.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -172,8 +172,8 @@
       "route": "generation_strategies",
       "html_path": "html/en/generation_strategies.html",
       "markdown_path": "markdown/en/generation_strategies.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -181,8 +181,8 @@
       "route": "glossary",
       "html_path": "html/en/glossary.html",
       "markdown_path": "markdown/en/glossary.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -190,8 +190,8 @@
       "route": "hpo_train",
       "html_path": "html/en/hpo_train.html",
       "markdown_path": "markdown/en/hpo_train.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -199,8 +199,8 @@
       "route": "index",
       "html_path": "html/en/index.html",
       "markdown_path": "markdown/en/index.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -208,8 +208,8 @@
       "route": "installation",
       "html_path": "html/en/installation.html",
       "markdown_path": "markdown/en/installation.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -217,8 +217,8 @@
       "route": "internal/audio_utils",
       "html_path": "html/en/internal/audio_utils.html",
       "markdown_path": "markdown/en/internal/audio_utils.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -226,8 +226,8 @@
       "route": "internal/file_utils",
       "html_path": "html/en/internal/file_utils.html",
       "markdown_path": "markdown/en/internal/file_utils.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -235,8 +235,8 @@
       "route": "internal/generation_utils",
       "html_path": "html/en/internal/generation_utils.html",
       "markdown_path": "markdown/en/internal/generation_utils.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -244,8 +244,8 @@
       "route": "internal/image_processing_utils",
       "html_path": "html/en/internal/image_processing_utils.html",
       "markdown_path": "markdown/en/internal/image_processing_utils.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -253,8 +253,8 @@
       "route": "internal/modeling_utils",
       "html_path": "html/en/internal/modeling_utils.html",
       "markdown_path": "markdown/en/internal/modeling_utils.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -262,8 +262,8 @@
       "route": "internal/pipelines_utils",
       "html_path": "html/en/internal/pipelines_utils.html",
       "markdown_path": "markdown/en/internal/pipelines_utils.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -271,8 +271,8 @@
       "route": "internal/time_series_utils",
       "html_path": "html/en/internal/time_series_utils.html",
       "markdown_path": "markdown/en/internal/time_series_utils.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -280,8 +280,8 @@
       "route": "internal/tokenization_utils",
       "html_path": "html/en/internal/tokenization_utils.html",
       "markdown_path": "markdown/en/internal/tokenization_utils.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -289,8 +289,8 @@
       "route": "internal/trainer_utils",
       "html_path": "html/en/internal/trainer_utils.html",
       "markdown_path": "markdown/en/internal/trainer_utils.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -298,8 +298,8 @@
       "route": "llm_tutorial",
       "html_path": "html/en/llm_tutorial.html",
       "markdown_path": "markdown/en/llm_tutorial.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -307,8 +307,8 @@
       "route": "main_classes/agent",
       "html_path": "html/en/main_classes/agent.html",
       "markdown_path": "markdown/en/main_classes/agent.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -316,8 +316,8 @@
       "route": "main_classes/callback",
       "html_path": "html/en/main_classes/callback.html",
       "markdown_path": "markdown/en/main_classes/callback.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -325,8 +325,8 @@
       "route": "main_classes/configuration",
       "html_path": "html/en/main_classes/configuration.html",
       "markdown_path": "markdown/en/main_classes/configuration.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -334,8 +334,8 @@
       "route": "main_classes/data_collator",
       "html_path": "html/en/main_classes/data_collator.html",
       "markdown_path": "markdown/en/main_classes/data_collator.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -343,8 +343,8 @@
       "route": "main_classes/deepspeed",
       "html_path": "html/en/main_classes/deepspeed.html",
       "markdown_path": "markdown/en/main_classes/deepspeed.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -352,8 +352,8 @@
       "route": "main_classes/feature_extractor",
       "html_path": "html/en/main_classes/feature_extractor.html",
       "markdown_path": "markdown/en/main_classes/feature_extractor.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -361,8 +361,8 @@
       "route": "main_classes/image_processor",
       "html_path": "html/en/main_classes/image_processor.html",
       "markdown_path": "markdown/en/main_classes/image_processor.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -370,8 +370,8 @@
       "route": "main_classes/keras_callbacks",
       "html_path": "html/en/main_classes/keras_callbacks.html",
       "markdown_path": "markdown/en/main_classes/keras_callbacks.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -379,8 +379,8 @@
       "route": "main_classes/logging",
       "html_path": "html/en/main_classes/logging.html",
       "markdown_path": "markdown/en/main_classes/logging.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -388,8 +388,8 @@
       "route": "main_classes/model",
       "html_path": "html/en/main_classes/model.html",
       "markdown_path": "markdown/en/main_classes/model.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -397,8 +397,8 @@
       "route": "main_classes/onnx",
       "html_path": "html/en/main_classes/onnx.html",
       "markdown_path": "markdown/en/main_classes/onnx.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -406,8 +406,8 @@
       "route": "main_classes/optimizer_schedules",
       "html_path": "html/en/main_classes/optimizer_schedules.html",
       "markdown_path": "markdown/en/main_classes/optimizer_schedules.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -415,8 +415,8 @@
       "route": "main_classes/output",
       "html_path": "html/en/main_classes/output.html",
       "markdown_path": "markdown/en/main_classes/output.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -424,8 +424,8 @@
       "route": "main_classes/pipelines",
       "html_path": "html/en/main_classes/pipelines.html",
       "markdown_path": "markdown/en/main_classes/pipelines.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -433,8 +433,8 @@
       "route": "main_classes/processors",
       "html_path": "html/en/main_classes/processors.html",
       "markdown_path": "markdown/en/main_classes/processors.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -442,8 +442,8 @@
       "route": "main_classes/quantization",
       "html_path": "html/en/main_classes/quantization.html",
       "markdown_path": "markdown/en/main_classes/quantization.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -451,8 +451,8 @@
       "route": "main_classes/text_generation",
       "html_path": "html/en/main_classes/text_generation.html",
       "markdown_path": "markdown/en/main_classes/text_generation.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -460,8 +460,8 @@
       "route": "main_classes/tokenizer",
       "html_path": "html/en/main_classes/tokenizer.html",
       "markdown_path": "markdown/en/main_classes/tokenizer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -469,8 +469,8 @@
       "route": "main_classes/trainer",
       "html_path": "html/en/main_classes/trainer.html",
       "markdown_path": "markdown/en/main_classes/trainer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -478,8 +478,8 @@
       "route": "model_doc/albert",
       "html_path": "html/en/model_doc/albert.html",
       "markdown_path": "markdown/en/model_doc/albert.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -487,8 +487,8 @@
       "route": "model_doc/align",
       "html_path": "html/en/model_doc/align.html",
       "markdown_path": "markdown/en/model_doc/align.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -496,8 +496,8 @@
       "route": "model_doc/altclip",
       "html_path": "html/en/model_doc/altclip.html",
       "markdown_path": "markdown/en/model_doc/altclip.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -505,8 +505,8 @@
       "route": "model_doc/audio-spectrogram-transformer",
       "html_path": "html/en/model_doc/audio-spectrogram-transformer.html",
       "markdown_path": "markdown/en/model_doc/audio-spectrogram-transformer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -514,8 +514,8 @@
       "route": "model_doc/auto",
       "html_path": "html/en/model_doc/auto.html",
       "markdown_path": "markdown/en/model_doc/auto.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -523,8 +523,8 @@
       "route": "model_doc/autoformer",
       "html_path": "html/en/model_doc/autoformer.html",
       "markdown_path": "markdown/en/model_doc/autoformer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -532,8 +532,8 @@
       "route": "model_doc/bark",
       "html_path": "html/en/model_doc/bark.html",
       "markdown_path": "markdown/en/model_doc/bark.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -541,8 +541,8 @@
       "route": "model_doc/bart",
       "html_path": "html/en/model_doc/bart.html",
       "markdown_path": "markdown/en/model_doc/bart.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -550,8 +550,8 @@
       "route": "model_doc/barthez",
       "html_path": "html/en/model_doc/barthez.html",
       "markdown_path": "markdown/en/model_doc/barthez.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -559,8 +559,8 @@
       "route": "model_doc/bartpho",
       "html_path": "html/en/model_doc/bartpho.html",
       "markdown_path": "markdown/en/model_doc/bartpho.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -568,8 +568,8 @@
       "route": "model_doc/beit",
       "html_path": "html/en/model_doc/beit.html",
       "markdown_path": "markdown/en/model_doc/beit.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -577,8 +577,8 @@
       "route": "model_doc/bert",
       "html_path": "html/en/model_doc/bert.html",
       "markdown_path": "markdown/en/model_doc/bert.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -586,8 +586,8 @@
       "route": "model_doc/bert-generation",
       "html_path": "html/en/model_doc/bert-generation.html",
       "markdown_path": "markdown/en/model_doc/bert-generation.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -595,8 +595,8 @@
       "route": "model_doc/bert-japanese",
       "html_path": "html/en/model_doc/bert-japanese.html",
       "markdown_path": "markdown/en/model_doc/bert-japanese.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -604,8 +604,8 @@
       "route": "model_doc/bertweet",
       "html_path": "html/en/model_doc/bertweet.html",
       "markdown_path": "markdown/en/model_doc/bertweet.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -613,8 +613,8 @@
       "route": "model_doc/big_bird",
       "html_path": "html/en/model_doc/big_bird.html",
       "markdown_path": "markdown/en/model_doc/big_bird.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -622,8 +622,8 @@
       "route": "model_doc/bigbird_pegasus",
       "html_path": "html/en/model_doc/bigbird_pegasus.html",
       "markdown_path": "markdown/en/model_doc/bigbird_pegasus.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -631,8 +631,8 @@
       "route": "model_doc/biogpt",
       "html_path": "html/en/model_doc/biogpt.html",
       "markdown_path": "markdown/en/model_doc/biogpt.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -640,8 +640,8 @@
       "route": "model_doc/bit",
       "html_path": "html/en/model_doc/bit.html",
       "markdown_path": "markdown/en/model_doc/bit.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -649,8 +649,8 @@
       "route": "model_doc/blenderbot",
       "html_path": "html/en/model_doc/blenderbot.html",
       "markdown_path": "markdown/en/model_doc/blenderbot.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -658,8 +658,8 @@
       "route": "model_doc/blenderbot-small",
       "html_path": "html/en/model_doc/blenderbot-small.html",
       "markdown_path": "markdown/en/model_doc/blenderbot-small.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -667,8 +667,8 @@
       "route": "model_doc/blip",
       "html_path": "html/en/model_doc/blip.html",
       "markdown_path": "markdown/en/model_doc/blip.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -676,8 +676,8 @@
       "route": "model_doc/blip-2",
       "html_path": "html/en/model_doc/blip-2.html",
       "markdown_path": "markdown/en/model_doc/blip-2.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -685,8 +685,8 @@
       "route": "model_doc/bloom",
       "html_path": "html/en/model_doc/bloom.html",
       "markdown_path": "markdown/en/model_doc/bloom.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -694,8 +694,8 @@
       "route": "model_doc/bort",
       "html_path": "html/en/model_doc/bort.html",
       "markdown_path": "markdown/en/model_doc/bort.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -703,8 +703,8 @@
       "route": "model_doc/bridgetower",
       "html_path": "html/en/model_doc/bridgetower.html",
       "markdown_path": "markdown/en/model_doc/bridgetower.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -712,8 +712,8 @@
       "route": "model_doc/bros",
       "html_path": "html/en/model_doc/bros.html",
       "markdown_path": "markdown/en/model_doc/bros.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -721,8 +721,8 @@
       "route": "model_doc/byt5",
       "html_path": "html/en/model_doc/byt5.html",
       "markdown_path": "markdown/en/model_doc/byt5.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -730,8 +730,8 @@
       "route": "model_doc/camembert",
       "html_path": "html/en/model_doc/camembert.html",
       "markdown_path": "markdown/en/model_doc/camembert.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -739,8 +739,8 @@
       "route": "model_doc/canine",
       "html_path": "html/en/model_doc/canine.html",
       "markdown_path": "markdown/en/model_doc/canine.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -748,8 +748,8 @@
       "route": "model_doc/chinese_clip",
       "html_path": "html/en/model_doc/chinese_clip.html",
       "markdown_path": "markdown/en/model_doc/chinese_clip.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -757,8 +757,8 @@
       "route": "model_doc/clap",
       "html_path": "html/en/model_doc/clap.html",
       "markdown_path": "markdown/en/model_doc/clap.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -766,8 +766,8 @@
       "route": "model_doc/clip",
       "html_path": "html/en/model_doc/clip.html",
       "markdown_path": "markdown/en/model_doc/clip.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -775,8 +775,8 @@
       "route": "model_doc/clipseg",
       "html_path": "html/en/model_doc/clipseg.html",
       "markdown_path": "markdown/en/model_doc/clipseg.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -784,8 +784,8 @@
       "route": "model_doc/code_llama",
       "html_path": "html/en/model_doc/code_llama.html",
       "markdown_path": "markdown/en/model_doc/code_llama.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -793,8 +793,8 @@
       "route": "model_doc/codegen",
       "html_path": "html/en/model_doc/codegen.html",
       "markdown_path": "markdown/en/model_doc/codegen.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -802,8 +802,8 @@
       "route": "model_doc/conditional_detr",
       "html_path": "html/en/model_doc/conditional_detr.html",
       "markdown_path": "markdown/en/model_doc/conditional_detr.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -811,8 +811,8 @@
       "route": "model_doc/convbert",
       "html_path": "html/en/model_doc/convbert.html",
       "markdown_path": "markdown/en/model_doc/convbert.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -820,8 +820,8 @@
       "route": "model_doc/convnext",
       "html_path": "html/en/model_doc/convnext.html",
       "markdown_path": "markdown/en/model_doc/convnext.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -829,8 +829,8 @@
       "route": "model_doc/convnextv2",
       "html_path": "html/en/model_doc/convnextv2.html",
       "markdown_path": "markdown/en/model_doc/convnextv2.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -838,8 +838,8 @@
       "route": "model_doc/cpm",
       "html_path": "html/en/model_doc/cpm.html",
       "markdown_path": "markdown/en/model_doc/cpm.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -847,8 +847,8 @@
       "route": "model_doc/cpmant",
       "html_path": "html/en/model_doc/cpmant.html",
       "markdown_path": "markdown/en/model_doc/cpmant.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -856,8 +856,8 @@
       "route": "model_doc/ctrl",
       "html_path": "html/en/model_doc/ctrl.html",
       "markdown_path": "markdown/en/model_doc/ctrl.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -865,8 +865,8 @@
       "route": "model_doc/cvt",
       "html_path": "html/en/model_doc/cvt.html",
       "markdown_path": "markdown/en/model_doc/cvt.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -874,8 +874,8 @@
       "route": "model_doc/data2vec",
       "html_path": "html/en/model_doc/data2vec.html",
       "markdown_path": "markdown/en/model_doc/data2vec.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -883,8 +883,8 @@
       "route": "model_doc/deberta",
       "html_path": "html/en/model_doc/deberta.html",
       "markdown_path": "markdown/en/model_doc/deberta.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -892,8 +892,8 @@
       "route": "model_doc/deberta-v2",
       "html_path": "html/en/model_doc/deberta-v2.html",
       "markdown_path": "markdown/en/model_doc/deberta-v2.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -901,8 +901,8 @@
       "route": "model_doc/decision_transformer",
       "html_path": "html/en/model_doc/decision_transformer.html",
       "markdown_path": "markdown/en/model_doc/decision_transformer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -910,8 +910,8 @@
       "route": "model_doc/deformable_detr",
       "html_path": "html/en/model_doc/deformable_detr.html",
       "markdown_path": "markdown/en/model_doc/deformable_detr.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -919,8 +919,8 @@
       "route": "model_doc/deit",
       "html_path": "html/en/model_doc/deit.html",
       "markdown_path": "markdown/en/model_doc/deit.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -928,8 +928,8 @@
       "route": "model_doc/deplot",
       "html_path": "html/en/model_doc/deplot.html",
       "markdown_path": "markdown/en/model_doc/deplot.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -937,8 +937,8 @@
       "route": "model_doc/deta",
       "html_path": "html/en/model_doc/deta.html",
       "markdown_path": "markdown/en/model_doc/deta.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -946,8 +946,8 @@
       "route": "model_doc/detr",
       "html_path": "html/en/model_doc/detr.html",
       "markdown_path": "markdown/en/model_doc/detr.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -955,8 +955,8 @@
       "route": "model_doc/dialogpt",
       "html_path": "html/en/model_doc/dialogpt.html",
       "markdown_path": "markdown/en/model_doc/dialogpt.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -964,8 +964,8 @@
       "route": "model_doc/dinat",
       "html_path": "html/en/model_doc/dinat.html",
       "markdown_path": "markdown/en/model_doc/dinat.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -973,8 +973,8 @@
       "route": "model_doc/dinov2",
       "html_path": "html/en/model_doc/dinov2.html",
       "markdown_path": "markdown/en/model_doc/dinov2.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -982,8 +982,8 @@
       "route": "model_doc/distilbert",
       "html_path": "html/en/model_doc/distilbert.html",
       "markdown_path": "markdown/en/model_doc/distilbert.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -991,8 +991,8 @@
       "route": "model_doc/dit",
       "html_path": "html/en/model_doc/dit.html",
       "markdown_path": "markdown/en/model_doc/dit.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1000,8 +1000,8 @@
       "route": "model_doc/donut",
       "html_path": "html/en/model_doc/donut.html",
       "markdown_path": "markdown/en/model_doc/donut.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1009,8 +1009,8 @@
       "route": "model_doc/dpr",
       "html_path": "html/en/model_doc/dpr.html",
       "markdown_path": "markdown/en/model_doc/dpr.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1018,8 +1018,8 @@
       "route": "model_doc/dpt",
       "html_path": "html/en/model_doc/dpt.html",
       "markdown_path": "markdown/en/model_doc/dpt.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1027,8 +1027,8 @@
       "route": "model_doc/efficientformer",
       "html_path": "html/en/model_doc/efficientformer.html",
       "markdown_path": "markdown/en/model_doc/efficientformer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1036,8 +1036,8 @@
       "route": "model_doc/efficientnet",
       "html_path": "html/en/model_doc/efficientnet.html",
       "markdown_path": "markdown/en/model_doc/efficientnet.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1045,8 +1045,8 @@
       "route": "model_doc/electra",
       "html_path": "html/en/model_doc/electra.html",
       "markdown_path": "markdown/en/model_doc/electra.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1054,8 +1054,8 @@
       "route": "model_doc/encodec",
       "html_path": "html/en/model_doc/encodec.html",
       "markdown_path": "markdown/en/model_doc/encodec.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1063,8 +1063,8 @@
       "route": "model_doc/encoder-decoder",
       "html_path": "html/en/model_doc/encoder-decoder.html",
       "markdown_path": "markdown/en/model_doc/encoder-decoder.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1072,8 +1072,8 @@
       "route": "model_doc/ernie",
       "html_path": "html/en/model_doc/ernie.html",
       "markdown_path": "markdown/en/model_doc/ernie.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1081,8 +1081,8 @@
       "route": "model_doc/ernie_m",
       "html_path": "html/en/model_doc/ernie_m.html",
       "markdown_path": "markdown/en/model_doc/ernie_m.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1090,8 +1090,8 @@
       "route": "model_doc/esm",
       "html_path": "html/en/model_doc/esm.html",
       "markdown_path": "markdown/en/model_doc/esm.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1099,8 +1099,8 @@
       "route": "model_doc/falcon",
       "html_path": "html/en/model_doc/falcon.html",
       "markdown_path": "markdown/en/model_doc/falcon.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1108,8 +1108,8 @@
       "route": "model_doc/flan-t5",
       "html_path": "html/en/model_doc/flan-t5.html",
       "markdown_path": "markdown/en/model_doc/flan-t5.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1117,8 +1117,8 @@
       "route": "model_doc/flan-ul2",
       "html_path": "html/en/model_doc/flan-ul2.html",
       "markdown_path": "markdown/en/model_doc/flan-ul2.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1126,8 +1126,8 @@
       "route": "model_doc/flaubert",
       "html_path": "html/en/model_doc/flaubert.html",
       "markdown_path": "markdown/en/model_doc/flaubert.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1135,8 +1135,8 @@
       "route": "model_doc/flava",
       "html_path": "html/en/model_doc/flava.html",
       "markdown_path": "markdown/en/model_doc/flava.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1144,8 +1144,8 @@
       "route": "model_doc/fnet",
       "html_path": "html/en/model_doc/fnet.html",
       "markdown_path": "markdown/en/model_doc/fnet.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1153,8 +1153,8 @@
       "route": "model_doc/focalnet",
       "html_path": "html/en/model_doc/focalnet.html",
       "markdown_path": "markdown/en/model_doc/focalnet.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1162,8 +1162,8 @@
       "route": "model_doc/fsmt",
       "html_path": "html/en/model_doc/fsmt.html",
       "markdown_path": "markdown/en/model_doc/fsmt.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1171,8 +1171,8 @@
       "route": "model_doc/funnel",
       "html_path": "html/en/model_doc/funnel.html",
       "markdown_path": "markdown/en/model_doc/funnel.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1180,8 +1180,8 @@
       "route": "model_doc/git",
       "html_path": "html/en/model_doc/git.html",
       "markdown_path": "markdown/en/model_doc/git.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1189,8 +1189,8 @@
       "route": "model_doc/glpn",
       "html_path": "html/en/model_doc/glpn.html",
       "markdown_path": "markdown/en/model_doc/glpn.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1198,8 +1198,8 @@
       "route": "model_doc/gpt-sw3",
       "html_path": "html/en/model_doc/gpt-sw3.html",
       "markdown_path": "markdown/en/model_doc/gpt-sw3.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1207,8 +1207,8 @@
       "route": "model_doc/gpt2",
       "html_path": "html/en/model_doc/gpt2.html",
       "markdown_path": "markdown/en/model_doc/gpt2.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1216,8 +1216,8 @@
       "route": "model_doc/gpt_bigcode",
       "html_path": "html/en/model_doc/gpt_bigcode.html",
       "markdown_path": "markdown/en/model_doc/gpt_bigcode.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1225,8 +1225,8 @@
       "route": "model_doc/gpt_neo",
       "html_path": "html/en/model_doc/gpt_neo.html",
       "markdown_path": "markdown/en/model_doc/gpt_neo.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1234,8 +1234,8 @@
       "route": "model_doc/gpt_neox",
       "html_path": "html/en/model_doc/gpt_neox.html",
       "markdown_path": "markdown/en/model_doc/gpt_neox.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1243,8 +1243,8 @@
       "route": "model_doc/gpt_neox_japanese",
       "html_path": "html/en/model_doc/gpt_neox_japanese.html",
       "markdown_path": "markdown/en/model_doc/gpt_neox_japanese.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1252,8 +1252,8 @@
       "route": "model_doc/gptj",
       "html_path": "html/en/model_doc/gptj.html",
       "markdown_path": "markdown/en/model_doc/gptj.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1261,8 +1261,8 @@
       "route": "model_doc/gptsan-japanese",
       "html_path": "html/en/model_doc/gptsan-japanese.html",
       "markdown_path": "markdown/en/model_doc/gptsan-japanese.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1270,8 +1270,8 @@
       "route": "model_doc/graphormer",
       "html_path": "html/en/model_doc/graphormer.html",
       "markdown_path": "markdown/en/model_doc/graphormer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1279,8 +1279,8 @@
       "route": "model_doc/groupvit",
       "html_path": "html/en/model_doc/groupvit.html",
       "markdown_path": "markdown/en/model_doc/groupvit.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1288,8 +1288,8 @@
       "route": "model_doc/herbert",
       "html_path": "html/en/model_doc/herbert.html",
       "markdown_path": "markdown/en/model_doc/herbert.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1297,8 +1297,8 @@
       "route": "model_doc/hubert",
       "html_path": "html/en/model_doc/hubert.html",
       "markdown_path": "markdown/en/model_doc/hubert.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1306,8 +1306,8 @@
       "route": "model_doc/ibert",
       "html_path": "html/en/model_doc/ibert.html",
       "markdown_path": "markdown/en/model_doc/ibert.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1315,8 +1315,8 @@
       "route": "model_doc/idefics",
       "html_path": "html/en/model_doc/idefics.html",
       "markdown_path": "markdown/en/model_doc/idefics.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1324,8 +1324,8 @@
       "route": "model_doc/imagegpt",
       "html_path": "html/en/model_doc/imagegpt.html",
       "markdown_path": "markdown/en/model_doc/imagegpt.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1333,8 +1333,8 @@
       "route": "model_doc/informer",
       "html_path": "html/en/model_doc/informer.html",
       "markdown_path": "markdown/en/model_doc/informer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1342,8 +1342,8 @@
       "route": "model_doc/instructblip",
       "html_path": "html/en/model_doc/instructblip.html",
       "markdown_path": "markdown/en/model_doc/instructblip.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1351,8 +1351,8 @@
       "route": "model_doc/jukebox",
       "html_path": "html/en/model_doc/jukebox.html",
       "markdown_path": "markdown/en/model_doc/jukebox.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1360,8 +1360,8 @@
       "route": "model_doc/layoutlm",
       "html_path": "html/en/model_doc/layoutlm.html",
       "markdown_path": "markdown/en/model_doc/layoutlm.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1369,8 +1369,8 @@
       "route": "model_doc/layoutlmv2",
       "html_path": "html/en/model_doc/layoutlmv2.html",
       "markdown_path": "markdown/en/model_doc/layoutlmv2.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1378,8 +1378,8 @@
       "route": "model_doc/layoutlmv3",
       "html_path": "html/en/model_doc/layoutlmv3.html",
       "markdown_path": "markdown/en/model_doc/layoutlmv3.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1387,8 +1387,8 @@
       "route": "model_doc/layoutxlm",
       "html_path": "html/en/model_doc/layoutxlm.html",
       "markdown_path": "markdown/en/model_doc/layoutxlm.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1396,8 +1396,8 @@
       "route": "model_doc/led",
       "html_path": "html/en/model_doc/led.html",
       "markdown_path": "markdown/en/model_doc/led.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1405,8 +1405,8 @@
       "route": "model_doc/levit",
       "html_path": "html/en/model_doc/levit.html",
       "markdown_path": "markdown/en/model_doc/levit.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1414,8 +1414,8 @@
       "route": "model_doc/lilt",
       "html_path": "html/en/model_doc/lilt.html",
       "markdown_path": "markdown/en/model_doc/lilt.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1423,8 +1423,8 @@
       "route": "model_doc/llama",
       "html_path": "html/en/model_doc/llama.html",
       "markdown_path": "markdown/en/model_doc/llama.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1432,8 +1432,8 @@
       "route": "model_doc/llama2",
       "html_path": "html/en/model_doc/llama2.html",
       "markdown_path": "markdown/en/model_doc/llama2.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1441,8 +1441,8 @@
       "route": "model_doc/longformer",
       "html_path": "html/en/model_doc/longformer.html",
       "markdown_path": "markdown/en/model_doc/longformer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1450,8 +1450,8 @@
       "route": "model_doc/longt5",
       "html_path": "html/en/model_doc/longt5.html",
       "markdown_path": "markdown/en/model_doc/longt5.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1459,8 +1459,8 @@
       "route": "model_doc/luke",
       "html_path": "html/en/model_doc/luke.html",
       "markdown_path": "markdown/en/model_doc/luke.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1468,8 +1468,8 @@
       "route": "model_doc/lxmert",
       "html_path": "html/en/model_doc/lxmert.html",
       "markdown_path": "markdown/en/model_doc/lxmert.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1477,8 +1477,8 @@
       "route": "model_doc/m2m_100",
       "html_path": "html/en/model_doc/m2m_100.html",
       "markdown_path": "markdown/en/model_doc/m2m_100.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1486,8 +1486,8 @@
       "route": "model_doc/marian",
       "html_path": "html/en/model_doc/marian.html",
       "markdown_path": "markdown/en/model_doc/marian.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1495,8 +1495,8 @@
       "route": "model_doc/markuplm",
       "html_path": "html/en/model_doc/markuplm.html",
       "markdown_path": "markdown/en/model_doc/markuplm.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1504,8 +1504,8 @@
       "route": "model_doc/mask2former",
       "html_path": "html/en/model_doc/mask2former.html",
       "markdown_path": "markdown/en/model_doc/mask2former.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1513,8 +1513,8 @@
       "route": "model_doc/maskformer",
       "html_path": "html/en/model_doc/maskformer.html",
       "markdown_path": "markdown/en/model_doc/maskformer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1522,8 +1522,8 @@
       "route": "model_doc/matcha",
       "html_path": "html/en/model_doc/matcha.html",
       "markdown_path": "markdown/en/model_doc/matcha.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1531,8 +1531,8 @@
       "route": "model_doc/mbart",
       "html_path": "html/en/model_doc/mbart.html",
       "markdown_path": "markdown/en/model_doc/mbart.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1540,8 +1540,8 @@
       "route": "model_doc/mctct",
       "html_path": "html/en/model_doc/mctct.html",
       "markdown_path": "markdown/en/model_doc/mctct.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1549,8 +1549,8 @@
       "route": "model_doc/mega",
       "html_path": "html/en/model_doc/mega.html",
       "markdown_path": "markdown/en/model_doc/mega.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1558,8 +1558,8 @@
       "route": "model_doc/megatron-bert",
       "html_path": "html/en/model_doc/megatron-bert.html",
       "markdown_path": "markdown/en/model_doc/megatron-bert.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1567,8 +1567,8 @@
       "route": "model_doc/megatron_gpt2",
       "html_path": "html/en/model_doc/megatron_gpt2.html",
       "markdown_path": "markdown/en/model_doc/megatron_gpt2.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1576,8 +1576,8 @@
       "route": "model_doc/mgp-str",
       "html_path": "html/en/model_doc/mgp-str.html",
       "markdown_path": "markdown/en/model_doc/mgp-str.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1585,8 +1585,8 @@
       "route": "model_doc/mluke",
       "html_path": "html/en/model_doc/mluke.html",
       "markdown_path": "markdown/en/model_doc/mluke.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1594,8 +1594,8 @@
       "route": "model_doc/mms",
       "html_path": "html/en/model_doc/mms.html",
       "markdown_path": "markdown/en/model_doc/mms.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1603,8 +1603,8 @@
       "route": "model_doc/mobilebert",
       "html_path": "html/en/model_doc/mobilebert.html",
       "markdown_path": "markdown/en/model_doc/mobilebert.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1612,8 +1612,8 @@
       "route": "model_doc/mobilenet_v1",
       "html_path": "html/en/model_doc/mobilenet_v1.html",
       "markdown_path": "markdown/en/model_doc/mobilenet_v1.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1621,8 +1621,8 @@
       "route": "model_doc/mobilenet_v2",
       "html_path": "html/en/model_doc/mobilenet_v2.html",
       "markdown_path": "markdown/en/model_doc/mobilenet_v2.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1630,8 +1630,8 @@
       "route": "model_doc/mobilevit",
       "html_path": "html/en/model_doc/mobilevit.html",
       "markdown_path": "markdown/en/model_doc/mobilevit.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1639,8 +1639,8 @@
       "route": "model_doc/mobilevitv2",
       "html_path": "html/en/model_doc/mobilevitv2.html",
       "markdown_path": "markdown/en/model_doc/mobilevitv2.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1648,8 +1648,8 @@
       "route": "model_doc/mpnet",
       "html_path": "html/en/model_doc/mpnet.html",
       "markdown_path": "markdown/en/model_doc/mpnet.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1657,17 +1657,17 @@
       "route": "model_doc/mpt",
       "html_path": "html/en/model_doc/mpt.html",
       "markdown_path": "markdown/en/model_doc/mpt.md",
-      "status": "error",
-      "source": "html",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "skipped",
+      "source": "existing",
+      "error": null
     },
     {
       "url": "https://huggingface.co/docs/transformers/main/en/model_doc/mra",
       "route": "model_doc/mra",
       "html_path": "html/en/model_doc/mra.html",
       "markdown_path": "markdown/en/model_doc/mra.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1675,8 +1675,8 @@
       "route": "model_doc/mt5",
       "html_path": "html/en/model_doc/mt5.html",
       "markdown_path": "markdown/en/model_doc/mt5.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1684,8 +1684,8 @@
       "route": "model_doc/musicgen",
       "html_path": "html/en/model_doc/musicgen.html",
       "markdown_path": "markdown/en/model_doc/musicgen.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1693,8 +1693,8 @@
       "route": "model_doc/mvp",
       "html_path": "html/en/model_doc/mvp.html",
       "markdown_path": "markdown/en/model_doc/mvp.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1702,8 +1702,8 @@
       "route": "model_doc/nat",
       "html_path": "html/en/model_doc/nat.html",
       "markdown_path": "markdown/en/model_doc/nat.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1711,8 +1711,8 @@
       "route": "model_doc/nezha",
       "html_path": "html/en/model_doc/nezha.html",
       "markdown_path": "markdown/en/model_doc/nezha.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1720,8 +1720,8 @@
       "route": "model_doc/nllb",
       "html_path": "html/en/model_doc/nllb.html",
       "markdown_path": "markdown/en/model_doc/nllb.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1729,8 +1729,8 @@
       "route": "model_doc/nllb-moe",
       "html_path": "html/en/model_doc/nllb-moe.html",
       "markdown_path": "markdown/en/model_doc/nllb-moe.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1738,8 +1738,8 @@
       "route": "model_doc/nystromformer",
       "html_path": "html/en/model_doc/nystromformer.html",
       "markdown_path": "markdown/en/model_doc/nystromformer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1747,8 +1747,8 @@
       "route": "model_doc/oneformer",
       "html_path": "html/en/model_doc/oneformer.html",
       "markdown_path": "markdown/en/model_doc/oneformer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1756,8 +1756,8 @@
       "route": "model_doc/open-llama",
       "html_path": "html/en/model_doc/open-llama.html",
       "markdown_path": "markdown/en/model_doc/open-llama.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1765,8 +1765,8 @@
       "route": "model_doc/openai-gpt",
       "html_path": "html/en/model_doc/openai-gpt.html",
       "markdown_path": "markdown/en/model_doc/openai-gpt.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1774,8 +1774,8 @@
       "route": "model_doc/opt",
       "html_path": "html/en/model_doc/opt.html",
       "markdown_path": "markdown/en/model_doc/opt.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1783,8 +1783,8 @@
       "route": "model_doc/owlvit",
       "html_path": "html/en/model_doc/owlvit.html",
       "markdown_path": "markdown/en/model_doc/owlvit.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1792,8 +1792,8 @@
       "route": "model_doc/pegasus",
       "html_path": "html/en/model_doc/pegasus.html",
       "markdown_path": "markdown/en/model_doc/pegasus.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1801,8 +1801,8 @@
       "route": "model_doc/pegasus_x",
       "html_path": "html/en/model_doc/pegasus_x.html",
       "markdown_path": "markdown/en/model_doc/pegasus_x.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1810,8 +1810,8 @@
       "route": "model_doc/perceiver",
       "html_path": "html/en/model_doc/perceiver.html",
       "markdown_path": "markdown/en/model_doc/perceiver.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1819,8 +1819,8 @@
       "route": "model_doc/persimmon",
       "html_path": "html/en/model_doc/persimmon.html",
       "markdown_path": "markdown/en/model_doc/persimmon.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1828,8 +1828,8 @@
       "route": "model_doc/phobert",
       "html_path": "html/en/model_doc/phobert.html",
       "markdown_path": "markdown/en/model_doc/phobert.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1837,8 +1837,8 @@
       "route": "model_doc/pix2struct",
       "html_path": "html/en/model_doc/pix2struct.html",
       "markdown_path": "markdown/en/model_doc/pix2struct.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1846,8 +1846,8 @@
       "route": "model_doc/plbart",
       "html_path": "html/en/model_doc/plbart.html",
       "markdown_path": "markdown/en/model_doc/plbart.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1855,8 +1855,8 @@
       "route": "model_doc/poolformer",
       "html_path": "html/en/model_doc/poolformer.html",
       "markdown_path": "markdown/en/model_doc/poolformer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1864,8 +1864,8 @@
       "route": "model_doc/pop2piano",
       "html_path": "html/en/model_doc/pop2piano.html",
       "markdown_path": "markdown/en/model_doc/pop2piano.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1873,8 +1873,8 @@
       "route": "model_doc/prophetnet",
       "html_path": "html/en/model_doc/prophetnet.html",
       "markdown_path": "markdown/en/model_doc/prophetnet.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1882,8 +1882,8 @@
       "route": "model_doc/pvt",
       "html_path": "html/en/model_doc/pvt.html",
       "markdown_path": "markdown/en/model_doc/pvt.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1891,8 +1891,8 @@
       "route": "model_doc/qdqbert",
       "html_path": "html/en/model_doc/qdqbert.html",
       "markdown_path": "markdown/en/model_doc/qdqbert.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1900,8 +1900,8 @@
       "route": "model_doc/rag",
       "html_path": "html/en/model_doc/rag.html",
       "markdown_path": "markdown/en/model_doc/rag.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1909,8 +1909,8 @@
       "route": "model_doc/realm",
       "html_path": "html/en/model_doc/realm.html",
       "markdown_path": "markdown/en/model_doc/realm.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1918,8 +1918,8 @@
       "route": "model_doc/reformer",
       "html_path": "html/en/model_doc/reformer.html",
       "markdown_path": "markdown/en/model_doc/reformer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1927,8 +1927,8 @@
       "route": "model_doc/regnet",
       "html_path": "html/en/model_doc/regnet.html",
       "markdown_path": "markdown/en/model_doc/regnet.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1936,8 +1936,8 @@
       "route": "model_doc/rembert",
       "html_path": "html/en/model_doc/rembert.html",
       "markdown_path": "markdown/en/model_doc/rembert.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1945,8 +1945,8 @@
       "route": "model_doc/resnet",
       "html_path": "html/en/model_doc/resnet.html",
       "markdown_path": "markdown/en/model_doc/resnet.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1954,8 +1954,8 @@
       "route": "model_doc/retribert",
       "html_path": "html/en/model_doc/retribert.html",
       "markdown_path": "markdown/en/model_doc/retribert.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1963,8 +1963,8 @@
       "route": "model_doc/roberta",
       "html_path": "html/en/model_doc/roberta.html",
       "markdown_path": "markdown/en/model_doc/roberta.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1972,8 +1972,8 @@
       "route": "model_doc/roberta-prelayernorm",
       "html_path": "html/en/model_doc/roberta-prelayernorm.html",
       "markdown_path": "markdown/en/model_doc/roberta-prelayernorm.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1981,8 +1981,8 @@
       "route": "model_doc/roc_bert",
       "html_path": "html/en/model_doc/roc_bert.html",
       "markdown_path": "markdown/en/model_doc/roc_bert.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1990,8 +1990,8 @@
       "route": "model_doc/roformer",
       "html_path": "html/en/model_doc/roformer.html",
       "markdown_path": "markdown/en/model_doc/roformer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -1999,8 +1999,8 @@
       "route": "model_doc/rwkv",
       "html_path": "html/en/model_doc/rwkv.html",
       "markdown_path": "markdown/en/model_doc/rwkv.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2008,8 +2008,8 @@
       "route": "model_doc/sam",
       "html_path": "html/en/model_doc/sam.html",
       "markdown_path": "markdown/en/model_doc/sam.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2017,8 +2017,8 @@
       "route": "model_doc/segformer",
       "html_path": "html/en/model_doc/segformer.html",
       "markdown_path": "markdown/en/model_doc/segformer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2026,8 +2026,8 @@
       "route": "model_doc/sew",
       "html_path": "html/en/model_doc/sew.html",
       "markdown_path": "markdown/en/model_doc/sew.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2035,8 +2035,8 @@
       "route": "model_doc/sew-d",
       "html_path": "html/en/model_doc/sew-d.html",
       "markdown_path": "markdown/en/model_doc/sew-d.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2044,8 +2044,8 @@
       "route": "model_doc/speech-encoder-decoder",
       "html_path": "html/en/model_doc/speech-encoder-decoder.html",
       "markdown_path": "markdown/en/model_doc/speech-encoder-decoder.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2053,8 +2053,8 @@
       "route": "model_doc/speech_to_text",
       "html_path": "html/en/model_doc/speech_to_text.html",
       "markdown_path": "markdown/en/model_doc/speech_to_text.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2062,8 +2062,8 @@
       "route": "model_doc/speech_to_text_2",
       "html_path": "html/en/model_doc/speech_to_text_2.html",
       "markdown_path": "markdown/en/model_doc/speech_to_text_2.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2071,8 +2071,8 @@
       "route": "model_doc/speecht5",
       "html_path": "html/en/model_doc/speecht5.html",
       "markdown_path": "markdown/en/model_doc/speecht5.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2080,8 +2080,8 @@
       "route": "model_doc/splinter",
       "html_path": "html/en/model_doc/splinter.html",
       "markdown_path": "markdown/en/model_doc/splinter.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2089,8 +2089,8 @@
       "route": "model_doc/squeezebert",
       "html_path": "html/en/model_doc/squeezebert.html",
       "markdown_path": "markdown/en/model_doc/squeezebert.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2098,8 +2098,8 @@
       "route": "model_doc/swiftformer",
       "html_path": "html/en/model_doc/swiftformer.html",
       "markdown_path": "markdown/en/model_doc/swiftformer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2107,8 +2107,8 @@
       "route": "model_doc/swin",
       "html_path": "html/en/model_doc/swin.html",
       "markdown_path": "markdown/en/model_doc/swin.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2116,8 +2116,8 @@
       "route": "model_doc/swin2sr",
       "html_path": "html/en/model_doc/swin2sr.html",
       "markdown_path": "markdown/en/model_doc/swin2sr.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2125,8 +2125,8 @@
       "route": "model_doc/swinv2",
       "html_path": "html/en/model_doc/swinv2.html",
       "markdown_path": "markdown/en/model_doc/swinv2.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2134,8 +2134,8 @@
       "route": "model_doc/switch_transformers",
       "html_path": "html/en/model_doc/switch_transformers.html",
       "markdown_path": "markdown/en/model_doc/switch_transformers.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2143,8 +2143,8 @@
       "route": "model_doc/t5",
       "html_path": "html/en/model_doc/t5.html",
       "markdown_path": "markdown/en/model_doc/t5.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2152,8 +2152,8 @@
       "route": "model_doc/t5v1.1",
       "html_path": "html/en/model_doc/t5v1.1.html",
       "markdown_path": "markdown/en/model_doc/t5v1.1.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2161,8 +2161,8 @@
       "route": "model_doc/table-transformer",
       "html_path": "html/en/model_doc/table-transformer.html",
       "markdown_path": "markdown/en/model_doc/table-transformer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2170,8 +2170,8 @@
       "route": "model_doc/tapas",
       "html_path": "html/en/model_doc/tapas.html",
       "markdown_path": "markdown/en/model_doc/tapas.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2179,8 +2179,8 @@
       "route": "model_doc/tapex",
       "html_path": "html/en/model_doc/tapex.html",
       "markdown_path": "markdown/en/model_doc/tapex.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2188,8 +2188,8 @@
       "route": "model_doc/time_series_transformer",
       "html_path": "html/en/model_doc/time_series_transformer.html",
       "markdown_path": "markdown/en/model_doc/time_series_transformer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2197,8 +2197,8 @@
       "route": "model_doc/timesformer",
       "html_path": "html/en/model_doc/timesformer.html",
       "markdown_path": "markdown/en/model_doc/timesformer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2206,8 +2206,8 @@
       "route": "model_doc/trajectory_transformer",
       "html_path": "html/en/model_doc/trajectory_transformer.html",
       "markdown_path": "markdown/en/model_doc/trajectory_transformer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2215,8 +2215,8 @@
       "route": "model_doc/transfo-xl",
       "html_path": "html/en/model_doc/transfo-xl.html",
       "markdown_path": "markdown/en/model_doc/transfo-xl.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2224,8 +2224,8 @@
       "route": "model_doc/trocr",
       "html_path": "html/en/model_doc/trocr.html",
       "markdown_path": "markdown/en/model_doc/trocr.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2233,8 +2233,8 @@
       "route": "model_doc/tvlt",
       "html_path": "html/en/model_doc/tvlt.html",
       "markdown_path": "markdown/en/model_doc/tvlt.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2242,8 +2242,8 @@
       "route": "model_doc/ul2",
       "html_path": "html/en/model_doc/ul2.html",
       "markdown_path": "markdown/en/model_doc/ul2.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2251,8 +2251,8 @@
       "route": "model_doc/umt5",
       "html_path": "html/en/model_doc/umt5.html",
       "markdown_path": "markdown/en/model_doc/umt5.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2260,8 +2260,8 @@
       "route": "model_doc/unispeech",
       "html_path": "html/en/model_doc/unispeech.html",
       "markdown_path": "markdown/en/model_doc/unispeech.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2269,8 +2269,8 @@
       "route": "model_doc/unispeech-sat",
       "html_path": "html/en/model_doc/unispeech-sat.html",
       "markdown_path": "markdown/en/model_doc/unispeech-sat.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2278,8 +2278,8 @@
       "route": "model_doc/upernet",
       "html_path": "html/en/model_doc/upernet.html",
       "markdown_path": "markdown/en/model_doc/upernet.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2287,8 +2287,8 @@
       "route": "model_doc/van",
       "html_path": "html/en/model_doc/van.html",
       "markdown_path": "markdown/en/model_doc/van.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2296,8 +2296,8 @@
       "route": "model_doc/videomae",
       "html_path": "html/en/model_doc/videomae.html",
       "markdown_path": "markdown/en/model_doc/videomae.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2305,8 +2305,8 @@
       "route": "model_doc/vilt",
       "html_path": "html/en/model_doc/vilt.html",
       "markdown_path": "markdown/en/model_doc/vilt.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2314,8 +2314,8 @@
       "route": "model_doc/vision-encoder-decoder",
       "html_path": "html/en/model_doc/vision-encoder-decoder.html",
       "markdown_path": "markdown/en/model_doc/vision-encoder-decoder.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2323,8 +2323,8 @@
       "route": "model_doc/vision-text-dual-encoder",
       "html_path": "html/en/model_doc/vision-text-dual-encoder.html",
       "markdown_path": "markdown/en/model_doc/vision-text-dual-encoder.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2332,8 +2332,8 @@
       "route": "model_doc/visual_bert",
       "html_path": "html/en/model_doc/visual_bert.html",
       "markdown_path": "markdown/en/model_doc/visual_bert.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2341,8 +2341,8 @@
       "route": "model_doc/vit",
       "html_path": "html/en/model_doc/vit.html",
       "markdown_path": "markdown/en/model_doc/vit.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2350,8 +2350,8 @@
       "route": "model_doc/vit_hybrid",
       "html_path": "html/en/model_doc/vit_hybrid.html",
       "markdown_path": "markdown/en/model_doc/vit_hybrid.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2359,8 +2359,8 @@
       "route": "model_doc/vit_mae",
       "html_path": "html/en/model_doc/vit_mae.html",
       "markdown_path": "markdown/en/model_doc/vit_mae.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2368,8 +2368,8 @@
       "route": "model_doc/vit_msn",
       "html_path": "html/en/model_doc/vit_msn.html",
       "markdown_path": "markdown/en/model_doc/vit_msn.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2377,8 +2377,8 @@
       "route": "model_doc/vitdet",
       "html_path": "html/en/model_doc/vitdet.html",
       "markdown_path": "markdown/en/model_doc/vitdet.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2386,8 +2386,8 @@
       "route": "model_doc/vitmatte",
       "html_path": "html/en/model_doc/vitmatte.html",
       "markdown_path": "markdown/en/model_doc/vitmatte.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2395,8 +2395,8 @@
       "route": "model_doc/vits",
       "html_path": "html/en/model_doc/vits.html",
       "markdown_path": "markdown/en/model_doc/vits.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2404,8 +2404,8 @@
       "route": "model_doc/vivit",
       "html_path": "html/en/model_doc/vivit.html",
       "markdown_path": "markdown/en/model_doc/vivit.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2413,8 +2413,8 @@
       "route": "model_doc/wav2vec2",
       "html_path": "html/en/model_doc/wav2vec2.html",
       "markdown_path": "markdown/en/model_doc/wav2vec2.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2422,8 +2422,8 @@
       "route": "model_doc/wav2vec2-conformer",
       "html_path": "html/en/model_doc/wav2vec2-conformer.html",
       "markdown_path": "markdown/en/model_doc/wav2vec2-conformer.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2431,8 +2431,8 @@
       "route": "model_doc/wav2vec2_phoneme",
       "html_path": "html/en/model_doc/wav2vec2_phoneme.html",
       "markdown_path": "markdown/en/model_doc/wav2vec2_phoneme.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2440,8 +2440,8 @@
       "route": "model_doc/wavlm",
       "html_path": "html/en/model_doc/wavlm.html",
       "markdown_path": "markdown/en/model_doc/wavlm.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2449,8 +2449,8 @@
       "route": "model_doc/whisper",
       "html_path": "html/en/model_doc/whisper.html",
       "markdown_path": "markdown/en/model_doc/whisper.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2458,8 +2458,8 @@
       "route": "model_doc/xclip",
       "html_path": "html/en/model_doc/xclip.html",
       "markdown_path": "markdown/en/model_doc/xclip.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2467,8 +2467,8 @@
       "route": "model_doc/xglm",
       "html_path": "html/en/model_doc/xglm.html",
       "markdown_path": "markdown/en/model_doc/xglm.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2476,8 +2476,8 @@
       "route": "model_doc/xlm",
       "html_path": "html/en/model_doc/xlm.html",
       "markdown_path": "markdown/en/model_doc/xlm.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2485,8 +2485,8 @@
       "route": "model_doc/xlm-prophetnet",
       "html_path": "html/en/model_doc/xlm-prophetnet.html",
       "markdown_path": "markdown/en/model_doc/xlm-prophetnet.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2494,8 +2494,8 @@
       "route": "model_doc/xlm-roberta",
       "html_path": "html/en/model_doc/xlm-roberta.html",
       "markdown_path": "markdown/en/model_doc/xlm-roberta.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2503,8 +2503,8 @@
       "route": "model_doc/xlm-roberta-xl",
       "html_path": "html/en/model_doc/xlm-roberta-xl.html",
       "markdown_path": "markdown/en/model_doc/xlm-roberta-xl.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2512,8 +2512,8 @@
       "route": "model_doc/xlm-v",
       "html_path": "html/en/model_doc/xlm-v.html",
       "markdown_path": "markdown/en/model_doc/xlm-v.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2521,8 +2521,8 @@
       "route": "model_doc/xlnet",
       "html_path": "html/en/model_doc/xlnet.html",
       "markdown_path": "markdown/en/model_doc/xlnet.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2530,8 +2530,8 @@
       "route": "model_doc/xls_r",
       "html_path": "html/en/model_doc/xls_r.html",
       "markdown_path": "markdown/en/model_doc/xls_r.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2539,8 +2539,8 @@
       "route": "model_doc/xlsr_wav2vec2",
       "html_path": "html/en/model_doc/xlsr_wav2vec2.html",
       "markdown_path": "markdown/en/model_doc/xlsr_wav2vec2.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2548,8 +2548,8 @@
       "route": "model_doc/xmod",
       "html_path": "html/en/model_doc/xmod.html",
       "markdown_path": "markdown/en/model_doc/xmod.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2557,8 +2557,8 @@
       "route": "model_doc/yolos",
       "html_path": "html/en/model_doc/yolos.html",
       "markdown_path": "markdown/en/model_doc/yolos.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2566,17 +2566,17 @@
       "route": "model_doc/yoso",
       "html_path": "html/en/model_doc/yoso.html",
       "markdown_path": "markdown/en/model_doc/yoso.md",
-      "status": "error",
-      "source": "html",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "skipped",
+      "source": "existing",
+      "error": null
     },
     {
       "url": "https://huggingface.co/docs/transformers/main/en/model_memory_anatomy",
       "route": "model_memory_anatomy",
       "html_path": "html/en/model_memory_anatomy.html",
       "markdown_path": "markdown/en/model_memory_anatomy.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2584,8 +2584,8 @@
       "route": "model_sharing",
       "html_path": "html/en/model_sharing.html",
       "markdown_path": "markdown/en/model_sharing.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2593,8 +2593,8 @@
       "route": "model_summary",
       "html_path": "html/en/model_summary.html",
       "markdown_path": "markdown/en/model_summary.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2602,8 +2602,8 @@
       "route": "multilingual",
       "html_path": "html/en/multilingual.html",
       "markdown_path": "markdown/en/multilingual.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2611,8 +2611,8 @@
       "route": "notebooks",
       "html_path": "html/en/notebooks.html",
       "markdown_path": "markdown/en/notebooks.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2620,8 +2620,8 @@
       "route": "pad_truncation",
       "html_path": "html/en/pad_truncation.html",
       "markdown_path": "markdown/en/pad_truncation.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2629,8 +2629,8 @@
       "route": "peft",
       "html_path": "html/en/peft.html",
       "markdown_path": "markdown/en/peft.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2638,8 +2638,8 @@
       "route": "perf_hardware",
       "html_path": "html/en/perf_hardware.html",
       "markdown_path": "markdown/en/perf_hardware.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2647,8 +2647,8 @@
       "route": "perf_infer_cpu",
       "html_path": "html/en/perf_infer_cpu.html",
       "markdown_path": "markdown/en/perf_infer_cpu.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2656,8 +2656,8 @@
       "route": "perf_infer_gpu_many",
       "html_path": "html/en/perf_infer_gpu_many.html",
       "markdown_path": "markdown/en/perf_infer_gpu_many.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2665,8 +2665,8 @@
       "route": "perf_infer_gpu_one",
       "html_path": "html/en/perf_infer_gpu_one.html",
       "markdown_path": "markdown/en/perf_infer_gpu_one.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2674,8 +2674,8 @@
       "route": "perf_infer_special",
       "html_path": "html/en/perf_infer_special.html",
       "markdown_path": "markdown/en/perf_infer_special.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2683,8 +2683,8 @@
       "route": "perf_torch_compile",
       "html_path": "html/en/perf_torch_compile.html",
       "markdown_path": "markdown/en/perf_torch_compile.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2692,8 +2692,8 @@
       "route": "perf_train_cpu",
       "html_path": "html/en/perf_train_cpu.html",
       "markdown_path": "markdown/en/perf_train_cpu.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2701,8 +2701,8 @@
       "route": "perf_train_cpu_many",
       "html_path": "html/en/perf_train_cpu_many.html",
       "markdown_path": "markdown/en/perf_train_cpu_many.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2710,8 +2710,8 @@
       "route": "perf_train_gpu_many",
       "html_path": "html/en/perf_train_gpu_many.html",
       "markdown_path": "markdown/en/perf_train_gpu_many.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2719,8 +2719,8 @@
       "route": "perf_train_gpu_one",
       "html_path": "html/en/perf_train_gpu_one.html",
       "markdown_path": "markdown/en/perf_train_gpu_one.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2728,8 +2728,8 @@
       "route": "perf_train_special",
       "html_path": "html/en/perf_train_special.html",
       "markdown_path": "markdown/en/perf_train_special.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2737,8 +2737,8 @@
       "route": "perf_train_tpu",
       "html_path": "html/en/perf_train_tpu.html",
       "markdown_path": "markdown/en/perf_train_tpu.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2746,8 +2746,8 @@
       "route": "perf_train_tpu_tf",
       "html_path": "html/en/perf_train_tpu_tf.html",
       "markdown_path": "markdown/en/perf_train_tpu_tf.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2755,8 +2755,8 @@
       "route": "performance",
       "html_path": "html/en/performance.html",
       "markdown_path": "markdown/en/performance.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2764,8 +2764,8 @@
       "route": "perplexity",
       "html_path": "html/en/perplexity.html",
       "markdown_path": "markdown/en/perplexity.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2773,8 +2773,8 @@
       "route": "philosophy",
       "html_path": "html/en/philosophy.html",
       "markdown_path": "markdown/en/philosophy.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2782,8 +2782,8 @@
       "route": "pipeline_tutorial",
       "html_path": "html/en/pipeline_tutorial.html",
       "markdown_path": "markdown/en/pipeline_tutorial.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2791,8 +2791,8 @@
       "route": "pipeline_webserver",
       "html_path": "html/en/pipeline_webserver.html",
       "markdown_path": "markdown/en/pipeline_webserver.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2800,8 +2800,8 @@
       "route": "pr_checks",
       "html_path": "html/en/pr_checks.html",
       "markdown_path": "markdown/en/pr_checks.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2809,8 +2809,8 @@
       "route": "preprocessing",
       "html_path": "html/en/preprocessing.html",
       "markdown_path": "markdown/en/preprocessing.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2818,8 +2818,8 @@
       "route": "quicktour",
       "html_path": "html/en/quicktour.html",
       "markdown_path": "markdown/en/quicktour.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2827,8 +2827,8 @@
       "route": "run_scripts",
       "html_path": "html/en/run_scripts.html",
       "markdown_path": "markdown/en/run_scripts.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2836,8 +2836,8 @@
       "route": "sagemaker",
       "html_path": "html/en/sagemaker.html",
       "markdown_path": "markdown/en/sagemaker.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2845,8 +2845,8 @@
       "route": "serialization",
       "html_path": "html/en/serialization.html",
       "markdown_path": "markdown/en/serialization.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2854,8 +2854,8 @@
       "route": "task_summary",
       "html_path": "html/en/task_summary.html",
       "markdown_path": "markdown/en/task_summary.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2863,8 +2863,8 @@
       "route": "tasks/asr",
       "html_path": "html/en/tasks/asr.html",
       "markdown_path": "markdown/en/tasks/asr.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2872,8 +2872,8 @@
       "route": "tasks/audio_classification",
       "html_path": "html/en/tasks/audio_classification.html",
       "markdown_path": "markdown/en/tasks/audio_classification.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2881,8 +2881,8 @@
       "route": "tasks/document_question_answering",
       "html_path": "html/en/tasks/document_question_answering.html",
       "markdown_path": "markdown/en/tasks/document_question_answering.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2890,8 +2890,8 @@
       "route": "tasks/idefics",
       "html_path": "html/en/tasks/idefics.html",
       "markdown_path": "markdown/en/tasks/idefics.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2899,8 +2899,8 @@
       "route": "tasks/image_captioning",
       "html_path": "html/en/tasks/image_captioning.html",
       "markdown_path": "markdown/en/tasks/image_captioning.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2908,8 +2908,8 @@
       "route": "tasks/image_classification",
       "html_path": "html/en/tasks/image_classification.html",
       "markdown_path": "markdown/en/tasks/image_classification.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2917,8 +2917,8 @@
       "route": "tasks/language_modeling",
       "html_path": "html/en/tasks/language_modeling.html",
       "markdown_path": "markdown/en/tasks/language_modeling.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2926,8 +2926,8 @@
       "route": "tasks/masked_language_modeling",
       "html_path": "html/en/tasks/masked_language_modeling.html",
       "markdown_path": "markdown/en/tasks/masked_language_modeling.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2935,8 +2935,8 @@
       "route": "tasks/monocular_depth_estimation",
       "html_path": "html/en/tasks/monocular_depth_estimation.html",
       "markdown_path": "markdown/en/tasks/monocular_depth_estimation.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2944,8 +2944,8 @@
       "route": "tasks/multiple_choice",
       "html_path": "html/en/tasks/multiple_choice.html",
       "markdown_path": "markdown/en/tasks/multiple_choice.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2953,8 +2953,8 @@
       "route": "tasks/object_detection",
       "html_path": "html/en/tasks/object_detection.html",
       "markdown_path": "markdown/en/tasks/object_detection.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2962,8 +2962,8 @@
       "route": "tasks/question_answering",
       "html_path": "html/en/tasks/question_answering.html",
       "markdown_path": "markdown/en/tasks/question_answering.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2971,8 +2971,8 @@
       "route": "tasks/semantic_segmentation",
       "html_path": "html/en/tasks/semantic_segmentation.html",
       "markdown_path": "markdown/en/tasks/semantic_segmentation.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2980,8 +2980,8 @@
       "route": "tasks/sequence_classification",
       "html_path": "html/en/tasks/sequence_classification.html",
       "markdown_path": "markdown/en/tasks/sequence_classification.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2989,8 +2989,8 @@
       "route": "tasks/summarization",
       "html_path": "html/en/tasks/summarization.html",
       "markdown_path": "markdown/en/tasks/summarization.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -2998,8 +2998,8 @@
       "route": "tasks/text-to-speech",
       "html_path": "html/en/tasks/text-to-speech.html",
       "markdown_path": "markdown/en/tasks/text-to-speech.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -3007,8 +3007,8 @@
       "route": "tasks/token_classification",
       "html_path": "html/en/tasks/token_classification.html",
       "markdown_path": "markdown/en/tasks/token_classification.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -3016,8 +3016,8 @@
       "route": "tasks/translation",
       "html_path": "html/en/tasks/translation.html",
       "markdown_path": "markdown/en/tasks/translation.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -3025,8 +3025,8 @@
       "route": "tasks/video_classification",
       "html_path": "html/en/tasks/video_classification.html",
       "markdown_path": "markdown/en/tasks/video_classification.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -3034,8 +3034,8 @@
       "route": "tasks/visual_question_answering",
       "html_path": "html/en/tasks/visual_question_answering.html",
       "markdown_path": "markdown/en/tasks/visual_question_answering.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -3043,8 +3043,8 @@
       "route": "tasks/zero_shot_image_classification",
       "html_path": "html/en/tasks/zero_shot_image_classification.html",
       "markdown_path": "markdown/en/tasks/zero_shot_image_classification.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -3052,8 +3052,8 @@
       "route": "tasks/zero_shot_object_detection",
       "html_path": "html/en/tasks/zero_shot_object_detection.html",
       "markdown_path": "markdown/en/tasks/zero_shot_object_detection.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -3061,8 +3061,8 @@
       "route": "tasks_explained",
       "html_path": "html/en/tasks_explained.html",
       "markdown_path": "markdown/en/tasks_explained.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -3070,8 +3070,8 @@
       "route": "testing",
       "html_path": "html/en/testing.html",
       "markdown_path": "markdown/en/testing.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -3079,8 +3079,8 @@
       "route": "tf_xla",
       "html_path": "html/en/tf_xla.html",
       "markdown_path": "markdown/en/tf_xla.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -3088,8 +3088,8 @@
       "route": "tflite",
       "html_path": "html/en/tflite.html",
       "markdown_path": "markdown/en/tflite.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -3097,8 +3097,8 @@
       "route": "tokenizer_summary",
       "html_path": "html/en/tokenizer_summary.html",
       "markdown_path": "markdown/en/tokenizer_summary.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -3106,8 +3106,8 @@
       "route": "torchscript",
       "html_path": "html/en/torchscript.html",
       "markdown_path": "markdown/en/torchscript.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -3115,8 +3115,8 @@
       "route": "training",
       "html_path": "html/en/training.html",
       "markdown_path": "markdown/en/training.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -3124,8 +3124,8 @@
       "route": "transformers_agents",
       "html_path": "html/en/transformers_agents.html",
       "markdown_path": "markdown/en/transformers_agents.md",
-      "status": "ok",
-      "source": "html",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     },
     {
@@ -3133,8 +3133,8 @@
       "route": "troubleshooting",
       "html_path": "html/en/troubleshooting.html",
       "markdown_path": "markdown/en/troubleshooting.md",
-      "status": "ok",
-      "source": "markdown",
+      "status": "skipped",
+      "source": "existing",
       "error": null
     }
   ]

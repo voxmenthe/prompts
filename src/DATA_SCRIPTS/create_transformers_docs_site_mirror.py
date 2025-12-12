@@ -184,6 +184,11 @@ def parse_args() -> argparse.Namespace:
         help="When preferring .md sources, skip pages that lack them instead of falling back to HTML.",
     )
     parser.add_argument(
+        "--skip-existing",
+        action="store_true",
+        help="Skip pages whose output files already exist (useful for resuming after partial runs).",
+    )
+    parser.add_argument(
         "--dry-run",
         action="store_true",
         help="Enumerate and fetch pages but do not write files.",
@@ -377,9 +382,15 @@ def process_job(
     prefer_markdown: bool,
     fetch_html: bool,
     skip_html_fallback: bool,
+    skip_existing: bool,
 ) -> PageResult:
     md_out = out_root / "markdown" / job.language / job.rel_markdown
     html_out = out_root / "html" / job.language / job.rel_html
+
+    if skip_existing and not dry_run:
+        needs_html = fetch_html or (not prefer_markdown)
+        if md_out.exists() and (not needs_html or html_out.exists()):
+            return PageResult(job=job, status="skipped", source="existing")
 
     if prefer_markdown:
         md_url = f"{job.url}.md"
@@ -513,6 +524,7 @@ def main() -> None:
                     prefer_markdown,
                     args.fetch_html,
                     args.skip_html_fallback,
+                    args.skip_existing,
                 ): job
                 for job in jobs
             }
@@ -523,12 +535,17 @@ def main() -> None:
                 except Exception as exc:  # pragma: no cover - thread errors
                     res = PageResult(job=job, status="error", error=str(exc))
                 results.append(res)
-                if res.status != "ok":
+                if res.status == "error":
                     print(f"ERROR fetching {job.url}: {res.error}", file=sys.stderr)
 
         if args.dry_run:
             ok_count = sum(1 for r in results if r.status == "ok")
-            print(f"Dry run complete for {language}: ok={ok_count} errors={len(results)-ok_count}")
+            skipped_count = sum(1 for r in results if r.status == "skipped")
+            error_count = sum(1 for r in results if r.status == "error")
+            print(
+                f"Dry run complete for {language}: ok={ok_count} "
+                f"skipped={skipped_count} errors={error_count}"
+            )
             continue
 
         write_manifest(
