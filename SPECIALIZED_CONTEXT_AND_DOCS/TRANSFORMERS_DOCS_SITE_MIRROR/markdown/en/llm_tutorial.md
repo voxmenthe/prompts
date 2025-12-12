@@ -4,28 +4,29 @@ Text generation is the most popular application for large language models (LLMs)
 
 In Transformers, the [generate()](/docs/transformers/main/en/main_classes/text_generation#transformers.GenerationMixin.generate) API handles text generation, and it is available for all models with generative capabilities. This guide will show you the basics of text generation with [generate()](/docs/transformers/main/en/main_classes/text_generation#transformers.GenerationMixin.generate) and some common pitfalls to avoid.
 
+> [!TIP]
 > For the following commands, please make sure [`transformers serve` is running](https://huggingface.co/docs/transformers/main/en/serving).
 >
-> ```
+> ```shell
 > transformers chat Qwen/Qwen2.5-0.5B-Instruct
 > ```
 
 ## Default generate
 
-Before you begin, it’s helpful to install [bitsandbytes](https://hf.co/docs/bitsandbytes/index) to quantize really large models to reduce their memory usage.
+Before you begin, it's helpful to install [bitsandbytes](https://hf.co/docs/bitsandbytes/index) to quantize really large models to reduce their memory usage.
 
-```
+```bash
 !pip install -U transformers bitsandbytes
 ```
 
 Bitsandbytes supports multiple backends in addition to CUDA-based GPUs. Refer to the multi-backend installation [guide](https://huggingface.co/docs/bitsandbytes/main/en/installation#multi-backend) to learn more.
 
-Load a LLM with [from\_pretrained()](/docs/transformers/main/en/main_classes/model#transformers.PreTrainedModel.from_pretrained) and add the following two parameters to reduce the memory requirements.
+Load a LLM with [from_pretrained()](/docs/transformers/main/en/main_classes/model#transformers.PreTrainedModel.from_pretrained) and add the following two parameters to reduce the memory requirements.
 
-* `device_map="auto"` enables Accelerates’ [Big Model Inference](./models#big-model-inference) feature for automatically initiating the model skeleton and loading and dispatching the model weights across all available devices, starting with the fastest device (GPU).
-* `quantization_config` is a configuration object that defines the quantization settings. This examples uses bitsandbytes as the quantization backend (see the [Quantization](./quantization/overview) section for more available backends) and it loads the model in [4-bits](./quantization/bitsandbytes).
+- `device_map="auto"` enables Accelerates' [Big Model Inference](./models#big-model-inference) feature for automatically initiating the model skeleton and loading and dispatching the model weights across all available devices, starting with the fastest device (GPU).
+- `quantization_config` is a configuration object that defines the quantization settings. This examples uses bitsandbytes as the quantization backend (see the [Quantization](./quantization/overview) section for more available backends) and it loads the model in [4-bits](./quantization/bitsandbytes).
 
-```
+```py
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 
 quantization_config = BitsAndBytesConfig(load_in_4bit=True)
@@ -34,16 +35,17 @@ model = AutoModelForCausalLM.from_pretrained("mistralai/Mistral-7B-v0.1", device
 
 Tokenize your input, and set the `padding_side()` parameter to `"left"` because a LLM is not trained to continue generation from padding tokens. The tokenizer returns the input ids and attention mask.
 
+> [!TIP]
 > Process more than one prompt at a time by passing a list of strings to the tokenizer. Batch the inputs to improve throughput at a small cost to latency and memory.
 
-```
+```py
 tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1", padding_side="left")
 model_inputs = tokenizer(["A list of colors: red, blue"], return_tensors="pt").to(model.device)
 ```
 
-Pass the inputs to [generate()](/docs/transformers/main/en/main_classes/text_generation#transformers.GenerationMixin.generate) to generate tokens, and [batch\_decode()](/docs/transformers/main/en/internal/tokenization_utils#transformers.PreTrainedTokenizerBase.batch_decode) the generated tokens back to text.
+Pass the inputs to [generate()](/docs/transformers/main/en/main_classes/text_generation#transformers.GenerationMixin.generate) to generate tokens, and [batch_decode()](/docs/transformers/main/en/internal/tokenization_utils#transformers.PreTrainedTokenizerBase.batch_decode) the generated tokens back to text.
 
-```
+```py
 generated_ids = model.generate(**model_inputs)
 tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
 "A list of colors: red, blue, green, yellow, orange, purple, pink,"
@@ -55,7 +57,7 @@ All generation settings are contained in [GenerationConfig](/docs/transformers/m
 
 Inspect the configuration through the `generation_config` attribute. It only shows values that are different from the default configuration, in this case, the `bos_token_id` and `eos_token_id`.
 
-```
+```py
 from transformers import AutoModelForCausalLM
 
 model = AutoModelForCausalLM.from_pretrained("mistralai/Mistral-7B-v0.1", device_map="auto")
@@ -68,7 +70,7 @@ GenerationConfig {
 
 You can customize [generate()](/docs/transformers/main/en/main_classes/text_generation#transformers.GenerationMixin.generate) by overriding the parameters and values in [GenerationConfig](/docs/transformers/main/en/main_classes/text_generation#transformers.GenerationConfig). See [this section below](#common-options) for commonly adjusted parameters.
 
-```
+```py
 # enable beam search sampling strategy
 model.generate(**inputs, num_beams=4, do_sample=True)
 ```
@@ -85,7 +87,7 @@ Refer to the [Generation strategies](./generation_strategies) guide to learn mor
 
 Create an instance of [GenerationConfig](/docs/transformers/main/en/main_classes/text_generation#transformers.GenerationConfig) and specify the decoding parameters you want.
 
-```
+```py
 from transformers import AutoModelForCausalLM, GenerationConfig
 
 model = AutoModelForCausalLM.from_pretrained("my_account/my_model")
@@ -94,15 +96,15 @@ generation_config = GenerationConfig(
 )
 ```
 
-Use [save\_pretrained()](/docs/transformers/main/en/main_classes/text_generation#transformers.GenerationConfig.save_pretrained) to save a specific generation configuration and set the `push_to_hub` parameter to `True` to upload it to the Hub.
+Use [save_pretrained()](/docs/transformers/main/en/main_classes/text_generation#transformers.GenerationConfig.save_pretrained) to save a specific generation configuration and set the `push_to_hub` parameter to `True` to upload it to the Hub.
 
-```
+```py
 generation_config.save_pretrained("my_account/my_model", push_to_hub=True)
 ```
 
 Leave the `config_file_name` parameter empty. This parameter should be used when storing multiple generation configurations in a single directory. It gives you a way to specify which generation configuration to load. You can create different configurations for different generative tasks (creative text generation with sampling, summarization with beam search) for use with a single model.
 
-```
+```py
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, GenerationConfig
 
 tokenizer = AutoTokenizer.from_pretrained("google-t5/t5-small")
@@ -126,15 +128,14 @@ print(tokenizer.batch_decode(outputs, skip_special_tokens=True))
 
 ## Common Options
 
-[generate()](/docs/transformers/main/en/main_classes/text_generation#transformers.GenerationMixin.generate) is a powerful tool that can be heavily customized. This can be daunting for a new users. This section contains a list of popular generation options that you can define in most text generation tools in Transformers: [generate()](/docs/transformers/main/en/main_classes/text_generation#transformers.GenerationMixin.generate), [GenerationConfig](/docs/transformers/main/en/main_classes/text_generation#transformers.GenerationConfig), `pipelines`, the `chat` CLI, …
+[generate()](/docs/transformers/main/en/main_classes/text_generation#transformers.GenerationMixin.generate) is a powerful tool that can be heavily customized. This can be daunting for a new users. This section contains a list of popular generation options that you can define in most text generation tools in Transformers: [generate()](/docs/transformers/main/en/main_classes/text_generation#transformers.GenerationMixin.generate), [GenerationConfig](/docs/transformers/main/en/main_classes/text_generation#transformers.GenerationConfig), `pipelines`, the `chat` CLI, ...
 
 | Option name | Type | Simplified description |
-| --- | --- | --- |
+|---|---|---|
 | `max_new_tokens` | `int` | Controls the maximum generation length. Be sure to define it, as it usually defaults to a small value. |
 | `do_sample` | `bool` | Defines whether generation will sample the next token (`True`), or is greedy instead (`False`). Most use cases should set this flag to `True`. Check [this guide](./generation_strategies) for more information. |
-| `temperature` | `float` | How unpredictable the next selected token will be. High values (`>0.8`) are good for creative tasks, low values (e.g. `<0.4`) for tasks that require “thinking”. Requires `do_sample=True`. |
-| `num_beams` | `int` | When set to `>1`, activates the beam search algorithm. Beam search is good on input-grounded tasks. Check [this guide](./generation_strategies) for more information. |
-| `repetition_penalty` | `float` | Set it to `>1.0` if you’re seeing the model repeat itself often. Larger values apply a larger penalty. |
+| `temperature` | `float` | How unpredictable the next selected token will be. High values (`>0.8`) are good for creative tasks, low values (e.g. `1`, activates the beam search algorithm. Beam search is good on input-grounded tasks. Check [this guide](./generation_strategies) for more information. |
+| `repetition_penalty` | `float` | Set it to `>1.0` if you're seeing the model repeat itself often. Larger values apply a larger penalty. |
 | `eos_token_id` | `list[int]` | The token(s) that will cause generation to stop. The default value is usually good, but you can specify a different token. |
 
 ## Pitfalls
@@ -145,18 +146,20 @@ The section below covers some common issues you may encounter during text genera
 
 [generate()](/docs/transformers/main/en/main_classes/text_generation#transformers.GenerationMixin.generate) returns up to 20 tokens by default unless otherwise specified in a models [GenerationConfig](/docs/transformers/main/en/main_classes/text_generation#transformers.GenerationConfig). It is highly recommended to manually set the number of generated tokens with the `max_new_tokens` parameter to control the output length. [Decoder-only](https://hf.co/learn/nlp-course/chapter1/6?fw=pt) models returns the initial prompt along with the generated tokens.
 
-```
+```py
 model_inputs = tokenizer(["A sequence of numbers: 1, 2"], return_tensors="pt").to(model.device)
 ```
 
-default length
-
-max\_new\_tokens
-
-```
+```py
 generated_ids = model.generate(**model_inputs)
 tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
 'A sequence of numbers: 1, 2, 3, 4, 5'
+```
+
+```py
+generated_ids = model.generate(**model_inputs, max_new_tokens=50)
+tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
+'A sequence of numbers: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,'
 ```
 
 ### Decoding strategy
@@ -165,28 +168,25 @@ The default decoding strategy in [generate()](/docs/transformers/main/en/main_cl
 
 For example, enable a [multinomial sampling](./generation_strategies#multinomial-sampling) strategy to generate more diverse outputs. Refer to the [Generation strategy](./generation_strategies) guide for more decoding strategies.
 
-```
+```py
 model_inputs = tokenizer(["I am a cat."], return_tensors="pt").to(model.device)
 ```
 
-greedy search
-
-multinomial sampling
-
-```
+```py
 generated_ids = model.generate(**model_inputs)
+tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
+```
+
+```py
+generated_ids = model.generate(**model_inputs, do_sample=True)
 tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
 ```
 
 ### Padding side
 
-Inputs need to be padded if they don’t have the same length. But LLMs aren’t trained to continue generation from padding tokens, which means the `padding_side()` parameter needs to be set to the left of the input.
+Inputs need to be padded if they don't have the same length. But LLMs aren't trained to continue generation from padding tokens, which means the `padding_side()` parameter needs to be set to the left of the input.
 
-right pad
-
-left pad
-
-```
+```py
 model_inputs = tokenizer(
     ["1, 2, 3", "A, B, C, D, E"], padding=True, return_tensors="pt"
 ).to(model.device)
@@ -195,13 +195,24 @@ tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
 '1, 2, 33333333333'
 ```
 
+```py
+tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1", padding_side="left")
+tokenizer.pad_token = tokenizer.eos_token
+model_inputs = tokenizer(
+    ["1, 2, 3", "A, B, C, D, E"], padding=True, return_tensors="pt"
+).to(model.device)
+generated_ids = model.generate(**model_inputs)
+tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
+'1, 2, 3, 4, 5, 6,'
+```
+
 ### Prompt format
 
 Some models and tasks expect a certain input prompt format, and if the format is incorrect, the model returns a suboptimal output. You can learn more about prompting in the [prompt engineering](./tasks/prompting) guide.
 
-For example, a chat model expects the input as a [chat template](./chat_templating). Your prompt should include a `role` and `content` to indicate who is participating in the conversation. If you try to pass your prompt as a single string, the model doesn’t always return the expected output.
+For example, a chat model expects the input as a [chat template](./chat_templating). Your prompt should include a `role` and `content` to indicate who is participating in the conversation. If you try to pass your prompt as a single string, the model doesn't always return the expected output.
 
-```
+```py
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 
 tokenizer = AutoTokenizer.from_pretrained("HuggingFaceH4/zephyr-7b-alpha")
@@ -210,11 +221,7 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 ```
 
-no format
-
-chat template
-
-```
+```py
 prompt = """How many cats does it take to change a light bulb? Reply as a pirate."""
 model_inputs = tokenizer([prompt], return_tensors="pt").to(model.device)
 input_length = model_inputs.input_ids.shape[1]
@@ -223,15 +230,28 @@ print(tokenizer.batch_decode(generated_ids[:, input_length:], skip_special_token
 "Aye, matey! 'Tis a simple task for a cat with a keen eye and nimble paws. First, the cat will climb up the ladder, carefully avoiding the rickety rungs. Then, with"
 ```
 
+```py
+messages = [
+    {
+        "role": "system",
+        "content": "You are a friendly chatbot who always responds in the style of a pirate",
+    },
+    {"role": "user", "content": "How many cats does it take to change a light bulb?"},
+]
+model_inputs = tokenizer.apply_chat_template(messages, add_generation_prompt=True, return_tensors="pt").to(model.device)
+input_length = model_inputs.shape[1]
+generated_ids = model.generate(model_inputs, do_sample=True, max_new_tokens=50)
+print(tokenizer.batch_decode(generated_ids[:, input_length:], skip_special_tokens=True)[0])
+"Arr, matey! According to me beliefs, 'twas always one cat to hold the ladder and another to climb up it an’ change the light bulb, but if yer looking to save some catnip, maybe yer can
+```
+
 ## Resources
 
 Take a look below for some more specific and specialized text generation libraries.
 
-* [Optimum](https://github.com/huggingface/optimum): an extension of Transformers focused on optimizing training and inference on specific hardware devices
-* [Outlines](https://github.com/dottxt-ai/outlines): a library for constrained text generation (generate JSON files for example).
-* [SynCode](https://github.com/uiuc-focal-lab/syncode): a library for context-free grammar guided generation (JSON, SQL, Python).
-* [Text Generation Inference](https://github.com/huggingface/text-generation-inference): a production-ready server for LLMs.
-* [Text generation web UI](https://github.com/oobabooga/text-generation-webui): a Gradio web UI for text generation.
-* [logits-processor-zoo](https://github.com/NVIDIA/logits-processor-zoo): additional logits processors for controlling text generation.
-
- [Update on GitHub](https://github.com/huggingface/transformers/blob/main/docs/source/en/llm_tutorial.md)
+- [Optimum](https://github.com/huggingface/optimum): an extension of Transformers focused on optimizing training and inference on specific hardware devices
+- [Outlines](https://github.com/dottxt-ai/outlines): a library for constrained text generation (generate JSON files for example).
+- [SynCode](https://github.com/uiuc-focal-lab/syncode): a library for context-free grammar guided generation (JSON, SQL, Python).
+- [Text Generation Inference](https://github.com/huggingface/text-generation-inference): a production-ready server for LLMs.
+- [Text generation web UI](https://github.com/oobabooga/text-generation-webui): a Gradio web UI for text generation.
+- [logits-processor-zoo](https://github.com/NVIDIA/logits-processor-zoo): additional logits processors for controlling text generation.

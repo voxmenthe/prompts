@@ -8,15 +8,15 @@ This guide will walk you through the process of adding a new pipeline to Transfo
 
 At a minimum, you only need to provide [Pipeline](/docs/transformers/main/en/main_classes/pipelines#transformers.Pipeline) with an appropriate input for a task. This is also where you should begin when designing your pipeline.
 
-Decide what input types [Pipeline](/docs/transformers/main/en/main_classes/pipelines#transformers.Pipeline) can accept. It can be strings, raw bytes, dictionaries, and so on. Try to keep the inputs in pure Python where possible because it’s more compatible. Next, decide on the output [Pipeline](/docs/transformers/main/en/main_classes/pipelines#transformers.Pipeline) should return. Again, keeping the output in Python is the simplest and best option because it’s easier to work with.
+Decide what input types [Pipeline](/docs/transformers/main/en/main_classes/pipelines#transformers.Pipeline) can accept. It can be strings, raw bytes, dictionaries, and so on. Try to keep the inputs in pure Python where possible because it's more compatible. Next, decide on the output [Pipeline](/docs/transformers/main/en/main_classes/pipelines#transformers.Pipeline) should return. Again, keeping the output in Python is the simplest and best option because it's easier to work with.
 
-Keeping the inputs and outputs simple, and ideally JSON-serializable, makes it easier for users to run your [Pipeline](/docs/transformers/main/en/main_classes/pipelines#transformers.Pipeline) without needing to learn new object types. It’s also common to support many different input types for even greater ease of use. For example, making an audio file acceptable from a filename, URL, or raw bytes gives the user more flexibility in how they provide the audio data.
+Keeping the inputs and outputs simple, and ideally JSON-serializable, makes it easier for users to run your [Pipeline](/docs/transformers/main/en/main_classes/pipelines#transformers.Pipeline) without needing to learn new object types. It's also common to support many different input types for even greater ease of use. For example, making an audio file acceptable from a filename, URL, or raw bytes gives the user more flexibility in how they provide the audio data.
 
 ## Create a pipeline
 
 With an input and output decided, you can start implementing [Pipeline](/docs/transformers/main/en/main_classes/pipelines#transformers.Pipeline). Your pipeline should inherit from the base [Pipeline](/docs/transformers/main/en/main_classes/pipelines#transformers.Pipeline) class and include 4 methods.
 
-```
+```py
 from transformers import Pipeline
 
 class MyPipeline(Pipeline):
@@ -31,15 +31,15 @@ class MyPipeline(Pipeline):
 
 1. `preprocess` takes the inputs and transforms them into the appropriate input format for the model.
 
-```
+```py
 def preprocess(self, inputs, maybe_arg=2):
     model_input = Tensor(inputs["input_ids"])
     return {"model_input": model_input}
 ```
 
-2. `_forward` shouldn’t be called directly. `forward` is the preferred method because it includes safeguards to make sure everything works correctly on the expected device. Anything linked to the model belongs in `_forward` and everything else belongs in either `preprocess` or `postprocess`.
+2. `_forward` shouldn't be called directly. `forward` is the preferred method because it includes safeguards to make sure everything works correctly on the expected device. Anything linked to the model belongs in `_forward` and everything else belongs in either `preprocess` or `postprocess`.
 
-```
+```py
 def _forward(self, model_inputs):
     outputs = self.model(**model_inputs)
     return outputs
@@ -47,17 +47,17 @@ def _forward(self, model_inputs):
 
 3. `postprocess` generates the final output from the models output in `_forward`.
 
-```
+```py
 def postprocess(self, model_outputs, top_k=5):
     best_class = model_outputs["logits"].softmax(-1)
     return best_class
 ```
 
-4. `_sanitize_parameters` lets users pass additional parameters to [Pipeline](/docs/transformers/main/en/main_classes/pipelines#transformers.Pipeline). This could be during initialization or when [Pipeline](/docs/transformers/main/en/main_classes/pipelines#transformers.Pipeline) is called. `_sanitize_parameters` returns 3 dicts of additional keyword arguments that are passed directly to `preprocess`, `_forward`, and `postprocess`. Don’t add anything if a user didn’t call the pipeline with extra parameters. This keeps the default arguments in the function definition which is always more natural.
+4. `_sanitize_parameters` lets users pass additional parameters to [Pipeline](/docs/transformers/main/en/main_classes/pipelines#transformers.Pipeline). This could be during initialization or when [Pipeline](/docs/transformers/main/en/main_classes/pipelines#transformers.Pipeline) is called. `_sanitize_parameters` returns 3 dicts of additional keyword arguments that are passed directly to `preprocess`, `_forward`, and `postprocess`. Don't add anything if a user didn't call the pipeline with extra parameters. This keeps the default arguments in the function definition which is always more natural.
 
 For example, add a `top_k` parameter in `postprocess` to return the top 5 most likely classes. Then in `_sanitize_parameters`, check if the user passed in `top_k` and add it to `postprocess_kwargs`.
 
-```
+```py
 def _sanitize_parameters(self, **kwargs):
     preprocess_kwargs = {}
     if "maybe_arg" in kwargs:
@@ -71,7 +71,7 @@ def _sanitize_parameters(self, **kwargs):
 
 Now the pipeline can return the top most likely labels if a user chooses to.
 
-```
+```py
 from transformers import pipeline
 
 pipeline = pipeline("my-task")
@@ -85,11 +85,11 @@ pipeline("This is the best meal I've ever had")
 
 Register the new task your pipeline supports in the `PIPELINE_REGISTRY`. The registry defines:
 
-* The supported Pytorch model class with `pt_model`
-* a default model which should come from a specific revision (branch, or commit hash) where the model works as expected with `default`
-* the expected input with `type`
+- The supported Pytorch model class with `pt_model`
+- a default model which should come from a specific revision (branch, or commit hash) where the model works as expected with `default`
+- the expected input with `type`
 
-```
+```py
 from transformers.pipelines import PIPELINE_REGISTRY
 from transformers import AutoModelForSequenceClassification
 
@@ -106,7 +106,7 @@ PIPELINE_REGISTRY.register_pipeline(
 
 Share your pipeline with the community on the [Hub](https://hf.co) or you can add it directly to Transformers.
 
-It’s faster to upload your pipeline code to the Hub because it doesn’t require a review from the Transformers team. Adding the pipeline to Transformers may be slower because it requires a review and you need to add tests to ensure your [Pipeline](/docs/transformers/main/en/main_classes/pipelines#transformers.Pipeline) works.
+It's faster to upload your pipeline code to the Hub because it doesn't require a review from the Transformers team. Adding the pipeline to Transformers may be slower because it requires a review and you need to add tests to ensure your [Pipeline](/docs/transformers/main/en/main_classes/pipelines#transformers.Pipeline) works.
 
 ### Upload to the Hub
 
@@ -114,7 +114,7 @@ Add your pipeline code to the Hub in a Python file.
 
 For example, a custom pipeline for sentence pair classification might look like the following code below.
 
-```
+```py
 import numpy as np
 from transformers import Pipeline
 
@@ -149,7 +149,7 @@ class PairClassificationPipeline(Pipeline):
 
 Save the code in a file named `pair_classification.py`, and import and register it as shown below.
 
-```
+```py
 from pair_classification import PairClassificationPipeline
 from transformers.pipelines import PIPELINE_REGISTRY
 from transformers import AutoModelForSequenceClassification
@@ -161,9 +161,9 @@ PIPELINE_REGISTRY.register_pipeline(
 )
 ```
 
-The [register\_pipeline](https://github.com/huggingface/transformers/blob/9feae5fb0164e89d4998e5776897c16f7330d3df/src/transformers/pipelines/base.py#L1387) function registers the pipeline details (task type, pipeline class, supported backends) to a models `config.json` file.
+The [register_pipeline](https://github.com/huggingface/transformers/blob/9feae5fb0164e89d4998e5776897c16f7330d3df/src/transformers/pipelines/base.py#L1387) function registers the pipeline details (task type, pipeline class, supported backends) to a models `config.json` file.
 
-```
+```json
   "custom_pipelines": {
     "pair-classification": {
       "impl": "pair_classification.PairClassificationPipeline",
@@ -174,9 +174,9 @@ The [register\_pipeline](https://github.com/huggingface/transformers/blob/9feae5
   },
 ```
 
-Call [push\_to\_hub()](/docs/transformers/main/en/main_classes/model#transformers.utils.PushToHubMixin.push_to_hub) to push the pipeline to the Hub. The Python file containing the code is copied to the Hub, and the pipelines model and tokenizer are also saved and pushed to the Hub. Your pipeline should now be available on the Hub under your namespace.
+Call [push_to_hub()](/docs/transformers/main/en/main_classes/model#transformers.utils.PushToHubMixin.push_to_hub) to push the pipeline to the Hub. The Python file containing the code is copied to the Hub, and the pipelines model and tokenizer are also saved and pushed to the Hub. Your pipeline should now be available on the Hub under your namespace.
 
-```
+```py
 from transformers import pipeline
 
 pipeline = pipeline(task="pair-classification", model="sgugger/finetuned-bert-mrpc")
@@ -185,7 +185,7 @@ pipeline.push_to_hub("pair-classification-pipeline")
 
 To use the pipeline, add `trust_remote_code=True` when loading the pipeline.
 
-```
+```py
 from transformers import pipeline
 
 pipeline = pipeline(task="pair-classification", trust_remote_code=True)
@@ -195,17 +195,15 @@ pipeline = pipeline(task="pair-classification", trust_remote_code=True)
 
 Adding a custom pipeline to Transformers requires adding tests to make sure everything works as expected, and requesting a review from the Transformers team.
 
-Add your pipeline code as a new module to the [pipelines](https://github.com/huggingface/transformers/tree/main/src/transformers/pipelines) submodule, and add it to the list of tasks defined in [pipelines/**init**.py](https://github.com/huggingface/transformers/blob/main/src/transformers/pipelines/__init__.py).
+Add your pipeline code as a new module to the [pipelines](https://github.com/huggingface/transformers/tree/main/src/transformers/pipelines) submodule, and add it to the list of tasks defined in [pipelines/__init__.py](https://github.com/huggingface/transformers/blob/main/src/transformers/pipelines/__init__.py).
 
 Next, add a new test for the pipeline in [transformers/tests/pipelines](https://github.com/huggingface/transformers/tree/main/tests/pipelines). You can look at the other tests for examples of how to test your pipeline.
 
-The [run\_pipeline\_test](https://github.com/huggingface/transformers/blob/db70426854fe7850f2c5834d633aff637f14772e/tests/pipelines/test_pipelines_text_classification.py#L186) function should be very generic and run on the models defined in [model\_mapping](https://github.com/huggingface/transformers/blob/db70426854fe7850f2c5834d633aff637f14772e/tests/pipelines/test_pipelines_text_classification.py#L48). This is important for testing future compatibility with new models.
+The [run_pipeline_test](https://github.com/huggingface/transformers/blob/db70426854fe7850f2c5834d633aff637f14772e/tests/pipelines/test_pipelines_text_classification.py#L186) function should be very generic and run on the models defined in [model_mapping](https://github.com/huggingface/transformers/blob/db70426854fe7850f2c5834d633aff637f14772e/tests/pipelines/test_pipelines_text_classification.py#L48). This is important for testing future compatibility with new models.
 
-You’ll also notice `ANY` is used throughout the [run\_pipeline\_test](https://github.com/huggingface/transformers/blob/db70426854fe7850f2c5834d633aff637f14772e/tests/pipelines/test_pipelines_text_classification.py#L186) function. The models are random, so you can’t check the actual values. Using `ANY` allows the test to match the output of the pipeline type instead.
+You'll also notice `ANY` is used throughout the [run_pipeline_test](https://github.com/huggingface/transformers/blob/db70426854fe7850f2c5834d633aff637f14772e/tests/pipelines/test_pipelines_text_classification.py#L186) function. The models are random, so you can't check the actual values. Using `ANY` allows the test to match the output of the pipeline type instead.
 
 Finally, you should also implement the following 4 tests.
 
-1. [test\_small\_model\_pt](https://github.com/huggingface/transformers/blob/db70426854fe7850f2c5834d633aff637f14772e/tests/pipelines/test_pipelines_text_classification.py#L59), use a small model for these pipelines to make sure they return the correct outputs. The results don’t have to make sense. Each pipeline should return the same result.
-2. [test\_large\_model\_pt](https://github.com/huggingface/transformers/blob/db70426854fe7850f2c5834d633aff637f14772e/tests/pipelines/test_pipelines_zero_shot_image_classification.py#L187), use a realistic model for these pipelines to make sure they return meaningful results. These tests are slow and should be marked as slow.
-
- [Update on GitHub](https://github.com/huggingface/transformers/blob/main/docs/source/en/add_new_pipeline.md)
+1. [test_small_model_pt](https://github.com/huggingface/transformers/blob/db70426854fe7850f2c5834d633aff637f14772e/tests/pipelines/test_pipelines_text_classification.py#L59), use a small model for these pipelines to make sure they return the correct outputs. The results don't have to make sense. Each pipeline should return the same result.
+1. [test_large_model_pt](https://github.com/huggingface/transformers/blob/db70426854fe7850f2c5834d633aff637f14772e/tests/pipelines/test_pipelines_zero_shot_image_classification.py#L187), use a realistic model for these pipelines to make sure they return meaningful results. These tests are slow and should be marked as slow.

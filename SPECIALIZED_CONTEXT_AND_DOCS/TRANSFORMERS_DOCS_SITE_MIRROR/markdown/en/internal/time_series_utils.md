@@ -4,30 +4,22 @@ This page lists all the utility functions and classes that can be used for Time 
 
 Most of those are only useful if you are studying the code of the time series models or you wish to add to the collection of distributional output classes.
 
-## Distributional Output
+## Distributional Output[[transformers.time_series_utils.NormalOutput]]
 
-### class transformers.time\_series\_utils.NormalOutput
+#### transformers.time_series_utils.NormalOutput[[transformers.time_series_utils.NormalOutput]]
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/time_series_utils.py#L179)
-
-( dim: int = 1  )
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/time_series_utils.py#L179)
 
 Normal distribution output class.
 
-### class transformers.time\_series\_utils.StudentTOutput
+#### transformers.time_series_utils.StudentTOutput[[transformers.time_series_utils.StudentTOutput]]
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/time_series_utils.py#L164)
-
-( dim: int = 1  )
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/time_series_utils.py#L164)
 
 Student-T distribution output class.
 
-### class transformers.time\_series\_utils.NegativeBinomialOutput
+#### transformers.time_series_utils.NegativeBinomialOutput[[transformers.time_series_utils.NegativeBinomialOutput]]
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/time_series_utils.py#L193)
-
-( dim: int = 1  )
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/time_series_utils.py#L193)
 
 Negative Binomial distribution output class.
-
- [Update on GitHub](https://github.com/huggingface/transformers/blob/main/docs/source/en/internal/time_series_utils.md)

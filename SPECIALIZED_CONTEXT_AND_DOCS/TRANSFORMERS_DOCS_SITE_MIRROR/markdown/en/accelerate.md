@@ -4,19 +4,19 @@
 
 This guide will show you two ways to use Accelerate with Transformers, using FSDP as the backend. The first method demonstrates distributed training with [Trainer](/docs/transformers/main/en/main_classes/trainer#transformers.Trainer), and the second method demonstrates adapting a PyTorch training loop. For more detailed information about Accelerate, please refer to the [documentation](https://hf.co/docs/accelerate/index).
 
-```
+```bash
 pip install accelerate
 ```
 
 Start by running [accelerate config](https://hf.co/docs/accelerate/main/en/package_reference/cli#accelerate-config) in the command line to answer a series of prompts about your training system. This creates and saves a configuration file to help Accelerate correctly set up training based on your setup.
 
-```
+```bash
 accelerate config
 ```
 
 Depending on your setup and the answers you provide, an example configuration file for distributing training with FSDP on one machine with two GPUs may look like the following.
 
-```
+```yaml
 compute_environment: LOCAL_MACHINE
 debug: false
 distributed_type: FSDP
@@ -49,7 +49,7 @@ use_cpu: false
 
 Pass the path to the saved configuration file to [TrainingArguments](/docs/transformers/main/en/main_classes/trainer#transformers.TrainingArguments), and from there, pass your [TrainingArguments](/docs/transformers/main/en/main_classes/trainer#transformers.TrainingArguments) to [Trainer](/docs/transformers/main/en/main_classes/trainer#transformers.Trainer).
 
-```
+```py
 from transformers import TrainingArguments, Trainer
 
 training_args = TrainingArguments(
@@ -82,9 +82,9 @@ trainer.train()
 
 ## Native PyTorch
 
-Accelerate can also be added to any PyTorch training loop to enable distributed training. The [Accelerator](https://huggingface.co/docs/accelerate/main/en/package_reference/accelerator#accelerate.Accelerator) is the main entry point for adapting your PyTorch code to work with Accelerate. It automatically detects your distributed training setup and initializes all the necessary components for training. You don’t need to explicitly place your model on a device because [Accelerator](https://huggingface.co/docs/accelerate/main/en/package_reference/accelerator#accelerate.Accelerator) knows which device to move your model to.
+Accelerate can also be added to any PyTorch training loop to enable distributed training. The [Accelerator](https://huggingface.co/docs/accelerate/main/en/package_reference/accelerator#accelerate.Accelerator) is the main entry point for adapting your PyTorch code to work with Accelerate. It automatically detects your distributed training setup and initializes all the necessary components for training. You don't need to explicitly place your model on a device because [Accelerator](https://huggingface.co/docs/accelerate/main/en/package_reference/accelerator#accelerate.Accelerator) knows which device to move your model to.
 
-```
+```py
 from accelerate import Accelerator
 
 accelerator = Accelerator()
@@ -93,7 +93,7 @@ device = accelerator.device
 
 All PyTorch objects (model, optimizer, scheduler, dataloaders) should be passed to the [prepare](https://huggingface.co/docs/accelerate/main/en/package_reference/accelerator#accelerate.Accelerator.prepare) method now. This method moves your model to the appropriate device or devices, adapts the optimizer and scheduler to use [AcceleratedOptimizer](https://huggingface.co/docs/accelerate/main/en/package_reference/torch_wrappers#accelerate.optimizer.AcceleratedOptimizer) and [AcceleratedScheduler](https://huggingface.co/docs/accelerate/main/en/package_reference/torch_wrappers#accelerate.scheduler.AcceleratedScheduler), and creates a new shardable dataloader.
 
-```
+```py
 train_dataloader, eval_dataloader, model, optimizer = accelerator.prepare(
     train_dataloader, eval_dataloader, model, optimizer
 )
@@ -101,7 +101,7 @@ train_dataloader, eval_dataloader, model, optimizer = accelerator.prepare(
 
 Replace `loss.backward` in your training loop with Accelerates [backward](https://huggingface.co/docs/accelerate/main/en/package_reference/accelerator#accelerate.Accelerator.backward) method to scale the gradients and determine the appropriate `backward` method to use depending on your framework (for example, DeepSpeed or Megatron).
 
-```
+```py
 for epoch in range(num_epochs):
     for batch in train_dataloader:
         outputs = model(**batch)
@@ -115,7 +115,7 @@ for epoch in range(num_epochs):
 
 Combine everything into a function and make it callable as a script.
 
-```
+```py
 from accelerate import Accelerator
   
 def main():
@@ -142,10 +142,8 @@ From the command line, call [accelerate launch](https://hf.co/docs/accelerate/ma
 
 To launch your training script on two GPUs, add the `--num_processes` argument.
 
-```
+```bash
 accelerate launch --num_processes=2 your_script.py
 ```
 
 Refer to the [Launching Accelerate scripts](https://hf.co/docs/accelerate/main/en/basic_tutorials/launch) for more details.
-
- [Update on GitHub](https://github.com/huggingface/transformers/blob/main/docs/source/en/accelerate.md)

@@ -4,13 +4,11 @@ This page lists all the custom layers used by the library, as well as the utilit
 
 Most of those are only useful if you are studying the code of the models in the library.
 
-## Layers
+## Layers[[transformers.GradientCheckpointingLayer]]
 
-### class transformers.GradientCheckpointingLayer
+#### transformers.GradientCheckpointingLayer[[transformers.GradientCheckpointingLayer]]
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/modeling_layers.py#L35)
-
-( \*args \*\*kwargs  )
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/modeling_layers.py#L35)
 
 Base class for layers with gradient checkpointing.
 
@@ -25,7 +23,7 @@ must be passed as positional arguments (`*args`) rather than keyword arguments t
 
 Example:
 
-```
+```python
 >>> # Correct - hidden_states passed as positional arg
 >>> out = self.layer(hidden_states, attention_mask=attention_mask)
 
@@ -33,95 +31,64 @@ Example:
 >>> out = self.layer(hidden_states=hidden_states, attention_mask=attention_mask)
 ```
 
-## Attention Functions
+## Attention Functions[[transformers.AttentionInterface]]
 
-### class transformers.AttentionInterface
+#### transformers.AttentionInterface[[transformers.AttentionInterface]]
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/modeling_utils.py#L4658)
-
-( )
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/modeling_utils.py#L4658)
 
 Dict-like object keeping track of allowed attention functions. You can easily add a new attention function
 with a call to `register()`. If a model needs to locally overwrite an existing attention function, say `sdpa`,
-it needs to declare a new instance of this class inside the `modeling_<model>.py`, and declare it on that instance.
+it needs to declare a new instance of this class inside the `modeling_.py`, and declare it on that instance.
 
-#### register
+registertransformers.AttentionInterface.registerhttps://github.com/huggingface/transformers/blob/main/src/transformers/utils/generic.py#L1029[{"name": "key", "val": ": str"}, {"name": "value", "val": ": Callable"}]
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/utils/generic.py#L1029)
+## Attention Mask Functions[[transformers.AttentionMaskInterface]]
 
-( key: str value: Callable  )
+#### transformers.AttentionMaskInterface[[transformers.AttentionMaskInterface]]
 
-## Attention Mask Functions
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/masking_utils.py#L631)
 
-### class transformers.AttentionMaskInterface
+registertransformers.AttentionMaskInterface.registerhttps://github.com/huggingface/transformers/blob/main/src/transformers/utils/generic.py#L1029[{"name": "key", "val": ": str"}, {"name": "value", "val": ": Callable"}]
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/masking_utils.py#L631)
+## Rotary Position Embedding Functions[[transformers.dynamic_rope_update]]
 
-( )
+#### transformers.dynamic_rope_update[[transformers.dynamic_rope_update]]
 
-#### register
-
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/utils/generic.py#L1029)
-
-( key: str value: Callable  )
-
-## Rotary Position Embedding Functions
-
-#### transformers.dynamic\_rope\_update
-
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/modeling_rope_utils.py#L33)
-
-( rope\_forward  )
-
-Parameters
-
-* **rope\_forward** (Callable) —
-  The forward pass of the RoPE implementation.
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/modeling_rope_utils.py#L33)
 
 Decorator function to update the RoPE parameters in the forward pass, if the model is using a dynamic RoPE
 (i.e. a RoPE implementation that may recompute its frequencies in the forward pass).
 
-## Pytorch custom modules
+**Parameters:**
 
-### class transformers.Conv1D
+rope_forward (Callable) : The forward pass of the RoPE implementation.
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/pytorch_utils.py#L97)
+**Returns:**
 
-( nf nx  )
+The decorated forward pass.
 
-Parameters
+## Pytorch custom modules[[transformers.Conv1D]]
 
-* **nf** (`int`) — The number of output features.
-* **nx** (`int`) — The number of input features.
+#### transformers.Conv1D[[transformers.Conv1D]]
+
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/pytorch_utils.py#L97)
 
 1D-convolutional layer as defined by Radford et al. for OpenAI GPT (and also used in GPT-2).
 
 Basically works like a linear layer but the weights are transposed.
 
-## PyTorch Helper Functions
+**Parameters:**
 
-#### transformers.apply\_chunking\_to\_forward
+nf (`int`) : The number of output features.
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/pytorch_utils.py#L126)
+nx (`int`) : The number of input features.
 
-( forward\_fn: Callable[..., torch.Tensor] chunk\_size: int chunk\_dim: int \*input\_tensors  ) → `torch.Tensor`
+## PyTorch Helper Functions[[transformers.apply_chunking_to_forward]]
 
-Parameters
+#### transformers.apply_chunking_to_forward[[transformers.apply_chunking_to_forward]]
 
-* **forward\_fn** (`Callable[..., torch.Tensor]`) —
-  The forward function of the model.
-* **chunk\_size** (`int`) —
-  The chunk size of a chunked tensor: `num_chunks = len(input_tensors[0]) / chunk_size`.
-* **chunk\_dim** (`int`) —
-  The dimension over which the `input_tensors` should be chunked.
-* **input\_tensors** (`tuple[torch.Tensor]`) —
-  The input tensors of `forward_fn` which will be chunked
-
-Returns
-
-`torch.Tensor`
-
-A tensor with the same shape as the `forward_fn` would have given if applied`.
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/pytorch_utils.py#L126)
 
 This function chunks the `input_tensors` into smaller input tensor parts of size `chunk_size` over the dimension
 `chunk_dim`. It then applies a layer `forward_fn` to each chunk independently to save memory.
@@ -131,38 +98,51 @@ applying `forward_fn` to `input_tensors`.
 
 Examples:
 
-```
+```python
 # rename the usual forward() fn to forward_chunk()
 def forward_chunk(self, hidden_states):
     hidden_states = self.decoder(hidden_states)
     return hidden_states
-
 
 # implement a chunked forward function
 def forward(self, hidden_states):
     return apply_chunking_to_forward(self.forward_chunk, self.chunk_size_lm_head, self.seq_len_dim, hidden_states)
 ```
 
-#### transformers.pytorch\_utils.prune\_linear\_layer
+**Parameters:**
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/pytorch_utils.py#L63)
+forward_fn (`Callable[..., torch.Tensor]`) : The forward function of the model.
 
-( layer: nn.Linear index: torch.LongTensor dim: int = 0  ) → `torch.nn.Linear`
+chunk_size (`int`) : The chunk size of a chunked tensor: `num_chunks = len(input_tensors[0]) / chunk_size`.
 
-Parameters
+chunk_dim (`int`) : The dimension over which the `input_tensors` should be chunked.
 
-* **layer** (`torch.nn.Linear`) — The layer to prune.
-* **index** (`torch.LongTensor`) — The indices to keep in the layer.
-* **dim** (`int`, *optional*, defaults to 0) — The dimension on which to keep the indices.
+input_tensors (`tuple[torch.Tensor]`) : The input tensors of `forward_fn` which will be chunked
 
-Returns
+**Returns:**
 
-`torch.nn.Linear`
+``torch.Tensor``
 
-The pruned layer as a new layer with `requires_grad=True`.
+A tensor with the same shape as the `forward_fn` would have given if applied`.
+
+#### transformers.pytorch_utils.prune_linear_layer[[transformers.pytorch_utils.prune_linear_layer]]
+
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/pytorch_utils.py#L63)
 
 Prune a linear layer to keep only entries in index.
 
 Used to remove heads.
 
- [Update on GitHub](https://github.com/huggingface/transformers/blob/main/docs/source/en/internal/modeling_utils.md)
+**Parameters:**
+
+layer (`torch.nn.Linear`) : The layer to prune.
+
+index (`torch.LongTensor`) : The indices to keep in the layer.
+
+dim (`int`, *optional*, defaults to 0) : The dimension on which to keep the indices.
+
+**Returns:**
+
+``torch.nn.Linear``
+
+The pruned layer as a new layer with `requires_grad=True`.

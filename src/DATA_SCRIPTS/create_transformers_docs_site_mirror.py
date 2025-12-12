@@ -7,9 +7,10 @@ Instead of pulling the `hf-doc-build/doc-build` artifacts, this script:
 
 1. Fetches the SvelteKit manifest for a given version/language to discover
    all docs routes (fallback: link crawl from the index page).
-2. Downloads each page's rendered HTML.
-3. Extracts the main docs container (`div.prose-doc`).
-4. Writes raw HTML and a Markdown-converted version to a local mirror.
+2. For each route, prefers the lightweight `.md` source endpoint on the
+   same site (avoids aggressive HTML rate limits). Falls back to rendered HTML.
+3. When using HTML, extracts the main docs container (`div.prose-doc`).
+4. Writes Markdown (and optionally HTML) to a local mirror.
 
 Default output layout:
 
@@ -120,6 +121,7 @@ class PageResult:
     job: PageJob
     status: str
     error: str | None = None
+    source: str | None = None
 
 
 def parse_args() -> argparse.Namespace:
@@ -165,6 +167,21 @@ def parse_args() -> argparse.Namespace:
             "Minimum seconds between requests across all workers. "
             f"Default: {DEFAULT_MIN_DELAY_SECONDS}. Lower to go faster, raise to be gentler."
         ),
+    )
+    parser.add_argument(
+        "--no-prefer-markdown",
+        action="store_true",
+        help="Fetch rendered HTML first instead of trying the .md source endpoint.",
+    )
+    parser.add_argument(
+        "--fetch-html",
+        action="store_true",
+        help="Also fetch/render HTML even when a .md source is available.",
+    )
+    parser.add_argument(
+        "--skip-html-fallback",
+        action="store_true",
+        help="When preferring .md sources, skip pages that lack them instead of falling back to HTML.",
     )
     parser.add_argument(
         "--dry-run",
@@ -353,18 +370,44 @@ def ensure_output_root(output_dir: Path, clean: bool) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
 
 
-def process_job(job: PageJob, out_root: Path, dry_run: bool) -> PageResult:
+def process_job(
+    job: PageJob,
+    out_root: Path,
+    dry_run: bool,
+    prefer_markdown: bool,
+    fetch_html: bool,
+    skip_html_fallback: bool,
+) -> PageResult:
+    md_out = out_root / "markdown" / job.language / job.rel_markdown
+    html_out = out_root / "html" / job.language / job.rel_html
+
+    if prefer_markdown:
+        md_url = f"{job.url}.md"
+        try:
+            md_bytes = fetch_bytes(md_url)
+            md_text_raw = md_bytes.decode("utf-8", errors="ignore")
+            md_text = clean_markdown(md_text_raw)
+            if dry_run:
+                return PageResult(job=job, status="ok", source="markdown")
+            ensure_within(out_root, md_out)
+            md_out.parent.mkdir(parents=True, exist_ok=True)
+            md_out.write_text(md_text, encoding="utf-8")
+            if not fetch_html:
+                return PageResult(job=job, status="ok", source="markdown")
+        except Exception as exc:
+            if skip_html_fallback:
+                return PageResult(job=job, status="skipped", error=str(exc), source="markdown")
+            # Fall back to rendered HTML below.
+
     try:
         raw_bytes = fetch_bytes(job.url)
         raw_html = raw_bytes.decode("utf-8", errors="ignore")
     except Exception as exc:
-        return PageResult(job=job, status="error", error=str(exc))
+        return PageResult(job=job, status="error", error=str(exc), source="html")
 
     if dry_run:
-        return PageResult(job=job, status="ok")
+        return PageResult(job=job, status="ok", source="html")
 
-    html_out = out_root / "html" / job.language / job.rel_html
-    md_out = out_root / "markdown" / job.language / job.rel_markdown
     for target in (html_out, md_out):
         ensure_within(out_root, target)
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -373,7 +416,7 @@ def process_job(job: PageJob, out_root: Path, dry_run: bool) -> PageResult:
     container_html = extract_prose_container(raw_html) or raw_html
     md_text = html_to_markdown(container_html)
     md_out.write_text(md_text, encoding="utf-8")
-    return PageResult(job=job, status="ok")
+    return PageResult(job=job, status="ok", source="html")
 
 
 def write_manifest(
@@ -385,7 +428,8 @@ def write_manifest(
     results: Sequence[PageResult],
 ) -> None:
     ok = [r for r in results if r.status == "ok"]
-    errors = [r for r in results if r.status != "ok"]
+    skipped = [r for r in results if r.status == "skipped"]
+    errors = [r for r in results if r.status not in {"ok", "skipped"}]
     manifest = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "source": {
@@ -398,6 +442,7 @@ def write_manifest(
         "counts": {
             "pages_requested": len(jobs),
             "pages_ok": len(ok),
+            "pages_skipped": len(skipped),
             "pages_error": len(errors),
         },
         "pages": [
@@ -407,6 +452,7 @@ def write_manifest(
                 "html_path": str(Path("html") / language / r.job.rel_html),
                 "markdown_path": str(Path("markdown") / language / r.job.rel_markdown),
                 "status": r.status,
+                "source": r.source,
                 "error": r.error,
             }
             for r in results
@@ -455,10 +501,19 @@ def main() -> None:
         )
         print(f"{language}: {len(jobs)} pages ({source} enumeration)")
 
+        prefer_markdown = not args.no_prefer_markdown
         results: list[PageResult] = []
         with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as executor:
             future_map = {
-                executor.submit(process_job, job, out_root, args.dry_run): job
+                executor.submit(
+                    process_job,
+                    job,
+                    out_root,
+                    args.dry_run,
+                    prefer_markdown,
+                    args.fetch_html,
+                    args.skip_html_fallback,
+                ): job
                 for job in jobs
             }
             for future in concurrent.futures.as_completed(future_map):

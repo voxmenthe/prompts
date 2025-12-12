@@ -4,219 +4,174 @@ This page lists all the utility functions used by [Trainer](/docs/transformers/m
 
 Most of those are only useful if you are studying the code of the Trainer in the library.
 
-## Utilities
+## Utilities[[transformers.EvalPrediction]]
 
-### class transformers.EvalPrediction
+#### transformers.EvalPrediction[[transformers.EvalPrediction]]
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/trainer_utils.py#L149)
-
-( predictions: numpy.ndarray | tuple[numpy.ndarray] label\_ids: numpy.ndarray | tuple[numpy.ndarray] inputs: numpy.ndarray | tuple[numpy.ndarray] | None = None losses: numpy.ndarray | tuple[numpy.ndarray] | None = None  )
-
-Parameters
-
-* **predictions** (`np.ndarray`) — Predictions of the model.
-* **label\_ids** (`np.ndarray`) — Targets to be matched.
-* **inputs** (`np.ndarray`, *optional*) — Input data passed to the model.
-* **losses** (`np.ndarray`, *optional*) — Loss values computed during evaluation.
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/trainer_utils.py#L149)
 
 Evaluation output (always contains labels), to be used to compute metrics.
 
-### class transformers.IntervalStrategy
+**Parameters:**
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/trainer_utils.py#L221)
+predictions (`np.ndarray`) : Predictions of the model.
 
-( value names = None module = None qualname = None type = None start = 1  )
+label_ids (`np.ndarray`) : Targets to be matched.
+
+inputs (`np.ndarray`, *optional*) : Input data passed to the model.
+
+losses (`np.ndarray`, *optional*) : Loss values computed during evaluation.
+
+#### transformers.IntervalStrategy[[transformers.IntervalStrategy]]
+
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/trainer_utils.py#L221)
 
 An enumeration.
 
-#### transformers.enable\_full\_determinism
+#### transformers.enable_full_determinism[[transformers.enable_full_determinism]]
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/trainer_utils.py#L67)
-
-( seed: int warn\_only: bool = False  )
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/trainer_utils.py#L67)
 
 Helper function for reproducible behavior during distributed training. See
-<https://pytorch.org/docs/stable/notes/randomness.html> for pytorch
+https://pytorch.org/docs/stable/notes/randomness.html for pytorch
 
-#### transformers.set\_seed
+#### transformers.set_seed[[transformers.set_seed]]
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/trainer_utils.py#L93)
-
-( seed: int deterministic: bool = False  )
-
-Parameters
-
-* **seed** (`int`) —
-  The seed to set.
-* **deterministic** (`bool`, *optional*, defaults to `False`) —
-  Whether to use deterministic algorithms where available. Can slow down training.
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/trainer_utils.py#L93)
 
 Helper function for reproducible behavior to set the seed in `random`, `numpy`, `torch` (if installed).
 
-#### transformers.torch\_distributed\_zero\_first
+**Parameters:**
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/trainer_pt_utils.py#L248)
+seed (`int`) : The seed to set.
 
-( local\_rank: int  )
+deterministic (`bool`, *optional*, defaults to `False`) : Whether to use deterministic algorithms where available. Can slow down training.
 
-Parameters
+#### transformers.torch_distributed_zero_first[[transformers.torch_distributed_zero_first]]
 
-* **local\_rank** (`int`) — The rank of the local process.
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/trainer_pt_utils.py#L248)
 
-Decorator to make all processes in distributed training wait for each local\_master to do something.
+Decorator to make all processes in distributed training wait for each local_master to do something.
 
-## Callbacks internals
+**Parameters:**
 
-### class transformers.trainer\_callback.CallbackHandler
+local_rank (`int`) : The rank of the local process.
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/trainer_callback.py#L424)
+## Callbacks internals[[transformers.trainer_callback.CallbackHandler]]
 
-( callbacks model processing\_class optimizer lr\_scheduler  )
+#### transformers.trainer_callback.CallbackHandler[[transformers.trainer_callback.CallbackHandler]]
+
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/trainer_callback.py#L424)
 
 Internal class that just calls the list of callbacks in order.
 
-## Trainer Argument Parser
+## Trainer Argument Parser[[transformers.HfArgumentParser]]
 
-### class transformers.HfArgumentParser
+#### transformers.HfArgumentParser[[transformers.HfArgumentParser]]
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/hf_argparser.py#L111)
-
-( dataclass\_types: typing.Union[transformers.hf\_argparser.DataClassType, collections.abc.Iterable[transformers.hf\_argparser.DataClassType], NoneType] = None \*\*kwargs  )
-
-Parameters
-
-* **dataclass\_types** (`DataClassType` or `Iterable[DataClassType]`, *optional*) —
-  Dataclass type, or list of dataclass types for which we will “fill” instances with the parsed args.
-* **kwargs** (`dict[str, Any]`, *optional*) —
-  Passed to `argparse.ArgumentParser()` in the regular way.
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/hf_argparser.py#L111)
 
 This subclass of `argparse.ArgumentParser` uses type hints on dataclasses to generate arguments.
 
 The class is designed to play well with the native argparse. In particular, you can add more (non-dataclass backed)
-arguments to the parser after initialization and you’ll get the output back after parsing as an additional
+arguments to the parser after initialization and you'll get the output back after parsing as an additional
 namespace. Optional: To create sub argument groups use the `_argument_group_name` attribute in the dataclass.
 
-#### parse\_args\_into\_dataclasses
-
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/hf_argparser.py#L272)
-
-( args = None return\_remaining\_strings = False look\_for\_args\_file = True args\_filename = None args\_file\_flag = None  ) → Tuple consisting of
-
-Parameters
-
-* **args** —
+parse_args_into_dataclassestransformers.HfArgumentParser.parse_args_into_dataclasseshttps://github.com/huggingface/transformers/blob/main/src/transformers/hf_argparser.py#L272[{"name": "args", "val": " = None"}, {"name": "return_remaining_strings", "val": " = False"}, {"name": "look_for_args_file", "val": " = True"}, {"name": "args_filename", "val": " = None"}, {"name": "args_file_flag", "val": " = None"}]- **args** --
   List of strings to parse. The default is taken from sys.argv. (same as argparse.ArgumentParser)
-* **return\_remaining\_strings** —
+- **return_remaining_strings** --
   If true, also return a list of remaining argument strings.
-* **look\_for\_args\_file** —
-  If true, will look for a “.args” file with the same base name as the entry point script for this
+- **look_for_args_file** --
+  If true, will look for a ".args" file with the same base name as the entry point script for this
   process, and will append its potential content to the command line args.
-* **args\_filename** —
-  If not None, will uses this file instead of the “.args” file specified in the previous argument.
-* **args\_file\_flag** —
+- **args_filename** --
+  If not None, will uses this file instead of the ".args" file specified in the previous argument.
+- **args_file_flag** --
   If not None, will look for a file in the command-line args specified with this flag. The flag can be
-  specified multiple times and precedence is determined by the order (last one wins).
-
-Returns
-
-Tuple consisting of
-
-* the dataclass instances in the same order as they were passed to the initializer.abspath
-* if applicable, an additional namespace for more (non-dataclass backed) arguments added to the parser
+  specified multiple times and precedence is determined by the order (last one wins).0Tuple consisting of- the dataclass instances in the same order as they were passed to the initializer.abspath
+- if applicable, an additional namespace for more (non-dataclass backed) arguments added to the parser
   after initialization.
-* The potential list of remaining argument strings. (same as argparse.ArgumentParser.parse\_known\_args)
+- The potential list of remaining argument strings. (same as argparse.ArgumentParser.parse_known_args)
 
 Parse command-line args into instances of the specified dataclass types.
 
-This relies on argparse’s `ArgumentParser.parse_known_args`. See the doc at:
-docs.python.org/3/library/argparse.html#argparse.ArgumentParser.parse\_args
+This relies on argparse's `ArgumentParser.parse_known_args`. See the doc at:
+docs.python.org/3/library/argparse.html#argparse.ArgumentParser.parse_args
 
-#### parse\_dict
+**Parameters:**
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/hf_argparser.py#L358)
+dataclass_types (`DataClassType` or `Iterable[DataClassType]`, *optional*) : Dataclass type, or list of dataclass types for which we will "fill" instances with the parsed args.
 
-( args: dict allow\_extra\_keys: bool = False  ) → Tuple consisting of
+kwargs (`dict[str, Any]`, *optional*) : Passed to `argparse.ArgumentParser()` in the regular way.
 
-Parameters
+**Returns:**
 
-* **args** (`dict`) —
-  dict containing config values
-* **allow\_extra\_keys** (`bool`, *optional*, defaults to `False`) —
-  Defaults to False. If False, will raise an exception if the dict contains keys that are not parsed.
+`Tuple consisting of`
 
-Returns
+- the dataclass instances in the same order as they were passed to the initializer.abspath
+- if applicable, an additional namespace for more (non-dataclass backed) arguments added to the parser
+  after initialization.
+- The potential list of remaining argument strings. (same as argparse.ArgumentParser.parse_known_args)
+#### parse_dict[[transformers.HfArgumentParser.parse_dict]]
 
-Tuple consisting of
-
-* the dataclass instances in the same order as they were passed to the initializer.
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/hf_argparser.py#L358)
 
 Alternative helper method that does not use `argparse` at all, instead uses a dict and populating the dataclass
 types.
 
-#### parse\_json\_file
+**Parameters:**
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/hf_argparser.py#L386)
+args (`dict`) : dict containing config values
 
-( json\_file: typing.Union[str, os.PathLike] allow\_extra\_keys: bool = False  ) → Tuple consisting of
+allow_extra_keys (`bool`, *optional*, defaults to `False`) : Defaults to False. If False, will raise an exception if the dict contains keys that are not parsed.
 
-Parameters
+**Returns:**
 
-* **json\_file** (`str` or `os.PathLike`) —
-  File name of the json file to parse
-* **allow\_extra\_keys** (`bool`, *optional*, defaults to `False`) —
-  Defaults to False. If False, will raise an exception if the json file contains keys that are not
-  parsed.
+`Tuple consisting of`
 
-Returns
+- the dataclass instances in the same order as they were passed to the initializer.
+#### parse_json_file[[transformers.HfArgumentParser.parse_json_file]]
 
-Tuple consisting of
-
-* the dataclass instances in the same order as they were passed to the initializer.
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/hf_argparser.py#L386)
 
 Alternative helper method that does not use `argparse` at all, instead loading a json file and populating the
 dataclass types.
 
-#### parse\_yaml\_file
+**Parameters:**
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/hf_argparser.py#L410)
+json_file (`str` or `os.PathLike`) : File name of the json file to parse
 
-( yaml\_file: typing.Union[str, os.PathLike] allow\_extra\_keys: bool = False  ) → Tuple consisting of
+allow_extra_keys (`bool`, *optional*, defaults to `False`) : Defaults to False. If False, will raise an exception if the json file contains keys that are not parsed.
 
-Parameters
+**Returns:**
 
-* **yaml\_file** (`str` or `os.PathLike`) —
-  File name of the yaml file to parse
-* **allow\_extra\_keys** (`bool`, *optional*, defaults to `False`) —
-  Defaults to False. If False, will raise an exception if the json file contains keys that are not
-  parsed.
+`Tuple consisting of`
 
-Returns
+- the dataclass instances in the same order as they were passed to the initializer.
+#### parse_yaml_file[[transformers.HfArgumentParser.parse_yaml_file]]
 
-Tuple consisting of
-
-* the dataclass instances in the same order as they were passed to the initializer.
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/hf_argparser.py#L410)
 
 Alternative helper method that does not use `argparse` at all, instead loading a yaml file and populating the
 dataclass types.
 
-## Debug Utilities
+**Parameters:**
 
-### class transformers.debug\_utils.DebugUnderflowOverflow
+yaml_file (`str` or `os.PathLike`) : File name of the yaml file to parse
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/debug_utils.py#L27)
+allow_extra_keys (`bool`, *optional*, defaults to `False`) : Defaults to False. If False, will raise an exception if the json file contains keys that are not parsed.
 
-( model max\_frames\_to\_save = 21 trace\_batch\_nums = [] abort\_after\_batch\_num = None  )
+**Returns:**
 
-Parameters
+`Tuple consisting of`
 
-* **model** (`nn.Module`) —
-  The model to debug.
-* **max\_frames\_to\_save** (`int`, *optional*, defaults to 21) —
-  How many frames back to record
-* **trace\_batch\_nums(`list[int]`,** *optional*, defaults to `[]`) —
-  Which batch numbers to trace (turns detection off)
-* **abort\_after\_batch\_num** (`int“, *optional*) —
-  Whether to abort after a certain batch number has finished
+- the dataclass instances in the same order as they were passed to the initializer.
+
+## Debug Utilities[[transformers.debug_utils.DebugUnderflowOverflow]]
+
+#### transformers.debug_utils.DebugUnderflowOverflow[[transformers.debug_utils.DebugUnderflowOverflow]]
+
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/debug_utils.py#L27)
 
 This debug class helps detect and understand where the model starts getting very large or very small, and more
 importantly `nan` or `inf` weight and activation elements.
@@ -230,7 +185,7 @@ Mode 1: Underflow/overflow detection
 
 To activate the underflow/overflow detection, initialize the object with the model :
 
-```
+```python
 debug_overflow = DebugUnderflowOverflow(model)
 ```
 
@@ -271,18 +226,18 @@ abs min  abs max  metadata
 ```
 
 You can see here, that `T5DenseGatedGeluDense.forward` resulted in output activations, whose absolute max value was
-around 62.7K, which is very close to fp16’s top limit of 64K. In the next frame we have `Dropout` which
+around 62.7K, which is very close to fp16's top limit of 64K. In the next frame we have `Dropout` which
 renormalizes the weights, after it zeroed some of the elements, which pushes the absolute max value to more than
 64K, and we get an overflow.
 
-As you can see it’s the previous frames that we need to look into when the numbers start going into very large for
+As you can see it's the previous frames that we need to look into when the numbers start going into very large for
 fp16 numbers.
 
 The tracking is done in a forward hook, which gets invoked immediately after `forward` has completed.
 
 By default the last 21 frames are printed. You can change the default to adjust for your needs. For example :
 
-```
+```python
 debug_overflow = DebugUnderflowOverflow(model, max_frames_to_save=100)
 ```
 
@@ -294,11 +249,11 @@ Mode 2. Specific batch absolute min/max tracing without detection
 
 The second work mode is per-batch tracing with the underflow/overflow detection feature turned off.
 
-Let’s say you want to watch the absolute min and max values for all the ingredients of each `forward` call of a
+Let's say you want to watch the absolute min and max values for all the ingredients of each `forward` call of a
 
 given batch, and only do that for batches 1 and 3. Then you instantiate this class as :
 
-```
+```python
 debug_overflow = DebugUnderflowOverflow(model, trace_batch_nums=[1, 3])
 ```
 
@@ -311,7 +266,7 @@ Early stopping:
 
 You can also specify the batch number after which to stop the training, with :
 
-```
+```python
 debug_overflow = DebugUnderflowOverflow(model, trace_batch_nums=[1, 3], abort_after_batch_num=3)
 ```
 
@@ -319,7 +274,15 @@ This feature is mainly useful in the tracing mode, but you can use it for any mo
 
 **Performance**:
 
-As this module measures absolute `min`/``max` of each weight of the model on every forward it’ll slow the training
+As this module measures absolute `min`/``max` of each weight of the model on every forward it'll slow the training
 down. Therefore remember to turn it off once the debugging needs have been met.
 
- [Update on GitHub](https://github.com/huggingface/transformers/blob/main/docs/source/en/internal/trainer_utils.md)
+**Parameters:**
+
+model (`nn.Module`) : The model to debug.
+
+max_frames_to_save (`int`, *optional*, defaults to 21) : How many frames back to record
+
+trace_batch_nums(`list[int]`, *optional*, defaults to `[]`) : Which batch numbers to trace (turns detection off)
+
+abort_after_batch_num  (`int``, *optional*) : Whether to abort after a certain batch number has finished

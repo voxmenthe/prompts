@@ -4,74 +4,54 @@ This page lists all of Transformers general utility functions that are found in 
 
 Most of those are only useful if you are studying the general code in the library.
 
-## Enums and namedtuples
+## Enums and namedtuples[[transformers.utils.ExplicitEnum]]
 
-### class transformers.utils.ExplicitEnum
+#### transformers.utils.ExplicitEnum[[transformers.utils.ExplicitEnum]]
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/utils/generic.py#L428)
-
-( value names = None module = None qualname = None type = None start = 1  )
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/utils/generic.py#L428)
 
 Enum with more explicit error message for missing values.
 
-### class transformers.utils.PaddingStrategy
+#### transformers.utils.PaddingStrategy[[transformers.utils.PaddingStrategy]]
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/utils/generic.py#L440)
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/utils/generic.py#L440)
 
-( value names = None module = None qualname = None type = None start = 1  )
-
-Possible values for the `padding` argument in [PreTrainedTokenizerBase.**call**()](/docs/transformers/main/en/internal/tokenization_utils#transformers.PreTrainedTokenizerBase.__call__). Useful for tab-completion in an
+Possible values for the `padding` argument in [PreTrainedTokenizerBase.__call__()](/docs/transformers/main/en/internal/tokenization_utils#transformers.PreTrainedTokenizerBase.__call__). Useful for tab-completion in an
 IDE.
 
-### class transformers.TensorType
+#### transformers.TensorType[[transformers.TensorType]]
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/utils/generic.py#L451)
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/utils/generic.py#L451)
 
-( value names = None module = None qualname = None type = None start = 1  )
-
-Possible values for the `return_tensors` argument in [PreTrainedTokenizerBase.**call**()](/docs/transformers/main/en/internal/tokenization_utils#transformers.PreTrainedTokenizerBase.__call__). Useful for
+Possible values for the `return_tensors` argument in [PreTrainedTokenizerBase.__call__()](/docs/transformers/main/en/internal/tokenization_utils#transformers.PreTrainedTokenizerBase.__call__). Useful for
 tab-completion in an IDE.
 
-## Special Decorators
+## Special Decorators[[transformers.add_start_docstrings]]
 
-#### transformers.add\_start\_docstrings
+#### transformers.add_start_docstrings[[transformers.add_start_docstrings]]
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/utils/doc.py#L37)
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/utils/doc.py#L37)
 
-( \*docstr  )
+#### transformers.utils.add_start_docstrings_to_model_forward[[transformers.utils.add_start_docstrings_to_model_forward]]
 
-#### transformers.utils.add\_start\_docstrings\_to\_model\_forward
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/utils/doc.py#L45)
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/utils/doc.py#L45)
+#### transformers.add_end_docstrings[[transformers.add_end_docstrings]]
 
-( \*docstr  )
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/utils/doc.py#L81)
 
-#### transformers.add\_end\_docstrings
+#### transformers.utils.add_code_sample_docstrings[[transformers.utils.add_code_sample_docstrings]]
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/utils/doc.py#L81)
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/utils/doc.py#L1006)
 
-( \*docstr  )
+#### transformers.utils.replace_return_docstrings[[transformers.utils.replace_return_docstrings]]
 
-#### transformers.utils.add\_code\_sample\_docstrings
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/utils/doc.py#L1100)
 
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/utils/doc.py#L1006)
+## Other Utilities[[transformers.utils._LazyModule]]
 
-( \*docstr processor\_class = None checkpoint = None output\_type = None config\_class = None mask = '[MASK]' qa\_target\_start\_index = 14 qa\_target\_end\_index = 15 model\_cls = None modality = None expected\_output = None expected\_loss = None real\_checkpoint = None revision = None  )
+#### transformers.utils._LazyModule[[transformers.utils._LazyModule]]
 
-#### transformers.utils.replace\_return\_docstrings
-
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/utils/doc.py#L1100)
-
-( output\_type = None config\_class = None  )
-
-## Other Utilities
-
-### class transformers.utils.\_LazyModule
-
- [< source >](https://github.com/huggingface/transformers/blob/main/src/transformers/utils/import_utils.py#L1865)
-
-( name: str module\_file: str import\_structure: dict module\_spec: \_frozen\_importlib.ModuleSpec | None = None extra\_objects: dict[str, object] | None = None explicit\_import\_shortcut: dict[str, list[str]] | None = None  )
+[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/utils/import_utils.py#L1865)
 
 Module class that surfaces all objects but only performs associated imports when the objects are requested.
-
- [Update on GitHub](https://github.com/huggingface/transformers/blob/main/docs/source/en/internal/file_utils.md)

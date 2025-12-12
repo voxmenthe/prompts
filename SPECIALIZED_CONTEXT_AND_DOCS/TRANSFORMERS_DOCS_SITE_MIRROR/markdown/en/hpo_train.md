@@ -1,20 +1,21 @@
 # Hyperparameter search
 
-Hyperparameter search discovers an optimal set of hyperparameters that produces the best model performance. [Trainer](/docs/transformers/main/en/main_classes/trainer#transformers.Trainer) supports several hyperparameter search backends - [Optuna](https://optuna.readthedocs.io/en/stable/index.html), [Weights & Biases](https://docs.wandb.ai/), [Ray Tune](https://docs.ray.io/en/latest/tune/index.html) - through [hyperparameter\_search()](/docs/transformers/main/en/main_classes/trainer#transformers.Trainer.hyperparameter_search) to optimize an objective or even multiple objectives.
+Hyperparameter search discovers an optimal set of hyperparameters that produces the best model performance. [Trainer](/docs/transformers/main/en/main_classes/trainer#transformers.Trainer) supports several hyperparameter search backends - [Optuna](https://optuna.readthedocs.io/en/stable/index.html), [Weights & Biases](https://docs.wandb.ai/), [Ray Tune](https://docs.ray.io/en/latest/tune/index.html) - through  [hyperparameter_search()](/docs/transformers/main/en/main_classes/trainer#transformers.Trainer.hyperparameter_search) to optimize an objective or even multiple objectives.
 
 This guide will go over how to set up a hyperparameter search for each of the backends.
 
-```
+```bash
 pip install optuna/wandb/ray[tune]
 ```
 
-To use [hyperparameter\_search()](/docs/transformers/main/en/main_classes/trainer#transformers.Trainer.hyperparameter_search), you need to create a `model_init` function. This function includes basic model information (arguments and configuration) because it needs to be reinitialized for each search trial in the run.
+To use [hyperparameter_search()](/docs/transformers/main/en/main_classes/trainer#transformers.Trainer.hyperparameter_search), you need to create a `model_init` function. This function includes basic model information (arguments and configuration) because it needs to be reinitialized for each search trial in the run.
 
-> The `model_init` function is incompatible with the [optimizers](./main_classes/trainer#transformers.Trainer.optimizers) parameter. Subclass [Trainer](/docs/transformers/main/en/main_classes/trainer#transformers.Trainer) and override the [create\_optimizer\_and\_scheduler()](/docs/transformers/main/en/main_classes/trainer#transformers.Trainer.create_optimizer_and_scheduler) method to create a custom optimizer and scheduler.
+> [!WARNING]
+> The `model_init` function is incompatible with the [optimizers](./main_classes/trainer#transformers.Trainer.optimizers) parameter. Subclass [Trainer](/docs/transformers/main/en/main_classes/trainer#transformers.Trainer) and override the [create_optimizer_and_scheduler()](/docs/transformers/main/en/main_classes/trainer#transformers.Trainer.create_optimizer_and_scheduler) method to create a custom optimizer and scheduler.
 
 An example `model_init` function is shown below.
 
-```
+```py
 def model_init(trial):
     return AutoModelForSequenceClassification.from_pretrained(
         model_args.model_name_or_path,
@@ -24,13 +25,14 @@ def model_init(trial):
     )
 ```
 
-Pass `model_init` to [Trainer](/docs/transformers/main/en/main_classes/trainer#transformers.Trainer) along with everything else you need for training. Then you can call [hyperparameter\_search()](/docs/transformers/main/en/main_classes/trainer#transformers.Trainer.hyperparameter_search) to start the search.
+Pass `model_init` to [Trainer](/docs/transformers/main/en/main_classes/trainer#transformers.Trainer) along with everything else you need for training. Then you can call [hyperparameter_search()](/docs/transformers/main/en/main_classes/trainer#transformers.Trainer.hyperparameter_search) to start the search.
 
-[hyperparameter\_search()](/docs/transformers/main/en/main_classes/trainer#transformers.Trainer.hyperparameter_search) accepts a [direction](./main_classes/trainer#transformers.Trainer.hyperparameter_search.direction) parameter to specify whether to minimize, maximize, or minimize and maximize multiple objectives. You’ll also need to set the [backend](./main_classes/trainer#transformers.Trainer.hyperparameter_search.backend) you’re using, an [object](./main_classes/trainer#transformers.Trainer.hyperparameter_search.hp_space) containing the hyperparameters to optimize for, the [number of trials](./main_classes/trainer#transformers.Trainer.hyperparameter_search.n_trials) to run, and a [compute\_objective](./main_classes/trainer#transformers.Trainer.hyperparameter_search.compute_objective) to return the objective values.
+[hyperparameter_search()](/docs/transformers/main/en/main_classes/trainer#transformers.Trainer.hyperparameter_search) accepts a [direction](./main_classes/trainer#transformers.Trainer.hyperparameter_search.direction) parameter to specify whether to minimize, maximize, or minimize and maximize multiple objectives. You'll also need to set the [backend](./main_classes/trainer#transformers.Trainer.hyperparameter_search.backend) you're using, an [object](./main_classes/trainer#transformers.Trainer.hyperparameter_search.hp_space) containing the hyperparameters to optimize for, the [number of trials](./main_classes/trainer#transformers.Trainer.hyperparameter_search.n_trials) to run, and a [compute_objective](./main_classes/trainer#transformers.Trainer.hyperparameter_search.compute_objective) to return the objective values.
 
-> If [compute\_objective](./main_classes/trainer#transformers.Trainer.hyperparameter_search.compute_objective) isn’t defined, the default [compute\_objective](./main_classes/trainer#transformers.Trainer.hyperparameter_search.compute_objective) is called which is the sum of an evaluation metric like F1.
+> [!TIP]
+> If [compute_objective](./main_classes/trainer#transformers.Trainer.hyperparameter_search.compute_objective) isn't defined, the default [compute_objective](./main_classes/trainer#transformers.Trainer.hyperparameter_search.compute_objective) is called which is the sum of an evaluation metric like F1.
 
-```
+```py
 from transformers import Trainer
 
 trainer = Trainer(
@@ -48,15 +50,9 @@ trainer.hyperparameter_search(...)
 
 The following examples demonstrate how to perform a hyperparameter search for the learning rate and training batch size using the different backends.
 
-Optuna
-
-Ray Tune
-
-Weights & Biases
-
 [Optuna](https://optuna.readthedocs.io/en/stable/tutorial/10_key_features/002_configurations.html#sphx-glr-tutorial-10-key-features-002-configurations-py) optimizes categories, integers, and floats.
 
-```
+```py
 def optuna_hp_space(trial):
     return {
         "learning_rate": trial.suggest_float("learning_rate", 1e-6, 1e-4, log=True),
@@ -72,8 +68,47 @@ best_trials = trainer.hyperparameter_search(
 )
 ```
 
+[Ray Tune](https://docs.ray.io/en/latest/tune/api/search_space.html) optimizes floats, integers, and categorical parameters. It also offers multiple sampling distributions for each parameter such as uniform and log-uniform.
+
+```py
+def ray_hp_space(trial):
+    return {
+        "learning_rate": tune.loguniform(1e-6, 1e-4),
+        "per_device_train_batch_size": tune.choice([16, 32, 64, 128]),
+    }
+
+best_trials = trainer.hyperparameter_search(
+    direction=["minimize", "maximize"],
+    backend="ray",
+    hp_space=ray_hp_space,
+    n_trials=20,
+    compute_objective=compute_objective,
+)
+
+```
+
+[Weights & Biases](https://docs.wandb.ai/guides/sweeps/sweep-config-keys) also optimizes integers, floats, and categorical parameters. It also includes support for different search strategies and distribution options.
+
+```py
+def wandb_hp_space(trial):
+    return {
+        "method": "random",
+        "metric": {"name": "objective", "goal": "minimize"},
+        "parameters": {
+            "learning_rate": {"distribution": "uniform", "min": 1e-6, "max": 1e-4},
+            "per_device_train_batch_size": {"values": [16, 32, 64, 128]},
+        },
+    }
+
+best_trials = trainer.hyperparameter_search(
+    direction=["minimize", "maximize"],
+    backend="wandb",
+    hp_space=wandb_hp_space,
+    n_trials=20,
+    compute_objective=compute_objective,
+)
+```
+
 ## Distributed Data Parallel
 
 [Trainer](/docs/transformers/main/en/main_classes/trainer#transformers.Trainer) only supports hyperparameter search for distributed data parallel (DDP) on the Optuna backends. Only the rank-zero process is used to generate the search trial, and the resulting parameters are passed along to the other ranks.
-
- [Update on GitHub](https://github.com/huggingface/transformers/blob/main/docs/source/en/hpo_train.md)
