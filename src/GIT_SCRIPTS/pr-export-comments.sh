@@ -177,6 +177,12 @@ IC_JSON="$(
   | jq -s 'flatten'
 )"
 
+# Fetch PR reviews (submitted review summaries, may contain body text)
+REVIEWS_JSON="$(
+  gh api --paginate -H "Accept: application/vnd.github+json" "/repos/${REPO}/pulls/${PR_NUMBER}/reviews" \
+  | jq -s 'flatten'
+)"
+
 # Build a threads array: roots + replies
 THREADS_JSON="$(
   jq '
@@ -332,6 +338,23 @@ timestamp="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
   done
 
   echo ""
+  echo "## Review Summaries (submitted reviews)"
+  echo ""
+  reviews_len=$(jq 'length' <<<"$REVIEWS_JSON")
+  if (( reviews_len == 0 )); then
+    echo "_None_"
+  else
+    jq -r '
+      sort_by(.submitted_at // .created_at) |
+      .[] | (
+        "### " + (.user.login // "unknown") + " — " + (.state // "unknown") + " — " + (.submitted_at // .created_at // "") + "  \n" +
+        "[" + .html_url + "](" + .html_url + ")\n\n" +
+        (if (.body // "") == "" then "_No text body_" else (.body // "") end)
+      )
+    ' <<<"$REVIEWS_JSON" | json_escape_md
+  fi
+
+  echo ""
   echo "## General Conversation (top-level PR comments)"
   ic_len=$(jq 'length' <<<"$IC_JSON")
   if (( ic_len == 0 )); then
@@ -358,6 +381,7 @@ if [[ -n "$OUT_JSON" ]]; then
     --arg prTitle "$PR_TITLE" \
     --arg exported "$timestamp" \
     --argjson threads "$THREADS_JSON" \
+    --argjson reviews "$REVIEWS_JSON" \
     --argjson issueComments "$IC_JSON" \
     '{
       repo: $repo,
@@ -367,6 +391,7 @@ if [[ -n "$OUT_JSON" ]]; then
       exported_at: $exported,
       context_radius: '"$CONTEXT"' ,
       review_threads: $threads,
+      reviews: $reviews,
       issue_comments: $issueComments
     }' > "$OUT_JSON"
 fi
